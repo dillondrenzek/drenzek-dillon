@@ -1,2 +1,2 @@
-require './capstone'
+require './portfolio'
 run Sinatra::Application
