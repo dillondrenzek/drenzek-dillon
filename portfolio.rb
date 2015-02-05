@@ -1,5 +1,10 @@
 require 'sinatra'
+require 'haml'
+require 'rack-flash'
+
+enable :sessions
+use Rack::Flash
 
 get '/' do
-	"Capstone Portal"
+	haml :index
 end
