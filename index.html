@@ -19,16 +19,16 @@
 		<script type="text/javascript" src="./js/lib/backbone-localStorage-min.js"></script>
 
 		<style type="text/css">
-		*,
-		*:before,
-		*:after {
-			box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-			font-family: Helvetica, sans-serif;
-		}
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				font-family: Helvetica, sans-serif;
+			}
 
 			html {
 				background: #1B2326;
@@ -42,13 +42,19 @@
 
 			#cards-container {
 				background: #EDDB9D; /* beige */
-				padding: 20px;
+				padding-left: 10px;
 			}
 
 			.card {
-				background: #F7FCEF; /*white*/
+				background: #FCFAF4; /*white*/
 				color: black;
 				padding: 10px;
+				list-style-type: none;
+				width: 200px;
+				height: 150px;
+				margin-right: 10px;
+				margin-top: 10px;
+				display: inline-block;
 			}
 		</style>
 
@@ -58,15 +64,13 @@
 
 	<!-- <div id="notice"></div> -->
 	<div id="app">
-		<h1>App</h1> <br>
+		<h1>App</h1>
+		<h2>Skills</h2> <br>
 		<ul id="cards-container"></ul>
 	</div>
 
-	
-
-
 	<script type="text/template" id="card-template">
-		<div class="card">
+		<div class="">
 			<h3><%= name %></h3>
 			<p><%= dateStart %></p>
 			<p><%= projectedXP %></p>

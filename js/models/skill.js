@@ -9,7 +9,7 @@ Portfolio.Skill =  Backbone.Model.extend({
 
 	defaults: {
 		name: 'Skill',
-		dateStart: 'July 27, 1992',
+		dateStart: '',
 		XP: 0,
 		projectedXP: 0,
 		personalFavor: 5,

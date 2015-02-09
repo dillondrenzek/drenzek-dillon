@@ -21,6 +21,9 @@ Portfolio.AppView = Backbone.View.extend({
 	render: function () {
 		// this.$el.html( this.)
 		console.log("Portfolio.AppView rendered.");
+
+		this.$('h1').html(Portfolio.name);
+		console.log("H1 tag set to:", Portfolio);
 	},
 
 	// Mostly a helper function for now

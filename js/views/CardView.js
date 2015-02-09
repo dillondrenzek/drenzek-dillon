@@ -3,11 +3,13 @@ var Portfolio = Portfolio || {};
 Portfolio.CardView = Backbone.View.extend({
 
 	tagName:  	'li',
+	className: 	'card',
 
 	template: 	_.template( $('#card-template').html() ),
 
 	events: {
-		// 'dblclick label': 'edit',
+		'dblclick .card': 'edit',
+		'click': 'select',
 		// 'keypress .edit': 'updateOnEnter',
 		// 'blur .edit':   'close'
 	},
@@ -16,12 +18,11 @@ Portfolio.CardView = Backbone.View.extend({
 		// In Backbone 1.1.0, if you want to access passed options in
 		// your view, you will need to save them as follows:
 
-		
-
 		this.options = options || {};
 		this.model = options.model;
 		this.listenTo(this.model, 'change', this.render);
-		// this.model.bind('change', _.bind(this.render, this));
+		// $('.card').css("background", "red");
+
 		console.log("Portfolio.CardView initialized.");
 	}, 
 
@@ -30,15 +31,19 @@ Portfolio.CardView = Backbone.View.extend({
 		console.log("Portfolio.CardView rendered.");
 
 	    this.$el.html( this.template( this.model.attributes ) );
-	    // this.input = this.$('.edit');
 	    return this;
-	}
+	},
 
 
 // Event Handlers
-	// edit: function() {
-	// 	// executed when todo label is double clicked
-	// },
+	edit: function() {
+		// executed when todo label is double clicked
+		console.log ("Portfolio.CardView double click.");
+	},
+
+	select: function() {
+		console.log ("Portfolio.CardView clicked.");
+	},
 
 	// close: function() {
 	// 	// executed when todo loses focus
