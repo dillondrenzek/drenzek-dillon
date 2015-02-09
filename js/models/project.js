@@ -1,3 +1,5 @@
+var Portfolio = Portfolio || {};
+
 var Project = Backbone.Model.extend({
 
 	defaults: {

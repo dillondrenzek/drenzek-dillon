@@ -19,16 +19,48 @@
 		<script type="text/javascript" src="./js/lib/backbone-localStorage-min.js"></script>
 
 		<style type="text/css">
-		.card {
-			background: red;
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-family: Helvetica, sans-serif;
 		}
+
+			html {
+				background: #1B2326;
+				color: white;
+			}
+
+			#app {
+				background: #C74628; /* orange-red */
+				padding: 20px;
+			}
+
+			#cards-container {
+				background: #EDDB9D; /* beige */
+				padding: 20px;
+			}
+
+			.card {
+				background: #F7FCEF; /*white*/
+				color: black;
+				padding: 10px;
+			}
 		</style>
 
 </head>
 <body>
+	
 
-	<div id="notice"></div>
-	<div id="app"></div>
+	<!-- <div id="notice"></div> -->
+	<div id="app">
+		<h1>App</h1> <br>
+		<ul id="cards-container"></ul>
+	</div>
 
 	
 
@@ -37,14 +69,23 @@
 		<div class="card">
 			<h3><%= name %></h3>
 			<p><%= dateStart %></p>
+			<p><%= projectedXP %></p>
 		</div>
 	</script>
-	<!-- // <script type="text/template" id="stats-template"></script> -->
+	<script type="text/template" id="stats-template">
+		<div>
+			<span id="card-count">0</span> Cards
+		</div>
+	</script>
 
+	<!-- // <script type="text/javascript" src="./js/Drenzek.js"></script> -->
 	<script type="text/javascript" src="./js/models/Skill.js"></script>
 	<script type="text/javascript" src="./js/models/Project.js"></script>
 	<script type="text/javascript" src="./js/models/Work.js"></script>
+	<script type="text/javascript" src="./js/collections/SkillCollection.js"></script>
 	<script type="text/javascript" src="./js/views/CardView.js"></script>
+	<script type="text/javascript" src="./js/views/AppView.js"></script>
+	<script type="text/javascript" src="./js/application.js"></script>
 
 </body>
 </html>

@@ -1,9 +1,9 @@
-// var app = app || {};
+var Portfolio = Portfolio || {};
 
 // Skill Model
 // ----------
 
-var Skill = Backbone.Model.extend({
+Portfolio.Skill =  Backbone.Model.extend({
 
 	// Attributes
 
@@ -19,9 +19,10 @@ var Skill = Backbone.Model.extend({
 	},
 
 	initialize: function(){
-		console.log("Initialize Skill.");
+		console.log("Portfolio.Skill initialized.");
+
 		this.on('change', function(){
-			console.log("Values for a skill have changed.");
+			console.log("Portfolio.Skill changed.");
 		});
 	}
 });
