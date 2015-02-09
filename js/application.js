@@ -89,7 +89,7 @@ $(function(){
 		{
 			name: 'Scala',
 			projectedXP: 100
-		},
+		}, new Portfolio.Language()
 
 	]);
 });
