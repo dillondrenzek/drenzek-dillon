@@ -23,12 +23,12 @@ Portfolio.CardView = Backbone.View.extend({
 		this.listenTo(this.model, 'change', this.render);
 		// $('.card').css("background", "red");
 
-		console.log("Portfolio.CardView initialized.");
+		// console.log("Portfolio.CardView initialized.");
 	}, 
 
 	render: function() {
 
-		console.log("Portfolio.CardView rendered.");
+		// console.log("Portfolio.CardView rendered.");
 
 	    this.$el.html( this.template( this.model.attributes ) );
 	    return this;
@@ -38,11 +38,11 @@ Portfolio.CardView = Backbone.View.extend({
 // Event Handlers
 	edit: function() {
 		// executed when todo label is double clicked
-		console.log ("Portfolio.CardView double click.");
+		// console.log ("Portfolio.CardView double click.");
 	},
 
 	select: function() {
-		console.log ("Portfolio.CardView clicked.");
+		// console.log ("Portfolio.CardView clicked.");
 	},
 
 	// close: function() {

@@ -1,8 +1,12 @@
 var Portfolio = Portfolio || {};
 
-var SkillCollection = Backbone.Collection.extend({
+var Skills = Backbone.Collection.extend({
 
 	model: Portfolio.Skill,
+
+	initialize: function( options ) {
+		this.options = options || {};
+	},
 
 	localStorage: new Backbone.LocalStorage('skills-backbone'),
 
@@ -16,4 +20,4 @@ var SkillCollection = Backbone.Collection.extend({
 });
 
 // Create the global collection of Skill objects
-Portfolio.skills = new SkillCollection();
+Portfolio.Skills = new Skills();

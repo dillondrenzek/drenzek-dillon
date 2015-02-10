@@ -8,28 +8,28 @@ Portfolio.AppView = Backbone.View.extend({
 		this.$list = this.$('#cards-container');
 
 
-		this.listenTo(Portfolio.skills, 'add', this.addOne);
-		this.listenTo(Portfolio.skills, 'reset', this.addAll);
+		this.listenTo(Portfolio.Skills, 'add', this.addOne);
+		this.listenTo(Portfolio.Skills, 'reset', this.addAll);
 
-		this.listenTo(Portfolio.skills, 'all', this.render);
+		this.listenTo(Portfolio.Skills, 'all', this.render);
 
-		Portfolio.skills.fetch();
+		Portfolio.Skills.fetch();
 
-		console.log("Portfolio.AppView initialized.");
+		// console.log("Portfolio.AppView initialized.");
 	},
 
 	render: function () {
 		// this.$el.html( this.)
-		console.log("Portfolio.AppView rendered.");
+		// console.log("Portfolio.AppView rendered.");
 
-		this.$('h1').html(Portfolio.name);
-		console.log("H1 tag set to:", Portfolio);
+		// this.$('h1').html(Portfolio.name);
+		// console.log("H1 tag set to:", Portfolio);
 	},
 
 	// Mostly a helper function for now
 	addOne: function ( skill ) {
 
-		console.log("Portfolio.AppView add one.");
+		// console.log("Portfolio.AppView add one.");
 
 		var view = new Portfolio.CardView({ model: skill });
 		$('#cards-container').append( view.render().el );
@@ -38,9 +38,9 @@ Portfolio.AppView = Backbone.View.extend({
 	// Add all skills
 	addAll: function() {
 
-		console.log("Portfolio.AppView add all.");
+		// console.log("Portfolio.AppView add all.");
 
 		this.$('#cards-container').html('');
-		Portfolio.skills.each(this.addOne, this);
+		Portfolio.Skills.each(this.addOne, this);
 	}
 });
