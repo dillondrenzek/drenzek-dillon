@@ -6,6 +6,9 @@ var Skills = Backbone.Collection.extend({
 
 	initialize: function( options ) {
 		this.options = options || {};
+		this.on('sort', function(){
+            console.log("Portfolio.Skills sorted.");
+        });
 	},
 
 	localStorage: new Backbone.LocalStorage('skills-backbone'),
@@ -15,7 +18,12 @@ var Skills = Backbone.Collection.extend({
 	},
 
 	comparator: function( skill ) {
-		return skill.get('name');
+		// return skill.get('personalFavor') * -1;
+		return skill.get('XP') * -1;
+	},
+
+	sorted: function () {
+		console.log("Skills were sorted.");
 	}
 });
 

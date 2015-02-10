@@ -43,6 +43,7 @@
 			#cards-container {
 				background: #EDDB9D; /* beige */
 				padding: 5px;
+				width: 65%;
 			}
 
 			.card {
@@ -71,12 +72,16 @@
 </head>
 <body>
 	
+	<!-- VISIBLE HTML -->
 
 	<div id="app">
 		<h1>Dillon Drenzek</h1>
 		<h2>Skills</h2> <br>
 		<ul id="cards-container"></ul>
+		<div id="filter-view"></div>
 	</div>
+
+	<!-- TEMPLATES -->
 
 	<script type="text/template" id="card-template">
 		<div class="">
@@ -88,11 +93,14 @@
 			<p><%= personalFavor %></p>
 		</div>
 	</script>
+
 	<script type="text/template" id="stats-template">
 		<div>
 			<span id="card-count">0</span> Cards
 		</div>
 	</script>
+
+	<!-- BACKBONE.JS -->
 
 	<script type="text/javascript" src="./js/models/Skill.js"></script>
 	<script type="text/javascript" src="./js/collections/SkillCollection.js"></script>
