@@ -20,10 +20,9 @@ Portfolio.Skill =  Backbone.Model.extend({
 
 	initialize: function( options ){
 		this.options = options || {};
-		// console.log("Portfolio.Skill initialized.");
 
 		this.on('change', function(){
-			// console.log("Portfolio.Skill changed.");
+			console.log("Portfolio.Skill changed.");
 		});
 	}
 });
@@ -31,15 +30,11 @@ Portfolio.Skill =  Backbone.Model.extend({
 Portfolio.Language = Portfolio.Skill.extend({
 
 	initialize: function( options ){
-		// Portfolio.Skill.prototype.initialize.call(this, options);
-
+		this.options = options || {};
 		this.attributes.name = "Language";
 
-		this.options = options || {};
-		// console.log("Portfolio.Language initialized.");
-
 		this.on('change', function(){
-			// console.log("Portfolio.Language changed.");
+			console.log("Portfolio.Language changed.");
 		});
 	}
 });

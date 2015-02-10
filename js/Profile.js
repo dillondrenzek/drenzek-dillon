@@ -36,8 +36,6 @@ InDesign      | Wednesday, January 27th, 2015 | 72   | 100         | 3.7        
 ",
 
 	parseInput: function ( inputString ) {
-		// console.log(" ### Starting parse ### ");
-		// console.log(" input string: ", input);
 
 		var result = {
 
@@ -60,25 +58,19 @@ InDesign      | Wednesday, January 27th, 2015 | 72   | 100         | 3.7        
 				var array = this.lines;
 				var result = [];
 				for (var i = 2; i < array.length; i++) {
-
 					array[i] = array[i].split("|");
 					array[i].forEach(function (element, index, arr) {
 						arr[index] = element.trim();
 					});
 					result.push(array[i]); 
-					
 				};
 				return result;
 			},
 
 			objects: function () {
-
 				var result = [];
 				var raw = this.rows();
 				var keys = this.keys();
-
-				// console.log(keys);
-
 				raw.forEach( function (element, index, array) {
 					var object = {};
 
@@ -86,12 +78,7 @@ InDesign      | Wednesday, January 27th, 2015 | 72   | 100         | 3.7        
 						var key = keys[index2];
 						object[key] = element2;
 					});
-
 					result.push(object);
-
-					// console.log(object);
-					// console.log(result);
-
 				});
 				return result;
 			}
