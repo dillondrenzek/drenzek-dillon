@@ -6,7 +6,7 @@ version:`0.1`
 ### Version Log
 ------------------
 ```
-Novice		- v0.0 -<Feb 10 15 - Backbone renders from index.html
+Novice	- v0.0 -<Feb 10 15 - Backbone renders from index.html
 		- v0.1 - Feb 10 15 - Begin to Introduce Node.js and Neo4J(yay!) 
 ```
 
