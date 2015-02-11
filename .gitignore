@@ -1,2 +1,7 @@
+.DS_STORE
+
 _media/
 _readable-libraries/
+
+node_modules/
+npm-debug.log
