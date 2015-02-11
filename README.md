@@ -7,7 +7,7 @@ version:`0.1`
 ------------------
 ```
 |Novice	|v0.0	| < Feb 10 15	| Backbone renders from index.html
-|	|v0.1 	|   Feb 10 15   | Introduce Node.js and Neo4j (Yay!)
+|		|v0.1 	|   Feb 10 15   | Introduce Node.js and Neo4j (Yay!)
 ```
 
 ### Special Thanks
