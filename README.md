@@ -1,6 +1,6 @@
-# [drenzek-dillon](dillon.drenzek.com) <br> 
-**Professional Portfolio of Dillon Drenzek** <br>
-**Homepage**: (dillon.drenzek.com)
+# [drenzek-dillon](dillon.drenzek.com) 
+The professional portfolio of University of Colorado student, Dillon Drenzek. <br>
+**Homepage**: http://dillon.drenzek.com
 
 
 ### Version: `v0.0.1` Novice <br>
