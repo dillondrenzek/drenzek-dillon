@@ -19,7 +19,7 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
  * [Jade](http://jade-lang.com/) (HTML Templating)
 
 #### Server
- * Node.js
+ * [Node.js](http://nodejs.org/) 
 
 #### Database
  * Neo4j (Graph Database)
