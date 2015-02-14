@@ -1,5 +1,4 @@
 # [drenzek-dillon](dillon.drenzek.com) <br> 
--------------------------------------------
 **Professional Portfolio of Dillon Drenzek** <br>
 **Homepage**: (dillon.drenzek.com)
 
