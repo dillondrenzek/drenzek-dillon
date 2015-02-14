@@ -8,7 +8,6 @@
 ```
 |		| 0.0.1 |   Feb 10 15   | Introduce Node.js and Neo4j (Yay!)
 |Novice	| 0.0.0	| < Feb 10 15	| Backbone renders from index.html
-
 ```
 
 ### Tools
