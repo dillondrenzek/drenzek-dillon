@@ -1,9 +1,11 @@
 # [drenzek-dillon](dillon.drenzek.com) <br> 
+-------------------------------------------
 **Professional Portfolio of Dillon Drenzek** <br>
 **Homepage**: (dillon.drenzek.com)
 
------------------------
+
 ### Version: `v0.0.1` Novice <br>
+---------------------------------
 
 | Version Name  	| Version Number 	| Date 		| Description |
 |-----------------------|-----------------------|---------------|---|
@@ -11,7 +13,7 @@
 |			| 0.0.1			|   Feb 10 15   | Introduce Node.js and Neo4j (Yay!) |
 | Novice		| 0.0.0			| Feb 10 15	| Backbone renders from index.html |
 
------------------------
+
 ### Tools
 ---------
 #### Frontend
