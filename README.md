@@ -1,15 +1,30 @@
-# drenzek-dillon
-Professional Portfolio of [Dillon Drenzek](dillon.drenzek.com)
-version:`0.1`
+# [drenzek-dillon](dillon.drenzek.com) <br> 
+**Professional Portfolio of Dillon Drenzek** <br>
 
+**Homepage**: (dillon.drenzek.com)
 
-### Version Log
-------------------
+### Version: `v0.0.1` <br>
+-----------------------
 ```
-|		|v0.1 	|   Feb 10 15   | Introduce Node.js and Neo4j (Yay!)
-|Novice	|v0.0	| < Feb 10 15	| Backbone renders from index.html
+|		| 0.0.1 |   Feb 10 15   | Introduce Node.js and Neo4j (Yay!)
+|Novice	| 0.0.0	| < Feb 10 15	| Backbone renders from index.html
 
 ```
+
+### Tools
+---------
+#### Frontend
+ * [Jade](http://jade-lang.com/) (HTML Templating)
+
+#### Server
+ * Node.js
+
+#### Database
+ * Neo4j (Graph Database)
+ * GrapheneDB (Heroku Addon)
+ 
+#### Testing
+ * [Jasmine](http://jasmine.github.io/2.2/introduction.html) (BDD Testing)
 
 ### Special Thanks
 ------------------
