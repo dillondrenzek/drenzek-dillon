@@ -16,8 +16,11 @@
   , "neo4j": "~1.1"
   , "jade": "^1.9.2"
   }
+, "engines": 
+  { "node": "0.12.x"
+  , "npm": "2.1.17"
+  }
 , "devDependencies":
   { "jasmine": "^2.2.1"
   }
-
 }
