@@ -3,5 +3,6 @@
 _media/
 _readable-libraries/
 
+old-js
 node_modules
 npm-debug.log

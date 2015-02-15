@@ -9,7 +9,8 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-------------------|---------------|---|
 | _Professional_	| _1.0.0_ 	| _Mar 2 15_ 	| _Due Date for Project_ |
-|					| 0.1.0		| 				| Hostable on Heroku |
+|					| 0.2.0		|				| |
+|					| 0.1.0		| 	Feb	14 15	| Hostable on Heroku |
 |					| 0.0.1		|   Feb 10 15   | Introduce Node.js and Neo4j (Yay!) |
 | Novice			| 0.0.0		| 	Feb 10 15	| Backbone renders from index.html |
 
