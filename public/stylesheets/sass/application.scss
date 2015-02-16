@@ -1,0 +1,48 @@
+// COLORS
+@import "_colors.scss";
+@import "_fira-sans.scss";
+@import "_cards.scss";
+
+
+
+
+
+
+/* UTILITY */
+*,
+*:before,
+*:after{
+	box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+}
+html{
+	background: #252423;
+	color: #fafafa;
+	font-family: 'Fira Sans', Helvetica, sans-serif;
+	text-align: center;
+	font-size: 10px;
+	letter-spacing: -1px;
+	background: url("../images/bg.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
+h1 {
+	// margin-top: 100px;
+	letter-spacing: -2px;
+}
+
+h2 {
+	// margin-top: 25px;
+	font-size: 3.6rem;
+	color: #1ce;
+}
+
+h2 {
+	color: #666;
+}

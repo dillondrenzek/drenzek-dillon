@@ -1,0 +1,23 @@
+mixin project_mini(p, num)
+	.proj.box 
+		.number.box
+			.value= (num < 10) ? "0"+num : num
+		.title.box
+			.value= p.title
+		.time.box
+			.value= p.time
+		.subtitle.box
+			.value= p.subtitle
+
+//- styling only
+mixin project_mini_dis(p, num)
+	.proj.box.disabled 
+		.number.box.disabled
+			.value.disabled= (num < 10) ? "0"+num : num
+		.title.box.disabled
+			.value.disabled= p.title
+		.time.box.disabled
+			.value.disabled= p.time
+		.subtitle.box.disabled
+			.value.disabled= p.subtitle
+

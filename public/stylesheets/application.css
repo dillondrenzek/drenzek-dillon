@@ -1,34 +1,250 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Fira Sans';
+  src: url("/_media/FiraSans3111/WEB/FiraSans-Regular.woff") format("woff"), url("../../../_media/FiraSans3111/WEB/FiraSans-Regular.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+.card {
+  width: 500px;
+  height: 800px;
+  background: #3D3C3C;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 0 auto;
+  display: inline-block; }
+  .card .body {
+    width: 100%;
+    height: 100%;
+    background: #353434; }
+    .card .body .box {
+      float: left;
+      position: relative; }
+    .card .body .value {
+      font-size: 2rem; }
+    .card .body .label {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0px; }
+    .card .body .overall.box {
+      background: #fafafa;
+      width: 40%;
+      height: 25%; }
+      .card .body .overall.box .value {
+        font-family: 'Fira Sans', Helvetica, sans-serif;
+        font-size: 12.8rem;
+        font-weight: 800;
+        color: #353434;
+        letter-spacing: -1.75px;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+      .card .body .overall.box .label {
+        width: 100%;
+        font-size: 2rem;
+        color: #eb7125;
+        position: absolute;
+        bottom: 5px; }
+      .card .body .overall.box .glass {
+        position: absolute;
+        bottom: 0;
+        right: 5px;
+        color: #eb7125; }
+    .card .body .faux-stats.box {
+      width: 60%;
+      height: 17%;
+      background: #575452; }
+      .card .body .faux-stats.box .xp.box {
+        width: 60%;
+        height: 100%; }
+        .card .body .faux-stats.box .xp.box .value {
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+        .card .body .faux-stats.box .xp.box .label {
+          font-size: 2rem;
+          position: absolute;
+          bottom: 5px;
+          text-align: center;
+          width: 100%; }
+      .card .body .faux-stats.box .outlook.box {
+        width: 40%;
+        height: 100%; }
+        .card .body .faux-stats.box .outlook.box .value {
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+        .card .body .faux-stats.box .outlook.box .label {
+          font-size: 2rem;
+          position: absolute;
+          bottom: 5px;
+          text-align: center;
+          width: 100%; }
+    .card .body .rating.box {
+      width: 60%;
+      height: 8%;
+      background: #ababab; }
+      .card .body .rating.box .value {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    .card .body .title.box {
+      background: #eb7125;
+      width: 100%;
+      height: 14%;
+      padding: 10px; }
+      .card .body .title.box .value {
+        font-family: 'Fira Sans', Helvetica, sans-serif;
+        font-size: 4.8rem;
+        font-weight: 800;
+        color: #fafafa;
+        letter-spacing: -1.5px;
+        text-align: left;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    .card .body .since.box {
+      width: 30%;
+      height: 8%;
+      background: #eb7125; }
+    .card .body .see-all.box {
+      width: 70%;
+      height: 8%;
+      background: #575452; }
+      .card .body .see-all.box .label {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    .card .body .timeline.box {
+      width: 100%;
+      height: 20%;
+      background: #353434; }
+      .card .body .timeline.box .label {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    .card .body .projects.box {
+      background: #fafafa;
+      height: 33%;
+      width: 100%;
+      overflow: hidden; }
+      .card .body .projects.box .proj.box {
+        width: 100%;
+        height: 33.4%;
+        background: #888686; }
+        .card .body .projects.box .proj.box.disabled {
+          background: #575452; }
+        .card .body .projects.box .proj.box .number.box {
+          width: 20%;
+          height: 60%;
+          background: #fafafa; }
+          .card .body .projects.box .proj.box .number.box.disabled {
+            background: transparent; }
+          .card .body .projects.box .proj.box .number.box .value {
+            font-family: 'Fira Sans', Helvetica, sans-serif;
+            font-size: 4.8rem;
+            font-weight: 800;
+            color: #353434;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+            .card .body .projects.box .proj.box .number.box .value.disabled {
+              color: #979797; }
+        .card .body .projects.box .proj.box .time.box {
+          width: 20%;
+          height: 40%;
+          background: #fafafa; }
+          .card .body .projects.box .proj.box .time.box.disabled {
+            background: transparent; }
+          .card .body .projects.box .proj.box .time.box .value {
+            font-family: 'Fira Sans', Helvetica, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #eb7125;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+            .card .body .projects.box .proj.box .time.box .value.disabled {
+              color: #888686; }
+        .card .body .projects.box .proj.box .title.box {
+          width: 80%;
+          height: 60%;
+          background: #eb7125; }
+          .card .body .projects.box .proj.box .title.box.disabled {
+            background: transparent; }
+          .card .body .projects.box .proj.box .title.box .value {
+            font-family: 'Fira Sans', Helvetica, sans-serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #fafafa;
+            letter-spacing: auto;
+            text-align: left;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+            .card .body .projects.box .proj.box .title.box .value.disabled {
+              color: #979797; }
+        .card .body .projects.box .proj.box .subtitle.box {
+          width: 80%;
+          height: 40%;
+          background: #eb7125; }
+          .card .body .projects.box .proj.box .subtitle.box.disabled {
+            background: transparent; }
+          .card .body .projects.box .proj.box .subtitle.box .value {
+            font-family: 'Fira Sans', Helvetica, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #353434;
+            letter-spacing: auto;
+            text-align: left;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+            .card .body .projects.box .proj.box .subtitle.box .value.disabled {
+              color: #888686; }
+
 /* UTILITY */
 *,
 *:before,
-*:after{
-	box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		-webkit-box-sizing:border-box;
-	margin: 0;
-	padding: 0;
-}
-html{
-	background: #252423;
-	color: #fafafa;
-	font-family: Helvetica, sans-serif;
-	text-align: center;
-	font-size: 1.4rem;
-	letter-spacing: -1px;
-	/*background: url("") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;*/
-}
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  background: #252423;
+  color: #fafafa;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: -1px;
+  background: url("../images/bg.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 h1 {
-	margin-top: 100px;
-	letter-spacing: -2px;
-}
+  letter-spacing: -2px; }
 
 h2 {
-	margin-top: 25px;
-	font-size: 1.2rem;
-	color: #1ce;
-}
+  font-size: 3.6rem;
+  color: #1ce; }
+
+h2 {
+  color: #666; }
+
+/*# sourceMappingURL=application.css.map */

@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Fira Sans';
+	src: url("/_media/FiraSans3111/WEB/FiraSans-Regular.woff") format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url('../../../_media/FiraSans3111/WEB/FiraSans-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+@mixin FiraSans-3 ($size, $weight, $color) {
+	font-family: 'Fira Sans', Helvetica, sans-serif;
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin FiraSans-5 ($size, $weight, $color, $spacing, $align) {
+	font-family: 'Fira Sans', Helvetica, sans-serif;
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+	letter-spacing: $spacing;
+	text-align: $align;
+}
