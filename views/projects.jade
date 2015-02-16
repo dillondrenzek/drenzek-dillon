@@ -1,12 +1,12 @@
-mixin project_mini(p, num)
+mixin project_mini(p, num, bg, text)
 	.proj.box 
 		.number.box
 			.value= (num < 10) ? "0"+num : num
-		.title.box
+		.title.box(style="#{bg}")
 			.value= p.title
 		.time.box
-			.value= p.time
-		.subtitle.box
+			.value(style="#{text}")= p.time
+		.subtitle.box(style="#{bg}")
 			.value= p.subtitle
 
 //- styling only

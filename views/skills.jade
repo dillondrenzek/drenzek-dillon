@@ -2,11 +2,14 @@ extends ./layout.jade
 include ./projects.jade
 
 mixin skill_card(s)
+	- var col = s.color;
+	- var bg = "background: "+s.color+" !important;";
+	- var text = "color: "+s.color+" !important;";
 	.card
 		.body
 			.overall.box
 				.value= s.overall
-				.label overall
+				.label(style="#{text}") overall
 				//- .glass o
 			.faux-stats.box
 				.xp.box
@@ -17,18 +20,18 @@ mixin skill_card(s)
 					.label outlook
 			.rating.box
 				.value #{s.love} stars
-			.title.box
+			.title.box(style="#{bg}")
 				.value= s.title
-			.since.box
+			.since.box(style="#{bg}")
 				.label since
 				.value= s.since
 			.see-all.box
-				.label See all #{s.projects.length} projects
+				.label See all <span class="value">#{s.projects.length}</span> projects
 			.timeline.box 
 				.label Timeline
 			.projects.box
 				each project, index in s.projects
-					+project_mini(project, index+1)
+					+project_mini(project, index+1, bg, text)
 	
 //- STYLING PURPOSES ONLY		
 mixin skill_card_dis(s)
@@ -64,43 +67,65 @@ mixin skill_card_dis(s)
 
 block page
 	h1 Skills
-	+skill_card({ title: "Adobe Illustrator"
-			, overall: 93
-			, experience: "high"
-			, outlook: "high"
-			, love: 5
-			, since: "Fall 2008"
-			, projects:[ 
-				{ title: "Vector Self-Portrait"
-				, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-				, time: "Fall 2014"},
-				{ title: "A Second Project I Did"
-				, subtitle: "This one will always be number two, no matter how good it may look"
-				, time: "Fall 2014"},
-				{ title: "Untitled Experiment"
-				, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
-				, time: "Fall 2014"}
-				]
-			})
+	.skill-list
+		+skill_card({ title: "Adobe Illustrator"
+				, color: "#eb7125"
+				, overall: 93
+				, experience: "high"
+				, outlook: "high"
+				, love: 5
+				, since: "Fall 2008"
+				, projects:[ 
+					{ title: "Vector Self-Portrait"
+					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
+					, time: "Fall 2014"},
+					{ title: "A Second Project I Did"
+					, subtitle: "This one will always be number two, no matter how good it may look"
+					, time: "Fall 2014"},
+					{ title: "Untitled Experiment"
+					, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
+					, time: "Fall 2014"}
+					]
+				})
+		+skill_card({ title: "HTML"
+				, color: "#894D26"
+				, overall: 86
+				, experience: "very high"
+				, outlook: "high"
+				, love: 4.5
+				, since: "21st Birthday"
+				, projects:[ 
+					{ title: "Vector Self-Portrait"
+					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
+					, time: "Fall 2014"},
+					{ title: "A Second Project I Did"
+					, subtitle: "This one will always be number two, no matter how good it may look"
+					, time: "Fall 2014"},
+					{ title: "Untitled Experiment"
+					, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
+					, time: "Fall 2014"}
+					]
+				})
 
-	+skill_card_dis({ title: "Adobe Illustrator"
-			, overall: 93
-			, experience: "high"
-			, outlook: "high"
-			, love: 5
-			, since: "Fall 2008"
-			, projects:[ 
-				{ title: "Vector Self-Portrait"
-				, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-				, time: "Fall 2014"},
-				{ title: "A Second Project I Did"
-				, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-				, time: "Fall 2014"},
-				{ title: "Untitled Experiment"
-				, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-				, time: "Fall 2014"}
-				]
-			})
+		+skill_card({ title: "Ruby on Rails"
+				, color: "#A42028"
+				, overall: 74
+				, experience: "low"
+				, outlook: "not great"
+				, love: 2.5
+				, since: "Spring 2013"
+				, projects:[ 
+					{ title: "Vector Self-Portrait"
+					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
+					, time: "Fall 2014"},
+					{ title: "A Second Project I Did"
+					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
+					, time: "Fall 2014"},
+					{ title: "Untitled Experiment"
+					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
+					, time: "Fall 2014"}
+					]
+				})
 
 
 

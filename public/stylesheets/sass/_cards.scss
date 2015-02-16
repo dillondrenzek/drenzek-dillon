@@ -18,7 +18,7 @@ $scale: 2;
 	overflow: hidden;
 	padding: 20px;
 
-	margin: 0 auto;
+	// margin: 0 auto;
 
 	display: inline-block;
 
@@ -74,18 +74,19 @@ $scale: 2;
 			height: 17%;
 			background: $black-3;
 
+			.label {
+					@include FiraSans-5(0.9rem * $scale, 800, $gray-6, auto, center);
+					position: absolute;
+					bottom: 5px;
+					width: 100%;
+				}
+
 			.xp.box {
 				width: 60%;
 				height: 100%;
 				.value {
+					@include FiraSans-5(1.8rem * $scale, 800, $white-8, -1.75px, center);
 					@include VerticalAlign(relative);
-				}
-				.label {
-					font-size: 1rem * $scale;
-					position: absolute;
-					bottom: 5px;
-					text-align: center;
-					width: 100%;
 				}
 			}
 			.outlook.box {
@@ -93,13 +94,6 @@ $scale: 2;
 				height: 100%;
 				.value {
 					@include VerticalAlign(relative);
-				}
-				.label {
-					font-size: 1rem * $scale;
-					position: absolute;
-					bottom: 5px;
-					text-align: center;
-					width: 100%;
 				}
 			}
 		}
@@ -129,6 +123,14 @@ $scale: 2;
 			width: 30%;
 			height: 8%;
 			background: $illustrator-l;
+			padding: 10px;
+
+			.label {
+				@include FiraSans-5(0.6rem * $scale, bold, $white-10, 0px, left);
+			}
+			.value {
+				@include FiraSans-5(1.0rem * $scale, bold, $white-10, 0px, left);
+			}
 		}
 		.see-all.box {
 			width: 70%;
@@ -136,7 +138,12 @@ $scale: 2;
 			background: $black-3;
 
 			.label {
+				@include FiraSans-5(1.2rem * $scale, bold, $gray-6, 0px, left);
+				text-transform: lowercase;
 				@include VerticalAlign(relative);
+			}
+			.value {
+				@include FiraSans-5(1.2rem * $scale, bold, $white-8, 0px, left);
 			}
 		}
 		.timeline.box {
@@ -161,12 +168,11 @@ $scale: 2;
 
 				&.disabled {
 					background: $black-3;
-					
 				}
 
 				.number.box {
 					width: 20%;
-					height: 60%;
+					height: 65%;
 					background: $white-10;
 
 					&.disabled { background: transparent; }
@@ -180,13 +186,13 @@ $scale: 2;
 
 				.time.box {
 					width: 20%;
-					height: 40%;
+					height: 35%;
 					background: $white-10;
 
 					&.disabled { background: transparent; }
 
 					.value {
-						@include FiraSans-3 (0.6rem * $scale, 800, $illustrator-l);
+						@include FiraSans-5 (0.6rem * $scale, 800, $illustrator-l, -0.5px, center);
 						@include VerticalAlign(relative);
 						&.disabled { color: $gray-5; }
 					}
@@ -194,7 +200,7 @@ $scale: 2;
 
 				.title.box {
 					width: 80%;
-					height: 60%;
+					height: 65%;
 					background: $illustrator-l;
 
 					&.disabled { background: transparent; }
@@ -208,13 +214,13 @@ $scale: 2;
 
 				.subtitle.box {
 					width: 80%;
-					height: 40%;
+					height: 35%;
 					background: $illustrator-l;
 
 					&.disabled { background: transparent; }
 					
 					.value {
-						@include FiraSans-5 (0.6rem * $scale, 400, $black-1, auto, left);
+						@include FiraSans-5 (0.6rem * $scale, 400, $black-1, -0.5px, left);
 						@include VerticalAlign(relative);
 						&.disabled { color: $gray-5; }
 					}
