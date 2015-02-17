@@ -32,22 +32,35 @@ html{
         background-size: cover;
 }
 
-h1 {
-	// margin-top: 100px;
-	letter-spacing: -2px;
+#title {
+
+	h1 {
+		// margin-top: 100px;
+		letter-spacing: -2px;
+		font-size: 4.8rem;
+	}
+
+	h2 {
+		// margin-top: 25px;
+		font-size: 3.6rem;
+		// color: #1ce;
+	}
+
+	h3 {
+		font-size: 3.0rem;
+		color: darken(#1ce, 30%);
+	}
 }
 
-h2 {
-	// margin-top: 25px;
-	font-size: 3.6rem;
-	color: #1ce;
-}
-
-h2 {
-	color: #666;
-}
 
 .skill-list {
-	overflow-x: scroll;
-	height: 700px;
+	// overflow-x: scroll;
+	height: 750px;
+	width: 900px;
+	margin: 0 auto;
+
+	.card {
+		float: left;
+		margin-left: 10px;
+	}
 }

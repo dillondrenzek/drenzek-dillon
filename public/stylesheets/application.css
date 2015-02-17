@@ -3,34 +3,47 @@
   font-family: 'Fira Sans';
   src: url("/_media/FiraSans3111/WEB/FiraSans-Regular.woff") format("woff"), url("../../../_media/FiraSans3111/WEB/FiraSans-Regular.ttf") format("truetype");
   /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+.toggle-off {
+  height: 0%; }
+  .toggle-off * {
+    height: 0%;
+    display: none; }
+
 .card {
-  width: 500px;
-  height: 800px;
+  position: relative;
+  width: 437.5px;
+  height: 700px;
   background: #3D3C3C;
-  border-radius: 20px;
+  border-radius: 17.5px;
   overflow: hidden;
   padding: 20px;
   display: inline-block; }
+  .card.minimized {
+    height: 280px; }
   .card .body {
     width: 100%;
     height: 100%;
     background: #353434; }
+    .card .body .static {
+      height: 245.0px; }
+    .card .body .toggle {
+      height: 455px; }
     .card .body .box {
       float: left;
       position: relative; }
     .card .body .value {
-      font-size: 2rem; }
+      font-size: 1.75rem; }
     .card .body .label {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: 0px; }
     .card .body .overall.box {
       background: #fafafa;
       width: 40%;
-      height: 25%; }
+      height: 63%; }
       .card .body .overall.box .value {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 12.8rem;
+        font-size: 11.2rem;
         font-weight: 800;
         color: #353434;
         letter-spacing: -1.75px;
@@ -41,7 +54,7 @@
         transform: translateY(-50%); }
       .card .body .overall.box .label {
         width: 100%;
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: #eb7125;
         position: absolute;
         bottom: 5px; }
@@ -52,11 +65,11 @@
         color: #eb7125; }
     .card .body .faux-stats.box {
       width: 60%;
-      height: 17%;
+      height: 43%;
       background: #575452; }
       .card .body .faux-stats.box .label {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 1.8rem;
+        font-size: 1.575rem;
         font-weight: 800;
         color: #979797;
         letter-spacing: auto;
@@ -69,7 +82,7 @@
         height: 100%; }
         .card .body .faux-stats.box .xp.box .value {
           font-family: 'Fira Sans', Helvetica, sans-serif;
-          font-size: 3.6rem;
+          font-size: 3.15rem;
           font-weight: 800;
           color: #d8d8d8;
           letter-spacing: -1.75px;
@@ -88,7 +101,7 @@
           transform: translateY(-50%); }
     .card .body .rating.box {
       width: 60%;
-      height: 8%;
+      height: 20%;
       background: #ababab; }
       .card .body .rating.box .value {
         position: relative;
@@ -98,11 +111,11 @@
     .card .body .title.box {
       background: #eb7125;
       width: 100%;
-      height: 14%;
+      height: 37%;
       padding: 10px; }
       .card .body .title.box .value {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 4.8rem;
+        font-size: 4.2rem;
         font-weight: 800;
         color: #fafafa;
         letter-spacing: -1.5px;
@@ -113,30 +126,31 @@
         transform: translateY(-50%); }
     .card .body .since.box {
       width: 30%;
-      height: 8%;
+      height: 12%;
       background: #eb7125;
       padding: 10px; }
       .card .body .since.box .label {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 1.2rem;
+        font-size: 1.05rem;
         font-weight: bold;
         color: #fafafa;
         letter-spacing: 0px;
         text-align: left; }
       .card .body .since.box .value {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 2rem;
+        font-size: 1.75rem;
         font-weight: bold;
         color: #fafafa;
         letter-spacing: 0px;
         text-align: left; }
     .card .body .see-all.box {
       width: 70%;
-      height: 8%;
-      background: #575452; }
+      height: 12%;
+      background: #575452;
+      padding: 10px; }
       .card .body .see-all.box .label {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 2.4rem;
+        font-size: 2.1rem;
         font-weight: bold;
         color: #979797;
         letter-spacing: 0px;
@@ -148,14 +162,14 @@
         transform: translateY(-50%); }
       .card .body .see-all.box .value {
         font-family: 'Fira Sans', Helvetica, sans-serif;
-        font-size: 2.4rem;
+        font-size: 2.1rem;
         font-weight: bold;
         color: #d8d8d8;
         letter-spacing: 0px;
         text-align: left; }
     .card .body .timeline.box {
       width: 100%;
-      height: 20%;
+      height: 28%;
       background: #353434; }
       .card .body .timeline.box .label {
         position: relative;
@@ -164,7 +178,7 @@
         transform: translateY(-50%); }
     .card .body .projects.box {
       background: #fafafa;
-      height: 33%;
+      height: 50%;
       width: 100%;
       overflow: hidden; }
       .card .body .projects.box .proj.box {
@@ -181,7 +195,7 @@
             background: transparent; }
           .card .body .projects.box .proj.box .number.box .value {
             font-family: 'Fira Sans', Helvetica, sans-serif;
-            font-size: 4.8rem;
+            font-size: 4.2rem;
             font-weight: 800;
             color: #353434;
             position: relative;
@@ -198,7 +212,7 @@
             background: transparent; }
           .card .body .projects.box .proj.box .time.box .value {
             font-family: 'Fira Sans', Helvetica, sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: #eb7125;
             letter-spacing: -0.5px;
@@ -217,7 +231,7 @@
             background: transparent; }
           .card .body .projects.box .proj.box .title.box .value {
             font-family: 'Fira Sans', Helvetica, sans-serif;
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: #fafafa;
             letter-spacing: auto;
@@ -236,7 +250,7 @@
             background: transparent; }
           .card .body .projects.box .proj.box .subtitle.box .value {
             font-family: 'Fira Sans', Helvetica, sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 400;
             color: #353434;
             letter-spacing: -0.5px;
@@ -271,18 +285,21 @@ html {
   -o-background-size: cover;
   background-size: cover; }
 
-h1 {
-  letter-spacing: -2px; }
-
-h2 {
-  font-size: 3.6rem;
-  color: #1ce; }
-
-h2 {
-  color: #666; }
+#title h1 {
+  letter-spacing: -2px;
+  font-size: 4.8rem; }
+#title h2 {
+  font-size: 3.6rem; }
+#title h3 {
+  font-size: 3.0rem;
+  color: #07525f; }
 
 .skill-list {
-  overflow-x: scroll;
-  height: 700px; }
+  height: 750px;
+  width: 900px;
+  margin: 0 auto; }
+  .skill-list .card {
+    float: left;
+    margin-left: 10px; }
 
 /*# sourceMappingURL=application.css.map */

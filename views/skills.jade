@@ -7,31 +7,67 @@ mixin skill_card(s)
 	- var text = "color: "+s.color+" !important;";
 	.card
 		.body
-			.overall.box
-				.value= s.overall
-				.label(style="#{text}") overall
-				//- .glass o
-			.faux-stats.box
-				.xp.box
-					.value= s.experience
-					.label experience
-				.outlook.box
-					.value= s.outlook
-					.label outlook
-			.rating.box
-				.value #{s.love} stars
-			.title.box(style="#{bg}")
-				.value= s.title
-			.since.box(style="#{bg}")
-				.label since
-				.value= s.since
-			.see-all.box
-				.label See all <span class="value">#{s.projects.length}</span> projects
-			.timeline.box 
-				.label Timeline
-			.projects.box
-				each project, index in s.projects
-					+project_mini(project, index+1, bg, text)
+			.static
+				.overall.box
+					.value= s.overall
+					.label(style="#{text}") overall
+					//- .glass o
+				.faux-stats.box
+					.xp.box
+						.value= s.experience
+						.label experience
+					.outlook.box
+						.value= s.outlook
+						.label outlook
+				.rating.box
+					.value #{s.love} stars
+				.title.box(style="#{bg}")
+					.value= s.title
+			.toggle
+				.since.box(style="#{bg}")
+					.label since
+					.value= s.since
+				.see-all.box
+					.label See all <span class="value">#{s.projects.length}</span> projects
+				.timeline.box 
+					.label(style="color:#444;") Timeline <br>(Coming!... but not really that soon)
+				.projects.box
+					each project, index in s.projects
+						+project_mini(project, index+1, bg, text)
+
+mixin skill_card_min(s)
+	- var col = s.color;
+	- var bg = "background: "+s.color+" !important;";
+	- var text = "color: "+s.color+" !important;";
+	.card.minimized
+		.body
+			.static
+				.overall.box
+					.value= s.overall
+					.label(style="#{text}") overall
+					//- .glass o
+				.faux-stats.box
+					.xp.box
+						.value= s.experience
+						.label experience
+					.outlook.box
+						.value= s.outlook
+						.label outlook
+				.rating.box
+					.value #{s.love} stars
+				.title.box(style="#{bg}")
+					.value= s.title
+			//- .toggle
+			//- 	.since.box(style="#{bg}")
+			//- 		.label since
+			//- 		.value= s.since
+			//- 	.see-all.box
+			//- 		.label See all <span class="value">#{s.projects.length}</span> projects
+			//- 	.timeline.box 
+			//- 		.label Timeline
+			//- 	.projects.box
+			//- 		each project, index in s.projects
+			//- 			+project_mini(project, index+1, bg, text)
 	
 //- STYLING PURPOSES ONLY		
 mixin skill_card_dis(s)
@@ -63,12 +99,10 @@ mixin skill_card_dis(s)
 				each project, index in s.projects
 					+project_mini_dis(project, index+1)
 			
-
-
 block page
 	h1 Skills
 	.skill-list
-		+skill_card({ title: "Adobe Illustrator"
+		+skill_card_min({ title: "Adobe Illustrator"
 				, color: "#eb7125"
 				, overall: 93
 				, experience: "high"
@@ -87,7 +121,7 @@ block page
 					, time: "Fall 2014"}
 					]
 				})
-		+skill_card({ title: "HTML"
+		+skill_card_min({ title: "HTML"
 				, color: "#894D26"
 				, overall: 86
 				, experience: "very high"
@@ -106,7 +140,6 @@ block page
 					, time: "Fall 2014"}
 					]
 				})
-
 		+skill_card({ title: "Ruby on Rails"
 				, color: "#A42028"
 				, overall: 74
@@ -126,6 +159,42 @@ block page
 					, time: "Fall 2014"}
 					]
 				})
+		+skill_card({ title: "Objective-C"
+				, color: "#2D7B8F"
+				, overall: 91
+				, experience: "very high"
+				, outlook: "good"
+				, love: 4
+				, since: "Fall 2013"
+				, projects:[ 
+					{ title: "Native"
+					, subtitle: "My work"
+					, time: "Fall 2014"},
+					{ title: "Geneva"
+					, subtitle: "Also my work"
+					, time: "Fall 2014"},
+					{ title: "Capstone Thesis"
+					, subtitle: "A redesigned music app"
+					, time: "Fall 2014"}
+					]
+				})
+		+skill_card({ title: "Node.js"
+				, color: "#80BD01"
+				, overall: 64
+				, experience: "low"
+				, outlook: "very great"
+				, love: 4.9
+				, since: "Feb 2015"
+				, projects:[ 
+					{ title: "Professional Portfolio"
+					, subtitle: "Believe it or not, this website uses Node.js"
+					, time: "Feb 2015"},
+					{ title: "Capstone Portal"
+					, subtitle: "The website that holds all the assignments I did for Capstone Projects"
+					, time: "Feb 2015"}
+					]
+				})
+
 
 
 
