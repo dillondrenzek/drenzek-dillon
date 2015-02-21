@@ -125,4 +125,14 @@ html {
   -o-background-size: cover;
   background-size: cover; }
 
-/*# sourceMappingURL=index.css.map */
+ul {
+  width: 960px;
+  margin: 0 auto; }
+
+li {
+  width: 50%;
+  display: inline-block;
+  padding: 5px;
+  list-style-type: none; }
+
+/*# sourceMappingURL=skills.css.map */

@@ -1,26 +1,27 @@
-{ "name": "drenzek-dillon"
-, "description": "The Professional Portfolio of Dillon Drenzek"
-, "version": "0.1.0"
-, "author": "Dillon Drenzek <dr.enzek@gmail.com>"
-, "homepage": "http://dillon.drenzek.com"
-, "repository": 
-  { "type": "git"
-  , "url": "https://github.com/dillondrenzek/drenzek-dillon.git"
-  }
-, "scripts": 
-  { "start": "node-dev app.js"
-  , "test": "jasmine spec/*/*.js"  
-  }
-, "dependencies":
-  { "express": "~3.2.0"
-  , "neo4j": "~1.1"
-  , "jade": "^1.9.2"
-  }
-, "engines": 
-  { "node": "0.12.x"
-  , "npm": "2.1.17"
-  }
-, "devDependencies":
-  { "jasmine": "^2.2.1"
+{
+  "name": "drenzek-dillon",
+  "description": "The Professional Portfolio of Dillon Drenzek",
+  "version": "0.1.0",
+  "author": "Dillon Drenzek <dr.enzek@gmail.com>",
+  "homepage": "http://dillon.drenzek.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dillondrenzek/drenzek-dillon.git"
+  },
+  "scripts": {
+    "start": "node-dev app.js",
+    "test": "jasmine spec/*/*.js"
+  },
+  "dependencies": {
+    "express": "~3.2.0",
+    "jade": "^1.9.2",
+    "neo4j": "~1.1"
+  },
+  "engines": {
+    "node": "0.12.x",
+    "npm": "2.1.17"
+  },
+  "devDependencies": {
+    "jasmine": "^2.2.1"
   }
 }

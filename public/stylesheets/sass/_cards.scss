@@ -1,6 +1,6 @@
+// _cards.scss
 
-$scale: 1.75;
-
+// MIXINS
 @mixin VerticalAlign($pos) {
 	position: $pos;
 	top: 50%;
@@ -8,242 +8,224 @@ $scale: 1.75;
     transform: translateY(-50%);
 }
 
-.toggle-off {
-	height: 0%;
+// VARIABLES
+$faux-stats-box-height: 150px;
 
-	*{
-		height: 0%;
-		display: none;
+
+// SCSS
+.card {
+	// DEBUG
+
+
+	// -----
+
+	width: 100%;
+	height: 100%;
+	background: $black-2;
+	padding: 10px;
+	float: left;
+	border-radius: 10px;
+
+}
+
+.body {
+	width: 100%;
+	height: 100%;
+	background: $black-1;
+
+	.box {
+		float: left;
+		display: inline-block;
+		position: relative;
+	}
+
+	.value {
+		font-size: 2rem;
+	}
+
+	.label {
+		width: 100%;
+		font-size: 1rem;
+		font-weight: 800;
+		letter-spacing: 0px;
+		position: absolute;
+		bottom: 5px;
 	}
 }
 
-.card {
-	position: relative;
-	width: 250px * $scale;
-	height: 400px * $scale;
-	background: $black-2;
+.title.box {
+	width: 100%;
+	padding: 10px;
+			
+	.value {
+		@include FiraSans-5 (2.4rem, 800, $white-10, -1.5px, left);
+	}
+}
 
-	border-radius: 10px * $scale;
-	overflow: hidden;
-	padding: 20px;
+.faux-stats.box{
+	width: 100%;
+	height: $faux-stats-box-height;
+	background: $black-3;
 
-	display: inline-block;
-
-	&.minimized {
-		height: ($scale * 400px) * 0.40;
+	// GENERICS
+	.label {
+		@include FiraSans-5(1rem, 800, $gray-6, auto, center);
 	}
 
-	.body {
-		width: 100%;
+	// OVERALL BOX
+	.overall.box {
+		background: $white-10;
+		width: 40%;
 		height: 100%;
-		background: $black-1;
-		.static {
-			height: (400px * $scale) * 0.35;
-		}
-
-		.toggle {
-			height: (400px * $scale) * 0.65;
-		}
-
-		// card defaults
-		.box {
-			float: left;
-			position: relative;
-		}
 
 		.value {
-			font-size: 1rem * $scale;
+			@include FiraSans-5 (6.4rem, 800, $black-1, -1.75px, center);
+			position: relative;
+			top: -5px;
 		}
+	}
 
-		.label {
-			font-size: 1rem * $scale;
-			font-weight: 800;
-			letter-spacing: 0px;
+	.xp.box {
+		width: 30%;
+		height: 75%;
+
+		.value {
+			@include FiraSans-5(1.8rem, 800, $white-9, -1.75px, center);
+			@include VerticalAlign(relative);
 		}
+	}
 
-		// individual boxes
-		.overall.box {
-			background: $white-10;
-			width: 40%;
-			height: 63%;
+	.outlook.box {
+		width: 30%;
+		height: 75%;
 
-			.value{
-				@include FiraSans-5 (6.4rem * $scale, 800, $black-1, -1.75px, center);
-				@include VerticalAlign(relative);
-			}
-			.label{
-				width: 100%;
-				font-size: 1rem * $scale;
-				color: $orange1-l;
-				position: absolute;
-				bottom: 5px;
-			}
-			.glass{
-				position: absolute;
-				bottom: 0;
-				right: 5px;
-				color: $orange1-l;
-			}
+		.value {
+			@include FiraSans-5(1.8rem, 800, $white-9, -1.75px, center);
+			@include VerticalAlign(relative);
 		}
+	}
 
-		.faux-stats.box{
-			width: 60%;
-			height: 43%;
-			background: $black-3;
+	.rating.box {
+		width: 60%;
+		height: 25%;
+		background: $gray-7;
 
-			.label {
-					@include FiraSans-5(0.9rem * $scale, 800, $gray-6, auto, center);
-					position: absolute;
-					bottom: 5px;
-					width: 100%;
-				}
-
-			.xp.box {
-				width: 60%;
-				height: 100%;
-				.value {
-					@include FiraSans-5(1.8rem * $scale, 800, $white-8, -1.75px, center);
-					@include VerticalAlign(relative);
-				}
-			}
-			.outlook.box {
-				width: 40%;
-				height: 100%;
-				.value {
-					@include VerticalAlign(relative);
-				}
-			}
-		}
-
-		.rating.box{
-			width: 60%;
-			height: 20%;
-			background: $gray-7;
-			.value {
-				@include VerticalAlign(relative);
-			}
-		}
-
-		.title.box {
-			background: $illustrator-l;
-			width: 100%;
-			height: 37%;
-			padding: 10px;
-			
-			.value {
-				@include FiraSans-5 (2.4rem * $scale, 800, $white-10, -1.5px, left);
-				@include VerticalAlign(relative);
-			}
-		}
-
-		.since.box {
-			width: 30%;
-			height: 12%;
-			background: $illustrator-l;
-			padding: 10px;
-
-			.label {
-				@include FiraSans-5(0.6rem * $scale, bold, $white-10, 0px, left);
-			}
-			.value {
-				@include FiraSans-5(1.0rem * $scale, bold, $white-10, 0px, left);
-			}
-		}
-		.see-all.box {
-			width: 70%;
-			height: 12%;
-			background: $black-3;
-			padding: 10px;
-
-			.label {
-				@include FiraSans-5(1.2rem * $scale, bold, $gray-6, 0px, left);
-				text-transform: lowercase;
-				@include VerticalAlign(relative);
-			}
-			.value {
-				@include FiraSans-5(1.2rem * $scale, bold, $white-8, 0px, left);
-			}
-		}
-		.timeline.box {
-			width: 100%;
-			height: 28%;
-			background: $black-1;
-
-			.label {
-				@include VerticalAlign(relative);
-			}
-		}
-		.projects.box {
-			background: $white-10;
-			height: 50%;
-			width: 100%;
-			overflow: hidden;
-
-			.proj.box {
-				width: 100%;
-				height: 33.4%;
-				background: $gray-5;
-
-				&.disabled {
-					background: $black-3;
-				}
-
-				.number.box {
-					width: 20%;
-					height: 65%;
-					background: $white-10;
-
-					&.disabled { background: transparent; }
-
-					.value {
-						@include FiraSans-3 (2.4rem * $scale, 800, $black-1);
-						@include VerticalAlign(relative);
-						&.disabled { color: $gray-6; }
-					}
-				}
-
-				.time.box {
-					width: 20%;
-					height: 35%;
-					background: $white-10;
-
-					&.disabled { background: transparent; }
-
-					.value {
-						@include FiraSans-5 (0.6rem * $scale, 800, $illustrator-l, -0.5px, center);
-						@include VerticalAlign(relative);
-						&.disabled { color: $gray-5; }
-					}
-				}
-
-				.title.box {
-					width: 80%;
-					height: 65%;
-					background: $illustrator-l;
-
-					&.disabled { background: transparent; }
-
-					.value {
-						@include FiraSans-5 (1.6rem * $scale, 800, $white-10, auto, left);
-						@include VerticalAlign(relative);
-						&.disabled { color: $gray-6; }
-					}
-				}
-
-				.subtitle.box {
-					width: 80%;
-					height: 35%;
-					background: $illustrator-l;
-
-					&.disabled { background: transparent; }
-					
-					.value {
-						@include FiraSans-5 (0.6rem * $scale, 400, $black-1, -0.5px, left);
-						@include VerticalAlign(relative);
-						&.disabled { color: $gray-5; }
-					}
-				}
-			}
+		.value {
+			@include VerticalAlign(relative);
 		}
 	}
 }
+
+
+
+// 		.since.box {
+// 			width: 30%;
+// 			height: 12%;
+// 			background: $illustrator-l;
+// 			padding: 10px;
+
+// 			.label {
+// 				@include FiraSans-5(0.6rem * $scale, bold, $white-10, 0px, left);
+// 			}
+// 			.value {
+// 				@include FiraSans-5(1.0rem * $scale, bold, $white-10, 0px, left);
+// 			}
+// 		}
+// 		.see-all.box {
+// 			width: 70%;
+// 			height: 12%;
+// 			background: $black-3;
+// 			padding: 10px;
+
+// 			.label {
+// 				@include FiraSans-5(1.2rem * $scale, bold, $gray-6, 0px, left);
+// 				text-transform: lowercase;
+// 				@include VerticalAlign(relative);
+// 			}
+// 			.value {
+// 				@include FiraSans-5(1.2rem * $scale, bold, $white-8, 0px, left);
+// 			}
+// 		}
+// 		.timeline.box {
+// 			width: 100%;
+// 			height: 28%;
+// 			background: $black-1;
+
+// 			.label {
+// 				@include VerticalAlign(relative);
+// 			}
+// 		}
+// 		.projects.box {
+// 			background: $white-10;
+// 			height: 50%;
+// 			width: 100%;
+// 			overflow: hidden;
+
+// 			.proj.box {
+// 				width: 100%;
+// 				height: 33.4%;
+// 				background: $gray-5;
+
+// 				&.disabled {
+// 					background: $black-3;
+// 				}
+
+// 				.number.box {
+// 					width: 20%;
+// 					height: 65%;
+// 					background: $white-10;
+
+// 					&.disabled { background: transparent; }
+
+// 					.value {
+// 						@include FiraSans-3 (2.4rem * $scale, 800, $black-1);
+// 						@include VerticalAlign(relative);
+// 						&.disabled { color: $gray-6; }
+// 					}
+// 				}
+
+// 				.time.box {
+// 					width: 20%;
+// 					height: 35%;
+// 					background: $white-10;
+
+// 					&.disabled { background: transparent; }
+
+// 					.value {
+// 						@include FiraSans-5 (0.6rem * $scale, 800, $illustrator-l, -0.5px, center);
+// 						@include VerticalAlign(relative);
+// 						&.disabled { color: $gray-5; }
+// 					}
+// 				}
+
+// 				.title.box {
+// 					width: 80%;
+// 					height: 65%;
+// 					background: $illustrator-l;
+
+// 					&.disabled { background: transparent; }
+
+// 					.value {
+// 						@include FiraSans-5 (1.6rem * $scale, 800, $white-10, auto, left);
+// 						@include VerticalAlign(relative);
+// 						&.disabled { color: $gray-6; }
+// 					}
+// 				}
+
+// 				.subtitle.box {
+// 					width: 80%;
+// 					height: 35%;
+// 					background: $illustrator-l;
+
+// 					&.disabled { background: transparent; }
+					
+// 					.value {
+// 						@include FiraSans-5 (0.6rem * $scale, 400, $black-1, -0.5px, left);
+// 						@include VerticalAlign(relative);
+// 						&.disabled { color: $gray-5; }
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

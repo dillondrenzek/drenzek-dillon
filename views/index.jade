@@ -1,9 +1,6 @@
 extends ./layout.jade
-include ./projects.jade
-include ./skills.jade
 
-
-block stylesheets
+block stylesheet
 	include ../public/stylesheets/index.css
 	
 //- block page
@@ -11,44 +8,3 @@ block page
 	#title
 		h1 My Professional Portfolio
 		h2 Convincing, right?
-
-		h3 Skill cards and their minimized versions are here!
-	.skill-list
-		+skill_card({ title: "Adobe Illustrator"
-				, color: "#eb7125"
-				, overall: 93
-				, experience: "high"
-				, outlook: "high"
-				, love: 5
-				, since: "Fall 2008"
-				, projects:[ 
-					{ title: "Vector Self-Portrait"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"},
-					{ title: "A Second Project I Did"
-					, subtitle: "This one will always be number two, no matter how good it may look"
-					, time: "Fall 2014"},
-					{ title: "Untitled Experiment"
-					, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
-					, time: "Fall 2014"}
-					]
-				})
-		+skill_card_min({ title: "Adobe Illustrator"
-				, color: "#eb7125"
-				, overall: 93
-				, experience: "high"
-				, outlook: "high"
-				, love: 5
-				, since: "Fall 2008"
-				, projects:[ 
-					{ title: "Vector Self-Portrait"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"},
-					{ title: "A Second Project I Did"
-					, subtitle: "This one will always be number two, no matter how good it may look"
-					, time: "Fall 2014"},
-					{ title: "Untitled Experiment"
-					, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
-					, time: "Fall 2014"}
-					]
-				})

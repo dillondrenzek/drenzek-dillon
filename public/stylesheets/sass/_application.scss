@@ -1,11 +1,29 @@
 // COLORS
-@import "_colors.scss";
+	// (not quite 50) Shades of Gray
+	$white-10: #fafafa;
+	$white-9: #eeeeee;
+	$white-8: #d8d8d8;
+	$gray-7: #ababab;
+	$gray-6: #979797;
+	$gray-5: #888686;
+	$gray-4: #666666;
+	$black-3: #575452;
+	$black-2: #3D3C3C;
+	$black-1: #353434;
+	$black-0: #171413;
+
+	// Defined Colors
+	$orange1-l: #eb7125;
+	$orange1-d: #ce6421;
+
+	// Assigned Colors
+	$illustrator-l: $orange1-l;
+	$illustrator-d: $orange1-d;
+	$ruby-l: #A42028;
+	$ruby-d: #9B1F31;
+
 @import "_fira-sans.scss";
 @import "_cards.scss";
-
-
-
-
 
 
 /* UTILITY */
@@ -18,12 +36,13 @@
 	margin: 0;
 	padding: 0;
 }
+
 html{
 	background: #252423;
 	color: #fafafa;
 	font-family: 'Fira Sans', Helvetica, sans-serif;
 	text-align: center;
-	font-size: 10px;
+	font-size: 16px;
 	letter-spacing: -1px;
 	background: url("../images/bg.png") no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -32,35 +51,3 @@ html{
         background-size: cover;
 }
 
-#title {
-
-	h1 {
-		// margin-top: 100px;
-		letter-spacing: -2px;
-		font-size: 4.8rem;
-	}
-
-	h2 {
-		// margin-top: 25px;
-		font-size: 3.6rem;
-		// color: #1ce;
-	}
-
-	h3 {
-		font-size: 3.0rem;
-		color: darken(#1ce, 30%);
-	}
-}
-
-
-.skill-list {
-	// overflow-x: scroll;
-	height: 750px;
-	width: 900px;
-	margin: 0 auto;
-
-	.card {
-		float: left;
-		margin-left: 10px;
-	}
-}

@@ -1,5 +1,18 @@
 extends ./layout.jade
-include ./projects.jade
+
+block stylesheet
+	include ../public/stylesheets/skills.css
+
+block page
+	h1 Skills
+		+skill_list(skills)
+
+//- MIXINS
+mixin skill_list(skills)
+	ul
+		each skill in skills
+			li 
+				+skill_card(skill)
 
 mixin skill_card(s)
 	- var col = s.color;
@@ -8,196 +21,93 @@ mixin skill_card(s)
 	.card
 		.body
 			.static
-				.overall.box
-					.value= s.overall
-					.label(style="#{text}") overall
-					//- .glass o
 				.faux-stats.box
+					.overall.box
+						.value= s.overall
+						.label(style="#{text}") overall
 					.xp.box
 						.value= s.experience
 						.label experience
 					.outlook.box
 						.value= s.outlook
 						.label outlook
-				.rating.box
-					.value #{s.love} stars
+					.rating.box
+						.value #{s.love} stars
 				.title.box(style="#{bg}")
 					.value= s.title
-			.toggle
-				.since.box(style="#{bg}")
-					.label since
-					.value= s.since
-				.see-all.box
-					.label See all <span class="value">#{s.projects.length}</span> projects
-				.timeline.box 
-					.label(style="color:#444;") Timeline <br>(Coming!... but not really that soon)
-				.projects.box
-					each project, index in s.projects
-						+project_mini(project, index+1, bg, text)
-
-mixin skill_card_min(s)
-	- var col = s.color;
-	- var bg = "background: "+s.color+" !important;";
-	- var text = "color: "+s.color+" !important;";
-	.card.minimized
-		.body
-			.static
-				.overall.box
-					.value= s.overall
-					.label(style="#{text}") overall
-					//- .glass o
-				.faux-stats.box
-					.xp.box
-						.value= s.experience
-						.label experience
-					.outlook.box
-						.value= s.outlook
-						.label outlook
-				.rating.box
-					.value #{s.love} stars
-				.title.box(style="#{bg}")
-					.value= s.title
-			//- .toggle
-			//- 	.since.box(style="#{bg}")
-			//- 		.label since
-			//- 		.value= s.since
-			//- 	.see-all.box
-			//- 		.label See all <span class="value">#{s.projects.length}</span> projects
-			//- 	.timeline.box 
-			//- 		.label Timeline
-			//- 	.projects.box
-			//- 		each project, index in s.projects
-			//- 			+project_mini(project, index+1, bg, text)
 	
-//- STYLING PURPOSES ONLY		
-mixin skill_card_dis(s)
-	.card.disabled
-		.body.disabled
-			.overall.box.disabled
-				.value.disabled= s.overall
-				.label.disabled overall
-				//-.disabled .glass o
-			.faux-stats.box.disabled
-				.xp.box.disabled
-					.value.disabled= s.experience
-					.label.disabled experience
-				.outlook.box.disabled
-					.value.disabled= s.outlook
-					.label.disabled outlook
-			.rating.box.disabled
-				.value.disabled #{s.love} stars
-			.title.box.disabled
-				.value.disabled= s.title
-			.since.box.disabled
-				.label.disabled since
-				.value.disabled= s.since
-			.see-all.box.disabled
-				.label.disabled See all #{s.projects.length} projects
-			.timeline.box.disabled 
-				.label.disabled Timeline
-			.projects.box.disabled
-				each project, index in s.projects
-					+project_mini_dis(project, index+1)
-			
-block page
-	h1 Skills
-	.skill-list
-		+skill_card_min({ title: "Adobe Illustrator"
-				, color: "#eb7125"
-				, overall: 93
-				, experience: "high"
-				, outlook: "high"
-				, love: 5
-				, since: "Fall 2008"
-				, projects:[ 
-					{ title: "Vector Self-Portrait"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"},
-					{ title: "A Second Project I Did"
-					, subtitle: "This one will always be number two, no matter how good it may look"
-					, time: "Fall 2014"},
-					{ title: "Untitled Experiment"
-					, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
-					, time: "Fall 2014"}
-					]
-				})
-		+skill_card_min({ title: "HTML"
-				, color: "#894D26"
-				, overall: 86
-				, experience: "very high"
-				, outlook: "high"
-				, love: 4.5
-				, since: "21st Birthday"
-				, projects:[ 
-					{ title: "Vector Self-Portrait"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"},
-					{ title: "A Second Project I Did"
-					, subtitle: "This one will always be number two, no matter how good it may look"
-					, time: "Fall 2014"},
-					{ title: "Untitled Experiment"
-					, subtitle: "My first Illustrator project ever, who knew there was so much promise behind those modest shapes"
-					, time: "Fall 2014"}
-					]
-				})
-		+skill_card({ title: "Ruby on Rails"
-				, color: "#A42028"
-				, overall: 74
-				, experience: "low"
-				, outlook: "not great"
-				, love: 2.5
-				, since: "Spring 2013"
-				, projects:[ 
-					{ title: "Vector Self-Portrait"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"},
-					{ title: "A Second Project I Did"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"},
-					{ title: "Untitled Experiment"
-					, subtitle: "A photo turned all colored and blotchy...\nstill pretty attractive"
-					, time: "Fall 2014"}
-					]
-				})
-		+skill_card({ title: "Objective-C"
-				, color: "#2D7B8F"
-				, overall: 91
-				, experience: "very high"
-				, outlook: "good"
-				, love: 4
-				, since: "Fall 2013"
-				, projects:[ 
-					{ title: "Native"
-					, subtitle: "My work"
-					, time: "Fall 2014"},
-					{ title: "Geneva"
-					, subtitle: "Also my work"
-					, time: "Fall 2014"},
-					{ title: "Capstone Thesis"
-					, subtitle: "A redesigned music app"
-					, time: "Fall 2014"}
-					]
-				})
-		+skill_card({ title: "Node.js"
-				, color: "#80BD01"
-				, overall: 64
-				, experience: "low"
-				, outlook: "very great"
-				, love: 4.9
-				, since: "Feb 2015"
-				, projects:[ 
-					{ title: "Professional Portfolio"
-					, subtitle: "Believe it or not, this website uses Node.js"
-					, time: "Feb 2015"},
-					{ title: "Capstone Portal"
-					, subtitle: "The website that holds all the assignments I did for Capstone Projects"
-					, time: "Feb 2015"}
-					]
-				})
+		
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- FULL SKILL CARD
+
+
+
+//- mixin skill_card(s)
+//- 	- var col = s.color;
+//- 	- var bg = "background: "+s.color+" !important;";
+//- 	- var text = "color: "+s.color+" !important;";
+//- 	.card
+//- 		.body
+//- 			.static
+//- 				.overall.box
+//- 					.value= s.overall
+//- 					.label(style="#{text}") overall
+//- 					//- .glass o
+//- 				.faux-stats.box
+//- 					.xp.box
+//- 						.value= s.experience
+//- 						.label experience
+//- 					.outlook.box
+//- 						.value= s.outlook
+//- 						.label outlook
+//- 				.rating.box
+//- 					.value #{s.love} stars
+//- 				.title.box(style="#{bg}")
+//- 					.value= s.title
+//- 			.toggle
+//- 				.since.box(style="#{bg}")
+//- 					.label since
+//- 					.value= s.since
+//- 				.see-all.box
+//- 					.label See all <span class="value">#{s.projects.length}</span> projects
+//- 				.timeline.box 
+//- 					.label(style="color:#444;") Timeline <br>(Coming!... but not really that soon)
+//- 				.projects.box
+//- 					each project, index in s.projects
+//- 						+project_mini(project, index+1, bg, text)
 
 
 
