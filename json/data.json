@@ -1,46 +1,25 @@
 {
 	"skills": [
-		{ "title": "Adobe Illustrator"
-		, "color": "#eb7125"
-		, "overall": "93"
-		, "experience": "high"
-		, "outlook": "great"
-		, "love": 4.5
-		, "since": "July 2008"}, 
-
-		{ "title": "HTML"
-		, "color": "#894D26"
-		, "overall": "86"
-		, "experience": "very high"
-		, "outlook": "excellent"
-		, "love": 4.7
-		, "since": "21st Birthday"}, 
-
-		{ "title": "Ruby On Rails"
-		, "color": "#A42028"
-		, "overall": "74"
-		, "experience": "low"
-		, "outlook": "poor"
-		, "love": 3.3
-		, "since": "Spring 2013"}, 
-
-		{ "title": "Objective-C"
-		, "color": "#2D7B8F"
-		, "overall": "91"
-		, "experience": "high"
-		, "outlook": "great"
-		, "love": 4.3
-		, "since": "Fall 2013"}, 
-
-		{ "title": "Node.js"
-		, "color": "#80BD01"
-		, "overall": "64"
-		, "experience": "new"
-		, "outlook": "excellent"
-		, "love": 4.7
-		, "since": "Feb 2015"}],
-
-
+	    {"title": "Haml", "since": "Spring 2013", "experience": "40", "outlook": "100", "love": "4.65", "color": "", "overall": ""}, 
+	    {"title": "Sass", "since": "Spring 2013", "experience": "50", "outlook": "110", "love": "4.75", "color": "", "overall": ""}, 
+	    {"title": "Ruby on Rails", "since": "Spring 2013", "experience": "low", "outlook": "poor", "love": "3.3", "color": "#A42028", "overall": "74"}, 
+	    {"title": "Sinatra", "since": "Winter 2014", "experience": "40", "outlook": "90", "love": "4.3", "color": "", "overall": ""}, 
+	    {"title": "Backbone.js", "since": "February 2015", "experience": "30", "outlook": "110", "love": "4.8", "color": "", "overall": ""}, 
+	    {"title": "Node.js", "since": "February 2015", "experience": "35", "outlook": "excellent", "love": "4.7", "color": "#80BD01", "overall": "64"}, 
+	    {"title": "C", "since": "Fall 2011", "experience": "30", "outlook": "50", "love": "3.5", "color": "", "overall": ""}, 
+	    {"title": "C++", "since": "Spring 2008", "experience": "20", "outlook": "30", "love": "3.7", "color": "", "overall": ""}, 
+	    {"title": "Python", "since": "Data Structures E.C.", "experience": "30", "outlook": "90", "love": "4.4", "color": "", "overall": ""}, 
+	    {"title": "Ruby", "since": "Spring 2013", "experience": "25", "outlook": "60", "love": "3.9", "color": "", "overall": ""}, 
+	    {"title": "HTML", "since": "21st Birthday", "experience": "80", "outlook": "100", "love": "4.5", "color": "", "overall": ""}, 
+	    {"title": "CSS", "since": "21st Birthday", "experience": "75", "outlook": "100", "love": "4.25", "color": "", "overall": ""}, 
+	    {"title": "JavaScript", "since": "Digital Media 1", "experience": "65", "outlook": "110", "love": "4.7", "color": "", "overall": ""}, 
+	    {"title": "jQuery", "since": "Digital Media 1", "experience": "55", "outlook": "90", "love": "4.85", "color": "", "overall": ""}, 
+	    {"title": "Objective-C", "since": "iOS Development Class", "experience": "90", "outlook": "100", "love": "4.6", "color": "#2D7B8F", "overall": "91"}, 
+	    {"title": "Swift", "since": "Winter Break 2014", "experience": "60", "outlook": "110", "love": "4.95", "color": "", "overall": ""}, 
+	    {"title": "Java", "since": "Object-Oriented Programming", "experience": "10", "outlook": "50", "love": "3.5", "color": "", "overall": ""}, 
+	    {"title": "Assembly", "since": "Intro to Hacking Course", "experience": "-10", "outlook": "-50", "love": "1", "color": "", "overall": ""}, 
+	    {"title": "Scala", "since": "Programming Languages", "experience": "15", "outlook": "20", "love": "3.7", "color": "", "overall": ""}
+	],
 
 	"projects": [{}, {}, {}, {}, {}],
 	"work": [{}, {}, {}, {}, {}],
