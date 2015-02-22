@@ -1,5 +1,14 @@
 @import "_application.scss";
 
+h1 {
+	font-size: 18rem;
+	// line-height: 18rem;
+	color: rgba($white-8, 0.5);
+	// text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 5px 5px 1px rgba(black, 0.1);
+}
+
 ul {
 	// DEBUG
 	// background: lighten(red, 40%);
@@ -8,7 +17,7 @@ ul {
 
 	width: 960px;
 	margin: 0 auto;
-	
+
 }
 
 li {
@@ -21,4 +30,16 @@ li {
 	display: inline-block;
 	padding: 5px;
 	list-style-type: none;
+}
+
+form.skill.new {
+
+	div {
+		// background: red;
+	}
+
+	input {
+		@include FiraSans-3(2rem, 400, $black-1);
+
+	}
 }

@@ -51,3 +51,42 @@ html{
         background-size: cover;
 }
 
+#title {
+	width: 500px;
+	margin: 0 auto;
+	// position: relative;
+	// top: 50px;
+	background: $gray-7;
+}
+
+h1 {
+	font-size: 2.4rem;
+}
+
+h2 {
+	font-size: 1.6rem;
+}
+
+nav {
+	// position: relative;
+	background: $black-1;
+	ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+
+			a {
+				@include FiraSans-3(1.2rem, 800, $white-9);
+				padding: 10px;
+				text-decoration: none;
+
+				&:hover {
+					color: $white-8;
+				}
+			}
+		}
+	}
+}
+
+
+
