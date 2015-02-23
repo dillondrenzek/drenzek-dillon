@@ -63,11 +63,11 @@ projects.list_edit = function(req, res, next) {
 projects.update = function(req, res, next) {
     delete req.body['__proto__'];
 
-    Time.get( req.params.id, function (err, time) {
-        time.update(req.body, function (err, result) {
+    Project.get( req.params.id, function (err, project) {
+        project.update(req.body, function (err, result) {
             if (err) return next(err);
 
-            res.redirect('/times/edit');
+            res.redirect('/projects/edit');
         });
     });
 };

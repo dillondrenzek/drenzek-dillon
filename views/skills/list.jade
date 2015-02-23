@@ -1,9 +1,11 @@
 extends ./skills.jade
+include ../std/list.jade
 
 //- PAGE
 block skill_page
 	h1 Skills
-	table(style="background: #333;")
+	//- table(style="background: #333;")
 		each skill in skills
 			+skill_row(skill)
+	+list("Skill", skills, false, false)
 

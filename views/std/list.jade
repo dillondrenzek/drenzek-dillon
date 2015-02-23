@@ -1,0 +1,55 @@
+mixin list (model, arr, orient, mode)
+	//- 	model 	 	("Skill", "Time", "Project", etc.) model to display 
+	//- 	arr  		array to list
+	//- 	orient  	list is false vertical or true horizontal
+	//-		mode  		list is false listing or true editing(includes form)
+
+	//- ! add a "edit" hash containing info about how to build form (input type,etc)
+
+	//- case model (ignore for now)
+		when ("skill" || "Skill")
+
+	ul.std-list
+		each i in arr
+			+item(model, i, orient, mode)
+				
+
+
+mixin item (model, i, orient, mode)
+	//- 	model 	 	("Skill", "Time", "Project", etc.) model to display 
+	//- 	i  			item to display
+	//- 	orient  	list is false vertical or true horizontal
+	//-		mode  		list is false listing or true editing(includes form)
+	- var col = i.color || i.darkColor || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	- var m = model.toUpperCase();
+	- var url = "/"+ model.toLowerCase() + "s/" + i.id;
+
+	li.std
+		.std-item(onclick="location.href='#{url}';")
+			.color.box(style="#{bg}")
+			.id.box.none(style="#{text}")
+				+label("ID")
+				+value(i.id)
+			.title.box
+				+label(m)
+				+value(i.title)
+
+mixin label (val)
+	//-		val 		value that gets displayed
+	.label= val
+
+	//- when editmode
+		label(for='#{name}') #{val}
+
+mixin value (val)
+	//-		val 		value that gets displayed
+	.value= val
+
+	//- when editmode
+		input(type="text", name="#{name}", id="#{name}", value="#{value}")
+	//- when newmode
+		input(type="#{type}", name="#{name}", id="#{name}")
+
+		

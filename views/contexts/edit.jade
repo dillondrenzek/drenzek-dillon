@@ -1,14 +1,14 @@
 extends ./contexts.jade
 
-mixin context_form_field(type, name, Name)
+mixin edit_form_field(name, Name, value)
 	div
 		label(for='#{name}') #{Name}
-		input(type="#{type}", name="#{name}", id="#{name}")
+		input(type="text", name="#{name}", id="#{name}", value="#{value}")
 
 //- PAGE
 block contexts_page
 	h1 Edit context
-	form(action="/contexts/new", method="POST", class="context new")
-		+context_form_field("text", "title", "Title")
+	form(action="/contexts/edit/"+context.id, method="POST", class="context edit")
+		+edit_form_field("title", "Title", context.title)
 		div
 			input(type="submit", value="Submit")
