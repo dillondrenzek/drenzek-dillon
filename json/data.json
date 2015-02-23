@@ -22,7 +22,25 @@
 	    {"title": "Adobe Illustrator", "since": "Fall 2010", "experience": "high", "outlook": "great", "love": "4.5", "darkColor": "#CE6421", 	"color": "#EB7225", "overall": "93"}
 	],
 
-	"projects": [{}, {}, {}, {}, {}],
-	"periods": [{}, {}, {}, {}, {}],
-	"contexts": [{}, {}, {}, {}, {}]
+	"projects": [
+		{"title": "Fingerpainting with Mrs. Johnston", "color": "#1ce"}, 
+		{"title": "The Greatest Project You Haven't Seen", "color": "#1ce"}, 
+		{"title": "Beginning (Part 1/2)", "color": "#1ce"}, 
+		{"title": "End (Part 2/2)", "color": "#1ce"}
+	],
+
+	"times": [
+		{"title": "February 23, 2015", "color": "#1ce"},
+		{"title": "Spring 2015", "color": "#1ce"}, 
+		{"title": "Winter Break 2014", "color": "#1ce"}, 
+		{"title": "Fall 2014", "color": "#1ce"},  
+		{"title": "July 27, 1992", "color": "#1ce"}
+	],
+
+	"contexts": [
+		{"title": "ATLS 4010 - Capstone Projects", "color": "#1ce"}, 
+		{"title": "CSCI 4448 - Object-Oriented Design", "color": "#1ce"}, 
+		{"title": "CSCI 0000 - Operating Systems", "color": "#1ce"}, 
+		{"title": "Native", "color": "rgb(84,152,153)"}
+	]
 }

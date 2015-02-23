@@ -17,18 +17,45 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 
 // REMOVE
-app.get('/skills/seed', function (req, res, next) {
+app.get('/seed', function (req, res, next) {
 
     var Skill = require('./models/skill'),
-        skillsArray = require('./json/data.json').skills;
+        Project = require('./models/project'),
+        Time = require('./models/time'),
+        Context = require('./models/context'),
+
+        jsonData = require('./json/data.json'),
+
+        skillsArray = jsonData.skills,
+        projectsArray = jsonData.projects,
+        timesArray = jsonData.times,
+        contextsArray = jsonData.contexts;
 
     // erase any skills
-    Skill.getAll (function (err, skills) {
-        if (err) return next(err);
-        // skills.each
+    Skill.getAll (function (err, skills) { if (err) return next(err);
         skills.forEach( function(skill, i, arr) {
-            skill.del(function (err) {
-                if (err) return next(err);
+            skill.del(function (err) { if (err) return next(err);
+            });
+        });
+    });
+
+    Project.getAll (function (err, projects) { if (err) return next(err);
+        projects.forEach( function(project, i, arr) {
+            project.del(function (err) { if (err) return next(err);
+            });
+        });
+    });
+
+    Time.getAll (function (err, times) { if (err) return next(err);
+        times.forEach( function(time, i, arr) {
+            time.del(function (err) { if (err) return next(err);
+            });
+        });
+    });
+
+    Context.getAll (function (err, contexts) { if (err) return next(err);
+        contexts.forEach( function(context, i, arr) {
+            context.del(function (err) { if (err) return next(err);
             });
         });
     });
@@ -42,6 +69,39 @@ app.get('/skills/seed', function (req, res, next) {
 
             if (i === skillsArray.length - 1) {
                 res.redirect('/skills');
+            }
+        });
+    });
+
+    projectsArray.forEach( function(el, i, arr) {
+        Project.create(el, function(err, result) {
+            if (err) return next(err);
+            console.log("Created project:", el.title);
+
+            if (i === projectsArray.length - 1) {
+                res.redirect('/projects');
+            }
+        });
+    });
+
+    timesArray.forEach( function(el, i, arr) {
+        Time.create(el, function(err, result) {
+            if (err) return next(err);
+            console.log("Created time:", el.title);
+
+            if (i === timesArray.length - 1) {
+                res.redirect('/times');
+            }
+        });
+    });
+
+    contextsArray.forEach( function(el, i, arr) {
+        Context.create(el, function(err, result) {
+            if (err) return next(err);
+            console.log("Created context:", el.title);
+
+            if (i === contextsArray.length - 1) {
+                res.redirect('/contexts');
             }
         });
     });
