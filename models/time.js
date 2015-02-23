@@ -14,11 +14,11 @@ var Time = module.exports = function Time(_node) {
 
 
 // public instance properties
-Object.defineProperty(Skill.prototype, 'id', {
+Object.defineProperty(Time.prototype, 'id', {
     get: function () { return this._node.id; }
 });
 
-Object.defineProperty(Skill.prototype, 'title', {
+Object.defineProperty(Time.prototype, 'title', {
     get: function () {
         return this._node.data['title'];
     },

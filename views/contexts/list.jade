@@ -3,3 +3,14 @@ extends ./contexts.jade
 //- PAGE
 block contexts_page
 	h1 List Contexts
+	h2= contexts.length + " contexts found."
+	table(style="background: #333;")
+		thead
+			tr
+				th id
+				th title
+		tbody
+			each context in contexts
+				tr
+					td= context.id
+					td= context.title

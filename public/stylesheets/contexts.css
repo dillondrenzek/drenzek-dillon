@@ -1,3 +1,161 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Fira Sans';
+  src: url("/_media/FiraSans3111/WEB/FiraSans-Regular.woff") format("woff"), url("../../../_media/FiraSans3111/WEB/FiraSans-Regular.ttf") format("truetype");
+  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+.card {
+  width: 100%;
+  height: 100%;
+  background: #3D3C3C;
+  padding: 10px;
+  float: left;
+  border-radius: 10px; }
 
+.body {
+  width: 100%;
+  height: 100%;
+  background: #353434; }
+  .body .box {
+    float: left;
+    display: inline-block;
+    position: relative; }
+  .body .value {
+    font-size: 2rem; }
+  .body .label {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0px;
+    position: absolute;
+    bottom: 5px; }
+
+.title.box {
+  width: 100%;
+  padding: 10px; }
+  .title.box .value {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fafafa;
+    letter-spacing: -1.5px;
+    text-align: left; }
+
+.faux-stats.box {
+  width: 100%;
+  height: 150px;
+  background: #575452; }
+  .faux-stats.box .label {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #979797;
+    letter-spacing: auto;
+    text-align: center; }
+  .faux-stats.box .overall.box {
+    background: #fafafa;
+    width: 40%;
+    height: 100%; }
+    .faux-stats.box .overall.box .value {
+      font-family: 'Fira Sans', Helvetica, sans-serif;
+      font-size: 6.4rem;
+      font-weight: 800;
+      color: #353434;
+      letter-spacing: -1.75px;
+      text-align: center;
+      position: relative;
+      top: -5px; }
+  .faux-stats.box .xp.box {
+    width: 30%;
+    height: 75%; }
+    .faux-stats.box .xp.box .value {
+      font-family: 'Fira Sans', Helvetica, sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #eeeeee;
+      letter-spacing: -1.75px;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  .faux-stats.box .outlook.box {
+    width: 30%;
+    height: 75%; }
+    .faux-stats.box .outlook.box .value {
+      font-family: 'Fira Sans', Helvetica, sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #eeeeee;
+      letter-spacing: -1.75px;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  .faux-stats.box .rating.box {
+    width: 60%;
+    height: 25%;
+    background: #ababab; }
+    .faux-stats.box .rating.box .value {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+
+/* UTILITY */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  background: #252423;
+  color: #fafafa;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: -1px;
+  background: url("../images/bg.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#title {
+  width: 500px;
+  margin: 0 auto;
+  background: #ababab; }
+
+h1 {
+  font-size: 2.4rem; }
+
+h2 {
+  font-size: 1.6rem; }
+
+nav {
+  background: #353434; }
+  nav ul {
+    list-style-type: none; }
+    nav ul li {
+      display: inline-block; }
+      nav ul li a {
+        font-family: 'Fira Sans', Helvetica, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: #eeeeee;
+        padding: 5px;
+        text-decoration: none; }
+        nav ul li a:hover {
+          color: #d8d8d8; }
+
+h1 {
+  font-size: 10rem;
+  color: rgba(216, 216, 216, 0.5);
+  font-weight: bold;
+  text-shadow: 5px 5px 1px rgba(0, 0, 0, 0.1); }
 
 /*# sourceMappingURL=contexts.css.map */

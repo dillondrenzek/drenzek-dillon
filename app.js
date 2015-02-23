@@ -62,6 +62,7 @@ app.post('/skills/destroy/:id', routes.skills.destroy);
 // PROJECT ROUTES
 app.get('/projects', routes.projects.list);
 app.get('/projects/new', routes.projects.new);
+app.get('/projects/edit', routes.projects.list_edit);
 app.get('/projects/:id', routes.projects.show);
 app.get('/projects/edit/:id', routes.projects.edit);
 app.post('/projects/new', routes.projects.create);
@@ -71,6 +72,7 @@ app.post('/projects/destroy/:id', routes.projects.destroy);
 // TIME ROUTES
 app.get('/times', routes.times.list);
 app.get('/times/new', routes.times.new);
+app.get('/times/edit', routes.times.list_edit);
 app.get('/times/:id', routes.times.show);
 app.get('/times/edit/:id', routes.times.edit);
 app.post('/times/new', routes.times.create);
@@ -80,6 +82,7 @@ app.post('/times/destroy/:id', routes.times.destroy);
 // CONTEXT ROUTES
 app.get('/contexts', routes.contexts.list);
 app.get('/contexts/new', routes.contexts.new);
+app.get('/contexts/edit', routes.contexts.list_edit);
 app.get('/contexts/:id', routes.contexts.show);
 app.get('/contexts/edit/:id', routes.contexts.edit);
 app.post('/contexts/new', routes.contexts.create);

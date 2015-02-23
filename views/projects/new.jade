@@ -1,5 +1,14 @@
 extends ./projects.jade
 
+mixin project_form_field(type, name, Name)
+	div
+		label(for='#{name}') #{Name}
+		input(type="#{type}", name="#{name}", id="#{name}")
+
 //- PAGE
 block projects_page
 	h1 New Project
+	form(action="/projects/new", method="POST", class="project new")
+		+project_form_field("text", "title", "Title")
+		div
+			input(type="submit", value="Submit")

@@ -1,0 +1,32 @@
+extends ./contexts.jade
+
+mixin table_action(name, action, method)
+	td
+		form(action="#{action}", method="#{method}")
+			input(type="submit", value="#{name}")
+
+mixin table_cell(name, value)
+	td
+		input(type="text", name="#{name}", id="#{name}", value="#{value}")
+
+block contexts_page
+	p Edit contexts
+	a(href="/contexts/new") New context
+	
+	table
+		thead
+			tr
+				th id
+				th title
+				th(colspan="3") *Actions*
+				
+		tbody
+			each context in contexts
+				tr
+					form(action="/contexts/edit/"+context.id, method="POST", class="context edit")
+						+table_cell("id", context.id)
+						+table_cell("title", context.title)
+						td
+							input(type="submit", value="Update")
+					+table_action("Show", "/contexts/"+context.id, "GET")
+					+table_action("Destroy", "/contexts/destroy/"+context.id, "POST")

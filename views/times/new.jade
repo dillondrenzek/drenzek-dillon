@@ -1,5 +1,14 @@
 extends ./times.jade
 
+mixin time_form_field(type, name, Name)
+	div
+		label(for='#{name}') #{Name}
+		input(type="#{type}", name="#{name}", id="#{name}")
+
 //- PAGE
 block times_page
 	h1 New Time
+	form(action="/times/new", method="POST", class="time new")
+		+time_form_field("text", "title", "Title")
+		div
+			input(type="submit", value="Submit")

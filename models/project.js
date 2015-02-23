@@ -12,13 +12,12 @@ var Project = module.exports = function Project(_node) {
 	this._node = _node;
 };
 
-
 // public instance properties
-Object.defineProperty(Skill.prototype, 'id', {
+Object.defineProperty(Project.prototype, 'id', {
     get: function () { return this._node.id; }
 });
 
-Object.defineProperty(Skill.prototype, 'title', {
+Object.defineProperty(Project.prototype, 'title', {
     get: function () {
         return this._node.data['title'];
     },

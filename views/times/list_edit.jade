@@ -1,0 +1,32 @@
+extends ./times.jade
+
+mixin table_action(name, action, method)
+	td
+		form(action="#{action}", method="#{method}")
+			input(type="submit", value="#{name}")
+
+mixin table_cell(name, value)
+	td
+		input(type="text", name="#{name}", id="#{name}", value="#{value}")
+
+block times_page
+	p Edit times
+	a(href="/times/new") New time
+	
+	table
+		thead
+			tr
+				th id
+				th title
+				th(colspan="3") *Actions*
+				
+		tbody
+			each time in times
+				tr
+					form(action="/times/edit/"+time.id, method="POST", class="time edit")
+						+table_cell("id", time.id)
+						+table_cell("title", time.title)
+						td
+							input(type="submit", value="Update")
+					+table_action("Show", "/times/"+time.id, "GET")
+					+table_action("Destroy", "/times/destroy/"+time.id, "POST")

@@ -14,11 +14,11 @@ var Context = module.exports = function Context(_node) {
 
 
 // public instance properties
-Object.defineProperty(Skill.prototype, 'id', {
+Object.defineProperty(Context.prototype, 'id', {
     get: function () { return this._node.id; }
 });
 
-Object.defineProperty(Skill.prototype, 'title', {
+Object.defineProperty(Context.prototype, 'title', {
     get: function () {
         return this._node.data['title'];
     },
