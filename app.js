@@ -68,6 +68,24 @@ app.post('/projects/new', routes.projects.create);
 app.post('/projects/edit/:id', routes.projects.update);
 app.post('/projects/destroy/:id', routes.projects.destroy);
 
+// TIME ROUTES
+app.get('/times', routes.times.list);
+app.get('/times/new', routes.times.new);
+app.get('/times/:id', routes.times.show);
+app.get('/times/edit/:id', routes.times.edit);
+app.post('/times/new', routes.times.create);
+app.post('/times/edit/:id', routes.times.update);
+app.post('/times/destroy/:id', routes.times.destroy);
+
+// CONTEXT ROUTES
+app.get('/contexts', routes.contexts.list);
+app.get('/contexts/new', routes.contexts.new);
+app.get('/contexts/:id', routes.contexts.show);
+app.get('/contexts/edit/:id', routes.contexts.edit);
+app.post('/contexts/new', routes.contexts.create);
+app.post('/contexts/edit/:id', routes.contexts.update);
+app.post('/contexts/destroy/:id', routes.contexts.destroy);
+
 
 
 

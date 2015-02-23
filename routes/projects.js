@@ -54,13 +54,13 @@ projects.create = function(req, res, next) {
     //     , since: req.body['since'] 
     //     }, function (err, skill) {
     //         if (err) return next(err);
-    //         res.redirect('/projects');
+    res.redirect('/projects');
     // });
 };
 
 // POST '/projects/edit/:id'
 projects.update = function(req, res, next) {
-    // res.redirect('/projects/edit');
+    res.redirect('/projects');
 };
 
 // POST '/projects/destroy/:id'
@@ -72,4 +72,5 @@ projects.destroy = function(req, res, next) {
     //         res.redirect('/projects');
     //     });
     // });
+    res.redirect('/projects');
 };
