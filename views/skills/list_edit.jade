@@ -1,0 +1,46 @@
+extends ./skills.jade
+
+
+mixin skill_table_action(name, action, method)
+	td
+		form(action="#{action}", method="#{method}")
+			input(type="submit", value="#{name}")
+
+mixin skill_table_cell(name, value)
+	td
+		input(type="text", name="#{name}", id="#{name}", value="#{value}")
+
+
+
+block skill_page
+	p Edit Skills
+	a(href="/skills/new") New Skill
+	a(href="/skills/edit") Edit Skills
+	form(action="/skills/edit", method="POST", class="skill edit")
+	table
+		thead
+			tr
+				th title
+				th since
+				th experience
+				th outlook
+				th love
+				th darkColor
+				th color
+				th overall
+				th(colspan="3") *Actions*
+				
+		tbody
+			each s in skills
+				tr
+					+skill_table_cell("name", s.title)
+					+skill_table_cell("since", s.since)
+					+skill_table_cell("experience", s.experience)
+					+skill_table_cell("outlook", s.outlook)
+					+skill_table_cell("love", s.love)
+					+skill_table_cell("darkColor", s.darkColor)
+					+skill_table_cell("color", s.color)
+					+skill_table_cell("overall", s.overall)
+					+skill_table_action("Show", "/skills/"+s.id, "GET")
+					+skill_table_action("Update", "/skills/edit/"+s.id, "POST")
+					+skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")

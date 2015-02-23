@@ -1,29 +1,9 @@
-//- ARGS: skills - array of skills, "mode" - index, new, edit, etc.
+//- skills.jade
 
-extends ./layout.jade
+extends ../layout.jade
 
 block stylesheet
-	include ../public/stylesheets/skills.css
-
-//- PAGE
-block page
-	case mode
-		when "index"
-			h1 Skills
-			+skill_list(skills)
-		when "new"
-			h1 New Skill
-			+skill_form("/skills/new", "post")
-
-
-//- MIXINS
-
-//- List Skills
-mixin skill_list(skills)
-	ul
-		each skill in skills
-			li 
-				+skill_card(skill)
+	include ../../public/stylesheets/skills.css
 
 //- Skill Card
 mixin skill_card(s)
@@ -31,7 +11,6 @@ mixin skill_card(s)
 	- var bg = "background: "+s.color+" !important;";
 	- var text = "color: "+s.color+" !important;";
 	.card
-		+skill_destroy(s)
 		.body
 			.static
 				.faux-stats.box
@@ -49,34 +28,17 @@ mixin skill_card(s)
 				.title.box(style="#{bg}")
 					.value= s.title
 
-//- Skill Destroy
-mixin skill_destroy(s)
-	form(action='/skills/#{s.id}', method='POST', onsubmit='return confirm("Are you sure?");')
-		input(type='hidden', name='_method', value='DELETE')
-		input(type='submit', value='X')
-
-//- Skill Form Field	
-mixin skill_form_field(type, name, Name)
-	div
-		label(for='#{name}') #{Name}
-		input(type="#{type}", name="#{name}", id="#{name}")
-
-//- Skill Form
-mixin skill_form(action, method)
-	form(action="#{action}", method="#{method}", class="skill new")
-		+skill_form_field("text", "title", "Title")
-		+skill_form_field("text", "color", "Color")
-		+skill_form_field("text", "overall", "Overall")
-		+skill_form_field("text", "experience", "Experience")
-		+skill_form_field("text", "outlook", "Outlook")
-		+skill_form_field("text", "love", "Love")
-		+skill_form_field("text", "since", "Since")
-		div
-			input(type="submit", value="Submit")
+//- List
+mixin skill_list(skills)
+	ul
+		each skill in skills
+			li 
+				+skill_card(skill)
 
 
-
-
+//- PAGE
+block page
+	block skill_page
 
 
 

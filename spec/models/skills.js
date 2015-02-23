@@ -1,153 +1,169 @@
-//
-// skill model tests. These are basically CRUD tests, ordered to let us test
-// all cases, plus listing all skills and following/unfollowing between skills.
-//
-// It's worth noting that there may already be skills in the database, so these
-// tests must not assume the initial state is empty.
-//
-// High-level test plan:
-//
-// - List initial skills.
-// - Create a skill A.
-// - Fetch skill A. Should be the same.
-// - List skills again; should be initial list plus skill A.
-// - Update skill A, e.g. its name.
-// - Fetch skill A again. It should be updated.
-// - Delete skill A.
-// - Try to fetch skill A again; should fail.
-// - List skills again; should be back to initial list.
-
-// - Create two skills in parallel, B and C.
-// - Fetch both skill's "following and others"; both should show no following.
-// - Have skill B follow skill C.
-// - Have skill B follow skill C again; should be idempotent.
-// - Fetch skill B's "following and others"; should show following skill C.
-// - Fetch skill C's "following and others"; should show not following skill B.
-// - Have skill B unfollow skill C.
-// - Have skill B unfollow skill C again; should be idempotent.
-// - Fetch both skills' "following and others" again; both should follow none.
-
-// - Create a skill D.
-// - Have skill B follow skill C follow skill D.
-// - Fetch all skills' "following and others"; should be right.
-// - Delete skill B.
-// - Fetch skill C's and D's "following and others"; should be right.
-// - Delete skill D.
-// - Fetch skill C's "following and others"; should be right.
-// - Delete skill C.
+// TODO: Add tests for each:
+// app.get('/skills/:id', routes.skills.show);
+// app.get('/skills/new', routes.skills.new);
+// app.post('/skills/new', routes.skills.create);
+// app.get('/skills/edit', routes.skills.list_edit);
+// app.post('/skills/edit/:id', routes.skills.update)
+// app.post('/skills/destroy/:id', routes.skills.destroy);
 
 
 var Skill = require('../../models/skill');
+
+
+describe( "Skill models", function(){
+
+    describe( "[Create]:" , function(){
+        xit("GET '/skills/new'", function(){
+            pending("Write test.");
+        });
+
+        xit("POST '/skills/new'", function(){
+            pending("Write test.");
+        });
+    });
+
+    describe( "[Read]:", function(){
+
+        xit("GET '/skills'", function(){
+            pending("Write test.");
+        });
+
+        xit("GET '/skills/:id'", function(){
+            pending("Write test.");
+        });
+
+    });
+
+
+
+    describe( "[Update]:" , function(){
+
+        xit("GET '/skills/edit/:id'", function(){
+            pending("Write test.");
+        });
+        
+        xit("GET '/skills/edit'", function(){
+            pending("Write test.");
+        });
+
+        xit("POST '/skills/edit/:id", function(){
+            pending("Write test.");
+        });
+        
+    });
+
+    describe( "[Destroy]:" , function(){
+
+        xit("POST '/skills/destroy/:id", function(){
+            pending("Write test.");
+        });
+    });
+});
+
+
+
 
 
 // Shared state:
 
 // Tests:
 
-describe("Skill models:", function() {
+// describe("Skill models:", function() {
+//     this.INITIAL_SKILLS = [];
+//     var SKILL_A = {};
+//     this.SKILL_B = {};
 
-    // - List initial skills.
-    it("List initial skills", function (next) {
-        Skill.getAll(function (err, skills) {
-            if (err) return next(err);
-
-            // expect(skills).to.be.an('array');
-            skills.forEach(function (skill) {
-                expectSkill(skill);
-            });
-
-            this.INITIAL_SKILLS = skills;
-            return next();
-        });
-    });
-
-    // - Create skill A
-    it("Create Skill A", function (next) {
-        var title = "Test Skill A";
-        Skill.create({ title: title
-             , color: "#1ce"
-             , overall: "0"
-             , experience: "high"
-             , outlook: "great"
-             , love: 4
-             , since: "July 2008"}, function (err, skill) {
-            if (err) {return next(err)};
-
-            expect(skill.id).toEqual(jasmine.any(Number));
-            expect(skill.title).toEqual(title);
-            this.SKILL_A = skill;
-            return next();
-        });
-    });
-
-    it("Fetch User A", function () {
-        Skill.get(this.SKILL_A.id, function (err, skill) {
-            if (err) {return next(err)};
-
-            expect(skill).toEqual(this.SKILL_A);
-            return next();
-        });
-    });
-
-    it("List skills again", function (next) {
-        Skill.getAll(function (err, skills) {
-            if (err) return next(err);
-
-            expect(skills).toEqual(jasmine.any(Array));
-            expect(skills.length).toEqual(this.INITIAL_SKILLS.length + 1);
-            expect(skills).toEqual(jasmine.arrayContaining([this.SKILL_A]));
-
-            return next();
-        });
-    });
-
-    it("Update Skill A", function (next) {
-        var initialTitle = this.SKILL_A.title;
-        expect(initialTitle).toEqual(jasmine.any(String));
-        this.SKILL_A.title += ' (edited)';
-        this.SKILL_A.save(function (err) {
-            return next(err);
-        });
-
-        Skill.get(this.SKILL_A.id, function (err, skill) {
-            if (err) return next(err);
-            expectSkill(skill, this.SKILL_A);
-            expect(this.SKILL_A.title).to.equal(initialTitle + ' (edited)');
-            return next();
-        });
-    });
-
-    it('Delete user A', function (next) {
-        this.SKILL_A.del(function (err) {
-            return next(err);
-        });
-    });
-
-    xit('Attempt to fetch user A again', function (next) {
-        User.get(USER_A.id, function (err, user) {
-            expect(user).to.not.exist;  // i.e. null or undefined
-            expect(err).to.be.an('object');
-            expect(err).to.be.an.instanceOf(Error);
-            return next();
-        });
-    });
-
-    xit('List users again', function (next) {
-        User.getAll(function (err, users) {
-            if (err) return next(err);
-
-            // like before, we just test that this array is now back to the
-            // initial length, and *doesn't* contain user A.
-            expect(users).to.be.an('array');
-            expect(users).to.have.length(INITIAL_USERS.length);
-            expectUsersToNotContain(users, USER_A);
-
-            return next();
-        });
-    });
+//     // - List initial skills.
 
 
-});
+//     // - Create skill A
+//     it("Create Skill A", function () {
+//         var title = "Test Skill A";
+//         Skill.create({ title: title
+//              , color: "#1ce"
+//              , overall: "0"
+//              , experience: "high"
+//              , outlook: "great"
+//              , love: 4
+//              , since: "July 2008"}
+//         , function (err, skill) {
+//             // if (err) {return next(err)};
+
+//             expect(skill.id).toEqual(jasmine.any(Number));
+//             expect(skill.title).toEqual(title);
+//             SKILL_A = skill;
+//             // return next();
+//         });    
+//     });
+
+//     it("Fetch User A", function () {
+//         Skill.get(this.SKILL_A.id, function (err, skill) {
+//             // if (err) {return next(err)};
+
+//             expect(skill).toEqual(this.SKILL_A);
+//             // return next();
+//         });
+//     });
+
+//     xit("List skills again", function (next) {
+//         Skill.getAll(function (err, skills) {
+//             if (err) return next(err);
+
+//             expect(skills).toEqual(jasmine.any(Array));
+//             expect(skills.length).toEqual(this.INITIAL_SKILLS.length + 1);
+//             expect(skills).toEqual(jasmine.arrayContaining([this.SKILL_A]));
+
+//             return next();
+//         });
+//     });
+
+//     xit("Update Skill A", function (next) {
+//         var initialTitle = this.SKILL_A.title;
+//         expect(initialTitle).toEqual(jasmine.any(String));
+//         this.SKILL_A.title += ' (edited)';
+//         this.SKILL_A.save(function (err) {
+//             return next(err);
+//         });
+
+//         Skill.get(this.SKILL_A.id, function (err, skill) {
+//             if (err) return next(err);
+//             expectSkill(skill, this.SKILL_A);
+//             expect(this.SKILL_A.title).to.equal(initialTitle + ' (edited)');
+//             return next();
+//         });
+//     });
+
+//     xit('Delete user A', function (next) {
+//         this.SKILL_A.del(function (err) {
+//             return next(err);
+//         });
+//     });
+
+//     xit('Attempt to fetch user A again', function (next) {
+//         User.get(USER_A.id, function (err, user) {
+//             expect(user).to.not.exist;  // i.e. null or undefined
+//             expect(err).to.be.an('object');
+//             expect(err).to.be.an.instanceOf(Error);
+//             return next();
+//         });
+//     });
+
+//     xit('List users again', function (next) {
+//         User.getAll(function (err, users) {
+//             if (err) return next(err);
+
+//             // like before, we just test that this array is now back to the
+//             // initial length, and *doesn't* contain user A.
+//             expect(users).to.be.an('array');
+//             expect(users).to.have.length(INITIAL_USERS.length);
+//             expectUsersToNotContain(users, USER_A);
+
+//             return next();
+//         });
+//     });
+
+
+// });
 
 //     it('Fetch user A', function (next) {
 //         User.get(USER_A.id, function (err, user) {

@@ -10,7 +10,7 @@ var db = new neo4j.GraphDatabase(
 
 var Skill = module.exports = function Skill(_node) {
 	this._node = _node;
-}
+};
 
 
 // public instance properties
@@ -93,7 +93,7 @@ Skill.prototype.del = function (callback) {
         'MATCH (skill:Skill)',
         'WHERE ID(skill) = {skillId}',
         'DELETE skill'
-    ].join('\n')
+    ].join('\n');
 
     var params = {
         skillId: this.id
@@ -106,10 +106,10 @@ Skill.prototype.del = function (callback) {
 
 
 // static methods:
-Skill.seedFromJSON = function (json, callback) {
-    var result = db.fromJSON(json);
-    console.log("result", result);
-};
+// Skill.seedFromJSON = function (json, callback) {
+//     var result = db.fromJSON(json);
+//     console.log("result", result);
+// };
 
 Skill.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
@@ -132,6 +132,7 @@ Skill.getAll = function (callback) {
         callback(null, skills);
     });
 };
+
 
 // creates the skill and persists (saves) it to the db, incl. indexing it:
 Skill.create = function (data, callback) {

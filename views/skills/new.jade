@@ -1,0 +1,20 @@
+extends ./skills.jade
+
+mixin skill_form_field(type, name, Name)
+	div
+		label(for='#{name}') #{Name}
+		input(type="#{type}", name="#{name}", id="#{name}")
+
+
+block skill_page
+	h1 New Skill
+	form(action="/skills/new", method="POST", class="skill new")
+		+skill_form_field("text", "title", "Title")
+		+skill_form_field("text", "color", "Color")
+		+skill_form_field("text", "overall", "Overall")
+		+skill_form_field("text", "experience", "Experience")
+		+skill_form_field("text", "outlook", "Outlook")
+		+skill_form_field("text", "love", "Love")
+		+skill_form_field("text", "since", "Since")
+		div
+			input(type="submit", value="Submit")
