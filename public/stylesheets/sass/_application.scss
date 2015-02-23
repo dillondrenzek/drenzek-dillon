@@ -182,12 +182,14 @@ nav {
 			margin-right: 50px;
 
 			a {
-				@include FiraSans-3(1.2rem, 800, $white-9);
+				@include FiraSans-5(1rem, 800, $white-9, 0px, center);
 				padding: 5px;
 				text-decoration: none;
+				text-transform: uppercase;
+
 
 				&:hover {
-					color: $ruby-l;
+					color: lighten($ruby-l, 10%);
 				}
 			}
 		}
