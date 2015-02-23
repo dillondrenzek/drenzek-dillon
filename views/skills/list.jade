@@ -3,9 +3,7 @@ include ../std/list.jade
 
 //- PAGE
 block skill_page
-	h1 Skills
-	//- table(style="background: #333;")
-		each skill in skills
-			+skill_row(skill)
+	h1 List Skills
+	h2= skills.length + " skills found."
 	+list("Skill", skills, false, false)
 

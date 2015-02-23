@@ -1,16 +1,8 @@
 extends ./projects.jade
+include ../std/list.jade
 
 //- PAGE
 block projects_page
 	h1 List Projects
 	h2= projects.length + " projects found."
-	table(style="background: #333;")
-		thead
-			tr
-				th id
-				th title
-		tbody
-			each project in projects
-				tr
-					td= project.id
-					td= project.title
+	+list("Project", projects, false, false)

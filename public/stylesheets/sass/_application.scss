@@ -77,8 +77,8 @@ li.std {
 	.std-item{
 		// DEBUG
 
-
-		// -----
+		$color-bar-width: 20px;
+		// ----
 
 		width: 100%;
 		height: 100%;
@@ -113,7 +113,7 @@ li.std {
 		}
 
 		.color.box {
-			width: 20px;
+			width: $color-bar-width;
 			height: 100%;
 		}
 
@@ -179,6 +179,7 @@ nav {
 		list-style-type: none;
 		li {
 			display: inline-block;
+			margin-right: 50px;
 
 			a {
 				@include FiraSans-3(1.2rem, 800, $white-9);
@@ -186,7 +187,7 @@ nav {
 				text-decoration: none;
 
 				&:hover {
-					color: $white-8;
+					color: $ruby-l;
 				}
 			}
 		}
