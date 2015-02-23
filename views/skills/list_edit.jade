@@ -3,8 +3,8 @@ extends ./skills.jade
 
 mixin skill_table_action(name, action, method)
 	td
-		form(action="#{action}", method="#{method}")
-			input(type="submit", value="#{name}")
+		//- form(action="#{action}", method="#{method}")
+		input(type="submit", value="#{name}")
 
 mixin skill_table_cell(name, value)
 	td
@@ -16,7 +16,7 @@ block skill_page
 	p Edit Skills
 	a(href="/skills/new") New Skill
 	a(href="/skills/edit") Edit Skills
-	form(action="/skills/edit", method="POST", class="skill edit")
+	
 	table
 		thead
 			tr
@@ -33,14 +33,18 @@ block skill_page
 		tbody
 			each s in skills
 				tr
-					+skill_table_cell("name", s.title)
-					+skill_table_cell("since", s.since)
-					+skill_table_cell("experience", s.experience)
-					+skill_table_cell("outlook", s.outlook)
-					+skill_table_cell("love", s.love)
-					+skill_table_cell("darkColor", s.darkColor)
-					+skill_table_cell("color", s.color)
-					+skill_table_cell("overall", s.overall)
-					+skill_table_action("Show", "/skills/"+s.id, "GET")
-					+skill_table_action("Update", "/skills/edit/"+s.id, "POST")
-					+skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")
+					form(action="/skills/edit/"+s.id, method="POST", class="skill edit")
+						//- <input type="hidden" name="Language" value="English">
+						td(style="display: none")
+							input(type="hidden", name="id", value=s.id)
+						+skill_table_cell("title", s.title)
+						+skill_table_cell("since", s.since)
+						+skill_table_cell("experience", s.experience)
+						+skill_table_cell("outlook", s.outlook)
+						+skill_table_cell("love", s.love)
+						+skill_table_cell("darkColor", s.darkColor)
+						+skill_table_cell("color", s.color)
+						+skill_table_cell("overall", s.overall)
+						+skill_table_action("Show", "/skills/"+s.id, "GET")
+						+skill_table_action("Update", "/skills/edit/"+s.id, "POST")
+						+skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")

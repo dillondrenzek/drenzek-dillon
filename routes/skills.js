@@ -42,15 +42,9 @@ skills.edit = function(req, res, next) {
 
 // POST '/skills/new'
 skills.create = function(req, res, next) {
-    Skill.create(
-        { title: req.body['title']
-        , color: req.body['color']
-        , overall: req.body['overall']
-        , experience: req.body['experience']
-        , outlook: req.body['outlook']
-        , love: req.body['love']
-        , since: req.body['since'] 
-        }, function (err, skill) {
+    delete req.body['__proto__'];
+
+    Skill.create(req.body, function (err, skill) {
             if (err) return next(err);
             res.redirect('/skills');
     });
@@ -61,6 +55,8 @@ skills.list_edit = function(req, res, next) {
     Skill.getAll(function (err, skills) {
         if (err) return next(err);
 
+
+
         res.render('skills/list_edit', {
             skills: skills
         });
@@ -69,7 +65,16 @@ skills.list_edit = function(req, res, next) {
 
 // POST '/skills/edit/:id'
 skills.update = function(req, res, next) {
-    res.redirect('/skills/edit');
+
+    delete req.body['__proto__'];
+
+    Skill.get( req.params.id, function (err, skill) {
+        skill.update(req.body, function (err, result) {
+            if (err) return next(err);
+
+            res.redirect('/skills/edit');
+        });
+    });
 };
 
 // POST '/skills/destroy/:id'

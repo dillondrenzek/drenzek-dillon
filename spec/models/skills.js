@@ -13,23 +13,51 @@ var Skill = require('../../models/skill');
 describe( "Skill models", function(){
 
     describe( "[Create]:" , function(){
-        xit("GET '/skills/new'", function(){
-            pending("Write test.");
+        it("GET '/skills/new'", function(){
+            // No Tests Yet, Okay to Pass
         });
 
-        xit("POST '/skills/new'", function(){
-            pending("Write test.");
+        it("POST '/skills/new'", function(){
+            var title = "Test Skill A";
+            Skill.create({ title: title
+                         , color: "#1ce"
+                         , overall: "0"
+                         , experience: "high"
+                         , outlook: "great"
+                         , love: 4
+                         , since: "July 2008"}
+                        , function (err, skill) {
+                            expect(skill.id).toEqual(jasmine.any(Number));
+                            expect(skill.title).toEqual(title);
+                        });    
         });
     });
 
     describe( "[Read]:", function(){
 
-        xit("GET '/skills'", function(){
-            pending("Write test.");
+        it("GET '/skills'", function(){
+            Skill.getAll(function (err, skills) {
+                expect(skills).toEqual(jasmine.any(Array));
+                expect(skills.length).toBeGreaterThan(0);
+            });
         });
 
-        xit("GET '/skills/:id'", function(){
-            pending("Write test.");
+        it("GET '/skills/:id'", function(){
+            Skill.create({ title: "title"
+                 , color: "#1ce"
+                 , overall: "0"
+                 , experience: "high"
+                 , outlook: "great"
+                 , love: 4
+                 , since: "July 2008"}
+                , function (err, skill) {
+                    expect(skill.id).toEqual(jasmine.any(Number));
+                    expect(skill.title).toEqual("title");
+
+                    Skill.get( skill.id, function (err, getSkill) {
+                        expect(getSkill.title).toEqual("title");
+                    });
+                });
         });
 
     });
@@ -38,24 +66,83 @@ describe( "Skill models", function(){
 
     describe( "[Update]:" , function(){
 
-        xit("GET '/skills/edit/:id'", function(){
-            pending("Write test.");
+        it("GET '/skills/edit/:id'", function(){
+            Skill.create({ title: "title"
+                 , color: "#1ce"
+                 , overall: "0"
+                 , experience: "high"
+                 , outlook: "great"
+                 , love: 4
+                 , since: "July 2008"}
+                , function (err, skill) {
+                    expect(skill.id).toEqual(jasmine.any(Number));
+                    expect(skill.title).toEqual("title");
+
+                    skill.title = "new title";
+                    expect(skill.title).toEqual("new title");
+
+                    skill.save( function (err){
+
+                        Skill.get( skill.id, function (err, getSkill) {
+                            expect(getSkill.title).toEqual("new title");
+                        });
+                    });
+                }); 
         });
         
-        xit("GET '/skills/edit'", function(){
-            pending("Write test.");
+        it("GET '/skills/edit'", function(){
+            Skill.getAll(function (err, skills) {
+                expect(skills).toEqual(jasmine.any(Array));
+                expect(skills.length).toBeGreaterThan(0);
+            });
         });
 
-        xit("POST '/skills/edit/:id", function(){
-            pending("Write test.");
+        it("POST '/skills/edit/:id", function(){
+            Skill.create({ title: "title"
+                 , color: "#1ce"
+                 , overall: "0"
+                 , experience: "high"
+                 , outlook: "great"
+                 , love: 4
+                 , since: "July 2008"}
+                , function (err, skill) {
+                    expect(skill.id).toEqual(jasmine.any(Number));
+                    expect(skill.title).toEqual("title");
+
+                    skill.title = "new title";
+                    expect(skill.title).toEqual("new title");
+
+                    skill.save( function (err){
+
+                        Skill.get( skill.id, function (err, getSkill) {
+                            expect(getSkill.title).toEqual("new title");
+                        });
+                    });
+                });
         });
         
     });
 
     describe( "[Destroy]:" , function(){
 
-        xit("POST '/skills/destroy/:id", function(){
-            pending("Write test.");
+        it("POST '/skills/destroy/:id", function(){
+
+
+            Skill.create({ title: "title"
+                         , color: "#1ce"
+                         , overall: "0"
+                         , experience: "high"
+                         , outlook: "great"
+                         , love: 4
+                         , since: "July 2008"}
+                        , function (err, skill) {
+                            expect(skill.id).toEqual(jasmine.any(Number));
+                            expect(skill.title).toEqual(title);
+                        
+                            skill.del(function (err) {
+                                expect(skill).toBeUndefined();
+                            });
+                        }); 
         });
     });
 });
@@ -106,15 +193,7 @@ describe( "Skill models", function(){
 //     });
 
 //     xit("List skills again", function (next) {
-//         Skill.getAll(function (err, skills) {
-//             if (err) return next(err);
 
-//             expect(skills).toEqual(jasmine.any(Array));
-//             expect(skills.length).toEqual(this.INITIAL_SKILLS.length + 1);
-//             expect(skills).toEqual(jasmine.arrayContaining([this.SKILL_A]));
-
-//             return next();
-//         });
 //     });
 
 //     xit("Update Skill A", function (next) {

@@ -27,6 +27,14 @@ Object.defineProperty(Skill.prototype, 'title', {
         this._node.data['title'] = title;
     }
 	});
+Object.defineProperty(Skill.prototype, 'darkColor', {
+    get: function () {
+        return this._node.data['darkColor'];
+    },
+    set: function (color) {
+        this._node.data['darkColor'] = color;
+    }
+    });
 Object.defineProperty(Skill.prototype, 'color', {
 	get: function () {
 		return this._node.data['color'];
@@ -103,6 +111,28 @@ Skill.prototype.del = function (callback) {
         callback(err);
     });
 };
+
+Skill.prototype.update = function (data, callback) {
+
+    console.log("data",data);
+
+    var query = [
+        'MATCH (skill: Skill)',
+        'WHERE ID(skill) = {id}',
+        'SET skill = {map}',
+        'RETURN skill'
+    ].join('\n');
+
+    var params = {
+        id: this.id,
+        map: data
+    }
+
+    db.query(query, params, function (err, result) {
+        if (err) return callback(err);
+        callback(null, new Skill(result['skill']));
+    });
+}
 
 
 // static methods:
