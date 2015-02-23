@@ -3,8 +3,8 @@ extends ./skills.jade
 
 mixin skill_table_action(name, action, method)
 	td
-		//- form(action="#{action}", method="#{method}")
-		input(type="submit", value="#{name}")
+		form(action="#{action}", method="#{method}")
+			input(type="submit", value="#{name}")
 
 mixin skill_table_cell(name, value)
 	td
@@ -20,6 +20,7 @@ block skill_page
 	table
 		thead
 			tr
+				th id
 				th title
 				th since
 				th experience
@@ -34,9 +35,7 @@ block skill_page
 			each s in skills
 				tr
 					form(action="/skills/edit/"+s.id, method="POST", class="skill edit")
-						//- <input type="hidden" name="Language" value="English">
-						td(style="display: none")
-							input(type="hidden", name="id", value=s.id)
+						+skill_table_cell("id", s.id)
 						+skill_table_cell("title", s.title)
 						+skill_table_cell("since", s.since)
 						+skill_table_cell("experience", s.experience)
@@ -45,6 +44,7 @@ block skill_page
 						+skill_table_cell("darkColor", s.darkColor)
 						+skill_table_cell("color", s.color)
 						+skill_table_cell("overall", s.overall)
-						+skill_table_action("Show", "/skills/"+s.id, "GET")
-						+skill_table_action("Update", "/skills/edit/"+s.id, "POST")
-						+skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")
+						td
+							input(type="submit", value="Update")
+					+skill_table_action("Show", "/skills/"+s.id, "GET")
+					+skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")

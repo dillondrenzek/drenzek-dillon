@@ -11,8 +11,6 @@ skills.list = function(req, res, next) {
     });
 };
 
-
-
 // GET '/skills/new'
 skills.new = function(req, res, next) {
     res.render('skills/new');
@@ -54,8 +52,6 @@ skills.create = function(req, res, next) {
 skills.list_edit = function(req, res, next) {
     Skill.getAll(function (err, skills) {
         if (err) return next(err);
-
-
 
         res.render('skills/list_edit', {
             skills: skills

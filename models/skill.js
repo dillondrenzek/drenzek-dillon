@@ -93,10 +93,6 @@ Skill.prototype.save = function (callback) {
 };
 
 Skill.prototype.del = function (callback) {
-    // use a Cypher query to delete both this skill and his/her following
-    // relationships in one transaction and one network request:
-    // (note that this'll still fail if there are any relationships attached
-    // of any other types, which is good because we don't expect any.)
     var query = [
         'MATCH (skill:Skill)',
         'WHERE ID(skill) = {skillId}',
@@ -113,8 +109,6 @@ Skill.prototype.del = function (callback) {
 };
 
 Skill.prototype.update = function (data, callback) {
-
-    console.log("data",data);
 
     var query = [
         'MATCH (skill: Skill)',
@@ -136,10 +130,6 @@ Skill.prototype.update = function (data, callback) {
 
 
 // static methods:
-// Skill.seedFromJSON = function (json, callback) {
-//     var result = db.fromJSON(json);
-//     console.log("result", result);
-// };
 
 Skill.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
@@ -166,14 +156,9 @@ Skill.getAll = function (callback) {
 
 // creates the skill and persists (saves) it to the db, incl. indexing it:
 Skill.create = function (data, callback) {
-    // construct a new instance of our class with the data, so it can
-    // validate and extend it, etc., if we choose to do that in the future:
     var node = db.createNode(data);
     var skill = new Skill(node);
 
-    // but we do the actual persisting with a Cypher query, so we can also
-    // apply a label at the same time. (the save() method doesn't support
-    // that, since it uses Neo4j's REST API, which doesn't support that.)
     var query = [
         'CREATE (skill:Skill {data})',
         'RETURN skill',
