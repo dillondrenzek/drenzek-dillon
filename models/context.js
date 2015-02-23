@@ -1,4 +1,4 @@
-// project.js
+// context.js
 
 var neo4j = require('neo4j');
 
@@ -8,7 +8,7 @@ var db = new neo4j.GraphDatabase(
 	'http://localhost:7474'
 );
 
-var Project = module.exports = function Project(_node) {
+var Context = module.exports = function Context(_node) {
 	this._node = _node;
 };
 
@@ -28,21 +28,21 @@ Object.defineProperty(Skill.prototype, 'title', {
 	});
 
 // public instance methods
-Project.prototype.save = function (callback) {
+Context.prototype.save = function (callback) {
     this._node.save(function (err) {
         callback(err);
     });
 };
 
-Project.prototype.del = function (callback) {
+Context.prototype.del = function (callback) {
     var query = [
-        'MATCH (project:Project)',
-        'WHERE ID(project) = {projectId}',
-        'DELETE project'
+        'MATCH (context:Context)',
+        'WHERE ID(context) = {contextId}',
+        'DELETE context'
     ].join('\n');
 
     var params = {
-        projectId: this.id
+        contextId: this.id
     };
 
     db.query(query, params, function (err) {
@@ -50,13 +50,13 @@ Project.prototype.del = function (callback) {
     });
 };
 
-Project.prototype.update = function (data, callback) {
+Context.prototype.update = function (data, callback) {
 
     var query = [
-        'MATCH (project: Project)',
-        'WHERE ID(project) = {id}',
-        'SET project = {map}',
-        'RETURN project'
+        'MATCH (context: Context)',
+        'WHERE ID(context) = {id}',
+        'SET context = {map}',
+        'RETURN context'
     ].join('\n');
 
     var params = {
@@ -66,43 +66,43 @@ Project.prototype.update = function (data, callback) {
 
     db.query(query, params, function (err, result) {
         if (err) return callback(err);
-        callback(null, new Project(result['project']));
+        callback(null, new Context(result['context']));
     });
 }
 
 // static methods:
 
-Project.get = function (id, callback) {
+Context.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
         if (err) return callback(err);
-        callback(null, new Project(node));
+        callback(null, new Context(node));
     });
 };
 
-Project.getAll = function (callback) {
+Context.getAll = function (callback) {
     var query = [
-        'MATCH (project:Project)',
-        'RETURN project',
+        'MATCH (context:Context)',
+        'RETURN context',
     ].join('\n');
 
     db.query(query, null, function (err, results) {
         if (err) return callback(err);
-        var projects = results.map(function (result) {
-            return new Project(result['project']);
+        var contexts = results.map(function (result) {
+            return new Context(result['context']);
         });
-        callback(null, projects);
+        callback(null, contexts);
     });
 };
 
 
-// creates the project and persists (saves) it to the db, incl. indexing it:
-Project.create = function (data, callback) {
+// creates the context and persists (saves) it to the db, incl. indexing it:
+Context.create = function (data, callback) {
     var node = db.createNode(data);
-    var project = new Project(node);
+    var context = new Context(node);
 
     var query = [
-        'CREATE (project:Project {data})',
-        'RETURN project',
+        'CREATE (context:Context {data})',
+        'RETURN context',
     ].join('\n');
 
     var params = {
@@ -111,7 +111,7 @@ Project.create = function (data, callback) {
 
     db.query(query, params, function (err, results) {
         if (err) return callback(err);
-        var project = new Project(results[0]['project']);
-        callback(null, project);
+        var context = new Context(results[0]['context']);
+        callback(null, context);
     });
 };

@@ -1,4 +1,4 @@
-// project.js
+// time.js
 
 var neo4j = require('neo4j');
 
@@ -8,7 +8,7 @@ var db = new neo4j.GraphDatabase(
 	'http://localhost:7474'
 );
 
-var Project = module.exports = function Project(_node) {
+var Time = module.exports = function Time(_node) {
 	this._node = _node;
 };
 
@@ -28,21 +28,21 @@ Object.defineProperty(Skill.prototype, 'title', {
 	});
 
 // public instance methods
-Project.prototype.save = function (callback) {
+Time.prototype.save = function (callback) {
     this._node.save(function (err) {
         callback(err);
     });
 };
 
-Project.prototype.del = function (callback) {
+Time.prototype.del = function (callback) {
     var query = [
-        'MATCH (project:Project)',
-        'WHERE ID(project) = {projectId}',
-        'DELETE project'
+        'MATCH (time:Time)',
+        'WHERE ID(time) = {timeId}',
+        'DELETE time'
     ].join('\n');
 
     var params = {
-        projectId: this.id
+        timeId: this.id
     };
 
     db.query(query, params, function (err) {
@@ -50,13 +50,13 @@ Project.prototype.del = function (callback) {
     });
 };
 
-Project.prototype.update = function (data, callback) {
+Time.prototype.update = function (data, callback) {
 
     var query = [
-        'MATCH (project: Project)',
-        'WHERE ID(project) = {id}',
-        'SET project = {map}',
-        'RETURN project'
+        'MATCH (time: Time)',
+        'WHERE ID(time) = {id}',
+        'SET time = {map}',
+        'RETURN time'
     ].join('\n');
 
     var params = {
@@ -66,43 +66,43 @@ Project.prototype.update = function (data, callback) {
 
     db.query(query, params, function (err, result) {
         if (err) return callback(err);
-        callback(null, new Project(result['project']));
+        callback(null, new Time(result['time']));
     });
 }
 
 // static methods:
 
-Project.get = function (id, callback) {
+Time.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
         if (err) return callback(err);
-        callback(null, new Project(node));
+        callback(null, new Time(node));
     });
 };
 
-Project.getAll = function (callback) {
+Time.getAll = function (callback) {
     var query = [
-        'MATCH (project:Project)',
-        'RETURN project',
+        'MATCH (time:Time)',
+        'RETURN time',
     ].join('\n');
 
     db.query(query, null, function (err, results) {
         if (err) return callback(err);
-        var projects = results.map(function (result) {
-            return new Project(result['project']);
+        var times = results.map(function (result) {
+            return new Time(result['time']);
         });
-        callback(null, projects);
+        callback(null, times);
     });
 };
 
 
-// creates the project and persists (saves) it to the db, incl. indexing it:
-Project.create = function (data, callback) {
+// creates the time and persists (saves) it to the db, incl. indexing it:
+Time.create = function (data, callback) {
     var node = db.createNode(data);
-    var project = new Project(node);
+    var time = new Time(node);
 
     var query = [
-        'CREATE (project:Project {data})',
-        'RETURN project',
+        'CREATE (time:Time {data})',
+        'RETURN time',
     ].join('\n');
 
     var params = {
@@ -111,7 +111,7 @@ Project.create = function (data, callback) {
 
     db.query(query, params, function (err, results) {
         if (err) return callback(err);
-        var project = new Project(results[0]['project']);
-        callback(null, project);
+        var time = new Time(results[0]['time']);
+        callback(null, time);
     });
 };

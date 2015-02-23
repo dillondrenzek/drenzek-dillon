@@ -5,4 +5,10 @@ extends ./skills.jade
 //- PAGE
 block skill_page
 	h1 Skills
-	+skill_list(skills)
+	table(style="background: #333;")
+		each skill in skills
+			+skill_row(skill)
+
+
+	
+	//- +skill_list(skills)

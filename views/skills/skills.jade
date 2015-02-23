@@ -5,6 +5,16 @@ extends ../layout.jade
 block stylesheet
 	include ../../public/stylesheets/skills.css
 
+mixin skill_row(s)
+	- var col = s.color;
+	- var bg = "background: "+s.color+" !important;";
+	- var text = "color: "+s.color+" !important;";
+	tr(style="#{bg}")
+		td
+			.title.box(style="#{bg}")
+				.value= s.title
+
+
 //- Skill Card
 mixin skill_card(s)
 	- var col = s.color;
@@ -33,13 +43,13 @@ mixin skill_list(skills)
 	ul
 		each skill in skills
 			li 
-				+skill_card(skill)
+				//- +skill_card(skill)
 
 
 //- PAGE
 block page
 	block skill_page
-
+		
 
 
 
