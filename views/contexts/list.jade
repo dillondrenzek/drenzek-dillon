@@ -5,4 +5,6 @@ include ../std/list.jade
 block contexts_page
 	h1 List Contexts
 	h2= contexts.length + " contexts found."
-	+list("Context", contexts, false, false)
+	+list(contexts)
+		each c in contexts
+			+item(c, false)

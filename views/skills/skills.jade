@@ -1,4 +1,4 @@
-//- skills.jade
+//- Skill Views Header
 
 extends ../layout.jade
 include ../std/form.jade
@@ -7,8 +7,10 @@ include ../std/list.jade
 block stylesheet
 	include ../../public/stylesheets/skills.css
 
+block page
+	block skill_page
 
-mixin skill_row(s)
+//- mixin skill_row(s)
 	- var col = s.color;
 	- var bg = "background: "+s.color+" !important;";
 	- var text = "color: "+s.color+" !important;";
@@ -19,7 +21,7 @@ mixin skill_row(s)
 
 
 //- Skill Card
-mixin skill_card(s)
+//- mixin skill_card(s)
 	- var col = s.color;
 	- var bg = "background: "+s.color+" !important;";
 	- var text = "color: "+s.color+" !important;";
@@ -42,25 +44,13 @@ mixin skill_card(s)
 					.value= s.title
 
 //- List
-mixin skill_list(skills)
+//- mixin skill_list(skills)
 	ul
 		each skill in skills
 			li 
 				//- +skill_card(skill)
 
-
-//- PAGE
-block page
-	block skill_page
-		
-
-
-
-
 //- FULL SKILL CARD
-
-
-
 //- mixin skill_card(s)
 //- 	- var col = s.color;
 //- 	- var bg = "background: "+s.color+" !important;";

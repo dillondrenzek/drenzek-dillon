@@ -5,4 +5,6 @@ include ../std/list.jade
 block projects_page
 	h1 List Projects
 	h2= projects.length + " projects found."
-	+list("Project", projects, false, false)
+	+list(projects)
+		each p in projects
+			+item(p, false)

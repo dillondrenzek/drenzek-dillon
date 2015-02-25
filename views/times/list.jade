@@ -5,4 +5,6 @@ include ../std/list.jade
 block times_page
 	h1 List Times
 	h2= times.length + " times found."
-	+list("Time", times, false, false)
+	+list(times)
+		each t in times
+			+item(t, false)
