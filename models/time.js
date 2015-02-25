@@ -25,7 +25,27 @@ Object.defineProperty(Time.prototype, 'title', {
     set: function (title) {
         this._node.data['title'] = title;
     }
+    });
+
+Object.defineProperty(Time.prototype, 'start', {
+    get: function () {
+        return this._node.data['start'];
+    },
+    set: function (start) {
+        this._node.data['start'] = start;
+    }
+    });
+
+Object.defineProperty(Time.prototype, 'end', {
+    get: function () {
+        return this._node.data['end'];
+    },
+    set: function (end) {
+        this._node.data['end'] = end;
+    }
 	});
+
+
 
 // public instance methods
 Time.prototype.save = function (callback) {

@@ -113,17 +113,12 @@
   padding: 0; }
 
 html {
-  background: #252423;
+  background: #171413;
   color: #fafafa;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   text-align: center;
   font-size: 16px;
-  letter-spacing: -1px;
-  background: url("../images/bg.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+  letter-spacing: -1px; }
 
 .none {
   display: none !important; }

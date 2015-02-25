@@ -26,63 +26,82 @@ Object.defineProperty(Skill.prototype, 'title', {
     set: function (title) {
         this._node.data['title'] = title;
     }
-	});
-Object.defineProperty(Skill.prototype, 'darkColor', {
+});
+
+Object.defineProperty(Skill.prototype, 'type', {
     get: function () {
-        return this._node.data['darkColor'];
+        return this._node.data['type'];
     },
-    set: function (color) {
-        this._node.data['darkColor'] = color;
+    set: function (type) {
+        this._node.data['type'] = type;
     }
-    });
-Object.defineProperty(Skill.prototype, 'color', {
-	get: function () {
-		return this._node.data['color'];
-	},
-	set: function (color) {
-		this._node.data['color'] = color;
-	}
-	});
-Object.defineProperty(Skill.prototype, 'overall', {
-	get: function () {
-		return this._node.data['overall'];
-	},
-	set: function (overall) {
-		this._node.data['overall'] = overall;
-	}
-	});
-Object.defineProperty(Skill.prototype, 'experience', {
-	get: function () {
-		return this._node.data['experience'];
-	},
-	set: function (experience) {
-		this._node.data['experience'] = experience;
-	}
-	});
-Object.defineProperty(Skill.prototype, 'outlook', {
-	get: function () {
-		return this._node.data['outlook'];
-	},
-	set: function (outlook) {
-		this._node.data['outlook'] = outlook;
-	}
-	});
-Object.defineProperty(Skill.prototype, 'love', {
-	get: function () {
-		return this._node.data['love'];
-	},
-	set: function (love) {
-		this._node.data['love'] = love;
-	}
-	});
-Object.defineProperty(Skill.prototype, 'since', {
-	get: function () {
-		return this._node.data['since'];
-	},
-	set: function (since) {
-		this._node.data['since'] = since;
-	}
-	});
+});
+
+Object.defineProperty(Skill.prototype, 'description', {
+    get: function () {
+        return this._node.data['description'];
+    },
+    set: function (description) {
+        this._node.data['description'] = description;
+    }
+});
+
+// Object.defineProperty(Skill.prototype, 'darkColor', {
+//     get: function () {
+//         return this._node.data['darkColor'];
+//     },
+//     set: function (color) {
+//         this._node.data['darkColor'] = color;
+//     }
+//     });
+// Object.defineProperty(Skill.prototype, 'color', {
+// 	get: function () {
+// 		return this._node.data['color'];
+// 	},
+// 	set: function (color) {
+// 		this._node.data['color'] = color;
+// 	}
+// 	});
+// Object.defineProperty(Skill.prototype, 'overall', {
+// 	get: function () {
+// 		return this._node.data['overall'];
+// 	},
+// 	set: function (overall) {
+// 		this._node.data['overall'] = overall;
+// 	}
+// 	});
+// Object.defineProperty(Skill.prototype, 'experience', {
+// 	get: function () {
+// 		return this._node.data['experience'];
+// 	},
+// 	set: function (experience) {
+// 		this._node.data['experience'] = experience;
+// 	}
+// 	});
+// Object.defineProperty(Skill.prototype, 'outlook', {
+// 	get: function () {
+// 		return this._node.data['outlook'];
+// 	},
+// 	set: function (outlook) {
+// 		this._node.data['outlook'] = outlook;
+// 	}
+// 	});
+// Object.defineProperty(Skill.prototype, 'love', {
+// 	get: function () {
+// 		return this._node.data['love'];
+// 	},
+// 	set: function (love) {
+// 		this._node.data['love'] = love;
+// 	}
+// 	});
+// Object.defineProperty(Skill.prototype, 'since', {
+// 	get: function () {
+// 		return this._node.data['since'];
+// 	},
+// 	set: function (since) {
+// 		this._node.data['since'] = since;
+// 	}
+// 	});
 
 
 // public instance methods

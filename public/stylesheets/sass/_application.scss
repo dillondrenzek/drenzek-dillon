@@ -32,7 +32,7 @@
 /* UTILITY */
 *,
 *:before,
-*:after{
+*:after {
 	box-sizing:border-box;
 		-moz-box-sizing:border-box;
 		-webkit-box-sizing:border-box;
@@ -41,17 +41,17 @@
 }
 
 html{
-	background: #252423;
+	background: $black-0;
 	color: #fafafa;
 	font-family: 'Fira Sans', Helvetica, sans-serif;
 	text-align: center;
 	font-size: 16px;
 	letter-spacing: -1px;
-	background: url("../images/bg.png") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+	// background: url("../images/bg.png") no-repeat center center fixed;
+ //        -webkit-background-size: cover;
+ //        -moz-background-size: cover;
+ //        -o-background-size: cover;
+ //        background-size: cover;
     // background: red;
 }
 

@@ -25,7 +25,36 @@ Object.defineProperty(Context.prototype, 'title', {
     set: function (title) {
         this._node.data['title'] = title;
     }
-	});
+});
+
+Object.defineProperty(Context.prototype, 'location', {
+    get: function () {
+        return this._node.data['location'];
+    },
+    set: function (location) {
+        this._node.data['location'] = location;
+    }
+});
+
+Object.defineProperty(Context.prototype, 'type', {
+    get: function () {
+        return this._node.data['type'];
+    },
+    set: function (type) {
+        this._node.data['type'] = type;
+    }
+});
+
+Object.defineProperty(Context.prototype, 'description', {
+    get: function () {
+        return this._node.data['description'];
+    },
+    set: function (description) {
+        this._node.data['description'] = description;
+    }
+});
+
+
 
 // public instance methods
 Context.prototype.save = function (callback) {

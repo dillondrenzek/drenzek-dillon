@@ -24,7 +24,18 @@ Object.defineProperty(Project.prototype, 'title', {
     set: function (title) {
         this._node.data['title'] = title;
     }
-	});
+});
+
+Object.defineProperty(Project.prototype, 'content', {
+    get: function () {
+        return this._node.data['content'];
+    },
+    set: function (content) {
+        this._node.data['content'] = content;
+    }
+});
+
+
 
 // public instance methods
 Project.prototype.save = function (callback) {
