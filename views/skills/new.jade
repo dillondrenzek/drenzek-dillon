@@ -6,16 +6,3 @@ extends ./skills.jade
 block skill_page
 	h1 New Skill
 	+new_form( model, keys )(action="/skills/new", method="POST")
-
-
-	//- form(action="/skills/new", method="POST", class="skill new")
-
-	//- 	//- +skill_table_cell("id", s.id)
-	//- 					+skill_table_cell("title", s.title)
-	//- 					+skill_table_cell("type", s.type)
-	//- 					+skill_table_cell("description", s.description)
-	//- 	+skill_form_field("text", "title", "Title")
-	//- 	+skill_form_field("text", "type", "Type")
-	//- 	+skill_form_field("text", "description", "Description")
-	//- 	div
-	//- 		input(type="submit", value="Submit")
