@@ -1,5 +1,5 @@
 // skill.js
-// v0.5
+// version 0.5.0
 var neo4j = require('neo4j');
 
 var db = new neo4j.GraphDatabase(
@@ -106,7 +106,6 @@ Object.defineProperties(Skill.prototype, {
 //
 //  Public Class Methods
 //
-
 Skill.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
         if (err) return callback(err);
