@@ -1,55 +1,38 @@
-mixin list (model, arr, orient, mode)
-	//- 	model 	 	("Skill", "Time", "Project", etc.) model to display 
-	//- 	arr  		array to list
-	//- 	orient  	list is false vertical or true horizontal
-	//-		mode  		list is false listing or true editing(includes form)
+//- std/list.jade
+//- version 0.5
 
-	//- ! add a "edit" hash containing info about how to build form (input type,etc)
+//- Standard List
+	items: Array - items to list
+	attributes: {class, id}
+mixin list( items )
+	ul.std-list(class!=attributes.class, id!=attributes.id)
+		block
 
-	//- case model (ignore for now)
-		when ("skill" || "Skill")
-
-	ul.std-list
-		each i in arr
-			+item(model, i, orient, mode)
-				
-
-
-mixin item (model, i, orient, mode)
-	//- 	model 	 	("Skill", "Time", "Project", etc.) model to display 
-	//- 	i  			item to display
-	//- 	orient  	list is false vertical or true horizontal
-	//-		mode  		list is false listing or true editing(includes form)
-	- var col = i.color || i.darkColor || "#666";
+//- Standard List Item
+	item: Object - item to show
+	showID: Boolean - to show ID number or not
+	attributes: {class, id, onclick}
+mixin item( item, showID )
+	- var col = item.color || item.darkColor || "#666";
 	- var bg = "background: "+col+" !important;";
 	- var text = "color: "+col+" !important;";
-	- var m = model.toUpperCase();
-	- var url = "/"+ model.toLowerCase() + "s/" + i.id;
-
-	li.std
-		.std-item(onclick="location.href='#{url}';")
+	- var idBoxClass = (showID) ? "" : "none";
+	li.std(class!=attributes.class, id!=attributes.id)
+		.std-item(onclick!=attributes.onclick)
 			.color.box(style="#{bg}")
-			.id.box.none(style="#{text}")
+			.id.box(style="#{text}", class="#{idBoxClass}")
 				+label("ID")
-				+value(i.id)
+				+value(item.id)
 			.title.box
-				+label(m)
-				+value(i.title)
+				+label("TITLE")
+				+value(item.title)
 
-mixin label (val)
-	//-		val 		value that gets displayed
-	.label= val
+//- Standard Label
+	text: String - text to show
+mixin label ( text )
+	.label= text
 
-	//- when editmode
-		label(for='#{name}') #{val}
-
-mixin value (val)
-	//-		val 		value that gets displayed
-	.value= val
-
-	//- when editmode
-		input(type="text", name="#{name}", id="#{name}", value="#{value}")
-	//- when newmode
-		input(type="#{type}", name="#{name}", id="#{name}")
-
-		
+//- Standard Value
+	value: String - value to display
+mixin value ( value )
+	.value= value

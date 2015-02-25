@@ -1,9 +1,10 @@
-//- form.jade
-//- version 0.5.0
+//- std/form.jade
+//- version 0.5
 
 //- Standard Form
 	action: String - action form will perform
 	method: String - HTTP method for action
+	attributes: {}
 mixin form( action, method )
 	form(action="#{action}", method="#{method}")
 		block
@@ -19,16 +20,18 @@ mixin field( label, name, type )
 		input(type="#{type}", name="#{name}", id!=attributes.id, value!=attributes.value)
 
 //- Standard Submit Button
-	no arguments
+	attributes: {}
 mixin submit
 	input(type="submit", value="Submit")
 
-
-
+//-
+//- Extensions
+//-
 
 //- New Form
 	model: Object.prototype - a prototype of the Object being created
 	keys: Array - the array of all the fields to render a field for
+	attributes: {action, method}
 mixin new_form( model, keys )
 	+form( attributes.action, attributes.method )
 		each key in keys
@@ -40,6 +43,7 @@ mixin new_form( model, keys )
 	model: Object.prototype - a prototype of the Object being edited
 	keys: Array - the array of all the fields to render a field for
 	obj: Model - the Model object to render in the form
+	attributes: {action, method}
 mixin edit_form( model, keys, obj )
 	+form( attributes.action, attributes.method )
 		each key in keys

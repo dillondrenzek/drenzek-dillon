@@ -1,6 +1,5 @@
 // skill.js
 // v0.5
-
 var neo4j = require('neo4j');
 
 var db = new neo4j.GraphDatabase(
@@ -12,7 +11,6 @@ var db = new neo4j.GraphDatabase(
 //
 //  Constructor
 //
-
 var Skill = module.exports = function Skill(_node) {
 	this._node = _node;
 };
@@ -21,7 +19,6 @@ var Skill = module.exports = function Skill(_node) {
 //
 //  Properties
 //
-
 Object.defineProperties(Skill.prototype, {
 
     'id': {

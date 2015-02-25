@@ -1,9 +1,11 @@
+//- List Skills
+//- version 0.4.0
 extends ./skills.jade
-include ../std/list.jade
 
-//- PAGE
+
 block skill_page
 	h1 List Skills
 	h2= skills.length + " skills found."
-	+list("Skill", skills, false, false)
-
+	+list(skills)
+		each s in skills
+			+item(s, false)
