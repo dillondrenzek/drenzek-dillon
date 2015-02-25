@@ -17,12 +17,25 @@ Object.defineProperty(Project.prototype, 'id', {
     get: function () { return this._node.id; }
 });
 
+Object.defineProperty(Project.prototype, 'keys', {
+    get: function () { return Object.keys(this._node.data));}
+});
+
 Object.defineProperty(Project.prototype, 'title', {
     get: function () {
         return this._node.data['title'];
     },
     set: function (title) {
         this._node.data['title'] = title;
+    }
+});
+
+Object.defineProperty(Project.prototype, 'color', {
+    get: function () {
+        return this._node.data['color'];
+    },
+    set: function (color) {
+        this._node.data['color'] = color;
     }
 });
 
@@ -35,36 +48,11 @@ Object.defineProperty(Project.prototype, 'content', {
     }
 });
 
-Object.defineProperty(Project.prototype, 'color', {
-    get: function () {
-        return this._node.data['color'];
-    },
-    set: function (color) {
-        this._node.data['color'] = color;
-    }
-    });
-
-
 
 // public instance methods
+
 Project.prototype.save = function (callback) {
     this._node.save(function (err) {
-        callback(err);
-    });
-};
-
-Project.prototype.del = function (callback) {
-    var query = [
-        'MATCH (project:Project)',
-        'WHERE ID(project) = {projectId}',
-        'DELETE project'
-    ].join('\n');
-
-    var params = {
-        projectId: this.id
-    };
-
-    db.query(query, params, function (err) {
         callback(err);
     });
 };
@@ -88,6 +76,25 @@ Project.prototype.update = function (data, callback) {
         callback(null, new Project(result['project']));
     });
 }
+
+Project.prototype.del = function (callback) {
+    var query = [
+        'MATCH (project:Project)',
+        'WHERE ID(project) = {projectId}',
+        'DELETE project'
+    ].join('\n');
+
+    var params = {
+        projectId: this.id
+    };
+
+    db.query(query, params, function (err) {
+        callback(err);
+    });
+};
+
+
+
 
 // static methods:
 

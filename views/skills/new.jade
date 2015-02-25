@@ -8,13 +8,15 @@ mixin skill_form_field(type, name, Name)
 
 block skill_page
 	h1 New Skill
+	
 	form(action="/skills/new", method="POST", class="skill new")
+
+		//- +skill_table_cell("id", s.id)
+						+skill_table_cell("title", s.title)
+						+skill_table_cell("type", s.type)
+						+skill_table_cell("description", s.description)
 		+skill_form_field("text", "title", "Title")
-		+skill_form_field("text", "color", "Color")
-		+skill_form_field("text", "overall", "Overall")
-		+skill_form_field("text", "experience", "Experience")
-		+skill_form_field("text", "outlook", "Outlook")
-		+skill_form_field("text", "love", "Love")
-		+skill_form_field("text", "since", "Since")
+		+skill_form_field("text", "type", "Type")
+		+skill_form_field("text", "description", "Description")
 		div
 			input(type="submit", value="Submit")

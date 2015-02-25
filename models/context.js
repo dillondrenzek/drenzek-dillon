@@ -18,6 +18,10 @@ Object.defineProperty(Context.prototype, 'id', {
     get: function () { return this._node.id; }
 });
 
+Object.defineProperty(Context.prototype, 'keys', {
+    get: function () { return Object.keys(this._node.data));}
+});
+
 Object.defineProperty(Context.prototype, 'title', {
     get: function () {
         return this._node.data['title'];
@@ -26,6 +30,8 @@ Object.defineProperty(Context.prototype, 'title', {
         this._node.data['title'] = title;
     }
 });
+
+
 
 Object.defineProperty(Context.prototype, 'location', {
     get: function () {

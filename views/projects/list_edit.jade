@@ -26,6 +26,7 @@ block projects_page
 					form(action="/projects/edit/"+project.id, method="POST", class="skill edit")
 						+table_cell("id", project.id)
 						+table_cell("title", project.title)
+						+table_cell("color", project.color)
 						td
 							input(type="submit", value="Update")
 					+table_action("Show", "/projects/"+project.id, "GET")

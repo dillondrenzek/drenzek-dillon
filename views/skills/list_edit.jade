@@ -22,13 +22,8 @@ block skill_page
 			tr
 				th id
 				th title
-				th since
-				th experience
-				th outlook
-				th love
-				th darkColor
-				th color
-				th overall
+				th type
+				th description
 				th(colspan="3") *Actions*
 				
 		tbody
@@ -37,13 +32,9 @@ block skill_page
 					form(action="/skills/edit/"+s.id, method="POST", class="skill edit")
 						+skill_table_cell("id", s.id)
 						+skill_table_cell("title", s.title)
-						+skill_table_cell("since", s.since)
-						+skill_table_cell("experience", s.experience)
-						+skill_table_cell("outlook", s.outlook)
-						+skill_table_cell("love", s.love)
-						+skill_table_cell("darkColor", s.darkColor)
 						+skill_table_cell("color", s.color)
-						+skill_table_cell("overall", s.overall)
+						+skill_table_cell("type", s.type)
+						+skill_table_cell("description", s.description)
 						td
 							input(type="submit", value="Update")
 					+skill_table_action("Show", "/skills/"+s.id, "GET")

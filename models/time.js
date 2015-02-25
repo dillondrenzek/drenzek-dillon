@@ -18,6 +18,10 @@ Object.defineProperty(Time.prototype, 'id', {
     get: function () { return this._node.id; }
 });
 
+Object.defineProperty(Time.prototype, 'keys', {
+    get: function () { return Object.keys(this._node.data));}
+});
+
 Object.defineProperty(Time.prototype, 'title', {
     get: function () {
         return this._node.data['title'];
