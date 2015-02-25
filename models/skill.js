@@ -55,66 +55,55 @@ Object.defineProperties(Skill.prototype, {
 
     'save': {
         enumerable: false,
-        value: save
+        value: function (callback) {
+            this._node.save(function (err) {
+                callback(err);
+            });
+        }
     },
 
     'update': {
         enumerable: false,
-        value: update
+        value: function (data, callback) {
+
+            var query = [
+                'MATCH (skill: Skill)',
+                'WHERE ID(skill) = {id}',
+                'SET skill = {map}',
+                'RETURN skill'
+            ].join('\n');
+
+            var params = {
+                id: this.id,
+                map: data
+            }
+
+            db.query(query, params, function (err, result) {
+                if (err) return callback(err);
+                callback(null, new Skill(result['skill']));
+            });
+        }
     },
 
     'del': {
         enumerable: false,
-        value: del
+        value: function (callback) {
+            var query = [
+                'MATCH (skill:Skill)',
+                'WHERE ID(skill) = {skillId}',
+                'DELETE skill'
+            ].join('\n');
+
+            var params = {
+                skillId: this.id
+            };
+
+            db.query(query, params, function (err) {
+                callback(err);
+            });
+        }
     }
 });
-
-
-//
-//  Public Instance Methods
-//
-
-var save = function (callback) {
-    this._node.save(function (err) {
-        callback(err);
-    });
-};
-
-var update = function (data, callback) {
-
-    var query = [
-        'MATCH (skill: Skill)',
-        'WHERE ID(skill) = {id}',
-        'SET skill = {map}',
-        'RETURN skill'
-    ].join('\n');
-
-    var params = {
-        id: this.id,
-        map: data
-    }
-
-    db.query(query, params, function (err, result) {
-        if (err) return callback(err);
-        callback(null, new Skill(result['skill']));
-    });
-}
-
-var del = function (callback) {
-    var query = [
-        'MATCH (skill:Skill)',
-        'WHERE ID(skill) = {skillId}',
-        'DELETE skill'
-    ].join('\n');
-
-    var params = {
-        skillId: this.id
-    };
-
-    db.query(query, params, function (err) {
-        callback(err);
-    });
-};
 
 
 //

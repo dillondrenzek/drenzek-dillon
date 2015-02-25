@@ -12,11 +12,11 @@ mixin form( action, method )
 	label: String - string to display on the label
 	name: String - for the "for" and "name" pair
 	type: String - type of input to use
-	attributes: {id}
+	attributes: {id, value}
 mixin field( label, name, type )
 	div
 		label(for='#{name}') #{label}
-		input(type="#{type}", name="#{name}", id!=attributes.id)
+		input(type="#{type}", name="#{name}", id!=attributes.id, value!=attributes.value)
 
 //- Standard Submit Button
 	no arguments
@@ -24,7 +24,9 @@ mixin submit
 	input(type="submit", value="Submit")
 
 
-//- Standard New Form
+
+
+//- New Form
 	model: Object.prototype - a prototype of the Object being created
 	keys: Array - the array of all the fields to render a field for
 mixin new_form( model, keys )
@@ -32,4 +34,14 @@ mixin new_form( model, keys )
 		each key in keys
 			if key !== 'id'
 				+field( key, key, "text")
+		+submit
+
+//- Edit Form
+	model: Object.prototype - a prototype of the Object being edited
+	keys: Array - the array of all the fields to render a field for
+	obj: Model - the Model object to render in the form
+mixin edit_form( model, keys, obj )
+	+form( attributes.action, attributes.method )
+		each key in keys
+			+field(key, key, "text")(value="#{obj[key]}")
 		+submit

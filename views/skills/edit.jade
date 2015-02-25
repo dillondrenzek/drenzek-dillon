@@ -19,10 +19,12 @@ mixin skill_table_action(name, action, method)
 
 block skill_page
 	h1 Edit Skill
-	table
-		thead
-			tr= skill.id
-		tbody
+	+edit_form( model, keys, obj )(action="/skills/edit/#{obj.id}", method="POST")
+
+	//- table
+	//- 	thead
+	//- 		tr= skill.id
+	//- 	tbody
 			//- tr= skill.title
 			//- tr= skill.since
 			//- tr= skill.experience

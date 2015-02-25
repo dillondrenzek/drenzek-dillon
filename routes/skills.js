@@ -37,8 +37,12 @@ skills.edit = function(req, res, next) {
     Skill.get(req.params.id, function (err, skill) {
         if (err) return next(err);
 
+        var keys = Object.keys(Skill.prototype);
+
         res.render('skills/edit', {
-            skill: skill
+            model: Skill.prototype,
+            keys: keys,
+            obj: skill
         });
     });
 }
