@@ -19,7 +19,7 @@ Object.defineProperty(Time.prototype, 'id', {
 });
 
 Object.defineProperty(Time.prototype, 'keys', {
-    get: function () { return Object.keys(this._node.data));}
+    get: function () { return Object.keys(this._node.data);}
 });
 
 Object.defineProperty(Time.prototype, 'title', {

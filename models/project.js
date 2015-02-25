@@ -18,7 +18,7 @@ Object.defineProperty(Project.prototype, 'id', {
 });
 
 Object.defineProperty(Project.prototype, 'keys', {
-    get: function () { return Object.keys(this._node.data));}
+    get: function () { return Object.keys(this._node.data);}
 });
 
 Object.defineProperty(Project.prototype, 'title', {

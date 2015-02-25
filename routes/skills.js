@@ -13,7 +13,12 @@ skills.list = function(req, res, next) {
 
 // GET '/skills/new'
 skills.new = function(req, res, next) {
-    res.render('skills/new');
+    var keys = Object.keys(Skill.prototype);
+
+    res.render('skills/new', {
+        model: Skill.prototype,
+        keys: keys
+    });
 };
 
 // GET '/skills/:id'
@@ -43,8 +48,8 @@ skills.create = function(req, res, next) {
     delete req.body['__proto__'];
 
     Skill.create(req.body, function (err, skill) {
-            if (err) return next(err);
-            res.redirect('/skills');
+        if (err) return next(err);
+        res.redirect('/skills');
     });
 };
 

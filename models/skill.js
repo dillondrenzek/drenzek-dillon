@@ -12,61 +12,63 @@ var Skill = module.exports = function Skill(_node) {
 	this._node = _node;
 };
 
-
 // public instance properties
+Object.defineProperties(Skill.prototype, {
 
-Object.defineProperty(Skill.prototype, 'id', {
-    get: function () { return this._node.id; }
-});
-
-Object.defineProperty(Skill.prototype, 'keys', {
-    get: function () { return Object.keys(this._node.data));}
-});
-
-Object.defineProperty(Skill.prototype, 'title', {
-    get: function () {
-        return this._node.data['title'];
+    'id': {
+        enumerable: true,
+        get: function () { return this._node.id; }
     },
-    set: function (title) {
-        this._node.data['title'] = title;
+
+    'title': {
+        enumerable: true,
+        get: function () { return this._node.data['title']; },
+        set: function (title) { this._node.data['title'] = title; }
+    },
+
+    'color': {
+        enumerable: true,
+        get: function () { return this._node.data['color']; },
+        set: function (color) { this._node.data['color'] = color; }
+    }, 
+
+    'type': {
+        enumerable: true,
+        get: function () { return this._node.data['type']; },
+        set: function (type) { this._node.data['type'] = type; }
+    }, 
+
+    'description': {
+        enumerable: true,
+        get: function () { return this._node.data['description']; },
+        set: function (description) { this._node.data['description'] = description; }
+    },
+
+    'save': {
+        enumerable: false,
+        value: save
+    },
+
+    'update': {
+        enumerable: false,
+        value: update
+    },
+
+    'del': {
+        enumerable: false,
+        value: del
     }
 });
 
-Object.defineProperty(Skill.prototype, 'color', {
-    get: function () {
-        return this._node.data['color'];
-    },
-    set: function (color) {
-        this._node.data['color'] = color;
-    }
-});
-
-Object.defineProperty(Skill.prototype, 'type', {
-    get: function () {
-        return this._node.data['type'];
-    },
-    set: function (type) {
-        this._node.data['type'] = type;
-    }
-});
-
-Object.defineProperty(Skill.prototype, 'description', {
-    get: function () {
-        return this._node.data['description'];
-    },
-    set: function (description) {
-        this._node.data['description'] = description;
-    }
-});
 
 // public instance methods
-Skill.prototype.save = function (callback) {
+var save = function (callback) {
     this._node.save(function (err) {
         callback(err);
     });
 };
 
-Skill.prototype.update = function (data, callback) {
+var update = function (data, callback) {
 
     var query = [
         'MATCH (skill: Skill)',
@@ -86,7 +88,7 @@ Skill.prototype.update = function (data, callback) {
     });
 }
 
-Skill.prototype.del = function (callback) {
+var del = function (callback) {
     var query = [
         'MATCH (skill:Skill)',
         'WHERE ID(skill) = {skillId}',
