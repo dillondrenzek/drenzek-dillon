@@ -35,6 +35,15 @@ Object.defineProperty(Project.prototype, 'content', {
     }
 });
 
+Object.defineProperty(Project.prototype, 'color', {
+    get: function () {
+        return this._node.data['color'];
+    },
+    set: function (color) {
+        this._node.data['color'] = color;
+    }
+    });
+
 
 
 // public instance methods

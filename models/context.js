@@ -54,6 +54,15 @@ Object.defineProperty(Context.prototype, 'description', {
     }
 });
 
+Object.defineProperty(Context.prototype, 'color', {
+    get: function () {
+        return this._node.data['color'];
+    },
+    set: function (color) {
+        this._node.data['color'] = color;
+    }
+});
+
 
 
 // public instance methods

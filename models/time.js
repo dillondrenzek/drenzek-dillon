@@ -45,6 +45,14 @@ Object.defineProperty(Time.prototype, 'end', {
     }
 	});
 
+Object.defineProperty(Time.prototype, 'color', {
+    get: function () {
+        return this._node.data['color'];
+    },
+    set: function (color) {
+        this._node.data['color'] = color;
+    }
+    });
 
 
 // public instance methods

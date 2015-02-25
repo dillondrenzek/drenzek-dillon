@@ -14,8 +14,45 @@ app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // APP ROUTES
+<<<<<<< HEAD
 app.get('/', routes.site.index);
 app.get('/seed', routes.site.seed);
+=======
+app.get('/', routes.index);
+
+// REMOVE
+app.get('/skills/seed', function (req, res, next) {
+
+    var Skill = require('./models/skill'),
+        skillsArray = require('./json/data.json').skills;
+
+    // erase any skills
+    Skill.getAll (function (err, skills) {
+        if (err) return next(err);
+        // skills.each
+        skills.forEach( function(skill, i, arr) {
+            skill.del(function (err) {
+                if (err) return next(err);
+            });
+        });
+    });
+
+
+    // re-seed db
+    skillsArray.forEach( function(el, i, arr) {
+        Skill.create(el, function(err, result) {
+            if (err) return next(err);
+            console.log("Created Skill:", el.title);
+
+            if (i === skillsArray.length - 1) {
+                res.redirect('/skills');
+            }
+        });
+    });
+
+    
+});
+>>>>>>> parent of 9de2b10... /seed seeds database
 
 // SKILL ROUTES
 app.get('/skills', routes.skills.list);

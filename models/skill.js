@@ -54,14 +54,14 @@ Object.defineProperty(Skill.prototype, 'description', {
 //         this._node.data['darkColor'] = color;
 //     }
 //     });
-// Object.defineProperty(Skill.prototype, 'color', {
-// 	get: function () {
-// 		return this._node.data['color'];
-// 	},
-// 	set: function (color) {
-// 		this._node.data['color'] = color;
-// 	}
-// 	});
+Object.defineProperty(Skill.prototype, 'color', {
+	get: function () {
+		return this._node.data['color'];
+	},
+	set: function (color) {
+		this._node.data['color'] = color;
+	}
+	});
 // Object.defineProperty(Skill.prototype, 'overall', {
 // 	get: function () {
 // 		return this._node.data['overall'];
