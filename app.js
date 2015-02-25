@@ -14,11 +14,8 @@ app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // APP ROUTES
-<<<<<<< HEAD
+
 app.get('/', routes.site.index);
-app.get('/seed', routes.site.seed);
-=======
-app.get('/', routes.index);
 
 // REMOVE
 app.get('/skills/seed', function (req, res, next) {
@@ -52,7 +49,6 @@ app.get('/skills/seed', function (req, res, next) {
 
     
 });
->>>>>>> parent of 9de2b10... /seed seeds database
 
 // SKILL ROUTES
 app.get('/skills', routes.skills.list);
