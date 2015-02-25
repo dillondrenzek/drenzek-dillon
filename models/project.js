@@ -18,7 +18,7 @@ var Project = module.exports = function Project(_node) {
 //
 //  Properties
 //
-Object.defineProperties(Skill.prototype, {
+Object.defineProperties(Project.prototype, {
     'id': {
         enumerable: true,
         get: function () { return this._node.id; }
@@ -88,13 +88,6 @@ Object.defineProperties(Skill.prototype, {
     }
 
 });
-
-
-
-Object.defineProperty(Project.prototype, 'keys', {
-    get: function () { return Object.keys(this._node.data);}
-});
-
 
 Object.defineProperty(Project.prototype, 'content', {
     get: function () {

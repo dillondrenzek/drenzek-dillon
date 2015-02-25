@@ -1,10 +1,12 @@
+//- List Projects
+//- version 0.5.0
+//- arguments:
+	objects: Array - list of all the skills to display
 extends ./projects.jade
-include ../std/list.jade
 
-//- PAGE
 block projects_page
 	h1 List Projects
-	h2= projects.length + " projects found."
-	+list(projects)
-		each p in projects
-			+item(p, false)
+	h2= objects.length + " projects found."
+	+list(objects)
+		each project in objects
+			+item(project, false)

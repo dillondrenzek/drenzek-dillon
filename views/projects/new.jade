@@ -1,14 +1,10 @@
+//- New Project
+//- version 0.5.0
+//- arguments:
+	model: Object.prototype - a prototype of the Object being created
+	keys: Array - the array of all the fields to render a field for
 extends ./projects.jade
 
-mixin project_form_field(type, name, Name)
-	div
-		label(for='#{name}') #{Name}
-		input(type="#{type}", name="#{name}", id="#{name}")
-
-//- PAGE
 block projects_page
 	h1 New Project
-	form(action="/projects/new", method="POST", class="project new")
-		+project_form_field("text", "title", "Title")
-		div
-			input(type="submit", value="Submit")
+	+new_form( model, keys )(action="/projects/new", method="POST")

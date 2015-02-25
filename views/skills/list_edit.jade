@@ -1,3 +1,8 @@
+//- List Skills (Edit)
+//- version 0.5.0
+//- arguments:
+	objects: Array - list of all the skills to display
+	keys: Array - list of keys to display
 extends ./skills.jade
 
 
@@ -13,9 +18,7 @@ mixin skill_table_cell(name, value)
 
 
 block skill_page
-	p Edit Skills
-	a(href="/skills/new") New Skill
-	a(href="/skills/edit") Edit Skills
+	h1 Edit Skills
 	
 	table
 		thead

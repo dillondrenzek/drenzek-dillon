@@ -1,3 +1,5 @@
+//- Skills Router
+//- version 0.5.0
 var skills = exports = module.exports;
 var Skill = require('../models/skill');
 
@@ -6,7 +8,7 @@ skills.list = function(req, res, next) {
     Skill.getAll(function (err, skills) {
         if (err) return next(err);
         res.render('skills/list', {
-            skills: skills
+            objects: skills
         });
     });
 };

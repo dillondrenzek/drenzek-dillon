@@ -1,11 +1,12 @@
 //- List Skills
 //- version 0.5.0
+//- arguments:
+	objects: Array - list of all the skills to display
 extends ./skills.jade
-
 
 block skill_page
 	h1 List Skills
-	h2= skills.length + " skills found."
-	+list(skills)
-		each s in skills
-			+item(s, false)
+	h2= objects.length + " skills found."
+	+list(objects)
+		each skill in objects
+			+item(skill, false)

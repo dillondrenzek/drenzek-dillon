@@ -1,3 +1,5 @@
+//- Projects Router
+//- version 0.5.0
 var projects = exports = module.exports;
 var Project = require('../models/project');
 
@@ -6,14 +8,19 @@ projects.list = function(req, res, next) {
     Project.getAll(function (err, projects) {
         if (err) return next(err);
         res.render('projects/list', {
-            projects: projects
+            objects: projects
         });
     });
 };
 
 // GET '/projects/new'
 projects.new = function(req, res, next) {
-    res.render('projects/new');
+    var keys = Object.keys(Project.prototype);
+
+    res.render('projects/new', {
+        model: Project.protoype,
+        keys: keys
+    });
 };
 
 // GET '/projects/:id'

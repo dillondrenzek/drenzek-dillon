@@ -1,4 +1,5 @@
 //- Skill Views Header
+//- version 0.5.0
 
 extends ../layout.jade
 include ../std/form.jade
@@ -10,82 +11,4 @@ block stylesheet
 block page
 	block skill_page
 
-//- mixin skill_row(s)
-	- var col = s.color;
-	- var bg = "background: "+s.color+" !important;";
-	- var text = "color: "+s.color+" !important;";
-	tr(style="#{bg}")
-		td
-			.title.box(style="#{bg}")
-				.value= s.title
-
-
-//- Skill Card
-//- mixin skill_card(s)
-	- var col = s.color;
-	- var bg = "background: "+s.color+" !important;";
-	- var text = "color: "+s.color+" !important;";
-	.card
-		.body
-			.static
-				.faux-stats.box
-					.overall.box
-						.value= s.overall
-						.label(style="#{text}") overall
-					.xp.box
-						.value= s.experience
-						.label experience
-					.outlook.box
-						.value= s.outlook
-						.label outlook
-					.rating.box
-						.value #{s.love} stars
-				.title.box(style="#{bg}")
-					.value= s.title
-
-//- List
-//- mixin skill_list(skills)
-	ul
-		each skill in skills
-			li 
-				//- +skill_card(skill)
-
-//- FULL SKILL CARD
-//- mixin skill_card(s)
-//- 	- var col = s.color;
-//- 	- var bg = "background: "+s.color+" !important;";
-//- 	- var text = "color: "+s.color+" !important;";
-//- 	.card
-//- 		.body
-//- 			.static
-//- 				.overall.box
-//- 					.value= s.overall
-//- 					.label(style="#{text}") overall
-//- 					//- .glass o
-//- 				.faux-stats.box
-//- 					.xp.box
-//- 						.value= s.experience
-//- 						.label experience
-//- 					.outlook.box
-//- 						.value= s.outlook
-//- 						.label outlook
-//- 				.rating.box
-//- 					.value #{s.love} stars
-//- 				.title.box(style="#{bg}")
-//- 					.value= s.title
-//- 			.toggle
-//- 				.since.box(style="#{bg}")
-//- 					.label since
-//- 					.value= s.since
-//- 				.see-all.box
-//- 					.label See all <span class="value">#{s.projects.length}</span> projects
-//- 				.timeline.box 
-//- 					.label(style="color:#444;") Timeline <br>(Coming!... but not really that soon)
-//- 				.projects.box
-//- 					each project, index in s.projects
-//- 						+project_mini(project, index+1, bg, text)
-
-
-
-
-
+//- Specialized Views
