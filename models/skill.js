@@ -1,4 +1,5 @@
 // skill.js
+// v0.5
 
 var neo4j = require('neo4j');
 
@@ -8,11 +9,19 @@ var db = new neo4j.GraphDatabase(
 	'http://localhost:7474'
 );
 
+//
+//  Constructor
+//
+
 var Skill = module.exports = function Skill(_node) {
 	this._node = _node;
 };
 
-// public instance properties
+
+//
+//  Properties
+//
+
 Object.defineProperties(Skill.prototype, {
 
     'id': {
@@ -61,7 +70,10 @@ Object.defineProperties(Skill.prototype, {
 });
 
 
-// public instance methods
+//
+//  Public Instance Methods
+//
+
 var save = function (callback) {
     this._node.save(function (err) {
         callback(err);
@@ -105,7 +117,9 @@ var del = function (callback) {
 };
 
 
-// static methods:
+//
+//  Public Class Methods
+//
 
 Skill.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
@@ -129,8 +143,6 @@ Skill.getAll = function (callback) {
     });
 };
 
-
-// creates the skill and persists (saves) it to the db, incl. indexing it:
 Skill.create = function (data, callback) {
     var node = db.createNode(data);
     var skill = new Skill(node);
