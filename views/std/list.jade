@@ -1,38 +1,3 @@
 //- std/list.jade
 //- version 0.5
 
-//- Standard List
-	items: Array - items to list
-	attributes: {class, id}
-mixin list( items )
-	ul.std(class!=attributes.class, id!=attributes.id)
-		block
-
-//- Standard List Item
-	item: Object - item to show
-	showID: Boolean - to show ID number or not
-	attributes: {class, id, onclick}
-mixin item( item, showID )
-	- var col = item.color || item.darkColor || "#666";
-	- var bg = "background: "+col+" !important;";
-	- var text = "color: "+col+" !important;";
-	- var idBoxClass = (showID) ? "" : "none";
-	li.std(class!=attributes.class, id!=attributes.id)
-		.std-item(onclick!=attributes.onclick)
-			.color.box(style="#{bg}")
-			.id.box(style="#{text}", class="#{idBoxClass}")
-				+label("ID")
-				+value(item.id)
-			.title.box
-				+label("TITLE")
-				+value(item.title)
-
-//- Standard Label
-	text: String - text to show
-mixin label ( text )
-	.label= text
-
-//- Standard Value
-	value: String - value to display
-mixin value ( value )
-	.value= value

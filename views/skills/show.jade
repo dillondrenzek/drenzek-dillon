@@ -1,5 +1,15 @@
 extends ./skills.jade
 
 block skill_page
-	h1 Show Skill
-	h2= skill.title
+	- var col = obj.color || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	h1= obj.title
+	div
+		.label title
+		.value= obj.title
+	div
+		.value(style="#{bg}")= obj.color
+	div
+		.label type
+		.value= obj.type

@@ -27,7 +27,7 @@ projects.show = function(req, res, next) {
         if (err) return next(err);
 
         res.render('projects/show', {
-            project: project,
+            obj: project,
             model: Project.prototype,
             keys: Object.keys(Project.prototype)
 

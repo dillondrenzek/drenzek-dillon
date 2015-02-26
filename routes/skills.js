@@ -27,7 +27,9 @@ skills.show = function(req, res, next) {
         if (err) return next(err);
 
         res.render('skills/show', {
-            skill: skill
+            obj: skill,
+            model: Skill.prototype,
+            keys: Object.keys(Skill.prototype)
         });
     }); 
 };

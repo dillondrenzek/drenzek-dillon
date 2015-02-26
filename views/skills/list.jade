@@ -9,4 +9,4 @@ block skill_page
 	h2= objects.length + " skills found."
 	+list(objects)
 		each skill in objects
-			+item(skill, false)
+			+item(skill, false)(onclick="location.href='/skills/#{skill.id}'")

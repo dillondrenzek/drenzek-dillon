@@ -1,3 +1,161 @@
-include ./form.jade
-include ./list.jade
-include ./table.jade
+//-
+//- Form
+//-
+
+//- Standard Form
+	action: String - action form will perform
+	method: String - HTTP method for action
+	attributes: {}
+mixin form( action, method )
+	form(action="#{action}", method="#{method}")
+		block
+
+//- Standard Form Field
+	label: String - string to display on the label
+	name: String - for the "for" and "name" pair
+	type: String - type of input to use
+	attributes: {id, value}
+mixin field( label, name, type )
+	.field.std
+		label.std(for='#{name}') #{label}
+		input.std(type="#{type}", name="#{name}", id!=attributes.id, value!=attributes.value)
+
+//- Standard Submit Button
+	attributes: {}
+mixin submit
+	input(type="submit", value="Submit")
+
+//- Standard Action Button
+	label: String - What label the button should display
+	action: String - describes the action (HTTP route)
+	method: String - describes the HTTP method to use
+mixin action( label, action, method )
+	+form(action, method)
+		input(type="submit", value="#{label}")
+
+//-
+//- Form Extensions
+//-
+
+//- New Form
+	model: Object.prototype - a prototype of the Object being created
+	keys: Array - the array of all the fields to render a field for
+	attributes: {action, method}
+mixin new_form( model, keys )
+	+form( attributes.action, attributes.method )
+		each key in keys
+			if key !== 'id'
+				+field( key, key, "text")
+		+submit
+
+//- Edit Form
+	model: Object.prototype - a prototype of the Object being edited
+	keys: Array - the array of all the fields to render a field for
+	obj: Model - the Model object to render in the form
+	attributes: {action, method}
+mixin edit_form( model, keys, obj )
+	+form( attributes.action, attributes.method )
+		each key in keys
+			+field(key, key, "text")(value="#{obj[key]}")
+		+submit
+
+//-
+//- List
+//-
+
+//- Standard List
+	items: Array - items to list
+	attributes: {class, id}
+mixin list( items )
+	ul.std(class!=attributes.class, id!=attributes.id)
+		block
+
+//- Standard List Item
+	item: Object - item to show
+	showID: Boolean - to show ID number or not
+	attributes: {class, id, onclick}
+mixin item( item, showID )
+	- var col = item.color || item.darkColor || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	- var idBoxClass = (showID) ? "" : "none";
+	li.std(class!=attributes.class, id!=attributes.id)
+		.std-item(onclick!=attributes.onclick)
+			.color.box(style="#{bg}")
+			.id.box(style="#{text}", class="#{idBoxClass}")
+				+label("ID")
+				+value(item.id)
+			.title.box
+				+label("TITLE")
+				+value(item.title)
+
+//- Standard Label
+	text: String - text to show
+mixin label ( text )
+	.label= text
+
+//- Standard Value
+	value: String - value to display
+mixin value ( value )
+	.value= value
+
+//-
+//-	Table
+//-
+
+//- Standard Table
+	objects: Array - a list of items that will each take a row of the table
+	keys: Array - a list of the headers for each column (obj attributes)
+	colspan: Number - the number of columns to span at the end
+	attributes: {}
+mixin table( objects, keys, colspan )
+	table.std
+		+thead( keys, colspan )
+		block
+
+
+
+//- Standard Table Header
+	columns: Array - a list of the headers for each column
+	cols: Number - the number of columns to span at the end
+mixin thead( columns, cols )
+	thead.std
+		tr.std
+			each c in columns
+				th= c
+			if cols
+				th(colspan="#{cols}") Actions
+
+//-
+//- Table Extensions
+//-
+
+//- Edit Table, Row
+	objects: Array - a list of items that will each take a row of the table
+	keys: Array - a list of the headers for each column (obj attributes)
+	actions: Array - array of Objects to determine what actions to take
+		.label: String - string that goes the face of the button
+		.action: String - the base of the request MUST ADD ID if(needsID)
+		.method: String - the HTTP Method to use
+		.needsID: Boolean - does the action need the id of the object?
+	attributes: {}
+mixin edit_table( objects, keys, actions )
+	+table(objects, keys, actions.length)
+		tbody.std
+			each obj in objects
+				+edit_row( obj, keys, actions)
+
+mixin edit_row( object, keys, actions )
+	tr.std
+		each k in keys
+			td.std
+				.value= object[k]
+
+		each a in actions
+			td.std
+				if a.needsID
+					- var action = a.action + object.id;
+					+action( a.label, action, a.method )
+				else
+					+action( a.label, a.action, a.method )
+
