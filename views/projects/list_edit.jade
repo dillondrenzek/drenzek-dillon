@@ -1,35 +1,11 @@
+//- List Projects (Edit)
+//- version 0.5.0
+//- arguments:
+	objects: Array - list of all the skills to display
+	keys: Array - list of keys to display
+	actions: Array - list of actions to include in the colspan
 extends ./projects.jade
 
-mixin table_action(name, action, method)
-	td
-		form(action="#{action}", method="#{method}")
-			input(type="submit", value="#{name}")
-
-mixin table_cell(name, value)
-	td
-		input(type="text", name="#{name}", id="#{name}", value="#{value}")
-
 block projects_page
-	p Edit Projects
-	a(href="/projects/new") New Project
-	
-	table
-		thead
-			tr
-				th id
-				th title
-				th(colspan="3") *Actions*
-				
-		tbody
-			each project in projects
-				tr
-					form(action="/projects/edit/"+project.id, method="POST", class="skill edit")
-						+table_cell("id", project.id)
-						+table_cell("title", project.title)
-						+table_cell("color", project.color)
-						td
-							input(type="submit", value="Update")
-					+table_action("Show", "/projects/"+project.id, "GET")
-					+table_action("Destroy", "/projects/destroy/"+project.id, "POST")
-
-
+	h1 Edit Projects
+	+edit_table(objects, keys, actions)

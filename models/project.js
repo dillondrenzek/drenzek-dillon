@@ -36,6 +36,12 @@ Object.defineProperties(Project.prototype, {
         set: function (color) { this._node.data['color'] = color; }
     },
 
+    'type': {
+        enumerable: true,
+        get: function () { return this._node.data['type']; },
+        set: function (type) { this._node.data['type'] = type; }
+    },
+
     'save': {
         enumerable: false,
         value: function (callback) {
@@ -59,7 +65,7 @@ Object.defineProperties(Project.prototype, {
             var params = {
                 id: this.id,
                 map: data
-            }
+            };
 
             db.query(query, params, function (err, result) {
                 if (err) return callback(err);
@@ -87,15 +93,6 @@ Object.defineProperties(Project.prototype, {
         }
     }
 
-});
-
-Object.defineProperty(Project.prototype, 'content', {
-    get: function () {
-        return this._node.data['content'];
-    },
-    set: function (content) {
-        this._node.data['content'] = content;
-    }
 });
 
 

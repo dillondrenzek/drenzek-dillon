@@ -15,11 +15,9 @@ skills.list = function(req, res, next) {
 
 // GET '/skills/new'
 skills.new = function(req, res, next) {
-    var keys = Object.keys(Skill.prototype);
-
     res.render('skills/new', {
         model: Skill.prototype,
-        keys: keys
+        keys: Object.keys(Skill.prototype)
     });
 };
 
@@ -39,15 +37,13 @@ skills.edit = function(req, res, next) {
     Skill.get(req.params.id, function (err, skill) {
         if (err) return next(err);
 
-        var keys = Object.keys(Skill.prototype);
-
         res.render('skills/edit', {
             model: Skill.prototype,
-            keys: keys,
+            keys: Object.keys(Skill.prototype),
             obj: skill
         });
     });
-}
+};
 
 // POST '/skills/new'
 skills.create = function(req, res, next) {

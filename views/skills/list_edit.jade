@@ -6,40 +6,6 @@
 	actions: Array - list of actions to include in the colspan
 extends ./skills.jade
 
-
-mixin skill_table_action(name, action, method)
-	td
-		form(action="#{action}", method="#{method}")
-			input(type="submit", value="#{name}")
-
-mixin skill_table_cell(name, value)
-	td
-		input(type="text", name="#{name}", id="#{name}", value="#{value}")
-
-
-
 block skill_page
 	h1 Edit Skills
 	+edit_table(objects, keys, actions)
-	//- table
-		thead
-			tr
-				th id
-				th title
-				th type
-				th description
-				th(colspan="3") *Actions*
-				
-		tbody
-			each s in skills
-				tr
-					form(action="/skills/edit/"+s.id, method="POST", class="skill edit")
-						+skill_table_cell("id", s.id)
-						+skill_table_cell("title", s.title)
-						+skill_table_cell("color", s.color)
-						+skill_table_cell("type", s.type)
-						+skill_table_cell("description", s.description)
-						td
-							input(type="submit", value="Update")
-					+skill_table_action("Show", "/skills/"+s.id, "GET")
-					+skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")

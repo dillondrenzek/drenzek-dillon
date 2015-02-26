@@ -15,11 +15,9 @@ projects.list = function(req, res, next) {
 
 // GET '/projects/new'
 projects.new = function(req, res, next) {
-    var keys = Object.keys(Project.prototype);
-
     res.render('projects/new', {
-        model: Project.protoype,
-        keys: keys
+        model: Project.prototype,
+        keys: Object.keys(Project.prototype)
     });
 };
 
@@ -29,7 +27,10 @@ projects.show = function(req, res, next) {
         if (err) return next(err);
 
         res.render('projects/show', {
-            project: project
+            project: project,
+            model: Project.prototype,
+            keys: Object.keys(Project.prototype)
+
         });
     }); 
 };
@@ -39,11 +40,9 @@ projects.edit = function(req, res, next) {
     Project.get(req.params.id, function (err, project) {
         if (err) return next(err);
 
-        var keys = Object.keys(Project.prototype);
-
         res.render('projects/edit', {
             model: Project.prototype,
-            keys: keys,
+            keys: Object.keys(Project.prototype),
             obj: project
         });
     });
@@ -54,8 +53,8 @@ projects.create = function(req, res, next) {
     delete req.body['__proto__'];
 
     Project.create(req.body, function (err, project) {
-            if (err) return next(err);
-            res.redirect('/projects/edit');
+        if (err) return next(err);
+        res.redirect('/projects');
     });
 };
 
@@ -63,6 +62,8 @@ projects.create = function(req, res, next) {
 projects.list_edit = function(req, res, next) {
     Project.getAll(function (err, projects) {
         if (err) return next(err);
+
+        console.log(Project.prototype);
 
         res.render('projects/list_edit', {
             objects: projects,
@@ -99,3 +100,7 @@ projects.destroy = function(req, res, next) {
         });
     });
 };
+
+
+
+

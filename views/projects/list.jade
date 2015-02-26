@@ -9,4 +9,4 @@ block projects_page
 	h2= objects.length + " projects found."
 	+list(objects)
 		each project in objects
-			+item(project, false)
+			+item(project, false)(onclick="location.href='/projects/#{project.id}'")

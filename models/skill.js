@@ -20,7 +20,6 @@ var Skill = module.exports = function Skill(_node) {
 //  Properties
 //
 Object.defineProperties(Skill.prototype, {
-
     'id': {
         enumerable: true,
         get: function () { return this._node.id; }
@@ -73,7 +72,7 @@ Object.defineProperties(Skill.prototype, {
             var params = {
                 id: this.id,
                 map: data
-            }
+            };
 
             db.query(query, params, function (err, result) {
                 if (err) return callback(err);

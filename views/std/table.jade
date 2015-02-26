@@ -15,21 +15,14 @@ mixin table( objects, keys, colspan )
 
 //- Standard Table Header
 	columns: Array - a list of the headers for each column
-	colspan: Number - the number of columns to span at the end
-mixin thead( columns, colspan )
+	cols: Number - the number of columns to span at the end
+mixin thead( columns, cols )
 	thead.std
 		tr.std
 			each c in columns
 				th= c
-			if colspan
-				th(colspan="#{colspan}") Actions
-
-//- Standard Table Cell
-	value: String - value to display
-	edit: Boolean - bool to determine whether an input should be used
-mixin td( value )
-	td.std= value
-		block
+			if cols
+				th(colspan="#{cols}") Actions
 
 //-
 //- Extensions
@@ -53,12 +46,14 @@ mixin edit_table( objects, keys, actions )
 mixin edit_row( object, keys, actions )
 	tr.std
 		each k in keys
-			+td(object[k])
+			td.std
+				.value= object[k]
+
 		each a in actions
-			+td
+			td.std
 				if a.needsID
 					- var action = a.action + object.id;
-					+action( a.label, action, a.method)
+					+action( a.label, action, a.method )
 				else
 					+action( a.label, a.action, a.method )
 
