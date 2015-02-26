@@ -59,9 +59,6 @@ skills.create = function(req, res, next) {
     });
 };
 
-// +skill_table_action("Show", "/skills/"+s.id, "GET")
-// +skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")
-
 // GET '/skills/edit'
 skills.list_edit = function(req, res, next) {
     Skill.getAll(function (err, skills) {

@@ -39,8 +39,12 @@ projects.edit = function(req, res, next) {
     Project.get(req.params.id, function (err, project) {
         if (err) return next(err);
 
+        var keys = Object.keys(Project.prototype);
+
         res.render('projects/edit', {
-            project: project
+            model: Project.prototype,
+            keys: keys,
+            obj: project
         });
     });
 };
@@ -61,7 +65,13 @@ projects.list_edit = function(req, res, next) {
         if (err) return next(err);
 
         res.render('projects/list_edit', {
-            projects: projects
+            objects: projects,
+            keys: Object.keys(Project.prototype),
+            actions: [
+                {label: "Show", action: "/projects/", method: "GET", needsID: true},
+                {label: "Edit", action: "/projects/edit/", method: "GET", needsID: true},
+                {label: "Destroy", action: "/projects/destroy/", method: "POST", needsID: true}
+            ]
         });
     });
 };
