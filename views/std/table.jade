@@ -18,7 +18,7 @@ mixin table( objects, keys, colspan )
 	colspan: Number - the number of columns to span at the end
 mixin thead( columns, colspan )
 	thead.std
-		tr
+		tr.std
 			each c in columns
 				th= c
 			if colspan
@@ -35,7 +35,7 @@ mixin td( value )
 //- Extensions
 //-
 
-//- Edit Table
+//- Edit Table, Row
 	objects: Array - a list of items that will each take a row of the table
 	keys: Array - a list of the headers for each column (obj attributes)
 	actions: Array - array of Objects to determine what actions to take
@@ -46,21 +46,12 @@ mixin td( value )
 	attributes: {}
 mixin edit_table( objects, keys, actions )
 	+table(objects, keys, actions.length)
-		tbody
+		tbody.std
 			each obj in objects
 				+edit_row( obj, keys, actions)
 
-//- Edit Table Row
-	objects: Array - a list of items that will each take a row of the table
-	keys: Array - a list of the headers for each column (obj attributes)
-	actions: Array - array of Objects to determine what actions to take
-		.label: String - string that goes the face of the button
-		.action: String - the base of the request MUST ADD ID if(needsID)
-		.method: String - the HTTP Method to use
-		.needsID: Boolean - does the action need the id of the object?
-	attributes: {}
 mixin edit_row( object, keys, actions )
-	tr
+	tr.std
 		each k in keys
 			+td(object[k])
 		each a in actions

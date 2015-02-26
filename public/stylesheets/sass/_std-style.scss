@@ -1,0 +1,122 @@
+// Standard Measurements
+	$std-padding: 15px;
+	$std-wrapper-width: 960px;
+
+// LISTS
+ul.std{
+	width: $std-wrapper-width;
+	margin: 0 auto;
+	list-style-type: none;
+}
+
+li.std {
+	width: 100%;
+	height: 120px;
+	margin-bottom: $std-padding / 2;
+
+	.std-item{
+		// DEBUG
+
+		$color-bar-width: 20px;
+		// ----
+
+		width: 100%;
+		height: 100%;
+
+		background: $black-2;
+		padding: 10px;
+		float: left;
+		border-radius: 10px;
+
+		&:hover {
+			cursor: pointer;
+			background: $black-3;
+		}
+
+
+		.box {
+			float: left;
+			display: inline-block;
+			position: relative;
+		}
+
+		.value {
+			display: inline-block;
+			font-size: 2rem;
+		}
+
+		.label {
+			// width: 100%;
+			@include FiraSans-5(1rem, 800, $gray-6, 2px, center);
+			position: absolute;
+			bottom: 5px;
+		}
+
+		.color.box {
+			width: $color-bar-width;
+			height: 100%;
+		}
+
+		.id.box {
+			background: $white-10;
+			// width: 10%;
+			height: 100%;
+			padding: $std-padding;
+
+			.value {
+				@include FiraSans-5 (3.2rem, 800, $black-1, -1.75px, center);
+				position: relative;
+				top: -5px;
+			}
+		}
+
+		.title.box {
+			width: auto;
+			height: 100%;
+			padding: $std-padding;
+
+					
+			.value {
+				position: relative;
+				top: -5px;
+				@include FiraSans-5 (3.2rem, 800, $white-10, -1.5px, left);
+			}
+		}
+	}
+}
+// FORMS
+.field.std {
+	width: $std-wrapper-width / 2;
+	margin: 0 auto;
+	margin-bottom: $std-padding / 2;
+}
+
+label.std {
+	width: 100px;
+	padding: $std-padding;
+	float: left;
+	text-align: right;
+	color: $gray-4;
+}
+
+input.std {
+	padding: $std-padding;
+	@include FiraSans-5 (2rem, 800, $black-1, -1.75px, center);
+	width: $std-wrapper-width / 2 - 100px;
+}
+
+// TABLES
+table.std {
+	width: $std-wrapper-width;
+	margin: 0 auto;
+}
+
+thead.std {
+	background: $black-1;
+	padding: $std-padding;
+}
+
+td.std {
+	background: $black-3;
+	padding: $std-padding;
+}

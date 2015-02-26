@@ -5,7 +5,7 @@
 	items: Array - items to list
 	attributes: {class, id}
 mixin list( items )
-	ul.std-list(class!=attributes.class, id!=attributes.id)
+	ul.std(class!=attributes.class, id!=attributes.id)
 		block
 
 //- Standard List Item

@@ -15,9 +15,9 @@ mixin form( action, method )
 	type: String - type of input to use
 	attributes: {id, value}
 mixin field( label, name, type )
-	div
-		label(for='#{name}') #{label}
-		input(type="#{type}", name="#{name}", id!=attributes.id, value!=attributes.value)
+	.field.std
+		label.std(for='#{name}') #{label}
+		input.std(type="#{type}", name="#{name}", id!=attributes.id, value!=attributes.value)
 
 //- Standard Submit Button
 	attributes: {}
