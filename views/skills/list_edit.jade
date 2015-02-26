@@ -3,6 +3,7 @@
 //- arguments:
 	objects: Array - list of all the skills to display
 	keys: Array - list of keys to display
+	actions: Array - list of actions to include in the colspan
 extends ./skills.jade
 
 
@@ -19,8 +20,8 @@ mixin skill_table_cell(name, value)
 
 block skill_page
 	h1 Edit Skills
-	
-	table
+	+edit_table(objects, keys, actions)
+	//- table
 		thead
 			tr
 				th id

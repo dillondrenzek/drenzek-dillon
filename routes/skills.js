@@ -59,13 +59,22 @@ skills.create = function(req, res, next) {
     });
 };
 
+// +skill_table_action("Show", "/skills/"+s.id, "GET")
+// +skill_table_action("Destroy", "/skills/destroy/"+s.id, "POST")
+
 // GET '/skills/edit'
 skills.list_edit = function(req, res, next) {
     Skill.getAll(function (err, skills) {
         if (err) return next(err);
 
         res.render('skills/list_edit', {
-            skills: skills
+            objects: skills,
+            keys: Object.keys(Skill.prototype),
+            actions: [
+                {label: "Show", action: "/skills/", method: "GET", needsID: true},
+                {label: "Edit", action: "/skills/edit/", method: "GET", needsID: true},
+                {label: "Destroy", action: "/skills/destroy/", method: "POST", needsID: true}
+            ]
         });
     });
 };

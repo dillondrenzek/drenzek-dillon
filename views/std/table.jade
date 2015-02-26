@@ -1,0 +1,73 @@
+//- std/table.jade
+//- version 0.5
+
+//- Standard Table
+	objects: Array - a list of items that will each take a row of the table
+	keys: Array - a list of the headers for each column (obj attributes)
+	colspan: Number - the number of columns to span at the end
+	attributes: {}
+mixin table( objects, keys, colspan )
+	table.std
+		+thead( keys, colspan )
+		block
+
+
+
+//- Standard Table Header
+	columns: Array - a list of the headers for each column
+	colspan: Number - the number of columns to span at the end
+mixin thead( columns, colspan )
+	thead.std
+		tr
+			each c in columns
+				th= c
+			if colspan
+				th(colspan="#{colspan}") Actions
+
+//- Standard Table Cell
+	value: String - value to display
+	edit: Boolean - bool to determine whether an input should be used
+mixin td( value )
+	td.std= value
+		block
+
+//-
+//- Extensions
+//-
+
+//- Edit Table
+	objects: Array - a list of items that will each take a row of the table
+	keys: Array - a list of the headers for each column (obj attributes)
+	actions: Array - array of Objects to determine what actions to take
+		.label: String - string that goes the face of the button
+		.action: String - the base of the request MUST ADD ID if(needsID)
+		.method: String - the HTTP Method to use
+		.needsID: Boolean - does the action need the id of the object?
+	attributes: {}
+mixin edit_table( objects, keys, actions )
+	+table(objects, keys, actions.length)
+		tbody
+			each obj in objects
+				+edit_row( obj, keys, actions)
+
+//- Edit Table Row
+	objects: Array - a list of items that will each take a row of the table
+	keys: Array - a list of the headers for each column (obj attributes)
+	actions: Array - array of Objects to determine what actions to take
+		.label: String - string that goes the face of the button
+		.action: String - the base of the request MUST ADD ID if(needsID)
+		.method: String - the HTTP Method to use
+		.needsID: Boolean - does the action need the id of the object?
+	attributes: {}
+mixin edit_row( object, keys, actions )
+	tr
+		each k in keys
+			+td(object[k])
+		each a in actions
+			+td
+				if a.needsID
+					- var action = a.action + object.id;
+					+action( a.label, action, a.method)
+				else
+					+action( a.label, a.action, a.method )
+

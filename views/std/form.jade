@@ -24,6 +24,14 @@ mixin field( label, name, type )
 mixin submit
 	input(type="submit", value="Submit")
 
+//- Standard Action Button
+	label: String - What label the button should display
+	action: String - describes the action (HTTP route)
+	method: String - describes the HTTP method to use
+mixin action( label, action, method )
+	+form(action, method)
+		input(type="submit", value="#{label}")
+
 //-
 //- Extensions
 //-
