@@ -1,15 +1,58 @@
+//- Show Skill
+//- version 0.5.0
 extends ./skills.jade
 
 block skill_page
 	- var col = obj.color || "#666";
+	- var dk_col = obj.darkColor || "#444" || "#256A7B";
 	- var bg = "background: "+col+" !important;";
 	- var text = "color: "+col+" !important;";
-	h1= obj.title
-	div
-		.label title
-		.value= obj.title
-	div
-		.value(style="#{bg}")= obj.color
-	div
-		.label type
-		.value= obj.type
+
+	.main-page
+
+		section.title
+			header
+				h2= obj.title
+				+action("Edit", "/skills/edit/"+obj.id, "GET")
+				.detail
+					.label= obj.model_label
+					if parentSkill
+						+skill_tag(parentSkill)
+			canvas#timeline(width="960px", height="400px")
+
+		section.subtitle
+			.since.box
+				.value.large= obj.since
+				.label since
+			.outlook.box
+				.value.large= obj.outlook
+				.label outlook	
+			.momentum.box
+				.value.large= obj.momentum
+				.label momentum
+
+		section.projects
+			h3 Projects
+			each p,i in projects
+				.label= p.title
+				if i<10
+					.value= "0"+(i+1)
+				else
+					.value= i+1
+
+		section.experience
+			h3 Experience
+			each xp in experience
+				.label= xp.type
+				.value= xp.value
+
+		//- section.events
+			h3 Events
+			each p in obj.events
+				.label Event
+				.value 23 Feb 15
+
+
+
+	script(src="/scripts/timeline.js")
+		

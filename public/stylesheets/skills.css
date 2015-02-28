@@ -1,8 +1,15 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'Fira Sans';
-  src: url("/_media/FiraSans3111/WEB/FiraSans-Regular.woff") format("woff"), url("../../../_media/FiraSans3111/WEB/FiraSans-Regular.ttf") format("truetype");
-  /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */ }
+  font-weight: 700;
+  src: url("../../fonts/FiraSans-Bold.woff") format("woff"), url("../../fonts/FiraSans-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 200;
+  src: url("../../fonts/FiraSans-Light.woff") format("woff"), url("../../fonts/FiraSans-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 400;
+  src: url("../../fonts/FiraSans-Regular.woff") format("woff"), url("../../fonts/FiraSans-Regular.ttf") format("truetype"); }
 .card {
   width: 100%;
   height: 100%;
@@ -121,10 +128,6 @@ li.std {
     li.std .std-item:hover {
       cursor: pointer;
       background: #575452; }
-    li.std .std-item .box {
-      float: left;
-      display: inline-block;
-      position: relative; }
     li.std .std-item .value {
       display: inline-block;
       font-size: 2rem; }
@@ -213,11 +216,12 @@ td.std {
 
 html {
   background: #171413;
-  color: #fafafa;
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  text-align: center;
   font-size: 16px;
-  letter-spacing: -1px; }
+  font-weight: 500;
+  color: #fafafa;
+  letter-spacing: -1px;
+  text-align: left; }
 
 .none {
   display: none !important; }
@@ -229,14 +233,62 @@ html {
   margin: 0 auto;
   background: #ababab; }
 
+.main-page {
+  width: 960px;
+  margin: 0 auto; }
+
+.box {
+  float: left;
+  display: inline-block;
+  position: relative; }
+
+.value {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #eeeeee;
+  letter-spacing: -1px;
+  text-align: left;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+  .value.large {
+    font-size: 2.5rem;
+    line-height: 2.5rem; }
+
+.label {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #bcbcbc;
+  letter-spacing: 1.5px;
+  text-align: left;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase; }
+
 h1 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 7rem;
-  color: rgba(216, 216, 216, 0.5);
-  font-weight: bold;
+  font-weight: 700;
+  color: #fafafa;
+  letter-spacing: -2px;
+  text-align: left;
   text-shadow: 5px 5px 1px rgba(0, 0, 0, 0.1); }
 
 h2 {
-  font-size: 1.6rem; }
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #fafafa;
+  letter-spacing: -2px;
+  text-align: left;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+
+h3 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 200;
+  color: #666666;
+  letter-spacing: -2px;
+  text-align: left; }
 
 nav {
   background: #353434; }
@@ -257,5 +309,106 @@ nav {
         text-transform: uppercase; }
         nav ul li a:hover {
           color: #cf2832; }
+
+section {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 20px; }
+
+.skill-tag {
+  padding: 3px 10px;
+  display: inline-block;
+  border-radius: 5px; }
+  .skill-tag .value {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #fafafa;
+    letter-spacing: 0px;
+    text-align: center; }
+
+section.title {
+  height: 400px;
+  position: relative;
+  z-index: 0;
+  background: #256A7B;
+  background: -moz-linear-gradient(left, #256A7B 0%, #2D7B8F 62%, #256A7B 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #256A7B), color-stop(62%, #2D7B8F), color-stop(100%, #256A7B));
+  background: -webkit-linear-gradient(left, #256A7B 0%, #2D7B8F 62%, #256A7B 100%);
+  background: -o-linear-gradient(left, #256A7B 0%, #2D7B8F 62%, #256A7B 100%);
+  background: -ms-linear-gradient(left, #256A7B 0%, #2D7B8F 62%, #256A7B 100%);
+  background: linear-gradient(to right, #256A7B 0%, #2D7B8F 62%, #256A7B 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 ); }
+  section.title header {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    z-index: 2; }
+    section.title header * {
+      display: inline-block; }
+    section.title header h2 {
+      margin-right: 30px; }
+    section.title header .detail {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      left: 3px;
+      top: -5px; }
+    section.title header .skill-tag {
+      margin: 0 20px;
+      position: relative;
+      top: -5px; }
+    section.title header .label {
+      font-size: 1.5rem; }
+  section.title canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+
+section.subtitle {
+  height: 85px;
+  padding: 0;
+  background: #575452;
+  background: -moz-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #575452), color-stop(62%, #666666), color-stop(100%, #575452));
+  background: -webkit-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: -o-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: -ms-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: linear-gradient(to right, #575452 0%, #666666 62%, #575452 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 ); }
+  section.subtitle .box {
+    border-left: 1px solid #575452;
+    border-right: 1px solid #575452;
+    height: 100%;
+    padding: 15px 25px; }
+  section.subtitle .momentum.box {
+    float: right;
+    width: 18%; }
+    section.subtitle .momentum.box .value, section.subtitle .momentum.box .label {
+      text-align: center; }
+  section.subtitle .outlook.box {
+    float: right;
+    width: 20%;
+    text-align: center; }
+    section.subtitle .outlook.box .value, section.subtitle .outlook.box .label {
+      text-align: center; }
+
+section.projects {
+  width: 62%;
+  background: #bcbcbc;
+  float: left; }
+
+section.experience {
+  width: 38%;
+  background: #d8d8d8;
+  float: right; }
+
+section.events {
+  background: #eeeeee;
+  float: left; }
 
 /*# sourceMappingURL=skills.css.map */

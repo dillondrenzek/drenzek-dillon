@@ -11,3 +11,10 @@ block page
 	block skill_page
 
 //- Specialized Views
+mixin skill_tag(skill)
+	- skill.url = "/skills";
+	- var col = skill.color || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	a.skill-tag(style="#{bg}", href="#{skill.url}")
+		.value= skill.title

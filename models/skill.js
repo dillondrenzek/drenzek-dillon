@@ -20,6 +20,12 @@ var Skill = module.exports = function Skill(_node) {
 //  Properties
 //
 Object.defineProperties(Skill.prototype, {
+
+    'model_label': {
+        enumerable: false,
+        get: function () { return "Skill"; }
+    },
+
     'id': {
         enumerable: true,
         get: function () { return this._node.id; }
@@ -48,6 +54,83 @@ Object.defineProperties(Skill.prototype, {
         get: function () { return this._node.data['description']; },
         set: function (description) { this._node.data['description'] = description; }
     },
+
+    'since': {
+        enumerable: true,
+        get: function () { return this._node.data['since']; },
+        set: function (since) { this._node.data['since'] = since; }
+    },
+
+    'outlook': {
+        enumerable: true,
+        get: function () { return this._node.data['outlook']; },
+        set: function (outlook) { this._node.data['outlook'] = outlook; }
+    },
+
+    'momentum': {
+        enumerable: true,
+        get: function () { return this._node.data['momentum']; },
+        set: function (momentum) { this._node.data['momentum'] = momentum; }
+    },
+
+
+
+
+
+    // 'parentSkill': {
+    //     enumerable: false,
+    //     get: function () {
+    //         if (!this._node.data['parentSkill']) {
+    //             this.getParentSkill(function(err, skill) {
+    //                 if (err) console.log(err);
+    //                 this.parentSkill = skill;
+
+    //                 console.log(this.parentSkill);
+    //                 return this._node.data['parentSkill'].title;
+    //             });
+    //         } else {
+    //             return this._node.data['parentSkill'].title;
+    //         }
+    //     },
+    //     set: function (parent) { this._node.data['parentSkill'] = parent; }
+    // },
+
+    'setParentSkill': {
+        enumerable: false,
+        value: function (parent, callback) {
+            this._node.createRelationshipTo(parent._node, 'SUBSKILL', {}, function (err, rel) {
+                callback(err);
+                console.log("Rel:", rel);
+            });
+        }
+    },
+
+    'getParentSkill': {
+        enumerable: false,
+        value: function (callback) {
+            var query = [
+                'MATCH (s:Skill) -[:SUBSKILL]-> (parent)',
+                'WHERE ID(s) = {skillId}',
+                'RETURN parent'
+            ].join('\n');
+
+            var params = {
+                skillId: this.id
+            };
+
+            db.query( query, params, function (err, results) {
+                if (err) return callback(err);
+                if (results.length) {
+                    var p = new Skill(results[0]['parent']);
+                    this.parentSkill = p.title;
+                    callback(null, p);
+                } else {
+                    callback(null, null);
+                }
+                
+            });
+        }
+    }, 
 
     'save': {
         enumerable: false,
@@ -109,6 +192,27 @@ Skill.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
         if (err) return callback(err);
         callback(null, new Skill(node));
+    });
+};
+
+Skill.getByTitle = function (data, callback) {
+    var query = [
+        'MATCH (skill:Skill {title: "'+ data +'"})',
+        'RETURN skill LIMIT 1'
+    ].join('\n');
+
+    var params = {
+        data: data
+    };
+
+    console.log("params:", params);
+    console.log("query:", query);
+
+    db.query(query, null, function (err, results) {
+        if (err) return callback(err);
+        console.log("Results:", results);
+        var skill = results[0]['skill'];
+        callback(null, skill);
     });
 };
 

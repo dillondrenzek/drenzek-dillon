@@ -26,10 +26,20 @@ skills.show = function(req, res, next) {
     Skill.get(req.params.id, function (err, skill) {
         if (err) return next(err);
 
-        res.render('skills/show', {
-            obj: skill,
-            model: Skill.prototype,
-            keys: Object.keys(Skill.prototype)
+        skill.getParentSkill(function (err, parent) {
+            if (err) return next(err);
+
+            res.render('skills/show', {
+                obj: skill,
+                projects: [{title: "Project A#"}, {title: "Project B#"}, {title: "Project C#"}],
+                experience: [
+                    {type: "Professional#", value: "23#"},
+                    {type: "Academic#", value: "34#"},
+                    {type: "Personal#", value: "0#"}
+                    ],
+                parentSkill: parent,
+                keys: Object.keys(Skill.prototype)
+            });
         });
     }); 
 };
@@ -39,10 +49,14 @@ skills.edit = function(req, res, next) {
     Skill.get(req.params.id, function (err, skill) {
         if (err) return next(err);
 
-        res.render('skills/edit', {
-            model: Skill.prototype,
-            keys: Object.keys(Skill.prototype),
-            obj: skill
+        skill.getParentSkill(function (err, parent) {
+            if (err) return next(err);
+            res.render('skills/edit', {
+                parentSkill: parent,
+                model: Skill.prototype,
+                keys: Object.keys(Skill.prototype),
+                obj: skill
+            });
         });
     });
 };
@@ -99,5 +113,20 @@ skills.destroy = function(req, res, next) {
     });
 };
 
+skills.addParentSkill = function(req, res, next) {
 
+
+    Skill.get(req.params.id, function (err, skill) {
+        if (err) return next(err);
+
+        Skill.getByTitle(req.body.parentSkill, function (err, parent) {
+            if (err) return next(err);
+
+            skill.setParentSkill(parent, function (err) {
+                if (err) return next(err);
+                res.redirect('/skills/edit');
+            });
+        });
+    });
+};
 

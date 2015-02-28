@@ -42,6 +42,32 @@ Object.defineProperties(Project.prototype, {
         set: function (type) { this._node.data['type'] = type; }
     },
 
+    'addSkill': {
+        enumerable: false,
+        value: function (skill, callback) {
+            this._node.createRelationshipTo(skill._node, 'exhibits', {}, function (err, rel) {
+                callback(err);
+            });
+        }
+    },
+
+//     User.prototype.follow = function (other, callback) {
+//     this._node.createRelationshipTo(other._node, 'follows', {}, function (err, rel) {
+//         callback(err);
+//     });
+// };
+    'exhibits': {
+        enumerable: false,
+        get: function (callback) {
+            
+        },
+        // set: function (skill, callback) {
+        //     this._node.createRelationshipTo(skill._node, 'exhibits', {}, function (err, rel) {
+        //         callback(err);
+        //     });
+        // }
+    },
+
     'save': {
         enumerable: false,
         value: function (callback) {

@@ -1,1 +1,108 @@
 @import "_application.scss";
+
+.project-tag {
+	padding: 3px 10px;
+	display: inline-block;
+	border-radius: 5px;
+
+	.value {
+		@include FiraSans-5(0.875rem, 700, $white-10, 0px, center);
+	}
+}
+
+section.title {
+	$root-z-index: 0;
+
+	height: 400px;
+	position: relative;
+	z-index: $root-z-index;
+	@include Gradient-0-62-100(#256A7B, #2D7B8F);
+
+	header {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		z-index: $root-z-index + 2;
+
+		* {
+			display: inline-block;
+		}
+
+		h2 {
+			margin-right: 30px;
+		}
+
+		.detail {
+			position: relative;
+			width: 100%;
+			height: 30px;
+			left: 3px;
+			top: -5px;
+		}
+		.skill-tag {
+			margin: 0 20px;
+			position: relative;
+			top: -5px;
+		}
+
+		.label {
+			font-size: 1.5rem;
+		}
+	}
+
+	canvas {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: $root-z-index + 1;
+	}
+}
+
+section.subtitle {
+	height: 85px;
+	padding: 0;
+	@include Gradient-0-62-100($black-3, $gray-4);
+
+	.box {
+		border-left: 1px solid $black-3;
+		border-right: 1px solid $black-3;
+		height: 100%;
+		padding: 15px 25px;
+	}
+
+	.momentum.box {
+		float: right;
+		width: 18%;
+		.value, .label {
+			text-align: center;
+		}
+	}
+
+	.outlook.box {
+		float: right;
+		width: 20%;
+		text-align: center;
+		.value, .label {
+			text-align: center;
+		}
+	}
+}
+
+section.description {
+	width: 62%;
+	background: $gray-8;
+	float: left;
+}
+
+section.skills {
+	width: 38%;
+	background: $white-8;
+	float: right;
+}
+
+section.events {
+	background: $white-9;
+	float: left;
+}

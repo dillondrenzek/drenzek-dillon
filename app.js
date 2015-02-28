@@ -7,7 +7,7 @@ var express = require('express')
 
 var app = express();
 
-app.set('port', process.env.PORT || 9876);
+app.set('port', process.env.PORT || 4567);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.bodyParser());
@@ -55,10 +55,12 @@ app.get('/skills', routes.skills.list);
 app.get('/skills/new', routes.skills.new);
 app.get('/skills/edit', routes.skills.list_edit);
 app.get('/skills/:id', routes.skills.show);
+app.post('/skills/:id/subskill', routes.skills.addParentSkill);
 app.get('/skills/edit/:id', routes.skills.edit);
 app.post('/skills/new', routes.skills.create);
 app.post('/skills/edit/:id', routes.skills.update);
 app.post('/skills/destroy/:id', routes.skills.destroy);
+
 
 // PROJECT ROUTES
 app.get('/projects', routes.projects.list);
@@ -69,6 +71,8 @@ app.get('/projects/edit/:id', routes.projects.edit);
 app.post('/projects/new', routes.projects.create);
 app.post('/projects/edit/:id', routes.projects.update);
 app.post('/projects/destroy/:id', routes.projects.destroy);
+
+app.post('/projects/:id/exhibits', routes.projects.exhibits);
 
 // TIME ROUTES
 app.get('/times', routes.times.list);

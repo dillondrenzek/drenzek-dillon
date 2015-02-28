@@ -23,7 +23,8 @@ mixin field( label, name, type )
 //- Standard Submit Button
 	attributes: {}
 mixin submit
-	input(type="submit", value="Submit")
+	.submit.std
+		input(type="submit", value="Submit")
 
 //- Standard Action Button
 	label: String - What label the button should display
@@ -55,10 +56,16 @@ mixin new_form( model, keys )
 	attributes: {action, method}
 mixin edit_form( model, keys, obj )
 	+form( attributes.action, attributes.method )
+		+submit
 		each key in keys
 			+field(key, key, "text")(value="#{obj[key]}")
-		+submit
+		block
+		
 
+mixin new_relationship_form( model, label, name )
+	+form( attributes.action, attributes.method )
+		+field( label, name, "text")
+		+submit
 //-
 //- List
 //-
@@ -144,7 +151,6 @@ mixin edit_table( objects, keys, actions )
 		tbody.std
 			each obj in objects
 				+edit_row( obj, keys, actions)
-
 mixin edit_row( object, keys, actions )
 	tr.std
 		each k in keys

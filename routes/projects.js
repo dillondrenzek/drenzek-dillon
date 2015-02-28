@@ -3,6 +3,22 @@
 var projects = exports = module.exports;
 var Project = require('../models/project');
 
+// POST '/projects/:id/exhibits'
+projects.exhibits = function(req, res, next) {
+    Project.get(req.params.id, function (err, project) {
+        if (err) return next(err);
+
+        project.
+
+        res.redirect('projects/show', {
+            obj: project,
+            model: Project.prototype,
+            keys: Object.keys(Project.prototype)
+        });
+    });
+};
+
+
 // GET '/projects'
 projects.list = function(req, res, next) {
     Project.getAll(function (err, projects) {

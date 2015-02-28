@@ -11,3 +11,10 @@ block page
 	block projects_page
 
 //- Specialized Views
+mixin project_tag(p)
+	- p.url = "/projects";
+	- var col = p.color || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	a.project-tag(style="#{bg}", href="#{p.url}")
+		.value= p.title

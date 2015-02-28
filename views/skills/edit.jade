@@ -4,5 +4,10 @@ extends ./skills.jade
 
 
 block skill_page
+
+
 	h1 Edit Skill
 	+edit_form( model, keys, obj )(action="/skills/edit/#{obj.id}", method="POST")
+	//- +field("Parent Skill", "parentSkill", "text")(value="#{parentSkill.title}")
+
+	//- +new_relationship_form( model, "New Parent Skill", "parentSkill")(action="/skills/#{obj.id}/subskill", method="POST")

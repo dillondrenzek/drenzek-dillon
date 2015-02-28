@@ -1,7 +1,23 @@
 @font-face {
 	font-family: 'Fira Sans';
-	src: url("/_media/FiraSans3111/WEB/FiraSans-Regular.woff") format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-		url('../../../_media/FiraSans3111/WEB/FiraSans-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+	font-weight: 700;
+	src: 	url("../../fonts/FiraSans-Bold.woff") format('woff'),
+			url("../../fonts/FiraSans-Bold.ttf") format('truetype');
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	font-weight: 200;
+	src: 	url("../../fonts/FiraSans-Light.woff") format('woff'),
+			url("../../fonts/FiraSans-Light.ttf") format('truetype');
+			
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	font-weight: 400;
+	src: 	url("../../fonts/FiraSans-Regular.woff") format('woff'),
+			url("../../fonts/FiraSans-Regular.ttf") format('truetype');
 }
 
 @mixin FiraSans-3 ($size, $weight, $color) {

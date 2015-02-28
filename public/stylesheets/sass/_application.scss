@@ -3,10 +3,13 @@
 	$white-10: #fafafa;
 	$white-9: #eeeeee;
 	$white-8: #d8d8d8;
+	$gray-8: #bcbcbc;
+	
 	$gray-7: #ababab;
 	$gray-6: #979797;
 	$gray-5: #888686;
 	$gray-4: #666666;
+
 	$black-3: #575452;
 	$black-2: #3D3C3C;
 	$black-1: #353434;
@@ -43,11 +46,8 @@
 
 html{
 	background: $black-0;
-	color: #fafafa;
-	font-family: 'Fira Sans', Helvetica, sans-serif;
-	text-align: center;
-	font-size: 16px;
-	letter-spacing: -1px;
+	@include FiraSans-5(16px, 500, $white-10, -1px, left);
+
 	// background: url("../images/bg.png") no-repeat center center fixed;
  //        -webkit-background-size: cover;
  //        -moz-background-size: cover;
@@ -71,15 +71,45 @@ html{
 	background: $gray-7;
 }
 
+.main-page {
+	width: $std-wrapper-width;
+	margin: 0 auto;
+}
+
+.box {
+	float: left;
+	display: inline-block;
+	position: relative;
+}
+
+.value {
+	@include FiraSans-5(1.5rem, 700, $white-9, -1px, left);
+	@include TextShadow;
+
+	&.large {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+}
+
+.label {
+	@include FiraSans-5(1rem, 400, $gray-8, 1.5px, left);
+	@include TextShadow;
+	text-transform: uppercase;
+}
+
 h1 {
-	font-size: 7rem;
-	color: rgba($white-8, 0.5);
-	font-weight: bold;
+	@include FiraSans-5(7rem, 700, $white-10, -2px, left);
 	text-shadow: 5px 5px 1px rgba(black, 0.1);
 }
 
 h2 {
-	font-size: 1.6rem;
+	@include FiraSans-5(4.5rem, 700, $white-10, -2px, left);
+	@include TextShadow;
+}
+
+h3 {
+	@include FiraSans-5(1.8rem, 200, $gray-4, -2px, left);
 }
 
 nav {
@@ -106,5 +136,11 @@ nav {
 	}
 }
 
+section {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 20px;
+}
 
 
