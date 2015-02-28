@@ -1,4 +1,4 @@
-// COLORS
+// COLORS (DEPRECATED)
 	// (not quite 50) Shades of Gray
 	$white-10: #fafafa;
 	$white-9: #eeeeee;
@@ -10,11 +10,6 @@
 	$gray-5: #888686;
 	$gray-4: #666666;
 
-	$black-3: #575452;
-	$black-2: #3D3C3C;
-	$black-1: #353434;
-	$black-0: #171413;
-
 	// Defined Colors
 	$orange1-l: #eb7125;
 	$orange1-d: #ce6421;
@@ -25,8 +20,22 @@
 	$ruby-l: #A42028;
 	$ruby-d: #9B1F31;
 
-	
 
+// COLORS
+	// Lightest
+	$white-3: $white-10;
+	$white-2: $white-9;
+	$white-1: $white-8;
+	$white-0: $gray-8;
+	$gray-3: $gray-7;
+	$gray-2: $gray-6;
+	$gray-1: $gray-5;
+	$gray-0: $gray-4;
+	$black-3: #575452;
+	$black-2: #3D3C3C;
+	$black-1: #353434;
+	$black-0: #171413;
+	// Darkest
 
 @import "_fira-sans.scss";
 @import "_cards.scss";
