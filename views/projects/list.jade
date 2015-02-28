@@ -5,8 +5,9 @@
 extends ./projects.jade
 
 block projects_page
-	h1 List Projects
-	h2= objects.length + " projects found."
-	+list(objects)
-		each project in objects
-			+item(project, false)(onclick="location.href='/projects/#{project.id}'")
+	.main-page
+		h1 Projects
+			//- span= objects.length
+		+list(objects)
+			each project in objects
+				+item(project, false)(onclick="location.href='/projects/#{project.id}'")

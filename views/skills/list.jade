@@ -5,8 +5,9 @@
 extends ./skills.jade
 
 block skill_page
-	h1 List Skills
-	h2= objects.length + " skills found."
-	+list(objects)
-		each skill in objects
-			+item(skill, false)(onclick="location.href='/skills/#{skill.id}'")
+	.main-page
+		h1 Skills
+			//- span= objects.length
+		+list(objects)
+			each skill in objects
+				+item(skill, false)(onclick="location.href='/skills/#{skill.id}'")

@@ -1,19 +1,39 @@
-nav 
-	ul 
-		li 
-			a(href="/") Home
-		li 
-			a(href="/skills") Skills
-			a(href="/skills/new") New
-			a(href="/skills/edit") Edit
-		li 
-			a(href="/projects") Projects
-			a(href="/projects/new") New
-			a(href="/projects/edit") Edit
-		//- li 
-			a(href="/times") Times
-			a(href="/times/edit") Edit
-		//- li 
-			a(href="/contexts") Contexts
-			a(href="/contexts/edit") Edit
-		
+//- Standard Nav Bar
+//- Version 0.6.0
+
+mixin navButton(h, label)
+	li
+		a(href="#{h}")= label
+
+mixin nav(admin)
+
+	if !admin
+		nav
+			ul 
+				+navButton("/", "Home")
+				block nav
+
+
+	else
+		nav 
+			ul 
+				li 
+					a(href="/") Home
+				li 
+					a(href="/skills") Skills
+					a(href="/skills/new") New
+					a(href="/skills/edit") Edit
+				li 
+					a(href="/projects") Projects
+					a(href="/projects/new") New
+					a(href="/projects/edit") Edit
+				//- li 
+					a(href="/times") Times
+					a(href="/times/edit") Edit
+				//- li 
+					a(href="/contexts") Contexts
+					a(href="/contexts/edit") Edit
+
+
++nav(true)
+	block nav
