@@ -1,4 +1,4 @@
-// skill.js
+// Skill Model
 // version 0.7.0
 var neo4j = require('neo4j');
 
