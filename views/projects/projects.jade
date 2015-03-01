@@ -2,10 +2,15 @@
 //- version 0.5.0
 
 extends ../layout.jade
+
 include ../std/std-ui.jade
 
 block stylesheet
 	include ../../public/stylesheets/projects.css
+
+//- block nav 
+	//- +navButton('/skills', 'Skills')
+	block nav_skills
 
 block page
 	block projects_page
