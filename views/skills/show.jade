@@ -3,10 +3,9 @@
 extends ./skills.jade
 
 block skill_page
-	- var col = obj.color || "#666";
-	- var dk_col = obj.darkColor || "#444" || "#256A7B";
-	- var bg = "background: "+col+" !important;";
-	- var text = "color: "+col+" !important;";
+
+	include ../scripts/coloring.js.jade
+	include ../scripts/timeline.js.jade
 
 	.main-page
 
@@ -34,25 +33,29 @@ block skill_page
 		section.projects
 			h3 Projects
 			each p,i in projects
-				.label= p.title
+				.label= p.project.title
 				if i<10
 					.value= "0"+(i+1)
 				else
 					.value= i+1
+				.label Professional
+				.value= p.experience.Professional
+				.label Academic
+				.value= p.experience.Academic
+				.label Personal
+				.value= p.experience.Personal
 
 		section.experience
 			h3 Experience
-			each xp in experience
-				.label= xp.type
-				.value= xp.value
+				.label Professional
+				.value= experienceTotals.Professional
+				.label Academic
+				.value= experienceTotals.Academic
+				.label Personal
+				.value= experienceTotals.Personal
 
 		//- section.events
 			h3 Events
 			each p in obj.events
 				.label Event
 				.value 23 Feb 15
-
-
-
-	script(src="/scripts/timeline.js")
-		

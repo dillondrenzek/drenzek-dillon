@@ -1,0 +1,43 @@
+script.
+	$(document).ready(function () {
+		var lightColor = "#{obj.color}";
+		var darkColor = function () {
+
+			// validate hex string
+			var hex = String(lightColor).replace(/[^0-9a-f]/gi, '');
+			if (hex.length < 6) {
+				hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+			}
+			var lum = -0.2;
+
+			// convert to decimal and change luminosity
+			var rgb = "#", c, i;
+			for (i = 0; i < 3; i++) {
+				c = parseInt(hex.substr(i*2,2), 16);
+				c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+				rgb += ("00"+c).substr(c.length);
+			}
+
+			return rgb;
+		};
+
+		var backgrounds = [ 
+			darkColor() + ';',
+			'-moz-linear-gradient(left, ' + darkColor() + ' 0%, ' + lightColor + ' 62%, ' + darkColor() + ' 100%)',
+			'-webkit-gradient(linear, left top, right top, color-stop(0%,' + darkColor() + '), color-stop(62%,' + lightColor + '), color-stop(100%,' + darkColor() + '))',
+			'-webkit-linear-gradient(left,  ' + darkColor() + ' 0%,' + lightColor + ' 62%,' + darkColor() + ' 100%)',
+			'-o-linear-gradient(left,  ' + darkColor() + ' 0%,' + lightColor + ' 62%,' + darkColor() + ' 100%)',
+			'-ms-linear-gradient(left,  ' + darkColor() + ' 0%,' + lightColor + ' 62%,' + darkColor() + ' 100%)',
+			'linear-gradient(to right,  ' + darkColor() + ' 0%,' + lightColor + ' 62%,' + darkColor() + ' 100%)',
+			'progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' + darkColor() + '\', endColorstr=\'' + darkColor() + '\',GradientType=1 )'
+		];
+
+		backgrounds.forEach(function (el, i, arr) {
+			$('section.title').css({ "background": backgrounds[i] });
+
+			if (i === backgrounds.length-1) {
+				$('section.title').css({ "filter": backgrounds[i] });
+			}
+		});
+
+	});

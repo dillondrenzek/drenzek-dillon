@@ -1,7 +1,8 @@
 //- Skills Router
 //- version 0.5.0
 var skills = exports = module.exports;
-var Skill = require('../models/skill');
+var Skill = require('../models/skill'),
+    Project = require('../models/project');
 
 // GET '/skills'
 skills.list = function(req, res, next) {
@@ -29,16 +30,42 @@ skills.show = function(req, res, next) {
         skill.getParentSkill(function (err, parent) {
             if (err) return next(err);
 
-            res.render('skills/show', {
-                obj: skill,
-                projects: [{title: "Project A#"}, {title: "Project B#"}, {title: "Project C#"}],
-                experience: [
-                    {type: "Professional#", value: "23#"},
-                    {type: "Academic#", value: "34#"},
-                    {type: "Personal#", value: "0#"}
-                    ],
-                parentSkill: parent,
-                keys: Object.keys(Skill.prototype)
+            skill.getExhibitingProjects(function (err, results) {
+                if (err) return next(err);
+
+                var projects = [];
+                var experienceTotals = 
+                    { "Professional": 0
+                    , "Academic": 0
+                    , "Personal": 0 };
+
+                results.forEach(function (el, i, arr) {
+                    var rel_data = el.relationship._data.data;
+                    var prof_xp = rel_data.prof_exp,
+                        acad_xp = rel_data.acad_exp,
+                        pers_xp = rel_data.pers_exp;
+
+                    experienceTotals.Professional += prof_xp;
+                    experienceTotals.Academic += acad_xp;
+                    experienceTotals.Personal += pers_xp;
+
+                    var project_package = 
+                        { "project": new Project(el['project'])
+                        , "experience":
+                            { "Professional": prof_xp
+                            , "Academic": acad_xp
+                            , "Personal": pers_xp }};
+
+                    projects.push(project_package);
+                });
+
+                res.render('skills/show', {
+                    obj: skill,
+                    projects: projects,
+                    experienceTotals: experienceTotals,
+                    parentSkill: parent,
+                    keys: Object.keys(Skill.prototype)
+                });
             });
         });
     }); 

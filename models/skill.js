@@ -122,7 +122,6 @@ Object.defineProperties(Skill.prototype, {
                 if (err) return callback(err);
                 if (results.length) {
                     var p = new Skill(results[0]['parent']);
-                    this.parentSkill = p.title;
                     callback(null, p);
                 } else {
                     callback(null, null);
@@ -131,6 +130,27 @@ Object.defineProperties(Skill.prototype, {
             });
         }
     }, 
+
+    // returns projects = [{project: p, experience: {}}]
+    'getExhibitingProjects': {
+        enumerable: false,
+        value: function (callback) {
+            var query = [
+                'MATCH (s:Skill) <-[relationship:EXHIBITS]- (project:Project)',
+                'WHERE ID(s) = {skillId}',
+                'RETURN relationship, project'
+            ].join('\n');
+
+            var params = {
+                skillId: this.id
+            };
+
+            db.query( query, params, function (err, results) {
+                if (err) return callback(err);
+                callback(null, results);
+            });
+        }
+    },  
 
     'save': {
         enumerable: false,
