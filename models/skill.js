@@ -31,6 +31,7 @@ Object.defineProperties(Skill.prototype, {
         get: function () { return this._node.id; }
     },
 
+    // SETTABLES
     'title': {
         enumerable: true,
         get: function () { return this._node.data['title']; },
@@ -61,6 +62,30 @@ Object.defineProperties(Skill.prototype, {
         set: function (since) { this._node.data['since'] = since; }
     },
 
+    'experience': {
+        enumerable: false,
+        get: function () { return this._node.data['experience']; },
+        set: function (xp) { this._node.data['experience']; }
+    },
+    // DEPRECATED >v1.0 (maybe?)
+    'professional': {
+        enumerable: true,
+        get: function () { return this._node.data['experience']['professional']; },
+        set: function (professional) { this._node.data['experience']['professional']; }
+    },
+
+    'academic': {
+        enumerable: true,
+        get: function () { return this._node.data['experience']['academic']; },
+        set: function (academic) { this._node.data['experience']['academic']; }
+    },
+
+    'personal': {
+        enumerable: true,
+        get: function () { return this._node.data['experience']['personal']; },
+        set: function (personal) { this._node.data['experience']['personal']; }
+    },
+
     'outlook': {
         enumerable: true,
         get: function () { return this._node.data['outlook']; },
@@ -73,28 +98,20 @@ Object.defineProperties(Skill.prototype, {
         set: function (momentum) { this._node.data['momentum'] = momentum; }
     },
 
+    'localURL': {
+        enumerable: true,
+        get: function () { return this._node.data['localURL']; },
+        set: function (localURL) { this._node.data['localURL'] = localURL; }
+    }, 
+
+    'confidence': {
+        enumerable: true,
+        get: function () { return this._node.data['confidence']; },
+        set: function (confidence) { this._node.data['confidence'] = confidence; }
+    },
 
 
-
-
-    // 'parentSkill': {
-    //     enumerable: false,
-    //     get: function () {
-    //         if (!this._node.data['parentSkill']) {
-    //             this.getParentSkill(function(err, skill) {
-    //                 if (err) console.log(err);
-    //                 this.parentSkill = skill;
-
-    //                 console.log(this.parentSkill);
-    //                 return this._node.data['parentSkill'].title;
-    //             });
-    //         } else {
-    //             return this._node.data['parentSkill'].title;
-    //         }
-    //     },
-    //     set: function (parent) { this._node.data['parentSkill'] = parent; }
-    // },
-
+    // NON-ENUMERABLES
     'setParentSkill': {
         enumerable: false,
         value: function (parent, callback) {
@@ -130,6 +147,34 @@ Object.defineProperties(Skill.prototype, {
             });
         }
     }, 
+
+    'getChildSkills': {
+        enumerable: false,
+        value: function (callback) {
+            var query = [
+                'MATCH (s:Skill) <-[:SUBSKILL]- (child)',
+                'WHERE ID(s) = {skillId}',
+                'RETURN child'
+            ].join('\n');
+
+            var params = {
+                skillId: this.id
+            };
+
+            db.query( query, params, function (err, results) {
+                if (err) return callback(err);
+
+                var childSkills = [];
+
+                results.forEach(function (el, i, arr) {
+                    var p = new Skill(results[i]['child']);
+                    childSkills.push(p);
+                });
+
+                callback(null, childSkills);
+            });
+        }
+    },
 
     // returns projects = [{project: p, experience: {}}]
     'getExhibitingProjects': {

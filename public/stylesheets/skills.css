@@ -300,10 +300,7 @@ h3 {
 
 nav {
   background: rgba(53, 52, 52, 0.2);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0; }
+  width: 100%; }
   nav ul {
     list-style-type: none;
     text-align: center; }
