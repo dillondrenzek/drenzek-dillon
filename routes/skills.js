@@ -1,5 +1,5 @@
 //- Skills Router
-//- version 0.5.0
+//- version 0.7.0
 var skills = exports = module.exports;
 var Skill = require('../models/skill'),
     Project = require('../models/project');
