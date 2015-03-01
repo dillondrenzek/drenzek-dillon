@@ -21,6 +21,7 @@ var Skill = module.exports = function Skill(_node) {
 //
 Object.defineProperties(Skill.prototype, {
 
+    // READONLY
     'model_label': {
         enumerable: false,
         get: function () { return "Skill"; }
@@ -67,29 +68,50 @@ Object.defineProperties(Skill.prototype, {
         set: function (since) { this._node.data['since'] = since; }
     },
 
+    // v2.0
     'experience': {
         enumerable: false,
         get: function () { return this._node.data['experience']; },
-        set: function (xp) { this._node.data['experience']; }
+        set: function (experience) { this._node.data['experience'] = experience; }
     },
-    // DEPRECATED >v1.0 (maybe?)
+
+    // 'professional': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['experience']['professional']; },
+    //     set: function (professional) { this._node.data['experience']['professional'] = professional; }
+    // },
+
+    // 'academic': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['experience']['academic']; },
+    //     set: function (academic) { this._node.data['experience']['academic'] = academic; }
+    // },
+
+    // 'personal': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['experience']['personal']; },
+    //     set: function (personal) { this._node.data['experience']['personal'] = personal; }
+    // },
+
+    // DEPRECATE v2.0
     'professional': {
         enumerable: true,
         get: function () { return this._node.data['professional']; },
-        set: function (professional) { this._node.data['professional']; }
+        set: function (professional) { this._node.data['professional'] = professional; }
     },
 
     'academic': {
         enumerable: true,
         get: function () { return this._node.data['academic']; },
-        set: function (academic) { this._node.data['academic']; }
+        set: function (academic) { this._node.data['academic'] = academic; }
     },
 
     'personal': {
         enumerable: true,
         get: function () { return this._node.data['personal']; },
-        set: function (personal) { this._node.data['personal']; }
+        set: function (personal) { this._node.data['personal'] = personal; }
     },
+    // END DEPRECATE
 
     'outlook': {
         enumerable: true,
