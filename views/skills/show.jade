@@ -2,6 +2,10 @@
 //- version 0.5.0
 extends ./skills.jade
 
+block nav_skills
+	li
+		a(href="/skills/"+obj.id)= obj.title
+
 block skill_page
 
 	include ../scripts/coloring.js.jade

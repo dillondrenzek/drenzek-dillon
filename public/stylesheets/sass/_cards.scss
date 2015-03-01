@@ -14,18 +14,12 @@ $faux-stats-box-height: 150px;
 
 // SCSS
 .card {
-	// DEBUG
-
-
-	// -----
-
 	width: 100%;
 	height: 100%;
 	background: $black-2;
 	padding: 10px;
 	float: left;
 	border-radius: 10px;
-
 }
 
 .body {
@@ -38,11 +32,9 @@ $faux-stats-box-height: 150px;
 		display: inline-block;
 		position: relative;
 	}
-
 	.value {
 		font-size: 2rem;
 	}
-
 	.label {
 		width: 100%;
 		font-size: 1rem;
@@ -58,7 +50,7 @@ $faux-stats-box-height: 150px;
 	padding: 10px;
 			
 	.value {
-		@include FiraSans-5 (2.4rem, 800, $white-10, -1.5px, left);
+		@include FiraSans-5 (2.4rem, 800, $white-3, -1.5px, left);
 	}
 }
 
@@ -69,12 +61,12 @@ $faux-stats-box-height: 150px;
 
 	// GENERICS
 	.label {
-		@include FiraSans-5(1rem, 800, $gray-6, auto, center);
+		@include FiraSans-5(1rem, 800, $gray-2, auto, center);
 	}
 
 	// OVERALL BOX
 	.overall.box {
-		background: $white-10;
+		background: $white-3;
 		width: 40%;
 		height: 100%;
 
@@ -90,7 +82,7 @@ $faux-stats-box-height: 150px;
 		height: 75%;
 
 		.value {
-			@include FiraSans-5(1.8rem, 800, $white-9, -1.75px, center);
+			@include FiraSans-5(1.8rem, 800, $white-2, -1.75px, center);
 			@include VerticalAlign(relative);
 		}
 	}
@@ -100,7 +92,7 @@ $faux-stats-box-height: 150px;
 		height: 75%;
 
 		.value {
-			@include FiraSans-5(1.8rem, 800, $white-9, -1.75px, center);
+			@include FiraSans-5(1.8rem, 800, $white-2, -1.75px, center);
 			@include VerticalAlign(relative);
 		}
 	}
@@ -108,124 +100,10 @@ $faux-stats-box-height: 150px;
 	.rating.box {
 		width: 60%;
 		height: 25%;
-		background: $gray-7;
+		background: $gray-3;
 
 		.value {
 			@include VerticalAlign(relative);
 		}
 	}
 }
-
-
-
-// 		.since.box {
-// 			width: 30%;
-// 			height: 12%;
-// 			background: $illustrator-l;
-// 			padding: 10px;
-
-// 			.label {
-// 				@include FiraSans-5(0.6rem * $scale, bold, $white-10, 0px, left);
-// 			}
-// 			.value {
-// 				@include FiraSans-5(1.0rem * $scale, bold, $white-10, 0px, left);
-// 			}
-// 		}
-// 		.see-all.box {
-// 			width: 70%;
-// 			height: 12%;
-// 			background: $black-3;
-// 			padding: 10px;
-
-// 			.label {
-// 				@include FiraSans-5(1.2rem * $scale, bold, $gray-6, 0px, left);
-// 				text-transform: lowercase;
-// 				@include VerticalAlign(relative);
-// 			}
-// 			.value {
-// 				@include FiraSans-5(1.2rem * $scale, bold, $white-8, 0px, left);
-// 			}
-// 		}
-// 		.timeline.box {
-// 			width: 100%;
-// 			height: 28%;
-// 			background: $black-1;
-
-// 			.label {
-// 				@include VerticalAlign(relative);
-// 			}
-// 		}
-// 		.projects.box {
-// 			background: $white-10;
-// 			height: 50%;
-// 			width: 100%;
-// 			overflow: hidden;
-
-// 			.proj.box {
-// 				width: 100%;
-// 				height: 33.4%;
-// 				background: $gray-5;
-
-// 				&.disabled {
-// 					background: $black-3;
-// 				}
-
-// 				.number.box {
-// 					width: 20%;
-// 					height: 65%;
-// 					background: $white-10;
-
-// 					&.disabled { background: transparent; }
-
-// 					.value {
-// 						@include FiraSans-3 (2.4rem * $scale, 800, $black-1);
-// 						@include VerticalAlign(relative);
-// 						&.disabled { color: $gray-6; }
-// 					}
-// 				}
-
-// 				.time.box {
-// 					width: 20%;
-// 					height: 35%;
-// 					background: $white-10;
-
-// 					&.disabled { background: transparent; }
-
-// 					.value {
-// 						@include FiraSans-5 (0.6rem * $scale, 800, $illustrator-l, -0.5px, center);
-// 						@include VerticalAlign(relative);
-// 						&.disabled { color: $gray-5; }
-// 					}
-// 				}
-
-// 				.title.box {
-// 					width: 80%;
-// 					height: 65%;
-// 					background: $illustrator-l;
-
-// 					&.disabled { background: transparent; }
-
-// 					.value {
-// 						@include FiraSans-5 (1.6rem * $scale, 800, $white-10, auto, left);
-// 						@include VerticalAlign(relative);
-// 						&.disabled { color: $gray-6; }
-// 					}
-// 				}
-
-// 				.subtitle.box {
-// 					width: 80%;
-// 					height: 35%;
-// 					background: $illustrator-l;
-
-// 					&.disabled { background: transparent; }
-					
-// 					.value {
-// 						@include FiraSans-5 (0.6rem * $scale, 400, $black-1, -0.5px, left);
-// 						@include VerticalAlign(relative);
-// 						&.disabled { color: $gray-5; }
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }

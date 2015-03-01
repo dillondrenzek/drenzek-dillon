@@ -1,1 +1,140 @@
 @import "_application.scss";
+
+.main-page {
+	background: $white-3;
+}
+
+nav {
+	background: rgba($black-1, 0.2);
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	ul {
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			padding: 10px 20px;
+			margin: 0 50px;
+
+			a {
+				@include FiraSans-5(1rem, 800, $white-2, 0px, center);
+				padding: 5px;
+				text-decoration: none;
+				text-transform: uppercase;
+				background: rgba($black-1, 0.3);
+
+				&:hover {
+					// color: lighten($ruby-l, 10%);
+				}
+			}
+		}
+	}
+
+	.menu {
+		height: 100%;
+		display: none;
+
+		a {
+			display: inline-block;
+		}
+
+		.home:hover & {
+
+		}
+	}
+}
+
+section {
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 20px;
+}
+
+section.title {
+	$root-z-index: 0;
+
+	height: 500px;
+	position: relative;
+	z-index: $root-z-index;
+
+	background: url("/images/temp-prof.jpg");
+	
+
+	header {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		z-index: $root-z-index + 2;
+
+		* {
+			display: inline-block;
+		}
+
+		h2 {
+			margin-right: 30px;
+		}
+
+		.detail {
+			position: relative;
+			width: 100%;
+			height: 30px;
+			left: 3px;
+			top: -5px;
+		}
+		.skill-tag {
+			margin: 0 20px;
+			position: relative;
+			top: -5px;
+		}
+
+		.label {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+section.subtitle {
+	height: 85px;
+	padding: 0;
+	@include Gradient-0-62-100($black-3, $gray-4);
+
+	.box {
+		border-left: 1px solid $black-3;
+		border-right: 1px solid $black-3;
+		height: 100%;
+		padding: 15px 25px;
+	}
+
+	.momentum.box {
+		float: right;
+		width: 18%;
+		.value, .label {
+			text-align: center;
+		}
+	}
+
+	.outlook.box {
+		float: right;
+		text-align: center;
+		.value, .label {
+			text-align: center;
+		}
+	}
+}
+
+section.working {
+	@include Gradient-0-62-100($white-2, $white-3);
+	height: 500px;
+	width: 62%;
+}
+
+section.skills {
+	@include Gradient-0-62-100($white-1, $white-2);
+	height: 500px;
+	width: 38%;
+}

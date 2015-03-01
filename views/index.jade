@@ -1,11 +1,67 @@
+//- Index Page
+//- version 0.6.0
 extends ./layout.jade
 
 block stylesheet
 	include ../public/stylesheets/index.css
 	
-//- block page
+
+//- block nav 
+	li
+		a(href="/skills") Skills
+	li
+		a(href="/projects") Projects
+
+
 block page
-	#title
+
+	.main-page
+		section.title
+			header
+				h2 Dillon Drenzek
+				.detail
+					h3 Thinker, Learner, and Developer
+			nav
+				ul
+					li
+						a(href="/skills") Skills
+					li
+						a(href="/projects") Projects
+
+		section.subtitle
+			.since.box
+				.value.large July 27, 1992
+				.label since
+			//- .outlook.box
+				.value.large Optimistic
+				.label outlook	
+			//- .momentum.box
+				.value.large 99
+				.label momentum
+
+		section.working
+			h3 Current Projects
+			a(href="/projects") See All Projects
+			ul
+				each p in projects
+					li
+						a(href="/projects/#{p.id}")= p.title
+
+
+		section.skills
+			h3 Personally Trending
+			a(href="/projects") See All Skills
+			ul 
+				each s in skills
+					li
+						a(href="/skills/#{s.id}")= s.title
+
+
+
+
+
+
+	//- #title
 		h1 My Professional Portfolio
 		h2 Convincing, right?
 	

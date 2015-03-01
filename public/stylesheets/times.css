@@ -215,13 +215,21 @@ td.std {
   padding: 0; }
 
 html {
-  background: #171413;
+  background: #1f1f1f;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #fafafa;
   letter-spacing: -1px;
-  text-align: left; }
+  text-align: left;
+  background: #171413;
+  background: -moz-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #171413), color-stop(62%, #3D3C3C), color-stop(100%, #171413));
+  background: -webkit-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
+  background: -o-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
+  background: -ms-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
+  background: linear-gradient(to right, #171413 0%, #3D3C3C 62%, #171413 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 ); }
 
 .none {
   display: none !important; }
@@ -231,7 +239,7 @@ html {
 #title {
   width: 500px;
   margin: 0 auto;
-  background: #ababab; }
+  background: #979797; }
 
 .main-page {
   width: 960px;
@@ -291,12 +299,18 @@ h3 {
   text-align: left; }
 
 nav {
-  background: #353434; }
+  background: rgba(53, 52, 52, 0.2);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
   nav ul {
-    list-style-type: none; }
+    list-style-type: none;
+    text-align: center; }
     nav ul li {
       display: inline-block;
-      margin-right: 50px; }
+      padding: 10px 20px;
+      margin: 0 50px; }
       nav ul li a {
         font-family: 'Fira Sans', Helvetica, sans-serif;
         font-size: 1rem;
@@ -306,9 +320,13 @@ nav {
         text-align: center;
         padding: 5px;
         text-decoration: none;
-        text-transform: uppercase; }
-        nav ul li a:hover {
-          color: #cf2832; }
+        text-transform: uppercase;
+        background: rgba(53, 52, 52, 0.3); }
+  nav .menu {
+    height: 100%;
+    display: none; }
+    nav .menu a {
+      display: inline-block; }
 
 section {
   position: relative;
