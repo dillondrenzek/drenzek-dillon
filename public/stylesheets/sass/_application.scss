@@ -171,6 +171,7 @@ section {
 
 section.admin {
 	background: #a42028;
+	border: 3px solid darken(#a42028, 10%);
 
 	h3 {
 		color: $white-0; }

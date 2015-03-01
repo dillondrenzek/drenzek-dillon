@@ -332,7 +332,8 @@ section {
   padding: 20px; }
 
 section.admin {
-  background: #a42028; }
+  background: #a42028;
+  border: 3px solid #79181e; }
   section.admin h3 {
     color: #bcbcbc; }
   section.admin .box {
