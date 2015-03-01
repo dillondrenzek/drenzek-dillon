@@ -16,7 +16,7 @@ section.title {
 	height: 400px;
 	position: relative;
 	z-index: $root-z-index;
-	@include Gradient-0-62-100(#256A7B, #2D7B8F);
+	// @include Gradient-0-62-100(#256A7B, #2D7B8F);
 
 	header {
 		display: inline-block;
@@ -50,14 +50,14 @@ section.title {
 		}
 	}
 
-	canvas {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: $root-z-index + 1;
-	}
+	// canvas {
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: $root-z-index + 1;
+	// }
 }
 
 section.subtitle {

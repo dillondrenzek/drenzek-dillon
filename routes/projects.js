@@ -48,8 +48,8 @@ projects.show = function(req, res, next) {
             res.render('projects/show', {
                 obj: project,
                 model: Project.prototype,
+                exhibitedSkills: skills,
                 keys: Object.keys(Project.prototype)
-
             });
         });
     }); 

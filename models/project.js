@@ -1,6 +1,7 @@
 // Project Model
 // version 0.7.0
-var neo4j = require('neo4j');
+var neo4j = require('neo4j'),
+    Skill = require('./skill');
 
 var db = new neo4j.GraphDatabase(
 	process.env['NEO4J_URL'] ||
@@ -126,7 +127,7 @@ Object.defineProperties(Project.prototype, {
             var query = [
                 'MATCH (skill:Skill) <-[relationship:EXHIBITS]- (p:Project)',
                 'WHERE ID(p) = {projectId}',
-                'RETURN relationship, skill'
+                'RETURN skill'
             ].join('\n');
 
             var params = {
@@ -135,7 +136,16 @@ Object.defineProperties(Project.prototype, {
 
             db.query( query, params, function (err, results) {
                 if (err) return callback(err);
-                callback(null, results);
+
+                var exhibitedSkills = [];
+
+                results.forEach(function (el, i) {
+                    var s = new Skill(results[i]['skill']);
+                    exhibitedSkills.push(s);
+                });
+
+
+                callback(null, exhibitedSkills);
             });
         }
     },

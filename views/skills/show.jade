@@ -2,7 +2,7 @@
 //- version 0.7.0
 extends ./skills.jade
 
-block nav_skills
+//- block nav_skills
 	li
 		a(href="#{obj.localURL}")= obj.title
 
@@ -16,6 +16,9 @@ block skill_page
 		section.admin
 			.box
 				h3 Admin
+			.box
+				.value= obj.id
+				.label ID
 			.box
 				+action("Edit", "/skills/edit/"+obj.id, "GET")
 				.label Edit Skill

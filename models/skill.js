@@ -187,9 +187,9 @@ Object.defineProperties(Skill.prototype, {
 
                 var childSkills = [];
 
-                results.forEach(function (el, i, arr) {
-                    var p = new Skill(results[i]['child']);
-                    childSkills.push(p);
+                results.forEach(function (el, i) {
+                    var s = new Skill(results[i]['child']);
+                    childSkills.push(s);
                 });
 
                 callback(null, childSkills);
