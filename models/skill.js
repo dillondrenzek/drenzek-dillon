@@ -1,5 +1,5 @@
 // skill.js
-// version 0.5.0
+// version 0.7.0
 var neo4j = require('neo4j');
 
 var db = new neo4j.GraphDatabase(
@@ -24,6 +24,11 @@ Object.defineProperties(Skill.prototype, {
     'model_label': {
         enumerable: false,
         get: function () { return "Skill"; }
+    },
+
+    'localURL': {
+        enumerable: false,
+        get: function () { return "/skills/"+this.id; }
     },
 
     'id': {
@@ -70,20 +75,20 @@ Object.defineProperties(Skill.prototype, {
     // DEPRECATED >v1.0 (maybe?)
     'professional': {
         enumerable: true,
-        get: function () { return this._node.data['experience']['professional']; },
-        set: function (professional) { this._node.data['experience']['professional']; }
+        get: function () { return this._node.data['professional']; },
+        set: function (professional) { this._node.data['professional']; }
     },
 
     'academic': {
         enumerable: true,
-        get: function () { return this._node.data['experience']['academic']; },
-        set: function (academic) { this._node.data['experience']['academic']; }
+        get: function () { return this._node.data['academic']; },
+        set: function (academic) { this._node.data['academic']; }
     },
 
     'personal': {
         enumerable: true,
-        get: function () { return this._node.data['experience']['personal']; },
-        set: function (personal) { this._node.data['experience']['personal']; }
+        get: function () { return this._node.data['personal']; },
+        set: function (personal) { this._node.data['personal']; }
     },
 
     'outlook': {
@@ -96,12 +101,6 @@ Object.defineProperties(Skill.prototype, {
         enumerable: true,
         get: function () { return this._node.data['momentum']; },
         set: function (momentum) { this._node.data['momentum'] = momentum; }
-    },
-
-    'localURL': {
-        enumerable: true,
-        get: function () { return this._node.data['localURL']; },
-        set: function (localURL) { this._node.data['localURL'] = localURL; }
     }, 
 
     'confidence': {

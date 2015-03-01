@@ -1,10 +1,10 @@
 //- Show Skill
-//- version 0.5.0
+//- version 0.7.0
 extends ./skills.jade
 
 block nav_skills
 	li
-		a(href="/skills/"+obj.id)= obj.title
+		a(href="#{obj.localURL}")= obj.title
 
 block skill_page
 
@@ -13,10 +13,23 @@ block skill_page
 
 	.main-page
 
+		section.admin
+			.box
+				h3 Admin
+			.box
+				+action("Edit", "/skills/edit/"+obj.id, "GET")
+				.label Edit Skill
+			.box
+				.value= obj.localURL
+				.label localURL
+			each c in subskills
+				.box
+					.value= c.title
+					.label Subskill
+
 		section.title
 			header
 				h2= obj.title
-				+action("Edit", "/skills/edit/"+obj.id, "GET")
 				.detail
 					.label= obj.model_label
 					if parentSkill
@@ -27,12 +40,18 @@ block skill_page
 			.since.box
 				.value.large= obj.since
 				.label since
+			.type.box
+				.value= obj.type
+				.label type
 			.outlook.box
 				.value.large= obj.outlook
 				.label outlook	
 			.momentum.box
 				.value.large= obj.momentum
 				.label momentum
+
+		section.description
+			h3= obj.description
 
 		section.projects
 			h3 Projects
@@ -42,22 +61,26 @@ block skill_page
 					.value= "0"+(i+1)
 				else
 					.value= i+1
-				.label Professional
-				.value= p.experience.Professional
-				.label Academic
-				.value= p.experience.Academic
-				.label Personal
-				.value= p.experience.Personal
+				//- v2.0
+				//- .label Professional
+				//- .value= p.experience.Professional
+				//- .label Academic
+				//- .value= p.experience.Academic
+				//- .label Personal
+				//- .value= p.experience.Personal
 
 		section.experience
+			h3 Confidence
+				.value.large= obj.confidence
 			h3 Experience
 				.label Professional
-				.value= experienceTotals.Professional
+				.value.large= experienceTotals.Professional
 				.label Academic
-				.value= experienceTotals.Academic
+				.value.large= experienceTotals.Academic
 				.label Personal
-				.value= experienceTotals.Personal
+				.value.large= experienceTotals.Personal
 
+		//- v2.0
 		//- section.events
 			h3 Events
 			each p in obj.events

@@ -331,6 +331,14 @@ section {
   width: 100%;
   padding: 20px; }
 
+section.admin {
+  background: #a42028; }
+  section.admin h3 {
+    color: #bcbcbc; }
+  section.admin .box {
+    display: inline-block;
+    margin-right: 50px; }
+
 .project-tag {
   padding: 3px 10px;
   display: inline-block;
