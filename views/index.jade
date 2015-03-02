@@ -1,5 +1,5 @@
 //- Index Page
-//- version 0.6.0
+//- version 0.7.0
 extends ./layout.jade
 
 block stylesheet
@@ -40,28 +40,14 @@ block page
 				.label momentum
 
 		section.working
-			h3 Current Projects
+			header
+				h3 Current Projects
 			a(href="/projects") See All Projects
-			ul
-				each p in projects
-					li
-						a(href="/projects/#{p.id}")= p.title
+			+project_list(projects)
 
 
 		section.skills
-			h3 Personally Trending
-			a(href="/projects") See All Skills
-			ul 
-				each s in skills
-					li
-						a(href="/skills/#{s.id}")= s.title
-
-
-
-
-
-
-	//- #title
-		h1 My Professional Portfolio
-		h2 Convincing, right?
-	
+			header
+				h3 Personally Trending
+			a(href="/skills") See All Skills
+			+skill_list(skills)

@@ -16,7 +16,7 @@ section.title {
 	height: 400px;
 	position: relative;
 	z-index: $root-z-index;
-	// @include Gradient-0-62-100(#256A7B, #2D7B8F);
+	@include Gradient-0-62-100($black-1, $black-2);
 
 	header {
 		display: inline-block;
@@ -97,6 +97,7 @@ section.description {
 }
 
 section.skills {
+	padding: 0;
 	width: 38%;
 	background: $white-8;
 	float: right;

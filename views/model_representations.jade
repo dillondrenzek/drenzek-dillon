@@ -1,0 +1,48 @@
+//- SKILLS
+mixin skill_tag(skill)
+	- var col = skill.color || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	a.skill-tag(style="#{bg}", href="#{skill.localURL}")
+		.value= skill.title
+
+//- Skill List
+	skills: Array - skills to list
+	attributes: {class, id}
+mixin skill_list( skills )
+	ul.skill(class!=attributes.class, id!=attributes.id)
+		each s in skills
+			+skill_list_item(s)
+		block
+
+
+mixin skill_list_item(s)
+	- var col = s.color || "#666";
+	- var bg = "background: "+col+" !important;";
+	- var text = "color: "+col+" !important;";
+	li.skill(onclick="location.href='#{s.localURL}'", style="#{bg}")
+		.title
+			h4= s.title
+		.momentum.box
+			.value= s.momentum
+			//- .arrow= s.outlook
+			.label momentum
+
+
+
+
+
+//- PROJECTS
+
+//- Project List
+	projects: Array - projects to list
+	attributes: {class, id}
+mixin project_list( projects )
+	ul.project(class!=attributes.class, id!=attributes.id)
+		each s in projects
+			+project_list_item(s)
+		block
+
+mixin project_list_item(p)
+	li.project
+		a(href="/projects/#{p.id}")= p.title

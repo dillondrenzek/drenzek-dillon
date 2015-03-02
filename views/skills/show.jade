@@ -57,8 +57,10 @@ block skill_page
 			h3= obj.description
 
 		section.projects
-			h3 Projects
-			each p,i in projects
+			header.section
+				h3 Projects
+			+project_list(projects)
+			//- each p,i in projects
 				.label= p.project.title
 				if i<10
 					.value= "0"+(i+1)
@@ -73,15 +75,16 @@ block skill_page
 				//- .value= p.experience.Personal
 
 		section.experience
-			h3 Confidence
-				.value.large= obj.confidence
-			h3 Experience
-				.label Professional
-				.value.large= experienceTotals.Professional
-				.label Academic
-				.value.large= experienceTotals.Academic
-				.label Personal
-				.value.large= experienceTotals.Personal
+			header.section
+				h3 Experience
+			.label Overall Confidence
+			.value.large= obj.confidence
+			.label Professional
+			.value.large= experienceTotals.Professional
+			.label Academic
+			.value.large= experienceTotals.Academic
+			.label Personal
+			.value.large= experienceTotals.Personal
 
 		//- v2.0
 		//- section.events

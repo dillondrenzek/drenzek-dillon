@@ -48,12 +48,12 @@ nav {
 	}
 }
 
-section {
-	position: relative;
-	float: left;
-	width: 100%;
-	padding: 20px;
-}
+// section {
+// 	position: relative;
+// 	float: left;
+// 	width: 100%;
+// 	padding: 20px;
+// }
 
 section.title {
 	$root-z-index: 0;
@@ -66,6 +66,7 @@ section.title {
 	
 
 	header {
+		background: none;
 		display: inline-block;
 		position: relative;
 		width: 100%;
@@ -129,12 +130,12 @@ section.subtitle {
 
 section.working {
 	@include Gradient-0-62-100($white-2, $white-3);
-	height: 500px;
+	// height: 500px;
 	width: 62%;
 }
 
 section.skills {
 	@include Gradient-0-62-100($white-1, $white-2);
-	height: 500px;
+	// height: 500px;
 	width: 38%;
 }

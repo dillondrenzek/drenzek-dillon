@@ -41,6 +41,7 @@
 @import "_fira-sans.scss";
 @import "_cards.scss";
 @import "_std-style.scss";
+@import "_model-representations.scss";
 
 
 /* UTILITY */
@@ -74,11 +75,12 @@ html{
 	}
 }
 
-#title {
-	width: 500px;
-	margin: 0 auto;
-	background: $gray-2;
-}
+
+// #title {
+// 	width: 500px;
+// 	margin: 0 auto;
+// 	background: $gray-2;
+// }
 
 .main-page {
 	width: $std-wrapper-width;
@@ -166,7 +168,20 @@ section {
 	position: relative;
 	float: left;
 	width: 100%;
-	padding: 20px;
+	// padding: 20px;
+
+	header {
+		width: 100%;
+		padding: 10px 20px;
+	}
+}
+
+header.section {
+	@include Gradient-0-62-100($white-2, $white-3);
+
+	h3 {
+		@include FiraSans-5(2rem, 400, $gray-0, -2px, left);
+	}
 }
 
 section.admin {
@@ -180,4 +195,9 @@ section.admin {
 		display: inline-block;
 		margin-right: 50px; }
 }
+
+
+
+
+
 
