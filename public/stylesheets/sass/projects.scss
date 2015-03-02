@@ -14,7 +14,7 @@ section.description {
 	@include Gradient-0-62-100($white-1, $white-2);
 	width: 62%;
 	float: left;
-	border: 3px solid $gray-0;
+	border: 1px solid $gray-0;
 	border-top: none;
 
 	p {
@@ -28,7 +28,7 @@ section.skills {
 	width: 38%;
 	background: $white-1;
 	float: right;
-	border: 3px solid $gray-0;
+	border: 1px solid $gray-0;
 	border-top: none;
 	border-left: none;
 }

@@ -74,25 +74,25 @@ app.post('/projects/destroy/:id', routes.projects.destroy);
 
 app.post('/projects/:id/exhibits', routes.projects.exhibits);
 
-// TIME ROUTES
-app.get('/times', routes.times.list);
-app.get('/times/new', routes.times.new);
-app.get('/times/edit', routes.times.list_edit);
-app.get('/times/:id', routes.times.show);
-app.get('/times/edit/:id', routes.times.edit);
-app.post('/times/new', routes.times.create);
-app.post('/times/edit/:id', routes.times.update);
-app.post('/times/destroy/:id', routes.times.destroy);
+// // TIME ROUTES
+// app.get('/times', routes.times.list);
+// app.get('/times/new', routes.times.new);
+// app.get('/times/edit', routes.times.list_edit);
+// app.get('/times/:id', routes.times.show);
+// app.get('/times/edit/:id', routes.times.edit);
+// app.post('/times/new', routes.times.create);
+// app.post('/times/edit/:id', routes.times.update);
+// app.post('/times/destroy/:id', routes.times.destroy);
 
-// CONTEXT ROUTES
-app.get('/contexts', routes.contexts.list);
-app.get('/contexts/new', routes.contexts.new);
-app.get('/contexts/edit', routes.contexts.list_edit);
-app.get('/contexts/:id', routes.contexts.show);
-app.get('/contexts/edit/:id', routes.contexts.edit);
-app.post('/contexts/new', routes.contexts.create);
-app.post('/contexts/edit/:id', routes.contexts.update);
-app.post('/contexts/destroy/:id', routes.contexts.destroy);
+// // CONTEXT ROUTES
+// app.get('/contexts', routes.contexts.list);
+// app.get('/contexts/new', routes.contexts.new);
+// app.get('/contexts/edit', routes.contexts.list_edit);
+// app.get('/contexts/:id', routes.contexts.show);
+// app.get('/contexts/edit/:id', routes.contexts.edit);
+// app.post('/contexts/new', routes.contexts.create);
+// app.post('/contexts/edit/:id', routes.contexts.update);
+// app.post('/contexts/destroy/:id', routes.contexts.destroy);
 
 
 

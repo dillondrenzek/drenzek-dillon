@@ -1,4 +1,11 @@
 // Styling Mixins
+@mixin VerticalAlign($pos) {
+	position: $pos;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 @mixin TextShadow {
 	text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
 }
