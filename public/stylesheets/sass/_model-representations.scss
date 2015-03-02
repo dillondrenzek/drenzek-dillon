@@ -8,10 +8,6 @@
 //
 
 ul.skill {
-	// DEBUG
-	background: yellow;
-	// -----
-
 	position: relative;
 	width: 100%;
 }
@@ -79,13 +75,44 @@ ul.project {
 	// DEBUG
 	background: yellow;
 	// -----
+	position: relative;
+	width: 100%;
 
 }
-li.project {
-	// DEBUG
-	background: green;
-	// -----
 
+li.project {
+	$root-z-index: 0;
+	position: relative;
 	list-style-type: none;
+	height: 200px;
+	width: 100%;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 10px 20px;
+
+	img {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 30%;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		z-index: $root-z-index + 1;
+	}
+
+	.title {
+		display: inline-block;
+		position: relative;
+		z-index:$root-z-index + 2;
+		h4 {
+			@include FiraSans-5(2em, 700, $white-2, -1px, left);
+			@include TextShadow;
+		}
+
+		.label {
+			color: $white-2;
+		}
+	}
 }
 

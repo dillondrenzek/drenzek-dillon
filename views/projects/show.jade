@@ -7,29 +7,30 @@ extends ./projects.jade
 		a(href="#{obj.localURL}")= obj.title
 
 block projects_page
+	- var admin = false;
 
 	//- include ../scripts/coloring.js.jade
 
-	.main-page
-
-		//- section.admin
-			.box
-				h3 Admin
-			.box
-				.value= obj.id
-				.label ID
-			.box
-				.value= obj.color
-				.label color
-			.box
-				.value= obj.imageURL
-				.label image
-			.box
-				+action("Edit", "/projects/edit/"+obj.id, "GET")
-				.label Edit Project			
-			.box
-				.value= obj.localURL
-				.label localURL
+	.main-pag
+		if admin
+			section.admin
+				.box
+					h3 Admin
+				.box
+					.value= obj.id
+					.label ID
+				.box
+					.value= obj.color
+					.label color
+				.box
+					.value= obj.imageURL
+					.label image
+				.box
+					+action("Edit", "/projects/edit/"+obj.id, "GET")
+					.label Edit Project			
+				.box
+					.value= obj.localURL
+					.label localURL
 
 		section.title(style="background: url('#{obj.imageURL}');")
 			header

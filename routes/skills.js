@@ -64,10 +64,10 @@ skills.show = function(req, res, next) {
                         //         { "Professional": prof_xp
                         //         , "Academic": acad_xp
                         //         , "Personal": pers_xp }};
-                        var project_package = 
-                            { "project": new Project(el['project'])};
+                        // var project_package = 
+                        //     { "project": };
 
-                        projects.push(project_package);
+                        projects.push(new Project(el['project']));
                     });
 
                     res.render('skills/show', {

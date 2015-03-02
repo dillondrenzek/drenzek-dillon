@@ -35,7 +35,6 @@ section.subtitle {
 
 	.outlook.box {
 		float: right;
-		// width: 20%;
 		text-align: center;
 		padding: 7px 20px;
 		.value, .label {
@@ -68,7 +67,7 @@ section.projects {
 	@include Gradient-0-62-100($white-0, $white-1);
 	width: 62%;
 	float: left;
-	border: 3px solid $gray-0;
+	border: 1px solid $gray-0;
 	border-top: none;
 }
 
@@ -76,7 +75,7 @@ section.experience {
 	@include Gradient-0-62-100($white-0, $white-1);
 	width: 38%;
 	float: right;
-	border: 3px solid $gray-0;
+	border: 1px solid $gray-0;
 	border-top: none;
 	border-left: none;
 

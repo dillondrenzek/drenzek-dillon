@@ -205,7 +205,6 @@ td.std {
   padding: 15px; }
 
 ul.skill {
-  background: yellow;
   position: relative;
   width: 100%; }
 
@@ -258,11 +257,41 @@ li.skill {
     transform: translateY(-50%); }
 
 ul.project {
-  background: yellow; }
+  background: yellow;
+  position: relative;
+  width: 100%; }
 
 li.project {
-  background: green;
-  list-style-type: none; }
+  position: relative;
+  list-style-type: none;
+  height: 200px;
+  width: 100%;
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 10px 20px; }
+  li.project img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1; }
+  li.project .title {
+    display: inline-block;
+    position: relative;
+    z-index: 2; }
+    li.project .title h4 {
+      font-family: 'Fira Sans', Helvetica, sans-serif;
+      font-size: 2em;
+      font-weight: 700;
+      color: #eeeeee;
+      letter-spacing: -1px;
+      text-align: left;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+    li.project .title .label {
+      color: #eeeeee; }
 
 /* UTILITY */
 *,

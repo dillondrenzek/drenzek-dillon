@@ -7,28 +7,29 @@ extends ./skills.jade
 		a(href="#{obj.localURL}")= obj.title
 
 block skill_page
+	- var admin = false;
 
 	include ../scripts/coloring.js.jade
 	include ../scripts/timeline.js.jade
 
 	.main-page
-
-		//- section.admin
-			.box
-				h3 Admin
-			.box
-				.value= obj.id
-				.label ID
-			.box
-				+action("Edit", "/skills/edit/"+obj.id, "GET")
-				.label Edit Skill
-			.box
-				.value= obj.localURL
-				.label localURL
-			each c in subskills
+		if admin
+			section.admin
 				.box
-					.value= c.title
-					.label Subskill
+					h3 Admin
+				.box
+					.value= obj.id
+					.label ID
+				.box
+					+action("Edit", "/skills/edit/"+obj.id, "GET")
+					.label Edit Skill
+				.box
+					.value= obj.localURL
+					.label localURL
+				each c in subskills
+					.box
+						.value= c.title
+						.label Subskill
 
 		section.title
 			header

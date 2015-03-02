@@ -39,10 +39,15 @@ mixin skill_list_item(s)
 	attributes: {class, id}
 mixin project_list( projects )
 	ul.project(class!=attributes.class, id!=attributes.id)
-		each s in projects
-			+project_list_item(s)
+		each p in projects
+			+project_list_item(p)
 		block
 
 mixin project_list_item(p)
-	li.project
-		a(href="/projects/#{p.id}")= p.title
+	li.project(style="background: url('#{p.imageURL}')", onclick="location.href='#{p.localURL}';")
+		if p.imageURL
+			img(src="#{p.imageURL}")
+		.title
+			h4= p.title
+			.label= p.type
+

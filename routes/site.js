@@ -13,6 +13,8 @@ site.index = function(req, res, next) {
         Skill.getAll(function (err, s_results) {
         	if (err) return next(err);
 
+            console.log("projects", p_results);
+
         	res.render('index', {
 				projects: p_results,
 				skills: s_results
