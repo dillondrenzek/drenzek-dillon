@@ -274,6 +274,26 @@ Object.defineProperties(Skill.prototype, {
 //
 //  Public Class Methods
 //
+Skill.getTrending = function (number, callback) {
+    var query = [
+        'MATCH (s:Skill)',
+        'RETURN s ORDER BY s.momentum DESC LIMIT {limit}'
+    ].join('\n');
+
+    var params = {
+        limit: number
+    };
+
+    db.query(query, params, function (err, results) {
+        if (err) return callback(err);
+        var skills = results.map(function (result) {
+            return new Skill(result['s']);
+        });
+        callback(null, skills);
+    });
+};
+
+
 Skill.get = function (id, callback) {
     db.getNodeById(id, function (err, node) {
         if (err) return callback(err);
@@ -291,12 +311,8 @@ Skill.getByTitle = function (data, callback) {
         data: data
     };
 
-    console.log("params:", params);
-    console.log("query:", query);
-
     db.query(query, null, function (err, results) {
         if (err) return callback(err);
-        console.log("Results:", results);
         var skill = results[0]['skill'];
         callback(null, skill);
     });

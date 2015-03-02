@@ -67,17 +67,14 @@ section.projects {
 	@include Gradient-0-62-100($white-0, $white-1);
 	width: 62%;
 	float: left;
-	border: 1px solid $gray-0;
 	border-top: none;
 }
 
 section.experience {
-	@include Gradient-0-62-100($white-0, $white-1);
+	@include Gradient-0-62-100($white-1, $white-2);
 	width: 38%;
 	float: right;
-	border: 1px solid $gray-0;
-	border-top: none;
-	border-left: none;
+	border-left: 1px solid $white-0;
 
 	.row {
 		width: 100%;
@@ -87,13 +84,12 @@ section.experience {
 
 	.label {
 		font-size: 0.8rem;
-		color: $black-3;
+		color: $gray-0;
 		text-align: center;
 	}
 
 	.value {
-		color: $white-3;
-		text-align: center;
+		@include FiraSans-5(1.75rem, 400, $gray-0, 0px, center);
 	}
 
 	.box {

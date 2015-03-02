@@ -205,7 +205,6 @@ li.project {
   padding: 0; }
 
 html {
-  background: #1f1f1f;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -213,12 +212,12 @@ html {
   letter-spacing: -1px;
   text-align: left;
   background: #171413;
-  background: -moz-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #171413), color-stop(62%, #3D3C3C), color-stop(100%, #171413));
-  background: -webkit-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
-  background: -o-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
-  background: -ms-linear-gradient(left, #171413 0%, #3D3C3C 62%, #171413 100%);
-  background: linear-gradient(to right, #171413 0%, #3D3C3C 62%, #171413 100%);
+  background: -moz-linear-gradient(left, #171413 0%, #353434 62%, #171413 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #171413), color-stop(62%, #353434), color-stop(100%, #171413));
+  background: -webkit-linear-gradient(left, #171413 0%, #353434 62%, #171413 100%);
+  background: -o-linear-gradient(left, #171413 0%, #353434 62%, #171413 100%);
+  background: -ms-linear-gradient(left, #171413 0%, #353434 62%, #171413 100%);
+  background: linear-gradient(to right, #171413 0%, #353434 62%, #171413 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 ); }
 
 .none {
@@ -257,6 +256,17 @@ html {
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   text-transform: uppercase; }
 
+a {
+  text-decoration: none;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #575452;
+  letter-spacing: 1px;
+  text-align: left; }
+  a:hover {
+    text-decoration: underline; }
+
 h1 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 7rem;
@@ -284,7 +294,7 @@ h3 {
   text-align: left; }
 
 nav {
-  background: rgba(53, 52, 52, 0.2);
+  background: #353434;
   width: 100%; }
   nav ul {
     list-style-type: none;
@@ -297,13 +307,14 @@ nav {
         font-family: 'Fira Sans', Helvetica, sans-serif;
         font-size: 1rem;
         font-weight: 800;
-        color: #eeeeee;
+        color: #ababab;
         letter-spacing: 0px;
         text-align: center;
         padding: 5px;
         text-decoration: none;
-        text-transform: uppercase;
-        background: rgba(53, 52, 52, 0.3); }
+        text-transform: uppercase; }
+        nav ul li a:hover {
+          color: #fafafa; }
   nav .menu {
     height: 100%;
     display: none; }
@@ -375,19 +386,27 @@ section.title {
 
 section.subtitle {
   padding: 0;
-  background: #575452;
-  background: -moz-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #575452), color-stop(62%, #666666), color-stop(100%, #575452));
-  background: -webkit-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
-  background: -o-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
-  background: -ms-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
-  background: linear-gradient(to right, #575452 0%, #666666 62%, #575452 100%);
+  background: #3D3C3C;
+  background: -moz-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3D3C3C), color-stop(62%, #575452), color-stop(100%, #3D3C3C));
+  background: -webkit-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: -o-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: -ms-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: linear-gradient(to right, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 ); }
   section.subtitle .box {
-    border-left: 1px solid #575452;
     border-right: 1px solid #575452;
     height: 100%;
     padding: 10px 20px; }
+  section.subtitle a {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #eeeeee;
+    letter-spacing: 0px;
+    text-align: left; }
+    section.subtitle a:hover {
+      color: #fafafa; }
   section.subtitle .momentum.box {
     float: right;
     width: 18%;
@@ -462,33 +481,34 @@ section.projects {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
   width: 62%;
   float: left;
-  border: 1px solid #666666;
   border-top: none; }
 
 section.experience {
-  background: #bcbcbc;
-  background: -moz-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #bcbcbc), color-stop(62%, #d8d8d8), color-stop(100%, #bcbcbc));
-  background: -webkit-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
-  background: -o-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
-  background: -ms-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
-  background: linear-gradient(to right, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: #d8d8d8;
+  background: -moz-linear-gradient(left, #d8d8d8 0%, #eeeeee 62%, #d8d8d8 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #d8d8d8), color-stop(62%, #eeeeee), color-stop(100%, #d8d8d8));
+  background: -webkit-linear-gradient(left, #d8d8d8 0%, #eeeeee 62%, #d8d8d8 100%);
+  background: -o-linear-gradient(left, #d8d8d8 0%, #eeeeee 62%, #d8d8d8 100%);
+  background: -ms-linear-gradient(left, #d8d8d8 0%, #eeeeee 62%, #d8d8d8 100%);
+  background: linear-gradient(to right, #d8d8d8 0%, #eeeeee 62%, #d8d8d8 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
   width: 38%;
   float: right;
-  border: 1px solid #666666;
-  border-top: none;
-  border-left: none; }
+  border-left: 1px solid #bcbcbc; }
   section.experience .row {
     width: 100%;
     padding: 3%;
     float: left; }
   section.experience .label {
     font-size: 0.8rem;
-    color: #575452;
+    color: #666666;
     text-align: center; }
   section.experience .value {
-    color: #fafafa;
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #666666;
+    letter-spacing: 0px;
     text-align: center; }
   section.experience .box {
     width: 33.3%;

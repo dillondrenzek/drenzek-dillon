@@ -56,16 +56,8 @@
 }
 
 html{
-	background: #1f1f1f;
 	@include FiraSans-5(16px, 500, $white-3, -1px, left);
-	@include Gradient-0-62-100($black-0, $black-2);
-
-	// background: url("../images/bg.png") no-repeat center center fixed;
- //        -webkit-background-size: cover;
- //        -moz-background-size: cover;
- //        -o-background-size: cover;
- //        background-size: cover;
-    // background: red;
+	@include Gradient-0-62-100($black-0, $black-1);
 }
 
 .none { 
@@ -75,17 +67,9 @@ html{
 	}
 }
 
-
-// #title {
-// 	width: 500px;
-// 	margin: 0 auto;
-// 	background: $gray-2;
-// }
-
 .main-page {
 	width: $std-wrapper-width;
-	margin: 0 auto;
-}
+	margin: 0 auto;}
 
 .box {
 	float: left;
@@ -109,6 +93,15 @@ html{
 	text-transform: uppercase;
 }
 
+a {
+	text-decoration: none;
+	@include FiraSans-5(1rem, 400, $black-3, 1px, left);
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
 h1 {
 	@include FiraSans-5(7rem, 700, $white-3, -2px, left);
 	text-shadow: 5px 5px 1px rgba(black, 0.1);
@@ -124,7 +117,7 @@ h3 {
 }
 
 nav {
-	background: rgba($black-1, 0.2);
+	background: $black-1;
 	width: 100%;
 
 	ul {
@@ -137,14 +130,12 @@ nav {
 			margin: 0 50px;
 
 			a {
-				@include FiraSans-5(1rem, 800, $white-2, 0px, center);
+				@include FiraSans-5(1rem, 800, $gray-3, 0px, center);
 				padding: 5px;
 				text-decoration: none;
 				text-transform: uppercase;
-				background: rgba($black-1, 0.3);
-
 				&:hover {
-					// color: lighten($ruby-l, 10%);
+					color: $white-3;
 				}
 			}
 		}
@@ -168,7 +159,6 @@ section {
 	position: relative;
 	float: left;
 	width: 100%;
-	// padding: 20px;
 
 	header {
 		width: 100%;
@@ -233,16 +223,19 @@ section.title {
 }
 
 section.subtitle {
-	// height: 85px;
 	padding: 0;
-	@include Gradient-0-62-100($black-3, $gray-4);
+	@include Gradient-0-62-100($black-2, $black-3);
 
 	.box {
-		border-left: 1px solid $black-3;
 		border-right: 1px solid $black-3;
 		height: 100%;
 		padding: 10px 20px;
 	}	
+
+	a {
+		@include FiraSans-5(1.5rem, 400, $white-2, 0px, left);
+		&:hover { color: $white-3; }
+	}
 
 	.momentum.box {
 		float: right;
@@ -255,7 +248,7 @@ section.subtitle {
 }
 
 section.events {
-	background: $white-9;
+	background: $white-2;
 	float: left;
 }
 

@@ -10,10 +10,10 @@ site.index = function(req, res, next) {
 	Project.getAll(function (err, p_results) {
         if (err) return next(err);
 
-        Skill.getAll(function (err, s_results) {
+        Skill.getTrending( 5, function (err, s_results) {
         	if (err) return next(err);
 
-            console.log("projects", p_results);
+            // console.log("projects", p_results);
 
         	res.render('index', {
 				projects: p_results,
