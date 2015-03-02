@@ -3,12 +3,14 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
 **Homepage**: http://dillon.drenzek.com
 
 
-### Version: `v0.5.0` <br>
+### Version: `v0.7.0` <br>
 ---------------------------------
 
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-------------------|---------------|---|
 | _Professional_	| _1.0.0_ 	| _Mar 2 15_ 	| _Due Date for Project_ |
+|					| 0.7.0		|	Mar  1 15	| Turn-in condition: good show views, okay index page, ugly list pages. | 
+|					| 0.6.0		|	Feb 28 15	| Unofficial version used as a checkpoint in the scramble to complete the project | 
 |					| 0.5.0		|	Feb 28 15	| First Relationships implemented in neo4j, skill show view well-developed | 
 |					| 0.4.0		|	Feb 23 15	| Heroku-able once again! All Models Lists are styled| 
 |					| 0.3.0		|	Feb 23 15	| All Models functionality implemented| 
