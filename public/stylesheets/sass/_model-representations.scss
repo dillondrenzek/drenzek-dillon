@@ -17,11 +17,6 @@ ul.skill {
 }
 
 li.skill {
-	// DEBUG
-	// background: orange;
-	// margin-bottom: 10px;
-	// -----
-
 	position: relative;
 	list-style-type: none;
 	width: 100%;
@@ -33,10 +28,8 @@ li.skill {
 	}
 
 	.box {
-		// background: blue;
 		float: right;
 		position: relative;
-		// @include Gradient-0-62-100($black-1, $black-2);
 		height: 100%;
 		padding: 5px 10px;
 	}

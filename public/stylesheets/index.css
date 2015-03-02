@@ -414,6 +414,61 @@ section.admin {
     display: inline-block;
     margin-right: 50px; }
 
+section.title {
+  z-index: 0;
+  position: relative;
+  height: 400px; }
+  section.title canvas {
+    z-index: 1; }
+  section.title header {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    z-index: 2; }
+    section.title header * {
+      display: inline-block; }
+    section.title header h2 {
+      margin-right: 30px; }
+    section.title header .detail {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      left: 3px;
+      top: -5px; }
+    section.title header .skill-tag {
+      margin: 0 20px;
+      position: relative;
+      top: -5px; }
+    section.title header .label {
+      font-size: 1.5rem;
+      color: #eeeeee; }
+
+section.subtitle {
+  padding: 0;
+  background: #575452;
+  background: -moz-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #575452), color-stop(62%, #666666), color-stop(100%, #575452));
+  background: -webkit-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: -o-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: -ms-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
+  background: linear-gradient(to right, #575452 0%, #666666 62%, #575452 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 ); }
+  section.subtitle .box {
+    border-left: 1px solid #575452;
+    border-right: 1px solid #575452;
+    height: 100%;
+    padding: 10px 20px; }
+  section.subtitle .momentum.box {
+    float: right;
+    width: 18%;
+    padding: 7px 20px; }
+    section.subtitle .momentum.box .value, section.subtitle .momentum.box .label {
+      text-align: center; }
+
+section.events {
+  background: #eeeeee;
+  float: left; }
+
 .main-page {
   background: #fafafa; }
 

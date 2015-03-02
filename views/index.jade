@@ -4,17 +4,8 @@ extends ./layout.jade
 
 block stylesheet
 	include ../public/stylesheets/index.css
-	
-
-//- block nav 
-	li
-		a(href="/skills") Skills
-	li
-		a(href="/projects") Projects
-
 
 block page
-
 	.main-page
 		section.title
 			header
@@ -30,24 +21,18 @@ block page
 
 		section.subtitle
 			.since.box
-				.value.large July 27, 1992
+				.value July 27, 1992
 				.label since
-			//- .outlook.box
-				.value.large Optimistic
-				.label outlook	
-			//- .momentum.box
-				.value.large 99
-				.label momentum
 
 		section.working
-			header
+			header.section
 				h3 Current Projects
-			a(href="/projects") See All Projects
+				a(href="/projects") See All Projects
 			+project_list(projects)
 
 
 		section.skills
-			header
+			header.section
 				h3 Personally Trending
-			a(href="/skills") See All Skills
+				a(href="/skills") See All Skills
 			+skill_list(skills)

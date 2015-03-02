@@ -13,7 +13,7 @@ block skill_page
 
 	.main-page
 
-		section.admin
+		//- section.admin
 			.box
 				h3 Admin
 			.box
@@ -39,9 +39,12 @@ block skill_page
 						+skill_tag(parentSkill)
 			canvas#timeline(width="960px", height="400px")
 
+		section.description
+			.value= obj.description
+
 		section.subtitle
 			.since.box
-				.value.large= obj.since
+				.value= obj.since
 				.label since
 			.type.box
 				.value= obj.type
@@ -53,38 +56,27 @@ block skill_page
 				.value.large= obj.momentum
 				.label momentum
 
-		section.description
-			h3= obj.description
-
 		section.projects
 			header.section
 				h3 Projects
 			+project_list(projects)
-			//- each p,i in projects
-				.label= p.project.title
-				if i<10
-					.value= "0"+(i+1)
-				else
-					.value= i+1
-				//- v2.0
-				//- .label Professional
-				//- .value= p.experience.Professional
-				//- .label Academic
-				//- .value= p.experience.Academic
-				//- .label Personal
-				//- .value= p.experience.Personal
 
 		section.experience
 			header.section
 				h3 Experience
-			.label Overall Confidence
-			.value.large= obj.confidence
-			.label Professional
-			.value.large= experienceTotals.Professional
-			.label Academic
-			.value.large= experienceTotals.Academic
-			.label Personal
-			.value.large= experienceTotals.Personal
+			.row
+				.value.large= obj.confidence
+				.label Overall Confidence with #{obj.title}
+			.row
+				.box
+					.value.large= experienceTotals.Professional
+					.label Professional
+				.box
+					.value.large= experienceTotals.Academic
+					.label Academic
+				.box
+					.value.large= experienceTotals.Personal
+					.label Personal
 
 		//- v2.0
 		//- section.events

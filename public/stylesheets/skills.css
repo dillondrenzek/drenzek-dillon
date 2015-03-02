@@ -414,22 +414,12 @@ section.admin {
     display: inline-block;
     margin-right: 50px; }
 
-.skill-tag {
-  padding: 3px 10px;
-  display: inline-block;
-  border-radius: 5px; }
-  .skill-tag .value {
-    font-family: 'Fira Sans', Helvetica, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #fafafa;
-    letter-spacing: 0px;
-    text-align: center; }
-
 section.title {
-  height: 400px;
+  z-index: 0;
   position: relative;
-  z-index: 0; }
+  height: 400px; }
+  section.title canvas {
+    z-index: 1; }
   section.title header {
     display: inline-block;
     position: relative;
@@ -450,17 +440,10 @@ section.title {
       position: relative;
       top: -5px; }
     section.title header .label {
-      font-size: 1.5rem; }
-  section.title canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1; }
+      font-size: 1.5rem;
+      color: #eeeeee; }
 
 section.subtitle {
-  height: 85px;
   padding: 0;
   background: #575452;
   background: -moz-linear-gradient(left, #575452 0%, #666666 62%, #575452 100%);
@@ -474,30 +457,113 @@ section.subtitle {
     border-left: 1px solid #575452;
     border-right: 1px solid #575452;
     height: 100%;
-    padding: 15px 25px; }
+    padding: 10px 20px; }
   section.subtitle .momentum.box {
     float: right;
-    width: 18%; }
+    width: 18%;
+    padding: 7px 20px; }
     section.subtitle .momentum.box .value, section.subtitle .momentum.box .label {
       text-align: center; }
-  section.subtitle .outlook.box {
-    float: right;
-    text-align: center; }
-    section.subtitle .outlook.box .value, section.subtitle .outlook.box .label {
-      text-align: center; }
-
-section.projects {
-  width: 62%;
-  background: #bcbcbc;
-  float: left; }
-
-section.experience {
-  width: 38%;
-  background: #d8d8d8;
-  float: right; }
 
 section.events {
   background: #eeeeee;
   float: left; }
+
+.skill-tag {
+  padding: 3px 10px;
+  display: inline-block;
+  border-radius: 5px; }
+  .skill-tag .value {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #fafafa;
+    letter-spacing: 0px;
+    text-align: center; }
+
+section.title canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+section.subtitle .momentum.box {
+  float: right;
+  width: 18%;
+  padding: 7px 20px; }
+  section.subtitle .momentum.box .value, section.subtitle .momentum.box .label {
+    text-align: center; }
+section.subtitle .outlook.box {
+  float: right;
+  text-align: center;
+  padding: 7px 20px; }
+  section.subtitle .outlook.box .value, section.subtitle .outlook.box .label {
+    text-align: center; }
+
+section.description {
+  background: #3D3C3C;
+  background: -moz-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3D3C3C), color-stop(62%, #575452), color-stop(100%, #3D3C3C));
+  background: -webkit-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: -o-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: -ms-linear-gradient(left, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  background: linear-gradient(to right, #3D3C3C 0%, #575452 62%, #3D3C3C 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
+  padding: 5px 20px; }
+  section.description * {
+    display: inline-block; }
+  section.description .label {
+    margin-right: 20px; }
+  section.description .value {
+    font-size: 1.25rem;
+    font-weight: 200;
+    text-shadow: none;
+    font-style: italic; }
+
+section.projects {
+  background: #bcbcbc;
+  background: -moz-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #bcbcbc), color-stop(62%, #d8d8d8), color-stop(100%, #bcbcbc));
+  background: -webkit-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: -o-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: -ms-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: linear-gradient(to right, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
+  width: 62%;
+  float: left;
+  border: 3px solid #666666;
+  border-top: none; }
+
+section.experience {
+  background: #bcbcbc;
+  background: -moz-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #bcbcbc), color-stop(62%, #d8d8d8), color-stop(100%, #bcbcbc));
+  background: -webkit-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: -o-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: -ms-linear-gradient(left, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  background: linear-gradient(to right, #bcbcbc 0%, #d8d8d8 62%, #bcbcbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
+  width: 38%;
+  float: right;
+  border: 3px solid #666666;
+  border-top: none;
+  border-left: none; }
+  section.experience .row {
+    width: 100%;
+    padding: 3%;
+    float: left; }
+  section.experience .label {
+    font-size: 0.8rem;
+    color: #575452;
+    text-align: center; }
+  section.experience .value {
+    color: #fafafa;
+    text-align: center; }
+  section.experience .box {
+    width: 33.3%;
+    height: 100%; }
+    section.experience .box * {
+      text-align: center; }
 
 /*# sourceMappingURL=skills.css.map */

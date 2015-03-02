@@ -1,7 +1,6 @@
 //- Show Project
 //- version 0.7.0
 extends ./projects.jade
-include ../skills/skills.jade
 
 //- block nav_skills
 	li
@@ -59,10 +58,9 @@ block projects_page
 
 
 		section.description
-			//- header.section
-			//- 	h3 Description
-			//- header.section
-				h3= obj.description
+			header.section
+				h3 Description
+			p= obj.description
 
 		section.skills
 			header.section
