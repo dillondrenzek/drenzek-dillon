@@ -2,7 +2,11 @@
 
 _media/
 _readable-libraries/
+json/
 
-old-js
+public/.sass-cache
+public/_media
+
+
 node_modules
 npm-debug.log

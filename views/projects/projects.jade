@@ -1,20 +1,14 @@
 //- Project Views Header
-//- version 0.5.0
+//- version 0.7.0
 
 extends ../layout.jade
-include ../std/std-ui.jade
 
 block stylesheet
 	include ../../public/stylesheets/projects.css
 
+//- block nav 
+	//- +navButton('/skills', 'Skills')
+	block nav_skills
+
 block page
 	block projects_page
-
-//- Specialized Views
-mixin project_tag(p)
-	- p.url = "/projects";
-	- var col = p.color || "#666";
-	- var bg = "background: "+col+" !important;";
-	- var text = "color: "+col+" !important;";
-	a.project-tag(style="#{bg}", href="#{p.url}")
-		.value= p.title

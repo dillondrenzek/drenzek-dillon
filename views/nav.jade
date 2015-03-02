@@ -9,8 +9,16 @@ mixin nav(admin)
 
 	if !admin
 		nav
-			ul 
-				+navButton("/", "Home")
+			ul
+				li
+					a(href="/" class="home") Home
+				li
+					a(href="/skills") Skills
+				li
+					a(href="/projects") Projects
+					//- .menu
+						a(href="/skills") Skills
+						a(href="/projects") Projects
 				block nav
 
 
@@ -27,13 +35,14 @@ mixin nav(admin)
 					a(href="/projects") Projects
 					a(href="/projects/new") New
 					a(href="/projects/edit") Edit
+				block nav
 				//- li 
 					a(href="/times") Times
+					a(href="/times/new") New
 					a(href="/times/edit") Edit
 				//- li 
 					a(href="/contexts") Contexts
+					a(href="/contexts/new") New
 					a(href="/contexts/edit") Edit
 
 
-+nav(true)
-	block nav

@@ -1,34 +1,69 @@
 //- Show Project
-//- version 0.4.0
+//- version 1.0.0
 extends ./projects.jade
 
+//- block nav_skills
+	li
+		a(href="#{obj.localURL}")= obj.title
+
 block projects_page
-	- var col = obj.color || "#666";
-	- var bg = "background: "+col+" !important;";
-	- var text = "color: "+col+" !important;";
-	- obj.skills = [{}, {}, {}];
+	- var admin = false;
+
+	//- include ../scripts/coloring.js.jade
 
 	.main-page
-		section.title
+		if admin
+			section.admin
+				.box
+					h3 Admin
+				.box
+					.value= obj.id
+					.label ID
+				.box
+					.value= obj.color
+					.label color
+				.box
+					.value= obj.imageURL
+					.label image
+				.box
+					+action("Edit", "/projects/edit/"+obj.id, "GET")
+					.label Edit Project			
+				.box
+					.value= obj.localURL
+					.label localURL
+
+		section.title(style="background: url('#{obj.imageURL}');")
 			header
 				h2= obj.title
-				+action("Edit", "/projects/edit/"+obj.id, "GET")
 				.detail
-					.label 
-						| Project
-					+project_tag({title: obj.type, color: col})
+					.label= obj.model_label
 
 		section.subtitle
 			.date.box
-				.value.large 23 Feb 15
+				.value= obj.date
 				.label date
+			.type.box
+				.value= obj.type
+				.label project type
+
+			if obj.externalURL
+				.external.box(onclick="location.href='';")
+					.value 
+						a(href="#{obj.externalURL}") Visit
+					.label External URL
+			if obj.githubURL
+				.external.box(onclick="location.href='#{obj.githubURL}';")
+					.value 
+						a(href="#{obj.githubURL}") Visit
+					.label GitHub Repo
+
 
 		section.description
-			h3 Description
+			header.section
+				h3 Description
 			p= obj.description
 
 		section.skills
-			h3 Skills
-			each s in obj.skills
-				.label Skill
-				.value Photoshop
+			header.section
+				h3 Skills
+			+skill_list( exhibitedSkills )

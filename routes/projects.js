@@ -42,11 +42,15 @@ projects.show = function(req, res, next) {
     Project.get(req.params.id, function (err, project) {
         if (err) return next(err);
 
-        res.render('projects/show', {
-            obj: project,
-            model: Project.prototype,
-            keys: Object.keys(Project.prototype)
+        project.getExhibitedSkills(function (err, skills) {
+            if (err) return next(err);
 
+            res.render('projects/show', {
+                obj: project,
+                model: Project.prototype,
+                exhibitedSkills: skills,
+                keys: Object.keys(Project.prototype)
+            });
         });
     }); 
 };

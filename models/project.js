@@ -1,6 +1,7 @@
-// project.js
-// version 0.5.0
-var neo4j = require('neo4j');
+// Project Model
+// version 0.7.0
+var neo4j = require('neo4j'),
+    Skill = require('./skill');
 
 var db = new neo4j.GraphDatabase(
 	process.env['NEO4J_URL'] ||
@@ -19,11 +20,24 @@ var Project = module.exports = function Project(_node) {
 //  Properties
 //
 Object.defineProperties(Project.prototype, {
+    
+    // READONLY
+    'model_label': {
+        enumerable: false,
+        get: function () { return "Project"; }
+    },
+
+    'localURL': {
+        enumerable: false,
+        get: function () { return "/projects/"+this.id; }
+    },
+
     'id': {
         enumerable: true,
         get: function () { return this._node.id; }
     },
 
+    // SETTABLES
     'title': {
         enumerable: true,
         get: function () { return this._node.data['title']; },
@@ -42,30 +56,98 @@ Object.defineProperties(Project.prototype, {
         set: function (type) { this._node.data['type'] = type; }
     },
 
-    'addSkill': {
-        enumerable: false,
-        value: function (skill, callback) {
-            this._node.createRelationshipTo(skill._node, 'exhibits', {}, function (err, rel) {
-                callback(err);
-            });
-        }
+    'date': {
+        enumerable: true,
+        get: function () { return this._node.data['date']; },
+        set: function (date) { this._node.data['date'] = date; }
     },
 
-//     User.prototype.follow = function (other, callback) {
-//     this._node.createRelationshipTo(other._node, 'follows', {}, function (err, rel) {
-//         callback(err);
-//     });
-// };
-    'exhibits': {
+
+
+    // v2.0
+    'content': {
         enumerable: false,
-        get: function (callback) {
-            
-        },
-        // set: function (skill, callback) {
-        //     this._node.createRelationshipTo(skill._node, 'exhibits', {}, function (err, rel) {
-        //         callback(err);
-        //     });
-        // }
+        get: function () { return this._node.data['content']; },
+        set: function (xp) { this._node.data['content']; }
+    },
+
+    // 'externalURL': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['content']['externalURL']; },
+    //     set: function (externalURL) { this._node.data['content']['externalURL'] = externalURL; }
+    // },
+
+    // 'githubURL': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['content']['githubURL']; },
+    //     set: function (githubURL) { this._node.data['content']['githubURL'] = githubURL; }
+    // },
+
+    // 'imageURL': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['content']['imageURL']; },
+    //     set: function (imageURL) { this._node.data['content']['imageURL'] = imageURL; }
+    // },
+
+    // 'description': {
+    //     enumerable: true,
+    //     get: function () { return this._node.data['content']['description']; },
+    //     set: function (description) { this._node.data['content']['description'] = description; }
+    // },
+
+    // DEPRECATE v2.0
+    'externalURL': {
+        enumerable: true,
+        get: function () { return this._node.data['externalURL']; },
+        set: function (externalURL) { this._node.data['externalURL'] = externalURL; }
+    },
+
+    'githubURL': {
+        enumerable: true,
+        get: function () { return this._node.data['githubURL']; },
+        set: function (githubURL) { this._node.data['githubURL'] = githubURL; }
+    },
+
+    'imageURL': {
+        enumerable: true,
+        get: function () { return this._node.data['imageURL']; },
+        set: function (imageURL) { this._node.data['imageURL'] = imageURL; }
+    },
+
+    'description': {
+        enumerable: true,
+        get: function () { return this._node.data['description']; },
+        set: function (description) { this._node.data['description'] = description; }
+    },
+    // END DEPRECATE    
+
+    'getExhibitedSkills': {
+        enumerable: false,
+        value: function (callback) {
+            var query = [
+                'MATCH (skill:Skill) <-[relationship:EXHIBITS]- (p:Project)',
+                'WHERE ID(p) = {projectId}',
+                'RETURN skill'
+            ].join('\n');
+
+            var params = {
+                projectId: this.id
+            };
+
+            db.query( query, params, function (err, results) {
+                if (err) return callback(err);
+
+                var exhibitedSkills = [];
+
+                results.forEach(function (el, i) {
+                    var s = new Skill(results[i]['skill']);
+                    exhibitedSkills.push(s);
+                });
+
+
+                callback(null, exhibitedSkills);
+            });
+        }
     },
 
     'save': {

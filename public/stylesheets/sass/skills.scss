@@ -13,70 +13,21 @@ $skill-tag-padding: 5px;
 }
 
 section.title {
-	$root-z-index: 0;
-
-	height: 400px;
-	position: relative;
-	z-index: $root-z-index;
-	
-
-	header {
-		display: inline-block;
-		position: relative;
-		width: 100%;
-		z-index: $root-z-index + 2;
-
-		* {
-			display: inline-block;
-		}
-
-		h2 {
-			margin-right: 30px;
-		}
-
-		.detail {
-			position: relative;
-			width: 100%;
-			height: 30px;
-			left: 3px;
-			top: -5px;
-		}
-		.skill-tag {
-			margin: 0 20px;
-			position: relative;
-			top: -5px;
-		}
-
-		.label {
-			font-size: 1.5rem;
-		}
-	}
-
 	canvas {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		top: 0;
 		left: 0;
-		z-index: $root-z-index + 1;
 	}
 }
 
 section.subtitle {
-	height: 85px;
-	padding: 0;
-	@include Gradient-0-62-100($black-3, $gray-4);
-
-	.box {
-		border-left: 1px solid $black-3;
-		border-right: 1px solid $black-3;
-		height: 100%;
-		padding: 15px 25px;
-	}
 
 	.momentum.box {
 		float: right;
 		width: 18%;
+		padding: 7px 20px;
 		.value, .label {
 			text-align: center;
 		}
@@ -84,27 +35,69 @@ section.subtitle {
 
 	.outlook.box {
 		float: right;
-		width: 20%;
 		text-align: center;
+		padding: 7px 20px;
 		.value, .label {
 			text-align: center;
 		}
 	}
 }
 
+section.description {
+	@include Gradient-0-62-100($black-2, $black-3);
+	padding: 5px 20px;
+
+	* {
+		display: inline-block;
+	}
+
+	.label {
+		margin-right: 20px;
+	}
+
+	.value {
+		font-size: 1.25rem;
+		font-weight: 200;
+		text-shadow: none;
+		font-style: italic;
+	}
+}
+
 section.projects {
+	@include Gradient-0-62-100($white-0, $white-1);
 	width: 62%;
-	background: $gray-8;
 	float: left;
+	border-top: none;
 }
 
 section.experience {
+	@include Gradient-0-62-100($white-1, $white-2);
 	width: 38%;
-	background: $white-8;
 	float: right;
+	border-left: 1px solid $white-0;
+
+	.row {
+		width: 100%;
+		padding: 3%;
+		float: left;
+	}
+
+	.label {
+		font-size: 0.8rem;
+		color: $gray-0;
+		text-align: center;
+	}
+
+	.value {
+		@include FiraSans-5(1.75rem, 400, $gray-0, 0px, center);
+	}
+
+	.box {
+		width: 33.3%;
+		height: 100%;
+		* {
+			text-align: center;
+		}
+	}
 }
 
-section.events {
-	background: $white-9;
-	float: left;
-}

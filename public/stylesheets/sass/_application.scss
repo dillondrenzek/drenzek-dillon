@@ -1,14 +1,4 @@
-// COLORS (DEPRECATED)
-	// (not quite 50) Shades of Gray
-	$white-10: #fafafa;
-	$white-9: #eeeeee;
-	$white-8: #d8d8d8;
-	$gray-8: #bcbcbc;
-	
-	$gray-7: #ababab;
-	$gray-6: #979797;
-	$gray-5: #888686;
-	$gray-4: #666666;
+
 
 	// Defined Colors
 	$orange1-l: #eb7125;
@@ -23,23 +13,35 @@
 
 // COLORS
 	// Lightest
-	$white-3: $white-10;
-	$white-2: $white-9;
-	$white-1: $white-8;
-	$white-0: $gray-8;
-	$gray-3: $gray-7;
-	$gray-2: $gray-6;
-	$gray-1: $gray-5;
-	$gray-0: $gray-4;
+	$white-3: #fafafa;
+	$white-2: #eeeeee;
+	$white-1: #d8d8d8;
+	$white-0: #bcbcbc;
+	$gray-3: #ababab;
+	$gray-2: #979797;
+	$gray-1: #888686;
+	$gray-0: #666666;
 	$black-3: #575452;
 	$black-2: #3D3C3C;
 	$black-1: #353434;
 	$black-0: #171413;
 	// Darkest
 
+	// REMOVE THIS SHIT
+	$white-10: $white-3;
+	$white-9: $white-2;
+	$white-8: $white-1;
+	$gray-8: $white-0;
+	$gray-7: $gray-3;
+	$gray-6: $gray-2;
+	$gray-5: $gray-1;
+	$gray-4: $gray-0;
+
+
 @import "_fira-sans.scss";
 @import "_cards.scss";
 @import "_std-style.scss";
+@import "_model-representations.scss";
 
 
 /* UTILITY */
@@ -54,15 +56,8 @@
 }
 
 html{
-	background: $black-0;
-	@include FiraSans-5(16px, 500, $white-10, -1px, left);
-
-	// background: url("../images/bg.png") no-repeat center center fixed;
- //        -webkit-background-size: cover;
- //        -moz-background-size: cover;
- //        -o-background-size: cover;
- //        background-size: cover;
-    // background: red;
+	@include FiraSans-5(16px, 500, $white-3, -1px, left);
+	@include Gradient-0-62-100($black-0, $black-1);
 }
 
 .none { 
@@ -72,18 +67,9 @@ html{
 	}
 }
 
-#title {
-	width: 500px;
-	margin: 0 auto;
-	// position: relative;
-	// top: 50px;
-	background: $gray-7;
-}
-
 .main-page {
 	width: $std-wrapper-width;
-	margin: 0 auto;
-}
+	margin: 0 auto;}
 
 .box {
 	float: left;
@@ -92,7 +78,7 @@ html{
 }
 
 .value {
-	@include FiraSans-5(1.5rem, 700, $white-9, -1px, left);
+	@include FiraSans-5(1.5rem, 700, $white-2, -1px, left);
 	@include TextShadow;
 
 	&.large {
@@ -102,45 +88,69 @@ html{
 }
 
 .label {
-	@include FiraSans-5(1rem, 400, $gray-8, 1.5px, left);
+	@include FiraSans-5(1rem, 400, $white-0, 1.5px, left);
 	@include TextShadow;
 	text-transform: uppercase;
 }
 
+a {
+	text-decoration: none;
+	@include FiraSans-5(1rem, 400, $black-3, 1px, left);
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
 h1 {
-	@include FiraSans-5(7rem, 700, $white-10, -2px, left);
+	@include FiraSans-5(7rem, 700, $white-3, -2px, left);
 	text-shadow: 5px 5px 1px rgba(black, 0.1);
 }
 
 h2 {
-	@include FiraSans-5(4.5rem, 700, $white-10, -2px, left);
+	@include FiraSans-5(4.5rem, 700, $white-3, -2px, left);
 	@include TextShadow;
 }
 
 h3 {
-	@include FiraSans-5(1.8rem, 200, $gray-4, -2px, left);
+	@include FiraSans-5(1.8rem, 200, $gray-0, -2px, left);
 }
 
 nav {
-	// position: relative;
 	background: $black-1;
+	width: 100%;
+
 	ul {
 		list-style-type: none;
+		text-align: center;
+
 		li {
 			display: inline-block;
-			margin-right: 50px;
+			padding: 10px 20px;
+			margin: 0 50px;
 
 			a {
-				@include FiraSans-5(1rem, 800, $white-9, 0px, center);
+				@include FiraSans-5(1rem, 800, $gray-3, 0px, center);
 				padding: 5px;
 				text-decoration: none;
 				text-transform: uppercase;
-
-
 				&:hover {
-					color: lighten($ruby-l, 10%);
+					color: $white-3;
 				}
 			}
+		}
+	}
+
+	.menu {
+		height: 100%;
+		display: none;
+
+		a {
+			display: inline-block;
+		}
+
+		.home:hover & {
+
 		}
 	}
 }
@@ -149,7 +159,97 @@ section {
 	position: relative;
 	float: left;
 	width: 100%;
-	padding: 20px;
+
+	header {
+		width: 100%;
+		padding: 10px 20px;
+	}
+}
+
+header.section {
+	@include Gradient-0-62-100($white-2, $white-3);
+
+	h3 {
+		@include FiraSans-5(2rem, 400, $gray-0, -2px, left);
+	}
+}
+
+section.admin {
+	background: #a42028;
+	border: 3px solid darken(#a42028, 10%);
+
+	h3 {
+		color: $white-0; }
+
+	.box {
+		display: inline-block;
+		margin-right: 50px; }
+}
+
+section.title {
+	$root-z-index: 0;
+	z-index: $root-z-index;
+	position: relative;
+	height: 400px;
+
+	canvas { z-index: $root-z-index + 1; }
+	
+	header {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		z-index: $root-z-index + 2;
+
+		* { display: inline-block; }
+		h2 { margin-right: 30px; }
+		.detail {
+			position: relative;
+			width: 100%;
+			height: 30px;
+			left: 3px;
+			top: -5px;
+		}
+		.skill-tag {
+			margin: 0 20px;
+			position: relative;
+			top: -5px;
+		}
+
+		.label {
+			font-size: 1.5rem;
+			color: $white-2;
+		}
+	}
+}
+
+section.subtitle {
+	padding: 0;
+	@include Gradient-0-62-100($black-2, $black-3);
+
+	.box {
+		border-right: 1px solid $black-3;
+		height: 100%;
+		padding: 10px 20px;
+	}	
+
+	a {
+		@include FiraSans-5(1.5rem, 400, $white-2, 0px, left);
+		&:hover { color: $white-3; }
+	}
+
+	.momentum.box {
+		float: right;
+		width: 18%;
+		padding: 7px 20px;
+		.value, .label {
+			text-align: center;
+		}
+	}
+}
+
+section.events {
+	background: $white-2;
+	float: left;
 }
 
 

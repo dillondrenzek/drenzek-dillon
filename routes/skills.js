@@ -1,5 +1,5 @@
 //- Skills Router
-//- version 0.5.0
+//- version 0.7.0
 var skills = exports = module.exports;
 var Skill = require('../models/skill'),
     Project = require('../models/project');
@@ -30,41 +30,54 @@ skills.show = function(req, res, next) {
         skill.getParentSkill(function (err, parent) {
             if (err) return next(err);
 
-            skill.getExhibitingProjects(function (err, results) {
+            skill.getChildSkills(function (err, children) {
                 if (err) return next(err);
 
-                var projects = [];
-                var experienceTotals = 
-                    { "Professional": 0
-                    , "Academic": 0
-                    , "Personal": 0 };
+                skill.getExhibitingProjects(function (err, results) {
+                    if (err) return next(err);
 
-                results.forEach(function (el, i, arr) {
-                    var rel_data = el.relationship._data.data;
-                    var prof_xp = rel_data.prof_exp,
-                        acad_xp = rel_data.acad_exp,
-                        pers_xp = rel_data.pers_exp;
+                    var projects = [];
+                    // v2.0
+                    // var experienceTotals = 
+                    //     { "Professional": 0
+                    //     , "Academic": 0
+                    //     , "Personal": 0 };
+                    var experienceTotals = 
+                        { "Professional": skill.professional
+                        , "Academic": skill.academic
+                        , "Personal": skill.personal };
 
-                    experienceTotals.Professional += prof_xp;
-                    experienceTotals.Academic += acad_xp;
-                    experienceTotals.Personal += pers_xp;
+                    results.forEach(function (el, i, arr) {
+                        // v2.0
+                        // var rel_data = el.relationship._data.data;
+                        // var prof_xp = rel_data.prof_exp,
+                        //     acad_xp = rel_data.acad_exp,
+                        //     pers_xp = rel_data.pers_exp;
 
-                    var project_package = 
-                        { "project": new Project(el['project'])
-                        , "experience":
-                            { "Professional": prof_xp
-                            , "Academic": acad_xp
-                            , "Personal": pers_xp }};
+                        // experienceTotals.Professional += prof_xp;
+                        // experienceTotals.Academic += acad_xp;
+                        // experienceTotals.Personal += pers_xp;
 
-                    projects.push(project_package);
-                });
+                        // var project_package = 
+                        //     { "project": new Project(el['project'])
+                        //     , "experience":
+                        //         { "Professional": prof_xp
+                        //         , "Academic": acad_xp
+                        //         , "Personal": pers_xp }};
+                        // var project_package = 
+                        //     { "project": };
 
-                res.render('skills/show', {
-                    obj: skill,
-                    projects: projects,
-                    experienceTotals: experienceTotals,
-                    parentSkill: parent,
-                    keys: Object.keys(Skill.prototype)
+                        projects.push(new Project(el['project']));
+                    });
+
+                    res.render('skills/show', {
+                        obj: skill,
+                        projects: projects,
+                        experienceTotals: experienceTotals,
+                        parentSkill: parent,
+                        subskills: children,
+                        keys: Object.keys(Skill.prototype)
+                    });
                 });
             });
         });

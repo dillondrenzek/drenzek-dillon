@@ -1,3 +1,13 @@
+//- STANDARD LAYOUT
+//- version 1.0.0
+
+-var admin = false;
+
+include ./model-representations.jade
+include ./std-ui.jade
+include ./nav.jade
+
+
 doctype html
 html
 	head
@@ -7,6 +17,6 @@ html
 			block stylesheet
 	body
 		.main-page
-			include ./nav.jade
-			
+			+nav(admin)
 			block page
+

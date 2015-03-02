@@ -1,28 +1,57 @@
 //- Show Skill
-//- version 0.5.0
+//- version 1.0.0
+//- extends ../nav.jade
 extends ./skills.jade
 
+
+//- block nav
+	li
+		a(href="#{obj.localURL}")= obj.title
+
 block skill_page
+	- var admin = false;
 
 	include ../scripts/coloring.js.jade
 	include ../scripts/timeline.js.jade
 
 	.main-page
+		if admin
+			section.admin
+				.box
+					h3 Admin
+				.box
+					.value= obj.id
+					.label ID
+				.box
+					+action("Edit", "/skills/edit/"+obj.id, "GET")
+					.label Edit Skill
+				.box
+					.value= obj.localURL
+					.label localURL
+				each c in subskills
+					.box
+						.value= c.title
+						.label Subskill
 
 		section.title
 			header
 				h2= obj.title
-				+action("Edit", "/skills/edit/"+obj.id, "GET")
 				.detail
 					.label= obj.model_label
 					if parentSkill
 						+skill_tag(parentSkill)
 			canvas#timeline(width="960px", height="400px")
 
+		section.description
+			.value= obj.description
+
 		section.subtitle
 			.since.box
-				.value.large= obj.since
+				.value= obj.since
 				.label since
+			.type.box
+				.value= obj.type
+				.label type
 			.outlook.box
 				.value.large= obj.outlook
 				.label outlook	
@@ -31,29 +60,28 @@ block skill_page
 				.label momentum
 
 		section.projects
-			h3 Projects
-			each p,i in projects
-				.label= p.project.title
-				if i<10
-					.value= "0"+(i+1)
-				else
-					.value= i+1
-				.label Professional
-				.value= p.experience.Professional
-				.label Academic
-				.value= p.experience.Academic
-				.label Personal
-				.value= p.experience.Personal
+			header.section
+				h3 Projects
+			+project_list(projects)
 
 		section.experience
-			h3 Experience
-				.label Professional
-				.value= experienceTotals.Professional
-				.label Academic
-				.value= experienceTotals.Academic
-				.label Personal
-				.value= experienceTotals.Personal
+			header.section
+				h3 Experience
+			.row
+				.value.large= obj.confidence
+				.label Overall Confidence with #{obj.title}
+			.row
+				.box
+					.value.large= experienceTotals.Professional
+					.label Professional
+				.box
+					.value.large= experienceTotals.Academic
+					.label Academic
+				.box
+					.value.large= experienceTotals.Personal
+					.label Personal
 
+		//- v2.0
 		//- section.events
 			h3 Events
 			each p in obj.events
