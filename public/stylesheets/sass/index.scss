@@ -24,7 +24,7 @@ section.title {
 	height: 500px;
 	position: relative;
 	z-index: $root-z-index;
-	background: url("/images/temp-prof.jpg");
+	background: url("/images/me.jpg") no-repeat fixed right;
 	
 	header {
 		background: none;
