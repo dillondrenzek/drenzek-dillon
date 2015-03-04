@@ -22,3 +22,9 @@ site.index = function(req, res, next) {
         });
     });
 };
+
+site.resume = function(req, res, next) {
+    res.render('resume', {
+
+    });
+};
