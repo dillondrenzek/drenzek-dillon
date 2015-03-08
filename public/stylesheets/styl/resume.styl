@@ -1,0 +1,162 @@
+// FIRA SANS
+// version 1.0.0
+
+@font-face 
+	font-family 'Fira Sans'
+	font-weight 700
+	src 	url("../../fonts/FiraSans-Bold.woff") format('woff'),
+			url("../../fonts/FiraSans-Bold.ttf") format('truetype')
+
+@font-face 
+	font-family 'Fira Sans'
+	font-weight 200
+	src 	url("../../fonts/FiraSans-Light.woff") format('woff'),
+			url("../../fonts/FiraSans-Light.ttf") format('truetype')
+			
+@font-face 
+	font-family 'Fira Sans'
+	font-weight 400
+	src 	url("../../fonts/FiraSans-Regular.woff") format('woff'),
+			url("../../fonts/FiraSans-Regular.ttf") format('truetype')
+
+FiraSans-3($size, $weight, $color) 
+	font-family 'Fira Sans', Helvetica, sans-serif
+	font-size $size
+	font-weight $weight
+	color $color
+
+FiraSans-5($size, $weight, $color, $spacing, $align) 
+	font-family 'Fira Sans', Helvetica, sans-serif
+	font-size $size
+	font-weight $weight
+	color $color
+	letter-spacing $spacing
+	text-align $align
+
+
+
+// COLORS
+$white-3 = #fafafa
+$white-2 = #eeeeee
+$white-1 = #d8d8d8
+$white-0 = #bcbcbc
+$gray-3 = #ababab
+$gray-2 = #979797
+$gray-1 = #888686
+$gray-0 = #666666
+$black-3 = #575452
+$black-2 = #3D3C3C
+$black-1 = #353434
+$black-0 = #171413
+
+// Resume Color Palette
+$lite = #F8F6E6
+$gold = #FFEEAA
+$pink = #FF7861
+$blue = #425B66
+$dark = #303030
+
+.none
+	display none !important
+	*
+		display none !important
+
+*,
+*:before,
+*:after
+	box-sizing border-box
+	-moz-box-sizing border-box
+	-webkit-box-sizing border-box
+	margin 0
+	padding 0
+
+html
+	FiraSans-5(16px, 500, $white-3, -1px, left)
+
+nav
+	// background $white-3
+	width 100%
+
+	ul
+		list-style-type none
+		text-align center
+		
+		li
+			display inline-block
+			padding 10px 20px
+			margin 0 50px
+			a:link,
+			a:visited
+				FiraSans-5(1rem, 400, $gray-3, 0px, left)
+				padding 5px
+				text-decoration none
+				text-transform uppercase
+				&:hover
+					color $blue
+					// text-shadow 1px 0px 1px rgba(0,0,0,0.2)
+
+#resume
+	border 1px solid $white-2
+	height 960
+	background $white-3
+	color $black-0
+	width 960px
+	margin 30px auto
+	padding 20px 30px
+
+section 
+	border-bottom 1px solid $white-0
+	height 100%
+
+section.title
+	// background red
+	
+	ul.info
+		// background $white-0
+		text-align left
+		
+		li
+			list-style-type none
+			display inline-block
+			// background $gray-3
+			height 100%
+			padding 10px
+			
+			h3
+				float left
+				text-transform uppercase
+				FiraSans-5(1rem, 400, $pink, -1px, left)
+			p
+				
+				
+	
+	// height auto
+	// margin-left 0
+	// header
+		
+	// 	h2 
+	// 		FiraSans-5(4rem, 700, $black-1, -3px, left)
+	// 		line-height 4rem
+			
+	// p
+	// 	FiraSans-5(1rem, 200, $gray-1, 0px, left)
+	// 	line-height 1.1rem
+		
+	// ul
+	// 	li
+	// 		background $pink
+	// 		position relative
+	// 		height 100px
+	// 		float left
+	// 		h3
+	// 			FiraSans-5(0.6rem, 200, $pink, 2px, left)
+	// 			text-transform: uppercase
+	// 			font-weight: 400
+	// 			position absolute
+	// 			top 0
+	// 		p
+
+		
+		
+.update 
+	color $pink

@@ -1,53 +1,62 @@
 extends ./layout.jade
 
+block title
+	title Dillon Drenzek - iOS &amp; Web Developer
+
 block stylesheet
-	:css
-		#resume {
-			background: red;
-			width: 960px;
-			height: 960px;
-			margin: 0 auto;
-		}
-
-
+	include ../public/stylesheets/resume.css
+		
 block page
-	h2 Resume
 	#resume 
-		section
+		.none (updated 3-4-15)
+		section.title
 			header
 				h2 Dillon Drenzek
-			p 2775 Taft Drive Apt. #1409 Boulder, CO 80302
-			p Phone: (406) 599-8576
-			p Email: dr.enzek@gmail.com
+				ul.info
+					li
+						h3 Address
+						p 858 18th Street <br> Boulder, CO 80302
+					//- li
+					//- 	h3 Phone
+					//- 	p (406) 599-8576
+					//- li
+					//- 	h3 Email 
+					//- 	p dr.enzek@gmail.com
+
 		section
 			header
 				h3 Objective
-			p Acquire and improve specialized skills and understanding related to future career plans while expanding social networks and earning money for the future.
+			p.update I want to find a job that will allow me to continue 
 		
+		section
+			header
+				h3 Skills
+
+
 		section
 			header
 				h3 Experience
 			ul
 				li
 					header 
+						h4 Native App	
+						p February 2014 – Present
+					p.update High-quality painting of homes with thorough prep work, detailed brushwork and frequent customer interaction
+					p.update Reference Contact Info: Jimmy Eberly (406) 570-6912, Bozeman, Montana
+
+				li
+					header 
+						h4 Scornavacco Martial Arts Academy	
+						p July 2012 – October 2014
+					p.update Instilled confidence and discipline in students aged 4-16; Assessed Students' progress on a daily basis; Engaged in discussions about student's performance with students' parents
+					p.update Reference Contact Info: Kraig Koshnick (406) 581-1570, Bozeman, Montana
+
+				li
+					header 
 						h4 Custom Paint and Paper Inc.	
 						p May 2011 – August 2011
-					p High-quality painting of homes with thorough prep work, detailed brushwork and frequent customer interaction
-					p Reference Contact Info: Jimmy Eberly (406) 570-6912, Bozeman, Montana
-
-				li
-					header 
-						h4 Koshnick Construction	
-						p May 2010 – August 2010
-					p Manual labor including work on small carpentry projects and thorough worksite maintenance
-					p Reference Contact Info: Kraig Koshnick (406) 581-1570, Bozeman, Montana
-
-				li
-					header 
-						h4 The Puppy Tub	
-						p June 2009 – August 2009
-					p Face-to-face customer service selling pet products, caring for dogs, and thorough workplace maintenance
-					p Reference Contact Info: Candy Saunders (406) 599-8327, Bozeman, Montana
+					p.update High-quality painting of homes with thorough prep work, detailed brushwork and frequent customer interaction
+					p.update Reference Contact Info: Jimmy Eberly (406) 570-6912, Bozeman, Montana
 
 		section 
 			header
@@ -56,13 +65,8 @@ block page
 				li
 					header
 						h4 University of Colorado at Boulder
-						p August 2010 - Present
-					p Economics Major
-					p Expected Graduation: May 2015
-				li
-					header
-						h4 Bozeman High School
-						p August 2006 - June 2010
-					p 3.6 GPA, Senior Project on Advertising and Marketing, Leo Club, Rotary Interact, Cross Country
+						p August 2010 - May 2015
+					p B.A. Computer Science
+					p 3.1 GPA
 
-		| (updated 4-12-12)
+		
