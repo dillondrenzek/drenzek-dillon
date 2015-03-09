@@ -2,8 +2,9 @@
 The professional portfolio of University of Colorado student, Dillon Drenzek. <br>
 **Homepage**: http://dillon.drenzek.com
 
-## Tools
 ---------
+## Tools
+
 #### Frontend
  * ~~[Sass](http://sass-lang.com/) (CSS Generation)~~ (_Deprecated in v0.8_)
  * [Stylus](http://learnboost.github.io/stylus/) (CSS Generation)
@@ -19,8 +20,9 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
 #### Testing
  * [Jasmine](http://jasmine.github.io/2.2/introduction.html) (BDD Testing)
 
-## Version: `v0.8.0` <br>
 ---------------------------------
+## Version: `v0.8.0` <br>
+
 
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-----------|---------------|---|
@@ -41,8 +43,10 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
 |					| 0.0.1		|   Feb 10 15   | Introduce Node.js and Neo4j (Yay!) |
 | Novice			| 0.0.0		| 	Feb 10 15	| Backbone renders from index.html |
  
-
-## Special Thanks
 ------------------
+## Special Thanks
+
 JSON-generating GUI: 
 	http://truben.no/table/
+	
+------------------
