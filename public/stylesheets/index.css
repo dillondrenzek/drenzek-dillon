@@ -437,7 +437,7 @@ section.title {
   height: 500px;
   position: relative;
   z-index: 0;
-  background: url("/images/me.jpg") no-repeat fixed right; }
+  background: url("/images/me.jpg") no-repeat right; }
   section.title header {
     background: none;
     display: inline-block;
