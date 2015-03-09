@@ -2,6 +2,8 @@ var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	watch = require('gulp-watch'),
 	stylus = require('gulp-stylus');
+var browserSync = require('browser-sync'),
+	reload = browserSync.reload;
 
 gulp.task('style', function() {
 	return gulp.src('styl', {cwd: 'public/stylesheets/'})
@@ -11,25 +13,17 @@ gulp.task('style', function() {
 		.pipe(gulp.dest('./public/stylesheets/'));
 });
 
-gulp.task('style-app', function() {
-	return gulp.src('styl/index.styl', {cwd: 'public/stylesheets/'})
-		.pipe(watch('styl'))
+gulp.task('serve', function() {
+	browserSync({
+		proxy: "localhost:4567"
+	});
+
+	
+
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['style']);
 
-});
-
-// var gulp = require('gulp');
-// var sass = require('gulp-sass');
-// var watch = require('gulp-watch');
-
-// gulp.task('default', function() {
-//   return gulp.src('sass/*.scss')
-//     .pipe(watch('sass/*.scss'))
-//     .pipe(sass())
-//     .pipe(gulp.dest('dist'));
-// });
 
 
 // var browserSync = require('browser-sync');
