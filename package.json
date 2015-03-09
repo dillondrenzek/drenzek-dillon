@@ -23,6 +23,7 @@
     "npm": "2.1.17"
   },
   "devDependencies": {
+    "gulp": "^3.8.11",
     "jasmine": "^2.2.1"
   }
 }
