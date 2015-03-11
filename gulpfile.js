@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	watch = require('gulp-watch'),
+	shell = require('gulp-shell'),
 	stylus = require('gulp-stylus');
 var browserSync = require('browser-sync'),
 	reload = browserSync.reload;
@@ -18,8 +19,9 @@ gulp.task('serve', function() {
 		proxy: "localhost:4567"
 	});
 
-	
-
+	return gulp.src('')
+		.pipe(shell(['npm start']))
+		.pipe(gulp.dest(''));
 });
 
 gulp.task('default', ['style']);
