@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-var gulp = require('gulp')
-,	watch = require('gulp-watch')
-,	plumber = require('gulp-plumber')
-,	stylus = require('gulp-stylus')
-,	shell = require('gulp-shell')
-;
-=======
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	watch = require('gulp-watch'),
 	stylus = require('gulp-stylus');
->>>>>>> a50fffb
 
 gulp.task('style', function() {
 	return gulp.src('styl', {cwd: 'public/stylesheets/'})
@@ -18,19 +9,9 @@ gulp.task('style', function() {
 		.pipe(watch('styl/*.styl', {cwd: 'public/stylesheets/', verbose: true}))
 		.pipe(stylus())
 		.pipe(gulp.dest('./public/stylesheets/'));
-<<<<<<< HEAD
-=======
-});
+	});
 
-gulp.task('style-app', function() {
-	return gulp.src('styl/index.styl', {cwd: 'public/stylesheets/'})
-		.pipe(watch('styl'))
->>>>>>> a50fffb
-});
-
-gulp.task('default', function() {
-
-});
+gulp.task('default', ['style']);
 
 // var gulp = require('gulp');
 // var sass = require('gulp-sass');
