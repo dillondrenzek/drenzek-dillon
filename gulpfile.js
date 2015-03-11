@@ -1,17 +1,16 @@
 var gulp = require('gulp')
 ,	watch = require('gulp-watch')
 ,	plumber = require('gulp-plumber')
-,	sass = require('gulp-sass')
+,	stylus = require('gulp-stylus')
 ,	shell = require('gulp-shell')
 ;
 
-// SHELL THIS SHIT
-gulp.task('sass', function () {
-    return gulp.src('./public/stylesheets/sass/*.scss')
-    	.pipe(watch('./public/stylesheets/sass/*.scss'))
-    	.pipe(plumber())
-        .pipe(sass())
-        .pipe(gulp.dest('./public/stylesheets/'));
+gulp.task('style', function() {
+	return gulp.src('styl', {cwd: 'public/stylesheets/'})
+		.pipe(plumber())
+		.pipe(watch('styl/*.styl', {cwd: 'public/stylesheets/', verbose: true}))
+		.pipe(stylus())
+		.pipe(gulp.dest('./public/stylesheets/'));
 });
 
 
