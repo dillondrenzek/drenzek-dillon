@@ -13,9 +13,12 @@ gulp.task('style', function() {
 	});
 
 gulp.task('stylus', function() {
+  var input = 'styl',
+      output = '';
+
   return gulp.src('')
     .pipe(shell([
-      'stylus --watch ./public/stylesheets/styl/ -o ./public/stylesheets/'
+      'stylus --watch ./public/stylesheets/styl/'+input+' -o ./public/stylesheets/'+output
     ]))
 });
 
@@ -26,20 +29,12 @@ gulp.task('serve', function() {
     ]))
 });
 
+var defaults = function() {
+  return ['style', 'serve']
+};
 
 
-gulp.task('default', ['style', 'serve']);
-
-// var gulp = require('gulp');
-// var sass = require('gulp-sass');
-// var watch = require('gulp-watch');
-
-// gulp.task('default', function() {
-//   return gulp.src('sass/*.scss')
-//     .pipe(watch('sass/*.scss'))
-//     .pipe(sass())
-//     .pipe(gulp.dest('dist'));
-// });
+gulp.task('default', defaults());
 
 
 // var browserSync = require('browser-sync');
