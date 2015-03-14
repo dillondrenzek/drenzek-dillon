@@ -1,17 +1,34 @@
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	watch = require('gulp-watch'),
-	stylus = require('gulp-stylus');
+	stylus = require('gulp-stylus'),
+	shell = require('gulp-shell');
 
 gulp.task('style', function() {
 	return gulp.src('styl', {cwd: 'public/stylesheets/'})
 		.pipe(plumber())
-		.pipe(watch('styl/*.styl', {cwd: 'public/stylesheets/', verbose: true}))
+		.pipe(watch('styl/*/*.styl', {cwd: 'public/stylesheets/', verbose: true}))
 		.pipe(stylus())
-		.pipe(gulp.dest('./public/stylesheets/'));
+		.pipe(gulp.dest('public/stylesheets/'));
 	});
 
-gulp.task('default', ['style']);
+gulp.task('stylus', function() {
+  return gulp.src('')
+    .pipe(shell([
+      'stylus --watch ./public/stylesheets/styl/ -o ./public/stylesheets/'
+    ]))
+});
+
+gulp.task('serve', function() {
+	return gulp.src('')
+    .pipe(shell([
+      'npm start'
+    ]))
+});
+
+
+
+gulp.task('default', ['style', 'serve']);
 
 // var gulp = require('gulp');
 // var sass = require('gulp-sass');
