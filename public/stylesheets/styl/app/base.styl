@@ -1,0 +1,41 @@
+// Base.styl
+
+*,
+*:before,
+*:after
+	box-sizing border-box
+	-moz-box-sizing border-box
+	-webkit-box-sizing border-box
+	margin 0
+	padding 0
+
+
+.none
+	display none !important
+	*
+		display none !important
+		
+html
+	FiraSans-5(16px, 500, $white-3, -1px, left)
+
+
+nav
+	// background $white-3
+	width 100%
+
+	ul
+		list-style-type none
+		text-align center
+		
+		li
+			display inline-block
+			padding 10px 20px
+			margin 0 50px
+			a:link,
+			a:visited
+				FiraSans-5(1rem, 400, $gray-3, 0px, left)
+				padding 5px
+				text-decoration none
+				text-transform uppercase
+				&:hover
+					color $red-d
