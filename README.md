@@ -21,17 +21,16 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
  * [Jasmine](http://jasmine.github.io/2.2/introduction.html) (BDD Testing)
 
 ---------------------------------
-## Version: `v0.8.0` <br>
+## Version: `v0.10.0` <br>
 
 
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-----------|---------------|---|
-| _Guru_			| _2.0.0_   |   Apr  1 15   | _Just kidding!_ |
-| _Admin_			| _1.3.0_ 	|   	| _Implement an Admin interface for me, and me only_ |
-| _Style_			| _1.2.0_ 	|   	| _Mock and Style all views for a unified look_ |
-| _Gulp_			| _1.1.0_ 	|   	| _Workflow integrations with Gulp_ |
-| _Functional_		| _1.0.0_ 	|   	| _Basically Functional_ |
-| _Resume_			| _0.9.0_	|		| _Add Resume page, content and styling with Stylus_ | 
+| _Functional_		| _1.0.0_ 	|   			| _Submittable to jobs, all data entered, new style_ |
+| _Admin_			| _0.12.0_ 	|   			| _Implement an Admin interface for me, and me only_ |
+| _Style_			| _0.11.0_ 	|   			| _Mock and Style all views for a unified look_ |
+| Resume			| 0.10.0	|	Mar 15 15	| Add Resume page, content and styling with Stylus | 
+| Gulp				| 0.9.0		|	Mar 12 15	| Workflow integrations with Gulp | 
 | Stylus			| 0.8.0		|	Mar  9 15	| Add Stylus | 
 |					| 0.7.0		|	Mar  1 15	| Turn-in condition: good show views, okay index page, ugly list pages. | 
 |					| 0.6.0		|	Feb 28 15	| Unofficial version used as a checkpoint in the scramble to complete the project | 

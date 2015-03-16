@@ -1,7 +1,7 @@
 {
   "name": "drenzek-dillon",
   "description": "The Professional Portfolio of Dillon Drenzek",
-  "version": "0.8.0",
+  "version": "0.10.0",
   "author": "Dillon Drenzek <dr.enzek@gmail.com>",
   "homepage": "http://dillon.drenzek.com",
   "repository": {
@@ -10,8 +10,7 @@
   },
   "scripts": {
     "start": "node-dev app.js",
-    "test": "jasmine spec/*/*.js",
-    "stylus": "stylus -w ./public/stylesheets/styl/ -o ./public/stylesheets"
+    "test": "jasmine spec/*/*.js"
   },
   "dependencies": {
     "express": "~3.2.0",
