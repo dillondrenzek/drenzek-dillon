@@ -1,0 +1,226 @@
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 200;
+  src: url("../../fonts/FiraSans-Light.woff") format('woff'), url("../../fonts/FiraSans-Light.ttf") format('truetype'), url("../../fonts/FiraSans-Light.eot");
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 400;
+  src: url("../../fonts/FiraSans-Regular.woff") format('woff'), url("../../fonts/FiraSans-Regular.ttf") format('truetype'), url("../../fonts/FiraSans-Regular.eot");
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 700;
+  src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.none {
+  display: none !important;
+}
+.none * {
+  display: none !important;
+}
+.debug {
+  border: 1px solid #e5c41e;
+}
+.debug * {
+  border: 1px solid #e5c41e;
+}
+html {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3d3c3c;
+  letter-spacing: -1px;
+  text-align: left;
+}
+li {
+  list-style-type: none;
+}
+.main-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #eee;
+}
+nav {
+  width: 100%;
+  position: relative;
+  background: #292929;
+  border-bottom: #171413 1px solid;
+}
+nav ul li {
+  display: inline;
+}
+nav a {
+  padding: 5px 20px;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8f7f5;
+  letter-spacing: 1px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: lowercase;
+  vertical-align: middle;
+}
+nav a:hover {
+  color: #a63f29;
+}
+nav .home {
+  background: #a63f29;
+  color: #f8f7f5;
+  padding: 5px;
+}
+nav .home:hover {
+  background: #f8f7f5;
+  color: #a63f29;
+}
+nav .admin {
+  float: right;
+}
+#resume {
+  float: left;
+  background: #fafafa;
+  font-size: 16px;
+  letter-spacing: 0px;
+  padding: 2% 3%;
+}
+.indent {
+  padding-left: 2em;
+}
+h2 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: -3px;
+  text-align: left;
+  line-height: 1em;
+}
+h3 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 2em;
+  font-weight: 200;
+  color: #292929;
+  letter-spacing: 0px;
+  text-align: left;
+}
+span {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: 0px;
+  text-align: left;
+}
+header.title {
+  width: 100%;
+  position: relative;
+  float: left;
+  border-bottom: 2px solid #ababab;
+}
+header.title header {
+  width: 100%;
+}
+header.title ul.info {
+  float: left;
+}
+header.title ul.links {
+  float: right;
+}
+header.title li {
+  padding: 0;
+}
+header.title li > * {
+  display: inline-block;
+}
+header.title span.separator {
+  color: #bcbcbc;
+  margin-left: 0.2em;
+}
+header.title .icon {
+  color: #a63f29;
+  text-align: center;
+  margin-right: 10px;
+}
+header.title .value {
+  color: #888686;
+}
+section {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+section > * {
+  width: 100%;
+  display: block;
+}
+li header {
+  position: relative;
+  height: 50px;
+}
+li header>* {
+  position: absolute;
+}
+li header h4 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: -1px;
+  text-align: left;
+  top: 0;
+  left: 0;
+}
+li header .context {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #292929;
+  letter-spacing: 0px;
+  text-align: left;
+  bottom: 0;
+  left: 0;
+}
+li header .date {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-weight: 200;
+  color: #292929;
+  letter-spacing: -1px;
+  text-align: left;
+  font-style: italic;
+  top: 0;
+  right: 0;
+}
+li header .location {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #292929;
+  letter-spacing: 0px;
+  text-align: left;
+  bottom: 0;
+  right: 0;
+}
+.objective p {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: 0px;
+  text-align: left;
+  font-style: italic;
+}

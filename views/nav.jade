@@ -1,5 +1,15 @@
 //- Standard Nav Bar
-//- Version 0.6.0
+//- Version 0.10.0
+
+mixin homeButton
+	li
+		a(href="/" class="fa fa-home fa-2x home")
+
+mixin adminButton
+	li
+		a(href="#" class="fa fa-power-off" title="Admin Mode")
+
+mixin 
 
 mixin navButton(h, label)
 	li
@@ -7,42 +17,15 @@ mixin navButton(h, label)
 
 mixin nav(admin)
 
-	if !admin
-		nav
-			ul
-				li
-					a(href="/" class="home") Home
-				li
-					a(href="/skills") Skills
-				li
-					a(href="/projects") Projects
-					//- .menu
-						a(href="/skills") Skills
-						a(href="/projects") Projects
-				block nav
-
-
-	else
-		nav 
-			ul 
-				li 
-					a(href="/") Home
-				li 
-					a(href="/skills") Skills
-					a(href="/skills/new") New
-					a(href="/skills/edit") Edit
-				li 
-					a(href="/projects") Projects
-					a(href="/projects/new") New
-					a(href="/projects/edit") Edit
-				block nav
-				//- li 
-					a(href="/times") Times
-					a(href="/times/new") New
-					a(href="/times/edit") Edit
-				//- li 
-					a(href="/contexts") Contexts
-					a(href="/contexts/new") New
-					a(href="/contexts/edit") Edit
-
+	nav 
+		ul 
+			+homeButton
+			//- +navButton('/skills', 'skills')
+			//- +navButton('/projects', 'projects')
+			+navButton('/resume', 'resume')
+			//- +adminButton
+			li
+				a(href="http://www.linkedin.com/in/dillondrenzek" class="fa fa-linkedin" target="_blank")
+			li
+				a(href="http://www.github.com/dillondrenzek" class="fa fa-github" target="_blank")
 

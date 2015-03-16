@@ -1,0 +1,123 @@
+extends ./layout.jade
+
+block title
+	title Dillon Drenzek - Aspiring iOS Developer &amp; Web Dev Hobbyist
+
+block stylesheet
+	include ../public/stylesheets/resume.css
+
+mixin section(title)
+	section(class="#{title.toLowerCase()}")
+		header
+			h3= title
+		block
+
+mixin iconItem(iconClass)
+	li.item
+		.icon
+			.fa(class="#{iconClass}")
+		.value
+			block
+
+mixin itemHeader(title, context, date, location)
+	header
+		h4= title
+		.context= context
+		.date= date
+		.location= location
+
+mixin itemContent
+	ul.indent
+		block
+
+block page
+	#resume 
+		.none (updated 3-4-15)
+		header.title
+			header
+				h2 Dillon Drenzek
+
+			ul.info
+				+iconItem("fa-home")
+					| 858 18th Street
+					span.separator &middot; 
+					| Boulder, CO 80302
+				+iconItem("fa-phone-square")
+					| (406) 599-8576
+				+iconItem("fa-envelope-square")
+					| dr.enzek@gmail.com
+
+			ul.links		
+				+iconItem("fa-linkedin-square")
+					| linkedin.com/in/dillondrenzek
+				+iconItem("fa-github-square")
+					| github.com/dillondrenzek
+
+		+section("Objective")
+			p.indent I’m seeking a full-time job that will help me continue to grow as a developer and programmer of “beautiful” code, while creating meaningful products and maintaining a well-rounded technical and professional skillset.
+		
+		+section("Experience")
+			ul.indent
+				li
+					+itemHeader(
+						"iOS Developer", 
+						"NativeApp (a TechStars-backed company)", 
+						"(February 2014 - present)", 
+						"Boulder, Colorado")
+					+itemContent
+						li Worked closely with company’s founders to determine iOS app requirements
+						li Implemented new app features quickly and often independently
+						li Focused on writing expandable, maintainable and reusable code
+						li Frequently required to learn new technologies quickly
+						li Utilized the CEO’s superior knowledge to enhance my own
+
+				li
+					+itemHeader(
+						"Instructor", 
+						"Scornavacco Martial Arts Academy", 
+						"(July 2012 - October 2014)", 
+						"Longmont, Colorado")
+					+itemContent
+						li Taught karate to kids ages 4-16, focusing on instilling confidence and discipline
+						li Lead and assisted classes of 5-25 students, coordinated lesson plans with other instructors
+						li Maintained regular communication with parents and listened to concerns and feedback
+						li Designed and distributed a monthly newsletter, maintained school’s main WordPress website
+						li Earned a Black Belt after just 2 years of intense personal training
+
+
+		+section("Skills")
+			ul.indent
+				li
+					span Well-Versed:
+					p.indent Objective-C, HTML, CSS, Adobe Photoshop, Adobe Illustrator, Git, Mac OS X, UI Design, Analyzing and solving problems, Self-motivated learning, Positivity, Empathy
+				li
+					span Proficient:
+					p.indent Swift, jQuery, JavaScript, Sketch, Agile Development, Parse DBMS, REST, Object-Oriented Programming, Time management, Leadership, Public Speaking
+				li
+					span Actively Learning:
+					p.indent All skills listed above (of course), Adobe After Effects, Numerous JavaScript Libraries (Node.js, Backbone.js), Living in the “Real World”
+
+		+section("Education")
+			ul.indent
+				li
+					+itemHeader( 
+						"Computer Science, B.A.	",
+						"University of Colorado at Boulder",
+						"(August 2010 - May 2015)",
+						"Boulder, Colorado")
+					+itemContent
+						li Minor in Technology, Arts &amp; Media
+						li Expected to graduate with Honors in Technology, Arts &amp; Media (&gt;3.75 GPA)
+						li 3.1 Cumulative GPA
+
+				li
+					+itemHeader(
+						"Study Abroad",
+						"Danish Institute for Study Abroad",
+						"(May - August 2015)",
+						"Copenhagen, Denmark")
+					+itemContent
+						li Enrolled in a 7-week graphic design studio
+
+
+		

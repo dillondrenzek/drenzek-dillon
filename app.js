@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // APP ROUTES
 
 app.get('/', routes.site.index);
+app.get('/resume', routes.site.resume);
 
 // REMOVE
 app.get('/skills/seed', function (req, res, next) {
