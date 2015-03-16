@@ -5,56 +5,66 @@ block title
 
 block stylesheet
 	include ../public/stylesheets/resume.css
-		
 
+mixin section(title)
+	section(class="#{title.toLowerCase()}")
+		header
+			h3= title
+		block
 
+mixin iconItem(iconClass)
+	li.item
+		.icon
+			.fa(class="#{iconClass}")
+		.value
+			block
 
-mixin resumeItem
+mixin itemHeader(title, context, date, location)
+	header
+		h4= title
+		.context= context
+		.date= date
+		.location= location
 
+mixin itemContent
+	ul.indent
+		block
 
 block page
 	#resume 
 		.none (updated 3-4-15)
-		section.title
+		header.title
 			header
 				h2 Dillon Drenzek
-				ul.info
-					li
-						//- h3 Address
-						p 858 18th Street
-					li
-						//- h3 Address
-						p Boulder, CO 80302
-					li
-						//- h3 Phone
-						p (406) 599-8576
-				ul.links
-					li
-						img(src="")
-						p dr.enzek@gmail.com
-					li
-						img(src="")
-						p linkedin.com/in/dillondrenzek
-					li
-						img(src="")
-						p github.com/dillondrenzek
 
-		section
-			header
-				h3 Objective
-			p I’m seeking a full-time job that will help me continue to grow as a developer and programmer of “beautiful” code, while creating meaningful products and maintaining a well-rounded technical and professional skillset.
+			ul.info
+				+iconItem("fa-home")
+					| 858 18th Street
+					span.separator &middot; 
+					| Boulder, CO 80302
+				+iconItem("fa-phone-square")
+					| (406) 599-8576
+				+iconItem("fa-envelope-square")
+					| dr.enzek@gmail.com
+
+			ul.links		
+				+iconItem("fa-linkedin-square")
+					| linkedin.com/in/dillondrenzek
+				+iconItem("fa-github-square")
+					| github.com/dillondrenzek
+
+		+section("Objective")
+			p.indent I’m seeking a full-time job that will help me continue to grow as a developer and programmer of “beautiful” code, while creating meaningful products and maintaining a well-rounded technical and professional skillset.
 		
-		section
-			header
-				h3 Experience
-			ul
+		+section("Experience")
+			ul.indent
 				li
-					header 
-						h4 iOS Developer	
-						p NativeApp (a TechStars-backed company)
-						p (February 2014 - present)
-						p Boulder, Colorado
-					ul
+					+itemHeader(
+						"iOS Developer", 
+						"NativeApp (a TechStars-backed company)", 
+						"(February 2014 - present)", 
+						"Boulder, Colorado")
+					+itemContent
 						li Worked closely with company’s founders to determine iOS app requirements
 						li Implemented new app features quickly and often independently
 						li Focused on writing expandable, maintainable and reusable code
@@ -62,12 +72,12 @@ block page
 						li Utilized the CEO’s superior knowledge to enhance my own
 
 				li
-					header 
-						h4 Instructor	
-						p Scornavacco Martial Arts Academy
-						p (July 2012 - October 2014)
-						p Longmont, Colorado
-					ul
+					+itemHeader(
+						"Instructor", 
+						"Scornavacco Martial Arts Academy", 
+						"(July 2012 - October 2014)", 
+						"Longmont, Colorado")
+					+itemContent
 						li Taught karate to kids ages 4-16, focusing on instilling confidence and discipline
 						li Lead and assisted classes of 5-25 students, coordinated lesson plans with other instructors
 						li Maintained regular communication with parents and listened to concerns and feedback
@@ -75,42 +85,38 @@ block page
 						li Earned a Black Belt after just 2 years of intense personal training
 
 
-		section
-			header
-				h3 Skills
-			ul
+		+section("Skills")
+			ul.indent
 				li
 					span Well-Versed:
-					p Objective-C, HTML, CSS, Adobe Photoshop, Adobe Illustrator, Git, Mac OS X, UI Design, Analyzing and solving problems, Self-motivated learning, Positivity, Empathy
+					p.indent Objective-C, HTML, CSS, Adobe Photoshop, Adobe Illustrator, Git, Mac OS X, UI Design, Analyzing and solving problems, Self-motivated learning, Positivity, Empathy
 				li
 					span Proficient:
-					p Swift, jQuery, JavaScript, Sketch, Agile Development, Parse DBMS, REST, Object-Oriented Programming, Time management, Leadership, Public Speaking
+					p.indent Swift, jQuery, JavaScript, Sketch, Agile Development, Parse DBMS, REST, Object-Oriented Programming, Time management, Leadership, Public Speaking
 				li
 					span Actively Learning:
-					p All skills listed above (of course), Adobe After Effects, Numerous JavaScript Libraries (Node.js, Backbone.js), Living in the “Real World”
+					p.indent All skills listed above (of course), Adobe After Effects, Numerous JavaScript Libraries (Node.js, Backbone.js), Living in the “Real World”
 
-		section 
-			header
-				h3 Education
-			ul
+		+section("Education")
+			ul.indent
 				li
-					header 
-						h4 Computer Science, B.A.	
-						p University of Colorado at Boulder
-						p (August 2010 - May 2015)
-						p Boulder, Colorado
-					ul
+					+itemHeader( 
+						"Computer Science, B.A.	",
+						"University of Colorado at Boulder",
+						"(August 2010 - May 2015)",
+						"Boulder, Colorado")
+					+itemContent
 						li Minor in Technology, Arts &amp; Media
 						li Expected to graduate with Honors in Technology, Arts &amp; Media (&gt;3.75 GPA)
 						li 3.1 Cumulative GPA
 
 				li
-					header 
-						h4 Study Abroad	
-						p Danish Institute for Study Abroad
-						p (May - August 2015)
-						p Copenhagen, Denmark
-					ul
+					+itemHeader(
+						"Study Abroad",
+						"Danish Institute for Study Abroad",
+						"(May - August 2015)",
+						"Copenhagen, Denmark")
+					+itemContent
 						li Enrolled in a 7-week graphic design studio
 
 

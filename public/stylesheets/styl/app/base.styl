@@ -2,12 +2,12 @@
 // version 0.9.0
 // - Base (usually visible) UI Elements
 
-
 	
 html
 	FiraSans-5(16px, 500, $black-2, -1px, left)
 
-
+li
+	list-style-type none
 
 
 
@@ -25,30 +25,33 @@ html
 // Navigation
 nav
 	width 100%
-	// height 60px
-	// padding 10px 20px
 	position relative
+	background Black
+	border-bottom black0 1px solid
+
 	ul 
-		
 		li
-			// float left
-			list-style-type none
+			display inline
 
 	a
-		// padding 5px 20px
-		border-radius 5px
-		border 2px Black solid
-		FiraSans-5(1rem, 700, $gray-3, 0px, left)
+		padding 5px 20px
+		FiraSans-5(1rem, 700, White, 1px, left)
 		text-decoration none
-		text-transform uppercase
-		color Red
-		background White
+		text-transform lowercase
+		vertical-align middle
+		
 		
 	a:hover
 		color Red
 		
 	.home
-		background Black
+		background Red
 		color White
-		border 1px Red solid
+		padding 5px
+		
+		&:hover
+			background White
+			color Red
+	.admin
+		float right
 		

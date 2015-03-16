@@ -1,6 +1,16 @@
 //- Standard Nav Bar
 //- Version 0.10.0
 
+mixin homeButton
+	li
+		a(href="/" class="fa fa-home fa-2x home")
+
+mixin adminButton
+	li
+		a(href="#" class="fa fa-power-off" title="Admin Mode")
+
+mixin 
+
 mixin navButton(h, label)
 	li
 		a(href="#{h}")= label
@@ -9,6 +19,13 @@ mixin nav(admin)
 
 	nav 
 		ul 
-			+navButton('/', 'Home')
-			+navButton('/resume', 'Resume')
+			+homeButton
+			+navButton('/skills', 'skills')
+			+navButton('/projects', 'projects')
+			+navButton('/resume', 'resume')
+			+adminButton
+			li
+				a(href="http://www.linkedin.com/in/dillondrenzek" class="fa fa-linkedin fa-2x" target="_blank")
+			li
+				a(href="http://www.github.com/dillondrenzek" class="fa fa-github fa-2x" target="_blank")
 
