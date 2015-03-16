@@ -1,16 +1,11 @@
+// Gulpfile
+// version 0.9.0
+
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	watch = require('gulp-watch'),
 	stylus = require('gulp-stylus'),
 	shell = require('gulp-shell');
-
-gulp.task('style', function() {
-	return gulp.src('styl', {cwd: 'public/stylesheets/'})
-		.pipe(plumber())
-		.pipe(watch('styl/*/*.styl', {cwd: 'public/stylesheets/', verbose: true}))
-		.pipe(stylus())
-		.pipe(gulp.dest('public/stylesheets/'));
-	});
 
 gulp.task('stylus', function() {
   var input = 'styl',
@@ -18,7 +13,7 @@ gulp.task('stylus', function() {
 
   return gulp.src('')
     .pipe(shell([
-      'stylus --watch ./public/stylesheets/styl/'+input+' -o ./public/stylesheets/'+output
+      'stylus --watch ./public/stylesheets/'+input+' -o ./public/stylesheets/'+output
     ]))
 });
 
@@ -30,12 +25,20 @@ gulp.task('serve', function() {
 });
 
 var defaults = function() {
-  return ['style', 'serve']
+  return ['stylus', 'serve']
 };
 
 
 gulp.task('default', defaults());
 
+
+
+
+
+
+
+
+// Later Versions
 
 // var browserSync = require('browser-sync');
 // var reload = browserSync.reload;

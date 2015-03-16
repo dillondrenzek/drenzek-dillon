@@ -1,445 +1,445 @@
-html{
-	@include FiraSans-5(16px, 500, $white-3, -1px, left);
-	@include Gradient-0-62-100($black-0, $black-1);
-}
+// html{
+// 	@include FiraSans-5(16px, 500, $white-3, -1px, left);
+// 	@include Gradient-0-62-100($black-0, $black-1);
+// }
 
-.none { 
-	display: none !important; 
-	* {
-		display: none !important;
-	}
-}
+// .none { 
+// 	display: none !important; 
+// 	* {
+// 		display: none !important;
+// 	}
+// }
 
-.main-page {
-	width: $std-wrapper-width;
-	margin: 0 auto;}
+// .main-page {
+// 	width: $std-wrapper-width;
+// 	margin: 0 auto;}
 
-.box {
-	float: left;
-	display: inline-block;
-	position: relative;
-}
+// .box {
+// 	float: left;
+// 	display: inline-block;
+// 	position: relative;
+// }
 
-.value {
-	@include FiraSans-5(1.5rem, 700, $white-2, -1px, left);
-	@include TextShadow;
+// .value {
+// 	@include FiraSans-5(1.5rem, 700, $white-2, -1px, left);
+// 	@include TextShadow;
 
-	&.large {
-		font-size: 2.5rem;
-		line-height: 2.5rem;
-	}
-}
+// 	&.large {
+// 		font-size: 2.5rem;
+// 		line-height: 2.5rem;
+// 	}
+// }
 
-.label {
-	@include FiraSans-5(1rem, 400, $white-0, 1.5px, left);
-	@include TextShadow;
-	text-transform: uppercase;
-}
+// .label {
+// 	@include FiraSans-5(1rem, 400, $white-0, 1.5px, left);
+// 	@include TextShadow;
+// 	text-transform: uppercase;
+// }
 
-a {
-	text-decoration: none;
-	@include FiraSans-5(1rem, 400, $black-3, 1px, left);
+// a {
+// 	text-decoration: none;
+// 	@include FiraSans-5(1rem, 400, $black-3, 1px, left);
 
-	&:hover{
-		text-decoration: underline;
-	}
-}
+// 	&:hover{
+// 		text-decoration: underline;
+// 	}
+// }
 
-h1 {
-	@include FiraSans-5(7rem, 700, $white-3, -2px, left);
-	text-shadow: 5px 5px 1px rgba(black, 0.1);
-}
+// h1 {
+// 	@include FiraSans-5(7rem, 700, $white-3, -2px, left);
+// 	text-shadow: 5px 5px 1px rgba(black, 0.1);
+// }
 
-h2 {
-	@include FiraSans-5(4.5rem, 700, $white-3, -2px, left);
-	@include TextShadow;
-}
+// h2 {
+// 	@include FiraSans-5(4.5rem, 700, $white-3, -2px, left);
+// 	@include TextShadow;
+// }
 
-h3 {
-	@include FiraSans-5(1.8rem, 200, $gray-0, -2px, left);
-}
+// h3 {
+// 	@include FiraSans-5(1.8rem, 200, $gray-0, -2px, left);
+// }
 
-nav {
-	background: $black-1;
-	width: 100%;
+// nav {
+// 	background: $black-1;
+// 	width: 100%;
 
-	ul {
-		list-style-type: none;
-		text-align: center;
+// 	ul {
+// 		list-style-type: none;
+// 		text-align: center;
 
-		li {
-			display: inline-block;
-			padding: 10px 20px;
-			margin: 0 50px;
+// 		li {
+// 			display: inline-block;
+// 			padding: 10px 20px;
+// 			margin: 0 50px;
 
-			a {
-				@include FiraSans-5(1rem, 800, $gray-3, 0px, center);
-				padding: 5px;
-				text-decoration: none;
-				text-transform: uppercase;
-				&:hover {
-					color: $white-3;
-				}
-			}
-		}
-	}
+// 			a {
+// 				@include FiraSans-5(1rem, 800, $gray-3, 0px, center);
+// 				padding: 5px;
+// 				text-decoration: none;
+// 				text-transform: uppercase;
+// 				&:hover {
+// 					color: $white-3;
+// 				}
+// 			}
+// 		}
+// 	}
 
-	.menu {
-		height: 100%;
-		display: none;
+// 	.menu {
+// 		height: 100%;
+// 		display: none;
 
-		a {
-			display: inline-block;
-		}
+// 		a {
+// 			display: inline-block;
+// 		}
 
-		.home:hover & {
+// 		.home:hover & {
 
-		}
-	}
-}
+// 		}
+// 	}
+// }
 
-section {
-	position: relative;
-	float: left;
-	width: 100%;
+// section {
+// 	position: relative;
+// 	float: left;
+// 	width: 100%;
 
-	header {
-		width: 100%;
-		padding: 10px 20px;
-	}
-}
+// 	header {
+// 		width: 100%;
+// 		padding: 10px 20px;
+// 	}
+// }
 
-header.section {
-	@include Gradient-0-62-100($white-2, $white-3);
+// header.section {
+// 	@include Gradient-0-62-100($white-2, $white-3);
 
-	h3 {
-		@include FiraSans-5(2rem, 400, $gray-0, -2px, left);
-	}
-}
+// 	h3 {
+// 		@include FiraSans-5(2rem, 400, $gray-0, -2px, left);
+// 	}
+// }
 
-section.admin {
-	background: #a42028;
-	border: 3px solid darken(#a42028, 10%);
+// section.admin {
+// 	background: #a42028;
+// 	border: 3px solid darken(#a42028, 10%);
 
-	h3 {
-		color: $white-0; }
+// 	h3 {
+// 		color: $white-0; }
 
-	.box {
-		display: inline-block;
-		margin-right: 50px; }
-}
+// 	.box {
+// 		display: inline-block;
+// 		margin-right: 50px; }
+// }
 
-section.title {
-	$root-z-index: 0;
-	z-index: $root-z-index;
-	position: relative;
-	height: 400px;
+// section.title {
+// 	$root-z-index: 0;
+// 	z-index: $root-z-index;
+// 	position: relative;
+// 	height: 400px;
 
-	canvas { z-index: $root-z-index + 1; }
+// 	canvas { z-index: $root-z-index + 1; }
 	
-	header {
-		display: inline-block;
-		position: relative;
-		width: 100%;
-		z-index: $root-z-index + 2;
+// 	header {
+// 		display: inline-block;
+// 		position: relative;
+// 		width: 100%;
+// 		z-index: $root-z-index + 2;
 
-		* { display: inline-block; }
-		h2 { margin-right: 30px; }
-		.detail {
-			position: relative;
-			width: 100%;
-			height: 30px;
-			left: 3px;
-			top: -5px;
-		}
-		.skill-tag {
-			margin: 0 20px;
-			position: relative;
-			top: -5px;
-		}
+// 		* { display: inline-block; }
+// 		h2 { margin-right: 30px; }
+// 		.detail {
+// 			position: relative;
+// 			width: 100%;
+// 			height: 30px;
+// 			left: 3px;
+// 			top: -5px;
+// 		}
+// 		.skill-tag {
+// 			margin: 0 20px;
+// 			position: relative;
+// 			top: -5px;
+// 		}
 
-		.label {
-			font-size: 1.5rem;
-			color: $white-2;
-		}
-	}
+// 		.label {
+// 			font-size: 1.5rem;
+// 			color: $white-2;
+// 		}
+// 	}
 
 	
-}
+// }
 
-section.subtitle {
-	padding: 0;
-	@include Gradient-0-62-100($black-2, $black-3);
+// section.subtitle {
+// 	padding: 0;
+// 	@include Gradient-0-62-100($black-2, $black-3);
 
-	.box {
-		border-right: 1px solid $black-3;
-		height: 100%;
-		padding: 10px 20px;
-	}	
+// 	.box {
+// 		border-right: 1px solid $black-3;
+// 		height: 100%;
+// 		padding: 10px 20px;
+// 	}	
 
-	a {
-		@include FiraSans-5(1.5rem, 400, $white-2, 0px, left);
-		&:hover { color: $white-3; }
-	}
+// 	a {
+// 		@include FiraSans-5(1.5rem, 400, $white-2, 0px, left);
+// 		&:hover { color: $white-3; }
+// 	}
 
-	.momentum.box {
-		float: right;
-		width: 18%;
-		padding: 7px 20px;
-		.value, .label {
-			text-align: center;
-		}
-	}
-}
+// 	.momentum.box {
+// 		float: right;
+// 		width: 18%;
+// 		padding: 7px 20px;
+// 		.value, .label {
+// 			text-align: center;
+// 		}
+// 	}
+// }
 
-section.events {
-	background: $white-2;
-	float: left;
-}
+// section.events {
+// 	background: $white-2;
+// 	float: left;
+// }
 
-APP-WIDE MODEL REPRESENTATIONS
-version 1.0.0
-
-
-SKILLS
+// APP-WIDE MODEL REPRESENTATIONS
+// version 1.0.0
 
 
-ul.skill {
-	position: relative;
-	width: 100%;
-}
+// SKILLS
 
-li.skill {
-	position: relative;
-	list-style-type: none;
-	width: 100%;
-	float: left;
-	cursor: pointer;
 
-	&:hover{
-		background: red;
-	}
+// ul.skill {
+// 	position: relative;
+// 	width: 100%;
+// }
 
-	.box {
-		float: right;
-		position: relative;
-		height: 100%;
-		padding: 5px 10px;
-	}
+// li.skill {
+// 	position: relative;
+// 	list-style-type: none;
+// 	width: 100%;
+// 	float: left;
+// 	cursor: pointer;
 
-	.title {
-		@include FiraSans-5(2em, 400, $white-2, -1px, left);
-		@include TextShadow;
-		padding: 0.25em 0.5em;
-		float: left;
-	}
+// 	&:hover{
+// 		background: red;
+// 	}
 
-	.value {
-		@include FiraSans-5(2em, 400, $white-2, -1px, left);
-		@include TextShadow;
-		display: inline-block;
-		text-align: center;
-		width: 100%;
-	}
+// 	.box {
+// 		float: right;
+// 		position: relative;
+// 		height: 100%;
+// 		padding: 5px 10px;
+// 	}
 
-	.label {
-		@include FiraSans-5(0.7em, 400, $gray-0, 1.5px, center);
-	}
+// 	.title {
+// 		@include FiraSans-5(2em, 400, $white-2, -1px, left);
+// 		@include TextShadow;
+// 		padding: 0.25em 0.5em;
+// 		float: left;
+// 	}
 
-	.arrow {
-		position: absolute;
-		right: 0.5em;
-		top: 40%;
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%);
-	}
-}
+// 	.value {
+// 		@include FiraSans-5(2em, 400, $white-2, -1px, left);
+// 		@include TextShadow;
+// 		display: inline-block;
+// 		text-align: center;
+// 		width: 100%;
+// 	}
 
-//
-// PROJECTS
-//
+// 	.label {
+// 		@include FiraSans-5(0.7em, 400, $gray-0, 1.5px, center);
+// 	}
 
-ul.project {
-	// DEBUG
-	background: yellow;
-	// -----
-	position: relative;
-	width: 100%;
+// 	.arrow {
+// 		position: absolute;
+// 		right: 0.5em;
+// 		top: 40%;
+// 		-webkit-transform: translateY(-50%);
+// 		transform: translateY(-50%);
+// 	}
+// }
 
-}
+// //
+// // PROJECTS
+// //
 
-li.project {
-	$root-z-index: 0;
-	position: relative;
-	list-style-type: none;
-	height: 200px;
-	width: 100%;
-	float: left;
-	cursor: pointer;
-	overflow: hidden;
-	padding: 10px 20px;
+// ul.project {
+// 	// DEBUG
+// 	background: yellow;
+// 	// -----
+// 	position: relative;
+// 	width: 100%;
 
-	img {
-		width: 100%;
-		position: absolute;
-		left: 0;
-		top: 30%;
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%);
-		z-index: $root-z-index + 1;
-	}
+// }
 
-	.title {
-		display: inline-block;
-		position: relative;
-		z-index:$root-z-index + 2;
-		h4 {
-			@include FiraSans-5(2em, 700, $white-2, -1px, left);
-			@include TextShadow;
-		}
+// li.project {
+// 	$root-z-index: 0;
+// 	position: relative;
+// 	list-style-type: none;
+// 	height: 200px;
+// 	width: 100%;
+// 	float: left;
+// 	cursor: pointer;
+// 	overflow: hidden;
+// 	padding: 10px 20px;
 
-		.label {
-			color: $white-2;
-		}
-	}
-}
+// 	img {
+// 		width: 100%;
+// 		position: absolute;
+// 		left: 0;
+// 		top: 30%;
+// 		-webkit-transform: translateY(-50%);
+// 		transform: translateY(-50%);
+// 		z-index: $root-z-index + 1;
+// 	}
 
-// Styling Mixins
-@mixin VerticalAlign($pos) {
-	position: $pos;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
+// 	.title {
+// 		display: inline-block;
+// 		position: relative;
+// 		z-index:$root-z-index + 2;
+// 		h4 {
+// 			@include FiraSans-5(2em, 700, $white-2, -1px, left);
+// 			@include TextShadow;
+// 		}
 
-@mixin TextShadow {
-	text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-}
+// 		.label {
+// 			color: $white-2;
+// 		}
+// 	}
+// }
 
-@mixin Gradient-0-62-100($dark-color, $light-color) {
-	background: $dark-color;
-	background: -moz-linear-gradient(left,  $dark-color 0%, $light-color 62%, $dark-color 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$dark-color), color-stop(62%,$light-color), color-stop(100%,$dark-color));
-	background: -webkit-linear-gradient(left,  $dark-color 0%,$light-color 62%,$dark-color 100%);
-	background: -o-linear-gradient(left,  $dark-color 0%,$light-color 62%,$dark-color 100%);
-	background: -ms-linear-gradient(left,  $dark-color 0%,$light-color 62%,$dark-color 100%);
-	background: linear-gradient(to right,  $dark-color 0%,$light-color 62%,$dark-color 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
+// // Styling Mixins
+// @mixin VerticalAlign($pos) {
+// 	position: $pos;
+// 	top: 50%;
+// 	-webkit-transform: translateY(-50%);
+//     transform: translateY(-50%);
+// }
 
-}
+// @mixin TextShadow {
+// 	text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+// }
 
-// Standard Measurements
-	$std-padding: 15px;
-	$std-wrapper-width: 960px;
+// @mixin Gradient-0-62-100($dark-color, $light-color) {
+// 	background: $dark-color;
+// 	background: -moz-linear-gradient(left,  $dark-color 0%, $light-color 62%, $dark-color 100%);
+// 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$dark-color), color-stop(62%,$light-color), color-stop(100%,$dark-color));
+// 	background: -webkit-linear-gradient(left,  $dark-color 0%,$light-color 62%,$dark-color 100%);
+// 	background: -o-linear-gradient(left,  $dark-color 0%,$light-color 62%,$dark-color 100%);
+// 	background: -ms-linear-gradient(left,  $dark-color 0%,$light-color 62%,$dark-color 100%);
+// 	background: linear-gradient(to right,  $dark-color 0%,$light-color 62%,$dark-color 100%);
+// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-color', endColorstr='$dark-color',GradientType=1 );
 
-// LISTS
-ul.std{
-	width: $std-wrapper-width;
-	margin: 0 auto;
-	list-style-type: none;
-}
+// }
 
-li.std {
-	width: 100%;
-	height: 120px;
-	margin-bottom: $std-padding / 2;
+// // Standard Measurements
+// 	$std-padding: 15px;
+// 	$std-wrapper-width: 960px;
 
-	.std-item{
-		// DEBUG
+// // LISTS
+// ul.std{
+// 	width: $std-wrapper-width;
+// 	margin: 0 auto;
+// 	list-style-type: none;
+// }
 
-		$color-bar-width: 20px;
-		// ----
+// li.std {
+// 	width: 100%;
+// 	height: 120px;
+// 	margin-bottom: $std-padding / 2;
 
-		width: 100%;
-		height: 100%;
+// 	.std-item{
+// 		// DEBUG
 
-		background: $black-2;
-		padding: 10px;
-		float: left;
-		border-radius: 10px;
+// 		$color-bar-width: 20px;
+// 		// ----
 
-		&:hover {
-			cursor: pointer;
-			background: $black-3;
-		}
+// 		width: 100%;
+// 		height: 100%;
+
+// 		background: $black-2;
+// 		padding: 10px;
+// 		float: left;
+// 		border-radius: 10px;
+
+// 		&:hover {
+// 			cursor: pointer;
+// 			background: $black-3;
+// 		}
 		
-		.value {
-			display: inline-block;
-			font-size: 2rem;
-		}
+// 		.value {
+// 			display: inline-block;
+// 			font-size: 2rem;
+// 		}
 
-		.label {
-			// width: 100%;
-			@include FiraSans-5(1rem, 800, $gray-2, 2px, center);
-			position: absolute;
-			bottom: 5px;
-		}
+// 		.label {
+// 			// width: 100%;
+// 			@include FiraSans-5(1rem, 800, $gray-2, 2px, center);
+// 			position: absolute;
+// 			bottom: 5px;
+// 		}
 
-		.color.box {
-			width: $color-bar-width;
-			height: 100%;
-		}
+// 		.color.box {
+// 			width: $color-bar-width;
+// 			height: 100%;
+// 		}
 
-		.id.box {
-			background: $white-3;
-			// width: 10%;
-			height: 100%;
-			padding: $std-padding;
+// 		.id.box {
+// 			background: $white-3;
+// 			// width: 10%;
+// 			height: 100%;
+// 			padding: $std-padding;
 
-			.value {
-				@include FiraSans-5 (3.2rem, 800, $black-1, -1.75px, center);
-				position: relative;
-				top: -5px;
-			}
-		}
+// 			.value {
+// 				@include FiraSans-5 (3.2rem, 800, $black-1, -1.75px, center);
+// 				position: relative;
+// 				top: -5px;
+// 			}
+// 		}
 
-		.title.box {
-			width: auto;
-			height: 100%;
-			padding: $std-padding;
+// 		.title.box {
+// 			width: auto;
+// 			height: 100%;
+// 			padding: $std-padding;
 
 					
-			.value {
-				position: relative;
-				top: -5px;
-				@include FiraSans-5 (3.2rem, 800, $white-3, -1.5px, left);
-			}
-		}
-	}
-}
-// FORMS
-.field.std {
-	width: $std-wrapper-width / 2;
-	margin: 0 auto;
-	margin-bottom: $std-padding / 2;
-}
+// 			.value {
+// 				position: relative;
+// 				top: -5px;
+// 				@include FiraSans-5 (3.2rem, 800, $white-3, -1.5px, left);
+// 			}
+// 		}
+// 	}
+// }
+// // FORMS
+// .field.std {
+// 	width: $std-wrapper-width / 2;
+// 	margin: 0 auto;
+// 	margin-bottom: $std-padding / 2;
+// }
 
-label.std {
-	width: 100px;
-	padding: $std-padding;
-	float: left;
-	text-align: right;
-	color: $gray-0;
-}
+// label.std {
+// 	width: 100px;
+// 	padding: $std-padding;
+// 	float: left;
+// 	text-align: right;
+// 	color: $gray-0;
+// }
 
-input.std {
-	padding: $std-padding;
-	@include FiraSans-5 (2rem, 800, $black-1, -1.75px, center);
-	width: $std-wrapper-width / 2 - 100px;
-}
+// input.std {
+// 	padding: $std-padding;
+// 	@include FiraSans-5 (2rem, 800, $black-1, -1.75px, center);
+// 	width: $std-wrapper-width / 2 - 100px;
+// }
 
-// TABLES
-table.std {
-	width: $std-wrapper-width;
-	margin: 0 auto;
-}
+// // TABLES
+// table.std {
+// 	width: $std-wrapper-width;
+// 	margin: 0 auto;
+// }
 
-thead.std {
-	background: $black-1;
-	padding: $std-padding;
-}
+// thead.std {
+// 	background: $black-1;
+// 	padding: $std-padding;
+// }
 
-td.std {
-	background: $black-3;
-	padding: $std-padding;
-}
+// td.std {
+// 	background: $black-3;
+// 	padding: $std-padding;
+// }
