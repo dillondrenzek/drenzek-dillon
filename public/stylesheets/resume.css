@@ -45,6 +45,14 @@ html {
 li {
   list-style-type: none;
 }
+h2 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: -3px;
+  text-align: left;
+}
 .main-page {
   position: absolute;
   top: 0;
