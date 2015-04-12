@@ -90,9 +90,6 @@ a:hover,
 a:active {
   text-decoration: underline;
 }
-section {
-  padding: 20px 30px;
-}
 aside {
   padding: 10px 30px;
   position: relative;
@@ -103,6 +100,9 @@ aside {
 }
 li {
   list-style: circle inside;
+}
+section {
+  padding: 20px 30px;
 }
 section.title {
   background: #a63f29;
@@ -218,28 +218,6 @@ section.projects {
   text-transform: uppercase;
   text-decoration: none;
   color: #fafafa;
-}
-li.project {
-  list-style-type: none;
-  background: #fafafa;
-  border-bottom: 1px #bcbcbc solid;
-  padding: 10px 30px;
-}
-li.project:first-child {
-  border-top: 1px #bcbcbc solid;
-}
-li.project li.skill-s {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fafafa;
-  letter-spacing: 1px;
-  text-align: left;
-  list-style-type: none;
-  color: #a63f29;
-}
-li.project h3 {
-  color: #292929;
 }
 .list {
   margin-bottom: 15px;

@@ -1,9 +1,10 @@
 //- App layout
-//- version 1.4.2
+//- version 1.4.3
 
 -var adminMode = false;
 
 include app/sidebar
+include app/models
 
 mixin list(title)
 	header
@@ -17,18 +18,7 @@ mixin sublist(title)
 		ul.list
 			block
 
-mixin largeProject(project)
-	li.project
-		h3= project.title
-		ul
-			li
-				a(href='#') View Project Page
-				a(href='#') Visit External Link
-		ul
-			for s in project.skills
-				li.skill-s= s
-		p= project.startDate + " - " + project.endDate
-		p.description At Native I work as an iOS developer 
+ 
 
 
 

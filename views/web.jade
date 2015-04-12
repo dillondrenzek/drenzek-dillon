@@ -13,22 +13,21 @@ block mainpage
 		h2 Web Developer
 
 	section.subtitle
-		div since Summer 2013
+		//- div since Summer 2013
 
 	section.content
 		h3 Humble Beginnings
 		p I first started learning how to code websites in a meaningful way on my 21st birthday by going through the lessons on <a href="http://www.codecademy.com">Codecademy</a> about HTML and CSS. I immediately began to design and code a "personal portfolio." I didn't get far past the JPEG navbar links (funny, in hindsight) on my first try, but web development has become the way I merge my artistic abilities with my logical and technical mind.
 
 	aside.skills
-		h3 Related Skills
-		ul
-			li HTML
-			li CSS
-			li JavaScript
-			li Node.js
-			li Jade
-			li Sass
-			li Stylus
+		+list('Related Skills')
+			+mediumSkill('HTML')
+			+mediumSkill('CSS')
+			+mediumSkill('JavaScript')
+			+mediumSkill('Node.js')
+			+mediumSkill('Jade')
+			+mediumSkill('Sass')
+			+mediumSkill('Stylus')
 
 	section.projects
 		+list('Projects')
