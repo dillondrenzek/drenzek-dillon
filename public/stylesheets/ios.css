@@ -44,6 +44,7 @@ html {
 }
 .mainpage {
   position: relative;
+  padding-left: 200px;
   z-index: 0;
 }
 .mainpage section.title {

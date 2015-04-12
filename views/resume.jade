@@ -1,7 +1,7 @@
-extends ./layout.jade
+extends app
 
 block title
-	title Dillon Drenzek - Thinker, Learner, Developer
+	| Dillon Drenzek - Resume
 
 block stylesheet
 	include ../public/stylesheets/resume.css
@@ -30,7 +30,7 @@ mixin itemContent
 	ul.indent
 		block
 
-block page
+block mainpage
 	#resume 
 		.none (updated 3-4-15)
 		header.title
