@@ -6,25 +6,31 @@ var Project = require('../models/project'),
 
 // GET '/'
 site.index = function(req, res, next) {
-
-	Project.getAll(function (err, p_results) {
-        if (err) return next(err);
-
-        Skill.getTrending( 5, function (err, s_results) {
-        	if (err) return next(err);
-
-            // console.log("projects", p_results);
-
-        	res.render('index', {
-				projects: p_results,
-				skills: s_results
-			});
-        });
-    });
+    res.render('index', {});
 };
 
-site.resume = function(req, res, next) {
-    res.render('resume', {
+// features
+site.ios = function(req, res, next) {
+    res.render('ios', {});
+};
 
-    });
+site.web = function(req, res, next) {
+	res.render('web', {});
+}
+
+site.art = function(req, res, next) {
+	res.render('art', {});
+}
+
+// overviews
+site.skills = function(req, res, next) {
+	res.render('skills', {});
+}
+
+site.projects = function(req, res, next) {
+	res.render('projects', {});
+}
+
+site.resume = function(req, res, next) {
+    res.render('resume', { });
 };

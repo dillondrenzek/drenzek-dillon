@@ -42,59 +42,121 @@ html {
   letter-spacing: -1px;
   text-align: left;
 }
-li {
-  list-style-type: none;
-}
-h2 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 4em;
-  font-weight: 700;
-  color: #292929;
-  letter-spacing: -3px;
-  text-align: left;
-}
-.main-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #eee;
-}
-nav {
-  width: 100%;
+.mainpage {
   position: relative;
+  z-index: 0;
+}
+.mainpage section.title {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+.mainpage section.title header {
+  background: none;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  float: left;
+}
+.mainpage section.title img {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+.mainpage section.subtitle {
   background: #292929;
-  border-bottom: #171413 1px solid;
+  float: left;
+  width: 100%;
+  height: 84px;
 }
-nav ul li {
-  display: inline;
+.mainpage section.content {
+  background: #fafafa;
+  float: left;
+  width: 60%;
+  height: 400px;
 }
-nav a {
-  padding: 5px 20px;
+.mainpage aside {
+  background: #bcbcbc;
+  float: right;
+  width: 40%;
+  height: 400px;
+}
+.sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  background: #292929;
+  color: #fafafa;
+  z-index: 50;
+}
+.sidebar header {
+  position: relative;
+  height: 84px;
+  background: #a63f29;
+  padding: 8px 15px;
+}
+.sidebar header h1 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 30px;
   font-weight: 700;
-  color: #f8f7f5;
+  color: #fafafa;
+  letter-spacing: -1px;
+  text-align: left;
+  line-height: 30px;
+}
+.sidebar .contact li {
+  width: 100%;
+  padding: 8px 15px;
+}
+.sidebar .contact li .icon {
+  display: inline;
+  float: left;
+}
+.sidebar .contact li .value {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+  color: #fafafa;
   letter-spacing: 1px;
   text-align: left;
-  text-decoration: none;
-  text-transform: lowercase;
-  vertical-align: middle;
-}
-nav a:hover {
-  color: #a63f29;
-}
-nav .home {
-  background: #a63f29;
-  color: #f8f7f5;
-  padding: 5px;
-}
-nav .home:hover {
-  background: #f8f7f5;
-  color: #a63f29;
-}
-nav .admin {
+  display: inline;
   float: right;
+}
+.sidebar .feature {
+  background: #3d3c3c;
+}
+.sidebar .feature li {
+  padding: 8px 15px;
+}
+.sidebar .feature a {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fafafa;
+  letter-spacing: -1px;
+  text-align: left;
+  text-decoration: none;
+  color: #fafafa;
+}
+.sidebar .overview li {
+  padding: 8px 15px;
+}
+.sidebar .overview a {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #fafafa;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fafafa;
 }
 #resume {
   float: left;
