@@ -1,0 +1,38 @@
+//- Sidebar HTML
+//- version 1.4.1
+
+mixin sidebar
+	.sidebar
+		+namecard
+		nav
+			+feature_links
+			+overview_links
+
+mixin namecard
+	.namecard
+		header
+			h1 Dillon Drenzek
+		.contact
+			ul.contact
+				li (406) 599-8576
+				li dillon@drenzek.com
+				li GitHub
+				li LinkedIn
+
+mixin feature_links
+	ul.feature
+		li
+			a.feature(href="/ios") iOS Developer
+		li
+			a.feature(href="/web") Web Developer
+		li
+			a.feature(href="/art") Digital Artist
+
+mixin overview_links
+	ul.overview
+		li
+			a.overview(href="/skills") Skills
+		li
+			a.overview(href="/projects") Projects
+		li
+			a.overview(href="/resume") Resume
