@@ -1,0 +1,58 @@
+//- Index page
+//- version 1.4.2
+extends app
+
+block title
+	| Dillon Drenzek
+
+block stylesheet
+	include ../public/stylesheets/index.css
+
+block mainpage
+
+
+
+
+//- PRE v1.4
+//- block page
+	section.title
+		header
+			h2 Dillon Drenzek
+			.detail
+				h3 Thinker, Learner, and Developer
+
+	section.subtitle
+		.since.box
+			.label since
+			.value July 27, 1992
+		.email.box
+			.label email
+			.value dr.enzek@gmail.com
+		.location.box
+			.label location
+			.value Boulder, Colorado
+	
+			
+	section.statement
+		header.section
+			h3 I'm Dillon
+		//- p Right now, you are looking at the website that I, Dillon Drenzek, will show to potential employers someday. And if you happen to be looking for someone who knows their way around a computer, an iPhone or a blank (mostly digital) canvas, by "someday," I mean today! This website was made for you, and its going to show you why I'm the most qualified college graduate you will come across! <br><br> 
+		//- p And if you aren't here looking on business, then sit back and just take in some of the sights you're about to see!
+		p  I pride myself on my abilities to analyze problems, identify different solutions and then based on what I know, choose the best solution, whether that is the most efficient, the quickest, or the most "bug-free", maintainable solution. 
+
+
+
+	section.skills
+		header.section
+			h3 Trending Skills
+			a(href="/skills") See All Skills
+		+skill_list(skills)
+
+	section.working
+		header.section
+			h3 Current Projects
+			a(href="/projects") See All Projects
+		+project_list(projects)
+
+
+	
