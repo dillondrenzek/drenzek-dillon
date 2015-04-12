@@ -241,3 +241,16 @@ li.project li.skill-s {
 li.project h3 {
   color: #292929;
 }
+.list {
+  margin-bottom: 15px;
+}
+.list li {
+  margin-left: 10px;
+  list-style: circle inside;
+}
+.list ul {
+  margin-left: 20px;
+}
+section.content {
+  width: 100%;
+}

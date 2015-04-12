@@ -8,26 +8,40 @@ block title
 block stylesheet
 	include ../public/stylesheets/index.css
 
+
+
+//- Main page
 block mainpage
-	h2 Index
-	//- section.title
-		header
-			h2 Dillon Drenzek
-			.detail
-				h3 Thinker, Learner, and Developer
+	section.title
+		h2 Dillon Drenzek
+		//- h3 Thinker, Learner, and Developer
+		//- img(src="images/profile.jpg")
+
+	section.subtitle
+		.since.box
+			.label since
+			.value July 27, 1992
+		.email.box
+			.label email
+			.value dr.enzek@gmail.com
+		.location.box
+			.label location
+			.value Boulder, Colorado
+
+	section.content
+		+list('Current Projects')
+			li Native
+			li Palette
+			li Object-Oriented Design Class Project
+		+list('Proudest Work')
+			li Native
+			li Professional Portfolio
+			li The Experience of Time
+
+	aside
 		img(src="images/profile.jpg")
 
-	//- section.subtitle
-	//- 	.since.box
-	//- 		.label since
-	//- 		.value July 27, 1992
-	//- 	.email.box
-	//- 		.label email
-	//- 		.value dr.enzek@gmail.com
-	//- 	.location.box
-	//- 		.label location
-	//- 		.value Boulder, Colorado
-	//- section.content
+	
 
 	//- aside
 

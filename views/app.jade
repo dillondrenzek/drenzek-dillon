@@ -5,6 +5,33 @@
 
 include app/sidebar
 
+mixin list(title)
+	header
+		h3= title
+	ul.list
+		block
+
+mixin sublist(title)
+	li
+		h4= title
+		ul.list
+			block
+
+mixin largeProject(project)
+	li.project
+		h3= project.title
+		ul
+			li
+				a(href='#') View Project Page
+				a(href='#') Visit External Link
+		ul
+			for s in project.skills
+				li.skill-s= s
+		p= project.startDate + " - " + project.endDate
+		p.description At Native I work as an iOS developer 
+
+
+
 doctype
 head
 	title

@@ -1,4 +1,4 @@
-//- Index page
+//- Skills page
 //- version 1.4.2
 extends app
 
@@ -6,7 +6,56 @@ block title
 	| Dillon Drenzek - Skills
 
 block stylesheet
-	include ../public/stylesheets/index.css
+	include ../public/stylesheets/skills.css
 
 block mainpage
-	h2 Skills
+	section.title
+		h2 Skills
+	section.content
+
+		.column
+			+list('Personal')
+				li Leadership
+				li Empathetic
+
+			+list('Design')
+				li UI Design
+				li MVC Design Pattern
+				li UI Design
+			
+			+list('Adobe Creative Suite')
+				li Photoshop
+				li Illustrator
+				li InDesign
+				li After Effects
+				li Premiere Pro
+
+
+		.column
+			+list('Web')
+				+sublist('Basics')
+					li HTML
+					li CSS
+					li JavaScript
+
+				+sublist('HTML Templating/Precompilation')
+					li Haml
+					li Jade
+
+				+sublist('CSS Templating/Precompilation')
+					li Sass
+					li Stylus
+
+				+sublist('Backend Libraries & Frameworks')
+					li Node.js
+					li Ruby on Rails
+					li PHP
+				
+				
+			
+			+list('iOS')
+				li Objective-C
+				li Swift
+
+
+			
