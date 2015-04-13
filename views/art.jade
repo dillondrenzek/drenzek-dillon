@@ -1,5 +1,5 @@
 //- Index page
-//- version 1.4.2
+//- version 1.4.3
 extends app
 
 block title
@@ -9,4 +9,33 @@ block stylesheet
 	include ../public/stylesheets/index.css
 
 block mainpage
-	h2 Digital Artist
+	section.title
+		h2 Digital Artist
+
+	section.subtitle
+		//- div since Fall 2013
+
+	section.content
+		h3 Humble Beginnings
+		p I've been interested in how things look ever since I started "designing" sports scoreboards using a spreadsheet
+			| application on my family's first MacIntosh computer when I was 4 years old. I took numerous art classes in 
+			| high school and was part of HawkTV, the school's weekly news show broadcast every Friday morning. I first
+			| began using Photoshop seriously when I began college and found a love for creating art in the digital domain.
+			| Since then, I've been using the Adobe suite as well as other programs such as Maya 3D and Sketch to produce
+			| works of art (practical or otherwise) in the digital domain!
+
+	aside.skills
+		+list('Related Skills')
+			+mediumSkill('Photoshop')
+			+mediumSkill('Illustrator')
+			+mediumSkill('Sketch')
+			
+	section.projects
+		+list('Projects')
+			li Cold for Now, but Always Wondering
+			li Me, In So Many Words
+			li Walk Through
+			li Hear Things You Like
+			li The Experience of Time
+			li Heliograph
+			li ** Alternative Imaging Finals
