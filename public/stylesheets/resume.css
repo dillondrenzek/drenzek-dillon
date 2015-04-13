@@ -34,6 +34,36 @@
 .debug * {
   border: 1px solid #e5c41e;
 }
+li.project-L {
+  list-style-type: none;
+  background: #fafafa;
+  border-bottom: 1px #bcbcbc solid;
+  padding: 10px 30px;
+}
+li.project-L:first-child {
+  border-top: 1px #bcbcbc solid;
+}
+li.project-L h3 {
+  color: #292929;
+}
+li.skill-M {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #292929;
+  letter-spacing: 1px;
+  text-align: left;
+  list-style-type: none;
+}
+li.skill-S {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: 1px;
+  text-align: left;
+  list-style-type: none;
+}
 html {
   background: #fafafa;
   font-family: 'Fira Sans', Helvetica, sans-serif;
