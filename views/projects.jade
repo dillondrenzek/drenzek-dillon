@@ -1,0 +1,25 @@
+//- Index page
+//- version 1.4.3
+extends app
+
+block title
+	| Dillon Drenzek - Projects
+
+block stylesheet
+	include ../public/stylesheets/index.css
+
+block mainpage
+	section.title
+		h2 Projects
+	section.projects
+		+list('Projects')
+			+largeProject({title: 'Native', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Dillondrenzek.com v2', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Dillondrenzek.com v1', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Capstone Professional Portfolio', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Capstone Assignment Portal', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Advanced Web Design Portal', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Digital Media 2 Portal', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Digital Media 1 Portal v1', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Digital Media 1 Portal v2', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})
+			+largeProject({title: 'Digital Sound Portal', startDate: 'Feb 2014', endDate: 'present', skills:['iOS', 'Objective-C']})

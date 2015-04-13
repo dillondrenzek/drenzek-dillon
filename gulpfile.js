@@ -5,8 +5,11 @@ var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	watch = require('gulp-watch'),
 	stylus = require('gulp-stylus'),
-	shell = require('gulp-shell');
+	shell = require('gulp-shell'),
+  browserSync = require('browser-sync'),
+  nodemon = require('gulp-nodemon');
 
+// STYLUS -----------------------
 gulp.task('stylus', function() {
   var input = 'styl',
       output = '';
@@ -17,6 +20,7 @@ gulp.task('stylus', function() {
     ]))
 });
 
+// SERVE ------------------------
 gulp.task('serve', function() {
 	return gulp.src('')
     .pipe(shell([
@@ -24,8 +28,28 @@ gulp.task('serve', function() {
     ]))
 });
 
+// GLOBAL SYNC ------------------
+gulp.task('browser-sync', ['nodemon'], function() {
+  browserSync.init(null, {
+    proxy: "http://localhost:4567",
+    port: 7000,
+    files: ["public/stylesheets/**", "*.js", "views/**/**"]
+  });
+});
+
+// NODEMON ----------------------
+gulp.task('nodemon', function (cb) {
+  return nodemon({
+    script: 'app.js'
+  }).on('start', function () {
+    cb();
+  });
+});
+
+
+
 var defaults = function() {
-  return ['stylus', 'serve']
+  return ['stylus', 'browser-sync'];
 };
 
 

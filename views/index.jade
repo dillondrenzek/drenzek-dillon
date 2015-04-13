@@ -1,16 +1,21 @@
-//- Index Page
-//- version 0.7.0
-extends ./layout.jade
+//- Index page
+//- version 1.4.2
+extends app
+
+block title
+	| Dillon Drenzek
 
 block stylesheet
 	include ../public/stylesheets/index.css
 
-block page
+
+
+//- Main page
+block mainpage
 	section.title
-		header
-			h2 Dillon Drenzek
-			.detail
-				h3 Thinker, Learner, and Developer
+		h2 Dillon Drenzek
+		//- h3 Thinker, Learner, and Developer
+		//- img(src="images/profile.jpg")
 
 	section.subtitle
 		.since.box
@@ -22,6 +27,36 @@ block page
 		.location.box
 			.label location
 			.value Boulder, Colorado
+
+	section.content
+		+list('Current Projects')
+			li Native
+			li Palette
+			li Object-Oriented Design Class Project
+		+list('Proudest Work')
+			li Native
+			li Professional Portfolio
+			li The Experience of Time
+
+	aside
+		img(src="images/profile.jpg")
+
+	
+
+	//- aside
+
+
+
+//- PRE v1.4
+//- block page
+	section.title
+		header
+			h2 Dillon Drenzek
+			.detail
+				h3 Thinker, Learner, and Developer
+
+	section.subtitle
+		
 	
 			
 	section.statement

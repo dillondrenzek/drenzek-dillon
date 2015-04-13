@@ -1,3 +1,6 @@
+// app.js
+// version 1.4.1
+
 // Module Dependencies
 
 var express = require('express')
@@ -16,64 +19,69 @@ app.use(express.static(path.join(__dirname, 'public')));
 // APP ROUTES
 
 app.get('/', routes.site.index);
+app.get('/ios', routes.site.ios);
+app.get('/web', routes.site.web);
+app.get('/art', routes.site.art);
+app.get('/skills', routes.site.skills);
+app.get('/projects', routes.site.projects);
 app.get('/resume', routes.site.resume);
 
 // REMOVE
-app.get('/skills/seed', function (req, res, next) {
+// app.get('/skills/seed', function (req, res, next) {
 
-    var Skill = require('./models/skill'),
-        skillsArray = require('./json/data.json').skills;
+//     var Skill = require('./models/skill'),
+//         skillsArray = require('./json/data.json').skills;
 
-    // erase any skills
-    Skill.getAll (function (err, skills) {
-        if (err) return next(err);
-        // skills.each
-        skills.forEach( function(skill, i, arr) {
-            skill.del(function (err) {
-                if (err) return next(err);
-            });
-        });
-    });
+//     // erase any skills
+//     Skill.getAll (function (err, skills) {
+//         if (err) return next(err);
+//         // skills.each
+//         skills.forEach( function(skill, i, arr) {
+//             skill.del(function (err) {
+//                 if (err) return next(err);
+//             });
+//         });
+//     });
 
 
-    // re-seed db
-    skillsArray.forEach( function(el, i, arr) {
-        Skill.create(el, function(err, result) {
-            if (err) return next(err);
-            console.log("Created Skill:", el.title);
+//     // re-seed db
+//     skillsArray.forEach( function(el, i, arr) {
+//         Skill.create(el, function(err, result) {
+//             if (err) return next(err);
+//             console.log("Created Skill:", el.title);
 
-            if (i === skillsArray.length - 1) {
-                res.redirect('/skills');
-            }
-        });
-    });
+//             if (i === skillsArray.length - 1) {
+//                 res.redirect('/skills');
+//             }
+//         });
+//     });
 
     
-});
+// });
 
-// SKILL ROUTES
-app.get('/skills', routes.skills.list);
-app.get('/skills/new', routes.skills.new);
-app.get('/skills/edit', routes.skills.list_edit);
-app.get('/skills/:id', routes.skills.show);
-app.post('/skills/:id/subskill', routes.skills.addParentSkill);
-app.get('/skills/edit/:id', routes.skills.edit);
-app.post('/skills/new', routes.skills.create);
-app.post('/skills/edit/:id', routes.skills.update);
-app.post('/skills/destroy/:id', routes.skills.destroy);
+// // SKILL ROUTES
+// app.get('/skills', routes.skills.list);
+// app.get('/skills/new', routes.skills.new);
+// app.get('/skills/edit', routes.skills.list_edit);
+// app.get('/skills/:id', routes.skills.show);
+// app.post('/skills/:id/subskill', routes.skills.addParentSkill);
+// app.get('/skills/edit/:id', routes.skills.edit);
+// app.post('/skills/new', routes.skills.create);
+// app.post('/skills/edit/:id', routes.skills.update);
+// app.post('/skills/destroy/:id', routes.skills.destroy);
 
 
-// PROJECT ROUTES
-app.get('/projects', routes.projects.list);
-app.get('/projects/new', routes.projects.new);
-app.get('/projects/edit', routes.projects.list_edit);
-app.get('/projects/:id', routes.projects.show);
-app.get('/projects/edit/:id', routes.projects.edit);
-app.post('/projects/new', routes.projects.create);
-app.post('/projects/edit/:id', routes.projects.update);
-app.post('/projects/destroy/:id', routes.projects.destroy);
+// // PROJECT ROUTES
+// app.get('/projects', routes.projects.list);
+// app.get('/projects/new', routes.projects.new);
+// app.get('/projects/edit', routes.projects.list_edit);
+// app.get('/projects/:id', routes.projects.show);
+// app.get('/projects/edit/:id', routes.projects.edit);
+// app.post('/projects/new', routes.projects.create);
+// app.post('/projects/edit/:id', routes.projects.update);
+// app.post('/projects/destroy/:id', routes.projects.destroy);
 
-app.post('/projects/:id/exhibits', routes.projects.exhibits);
+// app.post('/projects/:id/exhibits', routes.projects.exhibits);
 
 // // TIME ROUTES
 // app.get('/times', routes.times.list);

@@ -1,0 +1,33 @@
+//- Layout templates for each of the model representations
+//- version 1.4.3
+
+//- Projects
+
+//- Large Project
+//- 
+mixin largeProject(project)
+	li.project-L
+		h3= project.title
+		ul
+			li
+				a(href='#') View Project Page
+				a(href='#') Visit External Link
+		ul
+			for s in project.skills
+				+smallSkill(s)
+		p= project.startDate + " - " + project.endDate
+		p.description At Native I work as an iOS developer
+
+//- Skills
+
+//- Medium Skill
+//-
+mixin mediumSkill(skill)
+	li.skill-M= (skill.title || skill || 'Skill Title')
+
+
+
+//- Small Skill
+//-
+mixin smallSkill(skill)
+	li.skill-S= (skill.title || skill || 'Skill Title')

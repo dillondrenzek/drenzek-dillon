@@ -1,7 +1,7 @@
-extends ./layout.jade
+extends app
 
 block title
-	title Dillon Drenzek - Aspiring iOS Developer &amp; Web Dev Hobbyist
+	| Dillon Drenzek - Resume
 
 block stylesheet
 	include ../public/stylesheets/resume.css
@@ -30,7 +30,7 @@ mixin itemContent
 	ul.indent
 		block
 
-block page
+block mainpage
 	#resume 
 		.none (updated 3-4-15)
 		header.title
@@ -47,7 +47,7 @@ block page
 				+iconItem("fa-envelope-square")
 					| dr.enzek@gmail.com
 
-			ul.links		
+			ul.links
 				+iconItem("fa-linkedin-square")
 					| linkedin.com/in/dillondrenzek
 				+iconItem("fa-github-square")

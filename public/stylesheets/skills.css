@@ -249,3 +249,16 @@ section.projects {
   text-decoration: none;
   color: #fafafa;
 }
+.list {
+  margin-bottom: 15px;
+}
+.list li {
+  margin-left: 10px;
+  list-style: circle inside;
+}
+.list ul {
+  margin-left: 20px;
+}
+section.content {
+  width: 100%;
+}
