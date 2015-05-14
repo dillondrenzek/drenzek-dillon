@@ -45,8 +45,8 @@ aside
 	position relative
 	width 40%
 	float right
-	border-left 1px white1 solid
-	border-bottom 1px white1 solid
+	// border-left 1px white1 solid
+	// border-bottom 1px white1 solid
 
 	
 li
@@ -61,12 +61,14 @@ section.title
 	background Red
 	float left
 	width 100%
-	padding 2% 3%
+	padding 20px 30px
+	line-height 67px
 	// overflow hidden
 	
 	h2
-		// padding 2% 3%
 		color White
+		// padding 2% 3%
+		// FiraSans-5(48px, 700, White, -2px, left)
 		
 section.subtitle
 	background Black
@@ -82,7 +84,8 @@ section.subtitle
 		display inline-block
 		padding 8px 15px
 		border-left 1px black2 solid
-		border-right 1px black2 solid
+		&:last-child
+			border-right 1px black2 solid
 		
 		
 section.content
@@ -90,6 +93,7 @@ section.content
 	color Black
 	float left
 	width 60%
+	padding 20px 30px
 	// padding 2% 3%
 	
 	.column

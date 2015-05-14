@@ -35,34 +35,91 @@
   border: 1px solid #e5c41e;
 }
 li.project-L {
+  position: relative;
   list-style-type: none;
-  background: #fafafa;
-  border-bottom: 1px #bcbcbc solid;
-  padding: 10px 30px;
+  border-bottom: 1px #ababab solid;
+  width: 60%;
+  height: 100px;
 }
 li.project-L:first-child {
-  border-top: 1px #bcbcbc solid;
+  border-top: 1px #ababab solid;
 }
-li.project-L h3 {
-  color: #292929;
+li.project-L>* {
+  display: inline-block;
 }
-li.skill-M {
+li.project-L .title {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  padding: 10px 20px;
+}
+li.project-L .title h3 {
+  position: relative;
+  width: 100%;
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 36px;
   font-weight: 400;
   color: #292929;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   text-align: left;
+}
+li.project-L .title ul.skills {
+  width: 100%;
+  position: relative;
+}
+li.project-L .title ul.skills>* {
+  display: inline-block;
+}
+li.project-L .title ul.skills .label {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ababab;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-right: 10px;
+}
+li.project-L .title ul.skills li {
   list-style-type: none;
+}
+li.project-L .image {
+  background: #292929;
+  position: relative;
+  overflow: hidden;
+  width: 20%;
+  height: 100px;
+  z-index: 0;
+}
+li.project-L .image img {
+  height: 100px;
+}
+.date-M {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #292929;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.tag {
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px #ababab solid;
+  margin-right: 10px;
 }
 li.skill-S {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   color: #292929;
   letter-spacing: 1px;
-  text-align: left;
-  list-style-type: none;
+  text-align: center;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px #ababab solid;
+  margin-right: 10px;
 }
 html {
   background: #fafafa;
@@ -125,8 +182,6 @@ aside {
   position: relative;
   width: 40%;
   float: right;
-  border-left: 1px #d8d8d8 solid;
-  border-bottom: 1px #d8d8d8 solid;
 }
 li {
   list-style: circle inside;
@@ -138,7 +193,8 @@ section.title {
   background: #a63f29;
   float: left;
   width: 100%;
-  padding: 2% 3%;
+  padding: 20px 30px;
+  line-height: 67px;
 }
 section.title h2 {
   color: #fafafa;
@@ -155,6 +211,8 @@ section.subtitle>* {
   display: inline-block;
   padding: 8px 15px;
   border-left: 1px #3d3c3c solid;
+}
+section.subtitle>*:last-child {
   border-right: 1px #3d3c3c solid;
 }
 section.content {
@@ -162,6 +220,7 @@ section.content {
   color: #292929;
   float: left;
   width: 60%;
+  padding: 20px 30px;
 }
 section.content .column {
   float: left;

@@ -12,7 +12,7 @@ block mainpage
 	section.title
 		h2 Digital Artist
 
-	section.subtitle
+	//- section.subtitle
 		//- div since Fall 2013
 
 	section.content
@@ -28,14 +28,18 @@ block mainpage
 		+list('Related Skills')
 			+mediumSkill('Photoshop')
 			+mediumSkill('Illustrator')
+			+mediumSkill('InDesign')
+			+mediumSkill('Premiere Pro')
+			+mediumSkill('After Effects')
 			+mediumSkill('Sketch')
+			+mediumSkill('Photography')
 			
 	section.projects
 		+list('Projects')
-			li Cold for Now, but Always Wondering
-			li Me, In So Many Words
-			li Walk Through
-			li Hear Things You Like
-			li The Experience of Time
-			li Heliograph
-			li ** Alternative Imaging Finals
+			+largeProject({title: 'Cold for Now, but Always Wondering', skills: ['Photoshop', 'Photography']})
+			+largeProject({title: 'Me, In So Many Words', skills: ['Photoshop', 'Photography']})
+			+largeProject({title: 'Walk Through', skills: ['Photoshop', 'Illustrator', 'Photography']})
+			+largeProject({title: 'Hear Things You Like', skills: ['Photoshop', 'Photography']})
+			+largeProject({title: 'The Experience of Time', skills: ['Premiere Pro', 'Photography']})
+			+largeProject({title: 'Heliograph', skills: ['Photoshop', 'Photography']})
+			+largeProject({title: '** Alternative Imaging Finals', skills: ['Photoshop', 'Photography']})

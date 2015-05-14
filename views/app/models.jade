@@ -7,16 +7,19 @@
 //- 
 mixin largeProject(project)
 	li.project-L
-		h3= project.title
-		ul
-			li
-				a(href='#') View Project Page
-				a(href='#') Visit External Link
-		ul
-			for s in project.skills
-				+smallSkill(s)
-		p= project.startDate + " - " + project.endDate
-		p.description At Native I work as an iOS developer
+		.image 
+			img(src="images/profile.jpg")
+		.title
+			h3= project.title
+			ul.skills
+				//- .label SKILLS
+				for s in project.skills
+					+smallSkill(s)
+
+		
+
+
+
 
 //- Skills
 
@@ -30,4 +33,4 @@ mixin mediumSkill(skill)
 //- Small Skill
 //-
 mixin smallSkill(skill)
-	li.skill-S= (skill.title || skill || 'Skill Title')
+	li.skill-S.tag= (skill.title || skill || 'Skill Title')

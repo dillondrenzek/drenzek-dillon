@@ -6,29 +6,105 @@
 
 //- Large Project
 li.project-L
+	position relative
 	list-style-type none
-	background White
-	
-	border-bottom 1px white0 solid
-	padding 10px 30px
-	
+	border-bottom 1px gray3 solid
+	width 60%
+	height 100px
 	&:first-child
-		border-top 1px white0 solid
+		border-top 1px gray3 solid
 		
+	// 1st Level children
+	&>*
+		display inline-block
+		// position relative
+		
+		// width 100%
 	
-	h3
-		color Black
-		// padding 8px 15px
+	// Title		
+	.title
+		// position relative
+		position absolute
+		// height 100px
+		top 0
+		left 20%
+		// right 0
+		// z-index 5
+		// width 80%
+		padding 10px 20px
+
+		h3
+			position relative
+			width 100%
+			FiraSans-5(36px, 400, Black, -1px, left)
 			
+		ul.skills
+			width 100%
+			position relative
+			&>*
+				display inline-block
+			.label
+				FiraSans-5(12px, 400, gray3, 2px, left)
+				margin-right 10px
+			li
+				list-style-type none
+		
+	// Image		
+	.image	
+		background Black
+		position relative
+		overflow hidden
+		width 20%
+		height 100px
+		z-index 0
+
+		img
+			// width 100%
+			height 100px
+
+				
+	
+				
 //- Skills
 
-//- Medium Skill
-li.skill-M
-	FiraSans-5(18px, 400, Black, 1px, left)
-	list-style-type none
+tag()
+	padding 2px 8px
+	border-radius 5px
+	border 1px gray3 solid
+	margin-right 10px
+	// cursor pointer
+	
+	// &:hover
+	// 	color Red
+	// 	border-color Red
+	// *:hover
+	// 	color Red
+	// 	border-color Red
+		
+.date-M
+	display inline-block
+	text-transform uppercase
+	FiraSans-5(14px, 700, Black, 2px, center)			
 
+.tag
+	tag()
+	
+	
+
+//- Medium Skill
 
 //- Small Skill
 li.skill-S
-	FiraSans-5(12px, 700, Black, 1px, left)
-	list-style-type none
+	FiraSans-5(12px, 400, Black, 1px, center)
+	tag()
+
+	
+
+
+
+
+
+
+
+
+
