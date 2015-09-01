@@ -10,7 +10,7 @@ var express = require('express')
 
 var app = express();
 
-app.set('port', process.env.PORT || 4567);
+app.set('port', process.env.PORT || 4444);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.bodyParser());
