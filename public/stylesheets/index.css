@@ -13,16 +13,6 @@
   font-weight: 700;
   src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
 }
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
 .none {
   display: none !important;
 }
@@ -34,6 +24,16 @@
 }
 .debug * {
   border: 1px solid Yellow;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 html {
   font-family: 'Fira Sans', Helvetica, sans-serif;
