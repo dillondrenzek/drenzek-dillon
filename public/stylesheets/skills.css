@@ -151,6 +151,20 @@ a.more:hover {
 .margin-bottom {
   margin-bottom: 75px;
 }
+.horizontal-gradient {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,fafafa+100&amp;0+0,1+100 */
+  background: -moz-linear-gradient(left, rgba(250,250,250,0) 0%, #fafafa 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(250,250,250,0)), color-stop(100%, #fafafa));
+  background: -webkit-linear-gradient(left, rgba(250,250,250,0) 0%, #fafafa 100%);
+  background: -o-linear-gradient(left, rgba(250,250,250,0) 0%, #fafafa 100%);
+  background: -ms-linear-gradient(left, rgba(250,250,250,0) 0%, #fafafa 100%);
+  background: linear-gradient(to right, rgba(250,250,250,0) 0%, #fafafa 100%);
+}
 .image {
   overflow: hidden;
   width: 100%;
@@ -158,6 +172,12 @@ a.more:hover {
 }
 .image img {
   max-height: 100%;
+}
+#social-media {
+  margin-top: 30px;
+}
+#social-media li a {
+  padding: 0 20px;
 }
 .skill {
   background: #b8432a;
@@ -323,12 +343,6 @@ section ul li {
 }
 #projects {
   background: #fafafa;
-}
-#social-media {
-  margin-top: 30px;
-}
-#social-media li a {
-  padding: 0 20px;
 }
 .list {
   margin-bottom: 15px;
