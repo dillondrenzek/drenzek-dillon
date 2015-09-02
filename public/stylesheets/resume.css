@@ -176,8 +176,18 @@ a.more:hover {
 #social-media {
   margin-top: 30px;
 }
+#social-media li:first-child a {
+  padding-left: 0;
+}
 #social-media li a {
+  color: #b8432a;
   padding: 0 20px;
+}
+#social-media li a:hover i {
+  color: #303030;
+}
+#social-media li a i {
+  font-size: 1.75em;
 }
 .skill {
   background: #b8432a;
@@ -219,6 +229,9 @@ a.more:hover {
 .project .title a {
   margin-right: 1.5em;
 }
+.project .title p {
+  margin: 0.5em 0;
+}
 .project .preview {
   width: 50%;
   height: 100%;
@@ -247,12 +260,18 @@ a.more:hover {
 }
 #site-title>* {
   display: inline-block;
+  vertical-align: baseline;
+}
+#site-title h1 {
+  -webkit-transform: translateY(-8%);
+  transform: translateY(-8%);
 }
 nav {
-  float: right;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  position: absolute;
+  right: 50px;
 }
 nav ul li {
   display: inline-block;
@@ -314,6 +333,9 @@ section ul li {
   background: #303030;
   color: #fafafa;
 }
+#skills ul {
+  text-align: center;
+}
 #author {
   height: 540px;
 }
@@ -343,6 +365,10 @@ section ul li {
 }
 #projects {
   background: #fafafa;
+}
+footer {
+  background: #303030;
+  padding: 75px 12.5%;
 }
 #resume {
   float: left;

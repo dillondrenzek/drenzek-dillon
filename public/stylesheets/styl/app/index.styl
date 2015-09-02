@@ -112,8 +112,17 @@ a.more
 #social-media
 	margin-top 30px
 	li
+		&:first-child a
+			padding-left 0
+
 		a
+			color Red
 			padding 0 20px
+			
+			&:hover i
+				color Black
+			i 
+				font-size 1.75em
 
 .skill
 	background Red
@@ -146,6 +155,8 @@ a.more
 			margin-left 0
 		a
 			margin-right 1.5em
+		p
+			margin 0.5em 0
 	.preview
 		width 50%
 		height 100%
@@ -169,7 +180,8 @@ a.more
 				float right
 
 		
-		
+	
+
 
 //-------------
 //- Site Title
@@ -177,13 +189,19 @@ a.more
 #site-title
 	padding 30px 50px
 	background Black
-	
+
 	&>*
 		display inline-block
+		vertical-align baseline
+	
+	h1
+		-webkit-transform translateY(-8%)
+		transform translateY(-8%)
 		
 nav
-	float right
 	VerticalAlign()
+	position absolute
+	right 50px
 	
 	ul
 		li
@@ -240,6 +258,8 @@ section
 #skills
 	background Black
 	color White	
+	ul
+		text-align center
 
 #author
 	height 540px
@@ -267,4 +287,12 @@ section
 #projects
 	background White
 
-			
+
+
+
+//---------
+//- Footer
+//---------
+footer
+	background Black
+	padding 75px 12.5%		

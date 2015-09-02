@@ -3,6 +3,23 @@
 
 extends app
 
+mixin project()
+	li.project
+		.title
+			h3 Shorter Project Name
+				.subtitle Project Type
+			ul.skills
+				li.skill Angular.js
+				li.skill Neo4j
+				li.skill Node.js
+			p Pretty short project description. That's the way it must be.
+			a(href="#") Launch
+			a(href="#") View on GitHub
+		
+		.preview
+			.image
+				img(src="images/drenzek-truthiness.jpg" alt="Test Image")
+
 block title
 	| Index
 
@@ -25,19 +42,13 @@ block body
 				img(src="images/profile.jpg" alt="Dillon Drenzek")
 		.text.half-width
 			.vertical-align
-				h2 A Word (or 73) from the Author
-				p.justify I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning #[span: a(href="#") the things I do want to learn]. I inject functionality, quality, and a lot of love into everything I do and so far, that has helped me do #[span: a(href="#") a number of amazing things]. I'm already good at a lot of different technologies and I can't wait to get even better. I'm glad you're here - whatever brings you - and I hope you'll #[span: a(href="#") reach out] and we can talk, work, or even play together. Cheers!
+				h2 A Word from the Author
+				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning #[span: a(href="#") the things I do want to learn]. I'm glad you're here - whatever brings you - and I hope you'll #[span: a(href="#") reach out] and we can talk, work, or even play together. Cheers!
 				ul#social-media.inline-children
-					li: a(href="#") T
-					li: a(href="#") I
-					li: a(href="#") L
-					li: a(href="#") G
-		//- 		li: a(href="#") D
-		//- 		li: a(href="#") B
-		//- .minor-width
-		//- 	.image
-		//- 		<img src="http://dummyimage.com/414x360/4d494d/686a82.gif&text=me!" alt="me!">
-
+					li: a(href="#"): i.fa.fa-twitter
+					li: a(href="#"): i.fa.fa-instagram
+					li: a(href="#"): i.fa.fa-linkedin
+					li: a(href="#"): i.fa.fa-github
 
 	//- Skills
 	section#skills
@@ -68,38 +79,6 @@ block body
 				li.skill Neo4j
 				li.skill PHP
 				li.skill Java
-					
-	mixin project()
-		li.project
-			.title
-				h3 Shorter Project Name
-					.subtitle Project Type
-				ul.skills
-					li.skill Angular.js
-					li.skill Neo4j
-					li.skill Node.js
-				p Pretty short project description. That's the way it must be.
-				a(href="#") Launch
-				a(href="#") View on GitHub
-			
-			.preview
-				.image
-					img(src="images/drenzek-truthiness.jpg" alt="Test Image")
-		//- li.project
-			.half-width.full-height
-				.image
-					img(src="images/drenzek-truthiness.jpg" alt="Test Image")
-			.half-width.vertical-align
-				h3 Shorter Project Name
-					.subtitle Project Type
-				ul.skills
-					li.skill Angular.js
-					li.skill Neo4j
-					li.skill Node.js
-				p Pretty short project description. That's the way it must be.
-				a(href="#") Launch
-				a(href="#") View on GitHub
-
 
 	//- Work
 	section#projects
@@ -113,15 +92,11 @@ block body
 				+project()
 
 
-	//- Contact
-	//- section
-		header
-			h2 Contact
-			a.more(href="#") All Contact
-		.flexible-height
-			ul.contacts
-				li.contact Contact
-				li.contact Contact
-				li.contact Contact
+
+	footer
+
+
+
+
 
 
