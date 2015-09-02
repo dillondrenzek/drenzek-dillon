@@ -1,5 +1,5 @@
 // Gulpfile
-// version 0.9.0
+// version 2.0.0
 
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),

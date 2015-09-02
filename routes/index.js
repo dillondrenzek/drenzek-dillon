@@ -1,7 +1,9 @@
+// Routes
+// version 2.0.0
 var routes = exports = module.exports;
-exports.skills = require('./skills');
-exports.projects = require('./projects');
-exports.times = require('./times');
-exports.contexts = require('./contexts');
-exports.site = require('./site');
 
+
+// GET '/'
+routes.index = function(req, res, next) {
+    res.render('index', {});
+};

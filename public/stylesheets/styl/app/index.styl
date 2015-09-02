@@ -1,165 +1,261 @@
 //- app/index.styl (ALIAS app.styl)
-//- version 1.4.3
+//- version 2.0.0
 
 @import 'color'
 @import 'font'
 @import 'mixin'
 @import 'util'
 
-@import 'sidebar'
-@import 'models'
+
 
 
 
 html
-	background White
-	FiraSans-5(16px, 500, $black-2, -1px, left)
+	FiraSans-5(16px, 500, Black, -1px, left)
+		
+#wrapper
+	width 1080px
+	margin 0 auto
+
+
+
+
+
+//--------------------
+//- Generic Styling
+//--------------------
+h1
+	FiraSans-5(4rem, 700, White, -0.05em, left)
 
 h2
-	FiraSans-5(4em, 700, Black, -3px, left)
-	line-height 1em
+	FiraSans-5(2rem, 700, Black, -0.05em, left)
 	
 h3
-	FiraSans-5(2em, 200, Black, 0px, left)
+	FiraSans-5(1.5rem, 200, Black, 0em, left)
 
 h4
-	FiraSans-5(1.3em, 200, gray3, 0px, left)
-	
-p
-	FiraSans-5(16px, 200, Black, 0px, left)
-	
-a:link,
-a:visited
-	FiraSans-5(16px, 400, Red, 0px, left)
-	text-decoration none
-	
-a:hover,
-a:active
-	text-decoration underline
+	FiraSans-5(1.25rem, 200, Gray, 0em, left)
 
-	
-
-aside
-	// background gray3
-	padding 10px 30px
-	position relative
-	width 40%
-	float right
-	border-left 1px white1 solid
-	border-bottom 1px white1 solid
-
-	
-li
-	list-style circle inside
-
-
-//- Sections
-section
-	padding 20px 30px
-	
-section.title
-	background Red
-	float left
-	width 100%
-	padding 2% 3%
-	// overflow hidden
-	
-	h2
-		// padding 2% 3%
-		color White
+.subtitle
+	FiraSans-5(0.25em, 200, Red, 0.15em, left)
+	text-transform uppercase
+	margin-top -1em
 		
-section.subtitle
-	background Black
-	color White
-	float left
-	width 100%
-	padding 0
-	min-height 10px
-	// height 50px
+p
+	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
 	
+a
+	color Red
+	font-weight 400
+	text-decoration none
+	&:hover,
+	&:active
+		text-decoration underline
+	&:active
+		color Dark
+
+a.more
+	FiraSans-5(0.875rem, 400, Gray, 0.0875em, left)
+	margin-left 40px
+	&:hover
+		color Red
+
+.full-width
+	width 100%
+
+.half-width
+	width 50%
+
+.major-width
+	width 61.8%
+
+.minor-width
+	width 38.2%
+
+.full-height
+	height 100%
+
+.vertical-align
+	VerticalAlign()
+
+.inline-children
+	InlineChildren()
+	
+.justify
+	text-align justify
+	
+.margin-bottom
+	margin-bottom 75px
+
+
+
+
+
+//----------------------
+//- Reusable Components
+//----------------------
+.image
+	overflow hidden
+	width 100%
+	height 100%
+	img
+		max-height 100%
+
+.skill
+	background Red
+	text-align center
+	padding 0.25em 1em
+	
+	color White
+	border-radius 0.5em
+
+.project
+	InlineChildren()
+	height 340px
+	width 100%
+	margin-bottom 75px
+	
+	&:last-child
+		margin-bottom 0
+	
+	.title
+		padding 1.5em
+		width 50%
+		VerticalAlign()
+		h3
+			font-weight 400
+			text-align left
+		.subtitle
+			margin-top -0.25em
+			font-size 0.75em
+		.skill:first-child
+			margin-left 0
+		a
+			margin-right 1.5em
+	.preview
+		width 50%
+		height 100%
+
+		
+	
+	&:nth-child(odd) // first
+		.title
+			float left
+		.preview
+			float right
+			img
+				float left
+			
+	&:nth-child(even)
+		.title
+			float right
+		.preview
+			float left
+			img
+				float right
+
+		
+		
+
+//-------------
+//- Site Title
+//-------------
+#site-title
+	padding 30px 50px
+	background Black
 	
 	&>*
 		display inline-block
-		padding 8px 15px
-		border-left 1px black2 solid
-		border-right 1px black2 solid
 		
-		
-section.content
-	background White
-	color Black
-	float left
-	width 60%
-	// padding 2% 3%
+nav
+	float right
+	VerticalAlign()
 	
-	.column
-		float left
-		margin-right 50px
-
-section.projects
-	width 100%
-	float left
-
-	
-//- Drop-in classes 
-//- (may eventually move to own file)
-	
-.view
-	position relative
-	padding-left 200px
-					
-.mainpage
-	position relative
-	// padding 2% 3%
-	z-index 0
-
-.sidebar
-	position fixed
-	width 200px
-	height 100vh
-	background Black
-	color White
-	z-index 50
-	
-	header
-		position relative
-		height 84px
-		background Red
-		StandardPadding()
-		
-		h1
-			VerticalAlign()
-			FiraSans-5(30px, 700, White, -1px, left)
-			line-height 30px
-	
-	li
-		width 100%
-		StandardPadding()
-		list-style disc outside		
-		
-	
-		
-	.contact
+	ul
 		li
-			.icon
-				display inline
-				float left
-			.value
-				FiraSans-5(12px, 200, White, 1px, left)
-				display inline
-				float right
-				
-	.feature
-		background black2
-		a
-			FiraSans-5(18px, 400, White, -1px, left)
-			text-decoration none
-			color White
+			display inline-block
+			list-style-type none
+			
+			a
+				FiraSans-5(1rem, 200, Light, 0.111111em, left)
+				text-transform uppercase
+				text-decoration none
+				padding 20px 30px
+				&:hover
+					color Red
+
+
+
+
+
+//-----------
+//- Sections
+//-----------
+section
+	padding 75px 12.5%
+	InlineChildren()
+	
+	&>*
+		margin-bottom 75px
+		&:last-child
+			margin-bottom 0px
+			
+	header
+		&>*
+			display inline-block
+			vertical-align middle
+		h2 
+			color inherit
+			padding-right 0.8125em
+			border-right 2px solid Red
+		p
+			color inherit
+			width 68%
+			padding-left 1.625em
+			
+	h3
+		color inherit
+		text-align center
+
+	ul
+		margin 0 auto
+		li
+			display inline-block
+			margin .5em
+
+#skills
+	background Black
+	color White	
+
+#author
+	height 540px
+	
+	.image
+		position absolute
+		z-index 0
+		height 100%
+		img
+			height 100%
+			
+	.text, .preview
+		background White
+		padding 0 75px 0 0
+		position absolute
+		z-index 5
+		height 100%
 		
-	.overview
+		&:last-child
+			right 0
+		
+		h2
+			margin-bottom 20px
+
+#projects
+	background White
+
+#social-media
+	margin-top 30px
+	li
 		a
-			FiraSans-5(14px, 200, White, 1px, left)
-			text-transform uppercase
-			text-decoration none
-			color White
+			padding 0 20px
 			
