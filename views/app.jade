@@ -1,39 +1,15 @@
-//- App layout
-//- version 1.4.3
-
--var adminMode = false;
-
-include app/sidebar
-include app/models
-
-mixin list(title)
-	header
-		h3= title
-	ul.list
-		block
-
-mixin sublist(title)
-	li
-		h4= title
-		ul.list
-			block
-
- 
-
-
+//- app.jade
+//- version 2.0.0
 
 doctype
-head
-	title
-		block title
+html
+	head
+		title
+			block title
 
-	style
-		include ../public/stylesheets/font-awesome.min.css
-		block stylesheet
-	//- include ./analytics.jade
-
-body
-	+sidebar
-	.view
-		.mainpage
-			block mainpage
+		link(href="stylesheets/font-awesome.min.css" rel="stylesheet")
+		link(href="stylesheets/index.css" rel="stylesheet")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body 
+		#wrapper
+			block body

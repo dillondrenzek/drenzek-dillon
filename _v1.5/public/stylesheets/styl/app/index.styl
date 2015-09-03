@@ -1,0 +1,165 @@
+//- app/index.styl (ALIAS app.styl)
+//- version 1.4.3
+
+@import 'color'
+@import 'font'
+@import 'mixin'
+@import 'util'
+
+@import 'sidebar'
+@import 'models'
+
+
+
+html
+	background White
+	FiraSans-5(16px, 500, $black-2, -1px, left)
+
+h2
+	FiraSans-5(4em, 700, Black, -3px, left)
+	line-height 1em
+	
+h3
+	FiraSans-5(2em, 200, Black, 0px, left)
+
+h4
+	FiraSans-5(1.3em, 200, gray3, 0px, left)
+	
+p
+	FiraSans-5(16px, 200, Black, 0px, left)
+	
+a:link,
+a:visited
+	FiraSans-5(16px, 400, Red, 0px, left)
+	text-decoration none
+	
+a:hover,
+a:active
+	text-decoration underline
+
+	
+
+aside
+	// background gray3
+	padding 10px 30px
+	position relative
+	width 40%
+	float right
+	border-left 1px white1 solid
+	border-bottom 1px white1 solid
+
+	
+li
+	list-style circle inside
+
+
+//- Sections
+section
+	padding 20px 30px
+	
+section.title
+	background Red
+	float left
+	width 100%
+	padding 2% 3%
+	// overflow hidden
+	
+	h2
+		// padding 2% 3%
+		color White
+		
+section.subtitle
+	background Black
+	color White
+	float left
+	width 100%
+	padding 0
+	min-height 10px
+	// height 50px
+	
+	
+	&>*
+		display inline-block
+		padding 8px 15px
+		border-left 1px black2 solid
+		border-right 1px black2 solid
+		
+		
+section.content
+	background White
+	color Black
+	float left
+	width 60%
+	// padding 2% 3%
+	
+	.column
+		float left
+		margin-right 50px
+
+section.projects
+	width 100%
+	float left
+
+	
+//- Drop-in classes 
+//- (may eventually move to own file)
+	
+.view
+	position relative
+	padding-left 200px
+					
+.mainpage
+	position relative
+	// padding 2% 3%
+	z-index 0
+
+.sidebar
+	position fixed
+	width 200px
+	height 100vh
+	background Black
+	color White
+	z-index 50
+	
+	header
+		position relative
+		height 84px
+		background Red
+		StandardPadding()
+		
+		h1
+			VerticalAlign()
+			FiraSans-5(30px, 700, White, -1px, left)
+			line-height 30px
+	
+	li
+		width 100%
+		StandardPadding()
+		list-style disc outside		
+		
+	
+		
+	.contact
+		li
+			.icon
+				display inline
+				float left
+			.value
+				FiraSans-5(12px, 200, White, 1px, left)
+				display inline
+				float right
+				
+	.feature
+		background black2
+		a
+			FiraSans-5(18px, 400, White, -1px, left)
+			text-decoration none
+			color White
+		
+	.overview
+		a
+			FiraSans-5(14px, 200, White, 1px, left)
+			text-transform uppercase
+			text-decoration none
+			color White
+			

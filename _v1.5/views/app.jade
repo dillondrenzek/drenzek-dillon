@@ -1,0 +1,39 @@
+//- App layout
+//- version 1.4.3
+
+-var adminMode = false;
+
+include app/sidebar
+include app/models
+
+mixin list(title)
+	header
+		h3= title
+	ul.list
+		block
+
+mixin sublist(title)
+	li
+		h4= title
+		ul.list
+			block
+
+ 
+
+
+
+doctype
+head
+	title
+		block title
+
+	style
+		include ../public/stylesheets/font-awesome.min.css
+		block stylesheet
+	//- include ./analytics.jade
+
+body
+	+sidebar
+	.view
+		.mainpage
+			block mainpage
