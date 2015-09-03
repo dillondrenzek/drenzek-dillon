@@ -3,22 +3,23 @@
 
 extends app
 
-mixin project()
+mixin project(proj)
 	li.project
 		.title
-			h3 Shorter Project Name
-				.subtitle Project Type
+			h3= proj.title
+				.subtitle= proj.type
 			ul.skills
-				li.skill Angular.js
-				li.skill Neo4j
-				li.skill Node.js
-			p Pretty short project description. That's the way it must be.
-			a(href="#") Launch
-			a(href="#") View on GitHub
+				each skill in proj.skills
+					li.skill= skill
+			p= proj.description
+			if (proj.launchURL)
+				a(href="#{proj.launchURL}") Launch
+			if (proj.githubURL)
+				a(href="#{proj.githubURL}") View on GitHub
 		
 		.preview
 			.image
-				img(src="images/drenzek-truthiness.jpg" alt="Test Image")
+				img(src="#{proj.imageURL}" alt="#{proj.imageAlt}")
 
 block title
 	| Index
@@ -43,7 +44,7 @@ block body
 		.text.half-width
 			.vertical-align
 				h2 A Word from the Author
-				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning #[span: a(href="#") the things I do want to learn]. I'm glad you're here - whatever brings you - and I hope you'll #[span: a(href="#") reach out] and we can talk, work, or even play together. Cheers!
+				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning #[span: a(href="#skills") the things I do want to learn]. I'm glad you're here - whatever brings you - and I hope you'll #[span: a(href="#") reach out] and we can talk, work, or even play together. Cheers!
 				ul#social-media.inline-children
 					li: a(href="#"): i.fa.fa-twitter
 					li: a(href="#"): i.fa.fa-instagram
@@ -51,49 +52,47 @@ block body
 					li: a(href="#"): i.fa.fa-github
 
 	//- Skills
-	section#skills
-		header
-			h2 Things I Can Do
-			p I have been exposed to countless numbers of technologies for developing websites, here are some of my favorites.
+	if skills
+		section#skills
+			header
+				h2 Things I Can Do
+				p I have been exposed to countless numbers of technologies for developing websites, here are some of my favorites.
 
-		.half-width.margin-bottom
-			h3 Web Development
-			ul.skills
-				li.skill HTML/CSS
-				li.skill JavaScript
-				li.skill jQuery
-				li.skill Node.js
-				li.skill Stylus
-			//- a(href="/skills") Among Others...
-		.half-width.margin-bottom
-			h3 UI/UX Design
-			ul.skills
-				li.skill Photoshop
-				li.skill Illustrator
-				li.skill Sketch
-		.full-width
-			h3 Newest Additions to My Skillset
-			ul.skills
-				li.skill Angular.js
-				li.skill MongoDB
-				li.skill Neo4j
-				li.skill PHP
-				li.skill Java
+			.half-width.margin-bottom
+				h3 Web Development
+				ul.skills
+					each s in skills.web
+						li.skill= s
+				//- a(href="/skills") Among Others...
+			.half-width.margin-bottom
+				h3 UI/UX Design
+				ul.skills
+					each s in skills.design
+						li.skill= s
+			.full-width
+				h3 Newest Additions to My Skillset
+				ul.skills
+					each s in skills.learning
+						li.skill= s
 
 	//- Work
-	section#projects
-		header
-			h2 Things I've Made
-			p I inject functionality, quality, and a love of love into everything I do, and so far, that has helped me do a number of really neat projects.
-		.full-width
-			ul.projects
-				+project()
-				+project()
-				+project()
+	if projects.length > 0
+		section#projects
+			header
+				h2 Things I've Made
+				p I inject functionality, quality, and a lot of love into everything I do. So far, that has helped me do a number of really neat projects, here are a few recent examples.
+			.full-width
+				ul.projects
+					each p in projects
+						+project(p)
 
 
 
 	footer
+		.half-width
+			p I've got big plans for this website, but right now, it's in the first few stages of its development.<br> Can you say Agile? ;)<br> Stay Tuned!
+		.updated
+			p Updated Sept. 2, 2015
 
 
 
