@@ -2,6 +2,8 @@
 // version 2.0.0
 var routes = exports = module.exports;
 
+var stormFeature = require('../storm-feature');
+
 
 // GET '/'
 routes.index = function(req, res, next) {
@@ -62,3 +64,8 @@ routes.index = function(req, res, next) {
     	}
     });
 };
+
+
+routes.storm = stormFeature.app;
+
+
