@@ -8,8 +8,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , bodyParser = require('body-parser')
-  , methodOverride = require('method-override');
-  // , storm = require('./storm-feature');
+  , methodOverride = require('method-override')
+  , storm = require('./storm-feature');
   // , methodOverride = require('method-override');
 
 var app = express();
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // APP ROUTES
 
-// app.use('/storm', storm.app);
+app.use('/storm', storm.app);
 
 app.get('/', routes.index);
 
