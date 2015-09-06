@@ -2,6 +2,8 @@
 // version 2.0.0
 var routes = exports = module.exports;
 
+var stormFeature = require('../storm-feature');
+
 
 // GET '/'
 routes.index = function(req, res, next) {
@@ -32,7 +34,7 @@ routes.index = function(req, res, next) {
     		type: "Website",
     		skills: ["Jade", "Stylus", "Node.js", "jQuery"],
     		description: "A case study I did of my Graphic Design project completed in Denmark during the Summer of 2015.",
-    		// launchURL: "http://www.google.com",
+    		launchURL: "/storm",
 			// githubURL: "http://www.github.com",
 			imageURL: "images/storm.jpg",
 			imageAlt: "Storm"
@@ -62,3 +64,8 @@ routes.index = function(req, res, next) {
     	}
     });
 };
+
+
+routes.storm = stormFeature.app;
+
+
