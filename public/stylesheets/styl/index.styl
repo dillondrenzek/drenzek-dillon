@@ -1,1 +1,328 @@
 @import 'app'
+
+*,
+*:before,
+*:after
+	box-sizing border-box
+	-moz-box-sizing border-box
+	-webkit-box-sizing border-box
+	margin 0
+	padding 0
+	position relative
+	
+html
+	background White
+	FiraSans-5(16px, 500, Black, -1px, left)
+	
+#wrapper
+	// width 1080px
+	margin 0 auto
+
+
+
+
+
+//--------------------
+//- Generic Styling
+//--------------------
+h1
+	FiraSans-5(4rem, 700, White, -0.05em, left)
+
+h2
+	FiraSans-5(2rem, 700, Black, -0.05em, left)
+	
+h3
+	FiraSans-5(1.5rem, 200, Black, 0em, left)
+
+h4
+	FiraSans-5(1.25rem, 200, Gray, 0em, left)
+
+.subtitle
+	FiraSans-5(0.25em, 200, Red, 0.15em, left)
+	text-transform uppercase
+	margin-top -1em
+		
+p
+	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
+	
+a
+	color Red
+	font-weight 400
+	text-decoration none
+	&:hover,
+	&:active
+		text-decoration underline
+	&:active
+		color Dark
+
+a.more
+	FiraSans-5(0.875rem, 400, Gray, 0.0875em, left)
+	margin-left 40px
+	&:hover
+		color Red
+
+.full-width
+	width 100%
+
+.half-width
+	width 50%
+
+.major-width
+	width 61.8%
+
+.minor-width
+	width 38.2%
+
+.full-height
+	height 100%
+
+.vertical-align
+	VerticalAlign()
+
+.inline-children
+	InlineChildren()
+	
+.justify
+	text-align justify
+	
+.margin-bottom
+	margin-bottom 75px
+
+
+
+
+
+//----------------------
+//- Reusable Components
+//----------------------
+.horizontal-gradient
+	height 100%
+	width 40%
+	position absolute
+	z-index 1
+	right 0
+	HorizontalGradient()
+	
+.image
+	overflow hidden
+	width 100%
+	height 100%
+	img
+		max-height 100%
+
+#social-media
+	margin-top 30px
+	li
+		&:first-child a
+			padding-left 0
+
+		a
+			color Red
+			padding 0 20px
+			
+			&:hover i
+				color Black
+			i 
+				font-size 1.75em
+
+.skill
+	background Red
+	text-align center
+	padding 0.25em 1em
+	
+	color White
+	border-radius 0.5em
+
+.project
+	InlineChildren()
+	height 340px
+	width 100%
+	margin-bottom 75px
+	
+	&:last-child
+		margin-bottom 0
+	
+	.title
+		padding 1.5em
+		width 50%
+		VerticalAlign()
+		h3
+			font-weight 400
+			text-align left
+		.subtitle
+			margin-top -0.25em
+			font-size 0.75em
+		.skill:first-child
+			margin-left 0
+		a
+			margin-right 1.5em
+		p
+			margin 0.5em 0
+	.preview
+		width 50%
+		height 100%
+
+		
+	
+	&:nth-child(odd) // first
+		.title
+			float left
+		.preview
+			float right
+			img
+				float left
+			
+	&:nth-child(even)
+		.title
+			float right
+		.preview
+			float left
+			img
+				float right
+
+		
+	
+
+
+//-------------
+//- Site Title
+//-------------
+#site-title
+	padding 30px 50px
+	background Black
+
+	&>*
+		display inline-block
+		vertical-align baseline
+	
+	h1
+		-webkit-transform translateY(-8%)
+		transform translateY(-8%)
+		
+nav
+	VerticalAlign()
+	position absolute
+	right 50px
+	
+	ul
+		li
+			display inline-block
+			list-style-type none
+			
+			a
+				FiraSans-5(1rem, 200, Light, 0.111111em, left)
+				text-transform uppercase
+				text-decoration none
+				padding 20px 30px
+				&:hover
+					color Red
+
+
+
+
+
+//-----------
+//- Sections
+//-----------
+section
+	padding 75px 12.5%
+	InlineChildren()
+	
+	&>*
+		margin-bottom 75px
+		&:last-child
+			margin-bottom 0px
+			
+	header
+		&>*
+			display inline-block
+			vertical-align middle
+		h2 
+			color inherit
+			padding-right 0.8125em
+			border-right 2px solid Red
+		p
+			color inherit
+			width 68%
+			padding-left 1.625em
+			
+	h3
+		color inherit
+		text-align center
+
+	ul
+		margin 0 auto
+		li
+			display inline-block
+			margin .5em
+
+#skills
+	background Black
+	color White	
+	ul
+		text-align center
+
+#author
+	height 540px
+	
+	.image
+		position absolute
+		z-index 0
+		height 100%
+		img
+			height 100%
+			
+	.text, .preview
+		background White
+		padding 0 75px 0 0
+		position absolute
+		z-index 5
+		height 100%
+		
+		&:last-child
+			right 0
+		
+		h2
+			margin-bottom 20px
+
+#projects
+	background White
+
+
+
+
+//---------
+//- Footer
+//---------
+footer
+	background Black
+	color White
+	padding 50px 12.5%
+	font-size 12px
+	.half-width
+		margin 0 auto
+	p
+		font-size 12px
+		color Gray !important
+		text-align center
+	.updated
+		margin-top 10px
+
+
+
+
+
+
+
+//- Media Queries
+@media (min-width: 1080px) {
+	@import 'large'
+}
+
+@media (min-width: 768px) and (max-width: 1079px) {
+	@import 'medium'
+}
+
+@media (max-width: 767px) {
+	@import 'small'
+}
