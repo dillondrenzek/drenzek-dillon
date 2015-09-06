@@ -12,7 +12,7 @@ routes.index = function(req, res, next) {
     		type: "Website",
     		skills: ["Node.js", "Neo4j", "Stylus", "Jade"],
     		description: "A major project in my Capstone class during the Spring of 2015. I went above and beyond the requirements by using Node and the graph database, Neo4j. This is the first version of the site you're on :)",
-    		launchURL: "http://dillon.drenzek.com",
+    		// launchURL: "http://dillon.drenzek.com",
     		// githubURL: "http://www.github.com",
     		imageURL: "images/drenzek-portfolio-v1.jpg",
     		imageAlt: "First Version of My Portfolio"
