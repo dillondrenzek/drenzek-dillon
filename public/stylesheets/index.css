@@ -784,9 +784,6 @@ html {
   letter-spacing: -1px;
   text-align: left;
 }
-#wrapper {
-  margin: 0 auto;
-}
 h1 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 4rem;
@@ -794,6 +791,9 @@ h1 {
   color: #fafafa;
   letter-spacing: -0.05em;
   text-align: left;
+}
+h1 .subtitle {
+  margin-top: -1em;
 }
 h2 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -827,7 +827,6 @@ h4 {
   letter-spacing: 0.15em;
   text-align: left;
   text-transform: uppercase;
-  margin-top: -1em;
 }
 p {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -848,48 +847,6 @@ a:active {
 }
 a:active {
   color: #555;
-}
-a.more {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #909090;
-  letter-spacing: 0.0875em;
-  text-align: left;
-  margin-left: 40px;
-}
-a.more:hover {
-  color: #b8432a;
-}
-.full-width {
-  width: 100%;
-}
-.half-width {
-  width: 50%;
-}
-.major-width {
-  width: 61.8%;
-}
-.minor-width {
-  width: 38.2%;
-}
-.full-height {
-  height: 100%;
-}
-.vertical-align {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.inline-children>* {
-  display: inline-block;
-  vertical-align: top;
-}
-.justify {
-  text-align: justify;
-}
-.margin-bottom {
-  margin-bottom: 75px;
 }
 .horizontal-gradient {
   height: 100%;
@@ -915,9 +872,6 @@ a.more:hover {
 }
 .image img {
   height: 540px;
-}
-#social-media {
-  margin-top: 30px;
 }
 #social-media li:first-child a {
   padding-left: 0;
@@ -982,12 +936,10 @@ header h1 {
   transform: translateY(-8%);
 }
 nav ul {
-  display: table;
+  text-align: right;
 }
 nav ul li {
-  display: table-cell;
   list-style-type: none;
-  text-align: right;
 }
 nav ul li a {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -1019,4 +971,10 @@ nav ul li a:hover {
 .skills-container h3 {
   width: 100%;
   text-align: center;
+}
+footer {
+  background: #303030;
+}
+p {
+  color: #909090 !important;
 }

@@ -14,13 +14,6 @@ html
 	background White
 	FiraSans-5(16px, 500, Black, -1px, left)
 	
-#wrapper
-	// width 1080px
-	margin 0 auto
-	// float left
-
-
-
 
 
 //--------------------
@@ -28,6 +21,8 @@ html
 //--------------------
 h1
 	FiraSans-5(4rem, 700, White, -0.05em, left)
+	.subtitle
+		margin-top -1em
 
 h2
 	FiraSans-5(2rem, 700, Black, -0.05em, left)
@@ -41,7 +36,6 @@ h4
 .subtitle
 	FiraSans-5(0.25em, 200, Red, 0.15em, left)
 	text-transform uppercase
-	margin-top -1em
 		
 p
 	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
@@ -55,41 +49,6 @@ a
 		text-decoration underline
 	&:active
 		color Dark
-
-a.more
-	FiraSans-5(0.875rem, 400, Gray, 0.0875em, left)
-	margin-left 40px
-	&:hover
-		color Red
-
-.full-width
-	width 100%
-
-.half-width
-	width 50%
-
-.major-width
-	width 61.8%
-
-.minor-width
-	width 38.2%
-
-.full-height
-	height 100%
-
-.vertical-align
-	VerticalAlign()
-
-.inline-children
-	InlineChildren()
-	
-.justify
-	text-align justify
-	
-.margin-bottom
-	margin-bottom 75px
-
-
 
 
 
@@ -115,7 +74,7 @@ a.more
 		height 540px
 
 #social-media
-	margin-top 30px
+	// margin-top 30px
 	li
 		&:first-child a
 			padding-left 0
@@ -261,16 +220,17 @@ header
 nav
 	// VerticalAlign()
 	ul
-		display table
+		// display table
+		text-align right
 		li
-			display table-cell
+			// display table-cell
 			list-style-type none
-			text-align right
+			
 			a
 				FiraSans-5(1rem, 200, Light, 0.111111em, left)
 				text-transform uppercase
 				text-decoration none
-				// padding 20px 20%
+				// padding 20px 30px
 				&:hover
 					color Red
 					
@@ -367,16 +327,22 @@ nav
 // //---------
 // //- Footer
 // //---------
-// footer
-// 	background Black
-// 	color White
+footer
+	background Black
+	
+	// &>*:first-child
+		// margin 0 auto
+
+	p
+		color Gray !important
+	// color White
 // 	padding 50px 12.5%
 // 	font-size 12px
 // 	.half-width
 // 		margin 0 auto
-// 	p
+	
 // 		font-size 12px
-// 		color Gray !important
+		
 // 		text-align center
 // 	.updated
 // 		margin-top 10px
@@ -387,15 +353,4 @@ nav
 
 
 
-//- Media Queries
-// @media (min-width: 1080px) {
-// 	@import 'large'
-// }
-
-// @media (min-width: 768px) and (max-width: 1079px) {
-// 	@import 'medium'
-// }
-
-// @media (max-width: 767px) {
-// 	@import 'small'
-// }
+// - Media Queries
