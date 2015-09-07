@@ -9,7 +9,7 @@
     "url": "https://github.com/dillondrenzek/drenzek-dillon.git"
   },
   "scripts": {
-    "start": "node-dev app.js",
+    "start": "node-dev index.js",
     "test": "jasmine spec/*/*.js"
   },
   "dependencies": {
