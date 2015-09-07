@@ -8,7 +8,7 @@
 	-webkit-box-sizing border-box
 	margin 0
 	padding 0
-	position relative
+	// position relative
 	
 html
 	background White
@@ -17,6 +17,7 @@ html
 #wrapper
 	// width 1080px
 	margin 0 auto
+	// float left
 
 
 
@@ -106,9 +107,12 @@ a.more
 .image
 	overflow hidden
 	width 100%
-	height 100%
+	// height 540px
+	&>*
+		display inline-block
+		vertical-align middle
 	img
-		max-height 100%
+		height 540px
 
 #social-media
 	margin-top 30px
@@ -125,6 +129,13 @@ a.more
 			i 
 				font-size 1.75em
 
+.skills
+	list-style-type none
+	
+	.skill
+		display inline-block
+		// text-align center
+
 .skill
 	background Red
 	text-align center
@@ -136,51 +147,60 @@ a.more
 	cursor default
 
 .project
-	InlineChildren()
-	height 340px
-	width 100%
+	// height 340px
+	// width 100%
 	margin-bottom 75px
+	// Clearfix()
+	&>*
+		display inline-block
+		vertical-align middle
+		
+	img
+		height 340px
 	
 	&:last-child
 		margin-bottom 0
 	
 	.title
-		padding 1.5em
-		width 50%
-		VerticalAlign()
+		// padding 1.5em
+		// width 50%
+		// VerticalAlign()
 		h3
 			font-weight 400
 			text-align left
 		.subtitle
-			margin-top -0.25em
+			// margin-top -0.25em
 			font-size 0.75em
 		.skill:first-child
-			margin-left 0
+			// margin-left 0
 		a
-			margin-right 1.5em
+			// margin-right 1.5em
 		p
-			margin 0.5em 0
+			// margin 0.5em 0
 	.preview
-		width 50%
-		height 100%
+		// width 50%
+		height 340px
 
 		
 	
-	&:nth-child(odd) // first
-		.title
-			float left
-		.preview
-			float right
-			img
-				float left
+	// &:nth-child(odd) // first
+	// 	.title
+	// 		float left
+	// 		Clearfix()
 			
-	&:nth-child(even)
-		.title
-			float right
-		.preview
-			float left
-			img
-				float right
+	// 	.preview
+	// 		float right
+	// 		img
+	// 			float left
+		
+			
+	// &:nth-child(even)
+	// 	.title
+	// 		float right
+	// 	.preview
+	// 		float left
+	// 		img
+	// 			float right
 
 		
 	
@@ -189,36 +209,30 @@ a.more
 //-------------
 //- Site Title
 //-------------
-#site-title
-	padding 3% 5%
-	background Black
+// #site-title
+// 	// padding 3% 5%
+// 	background Black
+// 	border-bottom 1px solid Red
+// 	// Clearfix()
 
-	&>*
-		display inline-block
-		vertical-align middle
+// 	&>*
+// 		display inline-block
+// 		vertical-align middle
 	
-	h1
-		-webkit-transform translateY(-8%)
-		transform translateY(-8%)
-		// width 50%
+// 	h1
+		
+		// float left
 		
 nav
-	VerticalAlign()
-	position absolute
-	right 50px
+	// display inline-block
+	// vertical-align middle
+	// margin-left 20%
+	// VerticalAlign()
+	// position absolute
+	// right 50px
+	// display table-cell
 	
-	ul
-		// float right
-		li
-			display inline-block
-			list-style-type none
-			a
-				FiraSans-5(1rem, 200, Light, 0.111111em, right)
-				text-transform uppercase
-				text-decoration none
-				padding 20px 30px
-				&:hover
-					color Red
+	
 
 
 
@@ -226,96 +240,146 @@ nav
 //- Sections
 //-----------
 section
-	padding 75px 12.5%
-	InlineChildren()
-	
-	&>*
-		margin-bottom 75px
-		&:last-child
-			margin-bottom 0px
-			
 	header
-		&>*
-			display inline-block
-			vertical-align middle
-		h2 
-			color inherit
-			padding-right 0.8125em
-			border-right 2px solid Red
-		p
-			color inherit
-			width 68%
-			padding-left 1.625em
-			
-	h3
-		color inherit
-		text-align center
+		display inline-block
+		width 100%
+	// color inherit
+	// padding-top 50px
+	// padding-bottom 50px
 
-	ul
-		margin 0 auto
-		li
-			display inline-block
-			margin .5em
-
-#skills
-	background Black
-	color White	
-	ul
-		text-align center
-	.skills-container
-		width 50%
-		&:last-child
-			width 100%
-
-#author
-	height 540px
-	
-	&>*
-		width 50%
-		
-	
-	.image
-		position absolute
-		z-index 0
-		height 100%
-		img
-			height 100%
-			
-	.text, .preview
-		background White
-		padding 0 75px 0 0
-		position absolute
-		z-index 5
-		height 100%
-		
-		&:last-child
-			right 0
-		
-		h2
-			margin-bottom 20px
-
-#projects
-	background White
-
-
-
-
-//---------
-//- Footer
-//---------
-footer
+#site-title
 	background Black
 	color White
-	padding 50px 12.5%
-	font-size 12px
-	.half-width
-		margin 0 auto
-	p
-		font-size 12px
-		color Gray !important
+	// height 135px
+
+header
+	// VerticalAlign()
+	h1
+		-webkit-transform translateY(-8%)
+		transform translateY(-8%)
+	
+nav
+	// VerticalAlign()
+	ul
+		display table
+		li
+			display table-cell
+			list-style-type none
+			text-align right
+			a
+				FiraSans-5(1rem, 200, Light, 0.111111em, left)
+				text-transform uppercase
+				text-decoration none
+				// padding 20px 20%
+				&:hover
+					color Red
+					
+#skills
+	background Black
+	color White
+	
+	header > *
+		vertical-align middle
+	
+	& *
+		vertical-align top
+		color inherit
+
+.skills-container
+	text-align center
+	h3
+		width 100%
 		text-align center
-	.updated
-		margin-top 10px
+
+// 	padding 75px 12.5%
+// 	InlineChildren()
+
+// 	&>*
+// 		margin-bottom 75px
+// 		&:last-child
+// 			margin-bottom 0px
+
+// 	header
+// 		&>*
+// 			display inline-block
+// 			vertical-align middle
+// 		h2 
+// 			color inherit
+// 			padding-right 0.8125em
+// 			border-right 2px solid Red
+// 		p
+// 			color inherit
+// 			width 68%
+// 			padding-left 1.625em
+
+// 	h3
+// 		color inherit
+// 		text-align center
+
+// 	ul
+// 		margin 0 auto
+// 		li
+// 			display inline-block
+// 			margin .5em
+
+
+
+// 	ul
+// 		text-align center
+// 	.skills-container
+// 		width 50%
+// 		&:last-child
+// 			width 100%
+
+// #author
+// 	height 540px
+
+// 	&>*
+// 		width 50%
+
+
+// 	.image
+// 		position absolute
+// 		z-index 0
+// 		height 100%
+// 		img
+// 			height 100%
+
+// 	.text, .preview
+// 		background White
+// 		padding 0 75px 0 0
+// 		position absolute
+// 		z-index 5
+// 		height 100%
+
+// 		&:last-child
+// 			right 0
+
+// 		h2
+// 			margin-bottom 20px
+
+// #projects
+// 	background White
+
+
+
+
+// //---------
+// //- Footer
+// //---------
+// footer
+// 	background Black
+// 	color White
+// 	padding 50px 12.5%
+// 	font-size 12px
+// 	.half-width
+// 		margin 0 auto
+// 	p
+// 		font-size 12px
+// 		color Gray !important
+// 		text-align center
+// 	.updated
+// 		margin-top 10px
 
 
 
@@ -324,14 +388,14 @@ footer
 
 
 //- Media Queries
-@media (min-width: 1080px) {
-	@import 'large'
-}
+// @media (min-width: 1080px) {
+// 	@import 'large'
+// }
 
-@media (min-width: 768px) and (max-width: 1079px) {
-	@import 'medium'
-}
+// @media (min-width: 768px) and (max-width: 1079px) {
+// 	@import 'medium'
+// }
 
-@media (max-width: 767px) {
-	@import 'small'
-}
+// @media (max-width: 767px) {
+// 	@import 'small'
+// }

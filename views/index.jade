@@ -4,10 +4,11 @@
 extends app
 
 mixin project(proj)
-	li.project
-		.title
-			h3= proj.title
-				.subtitle= proj.type
+	li.project.col-lg-12
+		.title.col-lg-6
+			header
+				h3= proj.title
+					.subtitle= proj.type
 			ul.skills
 				each skill in proj.skills
 					li.skill= skill
@@ -17,7 +18,7 @@ mixin project(proj)
 			if (proj.githubURL)
 				a(href="#{proj.githubURL}") View on GitHub
 		
-		.preview
+		.preview.col-lg-6
 			.image
 				img(src="#{proj.imageURL}" alt="#{proj.imageAlt}")
 
@@ -27,22 +28,24 @@ block title
 block body
 
 	//- Title
-	header#site-title
-		h1 Dillon Drenzek
-			.subtitle Aspiring Developer, Perpetual Learner
-		nav
-			ul
+	//- section.container
+	#site-title.col-lg-12
+		header.col-lg-4
+			h1 Dillon Drenzek
+				.subtitle Aspiring Developer, Perpetual Learner
+		nav.col-lg-8
+			ul.col-lg-8.col-lg-push-3
 				li: a(href="#author") About
 				li: a(href="#projects") Work
 				li: a(href="#skills") Skills
 		
-	#author
-		.preview
+	section.col-lg-12
+		.col-lg-6
 			.image
 				.horizontal-gradient
 				img(src="images/profile.jpg" alt="Dillon Drenzek")
-		.text
-			.vertical-align
+		.col-lg-6
+			.col-lg-12
 				h2 A Word from the Author
 				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning the things I do want to learn. I'm glad you're here - whatever brings you - and I hope you'll reach out and we can talk, work, or even play together. Cheers!
 				ul#social-media.inline-children
@@ -51,24 +54,25 @@ block body
 					li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
 					li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
 
+
 	//- Skills
 	if skills
-		section#skills
+		section#skills.col-lg-12
 			header
 				h2 Things I Can Do
 				p I have been exposed to countless numbers of technologies for developing websites, here are some of my favorites.
 
-			.skills-container.margin-bottom
+			.skills-container.col-lg-6
 				h3 Web Development
 				ul.skills
 					each s in skills.web
 						li.skill= s
-			.skills-container.margin-bottom
+			.skills-container.col-lg-6
 				h3 UI/UX Design
 				ul.skills
 					each s in skills.design
 						li.skill= s
-			.skills-container
+			.skills-container.col-lg-12
 				h3 Newest Additions to My Skillset
 				ul.skills
 					each s in skills.learning
@@ -76,14 +80,13 @@ block body
 
 	//- Work
 	if projects && projects.length > 0
-		section#projects
+		section#projects.col-lg-12
 			header
 				h2 Things I've Made
 				p I inject functionality, quality, and a lot of love into everything I do. So far, that has helped me do a number of really neat projects, here are a few recent examples.
-			.full-width
-				ul.projects
-					each p in projects
-						+project(p)
+			ul.projects
+				each p in projects
+					+project(p)
 
 
 
