@@ -1,11 +1,7 @@
 .DS_STORE
 
-_media/
-_readable-libraries/
-json/
-
-public/.sass-cache
-public/_media
+_media
+_v1.5
 
 
 node_modules
