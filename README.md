@@ -1,15 +1,12 @@
 # [drenzek-dillon](http://dillon.drenzek.com) 
-The professional portfolio of University of Colorado student, Dillon Drenzek. <br>
+The professional portfolio of University of Colorado graduate, Dillon Drenzek. <br>
 **Homepage**: http://dillon.drenzek.com
 
 ---------
 ## Tools
 
-#### Frontend
- * ~~[Sass](http://sass-lang.com/) (CSS Generation)~~ (_Deprecated in v0.8_)
- * [Stylus](http://learnboost.github.io/stylus/) (CSS Generation)
-
 #### Server
+ * [Stylus](http://learnboost.github.io/stylus/) (CSS Preprocessing)
  * [Jade](http://jade-lang.com/) (HTML Templating)
  * [Node.js](http://nodejs.org/) 
 
@@ -41,9 +38,4 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
 | Novice			| 0.0.0		| 	Feb 10 15	| Backbone renders from index.html |
  
 ------------------
-## Special Thanks
 
-JSON-generating GUI: 
-	http://truben.no/table/
-	
-------------------
