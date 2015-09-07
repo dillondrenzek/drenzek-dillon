@@ -183,6 +183,7 @@ a.more:hover {
   padding: 0.25em 1em;
   color: #fafafa;
   border-radius: 0.5em;
+  cursor: default;
 }
 .project {
   height: 340px;
