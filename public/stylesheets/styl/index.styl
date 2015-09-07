@@ -190,16 +190,17 @@ a.more
 //- Site Title
 //-------------
 #site-title
-	padding 30px 50px
+	padding 3% 5%
 	background Black
 
 	&>*
 		display inline-block
-		vertical-align baseline
+		vertical-align middle
 	
 	h1
 		-webkit-transform translateY(-8%)
 		transform translateY(-8%)
+		// width 50%
 		
 nav
 	VerticalAlign()
@@ -207,19 +208,17 @@ nav
 	right 50px
 	
 	ul
+		// float right
 		li
 			display inline-block
 			list-style-type none
-			
 			a
-				FiraSans-5(1rem, 200, Light, 0.111111em, left)
+				FiraSans-5(1rem, 200, Light, 0.111111em, right)
 				text-transform uppercase
 				text-decoration none
 				padding 20px 30px
 				&:hover
 					color Red
-
-
 
 
 
@@ -263,9 +262,17 @@ section
 	color White	
 	ul
 		text-align center
+	.skills-container
+		width 50%
+		&:last-child
+			width 100%
 
 #author
 	height 540px
+	
+	&>*
+		width 50%
+		
 	
 	.image
 		position absolute

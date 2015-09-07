@@ -244,12 +244,12 @@ a.more:hover {
   float: right;
 }
 #site-title {
-  padding: 30px 50px;
+  padding: 3% 5%;
   background: #303030;
 }
 #site-title>* {
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: middle;
 }
 #site-title h1 {
   -webkit-transform: translateY(-8%);
@@ -272,7 +272,7 @@ nav ul li a {
   font-weight: 200;
   color: #ddd;
   letter-spacing: 0.111111em;
-  text-align: left;
+  text-align: right;
   text-transform: uppercase;
   text-decoration: none;
   padding: 20px 30px;
@@ -325,8 +325,17 @@ section ul li {
 #skills ul {
   text-align: center;
 }
+#skills .skills-container {
+  width: 50%;
+}
+#skills .skills-container:last-child {
+  width: 100%;
+}
 #author {
   height: 540px;
+}
+#author>* {
+  width: 50%;
 }
 #author .image {
   position: absolute;
@@ -371,4 +380,83 @@ footer p {
 }
 footer .updated {
   margin-top: 10px;
+}
+@media (max-width: 767px) {
+  h1 {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fafafa;
+    letter-spacing: -0.05em;
+    text-align: center;
+  }
+  h2 {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #303030;
+    letter-spacing: -0.05em;
+    text-align: left;
+  }
+  h3 {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #303030;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  h4 {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 200;
+    color: #909090;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .subtitle {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 0.24em;
+    font-weight: 200;
+    color: #b8432a;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -1em;
+  }
+  #site-title>* {
+    display: block;
+  }
+  #site-title h1 {
+    -webkit-transform: none;
+    transform: none;
+  }
+  nav {
+    position: relative;
+    right: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    width: 100%;
+  }
+  nav ul {
+    text-align: center;
+  }
+  nav ul li a {
+    padding: 20px 20px;
+  }
+  section header h2 {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid #b8432a;
+  }
+  section header p {
+    width: auto;
+    padding-left: 0;
+  }
+  #author {
+    height: 320px;
+  }
+  #skills .skills-container {
+    width: 100%;
+  }
 }

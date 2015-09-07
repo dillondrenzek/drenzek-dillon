@@ -1,35 +1,90 @@
 //- small.styl
 //- styles for screens less than 768px wide
 
-// #site-title
-// 	padding 30px 50px
-// 	width 100%
-// 	// background Black
+html
+	// FiraSans-5(16px, 400, Black, -1px, left)
 
-// 	&>*
-// 		display block
-// 		// vertical-align baseline
-// 	h1
-// 		width 100%
-// 		text-align center
-// 		.subtitle
-// 			text-align center
-// 	// -webkit-transform translateY(-8%)
-// 	// transform translateY(-8%)
-// nav
-// 	// VerticalAlign()
-// 	// position absolute
-// 	// right 50px
+
+//--------------------
+//- Generic Styling
+//--------------------
+h1
+	FiraSans-5(2.5rem, 700, White, -0.05em, center)
+
+h2
+	FiraSans-5(1.5rem, 700, Black, -0.05em, left)
 	
-// 	ul
-// 		li
-// 			display inline-block
-// 			list-style-type none
-			
-// 			a
-// 				FiraSans-5(1rem, 200, Light, 0.111111em, left)
-// 				text-transform uppercase
-// 				text-decoration none
-// 				padding 20px 30px
-// 				&:hover
-// 					color Red
+h3
+	FiraSans-5(1.5rem, 200, Black, 0em, left)
+
+h4
+	FiraSans-5(1.25rem, 200, Gray, 0em, left)
+
+.subtitle
+	FiraSans-5(0.24em, 200, Red, 0.15em, center)
+	text-transform uppercase
+	margin-top -1em
+	
+
+
+#site-title
+// 	padding 30px 50px
+// 	background Black
+
+	&>*
+		display block
+		
+	h1
+		-webkit-transform none
+		transform none
+		
+
+// 		vertical-align baseline
+	
+nav
+	position relative
+	right 0
+	-webkit-transform translateY(0)
+	transform translateY(0)
+	width 100%
+
+	ul
+		// margin 0 auto
+		text-align center
+		li
+			a
+				padding 20px 20px
+				// FiraSans-5(0.9rem, 200, Light, 0.111111em, left)
+		
+section
+	header
+		&>*
+			// display block
+
+		h2
+			padding-right 0
+			border-right none
+			border-bottom 2px solid Red
+
+		p
+			width auto
+			padding-left 0
+
+
+
+#author
+	height 320px
+	
+#skills
+	.skills-container
+		width 100%
+
+
+
+
+
+
+
+
+
+

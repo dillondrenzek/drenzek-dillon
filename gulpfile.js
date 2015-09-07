@@ -31,7 +31,6 @@ gulp.task('serve', function() {
 // GLOBAL SYNC ------------------
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init(null, {
-    proxy: "http://localhost:4567",
     port: 7000,
     files: ["public/stylesheets/**", "*.js", "views/**/**"]
   });
@@ -40,7 +39,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
 // NODEMON ----------------------
 gulp.task('nodemon', function (cb) {
   return nodemon({
-    script: 'app.js'
+    script: 'index.js'
   }).on('start', function () {
     cb();
   });
@@ -49,7 +48,7 @@ gulp.task('nodemon', function (cb) {
 
 
 var defaults = function() {
-  return ['stylus', 'browser-sync'];
+  return ['stylus', 'serve'];
 };
 
 

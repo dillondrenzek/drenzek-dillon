@@ -37,11 +37,11 @@ block body
 				li: a(href="#skills") Skills
 		
 	#author
-		.preview.half-width
+		.preview
 			.image
 				.horizontal-gradient
 				img(src="images/profile.jpg" alt="Dillon Drenzek")
-		.text.half-width
+		.text
 			.vertical-align
 				h2 A Word from the Author
 				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning the things I do want to learn. I'm glad you're here - whatever brings you - and I hope you'll reach out and we can talk, work, or even play together. Cheers!
@@ -58,17 +58,17 @@ block body
 				h2 Things I Can Do
 				p I have been exposed to countless numbers of technologies for developing websites, here are some of my favorites.
 
-			.half-width.margin-bottom
+			.skills-container.margin-bottom
 				h3 Web Development
 				ul.skills
 					each s in skills.web
 						li.skill= s
-			.half-width.margin-bottom
+			.skills-container.margin-bottom
 				h3 UI/UX Design
 				ul.skills
 					each s in skills.design
 						li.skill= s
-			.full-width
+			.skills-container
 				h3 Newest Additions to My Skillset
 				ul.skills
 					each s in skills.learning
@@ -85,13 +85,6 @@ block body
 					each p in projects
 						+project(p)
 
-
-
-	footer
-		.half-width
-			p I've got big plans for this website, but right now, it's in the first few stages of its development.<br> Can you say Agile? ;)<br> Stay Tuned!
-		.updated
-			p Updated Sept. 2, 2015
 
 
 

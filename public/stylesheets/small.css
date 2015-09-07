@@ -1,0 +1,39 @@
+.subtitle {
+  text-transform: uppercase;
+  margin-top: -1em;
+}
+#site-title>* {
+  display: block;
+}
+#site-title h1 {
+  -webkit-transform: none;
+  transform: none;
+}
+nav {
+  position: relative;
+  right: 0;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  width: 100%;
+}
+nav ul {
+  text-align: center;
+}
+nav ul li a {
+  padding: 20px 20px;
+}
+section header h2 {
+  padding-right: 0;
+  border-right: none;
+  border-bottom: 2px solid Red;
+}
+section header p {
+  width: auto;
+  padding-left: 0;
+}
+#author {
+  height: 320px;
+}
+#skills .skills-container {
+  width: 100%;
+}
