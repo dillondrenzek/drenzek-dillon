@@ -26,7 +26,7 @@ The professional portfolio of University of Colorado student, Dillon Drenzek. <b
 
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-----------|---------------|---|
-| Professional	    | 2.0.0 	|   Sep  1 15 	| _Submittable to jobs, all data entered, new style_ |
+| Professional	    | 2.0.0 	|   Sep  6 15 	| Submittable to jobs, all data entered, new style |
 | Resume			| 1.3.0		|	Mar 15 15	| Add Resume page, content and styling with Stylus | 
 | Gulp				| 1.2.0		|	Mar 12 15	| Workflow integrations with Gulp | 
 | Stylus			| 1.1.0		|	Mar  9 15	| Add Stylus | 
