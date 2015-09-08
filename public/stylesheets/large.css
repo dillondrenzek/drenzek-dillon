@@ -1,0 +1,19 @@
+h1 {
+  font-size: 4rem;
+}
+h1 .subtitle {
+  text-align: left;
+}
+nav ul {
+  text-align: right;
+}
+nav ul li {
+  list-style-type: none;
+}
+nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: Red;
+}

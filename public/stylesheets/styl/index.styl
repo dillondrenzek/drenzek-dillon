@@ -19,10 +19,8 @@ html
 //--------------------
 //- Generic Styling
 //--------------------
-h1
-	FiraSans-5(4rem, 700, White, -0.05em, left)
-	.subtitle
-		margin-top -1em
+
+	
 
 h2
 	FiraSans-5(2rem, 700, Black, -0.05em, left)
@@ -33,9 +31,9 @@ h3
 h4
 	FiraSans-5(1.25rem, 200, Gray, 0em, left)
 
-.subtitle
-	FiraSans-5(0.25em, 200, Red, 0.15em, left)
-	text-transform uppercase
+// .subtitle
+// 	FiraSans-5(0.25em, 200, Red, 0.15em, left)
+// 	text-transform uppercase
 		
 p
 	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
@@ -140,97 +138,40 @@ a
 		// width 50%
 		height 340px
 
-		
-	
-	// &:nth-child(odd) // first
-	// 	.title
-	// 		float left
-	// 		Clearfix()
-			
-	// 	.preview
-	// 		float right
-	// 		img
-	// 			float left
-		
-			
-	// &:nth-child(even)
-	// 	.title
-	// 		float right
-	// 	.preview
-	// 		float left
-	// 		img
-	// 			float right
 
-		
-	
-
-
-//-------------
-//- Site Title
-//-------------
-// #site-title
-// 	// padding 3% 5%
-// 	background Black
-// 	border-bottom 1px solid Red
-// 	// Clearfix()
-
-// 	&>*
-// 		display inline-block
-// 		vertical-align middle
-	
-// 	h1
-		
-		// float left
-		
-nav
-	// display inline-block
-	// vertical-align middle
-	// margin-left 20%
-	// VerticalAlign()
-	// position absolute
-	// right 50px
-	// display table-cell
-	
-	
-
-
-
-//-----------
-//- Sections
-//-----------
-section
-	header
-		display inline-block
-		width 100%
-	// color inherit
-	// padding-top 50px
-	// padding-bottom 50px
-
+//------------------
+//- Top of the Page
+//------------------
 #site-title
 	background Black
 	color White
-	// height 135px
 
-header
-	// VerticalAlign()
-	h1
-		-webkit-transform translateY(-8%)
-		transform translateY(-8%)
+h1
+	FiraSans-5(3rem, 700, White, -0.05em, center)
+	.subtitle
+		left 4px // nudge
+
+.subtitle
+	FiraSans-5(0.25em, 200, Red, 0.14em, center)
+	text-transform uppercase
+	position absolute
+	bottom 0
+	left 0
+	
 	
 nav
-	// VerticalAlign()
+	height 65px
 	ul
-		// display table
-		text-align right
+		text-align center
+		VerticalAlign()
 		li
-			// display table-cell
 			list-style-type none
 			
 			a
 				FiraSans-5(1rem, 200, Light, 0.111111em, left)
 				text-transform uppercase
 				text-decoration none
-				// padding 20px 30px
+				padding 20px 25px
 				&:hover
 					color Red
 					
@@ -354,3 +295,15 @@ footer
 
 
 // - Media Queries
+@media (min-width: 768px) {
+	@import 'small'
+}
+
+@media (min-width: 992px) {
+	@import 'medium'
+}
+
+@media (min-width: 1200px) {
+	@import 'large'
+}
+

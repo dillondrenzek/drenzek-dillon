@@ -30,16 +30,16 @@ block body
 	//- Title
 	//- section.container
 	#site-title.col-lg-12
-		header.col-lg-4
-			h1 Dillon Drenzek
-				.subtitle Aspiring Developer, Perpetual Learner
-		nav.col-lg-8
-			ul.col-lg-12
+		header.col-sm-4.col-xs-12
+			h1.col-xs-12 Dillon Drenzek
+				.subtitle.col-xs-12 Aspiring Developer, Perpetual Learner
+		nav.col-sm-8.col-xs-12
+			ul.col-sm-12.col-xs-12
 				li: a(href="#author") About
 				li: a(href="#projects") Work
 				li: a(href="#skills") Skills
 		
-	section.col-lg-12
+	//- section.col-lg-12
 		.col-lg-6
 			.image
 				.horizontal-gradient
@@ -56,7 +56,7 @@ block body
 
 
 	//- Skills
-	if skills
+	//- if skills
 		section#skills.col-lg-12
 			header
 				h2 Things I Can Do
@@ -79,7 +79,7 @@ block body
 						li.skill= s
 
 	//- Work
-	if projects && projects.length > 0
+	//- if projects && projects.length > 0
 		section#projects.col-lg-12
 			header
 				h2 Things I've Made
