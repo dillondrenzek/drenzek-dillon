@@ -953,7 +953,8 @@ nav ul li a {
   text-decoration: none;
   padding: 20px 25px;
 }
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:active {
   color: #b8432a;
 }
 #skills {
