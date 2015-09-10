@@ -12,3 +12,9 @@ h1 .subtitle {
 nav ul {
   text-align: right;
 }
+#author .vertical-gradient {
+  display: none;
+}
+#author .horizontal-gradient {
+  display: block;
+}

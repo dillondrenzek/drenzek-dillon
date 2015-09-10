@@ -786,7 +786,7 @@ html {
 }
 h2 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #303030;
   letter-spacing: -0.05em;
@@ -842,6 +842,20 @@ a:active {
   background: -ms-linear-gradient(left, rgba(250,250,250,0) 0%, #fafafa 100%);
   background: linear-gradient(to right, rgba(250,250,250,0) 0%, #fafafa 100%);
 }
+.vertical-gradient {
+  height: 40%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;0+0,1+99 */
+  background: -moz-linear-gradient(top, rgba(250,250,250,0) 0%, #fafafa 99%, #fafafa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(250,250,250,0)), color-stop(100%, #fafafa));
+  background: -webkit-linear-gradient(top, rgba(250,250,250,0) 0%, #fafafa 99%, #fafafa 100%);
+  background: -o-linear-gradient(top, rgba(250,250,250,0) 0%, #fafafa 99%, #fafafa 100%);
+  background: -ms-linear-gradient(top, rgba(250,250,250,0) 0%, #fafafa 99%, #fafafa 100%);
+  background: linear-gradient(to bottom, rgba(250,250,250,0) 0%, #fafafa 99%, #fafafa 100%);
+}
 .image {
   overflow: hidden;
   width: 100%;
@@ -852,6 +866,10 @@ a:active {
 }
 .image img {
   height: 540px;
+}
+#social-media>* {
+  display: inline-block;
+  vertical-align: top;
 }
 #social-media li:first-child a {
   padding-left: 0;
@@ -908,6 +926,8 @@ a:active {
   color: #fafafa;
 }
 h1 {
+  -webkit-transform: translateY(-8%);
+  transform: translateY(-8%);
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: 700;
@@ -957,6 +977,17 @@ nav ul li a:hover,
 nav ul li a:active {
   color: #b8432a;
 }
+#author {
+  background: #fafafa;
+  color: #303030;
+}
+#author .horizontal-gradient {
+  display: none;
+}
+#author img {
+  height: auto;
+  width: 100%;
+}
 #skills {
   background: #303030;
   color: #fafafa;
@@ -982,6 +1013,14 @@ p {
   color: #909090 !important;
 }
 @media (min-width: 768px) {
+  h2 {
+    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #303030;
+    letter-spacing: -0.05em;
+    text-align: left;
+  }
   header {
     left: 3%;
   }
@@ -995,6 +1034,12 @@ p {
   }
   nav ul {
     text-align: right;
+  }
+  #author .vertical-gradient {
+    display: none;
+  }
+  #author .horizontal-gradient {
+    display: block;
   }
 }
 @media (min-width: 992px) {

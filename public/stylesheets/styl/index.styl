@@ -23,7 +23,7 @@ html
 	
 
 h2
-	FiraSans-5(2rem, 700, Black, -0.05em, left)
+	FiraSans-5(1.5rem, 700, Black, -0.05em, left)
 	
 h3
 	FiraSans-5(1.5rem, 200, Black, 0em, left)
@@ -61,6 +61,14 @@ a
 	right 0
 	HorizontalGradient()
 	
+.vertical-gradient
+	height 40%
+	width 100%
+	position absolute
+	z-index 1
+	bottom 0
+	VerticalGradient()
+	
 .image
 	overflow hidden
 	width 100%
@@ -73,6 +81,7 @@ a
 
 #social-media
 	// margin-top 30px
+	InlineChildren()
 	li
 		&:first-child a
 			padding-left 0
@@ -147,6 +156,8 @@ a
 	color White
 
 h1
+	-webkit-transform translateY(-8%)
+	transform translateY(-8%)
 	FiraSans-5(3rem, 700, White, -0.05em, center)
 	.subtitle
 		left 4px // nudge
@@ -174,6 +185,22 @@ nav
 				padding 20px 25px
 				&:hover, &:active
 					color Red
+					
+#author
+	background White
+	color Black
+	
+	.vertical-gradient
+		// display 
+	.horizontal-gradient
+		display none
+
+	img
+		height auto
+		width 100%
+
+
+
 					
 #skills
 	background Black
