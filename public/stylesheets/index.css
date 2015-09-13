@@ -14,10 +14,15 @@
   src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
 }
 .container {
-  padding-right: 40px/2;
-  padding-left: 40px/2;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
+}
+@media (min-width: 320px) {
+  .container {
+    width: 312px;
+  }
 }
 @media (min-width: 768px) {
   .container {
@@ -35,14 +40,8 @@
   }
 }
 .container-fluid {
-  padding-right: 40px/2;
-  padding-left: 40px/2;
   margin-right: auto;
   margin-left: auto;
-}
-.row {
-  margin-right: -GutterWidth/2;
-  margin-left: -GutterWidth/2;
 }
 .col-xs-1,
 .col-sm-1,
@@ -94,8 +93,6 @@
 .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-right: 40px/2;
-  padding-left: 40px/2;
 }
 .col-xs-1>*,
 .col-sm-1>*,
@@ -864,8 +861,8 @@ a:active {
   display: inline-block;
   vertical-align: middle;
 }
-.image img {
-  height: 540px;
+#social-media {
+  width: 100%;
 }
 #social-media>* {
   display: inline-block;
@@ -900,13 +897,11 @@ a:active {
 }
 .project {
   margin-bottom: 75px;
+  list-style-type: none;
 }
 .project>* {
   display: inline-block;
   vertical-align: middle;
-}
-.project img {
-  height: 340px;
 }
 .project:last-child {
   margin-bottom: 0;
@@ -917,9 +912,6 @@ a:active {
 }
 .project .title .subtitle {
   font-size: 0.75em;
-}
-.project .preview {
-  height: 340px;
 }
 #site-title {
   background: #303030;
@@ -987,6 +979,12 @@ nav ul li a:active {
 #author img {
   height: auto;
   width: 100%;
+}
+#author .padded-children>* {
+  padding-top: 17.5px;
+}
+#author .padded-children>*:last-child {
+  padding-bottom: 17.5px;
 }
 #skills {
   background: #303030;
