@@ -1,5 +1,6 @@
 @import 'app'
 
+//---------------------------------------
 *,
 *:before,
 *:after
@@ -8,7 +9,6 @@
 	-webkit-box-sizing border-box
 	margin 0
 	padding 0
-	// position relative
 	
 html
 	background White
@@ -19,23 +19,22 @@ html
 //--------------------
 //- Generic Styling
 //--------------------
+
 h1
-	FiraSans-5(4rem, 700, White, -0.05em, left)
-	.subtitle
-		margin-top -1em
+	FiraSans-5(3rem, 700, White, -0.05em, center)	
+	line-height 3rem
 
 h2
-	FiraSans-5(2rem, 700, Black, -0.05em, left)
+	FiraSans-5(1.5rem, 700, Black, -0.05em, left)
+	line-height 1.5rem
 	
 h3
-	FiraSans-5(1.5rem, 200, Black, 0em, left)
+	FiraSans-5(1.5rem, 400, Black, 0em, left)
+	line-height 1.5rem
 
 h4
 	FiraSans-5(1.25rem, 200, Gray, 0em, left)
 
-.subtitle
-	FiraSans-5(0.25em, 200, Red, 0.15em, left)
-	text-transform uppercase
 		
 p
 	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
@@ -55,26 +54,8 @@ a
 //----------------------
 //- Reusable Components
 //----------------------
-.horizontal-gradient
-	height 100%
-	width 40%
-	position absolute
-	z-index 1
-	right 0
-	HorizontalGradient()
-	
-.image
-	overflow hidden
-	width 100%
-	// height 540px
-	&>*
-		display inline-block
-		vertical-align middle
-	img
-		height 540px
-
 #social-media
-	// margin-top 30px
+	InlineChildren()
 	li
 		&:first-child a
 			padding-left 0
@@ -90,262 +71,224 @@ a
 
 .skills
 	list-style-type none
-	
 	.skill
 		display inline-block
-		// text-align center
 
 .skill
 	background Red
 	text-align center
 	padding 0.25em 1em
-	
 	color White
 	border-radius 0.5em
-	
 	cursor default
 
-.project
-	// height 340px
-	// width 100%
-	margin-bottom 75px
-	// Clearfix()
-	&>*
-		display inline-block
-		vertical-align middle
-		
-	img
-		height 340px
-	
-	&:last-child
-		margin-bottom 0
-	
-	.title
-		// padding 1.5em
-		// width 50%
-		// VerticalAlign()
-		h3
-			font-weight 400
-			text-align left
-		.subtitle
-			// margin-top -0.25em
-			font-size 0.75em
-		.skill:first-child
-			// margin-left 0
-		a
-			// margin-right 1.5em
-		p
-			// margin 0.5em 0
-	.preview
-		// width 50%
-		height 340px
-
-		
-	
-	// &:nth-child(odd) // first
-	// 	.title
-	// 		float left
-	// 		Clearfix()
-			
-	// 	.preview
-	// 		float right
-	// 		img
-	// 			float left
-		
-			
-	// &:nth-child(even)
-	// 	.title
-	// 		float right
-	// 	.preview
-	// 		float left
-	// 		img
-	// 			float right
-
-		
-	
-
-
-//-------------
-//- Site Title
-//-------------
-// #site-title
-// 	// padding 3% 5%
-// 	background Black
-// 	border-bottom 1px solid Red
-// 	// Clearfix()
-
-// 	&>*
-// 		display inline-block
-// 		vertical-align middle
-	
-// 	h1
-		
-		// float left
-		
-nav
-	// display inline-block
-	// vertical-align middle
-	// margin-left 20%
-	// VerticalAlign()
-	// position absolute
-	// right 50px
-	// display table-cell
-	
-	
 
 
 
-//-----------
-//- Sections
-//-----------
-section
-	header
-		display inline-block
-		width 100%
-	// color inherit
-	// padding-top 50px
-	// padding-bottom 50px
 
+//------------------
+//- Top of the Page
+//------------------
 #site-title
 	background Black
 	color White
-	// height 135px
+	Width-XS(12)
 
-header
-	// VerticalAlign()
+.site-title
+	Width-XS(12)
+	Width-SM(6)
+	padding-left 0
+	padding-right 0
 	h1
-		-webkit-transform translateY(-8%)
-		transform translateY(-8%)
-	
+		display block
+	.subtitle
+		display block
+		FiraSans-5(0.75rem, 200, Red, 0.14em, center)
+		line-height 0.75rem
+		text-transform uppercase
+		left 4px
+		padding-top 0
+		
 nav
-	// VerticalAlign()
+	Width-XS(12)
+	Width-SM(6)
+	background Black
+	color White
 	ul
-		// display table
-		text-align right
-		li
-			// display table-cell
-			list-style-type none
-			
-			a
-				FiraSans-5(1rem, 200, Light, 0.111111em, left)
-				text-transform uppercase
-				text-decoration none
-				// padding 20px 30px
-				&:hover
-					color Red
+		Width-XS(12)
+		display table
+	li
+		text-align center
+		display table-cell
+	a
+		FiraSans-5(1rem, 200, Light, 0.111111em, left)
+		text-transform uppercase
+		padding 15px
+
+
+
+
+
+//------------------
+//- Sections
+//------------------
+section
+	Width-XS(12)
+	&:not(#site-title)
+		&>*
+			padding-left 20px
+			padding-right 20px
+	&>*
+		display inline-block
+		vertical-align middle
+		padding-top 30px
+		
+		&:last-child
+			padding-bottom 30px
+		&>*
+			padding-top 10px
+			&:first-child
+				padding-top 0
+			&:last-child
+				padding-bottom 0
+				
+	h1, h2, h3, p
+		color inherit
+		
+	&>header
+		&>*
+			display inline-block
+			vertical-align middle
+		h2
+			Width-LG(3)
+			text-align right
+			padding-right 30px
+			border-right 1px solid Red
+		p
+			Width-LG(7)
+			padding-left 30px
+	
+	figure
+		Width-XS(12)
+		overflow hidden
+		padding 0 !important
+		
+		img
+			display block
+			width 100%
+	
+	.text
+		Width-XS(12)
+	
+	.skills-container
+		padding-top 70px
+		&:last-child
+			Width-XS(12)
+			padding-bottom 70px
+
+		&:not(:last-child)
+			Width-SM(6)
+			display inline-block
+			vertical-align top
+
+
+		h3
+			width 100%
+			text-align center
+		.skills
+			text-align center
+
+			.skill
+				margin-bottom 5px
+				&:not(:last-child)
+					margin-right 5px
 					
+	.project
+		padding-top 70px
+		padding-bottom 70px
+			
+.project
+	list-style-type none
+	&>*
+		display inline-block
+		vertical-align middle
+	
+	.title
+		Width-XS(12)
+		Width-SM(6)
+		header
+			Width-XS(12)
+			&>*
+				margin-top 10px
+				&:first-child
+					margin-top 0
+			
+		.button
+			FiraSans-5(1.25rem, 400, Red, auto, center)
+			Width-XS(12)
+			Width-SM(10)
+			margin 0 auto
+			border 1px solid Red
+			display block
+			margin-top 10px
+			margin-bottom 10px
+			
+		.subtitle
+			FiraSans-5(0.75rem, 200, Red, 0.14em, left)
+			line-height 0.75rem
+			text-transform uppercase
+		
+		&>*
+			margin-top 10px
+			&:first-child
+				margin-top 0
+				
+		.skill
+			margin-bottom 5px
+			&:not(:last-child)
+				margin-right 5px
+
+	figure
+		Width-SM(6)
+				
+		
+
+
+#author
+	background White
+	color Black
+	
+	figure
+		Width-MD(6)
+	.text
+		Width-MD(6)
+	
 #skills
 	background Black
 	color White
 	
-	header > *
-		vertical-align middle
+#projects
+	background White
+	color Black
 	
-	& *
-		vertical-align top
-		color inherit
 
-.skills-container
-	text-align center
-	h3
-		width 100%
-		text-align center
-
-// 	padding 75px 12.5%
-// 	InlineChildren()
-
-// 	&>*
-// 		margin-bottom 75px
-// 		&:last-child
-// 			margin-bottom 0px
-
-// 	header
-// 		&>*
-// 			display inline-block
-// 			vertical-align middle
-// 		h2 
-// 			color inherit
-// 			padding-right 0.8125em
-// 			border-right 2px solid Red
-// 		p
-// 			color inherit
-// 			width 68%
-// 			padding-left 1.625em
-
-// 	h3
-// 		color inherit
-// 		text-align center
-
-// 	ul
-// 		margin 0 auto
-// 		li
-// 			display inline-block
-// 			margin .5em
-
-
-
-// 	ul
-// 		text-align center
-// 	.skills-container
-// 		width 50%
-// 		&:last-child
-// 			width 100%
-
-// #author
-// 	height 540px
-
-// 	&>*
-// 		width 50%
-
-
-// 	.image
-// 		position absolute
-// 		z-index 0
-// 		height 100%
-// 		img
-// 			height 100%
-
-// 	.text, .preview
-// 		background White
-// 		padding 0 75px 0 0
-// 		position absolute
-// 		z-index 5
-// 		height 100%
-
-// 		&:last-child
-// 			right 0
-
-// 		h2
-// 			margin-bottom 20px
-
-// #projects
-// 	background White
-
-
-
-
-// //---------
-// //- Footer
-// //---------
-footer
+//---------
+//- Footer
+//---------
+footer#site-footer
 	background Black
 	
-	// &>*:first-child
-		// margin 0 auto
+	&>*:first-child
+		margin 0 auto
 
 	p
 		color Gray !important
-	// color White
-// 	padding 50px 12.5%
-// 	font-size 12px
-// 	.half-width
-// 		margin 0 auto
-	
-// 		font-size 12px
-		
-// 		text-align center
-// 	.updated
-// 		margin-top 10px
+		text-align center
+	padding 50px 12.5%
+	font-size 10px
+	.updated
+		margin-top 10px
+		text-align center
 
 
 
@@ -354,3 +297,15 @@ footer
 
 
 // - Media Queries
+@media (min-width: 768px) {
+	@import 'small'
+}
+
+@media (min-width: 992px) {
+	@import 'medium'
+}
+
+@media (min-width: 1200px) {
+	@import 'large'
+}
+
