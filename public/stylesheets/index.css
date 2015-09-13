@@ -899,10 +899,6 @@ a:active {
   color: #fafafa;
   width: 100%;
 }
-#site-title>* {
-  display: inline-block;
-  vertical-align: middle;
-}
 .site-title {
   width: 100%;
   padding-left: 0;
@@ -910,10 +906,11 @@ a:active {
 }
 @media (min-width: 768px) {
   .site-title {
-    width: 41.66666667%;
+    width: 50%;
   }
 }
 .site-title h1 {
+  display: block;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: 700;
@@ -923,6 +920,7 @@ a:active {
   line-height: 3rem;
 }
 .site-title .subtitle {
+  display: block;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 0.75rem;
   font-weight: 200;
@@ -941,7 +939,7 @@ nav {
 }
 @media (min-width: 768px) {
   nav {
-    width: 58.33333333%;
+    width: 50%;
   }
 }
 nav ul {
@@ -970,6 +968,8 @@ section:not(#site-title)>* {
   padding-right: 20px;
 }
 section>* {
+  display: inline-block;
+  vertical-align: middle;
   padding-top: 30px;
 }
 section>*:last-child {
@@ -990,6 +990,28 @@ section h3,
 section p {
   color: inherit;
 }
+section>header>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+section>header h2 {
+  text-align: right;
+  padding-right: 30px;
+  border-right: 1px solid #b8432a;
+}
+@media (min-width: 1200px) {
+  section>header h2 {
+    width: 25%;
+  }
+}
+section>header p {
+  padding-left: 30px;
+}
+@media (min-width: 1200px) {
+  section>header p {
+    width: 58.33333333%;
+  }
+}
 section figure {
   width: 100%;
   overflow: hidden;
@@ -1006,6 +1028,7 @@ section .skills-container {
   padding-top: 70px;
 }
 section .skills-container:last-child {
+  width: 100%;
   padding-bottom: 70px;
 }
 section .skills-container:not(:last-child) {
@@ -1035,11 +1058,7 @@ section .project {
   padding-bottom: 70px;
 }
 .project {
-  border-top: solid 1px #909090;
   list-style-type: none;
-}
-.project:last-child {
-  border-bottom: solid 1px #909090;
 }
 .project>* {
   display: inline-block;
@@ -1106,6 +1125,16 @@ section .project {
   background: #fafafa;
   color: #303030;
 }
+@media (min-width: 992px) {
+  #author figure {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  #author .text {
+    width: 50%;
+  }
+}
 #skills {
   background: #303030;
   color: #fafafa;
@@ -1114,18 +1143,48 @@ section .project {
   background: #fafafa;
   color: #303030;
 }
+footer#site-footer {
+  background: #303030;
+  padding: 50px 12.5%;
+  font-size: 10px;
+}
+footer#site-footer>*:first-child {
+  margin: 0 auto;
+}
+footer#site-footer p {
+  color: #909090 !important;
+  text-align: center;
+}
+footer#site-footer .updated {
+  margin-top: 10px;
+  text-align: center;
+}
 @media (min-width: 768px) {
+  #site-title {
+    padding-left: 20px;
+  }
   #site-title>* {
     padding-top: 15px;
     padding-bottom: 15px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #site-title h1 {
+    text-align: left;
+  }
+  #site-title .subtitle {
+    text-align: left;
   }
   .project .title {
     padding-right: 30px;
   }
 }
 @media (min-width: 992px) {
-  h1 {
+  .site-title h1 {
     font-size: 3.3rem;
+  }
+  .site-title .subtitle {
+    font-size: 0.825rem;
   }
 }
 @media (min-width: 1200px) {
@@ -1133,7 +1192,7 @@ section .project {
     font-size: 4rem;
   }
   h1 .subtitle {
-    text-align: left;
+    font-size: 1rem;
   }
   nav ul {
     text-align: right;
