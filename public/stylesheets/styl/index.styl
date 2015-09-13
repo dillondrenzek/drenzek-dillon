@@ -129,15 +129,14 @@ a
 	color White
 	Width-XS(12)
 	
-	// &>*
-	// 	padding-top 15px
-	// 	&:last-child
-	// 		padding-bottom 15px
+	&>*
+		display inline-block
+		vertical-align middle
 	
 	
 .site-title
 	Width-XS(12)
-	Width-SM(4)
+	Width-SM(5)
 	padding-left 0
 	padding-right 0
 	h1
@@ -152,7 +151,7 @@ a
 		
 nav
 	Width-XS(12)
-	Width-SM(8)
+	Width-SM(7)
 	background Black
 	color White
 	
@@ -171,7 +170,7 @@ nav
 
 
 //------------------
-//- Top of the Page
+//- Sections
 //------------------
 section
 	Width-XS(12)
@@ -207,6 +206,16 @@ section
 		Width-XS(12)
 	
 	.skills-container
+		padding-top 70px
+		&:last-child
+			padding-bottom 70px
+
+		&:not(:last-child)
+			Width-SM(6)
+			display inline-block
+			vertical-align top
+
+
 		h3
 			width 100%
 			text-align center
@@ -223,7 +232,7 @@ section
 		padding-bottom 70px
 			
 		.title
-			Width-XS(12)
+			// Width-XS(12)
 			
 .project
 	border-top solid 1px Gray
@@ -234,11 +243,9 @@ section
 		display inline-block
 		vertical-align middle
 	
-	// &:last-child
-	// 	margin-bottom 0
-	
 	.title
 		Width-XS(12)
+		Width-SM(6)
 		header
 			Width-XS(12)
 			&>*
@@ -249,6 +256,8 @@ section
 		.button
 			FiraSans-5(1.25rem, 400, Red, auto, center)
 			Width-XS(12)
+			Width-SM(10)
+			margin 0 auto
 			border 1px solid Red
 			display block
 			margin-top 10px
@@ -263,6 +272,8 @@ section
 			margin-top 10px
 			&:first-child
 				margin-top 0
+	figure
+		Width-SM(6)
 				
 		
 

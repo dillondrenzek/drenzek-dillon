@@ -1,20 +1,7 @@
-header {
-  left: 3%;
+#site-title>* {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
-h1 {
-  font-size: 2.5rem;
-  text-align: left;
-}
-h1 .subtitle {
-  left: 0;
-  text-align: left;
-}
-nav ul {
-  text-align: right;
-}
-#author .vertical-gradient {
-  display: none;
-}
-#author .horizontal-gradient {
-  display: block;
+.project .title {
+  padding-right: 30px;
 }
