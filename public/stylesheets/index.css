@@ -788,14 +788,16 @@ h2 {
   color: #303030;
   letter-spacing: -0.05em;
   text-align: left;
+  line-height: 1.5rem;
 }
 h3 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 1.5rem;
-  font-weight: 200;
+  font-weight: 400;
   color: #303030;
   letter-spacing: 0em;
   text-align: left;
+  line-height: 1.5rem;
 }
 h4 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -861,9 +863,6 @@ a:active {
   display: inline-block;
   vertical-align: middle;
 }
-#social-media {
-  width: 100%;
-}
 #social-media>* {
   display: inline-block;
   vertical-align: top;
@@ -895,66 +894,61 @@ a:active {
   border-radius: 0.5em;
   cursor: default;
 }
-.project {
-  margin-bottom: 75px;
-  list-style-type: none;
-}
-.project>* {
-  display: inline-block;
-  vertical-align: middle;
-}
-.project:last-child {
-  margin-bottom: 0;
-}
-.project .title h3 {
-  font-weight: 400;
-  text-align: left;
-}
-.project .title .subtitle {
-  font-size: 0.75em;
-}
 #site-title {
   background: #303030;
   color: #fafafa;
+  width: 100%;
 }
-h1 {
-  -webkit-transform: translateY(-8%);
-  transform: translateY(-8%);
+.site-title {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .site-title {
+    width: 33.33333333%;
+  }
+}
+.site-title h1 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #fafafa;
   letter-spacing: -0.05em;
   text-align: center;
+  line-height: 3rem;
 }
-h1 .subtitle {
-  left: 4px;
-}
-.subtitle {
+.site-title .subtitle {
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.25em;
+  font-size: 0.75rem;
   font-weight: 200;
   color: #b8432a;
   letter-spacing: 0.14em;
   text-align: center;
+  line-height: 0.75rem;
   text-transform: uppercase;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  left: 4px;
+  padding-top: 0;
 }
 nav {
-  height: 65px;
+  width: 100%;
+  background: #303030;
+  color: #fafafa;
+}
+@media (min-width: 768px) {
+  nav {
+    width: 66.66666667%;
+  }
 }
 nav ul {
+  width: 100%;
+  display: table;
+}
+nav li {
   text-align: center;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  display: table-cell;
 }
-nav ul li {
-  list-style-type: none;
-}
-nav ul li a {
+nav a {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 200;
@@ -962,53 +956,131 @@ nav ul li a {
   letter-spacing: 0.111111em;
   text-align: left;
   text-transform: uppercase;
-  text-decoration: none;
-  padding: 20px 25px;
+  padding: 15px;
 }
-nav ul li a:hover,
-nav ul li a:active {
+section {
+  width: 100%;
+}
+section:not(#site-title)>* {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+section>* {
+  padding-top: 30px;
+}
+section>*:last-child {
+  padding-bottom: 30px;
+}
+section>*>* {
+  padding-top: 10px;
+}
+section>*>*:first-child {
+  padding-top: 0;
+}
+section>*>*:last-child {
+  padding-bottom: 0;
+}
+section h1,
+section h2,
+section h3,
+section p {
+  color: inherit;
+}
+section figure {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 !important;
+}
+section figure img {
+  display: block;
+  width: 100%;
+}
+section .text {
+  width: 100%;
+}
+section .skills-container h3 {
+  width: 100%;
+  text-align: center;
+}
+section .skills-container .skills {
+  text-align: center;
+}
+section .skills-container .skills .skill {
+  margin-bottom: 5px;
+}
+section .skills-container .skills .skill:not(:last-child) {
+  margin-right: 5px;
+}
+section .project {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+section .project .title {
+  width: 100%;
+}
+.project {
+  border-top: solid 1px #909090;
+  list-style-type: none;
+}
+.project:last-child {
+  border-bottom: solid 1px #909090;
+}
+.project>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+.project .title {
+  width: 100%;
+}
+.project .title header {
+  width: 100%;
+}
+.project .title header>* {
+  margin-top: 10px;
+}
+.project .title header>*:first-child {
+  margin-top: 0;
+}
+.project .title .button {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
   color: #b8432a;
+  letter-spacing: auto;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #b8432a;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.project .title .subtitle {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: #b8432a;
+  letter-spacing: 0.14em;
+  text-align: left;
+  line-height: 0.75rem;
+  text-transform: uppercase;
+}
+.project .title>* {
+  margin-top: 10px;
+}
+.project .title>*:first-child {
+  margin-top: 0;
 }
 #author {
   background: #fafafa;
   color: #303030;
 }
-#author .horizontal-gradient {
-  display: none;
-}
-#author img {
-  height: auto;
-  width: 100%;
-}
-#author .padded-children>* {
-  padding-top: 17.5px;
-}
-#author .padded-children>*:last-child {
-  padding-bottom: 17.5px;
-}
 #skills {
   background: #303030;
   color: #fafafa;
 }
-#skills header > * {
-  vertical-align: middle;
-}
-#skills * {
-  vertical-align: top;
-  color: inherit;
-}
-.skills-container {
-  text-align: center;
-}
-.skills-container h3 {
-  width: 100%;
-  text-align: center;
-}
-footer {
-  background: #303030;
-}
-p {
-  color: #909090 !important;
+#projects {
+  background: #fafafa;
+  color: #303030;
 }
 @media (min-width: 768px) {
   h2 {

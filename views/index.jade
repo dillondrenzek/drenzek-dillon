@@ -3,24 +3,7 @@
 
 extends app
 
-mixin project(proj)
-	li.project.col-xs-12
-		.title.col-sm-6.col-xs-12
-			header.col-xs-12
-				h3.col-xs-12= proj.title
-					.subtitle.col-xs-12= proj.type
-			ul.skills.col-xs-12
-				each skill in proj.skills
-					li.skill= skill
-			p.col-xs-12= proj.description
-			if (proj.launchURL)
-				a(href="#{proj.launchURL}") Launch
-			if (proj.githubURL)
-				a(href="#{proj.githubURL}") View on GitHub
-		
-		.col-sm-6.col-xs-12
-			.image
-				img.col-xs-12(src="#{proj.imageURL}" alt="#{proj.imageAlt}")
+
 
 block title
 	| Dillon Drenzek | Aspiring Developer, Perpetual Learner
@@ -28,24 +11,42 @@ block title
 block body
 
 	//- Title
+
+
+
+	//- Title
 	//- section.container
-	#site-title.col-xs-12
-		header.col-sm-4.col-xs-12
-			h1.col-xs-12 Dillon Drenzek
-				.subtitle.col-xs-12 Aspiring Developer, Perpetual Learner
-		nav.col-sm-8.col-xs-12
-			ul.col-sm-12.col-xs-12
+	section#site-title
+		header.site-title
+			h1 Dillon Drenzek
+			.subtitle Aspiring Developer, Perpetual Learner
+		nav
+			ul
 				li: a(href="#author") About
 				li: a(href="#projects") Work
 				li: a(href="#skills") Skills
 		
-	section#author.col-xs-12
-		.col-md-6.col-xs-12
+	section#author
+		figure
+			img(src="images/profile.jpg" alt="Dillon Drenzek")
+		.text
+			header
+				h2 A Word from the Author
+			.body
+				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning the things I do want to learn. I'm glad you're here - whatever brings you - and I hope you'll reach out and we can talk, work, or even play together. Cheers!
+			footer
+				ul#social-media
+					li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
+					li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
+					li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+					li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+
+		//- .col-md-6.col-xs-12
 			.image
 				.vertical-gradient
 				.horizontal-gradient
-				img(src="images/profile.jpg" alt="Dillon Drenzek")
-		.col-md-6.col-xs-12
+				
+		//- .col-md-6.col-xs-12
 			.padded-children.col-xs-10.col-xs-push-1
 				h2 A Word from the Author
 				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning the things I do want to learn. I'm glad you're here - whatever brings you - and I hope you'll reach out and we can talk, work, or even play together. Cheers!
@@ -58,30 +59,48 @@ block body
 
 	//- Skills
 	if skills
-		section#skills.col-xs-12
-			header.col-xs-10.col-xs-push-1
+		section#skills
+			header
 				h2 Things I Can Do
 				p I have been exposed to countless numbers of technologies for developing websites, here are some of my favorites.
 
-			.skills-container.col-sm-6.col-xs-12
+			.skills-container
 				h3 Web Development
 				ul.skills
 					each s in skills.web
 						li.skill= s
-			.skills-container.col-sm-6.col-xs-12
+			.skills-container
 				h3 UI/UX Design
 				ul.skills
 					each s in skills.design
 						li.skill= s
-			.skills-container.col-xs-12
+			.skills-container
 				h3 Newest Additions to My Skillset
 				ul.skills
 					each s in skills.learning
 						li.skill= s
 
 	//- Work
+	mixin project(proj)
+		li.project
+			.title
+				header
+					h3= proj.title
+					.subtitle= proj.type
+				//- ul.skills.col-xs-12
+					each skill in proj.skills
+						li.skill= skill
+				p= proj.description
+				if (proj.launchURL)
+					a(href="#{proj.launchURL}").button Launch
+				if (proj.githubURL)
+					a(href="#{proj.githubURL}").button View on GitHub
+			
+			figure
+				img.col-xs-12(src="#{proj.imageURL}" alt="#{proj.imageAlt}")
+
 	if projects && projects.length > 0
-		section#projects.col-xs-10.col-xs-push-1
+		section#projects
 			header
 				h2 Things I've Made
 				p I inject functionality, quality, and a lot of love into everything I do. So far, that has helped me do a number of really neat projects, here are a few recent examples.
