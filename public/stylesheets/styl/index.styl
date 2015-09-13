@@ -129,9 +129,9 @@ nav
 
 
 
-//------------------
+//-----------
 //- Sections
-//------------------
+//-----------
 section
 	Width-XS(12)
 	&:not(#site-title)
@@ -156,17 +156,29 @@ section
 		color inherit
 		
 	&>header
+		display block
+		Width-XS(12)
+		Width-SM(10)
+		Width-MD(9)
+		Width-LG(8)
+		margin 0 auto
 		&>*
 			display inline-block
 			vertical-align middle
 		h2
-			Width-LG(3)
-			text-align right
-			padding-right 30px
-			border-right 1px solid Red
+			Width-XS(12)
+			Width-SM(4)
+			// text-align left
+			// text-decoration underline
+			padding-right 0
+			// border-bottom 1px solid Red
+			
 		p
-			Width-LG(7)
-			padding-left 30px
+			Width-XS(12)
+			Width-SM(8)
+			padding-left 0
+			// text-align center
+			// text-align left
 	
 	figure
 		Width-XS(12)
@@ -182,11 +194,15 @@ section
 	
 	.skills-container
 		padding-top 70px
+		margin 0 auto
+		Width-XS(12)
+		
 		&:last-child
-			Width-XS(12)
+			// Width-XS(12)
 			padding-bottom 70px
 
 		&:not(:last-child)
+			
 			Width-SM(6)
 			display inline-block
 			vertical-align top
@@ -199,9 +215,9 @@ section
 			text-align center
 
 			.skill
-				margin-bottom 5px
+				margin-bottom 10px
 				&:not(:last-child)
-					margin-right 5px
+					margin-right 10px
 					
 	.project
 		padding-top 70px
@@ -232,9 +248,13 @@ section
 			display block
 			margin-top 10px
 			margin-bottom 10px
+			text-decoration none
+			&:hover
+				background Red
+				color White
 			
 		.subtitle
-			FiraSans-5(0.75rem, 200, Red, 0.14em, left)
+			FiraSans-5(0.75rem, 400, Red, 0.14em, left)
 			line-height 0.75rem
 			text-transform uppercase
 		

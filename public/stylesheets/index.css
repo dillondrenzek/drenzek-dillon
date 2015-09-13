@@ -210,26 +210,46 @@ section h3,
 section p {
   color: inherit;
 }
+section>header {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  section>header {
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  section>header {
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  section>header {
+    width: 66.66666667%;
+  }
+}
 section>header>* {
   display: inline-block;
   vertical-align: middle;
 }
 section>header h2 {
-  text-align: right;
-  padding-right: 30px;
-  border-right: 1px solid #b8432a;
+  width: 100%;
+  padding-right: 0;
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   section>header h2 {
-    width: 25%;
+    width: 33.33333333%;
   }
 }
 section>header p {
-  padding-left: 30px;
+  width: 100%;
+  padding-left: 0;
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   section>header p {
-    width: 58.33333333%;
+    width: 66.66666667%;
   }
 }
 section figure {
@@ -246,9 +266,10 @@ section .text {
 }
 section .skills-container {
   padding-top: 70px;
+  margin: 0 auto;
+  width: 100%;
 }
 section .skills-container:last-child {
-  width: 100%;
   padding-bottom: 70px;
 }
 section .skills-container:not(:last-child) {
@@ -268,10 +289,10 @@ section .skills-container .skills {
   text-align: center;
 }
 section .skills-container .skills .skill {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 section .skills-container .skills .skill:not(:last-child) {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 section .project {
   padding-top: 70px;
@@ -314,16 +335,21 @@ section .project {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-decoration: none;
 }
 @media (min-width: 768px) {
   .project .title .button {
     width: 83.33333333%;
   }
 }
+.project .title .button:hover {
+  background: #b8432a;
+  color: #fafafa;
+}
 .project .title .subtitle {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 0.75rem;
-  font-weight: 200;
+  font-weight: 400;
   color: #b8432a;
   letter-spacing: 0.14em;
   text-align: left;
@@ -400,6 +426,15 @@ footer#site-footer .updated {
   }
   #site-title .subtitle {
     text-align: left;
+  }
+  section>header h2 {
+    border-bottom: 0;
+    border-right: 2px solid #b8432a;
+    text-align: right;
+    padding-right: 30px;
+  }
+  section>header p {
+    padding-left: 30px;
   }
   .project .title {
     padding-right: 30px;
