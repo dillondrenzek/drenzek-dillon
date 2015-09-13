@@ -11,11 +11,6 @@ block title
 block body
 
 	//- Title
-
-
-
-	//- Title
-	//- section.container
 	section#site-title
 		header.site-title
 			h1 Dillon Drenzek
@@ -25,7 +20,11 @@ block body
 				li: a(href="#author") About
 				li: a(href="#projects") Work
 				li: a(href="#skills") Skills
-		
+	
+
+
+
+	//- Author
 	section#author
 		figure
 			img(src="images/profile.jpg" alt="Dillon Drenzek")
@@ -41,20 +40,8 @@ block body
 					li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
 					li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
 
-		//- .col-md-6.col-xs-12
-			.image
-				.vertical-gradient
-				.horizontal-gradient
-				
-		//- .col-md-6.col-xs-12
-			.padded-children.col-xs-10.col-xs-push-1
-				h2 A Word from the Author
-				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning the things I do want to learn. I'm glad you're here - whatever brings you - and I hope you'll reach out and we can talk, work, or even play together. Cheers!
-				ul#social-media.inline-children
-					li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-					li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
-					li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-					li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+
+
 
 
 	//- Skills
@@ -80,6 +67,10 @@ block body
 					each s in skills.learning
 						li.skill= s
 
+
+
+
+
 	//- Work
 	mixin project(proj)
 		li.project
@@ -87,7 +78,7 @@ block body
 				header
 					h3= proj.title
 					.subtitle= proj.type
-				//- ul.skills.col-xs-12
+				ul.skills.col-xs-12
 					each skill in proj.skills
 						li.skill= skill
 				p= proj.description

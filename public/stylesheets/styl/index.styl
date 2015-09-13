@@ -20,7 +20,9 @@ html
 //- Generic Styling
 //--------------------
 
-	
+h1
+	FiraSans-5(3rem, 700, White, -0.05em, center)	
+	line-height 3rem
 
 h2
 	FiraSans-5(1.5rem, 700, Black, -0.05em, left)
@@ -36,7 +38,6 @@ h4
 		
 p
 	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
-	// line-height auto
 	
 a
 	color Red
@@ -53,41 +54,7 @@ a
 //----------------------
 //- Reusable Components
 //----------------------
-.horizontal-gradient
-	height 100%
-	width 40%
-	position absolute
-	z-index 1
-	right 0
-	HorizontalGradient()
-	
-.vertical-gradient
-	height 40%
-	width 100%
-	position absolute
-	z-index 1
-	bottom 0
-	VerticalGradient()
-	
-.image
-	overflow hidden
-	width 100%
-	// height 540px
-	&>*
-		display inline-block
-		vertical-align middle
-	// img
-	// 	height 540px
-
-
-		
-
 #social-media
-	col-XS(12)
-	// margin-top 30px
-	// height 65px
-	
-	// padding-bottom 5%
 	InlineChildren()
 	li
 		&:first-child a
@@ -104,20 +71,18 @@ a
 
 .skills
 	list-style-type none
-	
 	.skill
 		display inline-block
-		// text-align center
 
 .skill
 	background Red
 	text-align center
 	padding 0.25em 1em
-	
 	color White
 	border-radius 0.5em
-	
 	cursor default
+
+
 
 
 
@@ -128,10 +93,7 @@ a
 	background Black
 	color White
 	Width-XS(12)
-	
-	
-	
-	
+
 .site-title
 	Width-XS(12)
 	Width-SM(6)
@@ -139,9 +101,6 @@ a
 	padding-right 0
 	h1
 		display block
-		FiraSans-5(3rem, 700, White, -0.05em, center)
-		line-height 3rem
-		// margin 0 auto
 	.subtitle
 		display block
 		FiraSans-5(0.75rem, 200, Red, 0.14em, center)
@@ -155,12 +114,9 @@ nav
 	Width-SM(6)
 	background Black
 	color White
-	
-	
 	ul
 		Width-XS(12)
 		display table
-
 	li
 		text-align center
 		display table-cell
@@ -168,6 +124,9 @@ nav
 		FiraSans-5(1rem, 200, Light, 0.111111em, left)
 		text-transform uppercase
 		padding 15px
+
+
+
 
 
 //------------------
@@ -248,13 +207,7 @@ section
 		padding-top 70px
 		padding-bottom 70px
 			
-		.title
-			// Width-XS(12)
-			
 .project
-	// border-top solid 1px Gray
-	// &:last-child
-	// 	border-bottom solid 1px Gray
 	list-style-type none
 	&>*
 		display inline-block
@@ -289,6 +242,12 @@ section
 			margin-top 10px
 			&:first-child
 				margin-top 0
+				
+		.skill
+			margin-bottom 5px
+			&:not(:last-child)
+				margin-right 5px
+
 	figure
 		Width-SM(6)
 				
