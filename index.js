@@ -10,7 +10,7 @@ var express = require('express')
 
 // Create and Configure App
 var app = exports.app = express();
-app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 4567);
+app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080);
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
