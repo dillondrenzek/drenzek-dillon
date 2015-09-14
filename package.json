@@ -9,7 +9,7 @@
     "url": "https://github.com/dillondrenzek/drenzek-dillon.git"
   },
   "scripts": {
-    "start": "node-dev index.js"
+    "start": "node-dev server.js"
   },
   "dependencies": {
     "express": "^4.13.3",
