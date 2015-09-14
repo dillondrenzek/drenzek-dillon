@@ -10,7 +10,8 @@ var express = require('express')
 
 // Create and Configure App
 var app = exports.app = express();
-app.set('port', process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080);
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
@@ -23,7 +24,7 @@ app.get('/', routes.index);
 
 
 // Create Server
-var server = app.listen(app.get('port'), function(){
+var server = app.listen(app.get('port'), app.get('ip'), function(){
 	var host = server.address().address;
 	var port = server.address().port;
 
