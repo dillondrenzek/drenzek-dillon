@@ -1,9 +1,3 @@
-FiraSans-3($size, $weight, $color) 
-	font-family 'Fira Sans', Helvetica, sans-serif
-	font-size $size
-	font-weight $weight
-	color $color
-
 FiraSans-5($size, $weight, $color, $spacing, $align) 
 	font-family 'Fira Sans', Helvetica, sans-serif
 	font-size $size
@@ -11,21 +5,11 @@ FiraSans-5($size, $weight, $color, $spacing, $align)
 	color $color
 	letter-spacing $spacing
 	text-align $align
-	// line-height $size
-	
-StandardPadding()
-	padding 8px 15px
-
-VerticalAlign()
-	top 50%
-	-webkit-transform translateY(-50%)
-	transform translateY(-50%)
 	
 InlineChildren()
 	&>*
 		display inline-block
 		vertical-align top
-		// float left
 			
 // HorizontalGradient()
 // 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,fafafa+100&amp;0+0,1+100 */
@@ -45,12 +29,10 @@ InlineChildren()
 // 	background -ms-linear-gradient(top,  rgba(250,250,250,0) 0%,rgba(250,250,250,1) 99%,rgba(250,250,250,1) 100%) /* IE10+ */
 // 	background linear-gradient(to bottom,  rgba(250,250,250,0) 0%,rgba(250,250,250,1) 99%,rgba(250,250,250,1) 100%) /* W3C */
 
-
-
-Clearfix()
-	&:after
-		visibility hidden
-		display block
-		content ""
-		clear both
-		height 0
+// Clearfix()
+// 	&:after
+// 		visibility hidden
+// 		display block
+// 		content ""
+// 		clear both
+// 		height 0

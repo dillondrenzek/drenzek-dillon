@@ -1,5 +1,6 @@
-// Routes
-// version 2.0.0
+// Routes & Temporary Data
+// version 2.2.0
+
 var routes = exports = module.exports;
 
 // GET '/'
@@ -20,7 +21,7 @@ routes.index = function(req, res, next) {
     	{
     		title: "Capstone Project Portal",
     		type: "Website",
-    		skills: ["Node.js"],
+    		skills: ["Node.js", "Jade", "Stylus"],
     		description: "A website for turning in assignments for my Capstone class in Spring 2015. I built an admin space into it to update the website throughout the year. Also where I fell in love with Node.js after porting the site from the Ruby DSL, Sinatra.",
     		launchURL: "http://capstone.drenzek.com",
     		githubURL: "https://github.com/dillondrenzek/drenzek-capstone",
