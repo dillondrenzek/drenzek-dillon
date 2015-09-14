@@ -9,20 +9,20 @@ The professional portfolio of University of Colorado graduate, Dillon Drenzek. <
  * [Stylus](http://learnboost.github.io/stylus/) (CSS Preprocessing)
  * [Jade](http://jade-lang.com/) (HTML Templating)
  * [Node.js](http://nodejs.org/) 
+ * [Express.js](http://expressjs.com/)
 
 #### Database
- * [Neo4j](http://neo4j.com/) (Graph Database)
- * GrapheneDB (Heroku Addon)
  
 #### Testing
- * [Jasmine](http://jasmine.github.io/2.2/introduction.html) (BDD Testing)
 
 ---------------------------------
-## Version: `v1.3.0` <br>
+## Version: `v2.2.0` <br>
 
 
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-----------|---------------|---|
+|                   | 2.2.0     |   Sep 13 15   | Projects Linked and Updated |
+|                   | 2.1.0     |   Sep 12 15   | Bootstrap Style Responsiveness Implemented |
 | Professional	    | 2.0.0 	|   Sep  6 15 	| Submittable to jobs, all data entered, new style |
 | Resume			| 1.3.0		|	Mar 15 15	| Add Resume page, content and styling with Stylus | 
 | Gulp				| 1.2.0		|	Mar 12 15	| Workflow integrations with Gulp | 

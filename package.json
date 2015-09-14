@@ -1,7 +1,7 @@
 {
   "name": "drenzek-dillon",
   "description": "The Professional Portfolio of Dillon Drenzek",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "author": "Dillon Drenzek <dr.enzek@gmail.com>",
   "homepage": "http://dillon.drenzek.com",
   "repository": {
@@ -9,13 +9,11 @@
     "url": "https://github.com/dillondrenzek/drenzek-dillon.git"
   },
   "scripts": {
-    "start": "node-dev index.js",
-    "test": "jasmine spec/*/*.js"
+    "start": "node-dev index.js"
   },
   "dependencies": {
     "express": "^4.13.3",
-    "jade": "^1.9.2",
-    "neo4j": "~1.1"
+    "jade": "^1.9.2"
   },
   "engines": {
     "node": "0.12.x",
@@ -23,10 +21,8 @@
   },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-nodemon": "^1.0.5",
     "gulp-plumber": "^1.0.0",
     "gulp-stylus": "^2.0.1",
-    "gulp-watch": "^4.1.1",
-    "jasmine": "^2.2.1"
+    "gulp-watch": "^4.1.1"
   }
 }
