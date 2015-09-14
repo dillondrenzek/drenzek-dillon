@@ -403,7 +403,7 @@ section .project {
   position: absolute;
 }
 .image-slider .control {
-  opacity: 0;
+  opacity: 0.5;
 background
   position: absolute;
   height: 100%;
@@ -413,10 +413,10 @@ background
   z-index: 11;
 }
 .image-slider .control .arrow {
-  background: #ff0;
+  background: #303030;
   position: absolute;
   height: 100%;
-  width: 10%;
+  width: 25%;
   z-index: 12;
   top: 0;
 }
@@ -425,6 +425,15 @@ background
 }
 .image-slider .control .arrow.right {
   right: 0;
+}
+.image-slider .control .arrow .fa {
+  color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.image-slider .control .arrow:active .arrow {
+  background: #b8432a;
 }
 .image-slider>* {
   position: absolute;
@@ -532,5 +541,13 @@ footer#site-footer .updated {
   }
   nav ul li a:hover {
     color: #b8432a;
+  }
+  .image-slider .control .arrow {
+    cursor: pointer;
+    width: 10%;
+    opacity: 0;
+  }
+  .image-slider .control:hover .arrow {
+    opacity: 1;
   }
 }

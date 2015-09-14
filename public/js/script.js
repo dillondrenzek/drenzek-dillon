@@ -10,8 +10,8 @@ $(document).ready(function(){
 		var slides = slider.find('.slide');
 
 		var control = IS.find('.control');
-		var left_arrow = $('<div class="arrow left"></div>');
-		var right_arrow = $('<div class="arrow right"></div>');
+		var left_arrow = $('<div class="arrow left"><div class="fa fa-chevron-left"></div></div>');
+		var right_arrow = $('<div class="arrow right"><div class="fa fa-chevron-right"></div></div>');
 
 		// Slide Index
 		var i = 0;
