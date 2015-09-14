@@ -378,10 +378,17 @@ section .project {
 .project .title .skill:not(:last-child) {
   margin-right: 5px;
 }
+.project figure {
+  height: 465px;
+  overflow: hidden;
+}
 @media (min-width: 768px) {
   .project figure {
     width: 50%;
   }
+}
+.clearfix {
+  clear: both;
 }
 #author {
   background: #fafafa;

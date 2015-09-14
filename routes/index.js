@@ -16,6 +16,10 @@ routes.index = function(req, res, next) {
     		launchURL: "http://drenzek-capstone-portfolio.herokuapp.com",
     		githubURL: "https://github.com/dillondrenzek/drenzek-capstone-portfolio",
     		imageURL: "images/drenzek-portfolio-v1.jpg",
+            imageURLs: ["images/large-images/drenzek-dillon-v1-1.png",
+                        "images/large-images/drenzek-dillon-v1-2.png",
+                        "images/large-images/drenzek-dillon-v1-3.png",
+                        "images/large-images/drenzek-dillon-v1-4.png"],
     		imageAlt: "First Version of My Portfolio"
     	},
     	{
