@@ -276,24 +276,49 @@ section
 				
 
 .image-slider
+	
 	height 100%
 	position relative
 	z-index 10
 	
-	&:hover .control
-		opacity 0.4
+	&:hover .navigation
+		opacity 1
 
 	
-	.slider
+	.slide
+		position relative
+		display inline-block
 		width 100%
 		height 100%
-		
-		.slide
-			position absolute
+		background Black
+		&>*
+			margin 0 auto
+		.landscape
+			height auto
+			width 100%
+		.portrait
+			width auto
+			height 100%
 
-	.control
+		
+		//
+		&:nth-child(even)
+			background Red
+
+	.page-display
+		position absolute
+		color White
+		background Red
+		z-index 12
+		bottom 0
+		right 0
+		padding 15px 30px
+		// -webkit-transform translateY(100%)
+		// transform translateY(100%)
+
+	.navigation
 		opacity 0.5
-		background
+		background none
 		position absolute
 		height 100%
 		width 100%
@@ -321,8 +346,8 @@ section
 				background rgba(Red, 1)
 			
 
-	&>*
-		position absolute
+	// &>*
+	// 	position absolute
 		
 .clearfix
 	clear both	
@@ -344,6 +369,8 @@ section
 #projects
 	background White
 	color Black
+	.projects
+		Width-XS(12)
 	
 
 //---------

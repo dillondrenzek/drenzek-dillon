@@ -3,6 +3,11 @@
 
 var routes = exports = module.exports;
 
+// GET '/test'
+routes.test = function(req, res) {
+    res.render('test');
+};
+
 // GET '/'
 routes.index = function(req, res, next) {
 

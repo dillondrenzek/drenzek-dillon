@@ -89,9 +89,9 @@ block body
 			
 			if proj.imageURLs
 				figure.image-slider
+					.page-display
 					.control
 					.slider
-
 						each imageSrc in proj.imageURLs
 							img.slide(src="#{imageSrc}" alt="Test")
 						.clearfix
