@@ -14,7 +14,7 @@
 		$this.append($this.tray);
 
 		// Create Slides
-		$this.slides = [];
+		
 		$this.images = $this.find('img');
 		$this.images.each(function(i,e,a){
 			var $e = $(e).remove();
@@ -24,7 +24,7 @@
 			$slide.append($e);
 			$this.tray.append($slide);
 
-			$this.slides.push($slide);
+			// $this.slides.push($slide);
 
 			if ($e.width() / $e.height() > frameRatio) {
 				$e.addClass("landscape");
@@ -32,6 +32,7 @@
 				$e.addClass("portrait");
 			};
 		});
+		$this.slides = $this.find('.slide');
 
 
 
@@ -39,8 +40,8 @@
 		// Index
 		$this.index.value = 0;
 		$this.tray.move = function(){
-
-			$($this.slides).each(function(i,e,a){
+			console.log($this);
+			$this.slides.each(function(i,e,a){
 				$(e).css({"top": -($this.height() * $this.index.value)});
 			});
 		};
