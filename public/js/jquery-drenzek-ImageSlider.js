@@ -7,13 +7,24 @@
 		var frameWidth = $this.width();
 		var frameHeight = $this.height(frameWidth / frameRatio);
 
-		$this.find('img').each(function(i,e,a){
+		// Create Slide Container: Tray
+		$this.tray = $("<div>", {
+			class: "tray"
+		});
+		$this.append($this.tray);
+
+		// Create Slides
+		$this.slides = [];
+		$this.images = $this.find('img');
+		$this.images.each(function(i,e,a){
 			var $e = $(e).remove();
 			var $slide = $("<div>", {
 				class: "slide"
 			});
 			$slide.append($e);
-			$this.append($slide);
+			$this.tray.append($slide);
+
+			$this.slides.push($slide);
 
 			if ($e.width() / $e.height() > frameRatio) {
 				$e.addClass("landscape");
@@ -21,6 +32,37 @@
 				$e.addClass("portrait");
 			};
 		});
+
+
+
+
+		// Index
+		$this.index.value = 0;
+		$this.tray.move = function(){
+
+			$($this.slides).each(function(i,e,a){
+				$(e).css({"top": -($this.height() * $this.index.value)});
+			});
+		};
+		$this.index.increment = function(){
+			if ($this.index.value < $this.images.length-1) {
+				$this.index.value++;
+				console.log("increment index:", $this.index.value);
+				$this.tray.move();
+			};
+			
+		};
+		$this.index.decrement = function(){
+			if ($this.index.value > 0) {
+				$this.index.value--;
+				console.log("decrement index:", $this.index.value);
+				$this.tray.move();
+			};
+		};
+
+
+
+
 
 		// Initialize Navigation
 		$this.navigation = $this.find('.navigation');
@@ -33,29 +75,42 @@
 
 		console.log($this.navigation);
 
+
+
 		// Navigation Arrows
 		$this.navigation.leftArrow = $this.navigation.find('.arrow.left'); 
 		if ($this.navigation.leftArrow.length == 0) {
-			$('<div>', {
+			$this.navigation.leftArrow = $('<div>', {
 				class: "arrow left created"
+			}).append($('<div>', {
+				class:"icon noselect"
+			}).text("<"));
+
+			$this.navigation.leftArrow.click(function(){
+				$this.index.decrement();
 			});
-			$this.navigation.append($this.navigation.leftArrow);
+
+			$($this.navigation).append($this.navigation.leftArrow);
 		}
+
+
+
 		$this.navigation.rightArrow = $this.find('.arrow.right');
 		if ($this.navigation.rightArrow.length == 0) { 
-			$('<div>', {
+
+			$this.navigation.rightArrow = $('<div>', {
 				class: "arrow right created"
+			}).append($('<div>', {
+				class:"icon noselect"
+			}).text(">"));
+
+			$this.navigation.rightArrow.click(function(){
+				$this.index.increment();
 			});
+
 			$this.navigation.append($this.navigation.rightArrow);
 		}
 
-		
-
-		// $this.find('').each(function(i,e,a){
-
-		// });
-
-		// var array = $this.find('')
 
 	};
 

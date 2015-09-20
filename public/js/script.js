@@ -1,7 +1,7 @@
 (function($){
 	$(function(){
 
-		$('.image-slider').ImageSlider();
+		$('.image-slider').each(function(){$(this).ImageSlider();});
 
 	});
 })(jQuery);
