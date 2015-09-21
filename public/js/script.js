@@ -13,16 +13,16 @@
 				imgRatio = this.width/this.height;
 				frameRatio = frame.width()/frame.height();
 
-				console.log("-----")
-				console.log("frame", frame, frameRatio);
-				console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
+				// console.log("-----")
+				// console.log("frame", frame, frameRatio);
+				// console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
 				
 				if (imgRatio > frameRatio) {
-					console.log("landscape");
-					$img.addClass('landscape');
+					// console.log("landscape");
+					$img.addClass('landscape'); // width 100% height auto 
 				} else {
-					console.log("portrait");
-					$img.addClass('portrait');
+					// console.log("portrait");
+					$img.addClass('portrait'); // width auto height 100%
 				}
 
 			});
@@ -74,8 +74,8 @@
 									"text" : "Click to View More Photos"}))
 				.each(function(){
 					var $this = $(this);
-					console.log("----");
-					console.log("this:", $this);
+					// console.log("----");
+					// console.log("this:", $this);
 
 					// Size figure
 					$this.height($this.width() / frameRatio);
@@ -95,6 +95,11 @@
 
 		initializeProjectFigures();
 		initializeModal();
+
+		$(window).on('resize', function(){
+			initializeProjectFigures();
+			initializeModal();
+		});
 			
 	});
 })(jQuery, window);
