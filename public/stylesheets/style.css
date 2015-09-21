@@ -90,6 +90,10 @@ a:active {
 a:active {
   color: #555;
 }
+img {
+  height: auto;
+  width: auto;
+}
 img.landscape {
   height: auto;
   width: 100%;
@@ -397,6 +401,7 @@ section .project {
   width: 100%;
 }
 #modal {
+  display: block;
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -404,22 +409,21 @@ section .project {
   left: 0;
   background: rgba(48,48,48,0.9);
   z-index: 100;
+  text-align: center;
 }
 #modal figure {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 300px;
-  width: 400px;
-  margin: 60px;
-  display: block;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 60%;
+  width: 40%;
+  margin: 0 auto;
   text-align: center;
   background: rgba(184,67,42,0.8);
 }
 #modal figcaption {
   position: absolute;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
   width: 100%;
   bottom: 0;
   background: rgba(48,48,48,0.9);

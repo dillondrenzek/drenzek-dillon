@@ -7,14 +7,25 @@
 		function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
 			var frame = $img.closest('figure');
-			var frameRatio = $(frame).width()/$(frame).height();
-			console.log(frameRatio);
+			// var frameRatio = frame.width()/frame.height();
+			var imgRatio, frameRatio;
+			$img.load(function(){
+				imgRatio = this.width/this.height;
+				frameRatio = frame.width()/frame.height();
 
-			if ($img.width()/$img.height() > frameRatio) {
-				$img.addClass('landscape');
-			} else {
-				$img.addClass('portrait');
-			}
+				console.log("-----")
+				console.log("frame", frame, frameRatio);
+				console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
+				
+				if (imgRatio > frameRatio) {
+					console.log("landscape");
+					$img.addClass('landscape');
+				} else {
+					console.log("portrait");
+					$img.addClass('portrait');
+				}
+
+			});
 		};
 
 		function initializeModal(){
@@ -22,7 +33,8 @@
 			$('.close')
 				.click(function(e){
 					e.preventDefault();
-					$('#modal').hide(); });
+					$('#modal').hide();
+					$('#modal').find('img').removeClass("landscape portrait"); });
 
 			$('.arrow')
 				.click(function(e){
@@ -32,8 +44,6 @@
 					} else if ($(this).hasClass("right")) {
 						console.log("right");
 					} });
-
-			sizeImage($('#modal').find('img'));
 
 			// Hide Modal
 			$('#modal').hide();
@@ -47,34 +57,43 @@
 				.find('img')
 				.attr({"src": $(images[0]).attr("src")})
 				.each(function(){
+					console.log("modal");
 					sizeImage($(this));
 				});
 
-			
-
 			$('#modal').show();
-
 		};
 		
 
-		// Initialize Project Figures
-		var frameRatio = 4/3;
-		$('.project figure')
-			.prepend($("<a>", { "href" : "#",
-								"class" : "image",
-								"text" : "Click to View More Photos"}))
-			.each(function(){
-				// Size figure
-				$(this).height($(this).width() / frameRatio);
+		function initializeProjectFigures(){
+			// Initialize Project Figures
+			var frameRatio = 4/3;
+			$('.project figure')
+				.prepend($("<a>", { "href" : "#",
+									"class" : "image",
+									"text" : "Click to View More Photos"}))
+				.each(function(){
+					var $this = $(this);
+					console.log("----");
+					console.log("this:", $this);
 
-				// size image
-				sizeImage($(this).find('img')[0]); 
-			})
-			.click(function(e){
-				e.preventDefault();
-				presentModal(this); 
-			});
+					// Size figure
+					$this.height($this.width() / frameRatio);
 
+					// size image
+					$this.find('img').each(function(){
+						sizeImage($(this));
+					});
+					 
+				})
+				.click(function(e){
+					e.preventDefault();
+					presentModal(this); 
+				});
+		}
+		
+
+		initializeProjectFigures();
 		initializeModal();
 			
 	});

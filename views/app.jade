@@ -31,7 +31,7 @@ mixin Project(proj)
 				a(href="#{proj.githubURL}").button View on GitHub
 		if proj.imageURLs
 			figure
-				img(src="#{proj.imageURLs[0]}" alt="#{proj.imageAlt}")
+				img(src="#{proj.imageURLs[0]}" alt="#{proj.title}")
 		else
 			figure
 				//- img(src="/images/profile.jpg" alt="Test")
@@ -52,7 +52,7 @@ mixin ImageModal()
 		a.arrow.right >
 		figure
 			img(src="images/drenzek-truthiness.jpg" alt="Something cool")
-			figcaption Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+		figcaption Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 doctype
 html
