@@ -13,6 +13,10 @@
   font-weight: 700;
   src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
 }
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
 *,
 *:before,
 *:after {
@@ -97,10 +101,17 @@ img.portrait {
 #site-title {
   background: #303030;
   color: #fafafa;
+  width: 100%;
 }
 .site-title {
+  width: 100%;
   padding-left: 0;
   padding-right: 0;
+}
+@media (min-width: 768px) {
+  .site-title {
+    width: 50%;
+  }
 }
 .site-title h1 {
   display: block;
@@ -119,10 +130,17 @@ img.portrait {
   padding-top: 0;
 }
 nav {
+  width: 100%;
   background: #303030;
   color: #fafafa;
 }
+@media (min-width: 768px) {
+  nav {
+    width: 50%;
+  }
+}
 nav ul {
+  width: 100%;
   display: table;
 }
 nav li {
@@ -196,20 +214,32 @@ nav a {
   color: #b8432a;
   letter-spacing: auto;
   text-align: center;
+  width: 100%;
   border: 1px solid #b8432a;
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
   text-decoration: none;
 }
+@media (min-width: 768px) {
+  .button {
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  .button {
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  .button {
+    width: 50%;
+  }
+}
 .button:hover {
   background: #b8432a;
   color: #fafafa;
   text-decoration: none;
-}
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
 }
 section {
   width: 100%;
