@@ -393,27 +393,9 @@ section .project {
   height: 100vh;
   top: 0;
   left: 0;
-  background: rgba(48,48,48,0.8);
+  background: rgba(48,48,48,0.9);
   z-index: 100;
   padding: 60px;
-}
-#modal .close {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 101;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  text-align: center;
-  cursor: pointer;
-  background: rgba(48,48,48,0.6);
-  color: rgba(250,250,250,0.6);
-}
-#modal .close:hover {
-  background: rgba(48,48,48,0.9);
-  color: #fafafa;
-  text-decoration: none;
 }
 #modal figure {
   position: relative;
@@ -435,11 +417,29 @@ section .project {
   color: #fafafa;
   padding: 20px 30px;
 }
-#modal .arrow {
+#modal .close {
+  top: 0;
+  left: 0;
   position: absolute;
+  z-index: 101;
+  height: 60px;
+  width: 60px;
+  background: rgba(48,48,48,0.6);
+  color: rgba(250,250,250,0.6);
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+}
+#modal .close:hover {
+  background: rgba(48,48,48,0.9);
+  color: #fafafa;
+  text-decoration: none;
+}
+#modal .arrow {
   top: 50%;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
+  position: absolute;
   z-index: 101;
   height: 60px;
   width: 60px;
