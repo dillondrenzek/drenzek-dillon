@@ -13,6 +13,79 @@
   font-weight: 700;
   src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
 }
+#modal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(48,48,48,0.9);
+  z-index: 100;
+  padding: 60px;
+}
+#modal figure {
+  position: relative;
+  display: block;
+  height: 100%;
+  background: rgba(184,67,42,0.8);
+}
+#modal figure img {
+  height: auto;
+  width: 100%;
+}
+#modal figcaption {
+  position: absolute;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  width: 100%;
+  bottom: 0;
+  background: rgba(48,48,48,0.9);
+  color: #fafafa;
+  padding: 20px 30px;
+}
+#modal .close {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 101;
+  height: 60px;
+  width: 60px;
+  background: rgba(48,48,48,0.6);
+  color: rgba(250,250,250,0.6);
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+}
+#modal .close:hover {
+  background: rgba(48,48,48,0.9);
+  color: #fafafa;
+  text-decoration: none;
+}
+#modal .arrow {
+  top: 50%;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  position: absolute;
+  z-index: 101;
+  height: 60px;
+  width: 60px;
+  background: rgba(48,48,48,0.6);
+  color: rgba(250,250,250,0.6);
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+}
+#modal .arrow:hover {
+  background: rgba(48,48,48,0.9);
+  color: #fafafa;
+  text-decoration: none;
+}
+#modal .arrow.left {
+  left: 0;
+}
+#modal .arrow.right {
+  right: 0;
+}
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -90,6 +163,14 @@ a:active {
 a:active {
   color: #555;
 }
+img.landscape {
+  height: auto;
+  width: 100%;
+}
+img.portrait {
+  height: 100%;
+  width: auto;
+}
 #social-media>* {
   display: inline-block;
   vertical-align: top;
@@ -140,7 +221,6 @@ a:active {
   display: block;
 }
 .site-title .subtitle {
-  display: block;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 0.75rem;
   font-weight: 200;
@@ -149,6 +229,7 @@ a:active {
   text-align: center;
   line-height: 0.75rem;
   text-transform: uppercase;
+  display: block;
   left: 4px;
   padding-top: 0;
 }
@@ -211,8 +292,8 @@ section p {
   color: inherit;
 }
 section>header {
-  display: block;
   width: 100%;
+  display: block;
   margin: 0 auto;
 }
 @media (min-width: 768px) {
@@ -379,97 +460,23 @@ section .project {
   margin-right: 5px;
 }
 .project figure {
-  position: relative;
+  background: #303030;
   overflow: hidden;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .project figure {
     width: 50%;
   }
 }
-#modal {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(48,48,48,0.9);
-  z-index: 100;
-  padding: 60px;
-}
-#modal figure {
-  position: relative;
-  display: block;
-  height: 100%;
-  background: rgba(184,67,42,0.8);
-}
-#modal figure img {
-  height: auto;
-  width: 100%;
-}
-#modal figcaption {
-  position: absolute;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  width: 100%;
-  bottom: 0;
-  background: rgba(48,48,48,0.9);
-  color: #fafafa;
-  padding: 20px 30px;
-}
-#modal .close {
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 101;
-  height: 60px;
-  width: 60px;
-  background: rgba(48,48,48,0.6);
-  color: rgba(250,250,250,0.6);
-  cursor: pointer;
-  line-height: 60px;
-  text-align: center;
-}
-#modal .close:hover {
-  background: rgba(48,48,48,0.9);
-  color: #fafafa;
-  text-decoration: none;
-}
-#modal .arrow {
-  top: 50%;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  position: absolute;
-  z-index: 101;
-  height: 60px;
-  width: 60px;
-  background: rgba(48,48,48,0.6);
-  color: rgba(250,250,250,0.6);
-  cursor: pointer;
-  line-height: 60px;
-  text-align: center;
-}
-#modal .arrow:hover {
-  background: rgba(48,48,48,0.9);
-  color: #fafafa;
-  text-decoration: none;
-}
-#modal .arrow.left {
-  left: 0;
-}
-#modal .arrow.right {
-  right: 0;
-}
-.image-slider {
-  height: 100%;
-  position: relative;
-  z-index: 10;
-  cursor: pointer;
-}
-.image-slider:hover a.image {
+.project figure img,
+.project figure:hover a.image {
   opacity: 1;
 }
-.image-slider a.image {
+.project figure a.image {
   opacity: 0;
   position: absolute;
   bottom: 0;
@@ -479,20 +486,20 @@ section .project {
   padding: 10px;
   color: #fafafa;
 }
-.image-slider a.image:hover {
+.project figure a.image:hover {
   text-decoration: none;
 }
-.image-slider:hover .navigation {
+.project figure:hover .navigation {
   opacity: 1;
 }
-.image-slider .tray {
+.project figure .tray {
   position: absolute;
   height: 100%;
   display: block;
   top: 0;
   left: 0;
 }
-.image-slider .slide {
+.project figure .slide {
   position: relative;
   float: left;
   width: 100%;
@@ -500,18 +507,10 @@ section .project {
   background: #303030;
   top: 0;
 }
-.image-slider .slide>* {
+.project figure .slide>* {
   margin: 0 auto;
 }
-.image-slider .slide .landscape {
-  height: auto;
-  width: 100%;
-}
-.image-slider .slide .portrait {
-  width: auto;
-  height: 100%;
-}
-.image-slider .page-display {
+.project figure .page-display {
   position: absolute;
   color: #fafafa;
   background: #b8432a;
@@ -520,7 +519,7 @@ section .project {
   right: 0;
   padding: 15px 30px;
 }
-.image-slider .navigation {
+.project figure .navigation {
   opacity: 0.5;
   background: none;
   position: absolute;
@@ -530,7 +529,7 @@ section .project {
   left: 0;
   z-index: 11;
 }
-.image-slider .navigation .arrow {
+.project figure .navigation .arrow {
   background: #303030;
   position: absolute;
   height: 100%;
@@ -539,19 +538,19 @@ section .project {
   top: 0;
   cursor: pointer;
 }
-.image-slider .navigation .arrow.left {
+.project figure .navigation .arrow.left {
   left: 0;
 }
-.image-slider .navigation .arrow.right {
+.project figure .navigation .arrow.right {
   right: 0;
 }
-.image-slider .navigation .arrow .fa {
+.project figure .navigation .arrow .fa {
   color: #fafafa;
   position: absolute;
   top: 50%;
   left: 50%;
 }
-.image-slider .navigation .arrow .icon {
+.project figure .navigation .arrow .icon {
   color: #fafafa;
   position: absolute;
   top: 50%;
@@ -562,16 +561,9 @@ section .project {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.image-slider .navigation .arrow:active .arrow {
+.project figure .navigation .arrow:active .arrow {
   background: #b8432a;
 }
-.noselect,
--webkit-touch-callout none,
--webkit-user-select none,
--khtml-user-select none,
--moz-user-select none,
--ms-user-select none,
-user-select none,
 .clearfix {
   clear: both;
 }

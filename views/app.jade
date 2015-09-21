@@ -1,6 +1,58 @@
 //- App Template
 //- version 2.2.0
 
+//- Skills
+mixin Skill(skill)
+	li.skill= skill
+
+mixin SkillsList(skills)
+	ul.skills
+		each s in skills
+			+Skill(s)
+
+mixin SkillsContainer(title, skills)
+	.skills-container
+		h3= title
+		+SkillsList(skills)
+		
+//- Projects
+mixin Project(proj)
+	li.project
+		.title
+			header
+				h3= proj.title
+				.subtitle= proj.type
+			+SkillsList(proj.skills)
+			p= proj.description
+			if (proj.launchURL)
+				a(href="#{proj.launchURL}").button Launch
+			if (proj.githubURL)
+				a(href="#{proj.githubURL}").button View on GitHub
+		if proj.imageURLs
+			figure
+				img(src="#{proj.imageURLs[0]}" alt="#{proj.imageAlt}")
+		else
+			figure
+				img(src="/images/profile.jpg" alt="Test")
+
+//- Social Media Links
+mixin SocialMedia()
+	ul#social-media
+		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
+		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
+		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+
+//- Image Modal
+mixin ImageModal()
+	#modal
+		a.close X
+		a.arrow.left <
+		a.arrow.right >
+		figure
+			img.modal(src="" alt="Something cool")
+			figcaption Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
 doctype
 html
 	head
@@ -18,7 +70,7 @@ html
 
 		//- jQuery
 		script(src="/js/jquery-1.11.2.min.js")
-		script(src="/js/jquery-drenzek-ImageSlider.js")
+		//- script(src="/js/jquery-drenzek-ImageSlider.js")
 		script(src="/js/script.js")
 
 		//- Google Analytics
@@ -33,15 +85,18 @@ html
 
 
 
-	body 
+	body
 		.container-fluid
+			section#site-title
+				header.site-title
+					h1 Dillon Drenzek
+					.subtitle Aspiring Developer, Perpetual Learner
+				nav
+					ul
+						li: a(href="#author") About
+						li: a(href="#projects") Work
+						li: a(href="#skills") Skills
 			block body
-			#modal
-				a.close X
-				a.arrow.left <
-				a.arrow.right >
-				figure
-					//- img(src="/images/drenzek-portfolio-v1.jpg" alt="Something cool")
-					figcaption Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.			
+			+ImageModal()
 			footer#site-footer
 				

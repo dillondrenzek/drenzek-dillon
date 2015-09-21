@@ -3,26 +3,10 @@
 
 extends app
 
-
-
 block title
 	| Dillon Drenzek | Aspiring Developer, Perpetual Learner
 
 block body
-
-	//- Title
-	section#site-title
-		header.site-title
-			h1 Dillon Drenzek
-			.subtitle Aspiring Developer, Perpetual Learner
-		nav
-			ul
-				li: a(href="#author") About
-				li: a(href="#projects") Work
-				li: a(href="#skills") Skills
-	
-
-
 
 	//- Author
 	section#author
@@ -34,15 +18,7 @@ block body
 			.body
 				p I design, code, and enjoy beautiful things. I recently graduated from the University of Colorado with a degree in Computer Science, but that doesn't mean I've stopped learning. In fact, that means I get to spend more time learning the things I do want to learn. I'm glad you're here - whatever brings you - and I hope you'll reach out and we can talk, work, or even play together. Cheers!
 			footer
-				ul#social-media
-					li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-					li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
-					li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-					li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
-
-
-
-
+				+SocialMedia()
 
 	//- Skills
 	if skills
@@ -50,49 +26,11 @@ block body
 			header
 				h2 Things I Can Do
 				p I have been exposed to countless numbers of technologies for developing websites, here are some of my favorites.
-
-			.skills-container
-				h3 Web Development
-				ul.skills
-					each s in skills.web
-						li.skill= s
-			.skills-container
-				h3 UI/UX Design
-				ul.skills
-					each s in skills.design
-						li.skill= s
-			.skills-container
-				h3 Newest Additions to My Skillset
-				ul.skills
-					each s in skills.learning
-						li.skill= s
-
-
-
-
+			+SkillsContainer("Web Development", skills.web)
+			+SkillsContainer("UI/UX Design", skills.design)
+			+SkillsContainer("Newest Additions to My Skillset", skills.learning)
 
 	//- Work
-	mixin project(proj)
-		li.project
-			.title
-				header
-					h3= proj.title
-					.subtitle= proj.type
-				ul.skills.col-xs-12
-					each skill in proj.skills
-						li.skill= skill
-				p= proj.description
-				if (proj.launchURL)
-					a(href="#{proj.launchURL}").button Launch
-				if (proj.githubURL)
-					a(href="#{proj.githubURL}").button View on GitHub
-			if proj.imageURLs
-				figure.image-slider
-					img(src="#{proj.imageURLs[0]}" alt="#{proj.imageAlt}")
-			else
-				figure
-					img(src="#{proj.imageURL}" alt="Test")
-
 	if projects && projects.length > 0
 		section#projects
 			header
@@ -100,7 +38,7 @@ block body
 				p I inject functionality, quality, and a lot of love into everything I do. So far, that has helped me do a number of really neat projects, here are a few recent examples.
 			ul.projects
 				each p in projects
-					+project(p)
+					+Project(p)
 
 
 

@@ -52,6 +52,15 @@ a
 		text-decoration underline
 	&:active
 		color Dark
+		
+img
+	&.landscape
+		height auto
+		width 100%
+	&.portrait
+		height 100%
+		width auto
+		
 
 
 
@@ -63,11 +72,9 @@ a
 	li
 		&:first-child a
 			padding-left 0
-
 		a
 			color Red
 			padding 0 20px
-			
 			&:hover i
 				color Black
 			i 
@@ -106,10 +113,10 @@ a
 	h1
 		display block
 	.subtitle
-		display block
 		FiraSans-5(0.75rem, 200, Red, 0.14em, center)
 		line-height 0.75rem
 		text-transform uppercase
+		display block
 		left 4px
 		padding-top 0
 		
@@ -160,11 +167,11 @@ section
 		color inherit
 		
 	&>header
-		display block
 		Width-XS(12)
 		Width-SM(10)
 		Width-MD(9)
 		Width-LG(8)
+		display block
 		margin 0 auto
 		&>*
 			display inline-block
@@ -183,7 +190,6 @@ section
 		Width-XS(12)
 		overflow hidden
 		padding 0 !important
-		
 		img
 			display block
 			width 100%
@@ -267,98 +273,21 @@ section
 			margin-bottom 5px
 			&:not(:last-child)
 				margin-right 5px
-
-	figure
-		Width-SM(6)
-		position relative
-		// height 465px
-		overflow hidden
-
-//--------------------
-// Image Detail Modal
-//--------------------
-
-ModalButton(ht, wd)
-	position absolute
-	z-index 101
-	height ht
-	width wd
-	background rgba(Black, 0.6)
-	color rgba(White, 0.6)
-	cursor pointer
-	line-height ht
-	text-align center
-	&:hover
-		background rgba(Black,0.9)
-		color rgba(White, 1.0)
-		text-decoration none
-ModalButton()
-	position absolute
-	z-index 101
-	height 60px
-	width 60px
-	background rgba(Black, 0.6)
-	color rgba(White, 0.6)
-	cursor pointer
-	line-height 60px
-	text-align center
-	&:hover
-		background rgba(Black,0.9)
-		color rgba(White, 1.0)
-		text-decoration none
-
-
-#modal
-	position fixed
-	width 100%
-	height 100vh
-	top 0
-	left 0
-	background rgba(Black,0.9)
-	z-index 100
-	padding 60px
 		
-	figure
-		position relative
-		display block
-		height 100%
-		background rgba(Red,0.8)
-		img
-			height auto
-			width 100%
-	figcaption
-		position absolute
-		-webkit-transform translateY(100%)
-		transform translateY(100%)
-		width 100%
-		bottom 0
-		background rgba(Black,0.9)
-		color White
-		padding 20px 30px
-
-	.close
-		top 0
-		left 0
-		ModalButton()
-		
-	.arrow
-		top 50%
-		-webkit-transform translateY(-100%)
-		transform translateY(-100%)
-		ModalButton()
-		&.left
-			left 0
-		&.right
-			right 0		
 
 //--------------
 // Image Slider
 //--------------
-.image-slider
+.project figure
+	Width-SM(6)
+	background Black
+	overflow hidden
 	height 100%
 	position relative
 	z-index 10
 	cursor pointer
+	
+	img
 	
 	&:hover a.image
 		opacity 1
@@ -369,7 +298,7 @@ ModalButton()
 		bottom 0
 		text-align center
 		width 100%
-		background rgba(Red,0.7);
+		background rgba(Red,0.7)
 		padding 10px
 		color White
 		&:hover
@@ -396,12 +325,7 @@ ModalButton()
 		top 0
 		&>*
 			margin 0 auto
-		.landscape
-			height auto
-			width 100%
-		.portrait
-			width auto
-			height 100%
+		
 
 	.page-display
 		position absolute
@@ -453,17 +377,6 @@ ModalButton()
 
 			&:active .arrow
 				background rgba(Red, 1)
-			
-
-	// &>*
-	// 	position absolute
-.noselect
-    -webkit-touch-callout none
-    -webkit-user-select none
-    -khtml-user-select none
-    -moz-user-select none
-    -ms-user-select none
-    user-select none
     
 
 

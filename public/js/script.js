@@ -1,20 +1,41 @@
-(function($){
+(function($, window){
 	$(function(){
 
+		function initializeModal(){
+			$('.close')
+				.click(function(e){
+					e.preventDefault();
+					$('#modal').hide(); });
 
+			$('.arrow')
+				.click(function(e){
+					e.preventDefault();
+					if ($(this).hasClass("left")) {
+						console.log("left");
+					} else if ($(this).hasClass("right")) {
+						console.log("right");
+					} });
 
-
-
-		function presentSlider(slider){
-			var $slider = $(slider);
-			$('#modal').show();
+			// Hide Modal
+			$('#modal').hide();
 		};
 
-		$('#modal').hide();
+		function presentModal(slider){
+			var $slider = $(slider);
+			var images = $slider.find('img');
+			$('#modal')
+				.find('img.modal')
+				.attr({"src": $(images[0]).attr("src")});
 
+			$('#modal').show();
+
+		};
+
+		
+
+		// Initialize Project Figures
 		var frameRatio = 4/3;
-
-		$('.image-slider')
+		$('.project figure')
 			.prepend($("<a>", { "href" : "#",
 								"class" : "image",
 								"text" : "Click to View More Photos"}))
@@ -22,23 +43,10 @@
 				$(this).height($(this).width() / frameRatio); })
 			.click(function(e){
 				e.preventDefault();
-				presentSlider(this); 
+				presentModal(this); 
 			});
 
-		$('.close')
-			.click(function(e){
-				e.preventDefault();
-				$('#modal').hide(); });
-
-		$('.arrow')
-			.click(function(e){
-				e.preventDefault();
-				if ($(this).hasClass("left")) {
-					console.log("left");
-				} else if ($(this).hasClass("right")) {
-					console.log("right");
-				}
-			})
+		initializeModal();
 			
 	});
-})(jQuery);
+})(jQuery, window);
