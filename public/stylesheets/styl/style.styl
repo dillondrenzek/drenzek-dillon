@@ -1,144 +1,8 @@
 //- Stylus version of index.css
-//- Version 2.2.0
+//- Version 2.2.3
 
 @import 'app'
 @import 'responsive/bootstrap'
-
-//---------------------------------------
-*,
-*:before,
-*:after
-	box-sizing border-box
-	-moz-box-sizing border-box
-	-webkit-box-sizing border-box
-	margin 0
-	padding 0
-	
-html
-	background White
-	FiraSans-5(16px, 500, Black, -1px, left)
-	
-
-
-//--------------------
-//- Generic Styling
-//--------------------
-
-h1
-	FiraSans-5(3rem, 700, White, -0.05em, center)	
-	line-height 3rem
-
-h2
-	FiraSans-5(1.75rem, 700, Black, -0.05em, left)
-	line-height 1.5rem
-	
-h3
-	FiraSans-5(1.5rem, 400, Black, 0em, left)
-	line-height 1.5rem
-
-h4
-	FiraSans-5(1.25rem, 200, Gray, 0em, left)
-
-		
-p
-	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
-	
-a
-	color Red
-	font-weight 400
-	text-decoration none
-	&:hover,
-	&:active
-		text-decoration underline
-	&:active
-		color Dark
-		
-img
-	&.landscape
-		height auto
-		width 100%
-	&.portrait
-		height 100%
-		width auto
-		
-
-
-
-//----------------------
-//- Reusable Components
-//----------------------
-#social-media
-	InlineChildren()
-	li
-		&:first-child a
-			padding-left 0
-		a
-			color Red
-			padding 0 20px
-			&:hover i
-				color Black
-			i 
-				font-size 1.75em
-
-.skills
-	list-style-type none
-	.skill
-		display inline-block
-
-.skill
-	background Red
-	text-align center
-	padding 0.25em 1em
-	color White
-	border-radius 0.5em
-	cursor default
-
-
-
-
-
-//------------------
-//- Top of the Page
-//------------------
-#site-title
-	background Black
-	color White
-	Width-XS(12)
-
-.site-title
-	Width-XS(12)
-	Width-SM(6)
-	padding-left 0
-	padding-right 0
-	h1
-		display block
-	.subtitle
-		FiraSans-5(0.75rem, 200, Red, 0.14em, center)
-		line-height 0.75rem
-		text-transform uppercase
-		display block
-		left 4px
-		padding-top 0
-		
-nav
-	Width-XS(12)
-	Width-SM(6)
-	background Black
-	color White
-	ul
-		Width-XS(12)
-		display table
-	li
-		text-align center
-		display table-cell
-	a
-		FiraSans-5(1rem, 200, Light, 0.111111em, left)
-		text-transform uppercase
-		padding 15px
-
-
-
-
 
 //-----------
 //- Sections
@@ -225,24 +89,108 @@ section
 					
 	.project
 		padding-top 70px
-		padding-bottom 70px
+		padding-bottom 70px	
 
-.button
-	FiraSans-5(1.25rem, 400, Red, auto, center)
-	Width-XS(12)
-	Width-SM(10)
-	Width-MD(8)
-	Width-LG(6)
-	border 1px solid Red
-	display block
-	margin-top 10px
-	margin-bottom 10px
-	text-decoration none
+#author
+	background White
+	color Black
+	
+	figure
+		Width-MD(6)
+	.text
+		Width-MD(6)
+	
+#skills
+	background Black
+	color White
+	
+#projects
+	background White
+	color Black
+	.projects
+		Width-XS(12)
+
+//--------------------
+// Image Detail Modal
+// version 2.2.3
+//--------------------
+
+ModalButton(ht, wd)
+	position absolute
+	z-index 101
+	height ht
+	width wd
+	background rgba(Black, 0.6)
+	color rgba(White, 0.6)
+	cursor pointer
+	line-height ht
+	text-align center
 	&:hover
-		background Red
-		color White
+		background rgba(Black,0.9)
+		color rgba(White, 1.0)
 		text-decoration none
+ModalButton()
+	position absolute
+	z-index 101
+	height 60px
+	width 60px
+	background rgba(Black, 0.6)
+	color rgba(White, 0.6)
+	cursor pointer
+	line-height 60px
+	text-align center
+	&:hover
+		background rgba(Black,0.9)
+		color rgba(White, 1.0)
+		text-decoration none
+
+
+#modal
+	position fixed
+	width 100%
+	height 100vh
+	top 0
+	left 0
+	background rgba(Black,0.9)
+	z-index 100
+	padding 60px
+		
+	figure
+		position relative
+		display block
+		height 100%
+		background rgba(Red,0.8)
+		img
+			height auto
+			width 100%
+	figcaption
+		position absolute
+		-webkit-transform translateY(100%)
+		transform translateY(100%)
+		width 100%
+		bottom 0
+		background rgba(Black,0.9)
+		color White
+		padding 20px 30px
+
+	.close
+		top 0
+		left 0
+		ModalButton()
+		
+	.arrow
+		top 50%
+		-webkit-transform translateY(-100%)
+		transform translateY(-100%)
+		ModalButton()
+		&.left
+			left 0
+		&.right
+			right 0
 			
+// Styling for Projects
+// version 2.2.3
+
 .project
 	list-style-type none
 	&>*
@@ -275,154 +223,108 @@ section
 				margin-right 5px
 		
 
-//--------------
-// Image Slider
-//--------------
-.project figure
-	Width-SM(6)
-	background Black
-	overflow hidden
-	height 100%
-	position relative
-	z-index 10
-	cursor pointer
-	
-	img
-	
-	&:hover a.image
-		opacity 1
-	
-	a.image
-		opacity 0
-		position absolute
-		bottom 0
-		text-align center
-		width 100%
-		background rgba(Red,0.7)
-		padding 10px
-		color White
-		&:hover
-			text-decoration none
-
-
-	&:hover .navigation
-		opacity 1
-
-	.tray
-		position absolute
-		height 100%
-		display block
-		top 0
-		left 0
-	
-	.slide
-		position relative
-		// display 
-		float left
-		width 100%
-		height 100%
+	//--------------
+	// Image Slider
+	//--------------
+	figure
+		Width-SM(6)
 		background Black
-		top 0
-		&>*
-			margin 0 auto
-		
-
-	.page-display
-		position absolute
-		color White
-		background Red
-		z-index 12
-		bottom 0
-		right 0
-		padding 15px 30px
-		// -webkit-transform translateY(100%)
-		// transform translateY(100%)
-
-	.navigation
-		opacity 0.5
-		background none
-		position absolute
+		overflow hidden
 		height 100%
-		width 100%
-		top 0
-		left 0
-		z-index 11
-		.arrow
-			background rgba(Black, 1)
+		position relative
+		z-index 10
+		cursor pointer
+		
+		img
+		
+		&:hover a.image
+			opacity 1
+		
+		a.image
+			opacity 0
+			position absolute
+			bottom 0
+			text-align center
+			width 100%
+			background rgba(Red,0.7)
+			padding 10px
+			color White
+			&:hover
+				text-decoration none
+
+
+		&:hover .navigation
+			opacity 1
+
+		.tray
 			position absolute
 			height 100%
-			width 10%
-			z-index 12
+			display block
 			top 0
-			cursor pointer
-			&.left
-				left 0
-			&.right
-				right 0
-			.fa
-				color White
+			left 0
+		
+		.slide
+			position relative
+			// display 
+			float left
+			width 100%
+			height 100%
+			background Black
+			top 0
+			&>*
+				margin 0 auto
+			
+
+		.page-display
+			position absolute
+			color White
+			background Red
+			z-index 12
+			bottom 0
+			right 0
+			padding 15px 30px
+			// -webkit-transform translateY(100%)
+			// transform translateY(100%)
+
+		.navigation
+			opacity 0.5
+			background none
+			position absolute
+			height 100%
+			width 100%
+			top 0
+			left 0
+			z-index 11
+			.arrow
+				background rgba(Black, 1)
 				position absolute
-				top 50%
-				left 50%
-			.icon
-				color White
-				position absolute
-				top 50%
-				left 50%
-				opacity 1
+				height 100%
+				width 10%
+				z-index 12
+				top 0
 				cursor pointer
-				font-size 2em
-				-webkit-transform translate(-50%, -50%)
-				transform translate(-50%, -50%)
+				&.left
+					left 0
+				&.right
+					right 0
+				.fa
+					color White
+					position absolute
+					top 50%
+					left 50%
+				.icon
+					color White
+					position absolute
+					top 50%
+					left 50%
+					opacity 1
+					cursor pointer
+					font-size 2em
+					-webkit-transform translate(-50%, -50%)
+					transform translate(-50%, -50%)
 
-			&:active .arrow
-				background rgba(Red, 1)
-    
-
-
-.clearfix
-	clear both	
-
-
-#author
-	background White
-	color Black
-	
-	figure
-		Width-MD(6)
-	.text
-		Width-MD(6)
-	
-#skills
-	background Black
-	color White
-	
-#projects
-	background White
-	color Black
-	.projects
-		Width-XS(12)
-	
-
-//---------
-//- Footer
-//---------
-footer#site-footer
-	background Black
-	
-	&>*:first-child
-		margin 0 auto
-
-	p
-		color Gray !important
-		text-align center
-	padding 50px 12.5%
-	font-size 10px
-	.updated
-		margin-top 10px
-		text-align center
-
-
+				&:active .arrow
+					background rgba(Red, 1)
 
 
 

@@ -1,3 +1,6 @@
+// Image Slider Plugin
+// DEPRECATED v2.2.3
+
 (function($, window, document) {
 	$.fn.ImageSlider = function(){
 		console.log(this);

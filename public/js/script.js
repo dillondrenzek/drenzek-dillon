@@ -1,3 +1,6 @@
+// Main JS Script
+// version 2.2.3
+
 (function($, window){
 	$(function(){
 
