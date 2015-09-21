@@ -273,14 +273,98 @@ section
 		// height 465px
 		overflow hidden
 		
-				
+#modal
+	position fixed
+	width 100%
+	height 100vh
+	top 0
+	left 0
+	background rgba(Black,0.8)
+	z-index 100
+	padding 60px
+	.close
+		position absolute
+		top 0
+		left 0
+		z-index 101
+		height 60px
+		width 60px
+		line-height 60px
+		text-align center
+		cursor pointer
+		background rgba(Black, 0.6)
+		color rgba(White, 0.6)
+		&:hover
+			background rgba(Black,0.9)
+			color rgba(White, 1.0)
+			text-decoration none
+		
+	figure
+		position relative
+		display block
+		height 100%
+		background rgba(Red,0.8)
+		img
+			height auto
+			width 100%
+	figcaption
+		position absolute
+		-webkit-transform translateY(100%)
+		transform translateY(100%)
+		width 100%
+		bottom 0
+		background rgba(Black,0.9)
+		color White
+		padding 20px 30px
+
+		
+	.arrow
+		position absolute
+		top 50%
+		-webkit-transform translateY(-100%)
+		transform translateY(-100%)
+		z-index 101
+		height 60px
+		width 60px
+		background rgba(Black, 0.6)
+		color rgba(White, 0.6)
+		cursor pointer
+		line-height 60px
+		text-align center
+		&:hover
+			background rgba(Black,0.9)
+			color rgba(White, 1.0)
+			text-decoration none
+		&.left
+			left 0
+		&.right
+			right 0		
 
 .image-slider
 	
 	height 100%
 	position relative
 	z-index 10
+	cursor pointer
+	// cursor -webkit-zoom-in
+	// cursor zoom-in
 	
+	&:hover a.image
+		opacity 1
+	
+	a.image
+		opacity 0
+		position absolute
+		bottom 0
+		text-align center
+		width 100%
+		background rgba(Red,0.7);
+		padding 10px
+		color White
+		&:hover
+			text-decoration none
+
+
 	&:hover .navigation
 		opacity 1
 

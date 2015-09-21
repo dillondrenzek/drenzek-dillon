@@ -86,19 +86,12 @@ block body
 					a(href="#{proj.launchURL}").button Launch
 				if (proj.githubURL)
 					a(href="#{proj.githubURL}").button View on GitHub
-			
 			if proj.imageURLs
 				figure.image-slider
-					.page-display
-					.control
-					.slider
-						each imageSrc in proj.imageURLs
-							img.slide(src="#{imageSrc}" alt="Test")
-						.clearfix
-
-			else		
+					img(src="#{proj.imageURLs[0]}" alt="#{proj.imageAlt}")
+			else
 				figure
-					img(src="#{proj.imageURL}" alt="#{proj.imageAlt}")
+					img(src="#{proj.imageURL}" alt="Test")
 
 	if projects && projects.length > 0
 		section#projects
