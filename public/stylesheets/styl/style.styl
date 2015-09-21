@@ -155,16 +155,19 @@ ModalButton()
 	left 0
 	background rgba(Black,0.9)
 	z-index 100
-	padding 60px
+	// padding 60px
 		
 	figure
-		position relative
+		position absolute
+		top 0
+		left 0
+		height 300px
+		width 400px
+		margin 60px
 		display block
-		height 100%
+		text-align center
+		// height 100%
 		background rgba(Red,0.8)
-		img
-			height auto
-			width 100%
 	figcaption
 		position absolute
 		-webkit-transform translateY(100%)
@@ -238,6 +241,7 @@ ModalButton()
 		cursor pointer
 		
 		img
+			margin 0 auto
 		
 		&:hover a.image
 			opacity 1

@@ -404,17 +404,17 @@ section .project {
   left: 0;
   background: rgba(48,48,48,0.9);
   z-index: 100;
-  padding: 60px;
 }
 #modal figure {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 400px;
+  margin: 60px;
   display: block;
-  height: 100%;
+  text-align: center;
   background: rgba(184,67,42,0.8);
-}
-#modal figure img {
-  height: auto;
-  width: 100%;
 }
 #modal figcaption {
   position: absolute;
@@ -535,7 +535,9 @@ section .project {
     width: 50%;
   }
 }
-.project figure img,
+.project figure img {
+  margin: 0 auto;
+}
 .project figure:hover a.image {
   opacity: 1;
 }
