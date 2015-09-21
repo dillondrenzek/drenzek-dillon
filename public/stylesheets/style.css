@@ -198,10 +198,12 @@ nav a {
 }
 .skill {
   background: #b8432a;
-  text-align: center;
-  padding: 0.25em 1em;
+  padding: 0.1em 0.8em;
   color: #fafafa;
+  text-align: center;
+  border-color: #b8432a;
   border-radius: 0.5em;
+  border-width: 1px;
   cursor: default;
 }
 .clearfix {
@@ -350,10 +352,20 @@ section .skills-container .skills {
   text-align: center;
 }
 section .skills-container .skills .skill {
-  margin-bottom: 10px;
+  background: #b8432a;
+  padding: 0.1em 0.8em;
+  color: #fafafa;
+  text-align: center;
+  border-color: #b8432a;
+  border-radius: 0.5em;
+  border-width: 1px;
+  cursor: default;
+  font-size: 1.25em;
+  padding: 0.25em 1.1em;
+  margin-bottom: 15px;
 }
 section .skills-container .skills .skill:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 section .project {
   padding-top: 70px;
@@ -498,10 +510,17 @@ section .project {
   margin-top: 0;
 }
 .project .title .skill {
-  margin-bottom: 5px;
+  background: #b8432a;
+  padding: 0.1em 0.8em;
+  color: #fafafa;
+  text-align: center;
+  border-color: #b8432a;
+  border-radius: 0.5em;
+  border-width: 1px;
+  cursor: default;
 }
 .project .title .skill:not(:last-child) {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .project figure {
   background: #303030;

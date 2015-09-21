@@ -1,4 +1,4 @@
-// Project Seed Data
+ // Project Seed Data
 // Version 2.2.3
 
 var projects = module.exports = [
@@ -24,6 +24,15 @@ var projects = module.exports = [
             imageURLs: ["images/capstone-portal.png"]
         },
         {
+            title: "Gridrunner",
+            type: "Web Game",
+            skills: ["jQuery", "JavaScript", "HTML", "CSS"],
+            description: "The team project I completed with my friend, Logan McCaul, from my Digital Media 2 class in Spring of 2014. The class was hooked the minute we let them play our game.",
+            launchURL: "", // Needs to be put up
+            githubURL: "https://github.com/dillondrenzek/gridrunner/tree/master/dm2-teamproject",
+            imageURLs: ["images/gridrunner.png"]
+        },
+        {
             title: "Storm Rebranding Case Study",
             type: "Website",
             skills: ["Jade", "Stylus", "Node.js", "jQuery"],
@@ -33,6 +42,15 @@ var projects = module.exports = [
             imageURLs: ["images/storm.jpg"]
         },
         {
+            title: "Le Faux Désign Compagnie",
+            type: "Website / Branding",
+            skills: ["jQuery", "CSS", "Illustrator", "Sketch", "UI Design"],
+            description: "I created a fake design company. The project was part of an advanced web design class I took in the Fall of 2014 at the University of Colorado.",
+            launchURL: "", // Eventually
+            imageURLs: ["images/le-faux-1.png",
+                        "images/le-faux-2.jpg"]
+        },
+        {
             title: "Drenzek Does Denmark",
             type: "Blog",
             skills: ["Angular.js", "MongoDB", "Node.js", "Jade", "Stylus"],
@@ -40,5 +58,12 @@ var projects = module.exports = [
             launchURL: "http://denmark.drenzek.com",
             githubURL: "https://github.com/dillondrenzek/drenzek-does-denmark",
             imageURLs: ["images/drenzek-does-denmark.png"]
+        },
+        {
+            title: "Cold For Now, Always Wondering",
+            type: "Artwork",
+            skills: ["Photoshop", "Photography"],
+            description: "On a frigid November night in Bozeman, Montana, I stood with my camera on a tripod aimed towards the heavens. With hot chocolate in hand, I pondered life's biggest questions. This piece was featured in the University of Colorado's 2015 Honors Journal.",
+            imageURLs: ["images/always-wondering.jpg"]
         }
         ];

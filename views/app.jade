@@ -6,9 +6,10 @@ mixin Skill(skill)
 	li.skill= skill
 
 mixin SkillsList(skills)
-	ul.skills
-		each s in skills
-			+Skill(s)
+	if skills
+		ul.skills
+			each s in skills
+				+Skill(s)
 
 mixin SkillsContainer(title, skills)
 	.skills-container
@@ -33,7 +34,7 @@ mixin Project(proj)
 				img(src="#{proj.imageURLs[0]}" alt="#{proj.imageAlt}")
 		else
 			figure
-				img(src="/images/profile.jpg" alt="Test")
+				//- img(src="/images/profile.jpg" alt="Test")
 
 //- Social Media Links
 mixin SocialMedia()
