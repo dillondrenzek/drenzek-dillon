@@ -24,13 +24,6 @@
 			}
 		});
 		$modal.index = 0;
-		// $modal.__defineGetter__('index', function(){
-		// 	return $modal.index;
-		// });
-		// $modal.__defineSetter__('index', function(val){
-		// 	// $modal.index = val;
-		// 	$modal.find('.slider').css({"left": -($modal.index*$modal.find('.slide').width())});
-		// });
 		
 
 		function sizeImage(img){
@@ -111,8 +104,6 @@
 		function presentModal(projectFigure){
 			$modal.show();
 
-
-			// var $modal = $('#modal');
 			var $modalFigure = $modal.find('figure');
 			var $modalSlider = $modal.find('.slider');
 
