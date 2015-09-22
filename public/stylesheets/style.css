@@ -458,11 +458,15 @@ section .project {
   cursor: pointer;
   line-height: 60px;
   text-align: center;
+  font-size: 1.25em;
 }
 #modal .close:hover {
   background: rgba(48,48,48,0.9);
   color: #fafafa;
   text-decoration: none;
+}
+#modal .close:active {
+  background: rgba(184,67,42,0.9);
 }
 #modal .arrow {
   top: 50%;
@@ -477,11 +481,15 @@ section .project {
   cursor: pointer;
   line-height: 60px;
   text-align: center;
+  font-size: 1.25em;
 }
 #modal .arrow:hover {
   background: rgba(48,48,48,0.9);
   color: #fafafa;
   text-decoration: none;
+}
+#modal .arrow:active {
+  background: rgba(184,67,42,0.9);
 }
 #modal .arrow.left {
   left: 0;
