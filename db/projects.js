@@ -9,10 +9,10 @@ var projects = module.exports = [
             description: "A major project in my Capstone class during the Spring of 2015. I went above and beyond the requirements by using Node and the graph database, Neo4j. This is the first version of the site you're on :)",
             launchURL: "http://drenzek-capstone-portfolio.herokuapp.com",
             githubURL: "https://github.com/dillondrenzek/drenzek-capstone-portfolio",
-            imageURLs: ["images/large-images/drenzek-dillon-v1-1.png",
-                        "images/large-images/drenzek-dillon-v1-2.png",
-                        "images/large-images/drenzek-dillon-v1-3.png",
-                        "images/large-images/drenzek-dillon-v1-4.png"]
+            imageURLs: ["images/capstone-portfolio-1.jpg",
+                        "images/capstone-portfolio-2.jpg",
+                        "images/capstone-portfolio-3.jpg",
+                        "images/capstone-portfolio-4.jpg"]
         },
         {
             title: "Capstone Project Portal",
