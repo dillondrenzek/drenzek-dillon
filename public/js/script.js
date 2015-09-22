@@ -139,10 +139,15 @@
 		function initializeProjectFigures(){
 			// Initialize Project Figures
 			var frameRatio = 4/3;
-			$('.project figure')
-				.prepend($("<a>", { "href" : "#",
+			var $figure = $('.project').find('figure');
+
+			if ($figure.find('a.image').length === 0) {
+				$figure.prepend($("<a>", { "href" : "#",
 									"class" : "image",
 									"text" : "Click to View More Photos"}))
+			};
+
+			$('.project figure')
 				.each(function(){
 					var $this = $(this);
 					// console.log("----");
