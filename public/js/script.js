@@ -4,6 +4,35 @@
 (function($, window){
 	$(function(){
 
+		// Global
+		var $modal = $('#modal');
+		Object.defineProperty($modal, "index", {
+			get: function(){return index;},
+			set: function(v){
+				index = v;
+				var numSlides = $modal.find('.slide').length;
+
+				if (index < 0 ) { 
+					index = 0;
+					return; 
+				} else if (index >= numSlides) {
+					index = numSlides-1;
+					return;
+				}
+
+				$modal.find('.slider').css({"left": -($modal.index*$modal.find('.slide').width())});
+			}
+		});
+		$modal.index = 0;
+		// $modal.__defineGetter__('index', function(){
+		// 	return $modal.index;
+		// });
+		// $modal.__defineSetter__('index', function(val){
+		// 	// $modal.index = val;
+		// 	$modal.find('.slider').css({"left": -($modal.index*$modal.find('.slide').width())});
+		// });
+		
+
 		function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
 			var frame = $img.closest('figure');
@@ -33,36 +62,78 @@
 			$('.close')
 				.click(function(e){
 					e.preventDefault();
-					$('#modal').hide();
-					$('#modal').find('img').removeClass("landscape portrait"); });
+					closeModal();
+
+				});
 
 			$('.arrow')
 				.click(function(e){
 					e.preventDefault();
 					if ($(this).hasClass("left")) {
-						console.log("left");
+						// console.log("left");
+						$modal.index--;
+
 					} else if ($(this).hasClass("right")) {
-						console.log("right");
-					} });
-
-			// Hide Modal
-			$('#modal').hide();
-		};
-
-		function presentModal(slider){
-			var $slider = $(slider);
-			var images = $slider
-				.find('img')
-			$('#modal')
-				.find('img')
-				.attr({"src": $(images[0]).attr("src")})
-				.each(function(){
-					console.log("modal");
-					sizeImage($(this));
+						// console.log("right");
+						$modal.index++
+					} 
+					
 				});
 
-			$('#modal').show();
+			// Hide Modal
+			$modal.hide();
 		};
+
+		function addModalImages($dest, images){
+			images.each(function(){
+				console.log(this);
+				$dest
+					.append($('<div>', {
+						"class": "slide"
+					})
+						.append($('<img/>', {
+							"src" : $(this).attr("src")
+						})));
+			});
+		}
+
+		function alignSlides(){
+			var $modalFigure = $modal.find('figure');
+			$('.slide')
+				.height($modalFigure.height())
+				.width($modalFigure.width())
+				.each(function(i, e){
+					$(e).css({"left": i*$modalFigure.width()});
+				});
+			sizeImage($('.slide').find('img'));
+		}
+
+		function presentModal(projectFigure){
+			$modal.show();
+
+
+			// var $modal = $('#modal');
+			var $modalFigure = $modal.find('figure');
+			var $modalSlider = $modal.find('.slider');
+
+			// add in photos from projectFigure
+			addModalImages($modalSlider, $(projectFigure).find('img'));
+			console.log($modalSlider);
+
+			// align those photos within a slider (by force?)
+			alignSlides();
+			
+		}
+
+		function closeModal(){
+			$modal.index = 0;
+
+			$modal
+				.find('.slide')
+				.remove();
+
+			$modal.hide();
+		}
 		
 
 		function initializeProjectFigures(){
@@ -99,6 +170,7 @@
 		$(window).on('resize', function(){
 			initializeProjectFigures();
 			initializeModal();
+			alignSlides();
 		});
 			
 	});

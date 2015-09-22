@@ -416,11 +416,23 @@ section .project {
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  height: 60%;
-  width: 40%;
+  height: 80%;
+  width: 66.66666667%;
   margin: 0 auto;
   text-align: center;
   background: rgba(184,67,42,0.8);
+  overflow: hidden;
+}
+#modal figure .slider {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+}
+#modal figure .slider .slide {
+  position: absolute;
+  display: inline-block;
 }
 #modal figcaption {
   position: absolute;
@@ -542,6 +554,9 @@ section .project {
 .project figure img {
   margin: 0 auto;
 }
+.project figure img :not(:first-child) {
+  display: none;
+}
 .project figure:hover a.image {
   opacity: 1;
 }
@@ -560,78 +575,6 @@ section .project {
 }
 .project figure:hover .navigation {
   opacity: 1;
-}
-.project figure .tray {
-  position: absolute;
-  height: 100%;
-  display: block;
-  top: 0;
-  left: 0;
-}
-.project figure .slide {
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 100%;
-  background: #303030;
-  top: 0;
-}
-.project figure .slide>* {
-  margin: 0 auto;
-}
-.project figure .page-display {
-  position: absolute;
-  color: #fafafa;
-  background: #b8432a;
-  z-index: 12;
-  bottom: 0;
-  right: 0;
-  padding: 15px 30px;
-}
-.project figure .navigation {
-  opacity: 0.5;
-  background: none;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 11;
-}
-.project figure .navigation .arrow {
-  background: #303030;
-  position: absolute;
-  height: 100%;
-  width: 10%;
-  z-index: 12;
-  top: 0;
-  cursor: pointer;
-}
-.project figure .navigation .arrow.left {
-  left: 0;
-}
-.project figure .navigation .arrow.right {
-  right: 0;
-}
-.project figure .navigation .arrow .fa {
-  color: #fafafa;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-.project figure .navigation .arrow .icon {
-  color: #fafafa;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 1;
-  cursor: pointer;
-  font-size: 2em;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.project figure .navigation .arrow:active .arrow {
-  background: #b8432a;
 }
 @media (min-width: 768px) {
   #site-title {
