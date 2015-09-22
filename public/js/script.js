@@ -1,5 +1,5 @@
 // Main JS Script
-// version 2.2.3
+// version 2.2.4
 
 (function($, window){
 	$(function(){
@@ -29,7 +29,6 @@
 		function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
 			var frame = $img.closest('figure');
-			// var frameRatio = frame.width()/frame.height();
 			var imgRatio, frameRatio;
 			$img.load(function(){
 				imgRatio = this.width/this.height;
