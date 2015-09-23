@@ -1,31 +1,17 @@
 // Main JS Script
-// version 2.2.4
+// version 2.3.0
 
 (function($, window){
 	$(function(){
 
 		// Global
-		var $modal = $('#modal');
-		Object.defineProperty($modal, "index", {
-			get: function(){return index;},
-			set: function(v){
-				index = v;
-				var numSlides = $modal.find('.slide').length;
+		var $modal = $('#modal').initImageModal();
 
-				if (index < 0 ) { 
-					index = 0;
-					return; 
-				} else if (index >= numSlides) {
-					index = numSlides-1;
-					return;
-				}
 
-				$modal.find('.slider').css({"left": -($modal.index*$modal.find('.slide').width())});
-			}
-		});
-		$modal.index = 0;
-		
 
+
+
+		// Helper : To be abstracted
 		function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
 			var frame = $img.closest('figure');
@@ -34,97 +20,22 @@
 				imgRatio = this.width/this.height;
 				frameRatio = frame.width()/frame.height();
 
-				// console.log("-----")
-				// console.log("frame", frame, frameRatio);
-				// console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
-				
 				if (imgRatio > frameRatio) {
-					// console.log("landscape");
 					$img.addClass('landscape'); // width 100% height auto 
 				} else {
-					// console.log("portrait");
 					$img.addClass('portrait'); // width auto height 100%
 				}
 
 			});
 		};
 
-		function initializeModal(){
 
-			$('.close')
-				.click(function(e){
-					e.preventDefault();
-					closeModal();
 
-				});
 
-			$('.arrow')
-				.click(function(e){
-					e.preventDefault();
-					if ($(this).hasClass("left")) {
-						// console.log("left");
-						$modal.index--;
 
-					} else if ($(this).hasClass("right")) {
-						// console.log("right");
-						$modal.index++
-					} 
-					
-				});
-
-			// Hide Modal
-			$modal.hide();
-		};
-
-		function addModalImages($dest, images){
-			images.each(function(){
-				console.log(this);
-				$dest
-					.append($('<div>', {
-						"class": "slide"
-					})
-						.append($('<img/>', {
-							"src" : $(this).attr("src")
-						})));
-			});
-		}
-
-		function alignSlides(){
-			var $modalFigure = $modal.find('figure');
-			$('.slide')
-				.height($modalFigure.height())
-				.width($modalFigure.width())
-				.each(function(i, e){
-					$(e).css({"left": i*$modalFigure.width()});
-				});
-			sizeImage($('.slide').find('img'));
-		}
-
-		function presentModal(projectFigure){
-			$modal.show();
-
-			var $modalFigure = $modal.find('figure');
-			var $modalSlider = $modal.find('.slider');
-
-			// add in photos from projectFigure
-			addModalImages($modalSlider, $(projectFigure).find('img'));
-			console.log($modalSlider);
-
-			// align those photos within a slider (by force?)
-			alignSlides();
-			
-		}
-
-		function closeModal(){
-			$modal.index = 0;
-
-			$modal
-				.find('.slide')
-				.remove();
-
-			$modal.hide();
-		}
-		
+		// Initialize Project Figures
+		// - improvements:
+		// ?? call with $(...).initProjectFigure() 
 
 		function initializeProjectFigures(){
 			// Initialize Project Figures
@@ -154,19 +65,12 @@
 				})
 				.click(function(e){
 					e.preventDefault();
-					presentModal(this); 
+					// presentModal(this);
+					$modal.present(this); 
 				});
 		}
-		
 
 		initializeProjectFigures();
-		initializeModal();
-
-		$(window).on('resize', function(){
-			initializeProjectFigures();
-			initializeModal();
-			alignSlides();
-		});
 			
 	});
 })(jQuery, window);

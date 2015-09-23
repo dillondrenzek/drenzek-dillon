@@ -1,5 +1,5 @@
 //- App Template
-//- version 2.2.4
+//- version 2.3.0
 
 //- Skills
 mixin Skill(skill)
@@ -29,13 +29,10 @@ mixin Project(proj)
 				a(href="#{proj.launchURL}").button Launch
 			if (proj.githubURL)
 				a(href="#{proj.githubURL}").button View on GitHub
-		if proj.imageURLs
-			figure
+		figure
+			if proj.imageURLs
 				each url in proj.imageURLs
 					img(src="#{url}" alt="#{proj.title}")
-		else
-			figure
-				//- img(src="/images/profile.jpg" alt="Test")
 
 //- Social Media Links
 mixin SocialMedia()
@@ -44,16 +41,6 @@ mixin SocialMedia()
 		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
 		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
 		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
-
-//- Image Modal
-mixin ImageModal()
-	#modal
-		a.close.fa.fa-remove
-		a.arrow.left.fa.fa-chevron-left
-		a.arrow.right.fa.fa-chevron-right
-		figure
-			.slider
-		//- figcaption Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 doctype
 html
@@ -72,6 +59,7 @@ html
 
 		//- jQuery
 		script(src="/js/jquery-1.11.2.min.js")
+		script(src="/js/jquery.ImageModal.js")
 		script(src="/js/script.js")
 
 		//- Google Analytics
@@ -99,5 +87,5 @@ html
 						li: a(href="#skills") Skills
 			block body
 			footer#site-footer
-		+ImageModal()
+		#modal
 				
