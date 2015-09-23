@@ -11,7 +11,9 @@
 		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
-
+			imageContainer: '.slider',
+			imageFrame: 'figure',
+			imageSlide: '.slide'
 		};
 
 		var ImageModal = (function(){
@@ -42,16 +44,20 @@
 		};
 
 		ImageModal.prototype.present = function(element){
-			console.log("present images from:", element);
+			// console.log("present images from:", element);
 			$this.show();
 
+			var $modalSlider = $this.find(this.options.imageContainer);
+
 			// add in photos from element
-			this.addImages($this, $(element).find('img'));
+			this.addImages($modalSlider, $(element).find('img'));
+
+			this.resize();
 		};
 
 		ImageModal.prototype.dismiss = function(){
 			console.log("dismiss");
-			$this.index = 0;
+			this.index = 0;
 			$this.find('slide').remove();
 			$this.hide();
 		};
@@ -64,11 +70,53 @@
 			console.log("decrement");
 		};
 
-		ImageModal.prototype.addImages = function(container, source){};
+		ImageModal.prototype.addImages = function($container, source){
+			console.log("add images into", $container, "from", source);
+			source.each(function(){
+				$container
+					.append($('<div>', {
+						"class": "slide"
+					})
+						.append($('<img/>', {
+							"src" : $(this).attr("src")
+						})));
+			});
+		};
 
-		ImageModal.prototype.resize = function(){};
+		ImageModal.prototype.resize = function(){
+			console.log("resize modal");
+			var $modalFigure = $this.find(this.options.imageFrame);
+			$(this.options.imageSlide)
+				.height($modalFigure.height())
+				.width($modalFigure.width())
+				.each(function(i,e){
+					$(e).css({"left": i * $modalFigure.width()});
+				});
+			// TO ADD: sizeImage($('.slide').find('img'));
+		};
 
+		// function sizeImage(img){
+		// 	var $img = (img instanceof jQuery) ? img : $(img);
+		// 	var frame = $img.closest('figure');
+		// 	var imgRatio, frameRatio;
+		// 	$img.load(function(){
+		// 		imgRatio = this.width/this.height;
+		// 		frameRatio = frame.width()/frame.height();
 
+		// 		// console.log("-----")
+		// 		// console.log("frame", frame, frameRatio);
+		// 		// console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
+				
+		// 		if (imgRatio > frameRatio) {
+		// 			// console.log("landscape");
+		// 			$img.addClass('landscape'); // width 100% height auto 
+		// 		} else {
+		// 			// console.log("portrait");
+		// 			$img.addClass('portrait'); // width auto height 100%
+		// 		}
+
+		// 	});
+		// };
 
 		return new ImageModal();
 	};
