@@ -4,6 +4,11 @@
 
 //- v0.0.0
 
+//- this: refers to objects part of this plugin
+//- $this: the jquery object this was called on
+
+
+
 (function( $ ) {
 
 	// Helper : To be abstracted
@@ -38,9 +43,21 @@
 		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
-			imageContainer: '.slider',
-			imageFrame: 'figure',
-			imageSlide: '.slide'
+			
+			selectors: {
+				slide: '.slide'
+			}, // unreliable
+			templates: {
+				frame: '<figure></figure>',
+				tray: '<div class="slider"></div>',
+				slide: '<div class="slide"></div>',// this is unstable (selectors.slide should be equivalent)
+				buttons: {
+					close: '<a href="#" class="close fa fa-remove"></a>',
+					left: '<a href="#" class="arrow left fa fa-chevron-left"></a>',
+					right: '<a href="#" class="arrow right fa fa-chevron-right"></a>'
+				}
+			}
+			
 		};
 
 		var ImageModal = (function(){
@@ -48,7 +65,12 @@
 			function ImageModal( options ) {
 				console.log("ImageModal()");
 				this.options = $.extend(true, {}, defaults, options);
-				// this.index = 0;
+				this.$closeButton = $(this.options.templates.buttons.close);
+				this.$leftButton = $(this.options.templates.buttons.left);
+				this.$rightButton = $(this.options.templates.buttons.right);
+				this.$frame = $(this.options.templates.frame);
+				this.$tray = $(this.options.templates.tray);
+				this.$slide = $(this.options.selectors.slide);
 				this.init();
 			}
 
@@ -56,17 +78,102 @@
 
 		})();
 
+		
+
+
+
+		// Prototype Functions
+		ImageModal.prototype.init = function(){
+			console.log("init");
+			this.index = 0;
+			$this
+				.append(this.$closeButton)
+				.append(this.$leftButton)
+				.append(this.$rightButton)
+				.append(this.$frame
+					.append(this.$tray))
+				.hide();
+		};
+
+		ImageModal.prototype.present = function(element){
+			// console.log("present images from:", element);
+			$this.show();
+
+			// add in photos from element
+			this.addImages(this.$tray, $(element).find('img'));
+
+			this.resize();
+		};
+
+		ImageModal.prototype.dismiss = function(){
+			console.log("dismiss");
+			this.index = 0;
+			$(this.options.selectors.slide).remove();
+			$this.hide();
+		};
+
+		ImageModal.prototype._gotoSlide = function(index){
+			// Adjust imageContainer according to value of index
+			// var $t = this.$tray,
+			var $f = this.$frame;
+
+			this.$tray.css({"left": -(index * $f.width())});
+		};
+
+		ImageModal.prototype.increment = function(){
+			this.index++;
+		};
+
+		ImageModal.prototype.decrement = function(){
+			this.index--;
+		};
+
+		ImageModal.prototype.addImages = function($container, source){
+			// console.log("add images into", $container, "from", source);
+			// console.log("num images: ", source.length);
+			// var $slide = this.$slide;
+			var modal = this;
+			source.each(function(){
+				$container
+					.append($('<div>', {
+						"class": "slide"
+					})
+						.append($('<img/>', {
+							"src" : $(this).attr("src")
+						})));
+			});
+			this.resize();
+		};
+
+		ImageModal.prototype.resize = function(){
+			// console.log("resize modal");
+			var $f = this.$frame;
+			$('.slide')
+				.height($f.height())
+				.width($f.width())
+				.each(function(i,e){
+					$(e).css({"left": i * $f.width()});
+				});
+			sizeImage($(this.options.imageSlide).find('img'));
+			this._gotoSlide(this.index);
+
+			// console.log("this.$slide", this.$slide);
+		};
+
+
+		// var $slide;
+		// Object.defineProperty(ImageModal.prototype, "$slide", {
+		// 	get: function(){return $(this.options.imageSlide)}
+		// });
+
 		// Define index property
 		var index = 0;
 		Object.defineProperty(ImageModal.prototype, "index", {
 			get: function(){return index;},
 			set: function(val){
 
-				
-				
-
 				// turn this into a stored variable
-				var numSlides = $this.find(this.options.imageSlide).length || 0;
+				var numSlides = $('.slide').length || 0;
 				console.log("numSlides", numSlides);
 
 				// Sanity check: Bounds 0 =< (possible indexes) < numSlides
@@ -81,76 +188,6 @@
 				this._gotoSlide(index);
 			}
 		});
-
-
-
-		// Prototype Functions
-		ImageModal.prototype.init = function(){
-			console.log("init");
-			this.index = 0;
-			$this.hide();
-		};
-
-		ImageModal.prototype.present = function(element){
-			// console.log("present images from:", element);
-			$this.show();
-
-			var $modalSlider = $this.find(this.options.imageContainer);
-
-			// add in photos from element
-			this.addImages($modalSlider, $(element).find('img'));
-
-			this.resize();
-		};
-
-		ImageModal.prototype.dismiss = function(){
-			console.log("dismiss");
-			this.index = 0;
-			$this.find('.slide').remove();
-			$this.hide();
-		};
-
-		ImageModal.prototype._gotoSlide = function(index){
-			// Adjust imageContainer according to value of index
-			$this.find(this.options.imageContainer).css({"left": -(index * $this.find(this.options.imageSlide).width())});
-		};
-
-		ImageModal.prototype.increment = function(){
-			this.index++;
-		};
-
-		ImageModal.prototype.decrement = function(){
-			this.index--;
-		};
-
-		ImageModal.prototype.addImages = function($container, source){
-			console.log("add images into", $container, "from", source);
-			console.log("num images: ", source.length);
-			source.each(function(){
-				$container
-					.append($('<div>', {
-						"class": "slide"
-					})
-						.append($('<img/>', {
-							"src" : $(this).attr("src")
-						})));
-			});
-		};
-
-		ImageModal.prototype.resize = function(){
-			console.log("resize modal");
-			var $modalFigure = $this.find(this.options.imageFrame);
-			$(this.options.imageSlide)
-				.height($modalFigure.height())
-				.width($modalFigure.width())
-				.each(function(i,e){
-					$(e).css({"left": i * $modalFigure.width()});
-				});
-			sizeImage($(this.options.imageSlide).find('img'));
-			this._gotoSlide(this.index);
-		};
-
-		
 
 		return new ImageModal();
 	};
