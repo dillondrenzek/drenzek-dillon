@@ -159,13 +159,22 @@
 		}
 		
 
+
 		initializeProjectFigures();
-		initializeModal();
+		// initializeModal();
+
+		
+		var $modal = $('#modal').initImageModal();
+
+		$modal.present();
+
+
+
 
 		$(window).on('resize', function(){
-			initializeProjectFigures();
-			initializeModal();
-			alignSlides();
+			// initializeProjectFigures();
+			// initializeModal();
+			// alignSlides();
 		});
 			
 	});
