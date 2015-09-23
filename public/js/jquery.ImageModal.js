@@ -6,6 +6,33 @@
 
 (function( $ ) {
 
+	// Helper : To be abstracted
+	function sizeImage(img){
+			var $img = (img instanceof jQuery) ? img : $(img);
+			var frame = $img.closest('figure');
+			var imgRatio, frameRatio;
+			$img.load(function(){
+				imgRatio = this.width/this.height;
+				frameRatio = frame.width()/frame.height();
+
+				// console.log("-----")
+				// console.log("frame", frame, frameRatio);
+				// console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
+				
+				if (imgRatio > frameRatio) {
+					// console.log("landscape");
+					$img.addClass('landscape'); // width 100% height auto 
+				} else {
+					// console.log("portrait");
+					$img.addClass('portrait'); // width auto height 100%
+				}
+
+			});
+		};
+
+
+
+
 	$.fn.initImageModal = function( options ){
 		var defaults, pluginName, $this;
 		$this = this;
@@ -32,11 +59,13 @@
 		Object.defineProperty(ImageModal.prototype, "index", {
 			get: function(){return index;},
 			set: function(v){
+				if (v<0) { index = 0; return; }
 				index = v;
 				console.log("ImageModal.index set:", index);
 			}
 		});
 
+		// Prototype Functions
 		ImageModal.prototype.init = function(){
 			console.log("init");
 			this.index = 0;
@@ -58,16 +87,18 @@
 		ImageModal.prototype.dismiss = function(){
 			console.log("dismiss");
 			this.index = 0;
-			$this.find('slide').remove();
+			$this.find('.slide').remove();
 			$this.hide();
 		};
 
 		ImageModal.prototype.increment = function(){
 			console.log("increment");
+			this.index++;
 		};
 
 		ImageModal.prototype.decrement = function(){
 			console.log("decrement");
+			this.index--;
 		};
 
 		ImageModal.prototype.addImages = function($container, source){
@@ -92,31 +123,10 @@
 				.each(function(i,e){
 					$(e).css({"left": i * $modalFigure.width()});
 				});
-			// TO ADD: sizeImage($('.slide').find('img'));
+			sizeImage($(this.options.imageSlide).find('img'));
 		};
 
-		// function sizeImage(img){
-		// 	var $img = (img instanceof jQuery) ? img : $(img);
-		// 	var frame = $img.closest('figure');
-		// 	var imgRatio, frameRatio;
-		// 	$img.load(function(){
-		// 		imgRatio = this.width/this.height;
-		// 		frameRatio = frame.width()/frame.height();
-
-		// 		// console.log("-----")
-		// 		// console.log("frame", frame, frameRatio);
-		// 		// console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
-				
-		// 		if (imgRatio > frameRatio) {
-		// 			// console.log("landscape");
-		// 			$img.addClass('landscape'); // width 100% height auto 
-		// 		} else {
-		// 			// console.log("portrait");
-		// 			$img.addClass('portrait'); // width auto height 100%
-		// 		}
-
-		// 	});
-		// };
+		
 
 		return new ImageModal();
 	};
