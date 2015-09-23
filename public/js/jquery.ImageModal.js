@@ -48,6 +48,7 @@
 			function ImageModal( options ) {
 				console.log("ImageModal()");
 				this.options = $.extend(true, {}, defaults, options);
+				// this.index = 0;
 				this.init();
 			}
 
@@ -56,14 +57,33 @@
 		})();
 
 		// Define index property
+		var index = 0;
 		Object.defineProperty(ImageModal.prototype, "index", {
 			get: function(){return index;},
-			set: function(v){
-				if (v<0) { index = 0; return; }
-				index = v;
-				console.log("ImageModal.index set:", index);
+			set: function(val){
+				// turn this into a stored variable
+				var numSlides = $this.find(this.options.imageSlide).length;
+				console.log("numSlides", numSlides);
+
+				// Sanity check
+				if (val < 0 || !numSlides) {
+					index = 0;
+					return;
+				} else if (val > numSlides-1) {
+					index = numSlides-1;
+					return;
+				} else {
+					index = val;
+				}
+
+
+				$this.find(this.options.imageContainer).css({"left": -(index * $this.find(this.options.imageSlide).width())});
+
+				console.log("ImageModal.index set:", index, " (tried:", val,")");
 			}
 		});
+
+
 
 		// Prototype Functions
 		ImageModal.prototype.init = function(){
@@ -92,17 +112,18 @@
 		};
 
 		ImageModal.prototype.increment = function(){
-			console.log("increment");
+			// console.log("increment");
 			this.index++;
 		};
 
 		ImageModal.prototype.decrement = function(){
-			console.log("decrement");
+			// console.log("decrement");
 			this.index--;
 		};
 
 		ImageModal.prototype.addImages = function($container, source){
 			console.log("add images into", $container, "from", source);
+			console.log("num images: ", source.length);
 			source.each(function(){
 				$container
 					.append($('<div>', {
