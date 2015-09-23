@@ -116,6 +116,49 @@
 		
 		
 
+		
+		// initializeModal();
+
+		
+		
+
+		// $modal.present();
+		// $modal.index = 0;
+
+		$('.close').click(function(e){
+			e.preventDefault();
+			$modal.dismiss();
+		});
+
+		$('.arrow')
+			.click(function(e){
+				e.preventDefault();
+				if ($(this).hasClass("left")) {
+					// console.log("left");
+					$modal.decrement();
+
+				} else if ($(this).hasClass("right")) {
+					// console.log("right");
+					$modal.increment();
+				} 
+				
+			});
+
+
+
+		$(window).on('resize', function(){
+			$modal.resize();
+			// initializeProjectFigures();
+			// initializeModal();
+			// alignSlides();
+		});
+
+
+
+		// Initialize Project Figures
+		// - improvements:
+		// ?? call with $(...).initProjectFigure() 
+
 		function initializeProjectFigures(){
 			// Initialize Project Figures
 			var frameRatio = 4/3;
@@ -152,41 +195,6 @@
 
 
 		initializeProjectFigures();
-		// initializeModal();
-
-		
-		
-
-		// $modal.present();
-		// $modal.index = 0;
-
-		$('.close').click(function(e){
-			e.preventDefault();
-			$modal.dismiss();
-		});
-
-		$('.arrow')
-			.click(function(e){
-				e.preventDefault();
-				if ($(this).hasClass("left")) {
-					// console.log("left");
-					$modal.decrement();
-
-				} else if ($(this).hasClass("right")) {
-					// console.log("right");
-					$modal.increment();
-				} 
-				
-			});
-
-
-
-		$(window).on('resize', function(){
-			$modal.resize();
-			// initializeProjectFigures();
-			// initializeModal();
-			// alignSlides();
-		});
 			
 	});
 })(jQuery, window);

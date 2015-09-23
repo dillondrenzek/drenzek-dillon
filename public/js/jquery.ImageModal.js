@@ -61,25 +61,24 @@
 		Object.defineProperty(ImageModal.prototype, "index", {
 			get: function(){return index;},
 			set: function(val){
+
+				
+				
+
 				// turn this into a stored variable
-				var numSlides = $this.find(this.options.imageSlide).length;
+				var numSlides = $this.find(this.options.imageSlide).length || 0;
 				console.log("numSlides", numSlides);
 
-				// Sanity check
-				if (val < 0 || !numSlides) {
-					index = 0;
-					return;
-				} else if (val > numSlides-1) {
-					index = numSlides-1;
-					return;
-				} else {
+				// Sanity check: Bounds 0 =< (possible indexes) < numSlides
+				if (0 <= val && val < numSlides) {
 					index = val;
+				} else {
+					return;
 				}
 
-
-				$this.find(this.options.imageContainer).css({"left": -(index * $this.find(this.options.imageSlide).width())});
-
 				console.log("ImageModal.index set:", index, " (tried:", val,")");
+
+				this._gotoSlide(index);
 			}
 		});
 
@@ -111,13 +110,16 @@
 			$this.hide();
 		};
 
+		ImageModal.prototype._gotoSlide = function(index){
+			// Adjust imageContainer according to value of index
+			$this.find(this.options.imageContainer).css({"left": -(index * $this.find(this.options.imageSlide).width())});
+		};
+
 		ImageModal.prototype.increment = function(){
-			// console.log("increment");
 			this.index++;
 		};
 
 		ImageModal.prototype.decrement = function(){
-			// console.log("decrement");
 			this.index--;
 		};
 
@@ -145,6 +147,7 @@
 					$(e).css({"left": i * $modalFigure.width()});
 				});
 			sizeImage($(this.options.imageSlide).find('img'));
+			this._gotoSlide(this.index);
 		};
 
 		
