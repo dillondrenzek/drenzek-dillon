@@ -7,7 +7,8 @@
 (function( $ ) {
 
 	$.fn.initImageModal = function( options ){
-		var defaults, pluginName;
+		var defaults, pluginName, $this;
+		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
 
@@ -25,18 +26,34 @@
 
 		})();
 
-
+		// Define index property
+		Object.defineProperty(ImageModal.prototype, "index", {
+			get: function(){return index;},
+			set: function(v){
+				index = v;
+				console.log("ImageModal.index set:", index);
+			}
+		});
 
 		ImageModal.prototype.init = function(){
 			console.log("init");
+			this.index = 0;
+			$this.hide();
 		};
 
-		ImageModal.prototype.present = function(){
-			console.log("present");
+		ImageModal.prototype.present = function(element){
+			console.log("present images from:", element);
+			$this.show();
+
+			// add in photos from element
+			this.addImages($this, $(element).find('img'));
 		};
 
 		ImageModal.prototype.dismiss = function(){
 			console.log("dismiss");
+			$this.index = 0;
+			$this.find('slide').remove();
+			$this.hide();
 		};
 
 		ImageModal.prototype.increment = function(){
@@ -46,6 +63,10 @@
 		ImageModal.prototype.decrement = function(){
 			console.log("decrement");
 		};
+
+		ImageModal.prototype.addImages = function(container, source){};
+
+		ImageModal.prototype.resize = function(){};
 
 
 
