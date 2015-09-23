@@ -2,33 +2,27 @@
 //- jQuery Plugin
 //- by Dillon Drenzek
 
-//- v0.0.0
+//- v1.0.0
 
 //- this: refers to objects part of this plugin
 //- $this: the jquery object this was called on
 
 
 
-(function( $ ) {
+(function( $, window ) {
 
 	// Helper : To be abstracted
 	function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
-			var frame = $img.closest('figure');
+			var frame = $img.closest('.slide');
 			var imgRatio, frameRatio;
 			$img.load(function(){
 				imgRatio = this.width/this.height;
 				frameRatio = frame.width()/frame.height();
-
-				// console.log("-----")
-				// console.log("frame", frame, frameRatio);
-				// console.log("img", $img.attr("alt"), this.width, this.height, imgRatio);
 				
 				if (imgRatio > frameRatio) {
-					// console.log("landscape");
 					$img.addClass('landscape'); // width 100% height auto 
 				} else {
-					// console.log("portrait");
 					$img.addClass('portrait'); // width auto height 100%
 				}
 
@@ -71,7 +65,7 @@
 				this.$frame = $(this.options.templates.frame);
 				this.$tray = $(this.options.templates.tray);
 				this.$slide = $(this.options.selectors.slide);
-				this.init();
+				this._init();
 			}
 
 			return ImageModal;
@@ -79,19 +73,41 @@
 		})();
 
 		
-
-
-
 		// Prototype Functions
-		ImageModal.prototype.init = function(){
-			console.log("init");
-			this.index = 0;
+		ImageModal.prototype._init = function(){
+			var _this = this;
+
+			// Default Values
+			_this.index = 0;
+
+			// Event Listeners
+			_this.$closeButton.click(function(e){
+				e.preventDefault();
+				_this.dismiss();
+			});
+
+			_this.$leftButton.click(function(e){
+				e.preventDefault();
+				_this.decrement();
+			});
+
+			_this.$rightButton.click(function(e){
+				e.preventDefault();
+				_this.increment();
+			});
+
+			$(window).on('resize', function(){
+				console.log("image modal resize");
+				_this.resize();
+			});
+
+			// Add Static Items
 			$this
-				.append(this.$closeButton)
-				.append(this.$leftButton)
-				.append(this.$rightButton)
-				.append(this.$frame
-					.append(this.$tray))
+				.append(_this.$closeButton)
+				.append(_this.$leftButton)
+				.append(_this.$rightButton)
+				.append(_this.$frame
+					.append(_this.$tray))
 				.hide();
 		};
 
@@ -114,7 +130,6 @@
 
 		ImageModal.prototype._gotoSlide = function(index){
 			// Adjust imageContainer according to value of index
-			// var $t = this.$tray,
 			var $f = this.$frame;
 
 			this.$tray.css({"left": -(index * $f.width())});
@@ -129,9 +144,6 @@
 		};
 
 		ImageModal.prototype.addImages = function($container, source){
-			// console.log("add images into", $container, "from", source);
-			// console.log("num images: ", source.length);
-			// var $slide = this.$slide;
 			var modal = this;
 			source.each(function(){
 				$container
@@ -146,7 +158,6 @@
 		};
 
 		ImageModal.prototype.resize = function(){
-			// console.log("resize modal");
 			var $f = this.$frame;
 			$('.slide')
 				.height($f.height())
@@ -154,17 +165,9 @@
 				.each(function(i,e){
 					$(e).css({"left": i * $f.width()});
 				});
-			sizeImage($(this.options.imageSlide).find('img'));
+			sizeImage($('.slide').find('img'));
 			this._gotoSlide(this.index);
-
-			// console.log("this.$slide", this.$slide);
 		};
-
-
-		// var $slide;
-		// Object.defineProperty(ImageModal.prototype, "$slide", {
-		// 	get: function(){return $(this.options.imageSlide)}
-		// });
 
 		// Define index property
 		var index = 0;
@@ -192,4 +195,8 @@
 		return new ImageModal();
 	};
 
-}( jQuery ));
+}( jQuery, window ));
+
+
+
+
