@@ -7,7 +7,7 @@
 		// Global
 		var $modal = $('#modal').initImageModal();
 
-
+		
 
 
 
@@ -58,8 +58,10 @@
 					$this.height($this.width() / frameRatio);
 
 					// size image
-					$this.find('img').each(function(){
-						sizeImage($(this));
+					$this.find('img').each(function(i,e){
+						// sizeImage($(this));
+						// if (i === 0) {$(e).show();	};
+						$(e).load(this.sizeImage);
 					});
 					 
 				})
@@ -68,7 +70,17 @@
 					// presentModal(this);
 					$modal.present(this); 
 				});
+
+
+			// $($('.project img')[0]).show();
+
+
 		}
+
+		$(window).on('resize', function(){
+			$('.project').find('img').sizeImage();
+			initializeProjectFigures();
+		});
 
 		initializeProjectFigures();
 			

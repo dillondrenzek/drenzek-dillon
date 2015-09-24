@@ -14,20 +14,58 @@
 	// Helper : To be abstracted
 	function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
-			var frame = $img.closest('.slide');
+			var $frame = $img.closest('.slide');
 			var imgRatio, frameRatio;
-			$img.load(function(){
-				imgRatio = this.width/this.height;
-				frameRatio = frame.width()/frame.height();
-				
-				if (imgRatio > frameRatio) {
-					$img.addClass('landscape'); // width 100% height auto 
-				} else {
-					$img.addClass('portrait'); // width auto height 100%
-				}
+			imgRatio = $img.width()/$img.height();
+			frameRatio = $frame.width()/$frame.height();
 
-			});
+			console.log("img", imgRatio, "frame", frameRatio);
+			
+			if (imgRatio > frameRatio) {
+				$img.removeClass('portrait');
+				$img.addClass('landscape'); // width 100% height auto 
+			} else {
+				$img.removeClass('landscape');
+				$img.addClass('portrait'); // width auto height 100%
+			}
+
+			// });
 		};
+
+	$.fn.sizeImage = function( options ){
+		var defaults, $this;
+		$this = this;
+		defaults = {
+			mode: 'fit',
+			parentSelector: 'figure'
+		};
+
+		var options = this.options = $.extend(true, {}, defaults, options);
+
+
+		// $this.load(function(){
+		// 	var $parent = $this.closest(options.parentSelector);
+		// 	console.log("parent", $parent);
+		// 	console.log("parent ratio", $parent.width()/$parent.height());
+		// 	console.log($this.attr("alt"), "ratio", $this.width()/$this.height());
+		// });
+
+		// var $img = (img instanceof jQuery) ? img : $(img);
+		var $frame = $this.closest(options.parentSelector);
+		var imgRatio = $this.width()/$this.height();
+		var frameRatio = $frame.width()/$frame.height();
+
+		console.log("img", imgRatio, "frame", frameRatio);
+		
+		if (imgRatio > frameRatio) {
+			$this.removeClass('portrait');
+			$this.addClass('landscape'); // width 100% height auto 
+		} else {
+			$this.removeClass('landscape');
+			$this.addClass('portrait'); // width auto height 100%
+		}
+		// })();
+	};
 
 
 
@@ -37,7 +75,6 @@
 		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
-			
 			selectors: {
 				slide: '.slide'
 			}, // unreliable
@@ -51,7 +88,6 @@
 					right: '<a href="#" class="arrow right fa fa-chevron-right"></a>'
 				}
 			}
-			
 		};
 
 		var ImageModal = (function(){
@@ -106,9 +142,12 @@
 				.append(_this.$closeButton)
 				.append(_this.$leftButton)
 				.append(_this.$rightButton)
-				.append(_this.$frame
-					.append(_this.$tray))
+				.append(_this.$frame)
 				.hide();
+
+			$('.slide').find('img').load(function(){
+				sizeImage(this);
+			});
 		};
 
 		ImageModal.prototype.present = function(element){
@@ -116,7 +155,7 @@
 			$this.show();
 
 			// add in photos from element
-			this.addImages(this.$tray, $(element).find('img'));
+			this.addImages(this.$frame, $(element).find('img'));
 
 			this.resize();
 		};
@@ -132,7 +171,13 @@
 			// Adjust imageContainer according to value of index
 			var $f = this.$frame;
 
-			this.$tray.css({"left": -(index * $f.width())});
+			$('.slide').each(function(i, e){
+				var left = parseInt($(e).css("left").replace('px', ''));
+				console.log("left", left);
+				$(e).css({"left": (i-index) * $f.width()})
+			});
+
+			// $('.slide').css({"left": -(index * $f.width())});
 		};
 
 		ImageModal.prototype.increment = function(){
@@ -165,7 +210,8 @@
 				.each(function(i,e){
 					$(e).css({"left": i * $f.width()});
 				});
-			sizeImage($('.slide').find('img'));
+			$('.slide').find('img').sizeImage();
+			// sizeImage($('.slide').find('img'));
 			this._gotoSlide(this.index);
 		};
 

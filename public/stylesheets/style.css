@@ -422,21 +422,22 @@ section .project {
   text-align: center;
   overflow: hidden;
 }
-#modal figure .slider {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
+#modal figure .slide {
+  width: 100%;
   height: 100%;
-}
-#modal figure .slider .slide {
   position: absolute;
   display: inline-block;
   text-align: center;
   overflow: hidden;
+  left: 0;
 }
-#modal figure .slider .slide img {
+#modal figure .slide img {
   position: relative;
+}
+#modal figure .slide img.landscape {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 #modal figcaption {
   position: absolute;
@@ -566,7 +567,7 @@ section .project {
 .project figure img {
   margin: 0 auto;
 }
-.project figure img :not(:first-child) {
+.project figure img:not(a) :not(:first-child) {
   display: none;
 }
 .project figure:hover a.image {
