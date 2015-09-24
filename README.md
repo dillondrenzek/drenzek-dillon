@@ -16,11 +16,12 @@ The professional portfolio of University of Colorado graduate, Dillon Drenzek. <
 #### Testing
 
 ---------------------------------
-## Version: `v2.2.0` <br>
+## Version: `v2.3.2` <br>
 
 
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-----------|---------------|---|
+|                   | 2.3.2     |   Sep 24 15   | Reimplementation of ImageModal as jQuery Plugin |
 |                   | 2.2.0     |   Sep 13 15   | Projects Linked and Updated |
 |                   | 2.1.0     |   Sep 12 15   | Bootstrap Style Responsiveness Implemented |
 | Professional	    | 2.0.0 	|   Sep  6 15 	| Submittable to jobs, all data entered, new style |
