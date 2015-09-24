@@ -173,20 +173,28 @@ ModalButton()
 		text-align center
 		overflow hidden
 		
-		.slider
-			position relative
-			top 0
-			left 0
-			display block
-			height 100%
+		// .slider
+		// 	position relative
+		// 	top 0
+		// 	left 0
+		// 	display block
+		// 	height 100%
 			
-			.slide
-				position absolute
-				display inline-block
-				text-align center
-				overflow hidden
-				img
-					position relative
+		.slide
+			Width-XS(12)
+			height 100%
+			position absolute
+			display inline-block
+			text-align center
+			overflow hidden
+			left 0
+			img
+				position relative
+			img.landscape
+				top 50%
+				-webkit-transform translateY(-50%)
+				transform translateY(-50%)
+				
 						
 
 	figcaption
@@ -261,9 +269,12 @@ ModalButton()
 		
 		img
 			margin 0 auto
-			:not(:first-child)
-				display none
-		
+			&:not(a)
+				:not(:first-child)
+					display none
+		// img:first-child:not(a)
+		// 	display block !important
+	
 		&:hover a.image
 			opacity 1
 		

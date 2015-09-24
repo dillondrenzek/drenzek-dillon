@@ -7,27 +7,38 @@
 //- this: refers to objects part of this plugin
 //- $this: the jquery object this was called on
 
-
+// TODO:
+// - Remove dependency on CSS classes
+// - Add 'esc' and arrow key functionality
 
 (function( $, window ) {
 
-	// Helper : To be abstracted
-	function sizeImage(img){
-			var $img = (img instanceof jQuery) ? img : $(img);
-			var frame = $img.closest('.slide');
-			var imgRatio, frameRatio;
-			$img.load(function(){
-				imgRatio = this.width/this.height;
-				frameRatio = frame.width()/frame.height();
-				
-				if (imgRatio > frameRatio) {
-					$img.addClass('landscape'); // width 100% height auto 
-				} else {
-					$img.addClass('portrait'); // width auto height 100%
-				}
 
-			});
+	// TODO: Make Options relevant, implement 'fit' mode, add in 'fill' mode
+	$.fn.sizeImage = function( options ){
+		var $this = this;
+		var defaults = {
+			mode: 'fit',
+			parentSelector: 'figure'
 		};
+
+		var options = this.options = $.extend(true, {}, defaults, options);
+
+		var $frame = $this.closest(options.parentSelector);
+		var imgRatio = $this.width()/$this.height();
+		var frameRatio = $frame.width()/$frame.height();
+
+		console.log("img", imgRatio, "frame", frameRatio);
+		
+		// TODO: Remove dependency on CSS class
+		if (imgRatio > frameRatio) {
+			$this.removeClass('portrait');
+			$this.addClass('landscape'); // width 100% height auto 
+		} else {
+			$this.removeClass('landscape');
+			$this.addClass('portrait'); // width auto height 100%
+		}
+	};
 
 
 
@@ -37,13 +48,11 @@
 		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
-			
 			selectors: {
 				slide: '.slide'
 			}, // unreliable
 			templates: {
 				frame: '<figure></figure>',
-				tray: '<div class="slider"></div>',
 				slide: '<div class="slide"></div>',// this is unstable (selectors.slide should be equivalent)
 				buttons: {
 					close: '<a href="#" class="close fa fa-remove"></a>',
@@ -51,7 +60,6 @@
 					right: '<a href="#" class="arrow right fa fa-chevron-right"></a>'
 				}
 			}
-			
 		};
 
 		var ImageModal = (function(){
@@ -59,11 +67,12 @@
 			function ImageModal( options ) {
 				console.log("ImageModal()");
 				this.options = $.extend(true, {}, defaults, options);
+
+				// Initialize Components
 				this.$closeButton = $(this.options.templates.buttons.close);
 				this.$leftButton = $(this.options.templates.buttons.left);
 				this.$rightButton = $(this.options.templates.buttons.right);
 				this.$frame = $(this.options.templates.frame);
-				this.$tray = $(this.options.templates.tray);
 				this.$slide = $(this.options.selectors.slide);
 				this._init();
 			}
@@ -88,109 +97,146 @@
 
 			_this.$leftButton.click(function(e){
 				e.preventDefault();
-				_this.decrement();
+				_this.index--;
 			});
 
 			_this.$rightButton.click(function(e){
 				e.preventDefault();
-				_this.increment();
+				_this.index++;
 			});
 
+			// On Window Resize
 			$(window).on('resize', function(){
-				console.log("image modal resize");
 				_this.resize();
+				_this.alignSlides();
 			});
 
-			// Add Static Items
+			// Add Components to HTML
 			$this
 				.append(_this.$closeButton)
 				.append(_this.$leftButton)
 				.append(_this.$rightButton)
-				.append(_this.$frame
-					.append(_this.$tray))
+				.append(_this.$frame)
+			// Hide Modal
 				.hide();
+
 		};
 
-		ImageModal.prototype.present = function(element){
-			// console.log("present images from:", element);
-			$this.show();
 
-			// add in photos from element
-			this.addImages(this.$tray, $(element).find('img'));
 
-			this.resize();
-		};
-
-		ImageModal.prototype.dismiss = function(){
-			console.log("dismiss");
-			this.index = 0;
-			$(this.options.selectors.slide).remove();
-			$this.hide();
-		};
-
-		ImageModal.prototype._gotoSlide = function(index){
-			// Adjust imageContainer according to value of index
-			var $f = this.$frame;
-
-			this.$tray.css({"left": -(index * $f.width())});
-		};
-
-		ImageModal.prototype.increment = function(){
-			this.index++;
-		};
-
-		ImageModal.prototype.decrement = function(){
-			this.index--;
-		};
-
-		ImageModal.prototype.addImages = function($container, source){
-			var modal = this;
-			source.each(function(){
-				$container
-					.append($('<div>', {
-						"class": "slide"
-					})
-						.append($('<img/>', {
-							"src" : $(this).attr("src")
-						})));
-			});
-			this.resize();
-		};
-
-		ImageModal.prototype.resize = function(){
-			var $f = this.$frame;
-			$('.slide')
-				.height($f.height())
-				.width($f.width())
-				.each(function(i,e){
-					$(e).css({"left": i * $f.width()});
-				});
-			sizeImage($('.slide').find('img'));
-			this._gotoSlide(this.index);
-		};
-
-		// Define index property
+		// INDEX
+		// updated v2.3.2
 		var index = 0;
 		Object.defineProperty(ImageModal.prototype, "index", {
 			get: function(){return index;},
 			set: function(val){
 
-				// turn this into a stored variable
-				var numSlides = $('.slide').length || 0;
-				console.log("numSlides", numSlides);
+				// Variable Bounds
+				var lowerBound = 0;
+				var upperBound = $(this.options.selectors.slide).length-1;
 
-				// Sanity check: Bounds 0 =< (possible indexes) < numSlides
-				if (0 <= val && val < numSlides) {
+				// Sanity Check
+				if (lowerBound <= val && val <= upperBound) {
 					index = val;
 				} else {
 					return;
 				}
 
-				console.log("ImageModal.index set:", index, " (tried:", val,")");
+				// Hide Buttons based on Index
+				( index === lowerBound ) ? this.$leftButton.hide() : this.$leftButton.show();
+				( index === upperBound ) ? this.$rightButton.hide() : this.$rightButton.show();
 
-				this._gotoSlide(index);
+				// ADD: update page counter/display
+
+				// Align Slides based on Index
+				this.alignSlides();
 			}
 		});
+
+
+
+		// Align Slides
+		// Updated: v2.3.2
+		ImageModal.prototype.alignSlides = function(){
+
+			// Current Index & Frame
+			var index = this.index;
+			var $frame = this.$frame;
+
+			// Set Left Attribute based on index, frame width and slide order
+			$(this.options.selectors.slide).each(function(i, e){
+				$(e).css({"left": (i-index) * $frame.width()});
+			});
+
+		};
+
+
+
+		// Add Images
+		// updated v2.3.2
+		ImageModal.prototype.addImages = function($container, $source){
+			
+			// For use inside each callback
+			var modal = this;
+
+			// Wrap each image in a slide and append slide to container
+			$source
+				.clone()
+				.wrap( $('<div>', { "class" : modal.options.selectors.slide.replace('.','')}) )
+				.show()
+				.parent()
+				.appendTo($container);
+		};
+
+
+
+		// Present Modal with Elements
+		// updated v2.3.2
+		ImageModal.prototype.present = function($elements){
+
+			// Show Modal
+			$this.show();
+
+			// Add Elements to Frame
+			this.addImages(this.$frame, $elements);
+
+			// Set Start Index
+			this.index = 0;
+
+			// Resize Window 
+			this.resize();
+		};
+
+
+
+		// Resize Slides According to Frame
+		// updated v2.3.2
+		ImageModal.prototype.resize = function(){
+
+			// Size Slides
+			$(this.options.selectors.slide)
+				.height(this.$frame.height())
+				.width(this.$frame.width())
+				
+			// Size Images based on size of slide
+				.find('img')
+				.sizeImage();
+		};
+
+
+
+		// Dismiss Modal
+		// updated v2.3.2
+		ImageModal.prototype.dismiss = function(){
+
+			// Remove all created Slides
+			$(this.options.selectors.slide).remove();
+
+			// Hide Modal
+			$this.hide();
+		};
+
+
 
 		return new ImageModal();
 	};
