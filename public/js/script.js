@@ -42,17 +42,16 @@
 			var frameRatio = 4/3;
 			var $figure = $('.project').find('figure');
 
+			// Add Links for More Photos
 			if ($figure.find('a.image').length === 0) {
 				$figure.prepend($("<a>", { "href" : "#",
 									"class" : "image",
 									"text" : "Click to View More Photos"}))
 			};
 
-			$('.project figure')
+			$figure
 				.each(function(){
 					var $this = $(this);
-					// console.log("----");
-					// console.log("this:", $this);
 
 					// Size figure
 					$this.height($this.width() / frameRatio);
@@ -61,6 +60,7 @@
 					$this.find('img').each(function(i,e){
 						// sizeImage($(this));
 						// if (i === 0) {$(e).show();	};
+						// console.log(this);
 						$(e).load(this.sizeImage);
 					});
 					 

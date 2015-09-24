@@ -95,11 +95,13 @@
 			function ImageModal( options ) {
 				console.log("ImageModal()");
 				this.options = $.extend(true, {}, defaults, options);
+
+				// Initialize Components
 				this.$closeButton = $(this.options.templates.buttons.close);
 				this.$leftButton = $(this.options.templates.buttons.left);
 				this.$rightButton = $(this.options.templates.buttons.right);
 				this.$frame = $(this.options.templates.frame);
-				this.$tray = $(this.options.templates.tray);
+				// this.$tray = $(this.options.templates.tray);
 				this.$slide = $(this.options.selectors.slide);
 				this._init();
 			}
@@ -133,11 +135,12 @@
 			});
 
 			$(window).on('resize', function(){
-				console.log("image modal resize");
+				// console.log("image modal resize");
 				_this.resize();
 			});
 
-			// Add Static Items
+			// Add Components to HTML
+			// Hide Frame
 			$this
 				.append(_this.$closeButton)
 				.append(_this.$leftButton)
@@ -145,9 +148,10 @@
 				.append(_this.$frame)
 				.hide();
 
-			$('.slide').find('img').load(function(){
-				sizeImage(this);
-			});
+			// 
+			$(this.options.selectors.slide)
+				.find('img')
+				.load(this.sizeImage);
 		};
 
 		ImageModal.prototype.present = function(element){
@@ -171,28 +175,26 @@
 			// Adjust imageContainer according to value of index
 			var $f = this.$frame;
 
-			$('.slide').each(function(i, e){
+
+			$(this.options.selectors.slide).each(function(i, e){
 				var left = parseInt($(e).css("left").replace('px', ''));
 				console.log("left", left);
 				$(e).css({"left": (i-index) * $f.width()})
 			});
 
-			console.log("_gotoSlide", index);
-			console.log(" ",this);
-
+			// Hide left button when at index 0
 			if (index === 0) {
 				this.$leftButton.hide();
 			} else {
 				this.$leftButton.show();
 			}
 
+			// Hide right button when at last image
 			if (index === ($(this.options.selectors.slide).length)-1 ) {
 				this.$rightButton.hide();
 			} else {
 				this.$rightButton.show();
 			}
-
-			// $('.slide').css({"left": -(index * $f.width())});
 		};
 
 		ImageModal.prototype.increment = function(){
@@ -204,6 +206,10 @@
 		};
 
 		ImageModal.prototype.addImages = function($container, source){
+			console.log("$container", $container);
+			console.log("source", source);
+
+
 			var modal = this;
 			source.each(function(){
 				$container
@@ -214,19 +220,28 @@
 							"src" : $(this).attr("src")
 						})));
 			});
-			this.resize();
+
+			console.log("num Slides", $('.slide').length);
+
+			// this.resize();
 		};
 
 		ImageModal.prototype.resize = function(){
-			var $f = this.$frame;
+
+			// Size Slides
 			$(this.options.selectors.slide)
-				.height($f.height())
-				.width($f.width())
-				.each(function(i,e){
-					$(e).css({"left": i * $f.width()});
-				});
-			$(this.options.selectors.slide).find('img').sizeImage();
-			// sizeImage($(this.options.selectors.slide).find('img'));
+				.height(this.$frame.height())
+				.width(this.$frame.width());
+				// .each(function(i, e){
+				// 	$(e).css({"left": i * $f.width()});
+				// });
+				
+			// Size Images based on size of slide
+			$(this.options.selectors.slide)
+				.find('img')
+				.sizeImage();
+
+
 			this._gotoSlide(this.index);
 		};
 
@@ -247,7 +262,7 @@
 					return;
 				}
 
-				console.log("ImageModal.index set:", index, " (tried:", val,")");
+				// console.log("ImageModal.index set:", index, " (tried:", val,")");
 
 				this._gotoSlide(index);
 			}
