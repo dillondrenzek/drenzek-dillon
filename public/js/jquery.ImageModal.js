@@ -11,46 +11,17 @@
 
 (function( $, window ) {
 
-	// Helper : To be abstracted
-	function sizeImage(img){
-			var $img = (img instanceof jQuery) ? img : $(img);
-			var $frame = $img.closest(this.options.selectors.slide);
-			var imgRatio, frameRatio;
-			imgRatio = $img.width()/$img.height();
-			frameRatio = $frame.width()/$frame.height();
 
-			console.log("img", imgRatio, "frame", frameRatio);
-			
-			if (imgRatio > frameRatio) {
-				$img.removeClass('portrait');
-				$img.addClass('landscape'); // width 100% height auto 
-			} else {
-				$img.removeClass('landscape');
-				$img.addClass('portrait'); // width auto height 100%
-			}
-
-			// });
-		};
-
+	// TODO: Make Options relevant, implement 'fit' mode, add in 'fill' mode
 	$.fn.sizeImage = function( options ){
-		var defaults, $this;
-		$this = this;
-		defaults = {
+		var $this = this;
+		var defaults = {
 			mode: 'fit',
 			parentSelector: 'figure'
 		};
 
 		var options = this.options = $.extend(true, {}, defaults, options);
 
-
-		// $this.load(function(){
-		// 	var $parent = $this.closest(options.parentSelector);
-		// 	console.log("parent", $parent);
-		// 	console.log("parent ratio", $parent.width()/$parent.height());
-		// 	console.log($this.attr("alt"), "ratio", $this.width()/$this.height());
-		// });
-
-		// var $img = (img instanceof jQuery) ? img : $(img);
 		var $frame = $this.closest(options.parentSelector);
 		var imgRatio = $this.width()/$this.height();
 		var frameRatio = $frame.width()/$frame.height();
@@ -210,29 +181,29 @@
 
 			// Wrap each image in a slide and append slide to container
 			$source
-				.each(function(){
-					$('<img/>', { "src" : $(this).attr("src") })
-						.wrap( $('<div>', { "class" : modal.options.selectors.slide.replace('.','')}) )
-						.parent()
-						.appendTo($container);
-
-				});
+				.clone()
+				.wrap( $('<div>', { "class" : modal.options.selectors.slide.replace('.','')}) )
+				.show()
+				.parent()
+				.appendTo($container);
 		};
 
 
 
-		// Present Modal
-		// 
-		ImageModal.prototype.present = function(element){
+		// Present Modal with Elements
+		// updated v2.3.2
+		ImageModal.prototype.present = function($elements){
 
 			// Show Modal
 			$this.show();
 
-			// add in photos from element
-			this.addImages(this.$frame, $(element).find('img'));
+			// Add Elements to Frame
+			this.addImages(this.$frame, $elements);
 
+			// Set Start Index
 			this.index = 0;
 
+			// Resize Window 
 			this.resize();
 		};
 

@@ -4,95 +4,96 @@
 (function($, window){
 	$(function(){
 
-		// Global
+		// Initialize Modal
 		var $modal = $('#modal').initImageModal();
 		$('.project')
 			.find('figure')
 			.click(function(e){
 				e.preventDefault();
-				$modal.present(this);
+				$modal.present($(this).find('img'));
 			});
 		
 
 
-
-		// Helper : To be abstracted
-		function sizeImage(img){
-			var $img = (img instanceof jQuery) ? img : $(img);
-			var frame = $img.closest('figure');
-			var imgRatio, frameRatio;
-			$img.load(function(){
-				imgRatio = this.width/this.height;
-				frameRatio = frame.width()/frame.height();
-
-				if (imgRatio > frameRatio) {
-					$img.addClass('landscape'); // width 100% height auto 
-				} else {
-					$img.addClass('portrait'); // width auto height 100%
-				}
-
-			});
-		};
+		// TODO: All Images will have either class (landscape or portrait)
+		// based on their parent container
+		// $('img').load(function(){
+		// 	$(this).sizeImage();
+		// });
 
 
 
+		// Size <figure> inside a .project
+		// new: v2.3.2
+		function sizeProjectFigures(){
 
+			var frameRatio = 4/3;
+			$('.project').find('figure')
+				.each(function(i,e){
+					$(e).height($(e).width() / frameRatio);
+				})
+				.find('img')
+				.sizeImage();
+
+		}
 
 		// Initialize Project Figures
+		// updated: v2.3.2
 		// - improvements:
 		// ?? call with $(...).initProjectFigure() 
-
 		function initializeProjectFigures(){
+
 			// Initialize Project Figures
 			var frameRatio = 4/3;
 			var $figure = $('.project').find('figure');
 
-			// Add Links for More Photos
-			if ($figure.find('a.image').length === 0) {
-				$figure.prepend($("<a>", { "href" : "#",
-									"class" : "image",
-									"text" : "Click to View More Photos"}))
-			};
+			$('.project').find('figure')
+				.each(function(i,e){
+					var $e = $(e);
+					var $img = $e.find('img');
 
-			$figure
-				.each(function(){
-					var $this = $(this);
+					// Add Links for More Photos
+					if ($img.length > 1) {
+						$e.find('a.image').remove();
+						$e.prepend($("<a>", { "href" : "#",
+											"class" : "image",
+											"text" : "Click to View More Photos"}));
+					} else {
+						$e.find('a.image').remove();
+						$e.prepend($("<a>", { "href" : "#",
+											"class" : "image",
+											"text" : "Click to View Photo"}));
+					}
 
-					// Size figure
-					$this.height($this.width() / frameRatio);
-
-					// size image
-					$this.find('img').each(function(i,e){
-						// sizeImage($(this));
-						if (i !== 0) { $(e).hide();	};
-						// console.log(this);
-						$(e).load(this.sizeImage);
-
+					// Hide all Images but First
+					$img.each(function(i,e){
+						(i !== 0) ? $(e).hide() : $(e).show();
 					});
-					 
 				});
+
+			sizeProjectFigures();
 
 		}
 
+
+
 		$(window).on('resize', function(){
-			$('.project').find('img').sizeImage();
-			$('.project').find('figure')
-				.each(function(){
-					var $this = $(this);
-
-					// Size figure
-					$this.height($this.width() / frameRatio);
-
-					// size image
-					$this.find('img').each(function(i,e){
-						$(e).sizeImage();
-					});
-					 
-				});
-			// initializeProjectFigures();
+			sizeProjectFigures();
 		});
+
+
 
 		initializeProjectFigures();
 			
 	});
+
 })(jQuery, window);
+
+
+
+
+
+
+
+
+
