@@ -7,7 +7,9 @@
 //- this: refers to objects part of this plugin
 //- $this: the jquery object this was called on
 
-
+// TODO:
+// - Remove dependency on CSS classes
+// - Add 'esc' and arrow key functionality
 
 (function( $, window ) {
 
@@ -28,6 +30,7 @@
 
 		console.log("img", imgRatio, "frame", frameRatio);
 		
+		// TODO: Remove dependency on CSS class
 		if (imgRatio > frameRatio) {
 			$this.removeClass('portrait');
 			$this.addClass('landscape'); // width 100% height auto 
@@ -35,7 +38,6 @@
 			$this.removeClass('landscape');
 			$this.addClass('portrait'); // width auto height 100%
 		}
-		// })();
 	};
 
 
@@ -51,7 +53,6 @@
 			}, // unreliable
 			templates: {
 				frame: '<figure></figure>',
-				tray: '<div class="slider"></div>',
 				slide: '<div class="slide"></div>',// this is unstable (selectors.slide should be equivalent)
 				buttons: {
 					close: '<a href="#" class="close fa fa-remove"></a>',
@@ -72,7 +73,6 @@
 				this.$leftButton = $(this.options.templates.buttons.left);
 				this.$rightButton = $(this.options.templates.buttons.right);
 				this.$frame = $(this.options.templates.frame);
-				// this.$tray = $(this.options.templates.tray);
 				this.$slide = $(this.options.selectors.slide);
 				this._init();
 			}
@@ -97,27 +97,27 @@
 
 			_this.$leftButton.click(function(e){
 				e.preventDefault();
-				_this.decrement();
+				_this.index--;
 			});
 
 			_this.$rightButton.click(function(e){
 				e.preventDefault();
-				_this.increment();
+				_this.index++;
 			});
 
+			// On Window Resize
 			$(window).on('resize', function(){
-				// console.log("image modal resize");
 				_this.resize();
 				_this.alignSlides();
 			});
 
 			// Add Components to HTML
-			// Hide Modal
 			$this
 				.append(_this.$closeButton)
 				.append(_this.$leftButton)
 				.append(_this.$rightButton)
 				.append(_this.$frame)
+			// Hide Modal
 				.hide();
 
 		};
@@ -223,32 +223,20 @@
 				.sizeImage();
 		};
 
+
+
+		// Dismiss Modal
+		// updated v2.3.2
 		ImageModal.prototype.dismiss = function(){
-			console.log("dismiss");
-			this.index = 0;
+
+			// Remove all created Slides
 			$(this.options.selectors.slide).remove();
+
+			// Hide Modal
 			$this.hide();
 		};
 
-		
 
-		ImageModal.prototype.increment = function(){
-			this.index++;
-		};
-
-		ImageModal.prototype.decrement = function(){
-			this.index--;
-		};
-
-
-
-		
-
-
-
-		
-
-		
 
 		return new ImageModal();
 	};

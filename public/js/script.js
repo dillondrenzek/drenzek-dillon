@@ -17,6 +17,7 @@
 
 		// TODO: All Images will have either class (landscape or portrait)
 		// based on their parent container
+		//
 		// $('img').load(function(){
 		// 	$(this).sizeImage();
 		// });
