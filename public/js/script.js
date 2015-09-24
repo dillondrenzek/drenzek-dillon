@@ -6,7 +6,12 @@
 
 		// Global
 		var $modal = $('#modal').initImageModal();
-
+		$('.project')
+			.find('figure')
+			.click(function(e){
+				e.preventDefault();
+				$modal.present(this);
+			});
 		
 
 
@@ -59,27 +64,32 @@
 					// size image
 					$this.find('img').each(function(i,e){
 						// sizeImage($(this));
-						// if (i === 0) {$(e).show();	};
+						if (i !== 0) { $(e).hide();	};
 						// console.log(this);
 						$(e).load(this.sizeImage);
+
 					});
 					 
-				})
-				.click(function(e){
-					e.preventDefault();
-					// presentModal(this);
-					$modal.present(this); 
 				});
-
-
-			// $($('.project img')[0]).show();
-
 
 		}
 
 		$(window).on('resize', function(){
 			$('.project').find('img').sizeImage();
-			initializeProjectFigures();
+			$('.project').find('figure')
+				.each(function(){
+					var $this = $(this);
+
+					// Size figure
+					$this.height($this.width() / frameRatio);
+
+					// size image
+					$this.find('img').each(function(i,e){
+						$(e).sizeImage();
+					});
+					 
+				});
+			// initializeProjectFigures();
 		});
 
 		initializeProjectFigures();
