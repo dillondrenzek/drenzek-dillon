@@ -14,7 +14,7 @@
 	// Helper : To be abstracted
 	function sizeImage(img){
 			var $img = (img instanceof jQuery) ? img : $(img);
-			var $frame = $img.closest('.slide');
+			var $frame = $img.closest(this.options.selectors.slide);
 			var imgRatio, frameRatio;
 			imgRatio = $img.width()/$img.height();
 			frameRatio = $frame.width()/$frame.height();
@@ -177,6 +177,21 @@
 				$(e).css({"left": (i-index) * $f.width()})
 			});
 
+			console.log("_gotoSlide", index);
+			console.log(" ",this);
+
+			if (index === 0) {
+				this.$leftButton.hide();
+			} else {
+				this.$leftButton.show();
+			}
+
+			if (index === ($(this.options.selectors.slide).length)-1 ) {
+				this.$rightButton.hide();
+			} else {
+				this.$rightButton.show();
+			}
+
 			// $('.slide').css({"left": -(index * $f.width())});
 		};
 
@@ -204,14 +219,14 @@
 
 		ImageModal.prototype.resize = function(){
 			var $f = this.$frame;
-			$('.slide')
+			$(this.options.selectors.slide)
 				.height($f.height())
 				.width($f.width())
 				.each(function(i,e){
 					$(e).css({"left": i * $f.width()});
 				});
-			$('.slide').find('img').sizeImage();
-			// sizeImage($('.slide').find('img'));
+			$(this.options.selectors.slide).find('img').sizeImage();
+			// sizeImage($(this.options.selectors.slide).find('img'));
 			this._gotoSlide(this.index);
 		};
 
@@ -222,7 +237,7 @@
 			set: function(val){
 
 				// turn this into a stored variable
-				var numSlides = $('.slide').length || 0;
+				var numSlides = $(this.options.selectors.slide).length || 0;
 				console.log("numSlides", numSlides);
 
 				// Sanity check: Bounds 0 =< (possible indexes) < numSlides
