@@ -19,12 +19,14 @@
 		var $this = this;
 		var defaults = {
 			mode: 'fit',
-			parentSelector: 'figure'
+			parentSelector: ''
 		};
 
 		var options = this.options = $.extend(true, {}, defaults, options);
 
-		var $frame = $this.closest(options.parentSelector);
+		// Determine frame to size image to
+		var $frame = (options.parentSelector === '') ? $this.parent() : $this.closest(options.parentSelector);
+
 		var imgRatio = $this.width()/$this.height();
 		var frameRatio = $frame.width()/$frame.height();
 
@@ -48,17 +50,25 @@
 		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
+			shortcuts: {
+				// dismiss: '',
+				// nextSlide: '',
+				// previousSlide: ''
+			},
 			selectors: {
 				slide: '.slide'
 			}, // unreliable
 			templates: {
 				frame: '<figure></figure>',
 				slide: '<div class="slide"></div>',// this is unstable (selectors.slide should be equivalent)
+				buttonWrap: '<div class="modal-button"></div>',
 				buttons: {
-					close: '<a href="#" class="close fa fa-remove"></a>',
-					left: '<a href="#" class="arrow left fa fa-chevron-left"></a>',
-					right: '<a href="#" class="arrow right fa fa-chevron-right"></a>'
-				}
+					close: '<a href="#" class="fa fa-remove"></a>',
+					left: '<a href="#" class="fa fa-chevron-left"></a>',
+					right: '<a href="#" class="fa fa-chevron-right"></a>'
+				},
+				shortcutHint: '<p class="shortcut-hint"></p>',
+				pageDisplay: '<div class="page-display"></div>'
 			}
 		};
 
@@ -69,9 +79,23 @@
 				this.options = $.extend(true, {}, defaults, options);
 
 				// Initialize Components
-				this.$closeButton = $(this.options.templates.buttons.close);
-				this.$leftButton = $(this.options.templates.buttons.left);
-				this.$rightButton = $(this.options.templates.buttons.right);
+				this.$closeButton = $(this.options.templates.buttons.close)
+										.add( $(this.options.templates.shortcutHint).text('(Esc)'))
+										.wrapAll($(this.options.templates.buttonWrap).addClass('close'))
+										.parent();
+
+				this.$leftButton = $(this.options.templates.buttons.left)
+										.add( $(this.options.templates.shortcutHint).text('(Left)'))
+										.wrapAll($(this.options.templates.buttonWrap).addClass('arrow left'))
+										.parent();
+
+				this.$rightButton = $(this.options.templates.buttons.right)
+										.add( $(this.options.templates.shortcutHint).text('(Right)'))
+										.wrapAll($(this.options.templates.buttonWrap).addClass('arrow right'))
+										.parent();
+
+
+				this.$pageDisplay = $(this.options.templates.pageDisplay);
 				this.$frame = $(this.options.templates.frame);
 				this.$slide = $(this.options.selectors.slide);
 				this._init();
@@ -97,12 +121,12 @@
 
 			_this.$leftButton.click(function(e){
 				e.preventDefault();
-				_this.index--;
+				_this.decrement();
 			});
 
 			_this.$rightButton.click(function(e){
 				e.preventDefault();
-				_this.index++;
+				_this.increment();
 			});
 
 			// On Window Resize
@@ -111,12 +135,30 @@
 				_this.alignSlides();
 			});
 
+			// Keyboard shortcuts
+			$(document).on('keyup', function(e){
+				switch (e.keyCode) {
+					case 27: // esc
+						_this.$closeButton.click();
+						break;
+					case 37: // left arrow
+						_this.$leftButton.click();
+						break;
+					case 39: // right arrow
+						_this.$rightButton.click();
+						break;
+					default:
+						break;
+				}
+			});
+
 			// Add Components to HTML
 			$this
 				.append(_this.$closeButton)
 				.append(_this.$leftButton)
 				.append(_this.$rightButton)
 				.append(_this.$frame)
+				.append(_this.$pageDisplay)
 			// Hide Modal
 				.hide();
 
@@ -147,6 +189,8 @@
 				( index === upperBound ) ? this.$rightButton.hide() : this.$rightButton.show();
 
 				// ADD: update page counter/display
+				var pdTxt = (index+1) + " / " + (upperBound+1);
+				this.$pageDisplay.text(pdTxt);
 
 				// Align Slides based on Index
 				this.alignSlides();
@@ -234,6 +278,17 @@
 
 			// Hide Modal
 			$this.hide();
+		};
+
+
+
+		// Increment / Decrement Index
+		// new in v2.3.3
+		ImageModal.prototype.increment = function(){
+			this.index++;
+		};
+		ImageModal.prototype.decrement = function(){
+			this.index--;
 		};
 
 
