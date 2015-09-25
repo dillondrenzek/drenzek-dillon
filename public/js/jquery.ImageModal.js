@@ -61,11 +61,13 @@
 			templates: {
 				frame: '<figure></figure>',
 				slide: '<div class="slide"></div>',// this is unstable (selectors.slide should be equivalent)
+				buttonWrap: '<div class="modal-button"></div>',
 				buttons: {
-					close: '<a href="#" class="close fa fa-remove"></a>',
-					left: '<a href="#" class="arrow left fa fa-chevron-left"></a>',
-					right: '<a href="#" class="arrow right fa fa-chevron-right"></a>'
-				}
+					close: '<a href="#" class="fa fa-remove"></a>',
+					left: '<a href="#" class="fa fa-chevron-left"></a>',
+					right: '<a href="#" class="fa fa-chevron-right"></a>'
+				},
+				shortcutHint: '<p class="shortcut-hint"></p>'
 			}
 		};
 
@@ -76,9 +78,21 @@
 				this.options = $.extend(true, {}, defaults, options);
 
 				// Initialize Components
-				this.$closeButton = $(this.options.templates.buttons.close);
-				this.$leftButton = $(this.options.templates.buttons.left);
-				this.$rightButton = $(this.options.templates.buttons.right);
+				this.$closeButton = $(this.options.templates.buttons.close)
+										.add( $(this.options.templates.shortcutHint).text('(Esc)'))
+										.wrapAll($(this.options.templates.buttonWrap).addClass('close'))
+										.parent();
+
+				this.$leftButton = $(this.options.templates.buttons.left)
+										.add( $(this.options.templates.shortcutHint).text('(Left)'))
+										.wrapAll($(this.options.templates.buttonWrap).addClass('arrow left'))
+										.parent();
+
+				this.$rightButton = $(this.options.templates.buttons.right)
+										.add( $(this.options.templates.shortcutHint).text('(Right)'))
+										.wrapAll($(this.options.templates.buttonWrap).addClass('arrow right'))
+										.parent();
+
 				this.$frame = $(this.options.templates.frame);
 				this.$slide = $(this.options.selectors.slide);
 				this._init();
@@ -122,13 +136,13 @@
 			$(document).on('keyup', function(e){
 				switch (e.keyCode) {
 					case 27: // esc
-						_this.dismiss();
+						_this.$closeButton.click();
 						break;
 					case 37: // left arrow
-						_this.decrement();
+						_this.$leftButton.click();
 						break;
 					case 39: // right arrow
-						_this.increment();
+						_this.$rightButton.click();
 						break;
 					default:
 						break;

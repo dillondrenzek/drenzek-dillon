@@ -136,7 +136,7 @@ ModalButton()
 	z-index 101
 	height 60px
 	width 60px
-	background rgba(Black, 0.6)
+	background rgba(Red, 0.6)
 	color rgba(White, 0.6)
 	cursor pointer
 	line-height 60px
@@ -205,16 +205,33 @@ ModalButton()
 		color White
 		padding 20px 30px
 
+	.modal-button
+		ModalButton()
+		
+		.shortcut-hint
+			color White
+			font-size 0.8rem
+			line-height 0.8rem
+			text-align center
+			margin-top 0.5rem
+
+		a
+			color White
+			// ModalButton()
+			// color
+		
+
 	.close
 		top 0
 		left 0
-		ModalButton()
+		// ModalButton()
 		
 	.arrow
+		// background rgba(Red, 0.8)
 		top 50%
 		-webkit-transform translateY(-100%)
 		transform translateY(-100%)
-		ModalButton()
+		// ModalButton()
 		&.left
 			left 0
 		&.right

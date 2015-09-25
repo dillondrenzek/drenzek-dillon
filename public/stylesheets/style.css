@@ -447,50 +447,44 @@ section .project {
   color: #fafafa;
   padding: 20px 30px;
 }
-#modal .close {
-  top: 0;
-  left: 0;
+#modal .modal-button {
   position: absolute;
   z-index: 101;
   height: 60px;
   width: 60px;
-  background: rgba(48,48,48,0.6);
+  background: rgba(184,67,42,0.6);
   color: rgba(250,250,250,0.6);
   cursor: pointer;
   line-height: 60px;
   text-align: center;
   font-size: 1.25em;
 }
-#modal .close:hover {
+#modal .modal-button:hover {
   background: rgba(48,48,48,0.9);
   color: #fafafa;
   text-decoration: none;
 }
-#modal .close:active {
+#modal .modal-button:active {
   background: rgba(184,67,42,0.9);
+}
+#modal .modal-button .shortcut-hint {
+  color: #fafafa;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+#modal .modal-button a {
+  color: #fafafa;
+}
+#modal .close {
+  top: 0;
+  left: 0;
 }
 #modal .arrow {
   top: 50%;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
-  position: absolute;
-  z-index: 101;
-  height: 60px;
-  width: 60px;
-  background: rgba(48,48,48,0.6);
-  color: rgba(250,250,250,0.6);
-  cursor: pointer;
-  line-height: 60px;
-  text-align: center;
-  font-size: 1.25em;
-}
-#modal .arrow:hover {
-  background: rgba(48,48,48,0.9);
-  color: #fafafa;
-  text-decoration: none;
-}
-#modal .arrow:active {
-  background: rgba(184,67,42,0.9);
 }
 #modal .arrow.left {
   left: 0;
