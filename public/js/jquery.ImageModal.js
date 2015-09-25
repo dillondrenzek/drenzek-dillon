@@ -19,12 +19,14 @@
 		var $this = this;
 		var defaults = {
 			mode: 'fit',
-			parentSelector: 'figure'
+			parentSelector: ''
 		};
 
 		var options = this.options = $.extend(true, {}, defaults, options);
 
-		var $frame = $this.closest(options.parentSelector);
+		// Determine frame to size image to
+		var $frame = (options.parentSelector === '') ? $this.parent() : $this.closest(options.parentSelector);
+
 		var imgRatio = $this.width()/$this.height();
 		var frameRatio = $frame.width()/$frame.height();
 

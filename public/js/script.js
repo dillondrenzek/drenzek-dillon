@@ -18,9 +18,9 @@
 		// TODO: All Images will have either class (landscape or portrait)
 		// based on their parent container
 		//
-		// $('img').load(function(){
-		// 	$(this).sizeImage();
-		// });
+		$('img:not(.author)').load(function(){
+			$(this).sizeImage();
+		});
 
 
 
@@ -72,7 +72,7 @@
 					});
 				});
 
-			sizeProjectFigures();
+			
 
 		}
 
@@ -85,6 +85,7 @@
 
 
 		initializeProjectFigures();
+		sizeProjectFigures();
 			
 	});
 
