@@ -50,6 +50,11 @@
 		$this = this;
 		pluginName = "imagemodal";
 		defaults = {
+			shortcuts: {
+				// dismiss: '',
+				// nextSlide: '',
+				// previousSlide: ''
+			},
 			selectors: {
 				slide: '.slide'
 			}, // unreliable
@@ -99,18 +104,35 @@
 
 			_this.$leftButton.click(function(e){
 				e.preventDefault();
-				_this.index--;
+				_this.decrement();
 			});
 
 			_this.$rightButton.click(function(e){
 				e.preventDefault();
-				_this.index++;
+				_this.increment();
 			});
 
 			// On Window Resize
 			$(window).on('resize', function(){
 				_this.resize();
 				_this.alignSlides();
+			});
+
+			// Keyboard shortcuts
+			$(document).on('keyup', function(e){
+				switch (e.keyCode) {
+					case 27: // esc
+						_this.dismiss();
+						break;
+					case 37: // left arrow
+						_this.decrement();
+						break;
+					case 39: // right arrow
+						_this.increment();
+						break;
+					default:
+						break;
+				}
 			});
 
 			// Add Components to HTML
@@ -236,6 +258,17 @@
 
 			// Hide Modal
 			$this.hide();
+		};
+
+
+
+		// Increment / Decrement Index
+		// new in v2.3.3
+		ImageModal.prototype.increment = function(){
+			this.index++;
+		};
+		ImageModal.prototype.decrement = function(){
+			this.index--;
 		};
 
 
