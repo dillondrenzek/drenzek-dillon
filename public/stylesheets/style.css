@@ -447,6 +447,13 @@ section .project {
   color: #fafafa;
   padding: 20px 30px;
 }
+#modal .page-display {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 30px;
+  color: #fafafa;
+}
 #modal .modal-button {
   position: absolute;
   z-index: 101;

@@ -67,7 +67,8 @@
 					left: '<a href="#" class="fa fa-chevron-left"></a>',
 					right: '<a href="#" class="fa fa-chevron-right"></a>'
 				},
-				shortcutHint: '<p class="shortcut-hint"></p>'
+				shortcutHint: '<p class="shortcut-hint"></p>',
+				pageDisplay: '<div class="page-display"></div>'
 			}
 		};
 
@@ -93,6 +94,8 @@
 										.wrapAll($(this.options.templates.buttonWrap).addClass('arrow right'))
 										.parent();
 
+
+				this.$pageDisplay = $(this.options.templates.pageDisplay);
 				this.$frame = $(this.options.templates.frame);
 				this.$slide = $(this.options.selectors.slide);
 				this._init();
@@ -155,6 +158,7 @@
 				.append(_this.$leftButton)
 				.append(_this.$rightButton)
 				.append(_this.$frame)
+				.append(_this.$pageDisplay)
 			// Hide Modal
 				.hide();
 
@@ -185,6 +189,8 @@
 				( index === upperBound ) ? this.$rightButton.hide() : this.$rightButton.show();
 
 				// ADD: update page counter/display
+				var pdTxt = (index+1) + " / " + (upperBound+1);
+				this.$pageDisplay.text(pdTxt);
 
 				// Align Slides based on Index
 				this.alignSlides();
