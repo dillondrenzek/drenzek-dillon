@@ -1,5 +1,5 @@
 //- App Template
-//- version 2.3.0
+//- version 2.4.0
 
 //- Skills
 mixin Skill(skill)
@@ -54,7 +54,7 @@ html
 
 		//- Stylesheets
 		//- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
-		link(rel="stylesheet" href="/stylesheets/test.css")
+		link(rel="stylesheet" href="/stylesheets/style-v2.4.0.css")
 		link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
 		block link
 
@@ -77,19 +77,26 @@ html
 
 
 	body
-		.container-fluid
-			section#site-title
-				header.site-title
+		.container
+			header#site-title
+				.logo
 					h1 Dillon Drenzek
-					.subtitle Aspiring Developer, Perpetual Learner
+					.subtitle Web Developer & Artist
+				
+					//- .subtitle Aspiring Developer, Perpetual Learner
 				//- nav
 					ul
 						li: a(href="#author") About
 						li: a(href="#skills") Skills
 						li: a(href="#projects") Work
 						
-			block body
-			footer#site-footer
+			aside
+				block left
+			.page
+				.page-header
+					block header
+				block right
+			//- footer#site-footer
 				p This site is very much under construction.<br> But I'm chipping away, bit by bit, and quite Agile-ly.<br> Follow my progress #[a(href="http://github.com/dillondrenzek/drenzek-dillon") on GitHub].<br> [ Updated: 9-25-2015 ]
 		#modal
 				

@@ -1,0 +1,22 @@
+//- The Work Of
+//- Created: v2.4.0
+
+extends app-v2.4.0
+
+block title
+	| The Work of | Dillon Drenzek
+
+block link
+	link(rel="stylesheet" href="/stylesheets/style-v2.4.0.css")
+
+block header
+	h2 The Work of
+
+block left
+	p Aside
+
+block right
+	if projects.length > 0
+		ul.projects
+			each p in projects
+				li.project

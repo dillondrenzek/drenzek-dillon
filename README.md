@@ -18,9 +18,12 @@ The professional portfolio of University of Colorado graduate, Dillon Drenzek. <
 ---------------------------------
 ## Version: `v2.3.2` <br>
 
-#### Next Version Goals
-* Keyboard support for ImageModal jQuery Plugin
-* Page indicator
+#### Next Version: `v2.4`
+ * new projects section
+   * "The Work of" page
+ * new project model
+ * re-simplify CSS
+   * New CSS Stylesheet
 
 
 #### Version History

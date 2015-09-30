@@ -54,15 +54,35 @@ img
 		width auto
 
 
-
+.container
+	
+	&>*
+		display inline-block
+		vertical-align top
+		position relative
+	aside
+		
+		// position relative
+		Width-XS(3)
+		Width-SM(3)
+		// float left
+	.page
+		// display inline-block
+		Width-XS(9)
+		Width-SM(9)
+		// left 33%
+		// float left
+	// clear both
 
 
 //------------------
 //- Top of the Page
 //------------------
 #site-title
+	// border-top 36px solid Black
 	background Black
-	color White
+	// color White
+	height 36px
 	Width-XS(12)
 
 .site-title
@@ -94,7 +114,51 @@ nav
 	a
 		FiraSans-5(1rem, 200, Light, 0.111111em, left)
 		text-transform uppercase
-		padding 15px
+		padding 15px	
+
+.logo
+	width 4.1666667em
+	height 4.1666667em
+	// height 5.5833333em
+	background Red
+	position absolute
+	font-size 36px
+	left 25%
+	
+	-webkit-transform translateX(-100%)
+	transform translateX(-100%)
+
+	// top -36px
+	// left 8.33333%
+	h1
+		font-size 1em // Standard 48px
+		line-height 0.83333em
+		position absolute
+		left 0.270833em
+		bottom 0.6666667em
+	.subtitle
+		font-size 0.25em // Standard 12px
+		position absolute
+		left 1.25em
+		bottom 1.25em
+		color LtRed
+		text-transform uppercase
+		letter-spacing .1em
+
+.page-header
+	background transparent
+	// position absolute
+	position relative
+	// left 8.3%
+	padding 15px
+	h2
+		font-size 3rem
+
+
+
+
+
+
 
 
 

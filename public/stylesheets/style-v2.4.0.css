@@ -17,6 +17,27 @@
   margin-right: auto;
   margin-left: auto;
 }
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 *,
 *:before,
 *:after {
@@ -102,9 +123,30 @@ img.portrait {
   height: 100%;
   width: auto;
 }
+.container>* {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.container aside {
+  width: 25%;
+}
+@media (min-width: 768px) {
+  .container aside {
+    width: 25%;
+  }
+}
+.container .page {
+  width: 75%;
+}
+@media (min-width: 768px) {
+  .container .page {
+    width: 75%;
+  }
+}
 #site-title {
   background: #303030;
-  color: #fafafa;
+  height: 36px;
   width: 100%;
 }
 .site-title {
@@ -160,6 +202,40 @@ nav a {
   text-align: left;
   text-transform: uppercase;
   padding: 15px;
+}
+.logo {
+  width: 4.1666667em;
+  height: 4.1666667em;
+  background: #b8432a;
+  position: absolute;
+  font-size: 36px;
+  left: 25%;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.logo h1 {
+  font-size: 1em;
+  line-height: 0.83333em;
+  position: absolute;
+  left: 0.270833em;
+  bottom: 0.6666667em;
+}
+.logo .subtitle {
+  font-size: 0.25em;
+  position: absolute;
+  left: 1.25em;
+  bottom: 1.25em;
+  color: #ffa780;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.page-header {
+  background: transparent;
+  position: relative;
+  padding: 15px;
+}
+.page-header h2 {
+  font-size: 3rem;
 }
 #site-footer {
   background: #303030;

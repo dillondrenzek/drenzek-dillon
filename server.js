@@ -20,7 +20,8 @@ app.use(express.static(__dirname + '/public'));
 
 // App Routes
 app.get('/', routes.index);
-app.get('/test', routes.test)
+app.get('/test', routes.test);
+app.get('/the-work-of', routes.work);
 
 
 

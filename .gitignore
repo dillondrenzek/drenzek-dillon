@@ -9,3 +9,6 @@ npm-debug.log
 
 public/images/always-wondering.jpg
 public/images/large-images/
+
+public/stylesheets/styl/test.styl
+public/stylesheets/test.css

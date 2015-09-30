@@ -1,7 +1,13 @@
  // Project Seed Data
 // Version 2.2.4
 
-var projects = module.exports = [
+var projects = module.exports = {};
+
+projects.v2 = [
+
+]; 
+
+projects.old = [
         {
             title: "Capstone Portfolio Website",
             type: "Website",
