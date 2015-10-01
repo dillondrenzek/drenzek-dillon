@@ -82,6 +82,10 @@ img
 	// border-top 36px solid Black
 	background Black
 	// color White
+	position fixed
+	z-index 100
+	top 0
+	left 0
 	height 36px
 	Width-XS(12)
 
@@ -147,19 +151,97 @@ nav
 
 .page-header
 	background transparent
-	// position absolute
 	position relative
-	// left 8.3%
-	padding 15px
+	padding 25px 30px
+	margin-bottom 30px
+	border-bottom 1px solid Light
 	h2
 		font-size 3rem
 
+.project
+	// border-top 1px solid Light
+	background Light
+	margin-bottom 20px
+	padding 0 30px
+	// margin 0 15px
+	margin-bottom 20px
+	Width-SM(12)
+	
+	ul
+		list-style-type none
+
+	&>*
+		display inline-block
+		vertical-align middle
+	
+	.title
+		// background White
+		// padding 12px 20px
+		margin 15px 0
+		Width-SM(8)
+		h3
+			FiraSans-5(1.125rem, 700, Black, -0.06em, left)
+	.descriptors
+		FiraSans-5(0.85rem, 700, Red, 0.1em, left)
+		text-transform uppercase
+		
+		.brackets
+			color Gray
+			font-weight 400
+
+	.points
+		FiraSans-5(0.85rem, 500, Dark, 0.1em, left)
+		// color Black
+		// letter-spacing .1em
+		text-transform uppercase
+		.point
+			margin-top 10px
+		// margin-bottom 10px
 
 
+	//--------------
+	// Image Slider
+	//--------------
+	figure
+		Width-SM(4)
+		background Black
+		overflow hidden
+		height 100%
+		position relative
+		z-index 10
+		cursor pointer
+		
+		img
+			display block
+			margin 0 auto
+			&:not(a)
+				:not(:first-child)
+					display none
+		// img:first-child:not(a)
+		// 	display block !important
+	
+		&:hover a.image
+			opacity 1
+		
+		a.image
+			opacity 0
+			position absolute
+			bottom 0
+			text-align center
+			width 100%
+			background rgba(Red,0.7)
+			padding 10px
+			color White
+			&:hover
+				text-decoration none
 
 
+		&:hover .navigation
+			opacity 1
 
 
+.page
+	margin-top 36px
 
 
 

@@ -146,6 +146,10 @@ img.portrait {
 }
 #site-title {
   background: #303030;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
   height: 36px;
   width: 100%;
 }
@@ -232,10 +236,113 @@ nav a {
 .page-header {
   background: transparent;
   position: relative;
-  padding: 15px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
 }
 .page-header h2 {
   font-size: 3rem;
+}
+.project {
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .project {
+    width: 100%;
+  }
+}
+.project ul {
+  list-style-type: none;
+}
+.project>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+.project .title {
+  margin: 15px 0;
+}
+@media (min-width: 768px) {
+  .project .title {
+    width: 66.66666667%;
+  }
+}
+.project .title h3 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.06em;
+  text-align: left;
+}
+.project .descriptors {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b8432a;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.project .descriptors .brackets {
+  color: #909090;
+  font-weight: 400;
+}
+.project .points {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.project .points .point {
+  margin-top: 10px;
+}
+.project figure {
+  background: #303030;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .project figure {
+    width: 33.33333333%;
+  }
+}
+.project figure img {
+  display: block;
+  margin: 0 auto;
+}
+.project figure img:not(a) :not(:first-child) {
+  display: none;
+}
+.project figure:hover a.image {
+  opacity: 1;
+}
+.project figure a.image {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background: rgba(184,67,42,0.7);
+  padding: 10px;
+  color: #fafafa;
+}
+.project figure a.image:hover {
+  text-decoration: none;
+}
+.project figure:hover .navigation {
+  opacity: 1;
+}
+.page {
+  margin-top: 36px;
 }
 #site-footer {
   background: #303030;
@@ -580,56 +687,8 @@ section .project {
 .project {
   list-style-type: none;
 }
-.project>* {
-  display: inline-block;
-  vertical-align: middle;
-}
-.project .title {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .project .title {
-    width: 50%;
-  }
-}
-.project .title header {
-  width: 100%;
-}
-.project .title header>* {
-  margin-top: 10px;
-}
-.project .title header>*:first-child {
-  margin-top: 0;
-}
-.project .title .subtitle {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #b8432a;
-  letter-spacing: 0.14em;
-  text-align: left;
-  line-height: 0.75rem;
-  text-transform: uppercase;
-}
-.project .title>* {
-  margin-top: 10px;
-}
-.project .title>*:first-child {
-  margin-top: 0;
-}
-.project .title .skill {
-  background: #b8432a;
-  padding: 0.1em 0.8em;
-  color: #fafafa;
-  text-align: center;
-  border-color: #b8432a;
-  border-radius: 0.1em;
-  border-width: 1px;
-  cursor: default;
-  letter-spacing: 0.05em;
-}
-.project .title .skill:not(:last-child) {
-  margin-right: 10px;
+.project .detail {
+  padding: 15px;
 }
 .project figure {
   background: #303030;
@@ -638,11 +697,6 @@ section .project {
   position: relative;
   z-index: 10;
   cursor: pointer;
-}
-@media (min-width: 768px) {
-  .project figure {
-    width: 50%;
-  }
 }
 .project figure img {
   margin: 0 auto;

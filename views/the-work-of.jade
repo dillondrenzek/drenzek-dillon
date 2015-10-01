@@ -10,13 +10,36 @@ block link
 	link(rel="stylesheet" href="/stylesheets/style-v2.4.0.css")
 
 block header
-	h2 The Work of
+	h2 The Work Of
+	//- .subtitle Projects
 
 block left
-	p Aside
+	//- p Aside
 
 block right
 	if projects.length > 0
 		ul.projects
 			each p in projects
 				li.project
+					.title
+						h3= p.title
+					if p.imageURLs
+						figure
+							each url in p.imageURLs
+								img(src="#{url}" alt="#{p.title}")
+
+					.detail
+						
+						if p.descriptors
+							.descriptors
+								span.brackets [
+								span
+									each des in p.descriptors
+										|  #{des}, 
+								span.brackets ]
+						if p.points
+							ul.points
+								each point in p.points
+									li.point
+										| - 
+										| #{point}
