@@ -15,13 +15,15 @@ app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/bower_components'));
 
 
 
 // App Routes
 app.get('/', routes.index);
-app.get('/test', routes.test);
+app.get('/homepage', routes.home);
 app.get('/the-work-of', routes.work);
+app.get('/author', routes.author);
 
 
 

@@ -11,8 +11,17 @@
 	margin 0
 	padding 0
 	
+html  
+	background url('../images/grassy-field.jpeg') no-repeat center center fixed 
+	-webkit-background-size cover
+	-moz-background-size cover
+	-o-background-size cover
+	background-size cover
+
+
+
 html
-	background White
+	// background url('../images/grassy-field.jpeg') fixed center center
 	FiraSans-5(16px, 500, Black, -1px, left)
 
 h1
@@ -33,113 +42,91 @@ h4
 p
 	FiraSans-5(1rem, 200, Black, 0.03125em, justify)
 	
-a
-	color Red
-	font-weight 400
-	text-decoration none
-	&:hover,
-	&:active
-		text-decoration underline
-	&:active
-		color Dark
+// a
+// 	color Red
+// 	font-weight 400
+// 	text-decoration none
+// 	&:hover,
+// 	&:active
+// 		text-decoration underline
+// 	&:active
+// 		color Dark
 		
-img
-	height auto
-	width auto
-	&.landscape
-		height auto
-		width 100%
-	&.portrait
-		height 100%
-		width auto
-
-
-.container
-	
-	&>*
-		display inline-block
-		vertical-align top
-		position relative
-	aside
-		
-		// position relative
-		Width-XS(3)
-		Width-SM(3)
-		// float left
-	.page
-		// display inline-block
-		Width-XS(9)
-		Width-SM(9)
-		// left 33%
-		// float left
-	// clear both
+// img
+// 	height auto
+// 	width auto
+// 	&.landscape
+// 		height auto
+// 		width 100%
+// 	&.portrait
+// 		height 100%
+// 		width auto
 
 
 //------------------
 //- Top of the Page
 //------------------
-#site-title
-	// border-top 36px solid Black
-	background Black
-	// color White
-	position fixed
-	z-index 100
-	top 0
-	left 0
-	height 36px
-	Width-XS(12)
+// #site-title
+// 	// border-top 36px solid Black
+// 	background Black
+// 	// color White
+// 	position fixed
+// 	z-index 100
+// 	top 0
+// 	left 0
+// 	height 36px
+// 	Width-XS(12)
 
-.site-title
-	Width-XS(12)
-	Width-SM(6)
-	padding-left 0
-	padding-right 0
-	h1
-		display block
-	.subtitle
-		FiraSans-5(0.75rem, 200, Red, 0.14em, center)
-		line-height 0.75rem
-		text-transform uppercase
-		display block
-		left 4px
-		padding-top 0
+// .site-title
+// 	Width-XS(12)
+// 	Width-SM(6)
+// 	padding-left 0
+// 	padding-right 0
+// 	h1
+// 		display block
+// 	.subtitle
+// 		FiraSans-5(0.75rem, 200, Red, 0.14em, center)
+// 		line-height 0.75rem
+// 		text-transform uppercase
+// 		display block
+// 		left 4px
+// 		padding-top 0
 		
-nav
-	Width-XS(12)
-	Width-SM(6)
-	background Black
-	color White
-	ul
-		Width-XS(12)
-		display table
-	li
-		text-align center
-		display table-cell
-	a
-		FiraSans-5(1rem, 200, Light, 0.111111em, left)
-		text-transform uppercase
-		padding 15px	
+// nav
+// 	Width-XS(12)
+// 	Width-SM(6)
+// 	background Black
+// 	color White
+// 	ul
+// 		Width-XS(12)
+// 		display table
+// 	li
+// 		text-align center
+// 		display table-cell
+// 	a
+// 		FiraSans-5(1rem, 200, Light, 0.111111em, left)
+// 		text-transform uppercase
+// 		padding 15px	
 
 .logo
-	width 4.1666667em
-	height 4.1666667em
-	// height 5.5833333em
+	// Width-XS(2)
+	// Offset-XS(2)
+	// width 4.1666667em
+	// height 4.1666667em
+	height 266px
+	width 200px
 	background Red
 	position absolute
-	font-size 36px
-	left 25%
-	
-	-webkit-transform translateX(-100%)
-	transform translateX(-100%)
+	text-align left
+	font-size 48px
 
-	// top -36px
-	// left 8.33333%
 	h1
 		font-size 1em // Standard 48px
 		line-height 0.83333em
 		position absolute
 		left 0.270833em
 		bottom 0.6666667em
+		text-align left
 	.subtitle
 		font-size 0.25em // Standard 12px
 		position absolute
@@ -148,6 +135,7 @@ nav
 		color LtRed
 		text-transform uppercase
 		letter-spacing .1em
+		text-align left
 
 .page-header
 	background transparent

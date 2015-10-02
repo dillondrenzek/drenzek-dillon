@@ -9,14 +9,16 @@ block title
 block link
 	link(rel="stylesheet" href="/stylesheets/style-v2.4.0.css")
 
-block header
+block page
+	section
+//- block header
 	h2 The Work Of
 	//- .subtitle Projects
 
-block left
+//- block left
 	//- p Aside
 
-block right
+//- block right
 	if projects.length > 0
 		ul.projects
 			each p in projects

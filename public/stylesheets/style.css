@@ -27,7 +27,7 @@
   padding: 0;
 }
 html {
-  background: #fafafa;
+  background: url("images/always-wondering.jpg") fixed center center;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;

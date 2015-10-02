@@ -12,7 +12,71 @@
 //-----------
 //- Sections
 //-----------
-section
+// section
+
+// .container
+	// Width-XS(12)
+
+.left
+	// background White
+	position relative
+	Width-XS(4)
+	Width-SM(4)
+	Width-MD(4)
+	height 100vh
+	display inline-block
+	vertical-align top
+	border-right 1px solid Gray
+	padding-right 15px
+	
+	.logo
+		// Width-XS(12)
+		// Width-SM(6)
+		// Width-MD(4)
+		position absolute
+		top 0
+		right 15px
+
+	aside
+		position relative
+		top (266+15)px
+		color White
+		font-style italic
+		font-weight 200
+		text-align right
+	
+.right
+	Width-XS(8)
+	height 100vh
+	display inline-block
+	vertical-align top
+	
+	
+	
+
+.logo
+	position fixed
+	// Width-XS(2)
+	// Offset-XS(2)
+
+.links
+	Width-XS(10)
+	Offset-XS(2)
+	position relative
+	top 50%
+	-webkit-transform translateY(-50%)
+	transform translateY(-50%)
+	a
+		color White
+		// margin-bottom 50px
+		.title
+			FiraSans-5(1.875rem, 700, White, -0.05em, left)
+		.comment
+			margin-left 15px
+
+
+
+figure
 	Width-XS(12)
 	&:not(#site-title)
 		&>*

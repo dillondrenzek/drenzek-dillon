@@ -53,14 +53,16 @@ html
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 
 		//- Stylesheets
-		//- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="/stylesheets/style.css")
 		link(rel="stylesheet" href="/stylesheets/style-v2.4.0.css")
-		link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
+		//- link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
 		block link
 
 
 		//- jQuery
-		script(src="/js/jquery-1.11.2.min.js")
+		script(src="/jquery/dist/jquery.min.js")
+		//- script(src="/js/jquery-1.11.2.min.js")
 		script(src="/js/jquery.ImageModal.js")
 		script(src="/js/script.js")
 
@@ -70,32 +72,24 @@ html
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 			ga('create', 'UA-67261358-1', 'auto');
 			ga('send', 'pageview');
 
 
-
 	body
+		//- header#site-title
 		.container
-			header#site-title
+			
+			.left
 				.logo
 					h1 Dillon Drenzek
 					.subtitle Web Developer & Artist
-				
-					//- .subtitle Aspiring Developer, Perpetual Learner
-				//- nav
-					ul
-						li: a(href="#author") About
-						li: a(href="#skills") Skills
-						li: a(href="#projects") Work
-						
-			aside
-				block left
-			.page
-				.page-header
-					block header
-				block right
+				aside
+					| I’m totally psyched you’re here. I’ve found a passion in putting a bit of original artistry in Front-End Web Development and I’m eager to share with you. My thoughts appear throughout the site in this font. It’s like I’m there! The Internet is Mankind’s Collective Memory. Here is my little moment.
+
+			.right
+				block page
+					
 			//- footer#site-footer
 				p This site is very much under construction.<br> But I'm chipping away, bit by bit, and quite Agile-ly.<br> Follow my progress #[a(href="http://github.com/dillondrenzek/drenzek-dillon") on GitHub].<br> [ Updated: 9-25-2015 ]
 		#modal
