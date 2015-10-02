@@ -58,7 +58,7 @@
 	
 
 .logo
-	position fixed
+	// position fixed
 	// Width-XS(2)
 	// Offset-XS(2)
 
@@ -212,137 +212,7 @@ figure
 	.projects
 		Width-XS(12)
 
-//--------------------
-// Image Detail Modal
-// version 2.2.3
-//--------------------
 
-ModalButton(ht, wd)
-	position absolute
-	z-index 101
-	height ht
-	width wd
-	background rgba(Black, 0.6)
-	color rgba(White, 0.6)
-	cursor pointer
-	line-height ht
-	text-align center
-	&:hover
-		background rgba(Black,0.9)
-		color rgba(White, 1.0)
-		text-decoration none
-ModalButton()
-	position absolute
-	z-index 101
-	height 60px
-	width 60px
-	background rgba(Red, 0.6)
-	color rgba(White, 0.6)
-	cursor pointer
-	line-height 60px
-	text-align center
-	font-size 1.25em
-	&:hover
-		background rgba(Black,0.9)
-		color rgba(White, 1.0)
-		text-decoration none
-	&:active
-		background rgba(Red,0.9)
-		
-
-
-#modal
-	display block
-	position fixed
-	Width-XS(12)
-	height 100vh
-	top 0
-	left 0
-	background rgba(Black,0.9)
-	z-index 100
-	text-align center
-		
-	figure
-		Width-XS(8)
-		height 80%
-		position relative
-		top 50%
-		-webkit-transform translateY(-50%)
-		transform translateY(-50%)
-		margin 0 auto
-		text-align center
-		overflow hidden
-		
-		// .slider
-		// 	position relative
-		// 	top 0
-		// 	left 0
-		// 	display block
-		// 	height 100%
-			
-		.slide
-			Width-XS(12)
-			height 100%
-			position absolute
-			display inline-block
-			text-align center
-			overflow hidden
-			left 0
-			img
-				position relative
-			img.landscape
-				top 50%
-				-webkit-transform translateY(-50%)
-				transform translateY(-50%)
-				
-						
-
-	figcaption
-		position absolute
-		width 100%
-		bottom 0
-		background rgba(Black,0.9)
-		color White
-		padding 20px 30px
-
-	.page-display
-		position absolute
-		Width-XS(12)
-		text-align center
-		top 30px
-		color White
-
-	.modal-button
-		ModalButton()
-		
-		.shortcut-hint
-			color White
-			font-size 0.8rem
-			line-height 0.8rem
-			text-align center
-			margin-top 0.5rem
-
-		a
-			color White
-			// ModalButton()
-			// color
-		
-
-	.close
-		top 0
-		left 0
-		// ModalButton()
-		
-	.arrow
-		// background rgba(Red, 0.8)
-		top 50%
-		-webkit-transform translateY(-100%)
-		transform translateY(-100%)
-		// ModalButton()
-		&.left
-			left 0
-		&.right
-			right 0
 			
 // Styling for Projects
 // version 2.2.3
