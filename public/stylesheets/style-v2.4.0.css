@@ -346,7 +346,7 @@ p {
   text-decoration: none;
 }
 .left {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   display: inline-block;
   vertical-align: top;
@@ -374,13 +374,13 @@ p {
   font-weight: 200;
   color: #fafafa;
   letter-spacing: -0.025em;
-  text-align: left;
-  font-style: italic;
   text-align: right;
+  font-style: italic;
 }
 .right {
+  position: relative;
+  left: 25%;
   height: 100vh;
-  display: inline-block;
   vertical-align: top;
   position: relative;
   top: 36px;
@@ -430,6 +430,8 @@ p {
   line-height: 3rem;
 }
 .links a .comment {
+  margin-left: 25px;
+  width: 75%;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 200;
@@ -437,10 +439,8 @@ p {
   letter-spacing: -0.025em;
   text-align: left;
   font-style: italic;
-  text-align: right;
 }
 .page {
-  width: 100%;
   margin-top: 36px;
   background: #fafafa;
   padding: 30px;
