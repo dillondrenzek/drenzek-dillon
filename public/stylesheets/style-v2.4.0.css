@@ -346,15 +346,14 @@ p {
   text-decoration: none;
 }
 .left {
-  position: fixed;
-  width: 25%;
+  position: absolute;
   height: 100vh;
   display: inline-block;
   vertical-align: top;
 }
 @media (min-width: 768px) {
   .left {
-    width: 25%;
+    width: 16.66666667%;
   }
 }
 @media (min-width: 992px) {
@@ -380,7 +379,6 @@ p {
   text-align: right;
 }
 .right {
-  width: 66.66666667%;
   height: 100vh;
   display: inline-block;
   vertical-align: top;
@@ -389,7 +387,7 @@ p {
 }
 @media (min-width: 768px) {
   .right {
-    width: 66.66666667%;
+    width: 75%;
   }
 }
 @media (min-width: 992px) {
