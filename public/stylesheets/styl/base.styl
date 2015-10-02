@@ -1,0 +1,226 @@
+// App-Wide Styling
+// v3.0.0
+
+@import 'app-v3.0.0'
+
+*,
+*:before,
+*:after
+	box-sizing border-box
+	-moz-box-sizing border-box
+	-webkit-box-sizing border-box
+	margin 0
+	padding 0
+
+//- Background Image
+html  
+	background url('../images/grassy-field.jpeg') no-repeat center center fixed 
+	-webkit-background-size cover
+	-moz-background-size cover
+	-o-background-size cover
+	background-size cover
+	
+
+//--------------
+//- Text Styles
+//--------------
+
+html
+	FiraSans(16px, 500, Black, -1px, left)
+h1
+	FiraSans(3rem, 700, White, -0.05em, center)
+	line-height 3rem
+	color White
+h2
+	FiraSans(2.25rem, 700, Black, -0.05em, left)
+	line-height 2.25rem
+h3
+	FiraSans(1.75rem, 400, Black, 0em, left)
+	line-height 1.5rem
+p
+	FiraSans(1rem, 200, Black, 0.03125em, justify)
+a
+	text-decoration none
+	// FiraSans( size, weight, color, spacing, align )
+		
+//--------
+//- Lists
+//--------
+ul
+	li
+		list-style-type none
+		
+
+#leftside
+	Width-SM(4)
+	position fixed
+	border yellow 1px solid
+	
+	.logo
+		position absolute
+		top 0
+		right 0
+		
+	aside
+		PersonalQuote(1rem, 200, White, -0.025em, right)
+		position absolute
+		top 200px
+		padding 15px
+		
+	
+#rightside
+	Width-SM(8)
+	Offset-SM(4)
+	top 36px
+	position absolute
+	// overflow-x hidden
+	
+
+
+
+
+//- Layout (from page top)
+//- ! styles may further be modified in inheriting page
+#site-title
+	Width-XS(12)
+	// Position(pos, z)
+	// Position(pos)
+	z-index 10
+	position fixed
+	top 0
+	left 0
+	height 36px
+	
+	background black
+
+.logo
+	width 150px
+	height 200px
+	font-size 36px
+	background Red
+	text-align left
+	z-index 101
+	h1
+		position absolute
+		left 0.270833em
+		bottom 0.6666667em
+		font-size 1em // Standard 48px
+		line-height 0.83333em
+		text-align left
+	.subtitle
+		position absolute
+		left 1.25em
+		bottom 1.25em
+		font-size 0.25em // Standard 12px
+		color LtRed
+		text-transform uppercase
+		letter-spacing .1em
+		text-align left
+
+
+.project
+	// border-top 1px solid Light
+	background Light
+	margin-bottom 20px
+	padding 0 30px
+	// margin 0 15px
+	margin-bottom 20px
+	Width-SM(12)
+	
+	ul
+		list-style-type none
+
+	&>*
+		display inline-block
+		vertical-align middle
+	
+	.title
+		// background White
+		// padding 12px 20px
+		margin 15px 0
+		Width-SM(8)
+		h3
+			FiraSans-5(1.125rem, 700, Black, -0.06em, left)
+	.descriptors
+		FiraSans-5(0.85rem, 700, Red, 0.1em, left)
+		text-transform uppercase
+		
+		.brackets
+			color Gray
+			font-weight 400
+
+	.points
+		FiraSans-5(0.85rem, 500, Dark, 0.1em, left)
+		// color Black
+		// letter-spacing .1em
+		text-transform uppercase
+		.point
+			margin-top 10px
+		// margin-bottom 10px
+
+
+	//--------------
+	// Image Slider
+	//--------------
+	figure
+		Width-SM(4)
+		background Black
+		overflow hidden
+		height 100%
+		position relative
+		z-index 10
+		cursor pointer
+		
+		img
+			display block
+			margin 0 auto
+			&:not(a)
+				:not(:first-child)
+					display none
+		// img:first-child:not(a)
+		// 	display block !important
+	
+		&:hover a.image
+			opacity 1
+		
+		a.image
+			opacity 0
+			position absolute
+			bottom 0
+			text-align center
+			width 100%
+			background rgba(Red,0.7)
+			padding 10px
+			color White
+			&:hover
+				text-decoration none
+
+
+		&:hover .navigation
+			opacity 1
+
+#site-footer
+	// background Black
+	// border-top 36px solid Black
+	background black
+	// color White
+	position fixed
+	z-index 99
+	bottom 0
+	left 0
+	height 36px
+	Width-XS(12)
+	
+	&>*:first-child
+		margin 0 auto
+
+	p
+		color Gray !important
+		text-align center
+		padding 50px 12.5%
+		font-size 10px
+		.updated
+			margin-top 10px
+			text-align center
+		
+

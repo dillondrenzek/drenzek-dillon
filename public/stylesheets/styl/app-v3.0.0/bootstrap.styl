@@ -12,19 +12,20 @@ MediumThreshold = 992px
 LargeThreshold = 1200px
 
 .container-fluid
+  display block
+  width 100%
   margin-right auto
   margin-left auto
   
 // Fixed Width Alternative container
 .container 
-  padding-right 15px
-  padding-left 15px
+  // padding-right 15px
+  // padding-left 15px
+  display block
+  width 100%
   margin-right auto
   margin-left auto
-  
-@media (max-width 767px)
-  .container
-    width 100%
+    
 
 @media (min-width SmallThreshold)
   .container 

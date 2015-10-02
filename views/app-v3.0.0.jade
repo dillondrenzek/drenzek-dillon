@@ -12,9 +12,9 @@ html
 
 		//- Stylesheets
 		link(rel="stylesheet" href="/font-awesome/css/font-awesome.min.css")
-		//- link(rel="stylesheet" href="/stylesheets/style.css")
 		link(rel="stylesheet" href="/stylesheets/style-v2.4.0.css")
-		link(rel="stylesheet" href="/stylesheets/style-v3.0.0.css")
+		link(rel="stylesheet" href="/stylesheets/homepage.css")
+		link(rel="stylesheet" href="/stylesheets/ImageModal.css")
 		//- link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
 		block link
 
@@ -36,19 +36,19 @@ html
 
 	body
 		header#site-title
-		.container
-			
-			.left
+		.container-fluid
+			#leftside
 				.logo
 					h1 Dillon Drenzek
 					.subtitle Web Developer & Artist
-				aside
+				aside 
+					//- called in jQuery aside( [li, li, li] ) 
 					ul
 						li I’m totally psyched you’re here. I’ve found a passion in putting a bit of original artistry in Front-End Web Development and I’m eager to share with you.<br><br> 
 						li My always-clever remarks appear throughout the site in this font. It's like your own personal tour!
 						li Also, these photos...
 
-			.right
+			#rightside
 				block page
 					
 			//- footer#site-footer

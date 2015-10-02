@@ -14,19 +14,16 @@
   src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
 }
 .container-fluid {
+  display: block;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  display: block;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
-}
-@media (max-width: 767px) {
-  .container {
-    width: 100%;
-  }
 }
 @media (min-width: 768px) {
   .container {
@@ -42,80 +39,6 @@
   .container {
     width: 1170px;
   }
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html {
-  background: url("../images/grassy-field.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-html {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #303030;
-  letter-spacing: -1px;
-  text-align: left;
-}
-h1 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fafafa;
-  letter-spacing: -0.05em;
-  text-align: center;
-  line-height: 3rem;
-  color: #fafafa;
-}
-h2 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #303030;
-  letter-spacing: -0.05em;
-  text-align: left;
-  line-height: 2.25rem;
-}
-h3 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: #303030;
-  letter-spacing: 0em;
-  text-align: left;
-  line-height: 1.5rem;
-}
-p {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #303030;
-  letter-spacing: 0.03125em;
-  text-align: justify;
-}
-a {
-  text-decoration: none;
-}
-ul li {
-  list-style-type: none;
-}
-#site-title {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #000;
 }
 #modal {
   display: block;

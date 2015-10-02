@@ -1,260 +1,260 @@
-//- Bootstrap-style Layouts
-//- Version 2.4.0
+// //- Bootstrap-style Layouts
+// //- Version 2.4.0
 
-// Media Query Thresholds
-SmallThreshold = 768px
-MediumThreshold = 992px
-LargeThreshold = 1200px
+// // Media Query Thresholds
+// SmallThreshold = 768px
+// MediumThreshold = 992px
+// LargeThreshold = 1200px
 
-.container-fluid
-  margin-right auto
-  margin-left auto
+// .container-fluid
+//   margin-right auto
+//   margin-left auto
   
-// Fixed Width Alternative container
-.container 
-  padding-right 15px
-  padding-left 15px
-  margin-right auto
-  margin-left auto
+// // Fixed Width Alternative container
+// .container 
+//   // padding-right 15px
+//   // padding-left 15px
+//   margin-right auto
+//   margin-left auto
   
-@media (max-width 767px)
-  .container
-    width 100%
+// @media (max-width 767px)
+//   .container
+//     width 100%
 
-@media (min-width 768px)
-  .container 
-    width 750px
-  
-
-@media (min-width 992px)
-  .container 
-    width 970px
+// @media (min-width 768px)
+//   .container 
+//     width 750px
   
 
-@media (min-width 1200px)
-  .container 
-    width 1170px
+// @media (min-width 992px)
+//   .container 
+//     width 970px
+  
+
+// @media (min-width 1200px)
+//   .container 
+//     width 1170px
   
 
 
 
-// Bootstrap Mixins
-Width-XS(size)
-  if size == 12
-    width 100%
-  else if size == 11
-    width 91.66666667%
-  else if size == 10
-    width 83.33333333%
-  else if size == 9
-    width 75%
-  else if size == 8
-    width 66.66666667%
-  else if size == 7
-    width 58.33333333%
-  else if size == 6
-    width 50%
-  else if size == 5
-    width 41.66666667%
-  else if size == 4
-    width 33.33333333%
-  else if size == 3
-    width 25%
-  else if size == 2
-    width 16.66666667%
-  else if size == 1
-    width 8.33333333%
+// // Bootstrap Mixins
+// Width-XS(size)
+//   if size == 12
+//     width 100%
+//   else if size == 11
+//     width 91.66666667%
+//   else if size == 10
+//     width 83.33333333%
+//   else if size == 9
+//     width 75%
+//   else if size == 8
+//     width 66.66666667%
+//   else if size == 7
+//     width 58.33333333%
+//   else if size == 6
+//     width 50%
+//   else if size == 5
+//     width 41.66666667%
+//   else if size == 4
+//     width 33.33333333%
+//   else if size == 3
+//     width 25%
+//   else if size == 2
+//     width 16.66666667%
+//   else if size == 1
+//     width 8.33333333%
   
-Width-SM(size)
-  @media (min-width SmallThreshold)
-    if size == 12
-      width 100%
-    else if size == 11
-      width 91.66666667%
-    else if size == 10
-      width 83.33333333%
-    else if size == 9
-      width 75%
-    else if size == 8
-      width 66.66666667%
-    else if size == 7
-      width 58.33333333%
-    else if size == 6
-      width 50%
-    else if size == 5
-      width 41.66666667%
-    else if size == 4
-      width 33.33333333%
-    else if size == 3
-      width 25%
-    else if size == 2
-      width 16.66666667%
-    else if size == 1
-      width 8.33333333%
+// Width-SM(size)
+//   @media (min-width SmallThreshold)
+//     if size == 12
+//       width 100%
+//     else if size == 11
+//       width 91.66666667%
+//     else if size == 10
+//       width 83.33333333%
+//     else if size == 9
+//       width 75%
+//     else if size == 8
+//       width 66.66666667%
+//     else if size == 7
+//       width 58.33333333%
+//     else if size == 6
+//       width 50%
+//     else if size == 5
+//       width 41.66666667%
+//     else if size == 4
+//       width 33.33333333%
+//     else if size == 3
+//       width 25%
+//     else if size == 2
+//       width 16.66666667%
+//     else if size == 1
+//       width 8.33333333%
 
-Width-MD(size)
-  @media (min-width MediumThreshold) 
-    if size == 12
-      width 100%
-    else if size == 11
-      width 91.66666667%
-    else if size == 10
-      width 83.33333333%
-    else if size == 9
-      width 75%
-    else if size == 8
-      width 66.66666667%
-    else if size == 7
-      width 58.33333333%
-    else if size == 6
-      width 50%
-    else if size == 5
-      width 41.66666667%
-    else if size == 4
-      width 33.33333333%
-    else if size == 3
-      width 25%
-    else if size == 2
-      width 16.66666667%
-    else if size == 1
-      width 8.33333333%
+// Width-MD(size)
+//   @media (min-width MediumThreshold) 
+//     if size == 12
+//       width 100%
+//     else if size == 11
+//       width 91.66666667%
+//     else if size == 10
+//       width 83.33333333%
+//     else if size == 9
+//       width 75%
+//     else if size == 8
+//       width 66.66666667%
+//     else if size == 7
+//       width 58.33333333%
+//     else if size == 6
+//       width 50%
+//     else if size == 5
+//       width 41.66666667%
+//     else if size == 4
+//       width 33.33333333%
+//     else if size == 3
+//       width 25%
+//     else if size == 2
+//       width 16.66666667%
+//     else if size == 1
+//       width 8.33333333%
 
-Width-LG(size)
-  @media (min-width LargeThreshold)
-    if size == 12
-      width 100%
-    else if size == 11
-      width 91.66666667%
-    else if size == 10
-      width 83.33333333%
-    else if size == 9
-      width 75%
-    else if size == 8
-      width 66.66666667%
-    else if size == 7
-      width 58.33333333%
-    else if size == 6
-      width 50%
-    else if size == 5
-      width 41.66666667%
-    else if size == 4
-      width 33.33333333%
-    else if size == 3
-      width 25%
-    else if size == 2
-      width 16.66666667%
-    else if size == 1
-      width 8.33333333%
+// Width-LG(size)
+//   @media (min-width LargeThreshold)
+//     if size == 12
+//       width 100%
+//     else if size == 11
+//       width 91.66666667%
+//     else if size == 10
+//       width 83.33333333%
+//     else if size == 9
+//       width 75%
+//     else if size == 8
+//       width 66.66666667%
+//     else if size == 7
+//       width 58.33333333%
+//     else if size == 6
+//       width 50%
+//     else if size == 5
+//       width 41.66666667%
+//     else if size == 4
+//       width 33.33333333%
+//     else if size == 3
+//       width 25%
+//     else if size == 2
+//       width 16.66666667%
+//     else if size == 1
+//       width 8.33333333%
    
 
-// Offset by left      
-Offset-XS(offset)
-  position relative
-  if offset == 12
-    left 100%
-  else if offset == 11
-    left 91.66666667%
-  else if offset == 10
-    left 83.33333333%
-  else if offset == 9
-    left 75%
-  else if offset == 8
-    left 66.66666667%
-  else if offset == 7
-    left 58.33333333%
-  else if offset == 6
-    left 50%
-  else if offset == 5
-    left 41.66666667%
-  else if offset == 4
-    left 33.33333333%
-  else if offset == 3
-    left 25%
-  else if offset == 2
-    left 16.66666667%
-  else if offset == 1
-    left 8.33333333%
+// // Offset by left      
+// Offset-XS(offset)
+//   position relative
+//   if offset == 12
+//     left 100%
+//   else if offset == 11
+//     left 91.66666667%
+//   else if offset == 10
+//     left 83.33333333%
+//   else if offset == 9
+//     left 75%
+//   else if offset == 8
+//     left 66.66666667%
+//   else if offset == 7
+//     left 58.33333333%
+//   else if offset == 6
+//     left 50%
+//   else if offset == 5
+//     left 41.66666667%
+//   else if offset == 4
+//     left 33.33333333%
+//   else if offset == 3
+//     left 25%
+//   else if offset == 2
+//     left 16.66666667%
+//   else if offset == 1
+//     left 8.33333333%
 
-Offset-SM(offset)
-  position relative
-  @media (min-width SmallThreshold)
-    if offset == 12
-      left 100%
-    else if offset == 11
-      left 91.66666667%
-    else if offset == 10
-      left 83.33333333%
-    else if offset == 9
-      left 75%
-    else if offset == 8
-      left 66.66666667%
-    else if offset == 7
-      left 58.33333333%
-    else if offset == 6
-      left 50%
-    else if offset == 5
-      left 41.66666667%
-    else if offset == 4
-      left 33.33333333%
-    else if offset == 3
-      left 25%
-    else if offset == 2
-      left 16.66666667%
-    else if offset == 1
-      left 8.33333333%
+// Offset-SM(offset)
+//   position relative
+//   @media (min-width SmallThreshold)
+//     if offset == 12
+//       left 100%
+//     else if offset == 11
+//       left 91.66666667%
+//     else if offset == 10
+//       left 83.33333333%
+//     else if offset == 9
+//       left 75%
+//     else if offset == 8
+//       left 66.66666667%
+//     else if offset == 7
+//       left 58.33333333%
+//     else if offset == 6
+//       left 50%
+//     else if offset == 5
+//       left 41.66666667%
+//     else if offset == 4
+//       left 33.33333333%
+//     else if offset == 3
+//       left 25%
+//     else if offset == 2
+//       left 16.66666667%
+//     else if offset == 1
+//       left 8.33333333%
 
-Offset-MD(offset)
-  position relative
-  @media (min-width MediumThreshold) 
-    if offset == 12
-      left 100%
-    else if offset == 11
-      left 91.66666667%
-    else if offset == 10
-      left 83.33333333%
-    else if offset == 9
-      left 75%
-    else if offset == 8
-      left 66.66666667%
-    else if offset == 7
-      left 58.33333333%
-    else if offset == 6
-      left 50%
-    else if offset == 5
-      left 41.66666667%
-    else if offset == 4
-      left 33.33333333%
-    else if offset == 3
-      left 25%
-    else if offset == 2
-      left 16.66666667%
-    else if offset == 1
-      left 8.33333333%
+// Offset-MD(offset)
+//   position relative
+//   @media (min-width MediumThreshold) 
+//     if offset == 12
+//       left 100%
+//     else if offset == 11
+//       left 91.66666667%
+//     else if offset == 10
+//       left 83.33333333%
+//     else if offset == 9
+//       left 75%
+//     else if offset == 8
+//       left 66.66666667%
+//     else if offset == 7
+//       left 58.33333333%
+//     else if offset == 6
+//       left 50%
+//     else if offset == 5
+//       left 41.66666667%
+//     else if offset == 4
+//       left 33.33333333%
+//     else if offset == 3
+//       left 25%
+//     else if offset == 2
+//       left 16.66666667%
+//     else if offset == 1
+//       left 8.33333333%
 
-Offset-LG(offset)
-  position relative
-  @media (min-width LargeThreshold)
-    if offset == 12
-      left 100%
-    else if offset == 11
-      left 91.66666667%
-    else if offset == 10
-      left 83.33333333%
-    else if offset == 9
-      left 75%
-    else if offset == 8
-      left 66.66666667%
-    else if offset == 7
-      left 58.33333333%
-    else if offset == 6
-      left 50%
-    else if offset == 5
-      left 41.66666667%
-    else if offset == 4
-      left 33.33333333%
-    else if offset == 3
-      left 25%
-    else if offset == 2
-      left 16.66666667%
-    else if offset == 1
-      left 8.33333333%
+// Offset-LG(offset)
+//   position relative
+//   @media (min-width LargeThreshold)
+//     if offset == 12
+//       left 100%
+//     else if offset == 11
+//       left 91.66666667%
+//     else if offset == 10
+//       left 83.33333333%
+//     else if offset == 9
+//       left 75%
+//     else if offset == 8
+//       left 66.66666667%
+//     else if offset == 7
+//       left 58.33333333%
+//     else if offset == 6
+//       left 50%
+//     else if offset == 5
+//       left 41.66666667%
+//     else if offset == 4
+//       left 33.33333333%
+//     else if offset == 3
+//       left 25%
+//     else if offset == 2
+//       left 16.66666667%
+//     else if offset == 1
+//       left 8.33333333%
