@@ -105,6 +105,15 @@ p {
   letter-spacing: 0.03125em;
   text-align: justify;
 }
+#site-title {
+  background: #000;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 36px;
+  width: 100%;
+}
 .logo {
   height: 266px;
   width: 200px;
@@ -112,6 +121,7 @@ p {
   position: absolute;
   text-align: left;
   font-size: 48px;
+  z-index: 101;
 }
 .logo h1 {
   font-size: 1em;
@@ -243,7 +253,13 @@ p {
   margin-top: 36px;
 }
 #site-footer {
-  background: #303030;
+  background: #000;
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  height: 36px;
+  width: 100%;
 }
 #site-footer>*:first-child {
   margin: 0 auto;
@@ -330,35 +346,37 @@ p {
   text-decoration: none;
 }
 .left {
-  position: relative;
-  width: 33.33333333%;
+  position: fixed;
+  width: 25%;
   height: 100vh;
   display: inline-block;
   vertical-align: top;
-  border-right: 1px solid #909090;
-  padding-right: 15px;
 }
 @media (min-width: 768px) {
   .left {
-    width: 33.33333333%;
+    width: 25%;
   }
 }
 @media (min-width: 992px) {
   .left {
-    width: 33.33333333%;
+    width: 16.66666667%;
   }
 }
 .left .logo {
   position: absolute;
   top: 0;
-  right: 15px;
+  right: 0;
 }
 .left aside {
   position: relative;
   top: 281px;
-  color: #fafafa;
-  font-style: italic;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
   font-weight: 200;
+  color: #fafafa;
+  letter-spacing: -0.025em;
+  text-align: left;
+  font-style: italic;
   text-align: right;
 }
 .right {
@@ -366,32 +384,69 @@ p {
   height: 100vh;
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  top: 36px;
+}
+@media (min-width: 768px) {
+  .right {
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .right {
+    width: 75%;
+  }
 }
 .logo {
   position: fixed;
 }
 .links {
-  width: 83.33333333%;
+  width: 100%;
   position: relative;
-  left: 16.66666667%;
+  left: 8.33333333%;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .links a {
+  padding: 15px;
+  display: block;
   color: #fafafa;
+  margin-bottom: 50px;
+  border-left: 5px solid transparent;
+  text-shadow: 1px 1px 5px #303030;
+}
+.links a:hover {
+  text-decoration: none;
+  background: rgba(0,0,0,0.2);
+  border-left: 5px solid #fafafa;
 }
 .links a .title {
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1.875rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #fafafa;
   letter-spacing: -0.05em;
   text-align: left;
+  line-height: 3rem;
 }
 .links a .comment {
-  margin-left: 15px;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #fafafa;
+  letter-spacing: -0.025em;
+  text-align: left;
+  font-style: italic;
+  text-align: right;
+}
+.page {
+  width: 100%;
+  margin-top: 36px;
+  background: #fafafa;
+  padding: 30px;
+  height: 1000px;
 }
 figure {
   width: 100%;

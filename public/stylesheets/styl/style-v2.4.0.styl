@@ -19,15 +19,16 @@
 
 .left
 	// background White
-	position relative
-	Width-XS(4)
-	Width-SM(4)
-	Width-MD(4)
+	position fixed
+	Width-XS(3)
+	Width-SM(3)
+	Width-MD(2)
 	height 100vh
 	display inline-block
 	vertical-align top
-	border-right 1px solid Gray
-	padding-right 15px
+	// border-right 1px solid Gray
+	// padding-right 15px
+	// background rgba(Black, 0.5)
 	
 	.logo
 		// Width-XS(12)
@@ -35,21 +36,24 @@
 		// Width-MD(4)
 		position absolute
 		top 0
-		right 15px
+		right 0
 
 	aside
 		position relative
 		top (266+15)px
-		color White
-		font-style italic
-		font-weight 200
-		text-align right
+		PersonalQuote(1rem, 200, White, -0.025em, left)
 	
 .right
+	// Offset-XS(4)
 	Width-XS(8)
+	Width-SM(8)
+	Width-MD(9)
 	height 100vh
 	display inline-block
 	vertical-align top
+	position relative
+	// z-index -1
+	top 36px
 	
 	
 	
@@ -60,19 +64,45 @@
 	// Offset-XS(2)
 
 .links
-	Width-XS(10)
-	Offset-XS(2)
+	Width-XS(12)
+	Offset-XS(1)
 	position relative
 	top 50%
 	-webkit-transform translateY(-50%)
 	transform translateY(-50%)
+	
 	a
+		padding 15px
+		display block
 		color White
-		// margin-bottom 50px
+		margin-bottom 50px
+		border-left 5px solid transparent
+		text-shadow 1px 1px 5px Black
+		&:hover
+			text-decoration none
+			background rgba(black,0.2)
+			border-left 5px solid White
+			// text-shadow 3px 3px 1px Black
+			// color Red
+			// .title
+			// 	color Red	
+
+
 		.title
-			FiraSans-5(1.875rem, 700, White, -0.05em, left)
+			FiraSans-5(3rem, 700, White, -0.05em, left)
+			line-height 3rem
 		.comment
-			margin-left 15px
+			// margin-left 25px
+			PersonalQuote(1rem, 200, White, -0.025em, left)
+			
+			
+.page
+	Width-XS(12)
+	margin-top 36px	
+	background White
+	padding 30px
+	height 1000px
+			
 
 
 
