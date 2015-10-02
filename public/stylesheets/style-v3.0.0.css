@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 200;
+  src: url("../../fonts/FiraSans-Light.woff") format('woff'), url("../../fonts/FiraSans-Light.ttf") format('truetype'), url("../../fonts/FiraSans-Light.eot");
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 400;
+  src: url("../../fonts/FiraSans-Regular.woff") format('woff'), url("../../fonts/FiraSans-Regular.ttf") format('truetype'), url("../../fonts/FiraSans-Regular.eot");
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 700;
+  src: url("../../fonts/FiraSans-Bold.woff") format('woff'), url("../../fonts/FiraSans-Bold.ttf") format('truetype'), url("../../fonts/FiraSans-Bold.eot");
+}
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  background: url("../images/grassy-field.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+html {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #303030;
+  letter-spacing: -1px;
+  text-align: left;
+}
+h1 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fafafa;
+  letter-spacing: -0.05em;
+  text-align: center;
+  line-height: 3rem;
+  color: #fafafa;
+}
+h2 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.05em;
+  text-align: left;
+  line-height: 2.25rem;
+}
+h3 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #303030;
+  letter-spacing: 0em;
+  text-align: left;
+  line-height: 1.5rem;
+}
+p {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #303030;
+  letter-spacing: 0.03125em;
+  text-align: justify;
+}
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style-type: none;
+}
+#site-title {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+}
+#modal {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(48,48,48,0.9);
+  z-index: 100;
+  text-align: center;
+}
+#modal figure {
+  width: 66.66666667%;
+  height: 80%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+#modal figure .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  left: 0;
+}
+#modal figure .slide img {
+  position: relative;
+}
+#modal figure .slide img.landscape {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#modal figcaption {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: rgba(48,48,48,0.9);
+  color: #fafafa;
+  padding: 20px 30px;
+}
+#modal .page-display {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 30px;
+  color: #fafafa;
+}
+#modal .modal-button {
+  position: absolute;
+  z-index: 101;
+  height: 60px;
+  width: 60px;
+  background: rgba(184,67,42,0.6);
+  color: rgba(250,250,250,0.6);
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.25em;
+}
+#modal .modal-button:hover {
+  background: rgba(48,48,48,0.9);
+  color: #fafafa;
+  text-decoration: none;
+}
+#modal .modal-button:active {
+  background: rgba(184,67,42,0.9);
+}
+#modal .modal-button .shortcut-hint {
+  color: #fafafa;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+#modal .modal-button a {
+  color: #fafafa;
+}
+#modal .close {
+  top: 0;
+  left: 0;
+}
+#modal .arrow {
+  top: 50%;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+#modal .arrow.left {
+  left: 0;
+}
+#modal .arrow.right {
+  right: 0;
+}
