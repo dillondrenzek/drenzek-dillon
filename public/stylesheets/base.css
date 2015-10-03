@@ -130,7 +130,7 @@ ul li {
   font-style: italic;
   position: absolute;
   top: 200px;
-  padding: 15px;
+  margin-top: 15px;
 }
 #rightside {
   position: relative;
@@ -146,6 +146,37 @@ ul li {
   #rightside {
     left: 33.33333333%;
   }
+}
+.page {
+  width: 100%;
+  display: block;
+  padding-left: 15px;
+}
+.page-header {
+  position: relative;
+  padding: 15px;
+  border-bottom: 5px solid #b8432a;
+  height: 164px;
+  color: #fafafa;
+}
+.page-header h2 {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #fafafa;
+  font-size: 3rem;
+}
+.page-body {
+  background: #fafafa;
+  padding: 15px;
+  border-bottom: 5px solid #ddd;
+}
+.page-footer {
+  width: 100%;
+  padding: 15px;
+  background: #303030;
+  color: #ffa780;
+  border-bottom: 5px solid #555;
 }
 #site-title {
   width: 100%;
@@ -184,13 +215,16 @@ ul li {
 }
 .project {
   background: #ddd;
-  margin-bottom: 20px;
-  padding: 0 30px;
-  margin-bottom: 20px;
+  display: inline-block;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.project:nth-child(odd) {
+  margin-right: 15px;
 }
 @media (min-width: 768px) {
   .project {
-    width: 100%;
+    width: 41.66666667%;
   }
 }
 .project ul {
@@ -205,7 +239,7 @@ ul li {
 }
 @media (min-width: 768px) {
   .project .title {
-    width: 66.66666667%;
+    width: 100%;
   }
 }
 .project .descriptors {
@@ -231,7 +265,7 @@ ul li {
 }
 @media (min-width: 768px) {
   .project figure {
-    width: 33.33333333%;
+    width: 100%;
   }
 }
 .project figure img {

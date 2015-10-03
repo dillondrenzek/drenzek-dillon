@@ -3,11 +3,29 @@
 
 extends app-v3.0.0
 
+mixin Project()
+	li.project 
+		figure
+			<img src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+		.title
+			h3 Project Name
+
 block title
 	| The Work of | Dillon Drenzek
 
 
 block page
+	.page
+		.page-header
+			h2 , The Work of
+		.page-body
+			ul
+				+Project()
+				+Project()
+				+Project()
+				+Project()
+				+Project()
+		.page-footer
 	//- .page
 	//- 	h1 , The Work of
 	//- .page

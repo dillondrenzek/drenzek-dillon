@@ -65,7 +65,8 @@ ul
 		PersonalQuote(1rem, 200, White, -0.025em, right)
 		position absolute
 		top 200px
-		padding 15px
+		margin-top 15px
+		// padding 15px
 		
 	
 #rightside
@@ -76,7 +77,40 @@ ul
 	// overflow-x hidden
 	
 
+.page
+	Width-XS(12)
+	// background White
+	display block
+	// margin-left 15px
+	padding-left 15px
+	
+.page-header
+	position relative
+	// background White
+	// background rgba(LtRed,0.2)
+	padding 15px
+	border-bottom 5px solid Red
+	height 164px
+	color White
+	h2
+		position absolute
+		bottom 15px
+		left 15px
+		color White
+		font-size 3rem
 
+.page-body
+	background White
+	padding 15px
+	border-bottom 5px solid Light
+	
+.page-footer
+	// margin-left 15px
+	Width-XS(12)
+	padding 15px
+	background Black
+	color LtRed
+	border-bottom 5px solid Dark
 
 
 //- Layout (from page top)
@@ -109,6 +143,7 @@ ul
 		text-align left
 	.subtitle
 		position absolute
+		// PersonalQuote(0.35em, 200, LtRed, 0.05em, left)
 		left 1.25em
 		bottom 1.25em
 		font-size 0.25em // Standard 12px
@@ -121,11 +156,15 @@ ul
 .project
 	// border-top 1px solid Light
 	background Light
-	margin-bottom 20px
-	padding 0 30px
+	display inline-block
+	// margin-bottom 20px
+	padding 15px
 	// margin 0 15px
-	margin-bottom 20px
-	Width-SM(12)
+	margin-bottom 15px
+	&:nth-child(odd)
+		margin-right 15px
+	Width-SM(5)
+	// float left
 	
 	ul
 		list-style-type none
@@ -135,10 +174,8 @@ ul
 		vertical-align middle
 	
 	.title
-		// background White
-		// padding 12px 20px
 		margin 15px 0
-		Width-SM(8)
+		Width-SM(12)
 		h3
 			FiraSans-5(1.125rem, 700, Black, -0.06em, left)
 	.descriptors
@@ -163,7 +200,7 @@ ul
 	// Image Slider
 	//--------------
 	figure
-		Width-SM(4)
+		Width-SM(12)
 		background Black
 		overflow hidden
 		height 100%

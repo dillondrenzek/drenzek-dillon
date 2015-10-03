@@ -60,45 +60,45 @@ html
 //- App Components
 //-----------------
 
-//- Skills
-mixin Skill(skill)
-	li.skill= skill
+//- //- Skills
+//- mixin Skill(skill)
+//- 	li.skill= skill
 
-mixin SkillsList(skills)
-	if skills
-		ul.skills
-			each s in skills
-				+Skill(s)
+//- mixin SkillsList(skills)
+//- 	if skills
+//- 		ul.skills
+//- 			each s in skills
+//- 				+Skill(s)
 
-mixin SkillsContainer(title, skills)
-	.skills-container
-		h3= title
-		+SkillsList(skills)
+//- mixin SkillsContainer(title, skills)
+//- 	.skills-container
+//- 		h3= title
+//- 		+SkillsList(skills)
 		
-//- Projects
-mixin Project(proj)
-	li.project
-		figure
-			if proj.imageURLs
-				each url in proj.imageURLs
-					img(src="#{url}" alt="#{proj.title}")
-		.title
-			header
-				h3= proj.title
-				.subtitle= proj.type
-			+SkillsList(proj.skills)
-			p= proj.description
-			//- if (proj.launchURL)
-			//- 	a(href="#{proj.launchURL}").button Launch
-			//- if (proj.githubURL)
-			//- 	a(href="#{proj.githubURL}").button View on GitHub
+//- //- Projects
+//- mixin Project(proj)
+//- 	li.project
+//- 		figure
+//- 			if proj.imageURLs
+//- 				each url in proj.imageURLs
+//- 					img(src="#{url}" alt="#{proj.title}")
+//- 		.title
+//- 			header
+//- 				h3= proj.title
+//- 				.subtitle= proj.type
+//- 			+SkillsList(proj.skills)
+//- 			p= proj.description
+//- 			//- if (proj.launchURL)
+//- 			//- 	a(href="#{proj.launchURL}").button Launch
+//- 			//- if (proj.githubURL)
+//- 			//- 	a(href="#{proj.githubURL}").button View on GitHub
 		
 
-//- Social Media Links
-mixin SocialMedia()
-	ul#social-media
-		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
-		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+//- //- Social Media Links
+//- mixin SocialMedia()
+//- 	ul#social-media
+//- 		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
+//- 		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
+//- 		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+//- 		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
 				
