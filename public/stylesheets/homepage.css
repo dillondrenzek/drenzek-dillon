@@ -121,6 +121,7 @@ ul li {
   right: 0;
 }
 #leftside aside {
+  width: 75%;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 200;
@@ -130,6 +131,7 @@ ul li {
   font-style: italic;
   position: absolute;
   top: 200px;
+  right: 0;
   margin-top: 15px;
 }
 #rightside {
@@ -235,14 +237,28 @@ ul li {
   vertical-align: middle;
 }
 .project .title {
-  margin: 15px 0;
+  margin-top: 15px;
 }
 @media (min-width: 768px) {
   .project .title {
     width: 100%;
   }
 }
+.project .title h3 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.06em;
+  text-align: left;
+}
 .project .descriptors {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b8432a;
+  letter-spacing: 0.1em;
+  text-align: left;
   text-transform: uppercase;
 }
 .project .descriptors .brackets {
@@ -250,6 +266,12 @@ ul li {
   font-weight: 400;
 }
 .project .points {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  letter-spacing: 0.1em;
+  text-align: left;
   text-transform: uppercase;
 }
 .project .points .point {
@@ -260,7 +282,7 @@ ul li {
   overflow: hidden;
   height: 100%;
   position: relative;
-  z-index: 10;
+  z-index: 0;
   cursor: pointer;
 }
 @media (min-width: 768px) {
