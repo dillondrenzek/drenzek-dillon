@@ -12,16 +12,26 @@
 		display block
 		color White
 		margin-bottom 50px
-		border-left 5px solid transparent
 		text-shadow 1px 1px 5px Black
+		
+		transition border-bottom .3s ease, background .2s ease
+		background transparent
+		border-bottom 5px solid transparent
+
 		&:hover
 			text-decoration none
+			
 			background rgba(black,0.2)
-			border-left 5px solid White
+			border-bottom 5px solid White
 
 
 		.title
 			FiraSans(3rem, 700, White, -0.05em, left)
+			Width-XS(12)
+			white-space nowrap
+			overflow hidden
+			text-overflow clip
+			
 			line-height 3rem
 		.comment
 			margin-left 25px

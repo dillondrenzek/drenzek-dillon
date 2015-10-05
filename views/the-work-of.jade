@@ -3,13 +3,17 @@
 
 extends app-v3.0.0
 
-mixin Project()
+mixin Project(proj)
 	li.project 
 		figure
-			<img src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+			each url in proj.imageURLs
+				img(src="#{url}" alt="#{proj.title}")
 		.title
-			h3 Project Name
-			.descriptors Description
+			h3= proj.title
+			.descriptors= proj.descriptors
+			ul.points
+				each p in proj.points
+					li.point= p
 
 block title
 	| The Work of | Dillon Drenzek
@@ -21,11 +25,12 @@ block page
 			h2 , The Work of
 		.page-body
 			ul
-				+Project()
-				+Project()
-				+Project()
-				+Project()
-				+Project()
+				each proj in projects
+					+Project(proj)
+				//- +Project()
+				//- +Project()
+				//- +Project()
+				//- +Project()
 		//- .page-footer
 	//- .page
 	//- 	h1 , The Work of

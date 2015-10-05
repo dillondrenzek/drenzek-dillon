@@ -103,6 +103,14 @@ p {
 a {
   text-decoration: none;
 }
+img.landscape {
+  width: 100%;
+  height: auto;
+}
+img.portrait {
+  height: 100%;
+  width: auto;
+}
 ul li {
   list-style-type: none;
 }
@@ -165,8 +173,9 @@ ul li {
   position: absolute;
   bottom: 15px;
   left: 15px;
-  color: #fafafa;
+  color: inherit;
   font-size: 3rem;
+  text-shadow: 1px 1px 3px #303030;
 }
 .page-body {
   background: #fafafa;
@@ -204,6 +213,7 @@ ul li {
   font-size: 1em;
   line-height: 0.83333em;
   text-align: left;
+  text-shadow: 1px 1px 1px rgba(48,48,48,0.5);
 }
 .logo .subtitle {
   position: absolute;
@@ -220,6 +230,7 @@ ul li {
   display: inline-block;
   padding: 15px;
   margin-bottom: 15px;
+  box-shadow: 1px 1px 3px #909090;
 }
 .project:nth-child(odd) {
   margin-right: 15px;
@@ -246,7 +257,7 @@ ul li {
 }
 .project .title h3 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #303030;
   letter-spacing: -0.06em;
@@ -254,7 +265,7 @@ ul li {
 }
 .project .descriptors {
   font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #b8432a;
   letter-spacing: 0.1em;

@@ -42,7 +42,15 @@ p
 a
 	text-decoration none
 	// FiraSans( size, weight, color, spacing, align )
-		
+	
+img
+	&.landscape
+		width 100%
+		height auto
+	&.portrait
+		height 100%
+		width auto
+
 //--------
 //- Lists
 //--------
@@ -88,18 +96,21 @@ ul
 	
 .page-header
 	position relative
-	// background White
-	// background rgba(LtRed,0.2)
+	// background Light
+	// background rgba(Black,0.2)
+	// background Dark
 	padding 15px
 	border-bottom 5px solid Red
 	height 164px
+	// color Black
 	color White
 	h2
 		position absolute
 		bottom 15px
 		left 15px
-		color White
+		color inherit
 		font-size 3rem
+		text-shadow 1px 1px 3px Black
 
 .page-body
 	background White
@@ -143,6 +154,7 @@ ul
 		font-size 1em // Standard 48px
 		line-height 0.83333em
 		text-align left
+		text-shadow 1px 1px 1px rgba(Black, 0.5)
 	.subtitle
 		position absolute
 		// PersonalQuote(0.35em, 200, LtRed, 0.05em, left)
@@ -163,6 +175,7 @@ ul
 	padding 15px
 	// margin 0 15px
 	margin-bottom 15px
+	box-shadow 1px 1px 3px Gray
 	&:nth-child(odd)
 		margin-right 15px
 	Width-SM(5)
@@ -179,9 +192,9 @@ ul
 		margin-top 15px
 		Width-SM(12)
 		h3
-			FiraSans(1.75rem, 700, Black, -0.06em, left)
+			FiraSans(1.25rem, 700, Black, -0.06em, left)
 	.descriptors
-		FiraSans(0.85rem, 700, Red, 0.1em, left)
+		FiraSans(0.75rem, 700, Red, 0.1em, left)
 		text-transform uppercase
 		
 		.brackets
