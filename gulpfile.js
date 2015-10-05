@@ -1,5 +1,5 @@
 // Gulpfile
-// version 2.2.0
+// v3.0.1
 
 var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
@@ -9,12 +9,13 @@ var gulp = require('gulp'),
 
 // STYLUS -----------------------
 gulp.task('stylus', function() {
-  var input = 'styl',
-      output = '';
+  var path = ['./public/styl',
+              '-o',
+              './public/css'].join(' ');
 
   return gulp.src('')
     .pipe(shell([
-      'stylus --watch ./public/stylesheets/'+input+' -o ./public/stylesheets/'+output
+      'stylus --watch '+path
     ]))
 });
 
