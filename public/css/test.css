@@ -4,4 +4,24 @@
 }
 li.test-project {
   border-top: 1px solid Gray;
+  padding: 15px 0;
+}
+li.test-project p {
+  font-size: 12px;
+  margin-left: 15px;
+}
+li {
+  margin-left: 15px;
+}
+li {
+  font-size: 18px;
+}
+li li {
+  font-size: 16px;
+}
+li li li {
+  font-size: 12px;
+}
+.missing {
+  color: Red;
 }

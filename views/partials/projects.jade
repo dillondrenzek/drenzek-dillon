@@ -28,8 +28,9 @@ mixin TestProject(p)
 						li= s
 			li 
 				h5 Images
-				each u in p.imageURLs
-					p= u
+				ul
+					each u in p.imageURLs
+						li= u
 			li 
 				h5 Descripton
 				p= p.description
