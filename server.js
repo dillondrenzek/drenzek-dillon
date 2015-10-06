@@ -6,7 +6,11 @@ var exports = module.exports = {};
 // Module Dependencies
 var express = require('express')
   , routes = require('./routes')
-  , path = require('path');
+  , path = require('path')
+  , MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+var db;
+var seedData = require('./db');
 
 // Create and Configure App
 var app = exports.app = express();
@@ -19,21 +23,40 @@ app.use(express.static(__dirname + '/bower_components'));
 
 
 
+
 // App Routes
 app.get('/', routes.index);
 app.get('/homepage', routes.home);
 app.get('/the-work-of', routes.work);
 app.get('/author', routes.author);
+app.get('/I', function(req, res){
+	res.render('admin');
+});
 
+app.get('/test/:subtest', function(req, res){
+	res.render('test/'+req.params['subtest'], {
+		projects: seedData.projects.v2
+	});
+});
 
 
 // Create Server
-var server = app.listen(app.get('port'), app.get('ip'), function(){
-    var host = server.address().address;
-    var port = server.address().port;
+function listen() {
+	var server = app.listen(app.get('port'), app.get('ip'), function(){
+	    var host = server.address().address;
+	    var port = server.address().port;
 
-    console.log('Express server listening at http://%s:%s', host, port);
+	    console.log('Express server listening at http://%s:%s', host, port);
+	});
+}
+
+MongoClient.connect('mongodb://localhost:27017', function(err, datab) {
+	assert.equal(null, err);
+	console.log("Connected correctly to database.");
+	db = datab;
+	listen();
 });
+
 
 
 // #!/bin/env node

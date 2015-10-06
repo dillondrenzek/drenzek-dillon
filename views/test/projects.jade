@@ -1,0 +1,14 @@
+extends test
+include ../partials/projects
+
+block title
+	| List Projects
+
+block page
+	h2 All Projects
+	if projects
+		ul.projects
+			each proj in projects
+				+TestProject(proj)
+	else
+		p No Projects Currently available.
