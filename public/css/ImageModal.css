@@ -99,7 +99,7 @@
   z-index: 101;
   height: 60px;
   width: 60px;
-  background: rgba(184,67,42,0.6);
+  background: rgba(178,59,35,0.6);
   color: rgba(250,250,250,0.6);
   cursor: pointer;
   line-height: 60px;
@@ -112,7 +112,7 @@
   text-decoration: none;
 }
 #modal .modal-button:active {
-  background: rgba(184,67,42,0.9);
+  background: rgba(178,59,35,0.9);
 }
 #modal .modal-button .shortcut-hint {
   color: #fafafa;

@@ -89,12 +89,33 @@
 
 		
 
-
-
+		// Aside & hover-description
 		
+		
+		function aside_output(array, output) {
+			
+			var elementArray = ['<ul>'];
+			array.forEach(function(el){
+				elementArray.push("<li>"+el+"<br><br></li>");
+			});
+			elementArray.push('</ul>');
 
 
+			var structure = elementArray.join('');
+			output.html(structure);
+		};
 
+		var output = $('#leftside').find('aside');
+		var aside = [
+			"I’m totally psyched you’re here. I’ve found a passion in putting a bit of original artistry in Front-End Web Development and I’m eager to share with you.<br><br>",
+			"My always-clever remarks appear throughout the site in this font. It\'s like your own personal tour!<br><br>",
+			"Also, these photos..."
+		];
+		aside_output(aside, output);
+
+		// aside_output([
+		// 	"test", "test2", "test3"
+		// 	], output);
 
 			
 	});

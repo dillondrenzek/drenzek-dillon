@@ -1,8 +1,6 @@
 //- App Template
 //- version 3.0.1
 
-include partials/logo
-
 doctype
 html
 	head
@@ -38,8 +36,12 @@ html
 		header#site-title
 		.container-fluid
 			#leftside
-				+Logo()
+				.logo
+					h1 Dillon Drenzek
+					.subtitle Web Developer & Artist
 				aside 
+					ul
+						li Call me, Administrator
 					//- called in jQuery aside( [li, li, li] ) 
 					//- ul
 					//- 	li I’m totally psyched you’re here. I’ve found a passion in putting a bit of original artistry in Front-End Web Development and I’m eager to share with you.<br><br> 
@@ -53,50 +55,3 @@ html
 				p This site is very much under construction.<br> But I'm chipping away, bit by bit, and quite Agile-ly.<br> Follow my progress #[a(href="http://github.com/dillondrenzek/drenzek-dillon") on GitHub].<br> [ Updated: 9-25-2015 ]
 		#modal
 		//- footer#site-footer
-
-//-----------------
-//- App Components
-//-----------------
-
-//- //- Skills
-//- mixin Skill(skill)
-//- 	li.skill= skill
-
-//- mixin SkillsList(skills)
-//- 	if skills
-//- 		ul.skills
-//- 			each s in skills
-//- 				+Skill(s)
-
-//- mixin SkillsContainer(title, skills)
-//- 	.skills-container
-//- 		h3= title
-//- 		+SkillsList(skills)
-		
-//- //- Projects
-//- mixin Project(proj)
-//- 	li.project
-//- 		figure
-//- 			if proj.imageURLs
-//- 				each url in proj.imageURLs
-//- 					img(src="#{url}" alt="#{proj.title}")
-//- 		.title
-//- 			header
-//- 				h3= proj.title
-//- 				.subtitle= proj.type
-//- 			+SkillsList(proj.skills)
-//- 			p= proj.description
-//- 			//- if (proj.launchURL)
-//- 			//- 	a(href="#{proj.launchURL}").button Launch
-//- 			//- if (proj.githubURL)
-//- 			//- 	a(href="#{proj.githubURL}").button View on GitHub
-		
-
-//- //- Social Media Links
-//- mixin SocialMedia()
-//- 	ul#social-media
-//- 		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-//- 		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
-//- 		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-//- 		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
-				

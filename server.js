@@ -24,20 +24,33 @@ app.use(express.static(__dirname + '/bower_components'));
 
 
 
-// App Routes
-app.get('/', routes.index);
-app.get('/homepage', routes.home);
-app.get('/the-work-of', routes.work);
-app.get('/author', routes.author);
-app.get('/I', function(req, res){
-	res.render('admin');
-});
 
-app.get('/test/:subtest', function(req, res){
-	res.render('test/'+req.params['subtest'], {
-		projects: seedData.projects.v2
-	});
-});
+
+// Website Routes
+var site = new express.Router();
+site.get('/', routes.site.home);
+site.get('/homepage', routes.site.home);
+site.get('/the-work-of', routes.site.work);
+site.get('/author', routes.site.author);
+// site.get('/test/:subtest', routes.site.subtests);
+
+// Admin Routes
+var my = new express.Router();
+my.get('/admin', routes.my.admin);
+my.get('/login', routes.my.login);
+
+// Api Routes
+var api = new express.Router();
+api.get('/projects', routes.api.projects.list);
+
+var test = new express.Router();
+test.get('/:subtest', routes.site.subtests);
+
+
+app.use('/', site);
+app.use('/my', my); 
+app.use('/api', api);
+app.use('/test', test);
 
 
 // Create Server

@@ -60,30 +60,33 @@ ul
 		
 
 #leftside
-	Width-SM(4)
+	Width-SM(2)
 	position fixed
+	z-index 0
 	border yellow 1px solid
 	
 	.logo
 		position absolute
 		top 0
 		right 0
+		z-index 11
 		
 	aside
 		Width-XS(9)
-		PersonalQuote(1rem, 200, White, -0.025em, right)
+		PersonalQuote(0.95rem, 200, White, -0.035em, right)
 		position absolute
 		top 200px
 		right 0
 		margin-top 15px
-		// padding 15px
+		padding-right 15px
 		
 	
 #rightside
-	Width-SM(8)
-	Offset-SM(4)
+	Width-SM(10)
+	Offset-SM(2)
 	top 36px
 	position absolute
+	// padding-left 15px
 	// overflow-x hidden
 	
 
@@ -92,7 +95,7 @@ ul
 	// background White
 	display block
 	// margin-left 15px
-	padding-left 15px
+	// padding-left 15px
 	
 .page-header
 	position relative
@@ -114,7 +117,8 @@ ul
 
 .page-body
 	background White
-	padding 15px
+	padding-top 15px
+	padding-left 15px
 	border-bottom 5px solid Light
 	
 .page-footer
@@ -165,24 +169,35 @@ ul
 		text-transform uppercase
 		letter-spacing .1em
 		text-align left
+	.login
+		position absolute
+		top 40px
+		left 15px
+		font-size 0.2em
+		color Red
+		text-transform uppercase
+		letter-spacing .1em
+		&:hover
+			color LtRed
 
 
 .project
 	// border-top 1px solid Light
-	background Light
+	// background Light
 	display inline-block
 	// margin-bottom 20px
-	padding 15px
+	// padding 15px
 	// margin 0 15px
 	margin-bottom 15px
-	box-shadow 1px 1px 3px Gray
+	// box-shadow 1px 1px 3px Gray
 	&:nth-child(odd)
 		margin-right 15px
 	Width-SM(5)
 	// float left
 	
 	ul
-		list-style-type none
+		// list-style-type none
+		// margin-left 15px
 
 	&>*
 		display inline-block
