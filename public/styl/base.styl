@@ -91,11 +91,26 @@ ul
 	
 
 .page
-	Width-XS(12)
-	// background White
+	Width-SM(12)
+	background White
 	display block
-	// margin-left 15px
-	// padding-left 15px
+	margin-top 36px
+	
+	&>* // Children of .page
+		display inline-block
+		vertical-align top
+	.left
+		Width-SM(3)
+
+	.center
+		// Offset-SM(3)
+		Width-SM(6)
+
+	.right
+		// Offset-SM(9)
+		Width-SM(3)
+
+
 	
 .page-header
 	position relative

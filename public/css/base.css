@@ -161,8 +161,33 @@ ul li {
   }
 }
 .page {
-  width: 100%;
+  background: #fafafa;
   display: block;
+  margin-top: 36px;
+}
+@media (min-width: 768px) {
+  .page {
+    width: 100%;
+  }
+}
+.page>* {
+  display: inline-block;
+  vertical-align: top;
+}
+@media (min-width: 768px) {
+  .page .left {
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .page .center {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .page .right {
+    width: 25%;
+  }
 }
 .page-header {
   position: relative;
