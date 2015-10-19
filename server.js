@@ -51,6 +51,7 @@ app.use('/', site);
 app.use('/my', my); 
 app.use('/api', api);
 app.use('/test', test);
+app.use('/resume', express.static(__dirname + '/public/pdf/dillon-drenzek-resume.pdf'));
 
 
 // Create Server
