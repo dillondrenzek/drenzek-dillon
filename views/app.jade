@@ -1,46 +1,7 @@
 //- App Template
-//- version 2.3.0
+//- version 3.0
 
-//- Skills
-mixin Skill(skill)
-	li.skill= skill
-
-mixin SkillsList(skills)
-	if skills
-		ul.skills
-			each s in skills
-				+Skill(s)
-
-mixin SkillsContainer(title, skills)
-	.skills-container
-		h3= title
-		+SkillsList(skills)
-		
-//- Projects
-mixin Project(proj)
-	li.project
-		.title
-			header
-				h3= proj.title
-				.subtitle= proj.type
-			+SkillsList(proj.skills)
-			p= proj.description
-			if (proj.launchURL)
-				a(href="#{proj.launchURL}").button Launch
-			if (proj.githubURL)
-				a(href="#{proj.githubURL}").button View on GitHub
-		figure
-			if proj.imageURLs
-				each url in proj.imageURLs
-					img(src="#{url}" alt="#{proj.title}")
-
-//- Social Media Links
-mixin SocialMedia()
-	ul#social-media
-		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
-		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+include partials/logo
 
 doctype
 html
@@ -52,13 +13,14 @@ html
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 
 		//- Stylesheets
-		//- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
-		link(rel="stylesheet" href="/stylesheets/style.css")
-		link(rel="stylesheet" href="/stylesheets/font-awesome.min.css")
+		link(rel="stylesheet" href="/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet" href="/css/base.css")
+		link(rel="stylesheet" href="/css/ImageModal.css")
+		block link
 
 
 		//- jQuery
-		script(src="/js/jquery-1.11.2.min.js")
+		script(src="/jquery/dist/jquery.min.js")
 		script(src="/js/jquery.ImageModal.js")
 		script(src="/js/script.js")
 
@@ -68,26 +30,64 @@ html
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 			ga('create', 'UA-67261358-1', 'auto');
 			ga('send', 'pageview');
 
 
-
 	body
+		header#site-title
+		+Logo()
 		.container-fluid
-			section#site-title
-				header.site-title
-					h1 Dillon Drenzek
-					.subtitle Aspiring Developer, Perpetual Learner
-				nav
-					ul
-						li: a(href="#author") About
-						li: a(href="#skills") Skills
-						li: a(href="#projects") Work
-						
-			block body
-			footer#site-footer
+			block page
+
+					
+			//- footer#site-footer
 				p This site is very much under construction.<br> But I'm chipping away, bit by bit, and quite Agile-ly.<br> Follow my progress #[a(href="http://github.com/dillondrenzek/drenzek-dillon") on GitHub].<br> [ Updated: 9-25-2015 ]
 		#modal
+
+//-----------------
+//- App Components
+//-----------------
+
+//- //- Skills
+//- mixin Skill(skill)
+//- 	li.skill= skill
+
+//- mixin SkillsList(skills)
+//- 	if skills
+//- 		ul.skills
+//- 			each s in skills
+//- 				+Skill(s)
+
+//- mixin SkillsContainer(title, skills)
+//- 	.skills-container
+//- 		h3= title
+//- 		+SkillsList(skills)
+		
+//- //- Projects
+//- mixin Project(proj)
+//- 	li.project
+//- 		figure
+//- 			if proj.imageURLs
+//- 				each url in proj.imageURLs
+//- 					img(src="#{url}" alt="#{proj.title}")
+//- 		.title
+//- 			header
+//- 				h3= proj.title
+//- 				.subtitle= proj.type
+//- 			+SkillsList(proj.skills)
+//- 			p= proj.description
+//- 			//- if (proj.launchURL)
+//- 			//- 	a(href="#{proj.launchURL}").button Launch
+//- 			//- if (proj.githubURL)
+//- 			//- 	a(href="#{proj.githubURL}").button View on GitHub
+		
+
+//- //- Social Media Links
+//- mixin SocialMedia()
+//- 	ul#social-media
+//- 		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
+//- 		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
+//- 		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+//- 		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
 				

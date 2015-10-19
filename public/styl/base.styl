@@ -1,0 +1,261 @@
+// App-Wide Styling
+// v3.0.0
+
+@import 'app'
+
+*,
+*:before,
+*:after
+	box-sizing border-box
+	-moz-box-sizing border-box
+	-webkit-box-sizing border-box
+	margin 0
+	padding 0
+
+//- Background Image
+html  
+	background url('../images/grassy-field.jpeg') no-repeat center center fixed 
+	-webkit-background-size cover
+	-moz-background-size cover
+	-o-background-size cover
+	background-size cover
+	
+
+//--------------
+//- Text Styles
+//--------------
+
+html
+	FiraSans(16px, 400, Black, -1px, left)
+h1
+	FiraSans(3rem, 700, White, -0.05em, center)
+	line-height 3rem
+// h2
+// 	FiraSans(2.25rem, 700, Black, -0.05em, left)
+// 	line-height 2.25rem
+h3
+	FiraSans(1.75rem, 400, Black, 0em, left)
+	line-height 1.5rem
+p
+	FiraSans(1rem, 200, Black, 0.03125em, justify)
+a
+	text-decoration none
+	// FiraSans( size, weight, color, spacing, align )
+	
+img
+	&.landscape
+		width 100%
+		height auto
+	&.portrait
+		height 100%
+		width auto
+
+//--------
+//- Lists
+//--------
+ul
+	li
+		list-style-type none
+
+
+
+.page
+	Width-SM(12)
+	background White
+	display block
+	margin-top 36px
+	
+	
+
+section
+	
+	&.title
+		height 138px
+	
+// .page-header
+// 	position relative
+// 	padding 15px
+// 	border-bottom 5px solid Red
+// 	height 164px
+// 	color White
+// 	h2
+// 		position absolute
+// 		bottom 15px
+// 		left 15px
+// 		color inherit
+// 		font-size 3rem
+// 		text-shadow 1px 1px 3px Black
+
+// .page-body
+// 	background White
+// 	padding-top 15px
+// 	padding-left 15px
+// 	border-bottom 5px solid Light
+	
+// .page-footer
+// 	Width-XS(12)
+// 	padding 15px
+// 	background Black
+// 	color LtRed
+// 	border-bottom 5px solid Dark
+
+.quote
+	font-style italic
+
+.primary, .secondary
+	a
+		color Black
+		&:hover
+			color Red
+
+
+//- Layout (from page top)
+//- ! styles may further be modified in inheriting page
+#site-title
+	Width-XS(12)
+	z-index 10
+	position fixed
+	top 0
+	left 0
+	height 36px
+	
+	background black
+
+.logo
+	width 130px
+	height 174px
+	font-size 31.32px
+	background Red
+	text-align left
+	z-index 101
+	h1
+		position absolute
+		left 0.270833em
+		bottom 0.6666667em
+		font-size 1em // Standard 48px
+		line-height 0.83333em
+		text-align left
+		text-shadow 1px 1px 1px rgba(Black, 0.5)
+		NoSelect()
+	.subtitle
+		position absolute
+		left 1.25em
+		bottom 1.25em
+		font-size 0.25em // Standard 12px
+		color LtRed
+		text-transform uppercase
+		letter-spacing .1em
+		text-align left
+		NoSelect()
+	.login
+		position absolute
+		top 40px
+		left 15px
+		font-size 0.25em
+		color Red
+		text-transform uppercase
+		letter-spacing .1em
+		cursor pointer
+		&:hover
+			color LtRed
+
+.logo
+	position fixed
+	top 0
+	left 25%
+	-webkit-transform translateX(-140px)
+	transform translateX(-140px)
+
+.project
+	display inline-block
+	margin-bottom 15px
+	Width-SM(5)
+	
+	&:nth-child(odd)
+		margin-right 15px
+
+	&>*
+		display inline-block
+		vertical-align middle
+	
+	.title
+		margin-top 15px
+		Width-SM(12)
+		h3
+			FiraSans(1.25rem, 700, Black, -0.06em, left)
+			
+	.descriptors
+		FiraSans(0.75rem, 700, Red, 0.1em, left)
+		text-transform uppercase
+		
+		.brackets
+			color Gray
+			font-weight 400
+
+	.points
+		FiraSans(0.85rem, 500, Dark, 0.1em, left)
+		text-transform uppercase
+		.point
+			margin-top 10px
+
+
+	//--------------
+	// Image Slider
+	//--------------
+	figure
+		Width-SM(12)
+		background Black
+		overflow hidden
+		height 100%
+		position relative
+		z-index 0
+		cursor pointer
+		
+		img
+			display block
+			margin 0 auto
+			&:not(a)
+				:not(:first-child)
+					display none
+	
+		&:hover a.image
+			opacity 1
+		
+		a.image
+			opacity 0
+			position absolute
+			bottom 0
+			text-align center
+			width 100%
+			background rgba(Red,0.7)
+			padding 10px
+			color White
+			&:hover
+				text-decoration none
+
+
+		&:hover .navigation
+			opacity 1
+
+#site-footer
+	background black
+	position fixed
+	z-index 99
+	bottom 0
+	left 0
+	height 36px
+	Width-XS(12)
+	
+	&>*:first-child
+		margin 0 auto
+
+	p
+		color Gray !important
+		text-align center
+		padding 50px 12.5%
+		font-size 10px
+		.updated
+			margin-top 10px
+			text-align center
+		
+

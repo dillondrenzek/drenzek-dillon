@@ -16,16 +16,12 @@ The professional portfolio of University of Colorado graduate, Dillon Drenzek. <
 #### Testing
 
 ---------------------------------
-## Version: `v2.3.2` <br>
-
-#### Next Version Goals
-* Keyboard support for ImageModal jQuery Plugin
-* Page indicator
-
+## Version: `v3.0.0` <br>
 
 #### Version History
 | Version Name  	| Version Number 	| Date 			| Description |
 |-------------------|-----------|---------------|---|
+| The Work of       | 3.0.0     |   Oct 19 15   | Whole new interface, data structure and mission statement |
 |                   | 2.3.2     |   Sep 24 15   | Reimplementation of ImageModal as jQuery Plugin |
 |                   | 2.3.0     |   Sep 21 15   | Creation of ImageModal, a way to view projects in detail |
 |                   | 2.2.0     |   Sep 13 15   | Projects Linked and Updated |

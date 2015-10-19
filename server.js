@@ -6,7 +6,11 @@ var exports = module.exports = {};
 // Module Dependencies
 var express = require('express')
   , routes = require('./routes')
-  , path = require('path');
+  , path = require('path')
+  , MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+var db;
+var seedData = require('./db');
 
 // Create and Configure App
 var app = exports.app = express();
@@ -15,22 +19,58 @@ app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/bower_components'));
 
 
 
-// App Routes
-app.get('/', routes.index);
-app.get('/test', routes.test)
 
+
+
+// Website Routes
+var site = new express.Router();
+site.get('/', routes.site.home);
+site.get('/homepage', routes.site.home);
+site.get('/the-work-of', routes.site.work);
+site.get('/author', routes.site.author);
+// site.get('/test/:subtest', routes.site.subtests);
+
+// Admin Routes
+var my = new express.Router();
+my.get('/admin', routes.my.admin);
+my.get('/login', routes.my.login);
+
+// Api Routes
+var api = new express.Router();
+api.get('/projects', routes.api.projects.list);
+
+var test = new express.Router();
+test.get('/:subtest', routes.site.subtests);
+
+
+app.use('/', site);
+app.use('/my', my); 
+app.use('/api', api);
+app.use('/test', test);
+app.use('/resume', express.static(__dirname + '/public/pdf/dillon-drenzek-resume.pdf'));
 
 
 // Create Server
-var server = app.listen(app.get('port'), app.get('ip'), function(){
-    var host = server.address().address;
-    var port = server.address().port;
+function listen() {
+	var server = app.listen(app.get('port'), app.get('ip'), function(){
+	    var host = server.address().address;
+	    var port = server.address().port;
 
-    console.log('Express server listening at http://%s:%s', host, port);
+	    console.log('Express server listening at http://%s:%s', host, port);
+	});
+}
+
+MongoClient.connect('mongodb://localhost:27017', function(err, datab) {
+	assert.equal(null, err);
+	console.log("Connected correctly to database.");
+	db = datab;
+	listen();
 });
+
 
 
 // #!/bin/env node

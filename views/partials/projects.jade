@@ -1,0 +1,40 @@
+//- title: "Cold For Now, Always Wondering",
+//-           descriptors: ["Artwork"],
+//-           points: ["2015 CU Honors Journal Feature",
+//-                   "Collage of My Photographs",
+//-                   "Photoshop Composition"],
+//-           skills: ["Photoshop", "Photography"],
+//-           description: "On a frigid November night in Bozeman, Montana, I stood with my camera on a tripod aimed towards the heavens. With hot chocolate in hand, I pondered life's biggest questions. This piece was featured in the University of Colorado's 2015 Honors Journal.",
+//-           imageURLs: ["images/always-wondering.jpg"]
+
+mixin TestProject(p)
+	li.test-project
+		h4= p.title
+		ul
+			li 
+				h5 Descriptors
+				ul
+					each d in p.descriptors
+						li= d
+			li 
+				h5 Points
+				ul
+					each pt in p.points
+						li= pt
+			li 
+				h5 Skills
+				ul
+					each s in p.skills
+						li= s
+			li 
+				h5 Images
+				ul
+					each u in p.imageURLs
+						li= u
+			li 
+				h5 Descripton
+				p= p.description
+			
+
+
+
