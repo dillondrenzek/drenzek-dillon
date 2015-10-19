@@ -35,8 +35,8 @@ block page
 
 			section
 				header
-					h3 Hello!
-				p.quote Thanks for visiting! I'm currently looking for a job and developing this website at the same time. Eventually, The Work of will be a comprehensive look at what I'm doing and it will all be built to resemble a dashboard so you, the employer/recruiter/friend, can get a good feel for what Dillon Drenzek is all about in a single glance! Cheers :)
+					h3 Forgive the mess!
+				p.quote Thanks for visiting! I'm currently looking for a job and developing this website at the same time. Eventually ", The Work of" will be a comprehensive look at what I'm doing and what I've done. It will be built with Angular to resemble a dashboard so you - the employer/recruiter/friend - can get a good feel for what Dillon Drenzek is all about in a single glance!<br> For now, enjoy what you can find, and drop me a note at dillon@drenzek.com!<br><br> Cheers,<br> Dillon
 			
 			//- section.featured
 				header
@@ -89,17 +89,30 @@ block page
 					li.project
 						figure
 							img(src="images/capstone-portfolio-1.jpg")
+							img(src="images/capstone-portfolio-2.jpg")
+							img(src="images/capstone-portfolio-3.jpg")
+							img(src="images/capstone-portfolio-4.jpg")
 						.title
 							.primary Capstone Portfolio Website
 							.secondary Website, Node.js, Neo4j
 							.body A major project in my Capstone class during the Spring of 2015. I went above and beyond the requirements by using Node and the graph database, Neo4j. This is the first version of the site you're on :)
+							ul
+								li: a(href="http://drenzek-capstone-portfolio.herokuapp.com") Launch
+								li: a(href="https://github.com/dillondrenzek/drenzek-capstone-portfolio") On GitHub
+					
+
 					li.project
 						figure
 							img(src="images/le-faux-1.png")
+							img(src="images/le-faux-2.jpg")
 						.title
 							.primary Le Faux Désign Compagnie
 							.secondary Branding, Website
 							.body I created a fake design company. The project was part of an advanced web design class I took in the Fall of 2014 at the University of Colorado.
+							//- ul
+								li: a(href="http://drenzek-capstone-portfolio.herokuapp.com") Launch
+								li: a(href="https://github.com/dillondrenzek/drenzek-capstone-portfolio") On GitHub
+
 					li.project
 						figure
 							img(src="images/always-wondering.jpg")
@@ -107,6 +120,8 @@ block page
 							.primary Cold For Now, Always Wondering
 							.secondary Artwork
 							.body On a frigid November night in Bozeman, Montana, I stood with my camera on a tripod aimed towards the heavens. With hot chocolate in hand, I pondered life's biggest questions. This piece was featured in the University of Colorado's 2015 Honors Journal.
+							
+
 					li.project
 						figure
 							img(src="images/gridrunner.png")
@@ -114,6 +129,10 @@ block page
 							.primary Gridrunner
 							.secondary Game, Website
 							.body A game a friend and I made for our Digital Media 2 class. My first brush with Object-Oriented JavaScript, and so my obsession began... 
+							ul
+								//- li: a(href="http://drenzek-capstone-portfolio.herokuapp.com") Launch
+								li: a(href="https://github.com/dillondrenzek/gridrunner/tree/master/dm2-teamproject") On GitHub
+
 					li.project
 						figure
 							img(src="images/capstone-portal.png")
@@ -121,6 +140,11 @@ block page
 							.primary Capstone Project Portal
 							.secondary Node.js
 							.body A website for turning in assignments for my Capstone class in Spring 2015. I built an admin space into it to update the website throughout the year. Also where I fell in love with Node.js after porting the site from the Ruby DSL, Sinatra.
+							ul
+								li: a(href="http://capstone.drenzek.com") Launch
+								li: a(href="https://github.com/dillondrenzek/drenzek-capstone") On GitHub
+
+
 					li.project
 						figure
 							img(src="images/drenzek-does-denmark.png")
@@ -128,6 +152,9 @@ block page
 							.primary Drenzek Does Denmark
 							.secondary Angular.js
 							.body A simple blog I created while I was in Denmark to practice using Angular.
+							ul
+								li: a(href="http://denmark.drenzek.com") Launch
+								li: a(href="https://github.com/dillondrenzek/drenzek-does-denmark") On GitHub
 
 
 
@@ -168,6 +195,39 @@ block page
 					+Skill("Photoshop", "++")
 					+Skill("Node.js", "+")
 					+Skill("Illustrator", "+")
+
+			section.recent-skills
+				header
+					h3 Resume Skills
+				ul.skills
+					+Skill("HTML(5)")
+					+Skill("CSS(3)")
+					+Skill("jQuery")
+					+Skill("Photoshop")
+					+Skill("Illustrator")
+					+Skill("Sketch")
+					+Skill("JavaScript")
+					+Skill("Stylus")
+					+Skill("Jade")
+					+Skill("Git/GitHub")
+					+Skill("Mac OS X")
+					+Skill("UNIX Command Line")
+					+Skill("Express.js")
+					+Skill("Node.js")
+					+Skill("Bootstrap")
+					+Skill("Gulp.js")
+					+Skill("Linux")
+					+Skill("WordPress")
+					+Skill("Angular.js")
+					+Skill("MongoDB")
+					+Skill("Objective-C")
+					+Skill("Swift")
+					+Skill("Python")
+					+Skill("REST APIs")
+					+Skill("JSON")
+					+Skill("AJAX")
+					+Skill("C/C++")
+					+Skill("Java")
 
 
 

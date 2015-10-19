@@ -522,6 +522,19 @@ section.title {
     width: 100%;
   }
 }
+.page .currently .project .title a {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #b23b23;
+  letter-spacing: 0.0714285em;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.page .currently .project .title a:hover {
+  text-decoration: underline;
+}
 .page .currently .project .title .primary {
   padding-bottom: 0;
 }
