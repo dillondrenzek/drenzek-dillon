@@ -10,7 +10,16 @@ site.work = function(req, res) {
 	// 	projects: seedData.projects.v2
 	// });
     res.render('the-work-of', {
-        data: seedData.theWorkOf
+        // featured: {
+        //     headerLink: {
+        //         label: "List Projects >",
+        //         href: "/projects",
+        //         active: false
+        //     },
+        //     slideIndicator: {
+        //         active: false
+        //     }
+        // }
     });
 };
 

@@ -21,7 +21,7 @@ mixin Project(proj)
 					li.point= p
 
 block title
-	| , The Work of | Dillon Drenzek - Up & Coming Web Developer
+	| Dillon Drenzek, The Work of
 
 block link
 	link(rel="stylesheet" href="/css/the-work-of.css")
@@ -32,42 +32,49 @@ block page
 		.center
 			section.title 
 				h2 , The Work of
-			
-			section.featured
+
+			section
 				header
-					h3 Featured Projects
-					a(href="/projects") List Projects >
-					.slide-indicator
-						.arrow <
-						.indicator 1/3
-						.arrow >
+					h3 Hello!
+				p.quote Thanks for visiting! I'm currently looking for a job and developing this website at the same time. Eventually, The Work of will be a comprehensive look at what I'm doing and it will all be built to resemble a dashboard so you, the employer/recruiter/friend, can get a good feel for what Dillon Drenzek is all about in a single glance! Cheers :)
+			
+			//- section.featured
+				header
+					h3 Featured Project
+					//- if featured.headerLink.active
+						a(href="/projects") List Projects >
+					//- if featured.slideIndicator.active
+						.slide-indicator
+							.arrow <
+							.indicator 1/3
+							.arrow >
 				.project
 					figure
-						img(src="images/always-wondering.jpg")
+						img(src="images/storm.jpg")
 					.title
-						.primary Cold For Now, Always Wondering
-						.secondary Artwork
-						.body Tweet-length description about this project, describing the main point of this project.
+						.primary: a(href="http://drenzek-storm-feature.herokuapp.com/") Storm Rebranding Case Study
+						.secondary Website, Branding
+						.body A case study I did of the Graphic Design project I completed in Denmark during the Summer of 2015.
 			
-			section.currently
+			//- section.currently
 				header
 					h3 Currently
 				ul
 					li.project
 						figure
-							img(src="images/always-wondering.jpg")
+							img(src="images/profile.jpg")
 						.title
-							.primary Cold For Now, Always Wondering
-							.secondary Artwork
-							.body Tweet-length description about this project, describing the main point of this project.
-					li.project
+							.primary dillon.drenzek.com
+							.secondary Node.js, Angular.js
+							.body The website you're currently visiting! I am constantly working to improve it, stay tuned!
+					//- li.project
 						figure
 							img(src="images/always-wondering.jpg")
 						.title
 							.primary Cold For Now, Always Wondering
 							.secondary Artwork
 							.body Tweet-length description about this project, describing the main point of this project.
-					li.project
+					//- li.project
 						figure
 							img(src="images/always-wondering.jpg")
 						.title
@@ -81,25 +88,46 @@ block page
 				ul
 					li.project
 						figure
-							img(src="images/always-wondering.jpg")
+							img(src="images/capstone-portfolio-1.jpg")
 						.title
-							.primary Cold For Now, Always Wondering
-							.secondary Artwork
-							.body Tweet-length description about this project, describing the main point of this project.
+							.primary Capstone Portfolio Website
+							.secondary Website, Node.js, Neo4j
+							.body A major project in my Capstone class during the Spring of 2015. I went above and beyond the requirements by using Node and the graph database, Neo4j. This is the first version of the site you're on :)
+					li.project
+						figure
+							img(src="images/le-faux-1.png")
+						.title
+							.primary Le Faux Désign Compagnie
+							.secondary Branding, Website
+							.body I created a fake design company. The project was part of an advanced web design class I took in the Fall of 2014 at the University of Colorado.
 					li.project
 						figure
 							img(src="images/always-wondering.jpg")
 						.title
 							.primary Cold For Now, Always Wondering
 							.secondary Artwork
-							.body Tweet-length description about this project, describing the main point of this project.
+							.body On a frigid November night in Bozeman, Montana, I stood with my camera on a tripod aimed towards the heavens. With hot chocolate in hand, I pondered life's biggest questions. This piece was featured in the University of Colorado's 2015 Honors Journal.
 					li.project
 						figure
-							img(src="images/always-wondering.jpg")
+							img(src="images/gridrunner.png")
 						.title
-							.primary Cold For Now, Always Wondering
-							.secondary Artwork
-							.body Tweet-length description about this project, describing the main point of this project.
+							.primary Gridrunner
+							.secondary Game, Website
+							.body A game a friend and I made for our Digital Media 2 class. My first brush with Object-Oriented JavaScript, and so my obsession began... 
+					li.project
+						figure
+							img(src="images/capstone-portal.png")
+						.title
+							.primary Capstone Project Portal
+							.secondary Node.js
+							.body A website for turning in assignments for my Capstone class in Spring 2015. I built an admin space into it to update the website throughout the year. Also where I fell in love with Node.js after porting the site from the Ruby DSL, Sinatra.
+					li.project
+						figure
+							img(src="images/drenzek-does-denmark.png")
+						.title
+							.primary Drenzek Does Denmark
+							.secondary Angular.js
+							.body A simple blog I created while I was in Denmark to practice using Angular.
 
 
 
@@ -114,80 +142,33 @@ block page
 				.category
 					h4 Web Development
 					ul.skills
-						+Skill("HTML", 92)
-						+Skill("CSS", 88)
-						+Skill("JavaScript", 73)
+						+Skill("HTML")
+						+Skill("CSS")
+						+Skill("JavaScript")
 				.category
 					h4 UI Design
 					ul.skills
-						+Skill("Photoshop", 87)
-						+Skill("Illustrator", 83)
-						+Skill("Sketch", 65)
+						+Skill("Photoshop")
+						+Skill("Illustrator")
+						+Skill("Sketch")
 				.category
 					h4 Programming
 					ul.skills
-						+Skill("Objective-C", 68)
-						+Skill("Python", 51)
-						+Skill("Java", 33)
+						+Skill("Objective-C")
+						+Skill("Python")
+						+Skill("Java")
 
 			section.recent-skills
 				header
-					h3 Recent Skills
+					h3 Recently Improved
 				ul.skills
-					+Skill("JavaScript", "73+")
-					+Skill("HTML", "92+")
-					+Skill("CSS", "88+")
-					+Skill("Photoshop", "87-")
-					+Skill("Illustrator", "83+")
+					+Skill("JavaScript", "+++")
+					+Skill("Python", "+++")
+					+Skill("Java", "++")
+					+Skill("Photoshop", "++")
+					+Skill("Node.js", "+")
+					+Skill("Illustrator", "+")
 
 
-	//- .page
-		.page-header
-			h2 , The Work of
-		.page-body
-			ul
-				each proj in projects
-					+Project(proj)
-				//- +Project()
-				//- +Project()
-				//- +Project()
-				//- +Project()
-		//- .page-footer
-	//- .page
-	//- 	h1 , The Work of
-	//- .page
 
-//- block header
-	h2 The Work Of
-	//- .subtitle Projects
 
-//- block left
-	//- p Aside
-
-//- block right
-	if projects.length > 0
-		ul.projects
-			each p in projects
-				li.project
-					.title
-						h3= p.title
-					if p.imageURLs
-						figure
-							each url in p.imageURLs
-								img(src="#{url}" alt="#{p.title}")
-
-					.detail
-						
-						if p.descriptors
-							.descriptors
-								span.brackets [
-								span
-									each des in p.descriptors
-										|  #{des}, 
-								span.brackets ]
-						if p.points
-							ul.points
-								each point in p.points
-									li.point
-										| - 
-										| #{point}

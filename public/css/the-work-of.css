@@ -117,6 +117,17 @@ ul li {
 section.title {
   height: 138px;
 }
+.quote {
+  font-style: italic;
+}
+.primary a,
+.secondary a {
+  color: #303030;
+}
+.primary a:hover,
+.secondary a:hover {
+  color: #b23b23;
+}
 #site-title {
   width: 100%;
   z-index: 10;

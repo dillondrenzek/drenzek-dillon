@@ -72,7 +72,7 @@ projects.v2 = [
                     "Graphic Design Studio",
                     "Summer of 2015"],
             skills: ["Jade", "Stylus", "Node.js", "jQuery"],
-            description: "A case study I did of my Graphic Design project completed in Denmark during the Summer of 2015.",
+            description: "A case study I did of the Graphic Design project I completed in Denmark during the Summer of 2015.",
             launchURL: "http://drenzek-storm-feature.herokuapp.com/",
             githubURL: "https://github.com/dillondrenzek/storm-feature",
             imageURLs: ["images/storm.jpg"]
