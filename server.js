@@ -7,7 +7,7 @@ var exports = module.exports = {};
 var express = require('express')
   , routes = require('./routes')
   , path = require('path')
-  , MongoClient = require('mongodb').MongoClient
+  // , MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 var db;
 var seedData = require('./db');
@@ -63,13 +63,13 @@ function listen() {
 	    console.log('Express server listening at http://%s:%s', host, port);
 	});
 }
-
-MongoClient.connect('mongodb://localhost:27017', function(err, datab) {
-	assert.equal(null, err);
-	console.log("Connected correctly to database.");
-	db = datab;
-	listen();
-});
+listen();
+// MongoClient.connect('mongodb://localhost:27017', function(err, datab) {
+// 	assert.equal(null, err);
+// 	console.log("Connected correctly to database.");
+// 	db = datab;
+	
+// });
 
 
 
