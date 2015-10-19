@@ -6,9 +6,12 @@ var seedData = require('../db');
 
 // GET '/the-work-of'
 site.work = function(req, res) {
-	res.render('the-work-of', {
-		projects: seedData.projects.v2
-	});
+	// res.render('the-work-of', {
+	// 	projects: seedData.projects.v2
+	// });
+    res.render('the-work-of', {
+        data: seedData.theWorkOf
+    });
 };
 
 // GET '/author'

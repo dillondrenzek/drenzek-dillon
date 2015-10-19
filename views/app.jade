@@ -25,7 +25,7 @@ html
 		script(src="/js/script.js")
 
 		//- Google Analytics
-		//- script.
+		script.
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -36,19 +36,14 @@ html
 
 	body
 		header#site-title
-		.logo
-			h1 Dillon Drenzek
-			.subtitle Up & Coming Developer
-			.login Login
-		//- 	img(src="images/logo_Primary.png" class="portrait")
+		+Logo()
 		.container-fluid
 			block page
 
 					
 			//- footer#site-footer
 				p This site is very much under construction.<br> But I'm chipping away, bit by bit, and quite Agile-ly.<br> Follow my progress #[a(href="http://github.com/dillondrenzek/drenzek-dillon") on GitHub].<br> [ Updated: 9-25-2015 ]
-		//- #modal
-		//- footer#site-footer
+		#modal
 
 //-----------------
 //- App Components

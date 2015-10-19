@@ -7,6 +7,14 @@ var MongoClient = require('mongodb');
 
 exports.skills = require('./skills');
 exports.projects = require('./projects');
+
+
+exports.theWorkOf = {
+	
+};
+
+
+
 // exports.connect = function(){
 // 	exports.db = MongoClient.connect("mongodb://localhost:27017/dillon", function(err, database) {
 // 		if (err) throw err;

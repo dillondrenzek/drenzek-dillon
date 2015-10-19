@@ -3,6 +3,11 @@
 
 var projects = module.exports = {};
 
+projects.v3 = {
+    current:[{}, {}, {}],
+    featured: [{}]
+}
+
 // new in 2.4.1
 projects.v2 = [
         {
