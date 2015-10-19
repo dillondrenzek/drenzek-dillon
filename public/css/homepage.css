@@ -72,7 +72,6 @@ h1 {
   letter-spacing: -0.05em;
   text-align: center;
   line-height: 3rem;
-  color: #fafafa;
 }
 h2 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -114,52 +113,6 @@ img.portrait {
 ul li {
   list-style-type: none;
 }
-#leftside {
-  position: fixed;
-  z-index: 0;
-  border: #ff0 1px solid;
-}
-@media (min-width: 768px) {
-  #leftside {
-    width: 16.66666667%;
-  }
-}
-#leftside .logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 11;
-}
-#leftside aside {
-  width: 75%;
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.95rem;
-  font-weight: 200;
-  color: #fafafa;
-  letter-spacing: -0.035em;
-  text-align: right;
-  font-style: italic;
-  position: absolute;
-  top: 200px;
-  right: 0;
-  margin-top: 15px;
-  padding-right: 15px;
-}
-#rightside {
-  position: relative;
-  top: 36px;
-  position: absolute;
-}
-@media (min-width: 768px) {
-  #rightside {
-    width: 83.33333333%;
-  }
-}
-@media (min-width: 768px) {
-  #rightside {
-    left: 16.66666667%;
-  }
-}
 .page {
   background: #fafafa;
   display: block;
@@ -170,52 +123,8 @@ ul li {
     width: 100%;
   }
 }
-.page>* {
-  display: inline-block;
-  vertical-align: top;
-}
-@media (min-width: 768px) {
-  .page .left {
-    width: 25%;
-  }
-}
-@media (min-width: 768px) {
-  .page .center {
-    width: 50%;
-  }
-}
-@media (min-width: 768px) {
-  .page .right {
-    width: 25%;
-  }
-}
-.page-header {
-  position: relative;
-  padding: 15px;
-  border-bottom: 5px solid #b23b23;
-  height: 164px;
-  color: #fafafa;
-}
-.page-header h2 {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: inherit;
-  font-size: 3rem;
-  text-shadow: 1px 1px 3px #303030;
-}
-.page-body {
-  background: #fafafa;
-  padding-top: 15px;
-  padding-left: 15px;
-  border-bottom: 5px solid #ddd;
-}
-.page-footer {
-  width: 100%;
-  padding: 15px;
-  background: #303030;
-  color: #f2caa0;
-  border-bottom: 5px solid #555;
+section.title {
+  height: 138px;
 }
 #site-title {
   width: 100%;
@@ -227,9 +136,9 @@ ul li {
   background: #000;
 }
 .logo {
-  width: 150px;
-  height: 200px;
-  font-size: 36px;
+  width: 130px;
+  height: 174px;
+  font-size: 31.32px;
   background: #b23b23;
   text-align: left;
   z-index: 101;
@@ -242,6 +151,11 @@ ul li {
   line-height: 0.83333em;
   text-align: left;
   text-shadow: 1px 1px 1px rgba(48,48,48,0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 .logo .subtitle {
   position: absolute;
@@ -252,30 +166,43 @@ ul li {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 .logo .login {
   position: absolute;
   top: 40px;
   left: 15px;
-  font-size: 0.2em;
+  font-size: 0.25em;
   color: #b23b23;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  cursor: pointer;
 }
 .logo .login:hover {
   color: #f2caa0;
+}
+.logo {
+  position: fixed;
+  top: 0;
+  left: 25%;
+  -webkit-transform: translateX(-140px);
+  transform: translateX(-140px);
 }
 .project {
   display: inline-block;
   margin-bottom: 15px;
 }
-.project:nth-child(odd) {
-  margin-right: 15px;
-}
 @media (min-width: 768px) {
   .project {
     width: 41.66666667%;
   }
+}
+.project:nth-child(odd) {
+  margin-right: 15px;
 }
 .project>* {
   display: inline-block;

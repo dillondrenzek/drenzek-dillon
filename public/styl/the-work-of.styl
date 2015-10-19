@@ -1,0 +1,132 @@
+// The Work of Style
+// v3.0.0
+
+@import 'base'
+
+ThickPadding = 20px
+StandardPadding = 10px
+ThinPadding = 5px
+
+.page
+	&>*
+		display inline-block
+		vertical-align top
+		
+	section.title
+		h2
+			position absolute
+			bottom StandardPadding
+			left StandardPadding
+		
+		a
+			display block
+			text-align right
+			position relative
+			top 50%
+			-webkit-transform translateY(-100%)
+			transform translateY(-100%)
+			padding-bottom StandardPadding
+
+	section
+		position relative
+		padding 0 StandardPadding
+		
+		&:not(.title)
+			padding-bottom ThickPadding
+			border-left 1px solid Light
+
+		// Debug
+		// border 1px solid Red
+
+		
+		header
+			position relative
+			padding StandardPadding 0
+			border-top 1px solid Light
+			
+			// border 1px solid black
+
+
+
+			&>* // Children of .page header
+				display inline-block
+			.slide-indicator
+				Width-SM(4)
+				position absolute
+				right 0
+				bottom 0
+				-webkit-transform translateY(100%)
+				transform translateY(100%)
+				// border 1px solid black
+				
+				&>*
+					display inline-block
+					// border 1px solid black
+					
+				.arrow
+					text-align center
+					cursor pointer
+					Width-SM(3)
+
+				.indicator
+					text-align center
+					Width-SM(6)
+				// float left
+				// display none
+			
+			a
+				position absolute
+				right 0
+				
+		.project
+			Width-SM(12)
+			position relative
+			margin-bottom 0
+			
+			&>*
+				display inline-block
+			figure
+				background transparent
+				padding-right StandardPadding
+				Width-SM(8)
+			.title
+				Width-SM(4)
+		
+	.left
+		Width-SM(3)
+	
+	.center
+		Width-SM(6)
+		
+	.right
+		Width-SM(3)
+		
+	.currently
+		Width-SM(12)
+		
+		.project
+			Width-SM(4)
+			margin-right 0
+			
+			&>*
+				display block
+				Width-SM(12)
+				
+			.title
+				Width-SM(12)
+					
+	.top-skills
+		.category
+			padding-left StandardPadding
+			margin-bottom StandardPadding
+			.skill
+				padding-left StandardPadding
+				padding-bottom StandardPadding/2
+				
+	.recent-skills
+		ul
+			padding-left StandardPadding
+			.skill
+				padding-bottom StandardPadding
+
+

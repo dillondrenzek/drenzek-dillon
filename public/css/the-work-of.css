@@ -310,3 +310,154 @@ section.title {
   margin-top: 10px;
   text-align: center;
 }
+.page>* {
+  display: inline-block;
+  vertical-align: top;
+}
+.page section.title h2 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.page section.title a {
+  display: block;
+  text-align: right;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  padding-bottom: 10px;
+}
+.page section {
+  position: relative;
+  padding: 0 10px;
+}
+.page section:not(.title) {
+  padding-bottom: 20px;
+  border-left: 1px solid #ddd;
+}
+.page section header {
+  position: relative;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+.page section header>* {
+  display: inline-block;
+}
+.page section header .slide-indicator {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+@media (min-width: 768px) {
+  .page section header .slide-indicator {
+    width: 33.33333333%;
+  }
+}
+.page section header .slide-indicator>* {
+  display: inline-block;
+}
+.page section header .slide-indicator .arrow {
+  text-align: center;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .page section header .slide-indicator .arrow {
+    width: 25%;
+  }
+}
+.page section header .slide-indicator .indicator {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .page section header .slide-indicator .indicator {
+    width: 50%;
+  }
+}
+.page section header a {
+  position: absolute;
+  right: 0;
+}
+.page section .project {
+  position: relative;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .page section .project {
+    width: 100%;
+  }
+}
+.page section .project>* {
+  display: inline-block;
+}
+.page section .project figure {
+  background: transparent;
+  padding-right: 10px;
+}
+@media (min-width: 768px) {
+  .page section .project figure {
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 768px) {
+  .page section .project .title {
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 768px) {
+  .page .left {
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .page .center {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .page .right {
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .page .currently {
+    width: 100%;
+  }
+}
+.page .currently .project {
+  margin-right: 0;
+}
+@media (min-width: 768px) {
+  .page .currently .project {
+    width: 33.33333333%;
+  }
+}
+.page .currently .project>* {
+  display: block;
+}
+@media (min-width: 768px) {
+  .page .currently .project>* {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .page .currently .project .title {
+    width: 100%;
+  }
+}
+.page .top-skills .category {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.page .top-skills .category .skill {
+  padding-left: 10px;
+  padding-bottom: 10px/2;
+}
+.page .recent-skills ul {
+  padding-left: 10px;
+}
+.page .recent-skills ul .skill {
+  padding-bottom: 10px;
+}

@@ -30,7 +30,6 @@ html
 h1
 	FiraSans(3rem, 700, White, -0.05em, center)
 	line-height 3rem
-	color White
 h2
 	FiraSans(2.25rem, 700, Black, -0.05em, left)
 	line-height 2.25rem
@@ -57,38 +56,8 @@ img
 ul
 	li
 		list-style-type none
-		
 
-#leftside
-	Width-SM(2)
-	position fixed
-	z-index 0
-	border yellow 1px solid
-	
-	.logo
-		position absolute
-		top 0
-		right 0
-		z-index 11
-		
-	aside
-		Width-XS(9)
-		PersonalQuote(0.95rem, 200, White, -0.035em, right)
-		position absolute
-		top 200px
-		right 0
-		margin-top 15px
-		padding-right 15px
-		
-	
-#rightside
-	Width-SM(10)
-	Offset-SM(2)
-	top 36px
-	position absolute
-	// padding-left 15px
-	// overflow-x hidden
-	
+
 
 .page
 	Width-SM(12)
@@ -96,61 +65,45 @@ ul
 	display block
 	margin-top 36px
 	
-	&>* // Children of .page
-		display inline-block
-		vertical-align top
-	.left
-		Width-SM(3)
-
-	.center
-		// Offset-SM(3)
-		Width-SM(6)
-
-	.right
-		// Offset-SM(9)
-		Width-SM(3)
-
-
 	
-.page-header
-	position relative
-	// background Light
-	// background rgba(Black,0.2)
-	// background Dark
-	padding 15px
-	border-bottom 5px solid Red
-	height 164px
-	// color Black
-	color White
-	h2
-		position absolute
-		bottom 15px
-		left 15px
-		color inherit
-		font-size 3rem
-		text-shadow 1px 1px 3px Black
 
-.page-body
-	background White
-	padding-top 15px
-	padding-left 15px
-	border-bottom 5px solid Light
+section
 	
-.page-footer
-	// margin-left 15px
-	Width-XS(12)
-	padding 15px
-	background Black
-	color LtRed
-	border-bottom 5px solid Dark
+	&.title
+		height 138px
+	
+// .page-header
+// 	position relative
+// 	padding 15px
+// 	border-bottom 5px solid Red
+// 	height 164px
+// 	color White
+// 	h2
+// 		position absolute
+// 		bottom 15px
+// 		left 15px
+// 		color inherit
+// 		font-size 3rem
+// 		text-shadow 1px 1px 3px Black
+
+// .page-body
+// 	background White
+// 	padding-top 15px
+// 	padding-left 15px
+// 	border-bottom 5px solid Light
+	
+// .page-footer
+// 	Width-XS(12)
+// 	padding 15px
+// 	background Black
+// 	color LtRed
+// 	border-bottom 5px solid Dark
 
 
 //- Layout (from page top)
 //- ! styles may further be modified in inheriting page
 #site-title
 	Width-XS(12)
-	// Position(pos, z)
-	// Position(pos)
 	z-index 10
 	position fixed
 	top 0
@@ -160,9 +113,9 @@ ul
 	background black
 
 .logo
-	width 150px
-	height 200px
-	font-size 36px
+	width 130px
+	height 174px
+	font-size 31.32px
 	background Red
 	text-align left
 	z-index 101
@@ -174,9 +127,9 @@ ul
 		line-height 0.83333em
 		text-align left
 		text-shadow 1px 1px 1px rgba(Black, 0.5)
+		NoSelect()
 	.subtitle
 		position absolute
-		// PersonalQuote(0.35em, 200, LtRed, 0.05em, left)
 		left 1.25em
 		bottom 1.25em
 		font-size 0.25em // Standard 12px
@@ -184,35 +137,33 @@ ul
 		text-transform uppercase
 		letter-spacing .1em
 		text-align left
+		NoSelect()
 	.login
 		position absolute
 		top 40px
 		left 15px
-		font-size 0.2em
+		font-size 0.25em
 		color Red
 		text-transform uppercase
 		letter-spacing .1em
+		cursor pointer
 		&:hover
 			color LtRed
 
+.logo
+	position fixed
+	top 0
+	left 25%
+	-webkit-transform translateX(-140px)
+	transform translateX(-140px)
 
 .project
-	// border-top 1px solid Light
-	// background Light
 	display inline-block
-	// margin-bottom 20px
-	// padding 15px
-	// margin 0 15px
 	margin-bottom 15px
-	// box-shadow 1px 1px 3px Gray
+	Width-SM(5)
+	
 	&:nth-child(odd)
 		margin-right 15px
-	Width-SM(5)
-	// float left
-	
-	ul
-		// list-style-type none
-		// margin-left 15px
 
 	&>*
 		display inline-block
@@ -223,6 +174,7 @@ ul
 		Width-SM(12)
 		h3
 			FiraSans(1.25rem, 700, Black, -0.06em, left)
+			
 	.descriptors
 		FiraSans(0.75rem, 700, Red, 0.1em, left)
 		text-transform uppercase
@@ -233,12 +185,9 @@ ul
 
 	.points
 		FiraSans(0.85rem, 500, Dark, 0.1em, left)
-		// color Black
-		// letter-spacing .1em
 		text-transform uppercase
 		.point
 			margin-top 10px
-		// margin-bottom 10px
 
 
 	//--------------
@@ -259,8 +208,6 @@ ul
 			&:not(a)
 				:not(:first-child)
 					display none
-		// img:first-child:not(a)
-		// 	display block !important
 	
 		&:hover a.image
 			opacity 1
@@ -282,10 +229,7 @@ ul
 			opacity 1
 
 #site-footer
-	// background Black
-	// border-top 36px solid Black
 	background black
-	// color White
 	position fixed
 	z-index 99
 	bottom 0
