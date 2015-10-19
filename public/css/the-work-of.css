@@ -59,7 +59,7 @@ html {
 html {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: #303030;
   letter-spacing: -1px;
   text-align: left;
@@ -72,15 +72,6 @@ h1 {
   letter-spacing: -0.05em;
   text-align: center;
   line-height: 3rem;
-}
-h2 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #303030;
-  letter-spacing: -0.05em;
-  text-align: left;
-  line-height: 2.25rem;
 }
 h3 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
@@ -315,18 +306,35 @@ section.title {
   vertical-align: top;
 }
 .page section.title h2 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.03125em;
+  text-align: left;
+  line-height: 1.395833em;
   position: absolute;
   bottom: 10px;
+  bottom: 0;
   left: 10px;
 }
 .page section.title a {
-  display: block;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #b23b23;
+  letter-spacing: 0.0714285em;
   text-align: right;
+  text-transform: uppercase;
+  display: block;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   padding-bottom: 10px;
+}
+.page section.title a:hover {
+  text-decoration: underline;
 }
 .page section {
   position: relative;
@@ -334,24 +342,39 @@ section.title {
 }
 .page section:not(.title) {
   padding-bottom: 20px;
-  border-left: 1px solid #ddd;
 }
 .page section header {
   position: relative;
   padding: 10px 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #909090;
 }
 .page section header>* {
   display: inline-block;
 }
+.page section header h3 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #303030;
+  letter-spacing: 0.11125em;
+  text-align: left;
+  line-height: 1em;
+  text-transform: uppercase;
+}
 .page section header .slide-indicator {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #303030;
+  letter-spacing: 0.140625em;
+  text-align: left;
   position: absolute;
   right: 0;
   bottom: 0;
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page section header .slide-indicator {
     width: 33.33333333%;
   }
@@ -363,7 +386,7 @@ section.title {
   text-align: center;
   cursor: pointer;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page section header .slide-indicator .arrow {
     width: 25%;
   }
@@ -371,93 +394,201 @@ section.title {
 .page section header .slide-indicator .indicator {
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page section header .slide-indicator .indicator {
     width: 50%;
   }
 }
 .page section header a {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #b23b23;
+  letter-spacing: 0.0714285em;
+  text-align: right;
+  text-transform: uppercase;
   position: absolute;
   right: 0;
 }
-.page section .project {
-  position: relative;
-  margin-bottom: 0;
+.page section header a:hover {
+  text-decoration: underline;
 }
-@media (min-width: 768px) {
-  .page section .project {
-    width: 100%;
-  }
-}
-.page section .project>* {
-  display: inline-block;
-}
-.page section .project figure {
-  background: transparent;
-  padding-right: 10px;
-}
-@media (min-width: 768px) {
-  .page section .project figure {
-    width: 66.66666667%;
-  }
-}
-@media (min-width: 768px) {
-  .page section .project .title {
-    width: 33.33333333%;
-  }
-}
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page .left {
     width: 25%;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page .center {
     width: 50%;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page .right {
     width: 25%;
   }
 }
-@media (min-width: 768px) {
+.page .featured .project {
+  position: relative;
+  margin-bottom: 0;
+}
+@media (min-width: 992px) {
+  .page .featured .project {
+    width: 100%;
+  }
+}
+.page .featured .project>* {
+  display: inline-block;
+}
+.page .featured .project figure {
+  background: transparent;
+  padding-right: 10px;
+}
+@media (min-width: 992px) {
+  .page .featured .project figure {
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .page .featured .project .title {
+    width: 33.33333333%;
+  }
+}
+.page .featured .project .title .primary {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.027916em;
+  text-align: left;
+  line-height: 1em;
+}
+@media (min-width: 992px) {
   .page .currently {
     width: 100%;
   }
 }
 .page .currently .project {
+  display: inline-block;
+  vertical-align: top;
   margin-right: 0;
+  padding-right: 10px;
+  margin-bottom: 20px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page .currently .project {
     width: 33.33333333%;
   }
 }
+.page .currently .project:first-child {
+  padding-left: 0;
+}
 .page .currently .project>* {
   display: block;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .page .currently .project>* {
     width: 100%;
   }
 }
-@media (min-width: 768px) {
+.page .currently .project figure {
+  padding-bottom: 10px;
+  background: none;
+}
+.page .currently .project .title {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.027916em;
+  text-align: left;
+  line-height: 1em;
+  margin-top: 5px;
+  padding-bottom: 10px;
+}
+@media (min-width: 992px) {
   .page .currently .project .title {
     width: 100%;
   }
+}
+.page .currently .project .title .primary {
+  padding-bottom: 0;
 }
 .page .top-skills .category {
   padding-left: 10px;
   margin-bottom: 10px;
 }
-.page .top-skills .category .skill {
+.page .top-skills .category:last-child {
+  margin-bottom: 0;
+}
+.page .top-skills .category h4 {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #303030;
+  letter-spacing: 0.140625em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.page .top-skills .category ul {
   padding-left: 10px;
-  padding-bottom: 10px/2;
+}
+.page .top-skills .category .skill {
+  padding-bottom: 5px;
 }
 .page .recent-skills ul {
   padding-left: 10px;
 }
 .page .recent-skills ul .skill {
   padding-bottom: 10px;
+}
+li.skill>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+li.skill .title {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.027916em;
+  text-align: left;
+  line-height: 1em;
+}
+@media (min-width: 992px) {
+  li.skill .title {
+    width: 83.33333333%;
+  }
+}
+li.skill .value {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: #303030;
+  letter-spacing: 0.083333em;
+  text-align: center;
+  line-height: 1.125em;
+}
+@media (min-width: 992px) {
+  li.skill .value {
+    width: 16.66666667%;
+  }
+}
+.secondary {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: #b23b23;
+  letter-spacing: 0.0714285em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.body {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #555;
+  letter-spacing: 0.035em;
+  text-align: left;
+  line-height: 1.25em;
 }

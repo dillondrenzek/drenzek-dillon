@@ -8,19 +8,22 @@ StandardPadding = 10px
 ThinPadding = 5px
 
 .page
-	&>*
+	&>* // Children of .page
 		display inline-block
 		vertical-align top
 		
 	section.title
 		h2
+			Char-PageTitle()
 			position absolute
 			bottom StandardPadding
+			bottom 0
 			left StandardPadding
 		
 		a
+			Char-HeaderLinks()
 			display block
-			text-align right
+			// text-align right
 			position relative
 			top 50%
 			-webkit-transform translateY(-100%)
@@ -33,7 +36,7 @@ ThinPadding = 5px
 		
 		&:not(.title)
 			padding-bottom ThickPadding
-			border-left 1px solid Light
+			// border-left 1px solid Gray
 
 		// Debug
 		// border 1px solid Red
@@ -42,16 +45,17 @@ ThinPadding = 5px
 		header
 			position relative
 			padding StandardPadding 0
-			border-top 1px solid Light
-			
-			// border 1px solid black
-
-
+			border-top 1px solid Gray
 
 			&>* // Children of .page header
 				display inline-block
+				
+			h3
+				Char-SectionTitle(Black)
+
 			.slide-indicator
-				Width-SM(4)
+				Width-MD(4)
+				Char-SectionSubtitle()
 				position absolute
 				right 0
 				bottom 0
@@ -66,20 +70,32 @@ ThinPadding = 5px
 				.arrow
 					text-align center
 					cursor pointer
-					Width-SM(3)
+					Width-MD(3)
 
 				.indicator
 					text-align center
-					Width-SM(6)
+					Width-MD(6)
 				// float left
 				// display none
 			
 			a
+				Char-HeaderLinks()
 				position absolute
 				right 0
-				
+	
+		
+	.left
+		Width-MD(3)
+	
+	.center
+		Width-MD(6)
+		
+	.right
+		Width-MD(3)
+		
+	.featured	
 		.project
-			Width-SM(12)
+			Width-MD(12)
 			position relative
 			margin-bottom 0
 			
@@ -88,45 +104,97 @@ ThinPadding = 5px
 			figure
 				background transparent
 				padding-right StandardPadding
-				Width-SM(8)
+				// padding-right StandardPadding
+				// margin-right StandardPadding
+				Width-MD(8)
 			.title
-				Width-SM(4)
-		
-	.left
-		Width-SM(3)
-	
-	.center
-		Width-SM(6)
-		
-	.right
-		Width-SM(3)
+				Width-MD(4)
+				.primary
+					Char-MediumItemPrimary()
 		
 	.currently
-		Width-SM(12)
+		Width-MD(12)
+		// padding-right 0
+		
 		
 		.project
-			Width-SM(4)
+			display inline-block
+			vertical-align top
 			margin-right 0
+			// padding-top StandardPadding
+			// border-top 3px solid Black
+			padding-right StandardPadding
+			Width-MD(4)
+			&:first-child
+				padding-left 0
+			&:last-child
+				// padding-right 0
+			
+			// margin-right StandardPadding
+			margin-bottom ThickPadding
+				
 			
 			&>*
 				display block
-				Width-SM(12)
+				Width-MD(12)
 				
+			figure
+				padding-bottom StandardPadding
+				background none
+
 			.title
-				Width-SM(12)
+				Char-SmallItemPrimary()
+				Width-MD(12)
+				margin-top ThinPadding
+				padding-bottom StandardPadding
+				.primary
+					padding-bottom 0
+					
+				.secondary
+					// padding-bottom ThinPadding
+					
 					
 	.top-skills
 		.category
+			// padding-top StandardPadding
 			padding-left StandardPadding
 			margin-bottom StandardPadding
-			.skill
+			&:last-child
+				margin-bottom 0
+			// margin-bottom StandardPadding
+			// background Light
+			h4
+				Char-SectionSubtitle()
+				text-transform uppercase
+			ul
 				padding-left StandardPadding
-				padding-bottom StandardPadding/2
+			.skill
+				// background Light
+				// padding-left StandardPadding
+				padding-bottom (StandardPadding/2)
 				
 	.recent-skills
 		ul
 			padding-left StandardPadding
 			.skill
 				padding-bottom StandardPadding
+				
+li.skill
+	&>*
+		display inline-block
+		vertical-align middle
+	.title
+		Char-MediumItemPrimary()
+		Width-MD(10)
+	.value
+		Char-MediumItemValue()
+		Width-MD(2)
+	
+.secondary
+	Char-MediumItemSecondary()
+
+.body
+	Char-Body()
+	
 
 

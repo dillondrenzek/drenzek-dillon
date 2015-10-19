@@ -3,6 +3,11 @@
 
 extends app
 
+mixin Skill(title, value)
+	li.skill
+		.title= title
+		.value= value
+
 mixin Project(proj)
 	li.project 
 		figure
@@ -81,31 +86,31 @@ block page
 				.category
 					h4 Web Development
 					ul.skills
-						li.skill HTML 92
-						li.skill CSS 88
-						li.skill JavaScript 73
+						+Skill("HTML", 92)
+						+Skill("CSS", 88)
+						+Skill("JavaScript", 73)
 				.category
 					h4 UI Design
 					ul.skills
-						li.skill Photoshop 87
-						li.skill Illustrator 83
-						li.skill Sketch 65
+						+Skill("Photoshop", 87)
+						+Skill("Illustrator", 83)
+						+Skill("Sketch", 65)
 				.category
 					h4 Programming
 					ul.skills
-						li.skill Objective-C 68
-						li.skill Python 51
-						li.skill Java 33
+						+Skill("Objective-C", 68)
+						+Skill("Python", 51)
+						+Skill("Java", 33)
 
 			section.recent-skills
 				header
 					h3 Recent Skills
 				ul.skills
-					li.skill JavaScript 73+
-					li.skill HTML 92
-					li.skill CSS 88
-					li.skill Photoshop 87-
-					li.skill Illustrator 83
+					+Skill("JavaScript", "73+")
+					+Skill("HTML", "92+")
+					+Skill("CSS", "88+")
+					+Skill("Photoshop", "87-")
+					+Skill("Illustrator", "83+")
 
 
 	//- .page

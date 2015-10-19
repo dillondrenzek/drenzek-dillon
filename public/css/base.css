@@ -59,7 +59,7 @@ html {
 html {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   color: #303030;
   letter-spacing: -1px;
   text-align: left;
@@ -72,15 +72,6 @@ h1 {
   letter-spacing: -0.05em;
   text-align: center;
   line-height: 3rem;
-}
-h2 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #303030;
-  letter-spacing: -0.05em;
-  text-align: left;
-  line-height: 2.25rem;
 }
 h3 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
