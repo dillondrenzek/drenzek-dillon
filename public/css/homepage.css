@@ -314,7 +314,7 @@ section.title {
 }
 .links {
   position: relative;
-  left: 8.33333333%;
+  left: 33.33333333%;
   top: 165px;
 }
 .links a {
@@ -329,8 +329,8 @@ section.title {
 }
 .links a:hover {
   text-decoration: none;
-  background: rgba(0,0,0,0.2);
-  border-bottom: 5px solid #fafafa;
+  background: rgba(0,0,0,0.4);
+  border-bottom: 5px solid #ddd;
 }
 .links a .title {
   font-family: 'Fira Sans', Helvetica, sans-serif;
