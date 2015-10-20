@@ -1,0 +1,20 @@
+{
+  "name": "drenzek-dillon",
+  "description": "The Professional Portfolio of Dillon Drenzek",
+  "main": "",
+  "authors": [
+    "Dillon Drenzek <dillon@drenzek.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://dillon.drenzek.com",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
