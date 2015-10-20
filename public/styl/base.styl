@@ -160,11 +160,14 @@ section
 			color LtRed
 
 .logo
+	Offset-XS(0)
+	Offset-MD(3)
 	position fixed
 	top 0
-	left 25%
-	-webkit-transform translateX(-140px)
-	transform translateX(-140px)
+	// left 25%
+	+MD()
+		-webkit-transform translateX(-140px)
+		transform translateX(-140px)
 
 .project
 	display inline-block

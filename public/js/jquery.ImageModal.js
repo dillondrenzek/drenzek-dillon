@@ -30,7 +30,7 @@
 		var imgRatio = $this.width()/$this.height();
 		var frameRatio = $frame.width()/$frame.height();
 
-		console.log("img", imgRatio, "frame", frameRatio);
+		// console.log("img", imgRatio, "frame", frameRatio);
 		
 		// TODO: Remove dependency on CSS class
 		if (imgRatio > frameRatio) {
@@ -75,7 +75,7 @@
 		var ImageModal = (function(){
 
 			function ImageModal( options ) {
-				console.log("ImageModal()");
+				// console.log("ImageModal()");
 				this.options = $.extend(true, {}, defaults, options);
 
 				// Initialize Components
