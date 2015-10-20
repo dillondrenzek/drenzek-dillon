@@ -31,6 +31,7 @@ var site = new express.Router();
 site.get('/', routes.site.home);
 site.get('/homepage', routes.site.home);
 site.get('/the-work-of', routes.site.work);
+site.get('/the-work-of/:page', routes.site.work);
 site.get('/author', routes.site.author);
 // site.get('/test/:subtest', routes.site.subtests);
 

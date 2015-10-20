@@ -22,6 +22,9 @@
 			$(this).sizeImage();
 		});
 
+		// TEMPORARY ANGULAR FIX
+		// $('img').attr({"src": this.attr("src").prepend("../")})
+
 
 
 		// Size <figure> inside a .project
