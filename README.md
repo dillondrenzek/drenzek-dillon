@@ -16,7 +16,7 @@ The professional portfolio of University of Colorado graduate, Dillon Drenzek. <
 #### Testing
 
 ---------------------------------
-## Version: `v3.0.0` <br>
+## Version: `v3.0.1` <br>
 
 #### Version History
 | Version Name  	| Version Number 	| Date 			| Description |
