@@ -94,7 +94,22 @@ block page
 
 					section.currently
 						header
-							h3 Past Work
+							h3 Past Work (Angular)
+						ul
+							li.project(ng-repeat="project in projects.all")
+								figure
+									img(ng-repeat="url in project.imageURLs" ng-src="{{url}}")
+								.title
+									.primary {{project.title}}
+									.secondary(ng-repeat="descriptor in project.descriptors") {{descriptor}}
+									.body {{project.description}}
+									ul(ng-show="project.launchURL || project.githubURL")
+										li: a(ng-show="project.launchURL" ng-href="{{project.launchURL}}") Launch
+										li: a(ng-show="project.githubURL" ng-href="{{project.githubURL}}") GitHub
+
+					//- section.currently
+						header
+							h3 Past Work (Static)
 						ul
 							li.project
 								figure
@@ -171,8 +186,10 @@ block page
 				.right
 					section.title
 						//- a(href="/cv") Curriculum Vitae >
-						a(href="/resume") Résumé >
+						a(href="/resume") Resume >
 					
+
+
 					section.top-skills
 						header
 							h3 Top Skills
@@ -192,6 +209,8 @@ block page
 								li.skill(ng-repeat="skill in skills.programming")
 									.title {{skill}}
 
+
+
 					section.recent-skills
 						header
 							h3 Recently Improved
@@ -199,6 +218,8 @@ block page
 							li.skill(ng-repeat="skill in skills.improved")
 								.title {{skill.title}}
 								.value {{skill.value}}
+
+
 
 					section.recent-skills
 						header
