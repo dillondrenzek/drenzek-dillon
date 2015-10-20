@@ -15,7 +15,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		resolve: {
 
 		}
-	});
+	})
+
+	.state('login', {
+		url: '/login',
+		controller: 'LoginCtrl'
+	})
 
 	$locationProvider.html5Mode(true);
 	$urlRouterProvider.otherwise('home');

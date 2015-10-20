@@ -321,6 +321,7 @@ section.title {
   text-align: center;
 }
 .links {
+  position: relative;
   left: 33.33333333%;
   top: 165px;
 }
