@@ -1,3 +1,7 @@
+// The Work of
+// Angular app
+// version 3.0.1
+
 var app = angular.module('workApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){

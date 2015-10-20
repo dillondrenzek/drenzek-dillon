@@ -190,9 +190,17 @@ section.title {
 .logo {
   position: fixed;
   top: 0;
-  left: 25%;
-  -webkit-transform: translateX(-140px);
-  transform: translateX(-140px);
+}
+@media (min-width: 992px) {
+  .logo {
+    left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    -webkit-transform: translateX(-140px);
+    transform: translateX(-140px);
+  }
 }
 .project {
   display: inline-block;
@@ -313,7 +321,6 @@ section.title {
   text-align: center;
 }
 .links {
-  position: relative;
   left: 33.33333333%;
   top: 165px;
 }

@@ -190,9 +190,17 @@ section.title {
 .logo {
   position: fixed;
   top: 0;
-  left: 25%;
-  -webkit-transform: translateX(-140px);
-  transform: translateX(-140px);
+}
+@media (min-width: 992px) {
+  .logo {
+    left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    -webkit-transform: translateX(-140px);
+    transform: translateX(-140px);
+  }
 }
 .project {
   display: inline-block;
@@ -424,15 +432,24 @@ section.title {
 .page section header a:hover {
   text-decoration: underline;
 }
+.page .left {
+  width: 16.66666667%;
+}
 @media (min-width: 992px) {
   .page .left {
     width: 25%;
   }
 }
+.page .center {
+  width: 83.33333333%;
+}
 @media (min-width: 992px) {
   .page .center {
     width: 50%;
   }
+}
+.page .right {
+  width: 83.33333333%;
 }
 @media (min-width: 992px) {
   .page .right {
