@@ -88,7 +88,7 @@ p {
   font-weight: 200;
   color: #303030;
   letter-spacing: 0.03125em;
-  text-align: justify;
+  text-align: left;
 }
 a {
   text-decoration: none;
@@ -117,6 +117,44 @@ ul li {
 section.title {
   height: 138px;
 }
+#social-media {
+  position: fixed;
+  width: 130px;
+  top: 174px;
+}
+@media (min-width: 992px) {
+  #social-media {
+    left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  #social-media {
+    -webkit-transform: translateX(-140px);
+    transform: translateX(-140px);
+  }
+}
+#social-media>* {
+  display: inline-block;
+  vertical-align: middle;
+}
+#social-media li {
+  width: 25%;
+  margin-top: 10px;
+  height: 35px;
+  position: relative;
+}
+#social-media a {
+  position: absolute;
+  font-size: 18px;
+  left: 50%;
+  color: #b23b23;
+  text-align: center;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#social-media a:hover {
+  color: #303030;
+}
 .quote {
   font-style: italic;
 }
@@ -138,12 +176,25 @@ section.title {
   background: #000;
 }
 .logo {
+  position: fixed;
+  top: 0;
   width: 130px;
   height: 174px;
   font-size: 31.32px;
   background: #b23b23;
   text-align: left;
   z-index: 101;
+}
+@media (min-width: 992px) {
+  .logo {
+    left: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    -webkit-transform: translateX(-140px);
+    transform: translateX(-140px);
+  }
 }
 .logo h1 {
   position: absolute;
@@ -186,21 +237,6 @@ section.title {
 }
 .logo .login:hover {
   color: #f2caa0;
-}
-.logo {
-  position: fixed;
-  top: 0;
-}
-@media (min-width: 992px) {
-  .logo {
-    left: 25%;
-  }
-}
-@media (min-width: 992px) {
-  .logo {
-    -webkit-transform: translateX(-140px);
-    transform: translateX(-140px);
-  }
 }
 .project {
   display: inline-block;
@@ -554,6 +590,12 @@ section.title {
 }
 .page .currently .project .title .primary {
   padding-bottom: 0;
+}
+.page .currently .project .title .secondary {
+  font-weight: 400;
+}
+.page .currently .project .title .body {
+  color: #303030;
 }
 .page .top-skills .category {
   padding-left: 10px;

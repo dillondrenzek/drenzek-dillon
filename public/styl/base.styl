@@ -3,6 +3,10 @@
 
 @import 'app'
 
+ThickPadding = 20px
+StandardPadding = 10px
+ThinPadding = 5px
+
 *,
 *:before,
 *:after
@@ -37,7 +41,7 @@ h3
 	FiraSans(1.75rem, 400, Black, 0em, left)
 	line-height 1.5rem
 p
-	FiraSans(1rem, 200, Black, 0.03125em, justify)
+	FiraSans(1rem, 200, Black, 0.03125em, left)
 a
 	text-decoration none
 	// FiraSans( size, weight, color, spacing, align )
@@ -72,36 +76,43 @@ section
 	&.title
 		height 138px
 	
-// .page-header
-// 	position relative
-// 	padding 15px
-// 	border-bottom 5px solid Red
-// 	height 164px
-// 	color White
-// 	h2
-// 		position absolute
-// 		bottom 15px
-// 		left 15px
-// 		color inherit
-// 		font-size 3rem
-// 		text-shadow 1px 1px 3px Black
-
-// .page-body
-// 	background White
-// 	padding-top 15px
-// 	padding-left 15px
-// 	border-bottom 5px solid Light
+#social-media
+	Offset-XS(0)
+	Offset-MD(3)
+	position fixed
+	width 130px
+	top 174px
 	
-// .page-footer
-// 	Width-XS(12)
-// 	padding 15px
-// 	background Black
-// 	color LtRed
-// 	border-bottom 5px solid Dark
+	+MD()
+		-webkit-transform translateX(-140px)
+		transform translateX(-140px)
+	&>*
+		display inline-block
+		vertical-align middle
+
+	li
+		Width-XS(3)
+		margin-top StandardPadding
+		height 35px
+		position relative
+		
+	a
+		// Width-XS(12)
+		// width 60px
+		position absolute
+		font-size 18px
+		left 50%
+		color Red
+		text-align center
+		-webkit-transform translateX(-50%)
+		transform translateX(-50%)
+		&:hover
+			color Black
 
 .quote
 	font-style italic
 
+//- TODO: MOVE THIS
 .primary, .secondary
 	a
 		color Black
@@ -122,12 +133,20 @@ section
 	background black
 
 .logo
+	ffset-XS(0)
+	Offset-MD(3)
+	position fixed
+	top 0
 	width 130px
 	height 174px
 	font-size 31.32px
 	background Red
 	text-align left
 	z-index 101
+	// box-shadow 1px 1px 1px rgba(Black,0.8)
+	+MD()
+		-webkit-transform translateX(-140px)
+		transform translateX(-140px)
 	h1
 		position absolute
 		left 0.270833em
@@ -160,14 +179,9 @@ section
 			color LtRed
 
 .logo
-	Offset-XS(0)
-	Offset-MD(3)
-	position fixed
-	top 0
+	// O
 	// left 25%
-	+MD()
-		-webkit-transform translateX(-140px)
-		transform translateX(-140px)
+	
 
 .project
 	display inline-block

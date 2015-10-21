@@ -3,6 +3,16 @@
 
 include partials/logo
 
+mixin SocialMedia()
+	ul#social-media
+		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+		li: a(href="https://behance.net/dillondrenzek/"): i.fa.fa-behance
+		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
+		
+		
+		
+
 doctype
 html
 	head
@@ -47,6 +57,7 @@ html
 	body
 		header#site-title
 		+Logo()
+		+SocialMedia()
 		.container-fluid
 			block page
 
@@ -93,11 +104,5 @@ html
 //- 			//- 	a(href="#{proj.githubURL}").button View on GitHub
 		
 
-//- //- Social Media Links
-//- mixin SocialMedia()
-//- 	ul#social-media
-//- 		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-//- 		li: a(href="https://instagram.com/dillondrenzek/"): i.fa.fa-instagram
-//- 		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-//- 		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+//- Social Media Links
 				
