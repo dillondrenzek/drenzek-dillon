@@ -23,9 +23,6 @@ app.use(express.static(__dirname + '/bower_components'));
 
 
 
-
-
-
 // Website Routes
 var site = new express.Router();
 site.get('/', routes.site.home);

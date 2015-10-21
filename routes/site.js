@@ -9,7 +9,10 @@ site.work = function(req, res) {
 	// res.render('the-work-of', {
 	// 	projects: seedData.projects.v2
 	// });
+    
+
     res.render('the-work-of', {
+        req: req
         // featured: {
         //     headerLink: {
         //         label: "List Projects >",
