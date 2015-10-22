@@ -19,7 +19,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 	.state('login', {
 		url: '/login',
-		controller: 'LoginCtrl'
+		controller: 'LoginCtrl',
+		templateUrl: '/login.html'
 	})
 
 	$locationProvider.html5Mode(true);
@@ -27,6 +28,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 
 });
+
+
+
+app.controller('LoginCtrl', [
+	'$scope',
+	function($scope){
+		$scope.pageTitle = "Login";
+	}]);
+
 
 
 app.controller('MainCtrl', [

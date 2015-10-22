@@ -5,6 +5,7 @@
 
 
 .page
+	padding-bottom 138px
 	&>* // Children of .page
 		display inline-block
 		vertical-align top
@@ -204,6 +205,75 @@ li.skill
 
 .body
 	Char-Body()
+
+.selected
+	color Red
+	font-weight 400
+
+// Forms
+
+FormTransitionTime = .3s
+
+.form-group
+	Width-XS(12)
+	padding 15px 0
+	// background Light
+	// border 1px Red solid
+	
+form
+	margin-top 138px
+	Width-MD(9)
+	text-align left
+	position relative
+	Offset-XS(3)
+	// input:focus
+	// 	border 1px solid Red
+	
+label
+	Width-MD(6)
+	FiraSans(1rem, 200, Gray, 0.25em, left)
+	text-transform uppercase
+	transition FormTransitionTime ease all
+	// padding-left ThickPadding
+
+input
+	font-size 30px
+	transition FormTransitionTime ease all
+	&:focus
+		outline none
+		
+	&.selected
+		color Red
+		
+
+		
+input[type="text"],
+input[type="password"]
+	background none
+	border none
+	border-bottom 1px solid Light
+	FiraSans(1.75rem, 700, Black, -0.025em, left)
+	FiraSans(1.75rem, 200, Gray, -0.05em, left)
+	&:focus
+		color Red
+		border-bottom 1px solid Red
+	
+	
+input[type="submit"]
+	background none
+	border none
+	text-transform uppercase
+	font-size 1rem
+	cursor pointer
+	FiraSans(1rem, 200, Gray, 0.125em, left)
+	&:hover
+		color Red
+		font-weight 400
+	&:active
+		box-shadow 1px 1px 1px rgba(Black, 0.5)
+		transition none
+		background Red
+		color White
 	
 
 

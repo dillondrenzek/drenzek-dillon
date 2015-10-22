@@ -356,6 +356,13 @@ section.title {
   margin-top: 10px;
   text-align: center;
 }
+#bottom-window {
+  height: 100vh;
+  width: width: 100%;;
+}
+.page {
+  padding-bottom: 138px;
+}
 .page>* {
   display: inline-block;
   vertical-align: top;
@@ -674,4 +681,94 @@ li.skill .value {
   letter-spacing: 0.035em;
   text-align: left;
   line-height: 1.25em;
+}
+.selected {
+  color: #b23b23;
+  font-weight: 400;
+}
+.form-group {
+  width: 100%;
+  padding: 15px 0;
+}
+form {
+  margin-top: 138px;
+  text-align: left;
+  position: relative;
+  left: 25%;
+}
+@media (min-width: 992px) {
+  form {
+    width: 75%;
+  }
+}
+label {
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #909090;
+  letter-spacing: 0.25em;
+  text-align: left;
+  text-transform: uppercase;
+  transition: 0.3s ease all;
+}
+@media (min-width: 992px) {
+  label {
+    width: 50%;
+  }
+}
+input {
+  font-size: 30px;
+  transition: 0.3s ease all;
+}
+input:focus {
+  outline: none;
+}
+input.selected {
+  color: #b23b23;
+}
+input[type="text"],
+input[type="password"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #303030;
+  letter-spacing: -0.025em;
+  text-align: left;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 200;
+  color: #909090;
+  letter-spacing: -0.05em;
+  text-align: left;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  color: #b23b23;
+  border-bottom: 1px solid #b23b23;
+}
+input[type="submit"] {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #909090;
+  letter-spacing: 0.125em;
+  text-align: left;
+}
+input[type="submit"]:hover {
+  color: #b23b23;
+  font-weight: 400;
+}
+input[type="submit"]:active {
+  box-shadow: 1px 1px 1px rgba(48,48,48,0.5);
+  transition: none;
+  background: #b23b23;
+  color: #fafafa;
 }

@@ -356,6 +356,10 @@ section.title {
   margin-top: 10px;
   text-align: center;
 }
+#bottom-window {
+  height: 100vh;
+  width: width: 100%;;
+}
 #social-media a:hover {
   color: #fafafa;
 }

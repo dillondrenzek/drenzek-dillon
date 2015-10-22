@@ -4,6 +4,25 @@
 (function($, window){
 	$(function(){
 
+
+		// $('input').focus(function(){
+		// 	var $this = $(this);
+		// 	$this.siblings().css({'color': $this.css('color')});
+
+		// 	console.log($this.siblings());
+		// });
+
+		$('input').focusin(function(){
+			var $this = $(this);
+			$this.siblings().addClass('selected');
+		});
+
+		$('input').focusout(function(){
+			var $this = $(this);
+			$this.siblings().removeClass('selected');
+		});
+
+
 		// Initialize Modal
 		var $modal = $('#modal').initImageModal();
 		$('.project')

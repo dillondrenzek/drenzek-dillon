@@ -7,13 +7,19 @@ var exports = module.exports = {};
 var express = require('express')
   , routes = require('./routes')
   , path = require('path')
-  // , MongoClient = require('mongodb').MongoClient
+  , MongoClient = require('mongodb').MongoClient
+  , MongoServer = require('mongodb').Server
   , assert = require('assert');
-var db;
 var seedData = require('./db');
 
 // Create and Configure App
 var app = exports.app = express();
+
+// mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/
+
+app.set('db_host', process.env.OPENSHIFT_MONGODB_DB_HOST || "127.0.0.1");
+app.set('db_port', process.env.OPENSHIFT_MONGODB_DB_PORT || 27017);
+
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 app.set('views', path.join(__dirname, '/views'));
@@ -21,6 +27,16 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/bower_components'));
 
+
+
+function errorHandler(err, req, res, next) {
+	console.error(err.message);
+	console.error(err.stack);
+	res.status(500);
+	res.render('error', {error: err});
+}
+
+app.use(errorHandler);
 
 
 // Website Routes
@@ -51,6 +67,11 @@ app.use('/api', api);
 app.use('/test', test);
 app.use('/resume', express.static(__dirname + '/public/pdf/dillon-drenzek-resume.pdf'));
 
+app.get('*', function(req, res, next){
+	// res.render('error');
+	next(Error('Page Not Found'));
+});
+
 
 // Create Server
 function listen() {
@@ -61,13 +82,38 @@ function listen() {
 	    console.log('Express server listening at http://%s:%s', host, port);
 	});
 }
-listen();
-// MongoClient.connect('mongodb://localhost:27017', function(err, datab) {
-// 	assert.equal(null, err);
-// 	console.log("Connected correctly to database.");
-// 	db = datab;
-	
-// });
+
+
+// DEV Environment Database
+if (app.get('ip') === "127.0.0.1") {
+	MongoClient.connect('mongodb://localhost:27017/drenzek-dillon', function(err, db) {
+
+
+	// 	db.collection('skills').findOne({title: "JavaScript"}, function(err, doc) {
+	// 		if (err) throw err;
+
+	// 		console.log(doc);
+
+	// 		db.close();
+	// 	});
+		console.log("Connected correctly to database.");
+
+		listen();
+
+	});
+	// mongoclient.connect(function(err, mongoclient) {
+	// 	if (err) throw err;
+	// 	console.log("Connected correctly to database.");
+	// 	
+	// });
+} else {
+	listen();
+}
+
+
+
+
+
 
 
 
