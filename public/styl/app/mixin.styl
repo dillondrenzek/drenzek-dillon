@@ -4,3 +4,27 @@ NoSelect()
 	-ms-user-select none      /* IE 10+ */
 	user-select none          /* Likely future */ 
 	cursor default
+	
+CoverBackground($url)
+	background url($url) no-repeat center center fixed 
+	-webkit-background-size cover
+	-moz-background-size cover
+	-o-background-size cover
+	background-size cover
+	
+TranslateX($deltaX)
+	-webkit-transform translateX($deltaX)
+	transform translateX($deltaX)
+	
+TranslateY($deltaY)
+	-webkit-transform translateY($deltaY)
+	transform translateY($deltaY)
+	
+Translate($deltaX, $deltaY)
+	-webkit-transform translate($deltaX, $deltaY)
+	transform translate($deltaX, $deltaY)
+
+InlineChildren($align)
+	&>*
+		display inline-block
+		vertical-align $align

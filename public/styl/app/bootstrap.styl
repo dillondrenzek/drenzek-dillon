@@ -1,5 +1,5 @@
 //- Bootstrap-style Layouts
-//- Version 3.0.0
+//- Version 3.0.1
 
 // Width-XS, Width-SM, Width-MD, Width-LG
 // Offset-XS, Offset-SM, Offset-MD, Offset-LG
@@ -10,38 +10,32 @@
 SmallThreshold = 768px
 MediumThreshold = 992px
 LargeThreshold = 1200px
-
-.container-fluid
-  display block
-  width 100%
-  margin-right auto
-  margin-left auto
-  
-// Fixed Width Alternative container
-.container 
-  // padding-right 15px
-  // padding-left 15px
-  display block
-  width 100%
-  margin-right auto
-  margin-left auto
     
 
+
+
+
+// TODO: Move These somewhere else
 @media (min-width SmallThreshold)
   .container 
     width 750px
-  
 
 @media (min-width MediumThreshold)
   .container 
     width 970px
   
-
 @media (min-width LargeThreshold)
   .container 
     width 1170px
 
-// Block Mixins
+
+
+
+
+// Media Query Blocks for Stylus
+// Use:
+//     +XS()
+//        color red
 
 XS()
   @media (max-width 767px)
@@ -63,8 +57,8 @@ LG()
 
 
 
-
 // Bootstrap Mixins
+// - corresponds to bootstrap's 12-column sizing scheme
 Width-XS(size)
   if size == 12
     width 100%
@@ -172,6 +166,7 @@ Width-LG(size)
     else if size == 1
       width 8.33333333%
    
+
 
 // Offset by left      
 Offset-XS(offset)

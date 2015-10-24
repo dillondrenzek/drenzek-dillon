@@ -3,48 +3,30 @@
 
 @import 'app'
 
-ThickPadding = 20px
-StandardPadding = 10px
-ThinPadding = 5px
+SiteTopMargin = 36px
+
 
 *,
 *:before,
 *:after
-	box-sizing border-box
-	-moz-box-sizing border-box
 	-webkit-box-sizing border-box
+	-moz-box-sizing border-box
+	box-sizing border-box
 	margin 0
 	padding 0
 
 //- Background Image
 html  
-	background url('../images/grassy-field.jpeg') no-repeat center center fixed 
-	-webkit-background-size cover
-	-moz-background-size cover
-	-o-background-size cover
-	background-size cover
-	
-
-//--------------
-//- Text Styles
-//--------------
+	CoverBackground('../images/grassy-field.jpeg')
 
 html
 	FiraSans(16px, 400, Black, -1px, left)
-h1
-	FiraSans(3rem, 700, White, -0.05em, center)
-	line-height 3rem
-// h2
-// 	FiraSans(2.25rem, 700, Black, -0.05em, left)
-// 	line-height 2.25rem
-h3
-	FiraSans(1.75rem, 400, Black, 0em, left)
-	line-height 1.5rem
+	
 p
 	FiraSans(1rem, 200, Black, 0.03125em, left)
+	
 a
 	text-decoration none
-	// FiraSans( size, weight, color, spacing, align )
 	
 img
 	&.landscape
@@ -54,60 +36,62 @@ img
 		height 100%
 		width auto
 
-//--------
-//- Lists
-//--------
 ul
 	li
 		list-style-type none
 
-
+// Bootstrap containers
+.container-fluid,
+.container 
+  display block
+  width 100%
+  margin 0 auto
 
 .page
 	Width-SM(12)
-	background White
 	display block
-	margin-top 36px
-	
-	
-
-section
-	
-	&.title
-		height 138px
+	margin-top SiteTopMargin
+	background White
 	
 #social-media
 	Offset-XS(0)
 	Offset-MD(3)
+	InlineChildren(middle)
 	position fixed
 	width 130px
 	top 174px
 	
 	+MD()
-		-webkit-transform translateX(-140px)
-		transform translateX(-140px)
-	&>*
-		display inline-block
-		vertical-align middle
+		TranslateX(-140px)
+	
 
 	li
 		Width-XS(3)
 		margin-top StandardPadding
-		height 35px
+		height 30px
 		position relative
 		
 	a
-		// Width-XS(12)
-		// width 60px
 		position absolute
-		font-size 18px
+		top 0
 		left 50%
+		height 100%
+		width 100%
+		font-size 18px
 		color Red
 		text-align center
-		-webkit-transform translateX(-50%)
-		transform translateX(-50%)
+		TranslateX(-50%)
 		&:hover
 			color Black
+			
+	i
+		position absolute
+		top 50%
+		left 50%
+		Translate(-50%, -50%)
+		
+			
+
 
 .quote
 	font-style italic
@@ -128,12 +112,11 @@ section
 	position fixed
 	top 0
 	left 0
-	height 36px
-	
+	height SiteTopMargin
 	background black
 
 .logo
-	ffset-XS(0)
+	Offset-XS(0)
 	Offset-MD(3)
 	position fixed
 	top 0
@@ -143,60 +126,55 @@ section
 	background Red
 	text-align left
 	z-index 101
-	// box-shadow 1px 1px 1px rgba(Black,0.8)
+	
 	+MD()
-		-webkit-transform translateX(-140px)
-		transform translateX(-140px)
+		TranslateX(-140px)
+		
 	h1
+		FiraSans(1em, 700, White, -0.05em, left)
+		line-height 0.83333em
+		text-shadow 1px 1px 1px rgba(Black, 0.5)
+		NoSelect()
 		position absolute
 		left 0.270833em
 		bottom 0.6666667em
-		font-size 1em // Standard 48px
-		line-height 0.83333em
-		text-align left
-		text-shadow 1px 1px 1px rgba(Black, 0.5)
-		NoSelect()
+		
 	.subtitle
+		FiraSans(0.25em, 400, LtRed, 0.1em, left)
+		text-transform uppercase
+		NoSelect()
 		position absolute
 		left 1.25em
 		bottom 1.25em
-		font-size 0.25em // Standard 12px
-		color LtRed
-		text-transform uppercase
-		letter-spacing .1em
-		text-align left
-		NoSelect()
+		
+		
 	.login
+		FiraSans(0.25em, 400, Red, 0.1em, left)
+		text-transform uppercase
 		position absolute
 		top 40px
-		left 15px
-		font-size 0.25em
-		color Red
-		text-transform uppercase
-		letter-spacing .1em
+		left StandardPadding
 		cursor pointer
 		&:hover
 			color LtRed
 
-.logo
-	// O
-	// left 25%
 	
 
 .project
-	display inline-block
-	margin-bottom 15px
 	Width-SM(5)
+	display inline-block
+	margin-bottom StandardPadding
+	
 	
 	&:nth-child(odd)
-		margin-right 15px
+		margin-right StandardPadding
 
 	&>*
 		display inline-block
 		vertical-align middle
 	
 	.title
-		margin-top 15px
+		margin-top StandardPadding
 		Width-SM(12)
 		h3
 			FiraSans(1.25rem, 700, Black, -0.06em, left)
@@ -213,7 +191,7 @@ section
 		FiraSans(0.85rem, 500, Dark, 0.1em, left)
 		text-transform uppercase
 		.point
-			margin-top 10px
+			margin-top ThinPadding
 
 
 	//--------------
@@ -245,7 +223,7 @@ section
 			text-align center
 			width 100%
 			background rgba(Red,0.7)
-			padding 10px
+			padding ThinPadding
 			color White
 			&:hover
 				text-decoration none
@@ -270,9 +248,9 @@ section
 		color Gray !important
 		text-align center
 		padding 50px 12.5%
-		font-size 10px
+		font-size ThinPadding
 		.updated
-			margin-top 10px
+			margin-top ThinPadding
 			text-align center
 			
 #bottom-window

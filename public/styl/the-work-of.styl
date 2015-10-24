@@ -4,191 +4,174 @@
 @import 'base'
 
 
-.page
-	padding-bottom 138px
-	&>* // Children of .page
-		display inline-block
-		vertical-align top
-		
-	section.title
-		h2
-			Char-PageTitle()
-			position absolute
-			bottom StandardPadding
-			bottom 0
-			left StandardPadding
-		
-		a
-			Char-HeaderLinks()
-			display block
-			// text-align right
-			position relative
-			top 50%
-			-webkit-transform translateY(-100%)
-			transform translateY(-100%)
-			padding-bottom StandardPadding
+// Three main columns of page
+.left,
+.center,
+.right
+	display inline-block
+	vertical-align top	
 
+.left
+	Width-XS(2)
+	Width-MD(3)
+
+.center
+	Width-XS(10)
+	Width-MD(6)
+	
+.right
+	Width-XS(10)
+	Width-MD(3)
+
+
+.page
+	background White
+	margin-top 36px
+	&>* // Children of .page
+		
+	
+	// Sections
+	// - characterized by the top border
 	section
 		position relative
 		padding 0 StandardPadding
-		
-		&:not(.title)
-			padding-bottom ThickPadding
-			// border-left 1px solid Gray
+		padding-bottom ThickPadding
 
-		// Debug
-		// border 1px solid Red
-
-		
 		header
 			position relative
 			padding StandardPadding 0
 			border-top 1px solid Gray
-
-			&>* // Children of .page header
+			&>*
 				display inline-block
-				
+				vertical-align middle
 			h3
 				Char-SectionTitle(Black)
-
-			.slide-indicator
-				Width-MD(4)
-				Char-SectionSubtitle()
-				position absolute
-				right 0
-				bottom 0
-				-webkit-transform translateY(100%)
-				transform translateY(100%)
-				// border 1px solid black
-				
-				&>*
-					display inline-block
-					// border 1px solid black
-					
-				.arrow
-					text-align center
-					cursor pointer
-					Width-MD(3)
-
-				.indicator
-					text-align center
-					Width-MD(6)
-				// float left
-				// display none
-			
 			a
 				Char-HeaderLinks()
-				position absolute
-				right 0
-	
-		
-	.left
-		Width-XS(2)
-		Width-MD(3)
-	
-	.center
-		Width-XS(10)
-		Width-MD(6)
-		
-	.right
-		// Offset-XS(2)
-		Width-XS(10)
-		Width-MD(3)
-		
-	.featured	
-		.project
-			Width-MD(12)
-			position relative
-			margin-bottom 0
-			
-			&>*
-				display inline-block
-			figure
-				background transparent
-				padding-right StandardPadding
-				// padding-right StandardPadding
-				// margin-right StandardPadding
-				Width-MD(8)
-			.title
-				Width-MD(4)
-				.primary
-					Char-MediumItemPrimary()
-		
-	.currently
-		Width-MD(12)
-		// padding-right 0
-		
-		
-		.project
-			display inline-block
-			vertical-align top
-			margin-right 0
-			// padding-top StandardPadding
-			// border-top 3px solid Black
-			padding-right StandardPadding
-			Width-MD(4)
-			&:first-child
-				padding-left 0
-			&:last-child
-				// padding-right 0
-			
-			// margin-right StandardPadding
-			margin-bottom ThickPadding
-				
-			
-			&>*
-				display block
-				Width-MD(12)
-				
-			figure
-				padding-bottom StandardPadding
-				background none
+				float right
 
-			.title
-				Char-SmallItemPrimary()
-				Width-MD(12)
-				margin-top ThinPadding
+		// Section Types
+			
+		&.title // along the top of the page
+			padding-bottom 0
+			height 137px
+			h2
+				Char-PageTitle()
+				position absolute
+				bottom 0
+				left StandardPadding
+			a
+				Char-HeaderLinks()
+				display block
+				position relative
+				top 50%
+				-webkit-transform translateY(-100%)
+				transform translateY(-100%)
 				padding-bottom StandardPadding
-				a
-					Char-HeaderLinks()
-					font-weight 700
-				.primary
-					padding-bottom 0
-					
-				.secondary
-					font-weight 400
-					// padding-bottom ThinPadding
-				.body
-					color Black
-					// font-weight 400
-					// text-align justify
-					
-					
-	.top-skills
-		.category
-			// padding-top StandardPadding
-			padding-left StandardPadding
-			margin-bottom StandardPadding
-			&:last-child
+		
+		&.featured // big picture 2/3, description 1/3
+			
+			// add in .skill
+			.project
+				Width-MD(12)
+				position relative
 				margin-bottom 0
-			// margin-bottom StandardPadding
-			// background Light
-			h4
-				Char-SectionSubtitle()
-				text-transform uppercase
+				&>*
+					display inline-block
+				figure
+					Width-MD(8)
+					background transparent
+					padding-right StandardPadding
+				.title
+					Width-MD(4)
+					.primary
+						Char-MediumItemPrimary()
+		
+		&.list-3-column // 3 columns for lists only
+			Width-MD(12)
+			
+			.project
+				Width-MD(4)
+				display inline-block
+				vertical-align top
+				padding-right StandardPadding
+				margin-right 0
+				margin-bottom ThickPadding
+				&:first-child
+					padding-left 0
+				
+				&>*
+					Width-MD(12)
+					display block
+					
+				figure
+					padding-bottom StandardPadding
+					background none
+					border-bottom 1px solid Black
+
+				.title
+					
+					Width-MD(12)
+					margin-top ThinPadding
+					padding-bottom StandardPadding
+					a
+						Char-HeaderLinks()
+						font-weight 700
+					.primary
+						Char-SmallItemPrimary()
+						padding-bottom 0
+					.secondary
+						Char-SmallItemSecondary()
+						font-weight 400
+					.body
+						color Black
+						Char-Body()
+					
+					
+		&.list-category
+			.category
+				padding-left StandardPadding
+				margin-bottom StandardPadding
+				&:last-child
+					margin-bottom 0
+				h4
+					Char-SectionSubtitle()
+					text-transform uppercase
+				ul
+					padding-left StandardPadding
+				.skill
+					padding-bottom (StandardPadding/2)
+		
+
+
+		&.list-standard
 			ul
 				padding-left StandardPadding
-			.skill
-				// background Light
-				// padding-left StandardPadding
-				padding-bottom (StandardPadding/2)
+				.skill
+					padding-bottom StandardPadding
+
+
+
+.slide-indicator
+	Width-MD(4)
+	Char-SectionSubtitle()
+	position absolute
+	right 0
+	bottom 0
+	-webkit-transform translateY(100%)
+	transform translateY(100%)
+	&>*
+		display inline-block	
+	.arrow
+		text-align center
+		cursor pointer
+		Width-MD(3)
+	.indicator
+		text-align center
+		Width-MD(6)
 				
-	.recent-skills
-		ul
-			padding-left StandardPadding
-			.skill
-				padding-bottom StandardPadding
-				
+
+
 li.skill
 	&>*
 		display inline-block
@@ -208,7 +191,6 @@ li.skill
 
 .selected
 	color Red
-	font-weight 400
 
 // Forms
 
@@ -217,24 +199,19 @@ FormTransitionTime = .3s
 .form-group
 	Width-XS(12)
 	padding 15px 0
-	// background Light
-	// border 1px Red solid
 	
 form
-	margin-top 138px
-	Width-MD(9)
-	text-align left
-	position relative
 	Offset-XS(3)
-	// input:focus
-	// 	border 1px solid Red
+	Width-MD(9)
+	position relative
+	margin-top 138px
+	text-align left
 	
 label
-	Width-MD(6)
 	FiraSans(1rem, 200, Gray, 0.25em, left)
+	Width-MD(6)
 	text-transform uppercase
 	transition FormTransitionTime ease all
-	// padding-left ThickPadding
 
 input
 	font-size 30px
@@ -249,11 +226,12 @@ input
 		
 input[type="text"],
 input[type="password"]
+	FiraSans(1.75rem, 200, Gray, -0.05em, left)
 	background none
 	border none
-	border-bottom 1px solid Light
-	FiraSans(1.75rem, 700, Black, -0.025em, left)
-	FiraSans(1.75rem, 200, Gray, -0.05em, left)
+	border-bottom 1px solid Gray
+	// FiraSans(1.75rem, 700, Black, -0.025em, left)
+	
 	&:focus
 		color Red
 		border-bottom 1px solid Red
@@ -265,10 +243,9 @@ input[type="submit"]
 	text-transform uppercase
 	font-size 1rem
 	cursor pointer
-	FiraSans(1rem, 200, Gray, 0.125em, left)
+	FiraSans(1rem, 200, Red, 0.125em, left)
 	&:hover
 		color Red
-		font-weight 400
 	&:active
 		box-shadow 1px 1px 1px rgba(Black, 0.5)
 		transition none

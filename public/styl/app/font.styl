@@ -1,9 +1,13 @@
 // Fonts
-// v3.0.0
+// v3.0.1
 // ! All @font-face, text style Mixins
 // ! generic h1,etc. tag styling is in Base.styl
 
-//--- Fira Sans
+
+
+
+// @font-face (Fira Sans)
+
 @font-face 
 	font-family 'Fira Sans'
 	font-weight 200
@@ -24,7 +28,7 @@
 	src 	url("../../fonts/FiraSans-Bold.woff") format('woff'),
 			url("../../fonts/FiraSans-Bold.ttf") format('truetype'),
 			url("../../fonts/FiraSans-Bold.eot")
-			
+
 FiraSans($size, $weight, $color, $spacing, $align) 
 	font-family 'Fira Sans', Helvetica, sans-serif
 	font-size $size
@@ -33,50 +37,72 @@ FiraSans($size, $weight, $color, $spacing, $align)
 	letter-spacing $spacing
 	text-align $align
 	
-PersonalQuote($size, $weight, $color, $spacing, $align)
-	FiraSans($size, $weight, $color, $spacing, $align)
-	font-style italic
+
 	
 
+
 // Character Styles
+
 Char-PageTitle()
 	FiraSans(3rem, 700, Black, -0.03125em, left)
 	line-height 1.395833em
 	
+
+
 Char-SectionTitle()
 	FiraSans(1.5rem, 200, Black, 0.11125em, left)
+	// FiraSans(1.75rem, 200, Dark, -0.05em, left)
 	line-height 1em
 	text-transform uppercase
 	
+
+
 Char-SectionSubtitle()
 	FiraSans(1rem, 200, Black, 0.140625em, left)
 	
+
+
 Char-HeaderLinks()
 	FiraSans(0.875rem, 200, Red, 0.0714285em, right)
 	text-transform uppercase
 	&:hover
 		text-decoration underline
 		
+
+
 Char-MediumItemPrimary()
 	FiraSans(1.5rem, 700, Black, -0.027916em, left)
 	line-height 1em
 	
+
+
 Char-MediumItemSecondary()
 	FiraSans(0.875rem, 200, Red, 0.0714285em, left)
 	text-transform uppercase
 	
+
+
 Char-MediumItemValue()
 	FiraSans(1.5rem, 200, Black, 0.083333em, center)
 	line-height 1.125em
 	
+
+
 Char-SmallItemPrimary()
 	FiraSans(1.25rem, 700, Black, -0.027916em, left)
 	line-height 1em
 	
+
+
 Char-Body()
-	FiraSans(1rem, 200, Dark, 0.035em, left)
-	line-height 1.25em
+	FiraSans(1rem, 200, Dark, 0.025em, left)
+	line-height 1.15em
 	
+
+
+PersonalQuote($size, $weight, $color, $spacing, $align)
+	FiraSans($size, $weight, $color, $spacing, $align)
+	font-style italic
 
 
 

@@ -35,21 +35,20 @@ block head
 block page
 	div(ng-app="workApp")
 		ui-view
-		
+
 		script(type="text/ng-template" id="/home.html")
 			.page
 				.left
-					section.title
-						//- +SocialMedia()
+					//- section.title
+						//- +Logo
 				.center
 					section.title 
 						h2 {{pageTitle}}
-
 					section
 						header
 							h3 Forgive the mess!
 						p.quote Thanks for visiting! I'm currently looking for a job and developing this website at the same time. Eventually ", The Work of" will be a comprehensive look at what I'm doing and what I've done. It will be built with Angular to resemble a dashboard so you - the employer, recruiter, friend - can get a good feel for what Dillon Drenzek is all about in a single glance! For now, enjoy what you can find, and drop me a note at dillon@drenzek.com!<br><br> Cheers,<br> Dillon
-					
+				
 					//- section.featured
 						header
 							h3 Featured Project
@@ -94,7 +93,7 @@ block page
 									.secondary Artwork
 									.body Tweet-length description about this project, describing the main point of this project.
 
-					section.currently
+					section.list-3-column
 						header
 							h3 Past Work
 						ul
@@ -104,7 +103,7 @@ block page
 								.title
 									.primary {{project.title}}
 									.secondary(ng-repeat="descriptor in project.descriptors") {{descriptor}}
-									.body {{project.description}}
+									//- .body {{project.description}}
 									ul(ng-show="project.launchURL || project.githubURL")
 										li: a(ng-show="project.launchURL" ng-href="{{project.launchURL}}") Launch
 										li: a(ng-show="project.githubURL" ng-href="{{project.githubURL}}") GitHub
@@ -112,11 +111,11 @@ block page
 				.right
 					section.title
 						//- a(href="/cv") Curriculum Vitae >
-						a(href="/resume") Resume >
+						//- a(href="/resume") Resume >
 					
 
 
-					section.top-skills
+					section.list-category
 						header
 							h3 Top Skills
 						.category
@@ -137,7 +136,7 @@ block page
 
 
 
-					section.recent-skills
+					section.list-standard
 						header
 							h3 Recently Improved
 						ul.skills
@@ -147,30 +146,32 @@ block page
 
 
 
-					section.recent-skills
+					section.list-standard
 						header
 							h3 Resume Skills
 						ul.skills
 							li.skill(ng-repeat="skill in skills.all")
 								.title {{skill}}
 
+
+
 		script(type="text/ng-template" id="/login.html")
 			.page
 				.left
-				.center
 					//- section.title
-						h2 {{pageTitle}}
-
+				.center
 					section.login
 						form
 							.form-group
-								label(for="username") Username
-								br
 								input(type="text" name="username" value="")
-							.form-group
-								label(for="password") Password
 								br
+								label(for="username") Username
+							.form-group
 								input(type="password" name="password" value="")
+								br
+								label(for="password") Password
+								
+								
 							.form-group
 								input(type="submit" value="Login")
 				.right
