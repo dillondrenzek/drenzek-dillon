@@ -232,6 +232,68 @@ ul
 		&:hover .navigation
 			opacity 1
 
+// Forms
+
+
+
+.form-group
+	Width-XS(12)
+	padding 15px 0
+	
+form
+	Offset-XS(3)
+	Width-MD(9)
+	position relative
+	margin-top 138px
+	text-align left
+	
+label
+	FiraSans(1rem, 200, Gray, 0.25em, left)
+	Width-MD(6)
+	text-transform uppercase
+	transition FormTransitionTime ease all
+
+input
+	font-size 30px
+	transition FormTransitionTime ease all
+	&:focus
+		outline none
+		
+	&.selected
+		color Red
+		
+
+		
+input[type="text"],
+input[type="password"]
+	FiraSans(1.75rem, 200, Gray, -0.05em, left)
+	background none
+	border none
+	border-bottom 1px solid Gray
+	// FiraSans(1.75rem, 700, Black, -0.025em, left)
+	
+	&:focus
+		color Red
+		border-bottom 1px solid Red
+	
+	
+input[type="submit"]
+	FiraSans(1rem, 200, Red, 0.125em, left)
+	background none
+	border none
+	text-transform uppercase
+	font-size 1rem
+	cursor pointer
+	
+	&:hover
+		color Red
+	&:active
+		box-shadow 1px 1px 1px rgba(Black, 0.5)
+		transition none
+		background Red
+		color White
+
+
 #site-footer
 	background black
 	position fixed
