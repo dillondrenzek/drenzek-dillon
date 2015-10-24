@@ -161,7 +161,7 @@ block page
 					//- section.title
 				.center
 					section.login
-						form
+						form()
 							.form-group
 								input(type="text" name="username" value="")
 								br
@@ -173,8 +173,112 @@ block page
 								
 								
 							.form-group
-								input(type="submit" value="Login")
+								//- input(type="submit" value="Login")
+								a(href="/the-work-of/admin") Login
 				.right
 
 
+
+		script(type="text/ng-template" id="/admin.html")
+			.page
+				.left
+
+				.center
+
+					section.title 
+						h2 {{pageTitle}}
+
+					//- Skills
+					section.admin
+						header
+							h3 List Skills
+						table
+							tr
+								th Title
+								th(colspan="3") Buttons
+							tr.skill(ng-repeat="skill in skills.all")
+								td.title {{skill}}
+								td: a.inactive(href="#") Show
+								td: a.inactive(href="#") Edit
+								td: a.inactive(href="#") Destroy
+
+
+					//- Project
+					section.admin
+						header
+							h3 List Projects
+						table
+							tr
+								th Title
+								th(colspan="3") Buttons
+								//- th Descriptors
+								//- th Points
+								//- th Skills
+								//- th Description
+								//- th URLs
+							tr(ng-repeat="project in projects.all")
+								td.title {{project.title}}
+								td
+									//- a.inactive(href="#") Show
+									a.inactive Show
+								td
+									//- a.inactive(href="#") Edit
+									a.inactive Edit
+								td
+									//- a.inactive(href="#") Destroy
+									a.inactive Destroy
+								//- td.descriptors
+								//- 	.descriptor(ng-repeat="des in project.descriptors"){{des}}
+								//- td.points
+								//- 	.point(ng-repeat="point in project.points"){{point}}
+								//- td.skills
+								//- 	.skill(ng-repeat="skill in project.skills"){{skill}}
+								//- td.description
+								//- 	.description {{project.description}}
+								//- td.launch
+								//- 	a(ng-href="{{project.launchURL}}").launch {{project.launchURL}}
+								//- td.github
+								//- 	a(ng-href="{{project.githubURL}}").github {{project.githubURL}}
+								//- td.urls
+								//- 	a(ng-href="{{project.imageURLs}}").image {{project.imageURLs}}
+
+				.right
+					section.title
+
+					section
+						header
+							h3 New Skill
+						form
+							.form-group
+								input(type="text" name="title")
+								label Title
+							.form-group
+								input(type="submit" value="Create Skill" disabled)
+					section.title
+					section
+						header
+							h3 New Project
+						form
+							.form-group
+								
+								
+								input(type="text" name="title")
+								label Title
+							.form-group
+								
+								
+								input(type="text" name="descriptors")
+								label Descriptors
+							.form-group
+								
+								
+								input(type="text" name="skills")
+								label Skills
+							.form-group
+								
+								
+								input(type="text" name="description")
+								label Description
+							.form-group
+								input(type="submit" value="Create Project")
 

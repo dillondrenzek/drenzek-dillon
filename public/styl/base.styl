@@ -27,6 +27,16 @@ p
 	
 a
 	text-decoration none
+	color Red
+	font-weight 400
+	&:hover
+		text-decoration underline
+		
+	&.inactive
+		color Light
+		cursor default
+		&:hover
+			text-decoration none
 	
 img
 	&.landscape
@@ -90,7 +100,9 @@ ul
 		left 50%
 		Translate(-50%, -50%)
 		
-			
+.disabled
+	color Light
+
 
 
 .quote
@@ -237,32 +249,29 @@ ul
 
 
 .form-group
-	Width-XS(12)
-	padding 15px 0
+	// Width-XS(9)
+	// padding 15px 0
+	padding-bottom StandardPadding
 	
 form
-	Offset-XS(3)
-	Width-MD(9)
+	Width-XS(9)
 	position relative
-	margin-top 138px
 	text-align left
 	
-label
-	FiraSans(1rem, 200, Gray, 0.25em, left)
-	Width-MD(6)
-	text-transform uppercase
-	transition FormTransitionTime ease all
+
 
 input
-	font-size 30px
+	Width-XS(12)
+	
+		
+label
+	FiraSans(1rem, 200, Gray, 0.25em, left)
+	// Width-MD(6)
+	text-transform uppercase
 	transition FormTransitionTime ease all
-	&:focus
-		outline none
-		
+	
 	&.selected
-		color Red
-		
-
+		font-weight 400
 		
 input[type="text"],
 input[type="password"]
@@ -270,23 +279,34 @@ input[type="password"]
 	background none
 	border none
 	border-bottom 1px solid Gray
-	// FiraSans(1.75rem, 700, Black, -0.025em, left)
-	
+	font-size 30px
+	transition FormTransitionTime ease all
 	&:focus
+		outline none
+		
+	&.selected
+		color Red
+
+	&:focus
+		background none
 		color Red
 		border-bottom 1px solid Red
 	
 	
 input[type="submit"]
-	FiraSans(1rem, 200, Red, 0.125em, left)
+	FiraSans(1rem, 200, Red, 0.125em, center)
 	background none
-	border none
+	border 1px solid Red
 	text-transform uppercase
+	Width-XS(12)
 	font-size 1rem
 	cursor pointer
+	padding StandardPadding
 	
 	&:hover
-		color Red
+		color White
+		background Red
+		font-weight 400
 	&:active
 		box-shadow 1px 1px 1px rgba(Black, 0.5)
 		transition none
@@ -319,7 +339,14 @@ input[type="submit"]
 	height 100vh
 	width Width-XS(12)
 
-
+table
+	width 100%
+	th
+		padding Thick Padding
+	tr
+		padding ThinPadding
+	td
+		padding ThinPadding
 
 
 		

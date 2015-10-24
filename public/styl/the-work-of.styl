@@ -7,7 +7,8 @@
 // Three main columns of page
 .left,
 .center,
-.right
+.right,
+.full
 	display inline-block
 	vertical-align top	
 
@@ -22,6 +23,10 @@
 .right
 	Width-XS(10)
 	Width-MD(3)
+
+.full
+	Width-MD(9)
+
 
 
 .page
@@ -52,7 +57,7 @@
 			
 		&.title // along the top of the page
 			padding-bottom 0
-			height 137px
+			height 138px
 			h2
 				Char-PageTitle()
 				position absolute
@@ -145,6 +150,9 @@
 				.skill
 					padding-bottom StandardPadding
 
+		&.admin
+			td
+				border-bottom 1px solid Light
 
 
 .slide-indicator
@@ -185,6 +193,9 @@ li.skill
 	color Red
 
 
-	
+// form
+// 	Offset-XS(3)
+// 	Width-MD(9)
+// 	margin-top 138px	
 
 

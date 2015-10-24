@@ -23,13 +23,29 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 		templateUrl: '/login.html'
 	})
 
+	.state('admin', {
+		url: '/admin',
+		controller: 'AdminCtrl',
+		templateUrl: '/admin.html'
+	});
+
 	$locationProvider.html5Mode(true);
 	$urlRouterProvider.otherwise('home');
 
 
 });
 
-
+app.controller('AdminCtrl', [
+	'$scope',
+	'skills',
+	'projects',
+	function($scope, skills, projects){
+		skills.getAll();
+		projects.getAll();
+		$scope.pageTitle = "Admin Home";
+		$scope.skills = skills.skills;
+		$scope.projects = projects.projects;
+	}]);
 
 app.controller('LoginCtrl', [
 	'$scope',
