@@ -296,7 +296,8 @@ input[type="password"]
 input[type="submit"]
 	FiraSans(1rem, 200, Red, 0.125em, center)
 	background none
-	border 1px solid Red
+	border-width 1px
+	border-color transparent
 	text-transform uppercase
 	Width-XS(12)
 	font-size 1rem
@@ -304,14 +305,15 @@ input[type="submit"]
 	padding StandardPadding
 	
 	&:hover
-		color White
-		background Red
+		border 1px solid Red
+		color Red
 		font-weight 400
 	&:active
-		box-shadow 1px 1px 1px rgba(Black, 0.5)
 		transition none
 		background Red
-		color White
+	&:focus
+		background none
+		outline none
 
 
 #site-footer
