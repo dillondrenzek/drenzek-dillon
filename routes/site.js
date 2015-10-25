@@ -3,28 +3,28 @@
 
 var site = exports = module.exports;
 var seedData = require('../db');
+var db = require('mongodb').MongoClient;
 
-// GET '/the-work-of'
+
+
+// The Work of
 site.work = function(req, res) {
-	// res.render('the-work-of', {
-	// 	projects: seedData.projects.v2
-	// });
-    
-
-    res.render('the-work-of', {
-        req: req
-        // featured: {
-        //     headerLink: {
-        //         label: "List Projects >",
-        //         href: "/projects",
-        //         active: false
-        //     },
-        //     slideIndicator: {
-        //         active: false
-        //     }
-        // }
-    });
+    res.render('the-work-of');
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // GET '/author'
 site.author = function(req, res) {

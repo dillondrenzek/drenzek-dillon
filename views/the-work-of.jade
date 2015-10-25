@@ -115,7 +115,7 @@ block page
 					
 
 
-					section.list-category
+					//- section.list-category
 						header
 							h3 Top Skills
 						.category
@@ -136,7 +136,7 @@ block page
 
 
 
-					section.list-standard
+					//- section.list-standard
 						header
 							h3 Recently Improved
 						ul.skills
@@ -150,8 +150,8 @@ block page
 						header
 							h3 Resume Skills
 						ul.skills
-							li.skill(ng-repeat="skill in skills.all")
-								.title {{skill}}
+							li.skill(ng-repeat="skill in skills")
+								.title {{skill.title}}
 
 
 
@@ -198,9 +198,9 @@ block page
 								th(colspan="3") Buttons
 							tr.skill(ng-repeat="skill in skills.all")
 								td.title {{skill}}
-								td: a.inactive(href="#") Show
-								td: a.inactive(href="#") Edit
-								td: a.inactive(href="#") Destroy
+								td.action: a.inactive(href="#") Show
+								td.action: a.inactive(href="#") Edit
+								td.action: a.inactive(href="#") Destroy
 
 
 					//- Project
@@ -218,13 +218,13 @@ block page
 								//- th URLs
 							tr(ng-repeat="project in projects.all")
 								td.title {{project.title}}
-								td
+								td.action
 									//- a.inactive(href="#") Show
 									a.inactive Show
-								td
+								td.action
 									//- a.inactive(href="#") Edit
 									a.inactive Edit
-								td
+								td.action
 									//- a.inactive(href="#") Destroy
 									a.inactive Destroy
 								//- td.descriptors

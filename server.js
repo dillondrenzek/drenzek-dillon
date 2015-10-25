@@ -27,7 +27,7 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/bower_components'));
 
-
+// var db = 
 
 function errorHandler(err, req, res, next) {
 	console.error(err.message);
@@ -56,6 +56,7 @@ my.get('/login', routes.my.login);
 // Api Routes
 var api = new express.Router();
 api.get('/projects', routes.api.projects.list);
+api.get('/skills', routes.api.skills.list);
 
 var test = new express.Router();
 test.get('/:subtest', routes.site.subtests);
@@ -83,32 +84,18 @@ function listen() {
 	});
 }
 
-
-// DEV Environment Database
-if (app.get('ip') === "127.0.0.1") {
-	MongoClient.connect('mongodb://localhost:27017/drenzek-dillon', function(err, db) {
-
-
-	// 	db.collection('skills').findOne({title: "JavaScript"}, function(err, doc) {
-	// 		if (err) throw err;
-
-	// 		console.log(doc);
-
-	// 		db.close();
-	// 	});
-		console.log("Connected correctly to database.");
-
-		listen();
-
-	});
+var db = MongoClient.connect('mongodb://localhost:27017/drenzek-dillon', {native_parse:true}, function(err, db) {
+	if (err) throw err;
+	listen();
+});
 	// mongoclient.connect(function(err, mongoclient) {
 	// 	if (err) throw err;
 	// 	console.log("Connected correctly to database.");
 	// 	
 	// });
-} else {
-	listen();
-}
+// } else {
+// 	listen();
+// }
 
 
 

@@ -3,6 +3,7 @@
 
 var api = exports = module.exports;
 var seedData = require('../db');
+var Skills = require('../models/Skill');
 
 // GET '/projects'
 api.projects = {
@@ -12,4 +13,17 @@ api.projects = {
         });
     },
 
+};
+
+
+// GET skills
+api.skills = {
+	list: function(req, res) {
+		Skills.getAll(function(err, skills){
+			if (err) throw err;
+			res.json(skills);
+
+		});
+		
+	}
 };

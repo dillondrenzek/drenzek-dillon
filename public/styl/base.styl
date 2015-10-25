@@ -257,7 +257,7 @@ form
 	Width-XS(9)
 	position relative
 	text-align left
-	
+
 
 
 input
@@ -265,29 +265,28 @@ input
 	
 		
 label
-	FiraSans(1rem, 200, Gray, 0.25em, left)
+	FiraSans(1rem, 200, Light, 0.25em, left)
 	// Width-MD(6)
 	text-transform uppercase
 	transition FormTransitionTime ease all
 	
 	&.selected
-		font-weight 400
+		// font-weight 400
 		
 input[type="text"],
 input[type="password"]
-	FiraSans(1.75rem, 200, Gray, -0.05em, left)
+	FiraSans(1.75rem, 200, Light, -0.05em, left)
 	background none
 	border none
-	border-bottom 1px solid Gray
+	border-bottom 1px solid Light
 	font-size 30px
-	transition FormTransitionTime ease all
-	&:focus
-		outline none
+	transition FormTransitionTime ease color border-bottom
 		
 	&.selected
 		color Red
 
 	&:focus
+		outline none
 		background none
 		color Red
 		border-bottom 1px solid Red
@@ -307,7 +306,7 @@ input[type="submit"]
 	&:hover
 		border 1px solid Red
 		color Red
-		font-weight 400
+		// font-weight 400
 	&:active
 		transition none
 		background Red
@@ -344,6 +343,7 @@ input[type="submit"]
 table
 	width 100%
 	th
+		Char-MediumItemSecondary(Dark)
 		padding Thick Padding
 	tr
 		padding ThinPadding
