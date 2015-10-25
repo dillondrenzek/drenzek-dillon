@@ -7,14 +7,10 @@ var app = angular.module('workApp', ['ui.router']);
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 	$stateProvider
-
 	.state('home', {
 		url: '/home',
 		controller: 'MainCtrl',
-		templateUrl: '/home.html',
-		resolve: {
-
-		}
+		templateUrl: '/home.html'
 	})
 
 	.state('login', {
@@ -31,9 +27,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 	$locationProvider.html5Mode(true);
 	$urlRouterProvider.otherwise('home');
-
-
 });
+
+
+
+
 
 app.controller('AdminCtrl', [
 	'$scope',
@@ -53,8 +51,6 @@ app.controller('LoginCtrl', [
 		$scope.pageTitle = "Login";
 	}]);
 
-
-
 app.controller('MainCtrl', [
 	'$scope',
 	'skills',
@@ -71,13 +67,13 @@ app.controller('MainCtrl', [
 
 
 
+
 app.factory('skills', [
 	'$http',
 	function($http){
 		var o = {
 			getAll: function() {
 				return $http.get('/api/skills').success(function(data){
-					// console.log("skills", data);
 					angular.copy(data, o.skills);
 				});
 			},
@@ -86,14 +82,12 @@ app.factory('skills', [
 		return o;
 	}]);
 
-
 app.factory('projects', [
 	'$http',
 	function($http){
 		var o = {
 			getAll: function() {
 				return $http.get('/api/projects').success(function(data){
-					// console.log("projects", data);
 					angular.copy(data, o.projects);
 				});
 			},

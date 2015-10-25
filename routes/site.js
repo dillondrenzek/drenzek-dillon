@@ -2,7 +2,6 @@
 // version 2.2.3
 
 var site = exports = module.exports;
-var seedData = require('../db');
 var db = require('mongodb').MongoClient;
 
 
@@ -11,18 +10,6 @@ var db = require('mongodb').MongoClient;
 site.work = function(req, res) {
     res.render('the-work-of');
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -43,14 +30,11 @@ site.home = function(req, res) {
 // GET '/test'
 site.test = function(req, res) {
     res.render('test', {
-    	projects: seedData.projects,
-    	skills: seedData.skills
     });
 };
 
 site.subtests = function(req, res) {
 	res.render('test/'+req.params['subtest'], {
-		projects: seedData.projects.v2
 	});
 };
 
@@ -58,7 +42,5 @@ site.subtests = function(req, res) {
 // GET '/'
 site.index = function(req, res, next) {
     res.render('index', {
-    	projects: seedData.projects.old,
-    	skills: seedData.skills
     });
 };

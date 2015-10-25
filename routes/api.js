@@ -2,7 +2,6 @@
 // version 2.2.3
 
 var api = exports = module.exports;
-var seedData = require('../db');
 var Skills = require('../models/Skill');
 var Projects = require('../models/Project');
 

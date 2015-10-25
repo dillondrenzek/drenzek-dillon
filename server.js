@@ -10,7 +10,6 @@ var express = require('express')
   , MongoClient = require('mongodb').MongoClient
   , MongoServer = require('mongodb').Server
   , assert = require('assert');
-var seedData = require('./db');
 
 // Create and Configure App
 var app = exports.app = express();
