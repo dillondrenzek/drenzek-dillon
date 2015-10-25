@@ -69,7 +69,6 @@ app.use('/test', test);
 app.use('/resume', express.static(__dirname + '/public/pdf/dillon-drenzek-resume.pdf'));
 
 app.get('*', function(req, res, next){
-	// res.render('error');
 	next(Error('Page Not Found'));
 });
 
