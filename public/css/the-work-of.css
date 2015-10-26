@@ -356,6 +356,9 @@ form {
 input {
   width: 100%;
 }
+input:focus + label {
+  color: #b23b23;
+}
 label {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 1rem;
@@ -805,7 +808,4 @@ li.skill .value {
   letter-spacing: 0.025em;
   text-align: left;
   line-height: 1.125em;
-}
-.selected {
-  color: #b23b23;
 }

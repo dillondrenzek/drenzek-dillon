@@ -6,7 +6,10 @@ var MongoClient = require('mongodb').MongoClient;
 
 
 // Create
-Skill.create = function(newObject, callback){};
+Skill.create = function(newObject, callback){
+	
+	
+};
 
 
 // List
