@@ -1,8 +1,6 @@
 //- App Template
 //- version 3.0.1
 
-include partials/logo
-
 mixin SocialMedia()
 	ul#social-media
 		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
@@ -56,7 +54,10 @@ html
 
 	body
 		header#site-title
-		+Logo()
+		.logo
+			a(href="/the-work-of"): h1 Dillon Drenzek
+			.subtitle Up & Coming Developer
+			a.login(href="/the-work-of/login") Login
 		+SocialMedia()
 		.container-fluid
 			block page
