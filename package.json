@@ -9,7 +9,8 @@
     "url": "https://github.com/dillondrenzek/drenzek-dillon.git"
   },
   "scripts": {
-    "start": "node-dev server.js"
+    "start": "node-dev server.js",
+    "test": "protractor spec/conf.js"
   },
   "dependencies": {
     "express": "^4.13.3",

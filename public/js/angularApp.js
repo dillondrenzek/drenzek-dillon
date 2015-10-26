@@ -10,7 +10,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	.state('home', {
 		url: '/home',
 		controller: 'MainCtrl',
-		templateUrl: '/home.html'
+		templateUrl: '/home.html', 
+		resolve: {
+			skillPromise: ['skills', function(skills){
+				return skills.getAll();
+			}],
+			projectPromise: ['projects', function(projects){
+				return projects.getAll();
+			}]
+		}
 	})
 
 	.state('login', {
@@ -22,7 +30,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	.state('admin', {
 		url: '/admin',
 		controller: 'AdminCtrl',
-		templateUrl: '/admin.html'
+		templateUrl: '/admin.html',
+		resolve: {
+			skillPromise: ['skills', function(skills){
+				return skills.getAll();
+			}],
+			projectPromise: ['projects', function(projects){
+				return projects.getAll();
+			}]
+		}
 	});
 
 	$locationProvider.html5Mode(true);
@@ -38,8 +54,8 @@ app.controller('AdminCtrl', [
 	'skills',
 	'projects',
 	function($scope, skills, projects){
-		skills.getAll();
-		projects.getAll();
+		// skills.getAll();
+		// projects.getAll();
 		$scope.pageTitle = "Admin Home";
 		$scope.skills = skills.skills;
 		$scope.projects = projects.projects;
@@ -56,8 +72,8 @@ app.controller('MainCtrl', [
 	'skills',
 	'projects',
 	function($scope, skills, projects){
-		skills.getAll();
-		projects.getAll();
+		// skills.getAll();
+		// projects.getAll();
 
 		$scope.pageTitle = ", The Work of";
 		$scope.skills = skills.skills;

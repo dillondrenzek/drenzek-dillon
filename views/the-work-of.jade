@@ -21,7 +21,7 @@ mixin Project(proj)
 					li.point= p
 
 block title
-	| Dillon Drenzek, The Work of
+	| The Work Of | Admin Home
 
 block angularApp
 	script(src="/js/angularApp.js")
@@ -33,8 +33,8 @@ block head
 	base(href="/the-work-of/")
 
 block page
-	div(ng-app="workApp")
-		div(ui-view)
+	.app(ng-app="workApp")
+		ui-view
 
 		script(type="text/ng-template" id="/home.html")
 			.page
