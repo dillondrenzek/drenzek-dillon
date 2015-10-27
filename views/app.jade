@@ -1,16 +1,6 @@
 //- App Template
 //- version 3.0.1
 
-mixin SocialMedia()
-	ul#social-media
-		li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
-		li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
-		li: a(href="https://behance.net/dillondrenzek/"): i.fa.fa-behance
-		li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
-		
-		
-		
-
 doctype
 html
 	head
@@ -58,7 +48,11 @@ html
 			a(href="/the-work-of"): h1 Dillon Drenzek
 			.subtitle Up & Coming Developer
 			a.login(href="/the-work-of/login") Login
-		+SocialMedia()
+		ul#social-media
+			li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+			li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+			li: a(href="https://behance.net/dillondrenzek/"): i.fa.fa-behance
+			li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
 		.container-fluid
 			block page
 

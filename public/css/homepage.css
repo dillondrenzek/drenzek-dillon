@@ -38,11 +38,7 @@
   padding: 0;
 }
 html {
-  background: url("../images/grassy-field.jpeg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: #fafafa;
 }
 html {
   font-family: 'Fira Sans', Helvetica, sans-serif;
