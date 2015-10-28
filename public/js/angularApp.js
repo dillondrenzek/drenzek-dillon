@@ -59,6 +59,12 @@ app.controller('AdminCtrl', [
 		$scope.pageTitle = "Admin Home";
 		$scope.skills = skills.skills;
 		$scope.projects = projects.projects;
+
+		$scope.newSkill = function(){
+			skills.create({
+				title: $scope.newSkill.title
+			});
+		};
 	}]);
 
 app.controller('LoginCtrl', [
@@ -89,9 +95,23 @@ app.factory('skills', [
 	function($http){
 		var o = {
 			getAll: function() {
-				return $http.get('/api/skills').success(function(data){
-					angular.copy(data, o.skills);
-				});
+				return $http.get('/api/skills')
+					.success(function(data){
+						angular.copy(data, o.skills);
+					})
+					.error(function(err){
+						console.error("Skills.getAll Error", err);
+					});
+			},
+			create: function(skill) {
+				return $http.post('/api/skills/new', skill)
+					.success(function(response){
+						console.log("pushing data", response);
+						return response;
+						// o.skills.push(response);
+					}).error(function(err){
+						console.log("skills.create error: ", err);
+					});
 			},
 			skills: []
 		};

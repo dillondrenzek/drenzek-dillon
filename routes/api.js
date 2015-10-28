@@ -16,12 +16,25 @@ api.projects = {
 };
 
 
-// GET skills
+
 api.skills = {
+
+	// GET skills
 	list: function(req, res) {
 		Skills.getAll(function(err, skills){
 			if (err) throw err;
 			res.json(skills);
 		});
+	},
+
+	// POST skills/new
+	create: function(req, res) {
+		console.log("req.body", req.body);
+		Skills.create(req.body, function(err, response){
+			if (err) throw err;
+			// console.log("api.skill.create", response);
+			res.json(response);
+		});
 	}
+
 };

@@ -9,7 +9,8 @@ var express = require('express')
   , path = require('path')
   , MongoClient = require('mongodb').MongoClient
   , MongoServer = require('mongodb').Server
-  , assert = require('assert');
+  , assert = require('assert')
+  , bodyParser = require('body-parser');
 
 // Create and Configure App
 var app = exports.app = express();
@@ -25,6 +26,8 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/bower_components'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // var db = 
 
@@ -56,6 +59,7 @@ my.get('/login', routes.my.login);
 var api = new express.Router();
 api.get('/projects', routes.api.projects.list);
 api.get('/skills', routes.api.skills.list);
+api.post('/skills/new', routes.api.skills.create);
 
 var test = new express.Router();
 test.get('/:subtest', routes.site.subtests);
@@ -68,7 +72,8 @@ app.use('/test', test);
 app.use('/resume', express.static(__dirname + '/public/pdf/dillon-drenzek-resume.pdf'));
 
 app.get('*', function(req, res, next){
-	next(Error('Page Not Found'));
+	// next(Error('Page Not Found'));
+	res.render('error');
 });
 
 

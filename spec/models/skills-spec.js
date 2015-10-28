@@ -32,7 +32,6 @@ describe('Skill Model', function(){
 						return text === newSkillTitle;
 					});
 				}).count()
-
 			).toEqual(1);
 
 			// Check for increase in count

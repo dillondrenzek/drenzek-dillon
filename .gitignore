@@ -13,4 +13,4 @@ public/images/large-images/
 public/stylesheets/styl/test.styl
 public/stylesheets/test.css
 
-mongo_creds.md
+./mongo_creds.md

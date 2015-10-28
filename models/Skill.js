@@ -7,8 +7,21 @@ var MongoClient = require('mongodb').MongoClient;
 
 // Create
 Skill.create = function(newObject, callback){
-	
-	
+	MongoClient.connect('mongodb://localhost:27017/drenzek-dillon', function(err, db) {
+		if (err) throw err;
+
+		db.collection('skills').insertOne(newObject, function(err, inserted){
+			if (err) {
+				callback(err, null);
+			};
+
+			console.log("inserted", inserted);
+
+			callback(null, inserted);
+
+			db.close();
+		});
+	});
 };
 
 

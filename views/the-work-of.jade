@@ -144,7 +144,7 @@ block page
 				.left
 				.center
 					section.login
-						form()
+						form
 							.form-group
 								input(type="text" name="username" value="")
 								br
@@ -199,9 +199,9 @@ block page
 								th(colspan="3") Buttons
 							tr.project(ng-repeat="project in projects")
 								td.title {{project.title}}
-								td.action: a.inactive Show
-								td.action: a.inactive Edit
-								td.action: a.inactive Destroy
+								td.action: a.inactive(href="#") Show
+								td.action: a.inactive(href="#") Edit
+								td.action: a.inactive(href="#") Destroy
 							tr.count
 								td {{projects.length}} projects found.
 
@@ -211,9 +211,9 @@ block page
 					section
 						header
 							h3 New Skill
-						form.new-skill
+						form.new-skill(ng-submit="newSkill()")
 							.form-group
-								input(type="text" name="title")
+								input(type="text" ng-model="newSkill.title" name="title")
 								label Title
 							.form-group
 								input(type="submit" value="Create Skill")
@@ -223,7 +223,7 @@ block page
 							h3 New Project
 						form.new-project
 							.form-group
-								input(type="text" name="title")
+								input(type="text" ng-model="newProject.title" name="title")
 								label Title
 							.form-group
 								input(type="text" name="descriptors")
