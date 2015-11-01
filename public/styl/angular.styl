@@ -1,0 +1,242 @@
+@import 'base'
+
+
+
+
+
+#site-title
+	Width-SM(12)
+	z-index 10
+	position fixed
+	top 0
+	left 0
+	height SiteTopMargin
+	background black
+
+
+
+
+	
+.page
+	position relative
+	display block
+	margin-top SiteTopMargin
+
+
+
+.page-column
+	display inline-block
+	vertical-align top
+	
+	// border 1px solid Red
+	
+.page-column.left
+	Width-SM(3)
+	.fixed
+		top 0
+		z-index 101
+		TranslateX(-140px)
+		Offset-SM(3)
+		
+.page-column.center
+	Width-SM(6)
+	
+.page-column.right
+	Width-SM(3)
+
+// p
+// 	FiraSans(1rem, 200, Black, 0.03125em, left)
+	
+
+		
+// 	&.inactive
+// 		color Light
+// 		cursor default
+// 		&:hover
+// 			text-decoration none
+	
+img.landscape
+	width 100%
+	height auto
+img.portrait
+	height 100%
+	width auto
+
+
+// // Bootstrap containers
+// .container-fluid,
+// .container 
+//   display block
+//   width 100%
+//   margin 0 auto
+
+.page
+	Width-SM(12)
+	display block
+	margin-top 36px
+	
+	section
+		Width-SM(12)
+		padding 0 StandardPadding
+		&:not(&.title)
+			margin-bottom ThickPadding
+		
+		header
+			padding-left StandardPadding
+			border-top 1px solid Light
+			
+// Project
+.project
+	background white
+	position relative
+	margin-left StandardPadding
+	border 1px solid Light
+	border-left 3px solid Light
+	
+	margin-bottom ThickPadding
+	
+	
+	// Project Header
+	header
+		background white
+		position relative
+		Width-SM(12)
+		border-top-width 0px !important
+		border-bottom 1px solid Light
+		
+		// Can contain a link
+		h4.primary
+			Width-SM(12)
+			Char-MediumItemPrimary()
+			
+		a
+			padding-right StandardPadding
+			&:hover i
+				color Black
+			&:active i
+				color Gray
+		
+		// Github icon	
+		i
+			font-size 18px
+			color Red
+			
+	a.external
+		text-transform uppercase
+		display block
+		margin-left ThickPadding
+		margin-top StandardPadding
+		&>*
+			display inline-block
+			vertical-align middle
+		i
+			margin-right ThinPadding
+			color Black
+		p
+			font-weight 700
+			font-size 0.75rem
+			color Black
+		&:hover
+			i
+				color Red
+			p
+				color Red
+				text-decoration underline
+		&:active
+			i
+				color Red
+			p
+				color Red
+
+
+	.links
+		position absolute
+		top 0
+		right 0
+		height 100%
+		// background White
+		&>*
+			display block
+			width 100%
+			
+			
+	// descriptor list
+	ul.skills
+		// margin-left StandardPadding
+		padding StandardPadding 0
+		// background White
+		Width-SM(12)
+		&>*
+			display inline-block
+		li
+			display inline-block
+			// padding-right ThinPadding
+			margin StandardPadding
+			margin-left 0
+			margin-bottom 0
+			padding (ThinPadding/4) ThinPadding
+			border-radius 5px
+			border solid 1px Light
+		li.skill
+			// position relative
+			Char-HeaderLinks()
+			color Dark
+			font-weight 400
+			font-size 0.65rem
+			// padding 0
+			line-height auto
+			padding-top 0
+			padding-bottom 0
+			margin-bottom 0
+			margin-top 0
+			margin 2px
+				
+				
+	.type
+		Char-HeaderLinks()
+		font-weight 400
+		// position absolute
+		// right 0
+
+	figure
+		position relative
+		Width-SM(6)
+		// background Black
+		display inline-block
+		padding-bottom 0
+		vertical-align top
+		border-left 1px solid Light
+		// border 1px solid Light
+		// padding-left StandardPadding
+		
+		// overflow hidden
+		img
+			display block
+			Width-SM(12)
+	.body
+		position relative
+		Width-SM(6)
+		display inline-block
+		padding ThickPadding
+		padding-top 0
+		vertical-align top
+		// background white
+		p
+			line-height 18px
+		li
+			// text-transform uppercase
+			// font-style italic
+			font-weight 400
+			font-size 0.85rem
+			// font-size 0.75rem
+			letter-spacing 0em
+			// margin-top 0
+			// margin-bottom 0
+			list-style-type circle
+			
+	
+			
+
+
+
+

@@ -38,22 +38,16 @@
   padding: 0;
 }
 html {
-  background: #fafafa;
-}
-html {
+  background: url("../images/grassy-field.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #303030;
   letter-spacing: -1px;
-  text-align: left;
-}
-p {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #303030;
-  letter-spacing: 0.03125em;
   text-align: left;
 }
 a {
@@ -64,118 +58,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
-a.inactive {
-  color: #ddd;
-  cursor: default;
-}
-a.inactive:hover {
-  text-decoration: none;
-}
-img.landscape {
-  width: 100%;
-  height: auto;
-}
-img.portrait {
-  height: 100%;
-  width: auto;
-}
-ul li {
+li {
   list-style-type: none;
 }
-.container-fluid,
-.container,
-display block,
-width 100%,
-margin 0 auto,
-.page {
-  display: block;
-  margin-top: 36px;
-  background: #fafafa;
-}
-@media (min-width: 768px) {
-  .container-fluid,
-  .container,
-  display block,
-  width 100%,
-  margin 0 auto,
-  .page {
-    width: 100%;
-  }
-}
-#social-media {
-  position: fixed;
-  width: 130px;
-  top: 174px;
-}
-@media (min-width: 992px) {
-  #social-media {
-    left: 25%;
-  }
-}
-#social-media>* {
-  display: inline-block;
-  vertical-align: middle;
-}
-@media (min-width: 992px) {
-  #social-media {
-    -webkit-transform: translateX(-140px);
-    transform: translateX(-140px);
-  }
-}
-#social-media li {
-  width: 25%;
-  margin-top: 10px;
-  height: 30px;
+#logo {
   position: relative;
-}
-#social-media a {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 100%;
-  font-size: 18px;
-  color: #b23b23;
-  text-align: center;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-#social-media a:hover {
-  color: #303030;
-}
-#social-media i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.disabled {
-  color: #ddd;
-}
-.quote {
-  font-style: italic;
-}
-.primary a,
-.secondary a {
-  color: #303030;
-}
-.primary a:hover,
-.secondary a:hover {
-  color: #b23b23;
-}
-#site-title {
-  width: 100%;
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 36px;
-  background: #000;
-}
-.logo {
-  position: fixed;
-  top: 0;
   width: 130px;
   height: 174px;
   font-size: 31.32px;
@@ -183,18 +70,7 @@ margin 0 auto,
   text-align: left;
   z-index: 101;
 }
-@media (min-width: 992px) {
-  .logo {
-    left: 25%;
-  }
-}
-@media (min-width: 992px) {
-  .logo {
-    -webkit-transform: translateX(-140px);
-    transform: translateX(-140px);
-  }
-}
-.logo h1 {
+#logo h1 {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 1em;
   font-weight: 700;
@@ -212,7 +88,7 @@ margin 0 auto,
   left: 0.270833em;
   bottom: 0.6666667em;
 }
-.logo .subtitle {
+#logo .subtitle {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 0.25em;
   font-weight: 400;
@@ -227,9 +103,9 @@ margin 0 auto,
   cursor: default;
   position: absolute;
   left: 1.25em;
-  bottom: 1.25em;
+  bottom: 1.125em;
 }
-.logo .login {
+#logo .login {
   font-family: 'Fira Sans', Helvetica, sans-serif;
   font-size: 0.25em;
   font-weight: 400;
@@ -242,226 +118,28 @@ margin 0 auto,
   left: 10px;
   cursor: pointer;
 }
-.logo .login:hover {
+#logo .login:hover {
   color: #f2caa0;
 }
-.project {
+#social-media {
+  width: 130px;
+  list-style-type: none;
+}
+#social-media li {
   display: inline-block;
-  margin-bottom: 10px;
+  width: 25%;
 }
-@media (min-width: 768px) {
-  .project {
-    width: 41.66666667%;
-  }
-}
-.project:nth-child(odd) {
-  margin-right: 10px;
-}
-.project>* {
-  display: inline-block;
-  vertical-align: middle;
-}
-.project .title {
-  margin-top: 10px;
-}
-@media (min-width: 768px) {
-  .project .title {
-    width: 100%;
-  }
-}
-.project .title h3 {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #303030;
-  letter-spacing: -0.06em;
-  text-align: left;
-}
-.project .descriptors {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #b23b23;
-  letter-spacing: 0.1em;
-  text-align: left;
-  text-transform: uppercase;
-}
-.project .descriptors .brackets {
-  color: #909090;
-  font-weight: 400;
-}
-.project .points {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #555;
-  letter-spacing: 0.1em;
-  text-align: left;
-  text-transform: uppercase;
-}
-.project .points .point {
-  margin-top: 5px;
-}
-.project figure {
-  background: #303030;
-  overflow: hidden;
-  height: 100%;
-  position: relative;
-  z-index: 0;
-  cursor: pointer;
-}
-@media (min-width: 768px) {
-  .project figure {
-    width: 100%;
-  }
-}
-.project figure img {
+#social-media li a {
+  padding-top: 10px;
+  width: 100%;
   display: block;
-  margin: 0 auto;
-}
-.project figure img:not(a) :not(:first-child) {
-  display: none;
-}
-.project figure:hover a.image {
-  opacity: 1;
-}
-.project figure a.image {
-  opacity: 0;
-  position: absolute;
-  bottom: 0;
   text-align: center;
-  width: 100%;
-  background: rgba(178,59,35,0.7);
-  padding: 5px;
-  color: #fafafa;
 }
-.project figure a.image:hover {
-  text-decoration: none;
+#social-media li i {
+  font-size: 18px;
 }
-.project figure:hover .navigation {
-  opacity: 1;
-}
-.form-group {
-  padding-bottom: 10px;
-}
-form {
-  width: 75%;
-  position: relative;
-  text-align: left;
-}
-input {
-  width: 100%;
-}
-input:focus + label {
-  color: #b23b23;
-}
-label {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #ddd;
-  letter-spacing: 0.25em;
-  text-align: left;
-  text-transform: uppercase;
-  transition: 0.3s ease all;
-}
-input[type="text"],
-input[type="password"] {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1.75rem;
-  font-weight: 200;
-  color: #ddd;
-  letter-spacing: -0.05em;
-  text-align: left;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  font-size: 30px;
-  transition: 0.3s ease color border-bottom;
-}
-input[type="text"].selected,
-input[type="password"].selected {
-  color: #b23b23;
-}
-input[type="text"]:focus,
-input[type="password"]:focus {
-  outline: none;
-  background: none;
-  color: #b23b23;
-  border-bottom: 1px solid #b23b23;
-}
-input[type="submit"] {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #b23b23;
-  letter-spacing: 0.125em;
-  text-align: center;
-  background: none;
-  border-width: 1px;
-  border-color: transparent;
-  text-transform: uppercase;
-  width: 100%;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 10px;
-}
-input[type="submit"]:hover {
-  border: 1px solid #b23b23;
-  color: #b23b23;
-}
-input[type="submit"]:active {
-  transition: none;
-  background: #b23b23;
-}
-input[type="submit"]:focus {
-  background: none;
-  outline: none;
-}
-#site-footer {
-  background: #000;
+.fixed {
   position: fixed;
-  z-index: 99;
-  bottom: 0;
-  left: 0;
-  height: 36px;
-  width: 100%;
-}
-#site-footer>*:first-child {
-  margin: 0 auto;
-}
-#site-footer p {
-  color: #909090 !important;
-  text-align: center;
-  padding: 50px 12.5%;
-  font-size: 5px;
-}
-#site-footer p .updated {
-  margin-top: 5px;
-  text-align: center;
-}
-#bottom-window {
-  height: 100vh;
-  width: width: 100%;;
-}
-table {
-  width: 100%;
-}
-table th {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 200;
-  color: #b23b23;
-  letter-spacing: 0.0714285em;
-  text-align: left;
-  text-transform: uppercase;
-  padding: Thick Padding;
-}
-table tr {
-  padding: 5px;
-}
-table td {
-  padding: 5px;
 }
 #social-media a:hover {
   color: #fafafa;

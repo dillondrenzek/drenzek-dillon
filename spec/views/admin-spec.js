@@ -83,6 +83,21 @@ describe('Admin Home', function(){
 
 	});
 
+
+
+	// Displays Destroy Skill Button
+	it('should display a destroy skill button', function(){
+
+		// Guarantee the skills table
+		var listSkillsTable = $('table.list-skills');
+		expect(listSkillsTable.isPresent()).toBe(true);
+
+		var skillRow = listSkillsTable.$('tr.skill');
+		expect(skillRows.isPresent()).toBe(true);
+		expect(skillRows.$('a.destroy').isPresent());
+
+	});
+
 	
 
 

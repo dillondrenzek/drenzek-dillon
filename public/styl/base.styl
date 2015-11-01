@@ -3,8 +3,7 @@
 
 @import 'app'
 
-SiteTopMargin = 36px
-
+SiteTopMargin = 50px
 
 *,
 *:before,
@@ -15,134 +14,34 @@ SiteTopMargin = 36px
 	margin 0
 	padding 0
 
-//- Background Image
-html  
-	background White
-	// CoverBackground('../images/grassy-field.jpeg')
 
+// Default Styles
 html
+	CoverBackground('../images/grassy-field.jpeg')
 	FiraSans(16px, 400, Black, -1px, left)
-	
-p
-	FiraSans(1rem, 200, Black, 0.03125em, left)
-	
+		
 a
 	text-decoration none
 	color Red
 	font-weight 400
 	&:hover
 		text-decoration underline
-		
-	&.inactive
-		color Light
-		cursor default
-		&:hover
-			text-decoration none
-	
-img
-	&.landscape
-		width 100%
-		height auto
-	&.portrait
-		height 100%
-		width auto
 
-ul
-	li
-		list-style-type none
-
-// Bootstrap containers
-.container-fluid,
-.container 
-  display block
-  width 100%
-  margin 0 auto
-
-.page
-	Width-SM(12)
-	display block
-	margin-top SiteTopMargin
-	background White
-	
-#social-media
-	Offset-XS(0)
-	Offset-MD(3)
-	InlineChildren(middle)
-	position fixed
-	width 130px
-	top 174px
-	
-	+MD()
-		TranslateX(-140px)
-	
-
-	li
-		Width-XS(3)
-		margin-top StandardPadding
-		height 30px
-		position relative
-		
-	a
-		position absolute
-		top 0
-		left 50%
-		height 100%
-		width 100%
-		font-size 18px
-		color Red
-		text-align center
-		TranslateX(-50%)
-		&:hover
-			color Black
-			
-	i
-		position absolute
-		top 50%
-		left 50%
-		Translate(-50%, -50%)
-		
-.disabled
-	color Light
+li
+	list-style-type none
 
 
 
-.quote
-	font-style italic
-
-//- TODO: MOVE THIS
-.primary, .secondary
-	a
-		color Black
-		&:hover
-			color Red
 
 
-//- Layout (from page top)
-//- ! styles may further be modified in inheriting page
-#site-title
-	Width-XS(12)
-	z-index 10
-	position fixed
-	top 0
-	left 0
-	height SiteTopMargin
-	background black
-
-.logo
-	Offset-XS(0)
-	Offset-MD(3)
-	position fixed
-	top 0
+#logo
+	position relative
 	width 130px
 	height 174px
 	font-size 31.32px
 	background Red
 	text-align left
 	z-index 101
-	
-	+MD()
-		TranslateX(-140px)
-		
 	h1
 		FiraSans(1em, 700, White, -0.05em, left)
 		line-height 0.83333em
@@ -151,16 +50,13 @@ ul
 		position absolute
 		left 0.270833em
 		bottom 0.6666667em
-		
 	.subtitle
 		FiraSans(0.25em, 400, LtRed, 0.1em, left)
 		text-transform uppercase
 		NoSelect()
 		position absolute
 		left 1.25em
-		bottom 1.25em
-		
-		
+		bottom 1.125em
 	.login
 		FiraSans(0.25em, 400, Red, 0.1em, left)
 		text-transform uppercase
@@ -171,186 +67,27 @@ ul
 		&:hover
 			color LtRed
 
-	
-
-.project
-	Width-SM(5)
-	display inline-block
-	margin-bottom StandardPadding
-	
-	
-	&:nth-child(odd)
-		margin-right StandardPadding
-
-	&>*
+#social-media
+	width 130px
+	list-style-type none
+	li
 		display inline-block
-		vertical-align middle
-	
-	.title
-		margin-top StandardPadding
-		Width-SM(12)
-		h3
-			FiraSans(1.25rem, 700, Black, -0.06em, left)
-			
-	.descriptors
-		FiraSans(0.75rem, 700, Red, 0.1em, left)
-		text-transform uppercase
-		
-		.brackets
-			color Gray
-			font-weight 400
-
-	.points
-		FiraSans(0.85rem, 500, Dark, 0.1em, left)
-		text-transform uppercase
-		.point
-			margin-top ThinPadding
-
-
-	//--------------
-	// Image Slider
-	//--------------
-	figure
-		Width-SM(12)
-		background Black
-		overflow hidden
-		height 100%
-		position relative
-		z-index 0
-		cursor pointer
-		
-		img
-			display block
-			margin 0 auto
-			&:not(a)
-				:not(:first-child)
-					display none
-	
-		&:hover a.image
-			opacity 1
-		
-		a.image
-			opacity 0
-			position absolute
-			bottom 0
-			text-align center
+		width 25%
+		a
+			padding-top StandardPadding
 			width 100%
-			background rgba(Red,0.7)
-			padding ThinPadding
-			color White
-			&:hover
-				text-decoration none
-
-
-		&:hover .navigation
-			opacity 1
-
-// Forms
-
-
-
-.form-group
-	// Width-XS(9)
-	// padding 15px 0
-	padding-bottom StandardPadding
-	
-form
-	Width-XS(9)
-	position relative
-	text-align left
-
-
-
-input
-	Width-XS(12)
-	&:focus + label
-		color Red
-		
-label
-	FiraSans(1rem, 200, Light, 0.25em, left)
-	// Width-MD(6)
-	text-transform uppercase
-	transition FormTransitionTime ease all
-	
-	&.selected
-		// font-weight 400
-		
-input[type="text"],
-input[type="password"]
-	FiraSans(1.75rem, 200, Light, -0.05em, left)
-	background none
-	border none
-	border-bottom 1px solid Light
-	font-size 30px
-	transition FormTransitionTime ease color border-bottom
-		
-	&.selected
-		color Red
-
-	&:focus
-		outline none
-		background none
-		color Red
-		border-bottom 1px solid Red
-	
-	
-input[type="submit"]
-	FiraSans(1rem, 200, Red, 0.125em, center)
-	background none
-	border-width 1px
-	border-color transparent
-	text-transform uppercase
-	Width-XS(12)
-	font-size 1rem
-	cursor pointer
-	padding StandardPadding
-	
-	&:hover
-		border 1px solid Red
-		color Red
-		// font-weight 400
-	&:active
-		transition none
-		background Red
-	&:focus
-		background none
-		outline none
-
-
-#site-footer
-	background black
-	position fixed
-	z-index 99
-	bottom 0
-	left 0
-	height 36px
-	Width-XS(12)
-	
-	&>*:first-child
-		margin 0 auto
-
-	p
-		color Gray !important
-		text-align center
-		padding 50px 12.5%
-		font-size ThinPadding
-		.updated
-			margin-top ThinPadding
+			display block
 			text-align center
-			
-#bottom-window
-	height 100vh
-	width Width-XS(12)
+		i
+			font-size 18px
 
-table
-	width 100%
-	th
-		Char-MediumItemSecondary(Dark)
-		padding Thick Padding
-	tr
-		padding ThinPadding
-	td
-		padding ThinPadding
+
+
+.fixed
+	position fixed
+
+
+
 
 
 		

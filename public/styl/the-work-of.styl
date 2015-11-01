@@ -4,29 +4,6 @@
 @import 'base'
 
 
-// Three main columns of page
-.left,
-.center,
-.right,
-.full
-	display inline-block
-	vertical-align top	
-
-.left
-	Width-XS(2)
-	Width-MD(3)
-
-.center
-	Width-XS(10)
-	Width-MD(6)
-	
-.right
-	Width-XS(10)
-	Width-MD(3)
-
-.full
-	Width-MD(9)
-
 
 
 .page
@@ -71,23 +48,23 @@
 				TranslateY(-100%)
 				padding-bottom StandardPadding
 		
-		&.featured // big picture 2/3, description 1/3
+		// &.featured // big picture 2/3, description 1/3
 			
-			// add in .skill
-			.project
-				Width-MD(12)
-				position relative
-				margin-bottom 0
-				&>*
-					display inline-block
-				figure
-					Width-MD(8)
-					background transparent
-					padding-right StandardPadding
-				.title
-					Width-MD(4)
-					.primary
-						Char-MediumItemPrimary()
+		// 	// add in .skill
+		// 	.project
+		// 		Width-MD(12)
+		// 		position relative
+		// 		margin-bottom 0
+		// 		&>*
+		// 			display inline-block
+		// 		figure
+		// 			Width-MD(8)
+		// 			background transparent
+		// 			padding-right StandardPadding
+		// 		.title
+		// 			Width-MD(4)
+		// 			.primary
+		// 				Char-MediumItemPrimary()
 		
 		&.list-3-column // 3 columns for lists only
 			Width-MD(12)
@@ -179,7 +156,8 @@
 li.skill
 	InlineChildren(middle)
 	.title
-		Char-MediumItemPrimary()
+		// Char-MediumItemPrimary()
+		Char-SmallItemPrimary()
 		Width-MD(10)
 	.value
 		Char-MediumItemValue()

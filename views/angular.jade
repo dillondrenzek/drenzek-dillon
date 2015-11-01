@@ -1,0 +1,214 @@
+//- Pure Angular App Template
+//- version 3.1
+
+doctype
+html
+	head
+		//- TODO: Change
+		title Pure Angular
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+
+		link(rel="stylesheet" href="/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet" href="/css/base.css")
+		link(rel="stylesheet" href="/css/the-work-of.css")
+		link(rel="stylesheet" href="/css/angular.css")
+		
+		link(rel="stylesheet" href="/css/ImageModal.css")
+
+		base(href="/my")
+
+		//- Angular
+		script(src="/angular/angular.min.js")
+		script(src="/angular-ui-router/release/angular-ui-router.min.js")
+
+		script(src="/js/angularApp.js")
+
+
+		//- Google Analytics
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-67261358-1', 'auto');
+			ga('send', 'pageview');
+
+
+	body(ng-app="drenzekDillon")
+		#site-title
+
+		.container-fluid
+			ui-view
+
+		script(type="text/ng-template" id="/home.html")
+			.page
+
+				.page-column.left
+					.fixed
+						#logo
+							a(href="/"): h1 Dillon Drenzek
+							.subtitle Up & Coming Developer
+							//- a.login(href="/login") Login
+						ul#social-media
+							li: a(href="https://github.com/dillondrenzek"): i.fa.fa-github
+							li: a(href="https://www.linkedin.com/in/dillondrenzek"): i.fa.fa-linkedin
+							li: a(href="https://behance.net/dillondrenzek/"): i.fa.fa-behance
+							li: a(href="https://twitter.com/DrEnzek"): i.fa.fa-twitter
+						a(href="/resume") Resume (FIX)
+
+				.page-column.center
+					section.title 
+						h2 {{pageTitle}}
+
+					section
+						header
+							h3 A Word From The Author...
+						p I'm psyched you're here! I'm an Up & Coming Web Developer and this is my little corner of the Internet. Ever since I was a kid, I've played with data of all sorts and looked for creative ways to display that information. Some of my earliest inspirations were the scoreboards on TV during sporting events, so I guess you could say this is my personal "scoreboard." I've taken my resume, and my portfolio and turned it into a scoreboard of my skills and projects. Play around and see what you can find and then drop me a note at dillon@drenzek.com!<br><br> Cheers,<br>Dillon
+
+					section
+						header
+							h3 Featured Projects
+							//- a(href="/projects") List Projects >
+						.project(ng-repeat="project in projects.all")
+							header
+								h4.primary(ng-if="project.permalink")
+									a(href="projects/{{project.permalink}}") {{project.title}}
+								h4.primary(ng-if="!project.permalink") {{project.title}}
+
+								ul
+									li.type(ng-show="project.type") {{project.type}}
+
+								.links
+									a.external(ng-show="project.githubUrl" href="{{project.githubUrl}}" title="View on GitHub")
+										i.fa.fa-github-square
+										p Github
+									a.external(ng-show="project.launchUrl" href="{{project.launchUrl}}" title="Launch")
+										i.fa.fa-external-link-square
+										p Launch
+									
+								
+
+
+								
+								
+							
+
+							
+							.body(ng-show="project.bulletPoints")
+								ul.skills(ng-show="project.skills")
+									li.skill(ng-show="project.skills" ng-repeat="skill in project.skills") {{skill}}
+
+								
+								li(ng-repeat="point in project.bulletPoints") {{point}}
+							figure(ng-show="project.imageUrls")
+								img(ng-repeat="url in project.imageUrls" src="{{url}}")
+								
+							//- .body(ng-show="project.description")
+								p.quote {{project.description}}
+
+
+
+				.page-column.right
+					section.title
+
+					//- section.author
+						header
+							h3 ...That's Me!
+						figure
+							img(src="images/profile.jpg")
+
+					section.list-category
+						header
+							h3 Top Skills
+						.category
+							h4 Web Development
+							ul.skills
+								li.skill(ng-repeat="skill in skills.web")
+									.title {{skill}}
+						.category
+							h4 UI/Graphic Design
+							ul.skills
+								li.skill(ng-repeat="skill in skills.ui")
+									.title {{skill}}
+						.category
+							h4 Programming
+							ul.skills
+								li.skill(ng-repeat="skill in skills.programming")
+									.title {{skill}}
+						//- section
+							header
+								h3 Forgive the mess!
+							p.quote Thanks for visiting! I'm currently looking for a job and developing this website at the same time. Eventually ", The Work of" will be a comprehensive look at what I'm doing and what I've done. It will be built with Angular to resemble a dashboard so you - the employer, recruiter, friend - can get a good feel for what Dillon Drenzek is all about in a single glance! For now, enjoy what you can find, and drop me a note at dillon@drenzek.com!<br><br> Cheers,<br> Dillon
+				
+					
+					
+						//- section.currently
+							header
+								h3 Currently
+							ul
+								li.project
+									figure
+										img(src="images/profile.jpg")
+									.title
+										.primary dillon.drenzek.com
+										.secondary Node.js, Angular.js
+										.body The website you're currently visiting! I am constantly working to improve it, stay tuned!
+								li.project
+									figure
+										img(src="images/always-wondering.jpg")
+									.title
+										.primary Cold For Now, Always Wondering
+										.secondary Artwork
+										.body Tweet-length description about this project, describing the main point of this project.
+								li.project
+									figure
+										img(src="images/always-wondering.jpg")
+									.title
+										.primary Cold For Now, Always Wondering
+										.secondary Artwork
+										.body Tweet-length description about this project, describing the main point of this project.
+
+						//- section.list-3-column
+							header
+								h3 Past Work
+							ul
+								li.project(ng-repeat="project in projects")
+									figure
+										img(ng-repeat="url in project.imageURLs" ng-src="{{url}}")
+									.title
+										.primary {{project.title}}
+										.secondary(ng-repeat="descriptor in project.descriptors") {{descriptor}}
+										//- .body {{project.description}}
+										ul(ng-show="project.launchURL || project.githubURL")
+											li: a(ng-show="project.launchURL" ng-href="{{project.launchURL}}") Launch
+											li: a(ng-show="project.githubURL" ng-href="{{project.githubURL}}") GitHub
+
+
+						//- section.title
+							a(href="/cv") Curriculum Vitae >
+							a(href="/resume") Resume >
+						
+
+
+						
+
+
+
+						//- section.list-standard
+							header
+								h3 Recently Improved
+							ul.skills
+								li.skill(ng-repeat="skill in skills.improved")
+									.title {{skill.title}}
+									.value {{skill.value}}
+
+
+
+						//- section.list-standard
+							header
+								h3 Resume Skills
+							ul.skills
+								li.skill(ng-repeat="skill in skills")
+									.title {{skill.title}}
+

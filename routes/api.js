@@ -35,6 +35,13 @@ api.skills = {
 			// console.log("api.skill.create", response);
 			res.json(response);
 		});
+	},
+
+	destroy: function(req, res) {
+		Skills.destroy(req.params.id, function(err, response){
+			if (err) throw err;
+			
+		});
 	}
 
 };

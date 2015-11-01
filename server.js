@@ -31,23 +31,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // var db = 
 
-function errorHandler(err, req, res, next) {
-	console.error(err.message);
-	console.error(err.stack);
-	res.status(500);
-	res.render('error', {error: err});
-}
+// function errorHandler(err, req, res, next) {
+// 	console.error(err.message);
+// 	console.error(err.stack);
+// 	res.status(500);
+// 	res.render('error', {error: err});
+// }
 
-app.use(errorHandler);
+// app.use(errorHandler);
 
 
 // Website Routes
-var site = new express.Router();
-site.get('/', routes.site.home);
-site.get('/homepage', routes.site.home);
-site.get('/the-work-of', routes.site.work);
-site.get('/the-work-of/:page', routes.site.work);
-site.get('/author', routes.site.author);
+// var site = new express.Router();
+// site.get('/', routes.site.home);
+app.get('/', function(req, res){
+	res.render('angular');
+});
+// site.get('/homepage', routes.site.home);
+// site.get('/the-work-of', routes.site.work);
+// site.get('/the-work-of/:page', routes.site.work);
+// site.get('/author', routes.site.author);
 // site.get('/test/:subtest', routes.site.subtests);
 
 // Admin Routes
@@ -60,12 +63,13 @@ var api = new express.Router();
 api.get('/projects', routes.api.projects.list);
 api.get('/skills', routes.api.skills.list);
 api.post('/skills/new', routes.api.skills.create);
+api.delete('/skills/destroy/:id', routes.api.skills.destroy);
 
 var test = new express.Router();
 test.get('/:subtest', routes.site.subtests);
 
 
-app.use('/', site);
+// app.use('/', site);
 app.use('/my', my); 
 app.use('/api', api);
 app.use('/test', test);

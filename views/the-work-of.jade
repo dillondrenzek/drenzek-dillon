@@ -9,7 +9,6 @@ block title
 
 block angularApp
 	script(src="/js/angularApp.js")
-
 block link
 	link(rel="stylesheet" href="/css/the-work-of.css")
 
@@ -18,125 +17,7 @@ block head
 
 block page
 	.app(ng-app="workApp")
-		ui-view
-
-		script(type="text/ng-template" id="/home.html")
-			.page
-				.left
-					//- section.title
-						//- +Logo
-				.center
-					section.title 
-						h2 {{pageTitle}}
-					section
-						header
-							h3 Forgive the mess!
-						p.quote Thanks for visiting! I'm currently looking for a job and developing this website at the same time. Eventually ", The Work of" will be a comprehensive look at what I'm doing and what I've done. It will be built with Angular to resemble a dashboard so you - the employer, recruiter, friend - can get a good feel for what Dillon Drenzek is all about in a single glance! For now, enjoy what you can find, and drop me a note at dillon@drenzek.com!<br><br> Cheers,<br> Dillon
-				
-					//- section.featured
-						header
-							h3 Featured Project
-							//- if featured.headerLink.active
-								a(href="/projects") List Projects >
-							//- if featured.slideIndicator.active
-								.slide-indicator
-									.arrow <
-									.indicator 1/3
-									.arrow >
-						.project
-							figure
-								img(src="images/storm.jpg")
-							.title
-								.primary: a(href="http://drenzek-storm-feature.herokuapp.com/") Storm Rebranding Case Study
-								.secondary Website, Branding
-								.body A case study I did of the Graphic Design project I completed in Denmark during the Summer of 2015.
-					
-					//- section.currently
-						header
-							h3 Currently
-						ul
-							li.project
-								figure
-									img(src="images/profile.jpg")
-								.title
-									.primary dillon.drenzek.com
-									.secondary Node.js, Angular.js
-									.body The website you're currently visiting! I am constantly working to improve it, stay tuned!
-							//- li.project
-								figure
-									img(src="images/always-wondering.jpg")
-								.title
-									.primary Cold For Now, Always Wondering
-									.secondary Artwork
-									.body Tweet-length description about this project, describing the main point of this project.
-							//- li.project
-								figure
-									img(src="images/always-wondering.jpg")
-								.title
-									.primary Cold For Now, Always Wondering
-									.secondary Artwork
-									.body Tweet-length description about this project, describing the main point of this project.
-
-					section.list-3-column
-						header
-							h3 Past Work
-						ul
-							li.project(ng-repeat="project in projects")
-								figure
-									img(ng-repeat="url in project.imageURLs" ng-src="{{url}}")
-								.title
-									.primary {{project.title}}
-									.secondary(ng-repeat="descriptor in project.descriptors") {{descriptor}}
-									//- .body {{project.description}}
-									ul(ng-show="project.launchURL || project.githubURL")
-										li: a(ng-show="project.launchURL" ng-href="{{project.launchURL}}") Launch
-										li: a(ng-show="project.githubURL" ng-href="{{project.githubURL}}") GitHub
-
-				.right
-					section.title
-						//- a(href="/cv") Curriculum Vitae >
-						//- a(href="/resume") Resume >
-					
-
-
-					//- section.list-category
-						header
-							h3 Top Skills
-						.category
-							h4 Web Development
-							ul.skills
-								li.skill(ng-repeat="skill in skills.web")
-									.title {{skill}}
-						.category
-							h4 UI Design
-							ul.skills
-								li.skill(ng-repeat="skill in skills.ui")
-									.title {{skill}}
-						.category
-							h4 Programming
-							ul.skills
-								li.skill(ng-repeat="skill in skills.programming")
-									.title {{skill}}
-
-
-
-					//- section.list-standard
-						header
-							h3 Recently Improved
-						ul.skills
-							li.skill(ng-repeat="skill in skills.improved")
-								.title {{skill.title}}
-								.value {{skill.value}}
-
-
-
-					section.list-standard
-						header
-							h3 Resume Skills
-						ul.skills
-							li.skill(ng-repeat="skill in skills")
-								.title {{skill.title}}
-
+		
 
 
 		script(type="text/ng-template" id="/login.html")
@@ -184,7 +65,7 @@ block page
 								td.title {{skill.title}}
 								td.action: a.inactive(href="#") Show
 								td.action: a.inactive(href="#") Edit
-								td.action: a.inactive(href="#") Destroy
+								td.action: a.destroy(ng-click="") Destroy
 							tr.count
 								td {{skills.length}} skills found.
 
